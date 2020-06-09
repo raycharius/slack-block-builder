@@ -1,0 +1,53 @@
+{
+  "name": "slack-block-builder",
+  "version": "0.1.0",
+  "description": "Lightweight, no-dependency JavaScript library for creating Slack Block Kit UIs, with a builder interface, inspired by SwiftUI.",
+  "author": {
+    "name": "Ray East",
+    "url": "https://github.com/raycharius"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raycharius/slack-block-builder"
+  },
+  "homepage": "https://github.com/raycharius/slack-block-builder#readme",
+  "bugs": {
+    "url": "https://github.com/raycharius/slack-block-builder/issues"
+  },
+  "files": [
+    "src/",
+    "README.md"
+  ],
+  "main": "./src/index.js",
+  "license": "MIT",
+  "keywords": [
+    "slack",
+    "interactive-messages",
+    "block-actions",
+    "bot",
+    "slack-bot",
+    "modal",
+    "block-kit",
+    "swiftui",
+    "bot",
+    "modal",
+    "message-builder",
+    "block-builder",
+    "slack-block-builder",
+    "block-kit"
+  ],
+  "scripts": {
+    "test": "jest",
+    "lint-fix": "eslint 'src/**/*.js' --fix",
+    "lint-check": "eslint 'src/**/*.js'",
+    "prettier-fix": "prettier --write 'src/**/*.js'",
+    "prettier-check": "prettier --check 'src/**/*.js'"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "prettier-eslint-cli": "^5.0.0",
+    "jest": "^26.0.1"
+  }
+}
