@@ -2,7 +2,6 @@ module.exports = ({ Class, method, property, param, valid, expectArray, expectMa
   test(`Building the object with a set property of '${property}' build '${property}' or each item inside of it`, () => {
     const instance = new Class();
 
-
     instance[method](valid);
 
     const built = instance.build({ raw: true }); // Add raw for surfaces

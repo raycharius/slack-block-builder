@@ -1,7 +1,7 @@
 {
   "name": "slack-block-builder",
   "version": "0.1.0",
-  "description": "Lightweight, no-dependency JavaScript library for creating Slack Block Kit UIs, with a builder interface, inspired by SwiftUI.",
+  "description": "Lightweight, zero-dependency library for creating Slack messages and modals, with a builder interface inspired by SwiftUI.",
   "author": {
     "name": "Ray East",
     "url": "https://github.com/raycharius"
@@ -27,10 +27,12 @@
     "bot",
     "slack-bot",
     "modal",
-    "block-kit",
+    "block",
+    "kit",
     "swiftui",
     "bot",
     "modal",
+    "messages",
     "message-builder",
     "block-builder",
     "slack-block-builder",

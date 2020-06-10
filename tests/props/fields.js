@@ -12,7 +12,7 @@ module.exports = (params) => {
     method: props.fields,
     property: props.fields,
     param: paramMap.fields,
-    mutated: types.PlainTextObject,
+    mutated: types.MarkdownObject,
     expectArray: true,
   };
 
