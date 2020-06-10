@@ -63,7 +63,7 @@ class BuilderHelper {
     }
 
     return array.map((item) => (typeof item === 'string'
-      ? this.getPlainTextObject(item)
+      ? this.getMarkdownObject(item)
       : item.build()));
   }
 
@@ -72,7 +72,7 @@ class BuilderHelper {
       return undefined;
     }
 
-    return array.map((item) => this.getPlainTextObject(item));
+    return array.map((item) => this.getMarkdownObject(item));
   }
 
 

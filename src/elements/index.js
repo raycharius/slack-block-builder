@@ -239,7 +239,7 @@ const getElements = () => {
      * @param {Object} [params] Constructor parameters
      * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads
      * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with
-     * @param {string} [params.intiialValue] Sets the default text entered into the TextInput at load
+     * @param {string} [params.initialValue] Sets the default text entered into the TextInput at load
      * @param {int} [params.minLength] Sets a minimum character count in order for the user to submit the form
      * @param {int} [params.maxLength] Sets a maximum character count allowed to send the form
      * @return {TextInput} An instance of Input
