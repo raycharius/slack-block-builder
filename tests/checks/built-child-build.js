@@ -20,4 +20,4 @@ module.exports = ({ Class, method, property, param, valid, expectArray, expectMa
     expect(instance.props[property].hasBeenBuilt).toEqual(true);
     expect(built[param]).toEqual(instance.result[param]);
   });
-};
+}; 

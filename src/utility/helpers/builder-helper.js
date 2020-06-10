@@ -101,6 +101,6 @@ class BuilderHelper {
   static areUndefined(...values) {
     return values.filter((value) => this.isUndefined(value)).length === values.length;
   }
-}
+} 
 
 module.exports = BuilderHelper;
