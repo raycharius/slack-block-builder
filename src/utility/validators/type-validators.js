@@ -86,7 +86,7 @@ module.exports = {
   }),
 
   isResponseTypeEnum: new Validator({
-    condition: (value) => value === enumValues.ephemeral,
+    condition: (value) => [enumValues.ephemeral, enumValues.inChannel].includes(value),
     message: 'String with value of \'ephemeral\'',
   }),
 

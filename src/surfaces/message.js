@@ -111,7 +111,7 @@ class Message extends Surface {
   }
 
   /**
-   * Sets the message to only visible by the user who invoked the action
+   * Sets the message to only be visible by the user who invoked the action
    *
    * {@link https://api.slack.com/messaging/composing|View in Slack API Documentation}
    *
@@ -120,6 +120,18 @@ class Message extends Surface {
 
   ephemeral() {
     return this.set(enumValues.ephemeral, props.responseType);
+  }
+
+  /**
+   * Sets the message to visible to everyone in the channel
+   *
+   * {@link https://api.slack.com/messaging/composing|View in Slack API Documentation}
+   *
+   * @return {this} The instance on which the method is called
+   */
+
+  inChannel() {
+    return this.set(enumValues.inChannel, props.responseType);
   }
 
   /**

@@ -17,6 +17,7 @@ const properties = [
   props.replaceOriginal,
   props.deleteOriginal,
   props.ephemeral,
+  props.inChannel,
   props.postAt,
 ];
 
