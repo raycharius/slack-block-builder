@@ -646,13 +646,12 @@ Originally, the idea of accepting a value of `undefined` was to help assist with
 
 ## :fire: &nbsp; Acknowledgements
  
-<img src="https://github.com/bravecow.png" alt="@bravecow" width="24" height="24" valign="bottom" /> Taras Neporozhniy ([@bravecow](https://github.com/bravecow)) - For All of the Advice
+<img src="https://github.com/bravecow.png" alt="@bravecow" width="24" height="24" valign="bottom" /> Taras Neporozhniy ([@bravecow](https://github.com/bravecow)) - For all of the advice!
 
-<img src="https://cdn.dribbble.com/users/683635/avatars/normal/ee2c7c826bfe244b573d145376fe0b5a.png?1510328842" alt="@ft502" width="24" height="24" valign="bottom" /> Alexey Chernyshov ([@ft502](https://dribbble.com/ft502) on Dribbble) - For the Wonderful Logo
+<img src="https://cdn.dribbble.com/users/683635/avatars/normal/ee2c7c826bfe244b573d145376fe0b5a.png?1510328842" alt="@ft502" width="24" height="24" valign="bottom" /> Alexey Chernyshov ([@ft502](https://dribbble.com/ft502) on Dribbble) - For such a beautiful logo!
 
-<img src="https://github.com/slackhq.png" alt="@slackhq" width="24" height="24" valign="bottom" /> SlackHQ ([@slackhq](https://github.com/slackhq)) - For the Wonderful Product and API
+<img src="https://github.com/slackhq.png" alt="@slackhq" width="24" height="24" valign="bottom" /> SlackHQ ([@slackhq](https://github.com/slackhq)) - For such a wonderful product and API!
 
 ## :black_nib: &nbsp; Author
 
 <img src="https://github.com/raycharius.png" alt="@raycharius" width="24" height="24" valign="bottom" /> Ray East ([@raycharius](https://github.com/raycharius)) - Huge Fan of Slack and Block Builder Maintainer
-e
