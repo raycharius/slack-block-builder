@@ -46,8 +46,7 @@
 * A `printPreviewURL()` method that outputs to the console a link to preview your UI on Slack's [Block Kit Builder website](https://app.slack.com/block-kit-builder).
 * Small size, with zero dependencies.
 
-<br/><br/>
-#### :hammer: &nbsp; Coming Soon
+## :rocket: &nbsp; Coming Soon
 
 * In-depth doc site.
 * TypeScript type definitions.
