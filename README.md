@@ -21,7 +21,7 @@
   </p>
 </p>
 
-![An example of using Block Builder](resources/images/main/hero.png)
+![An example of using Block Builder](resources/images/main/hero-image.png)
 
 ***
 
