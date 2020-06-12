@@ -21,4 +21,5 @@ module.exports = {
   globallyInvalid: [0, 1, 2, 3, 4, 5],
   timestamp: 1355517523,
   ephemeral: 'ephemeral',
+  inChannel: 'in_channel',
 };

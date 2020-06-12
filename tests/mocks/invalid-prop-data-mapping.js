@@ -60,5 +60,6 @@ module.exports = {
   deleteOriginal: types.globallyInvalid,
   responseType: types.globallyInvalid,
   postAt: types.globallyInvalid,
-  ephemeral: types.string,
+  ephemeral: types.globallyInvalid,
+  inChannel: types.globallyInvalid,
 };

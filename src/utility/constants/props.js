@@ -60,4 +60,5 @@ module.exports = {
   responseType: 'responseType',
   postAt: 'postAt',
   ephemeral: 'ephemeral',
+  inChannel: 'inChannel',
 };

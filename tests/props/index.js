@@ -23,6 +23,7 @@ const fields = require('./fields');
 const filter = require('./filter');
 const hint = require('./hint');
 const imageUrl = require('./image-url');
+const inChannel = require('./in-channel');
 const initialChannel = require('./initial-channel');
 const initialChannels = require('./initial-channels');
 const initialConversation = require('./initial-conversation');
@@ -87,6 +88,7 @@ module.exports = {
   filter,
   hint,
   imageUrl,
+  inChannel,
   initialChannel,
   initialChannels,
   initialConversation,
