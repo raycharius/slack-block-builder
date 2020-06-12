@@ -1,12 +1,38 @@
 
 :notebook: **Note:** Thorough, in-depth docs are in the process and will be available by **mid-June**.
 
-# Block Builder
+<p align="center">
+    <img src="https://raw.githubusercontent.com/raycharius/slack-block-builder/beautify-readme/resources/images/main/logo-horizontal.png" alt="Logo" width="600f">
+</p>
 
+<p align="center">
+    <h3 align="center">Maintainable code for Slack interactive messages, modals, and home tabs.</h3>
+    </p>
+
+<p align="center">
+    Lightweight, zero-dependency JavasScript library for Slack UI.
+    <br />
+    <br />
+    <a href="#real-world-examples"><strong>View Real-World Examples »</strong></a>
+    <br />
+    <br />
+    <a href="#space_invader--usage">Quick Start Guide</a>
+    ·
+    <a href="https://github.com/raycharius/slack-block-builder/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/raycharius/slack-block-builder/issues">Request Feature</a>
+  </p>
+</p>
+
+***
+  
+[![npm](https://img.shields.io/npm/v/slack-block-builder?color=bright-green)](https://www.npmjs.com/package/slack-block-builder)
 [![codecov](https://codecov.io/gh/raycharius/slack-block-builder/branch/master/graph/badge.svg)](https://codecov.io/gh/raycharius/slack-block-builder)
 [![Maintainability](https://api.codeclimate.com/v1/badges/17a96b146284b1b82b9e/maintainability)](https://codeclimate.com/github/raycharius/slack-block-builder/maintainability)
+![NPM](https://img.shields.io/npm/l/slack-block-builder?color=bright-green)
 
-**Block Builder** is a lightweight, dependency-free JavaScript library for creating interactive messages, modals, and home tabs for Slack, with a builder syntax inspired by [SwiftUI](https://developer.apple.com/xcode/swiftui/).
+
+**Block Builder** helps you keep your Slack app code for UI maintainable, testable, and reusable. It has a simple builder syntax inspired by [SwiftUI](https://developer.apple.com/documentation/swiftui). 
 
 ![An example of using Block Builder](resources/images/main/hero.png)
 
@@ -549,7 +575,9 @@ const someModal = ({ someData }) => {
 };
 ```
 
-#### Conditionals Real-World Example
+## Real-World Examples
+
+### Conditionals
 
 Let's say you have an app that manages team rosters, through a [Slack](https://slack.com) modal. 
 
@@ -617,13 +645,15 @@ Originally, the idea of accepting a value of `undefined` was to help assist with
 
 [Node Slack SDK](https://github.com/slackapi/node-slack-sdk) – A great and powerful SDK for building [Slack](https://slack.com) Apps from the ground up.
 
+## Acknowledgements
+
+<img src="https://github.com/bravecow.png" alt="@bravecow" width="24" height="24" valign="bottom" /> Taras Neporozhniy ([@bravecow](https://github.com/bravecow)) - For All of the Advice
+
+<img src="https://cdn.dribbble.com/users/683635/avatars/normal/ee2c7c826bfe244b573d145376fe0b5a.png?1510328842" alt="@ft502" width="24" height="24" valign="bottom" /> Alexey Chernyshov ([@ft502](https://dribbble.com/ft502) on Dribbble) - For the Wonderful Logo
+
+<img src="https://github.com/slackhq.png" alt="@slackhq" width="24" height="24" valign="bottom" /> SlackHQ ([@slackhq](https://github.com/slackhq)) - For the Wonderful Product and API
+
 ## Author
 
 <img src="https://github.com/raycharius.png" alt="@raycharius" width="24" height="24" valign="bottom" /> Ray East ([@raycharius](https://github.com/raycharius)) - Huge Fan of Slack and Block Builder Maintainer
-
-## License
-
-[MIT License](LICENSE)
-
-
-
+e
