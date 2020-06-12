@@ -638,14 +638,14 @@ There are multiple ways to add logic with this in mind. If you're feeling especi
 
 Originally, the idea of accepting a value of `undefined` was to help assist with simple things, such as passing in a value to the `initialOption()` method for select menus, but it opens the door for a lot manipulation. It's up to you to decide where you draw the line with this type of inline logic.
 
-## :link :&nbsp; Other Useful Slack-Related Projects
+## :link: :&nbsp; Other Useful Slack-Related Projects
 
 [Bolt for Javascript](https://github.com/SlackAPI/bolt) – A simple framework for building [Slack](https://slack.com) apps, developed by [Slack](https://slack.com) themselves.
 
 [Node Slack SDK](https://github.com/slackapi/node-slack-sdk) – A great and powerful SDK for building [Slack](https://slack.com) Apps from the ground up.
 
-## :pray: &nbsp; Acknowledgements
-
+## :fire: &nbsp; Acknowledgements
+ 
 <img src="https://github.com/bravecow.png" alt="@bravecow" width="24" height="24" valign="bottom" /> Taras Neporozhniy ([@bravecow](https://github.com/bravecow)) - For All of the Advice
 
 <img src="https://cdn.dribbble.com/users/683635/avatars/normal/ee2c7c826bfe244b573d145376fe0b5a.png?1510328842" alt="@ft502" width="24" height="24" valign="bottom" /> Alexey Chernyshov ([@ft502](https://dribbble.com/ft502) on Dribbble) - For the Wonderful Logo
