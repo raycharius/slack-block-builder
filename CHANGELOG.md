@@ -1,5 +1,11 @@
 # Change Log
 
+## v0.1.3 - 2020-06-13
+
+* Add project logo (kudos to Alexey Chernyshov).
+* Beautify README.md for project.
+* Update images to reflect new logo.
+
 ## v0.1.2 - 2020-06-12
 
 * Add `inChannel()` method to `Message` object.

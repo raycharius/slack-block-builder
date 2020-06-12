@@ -1,16 +1,40 @@
+<p align="center">
+    <img src="https://raw.githubusercontent.com/raycharius/slack-block-builder/master/resources/images/main/logo-horizontal.png" alt="Logo" width="600px">
+</p>
 
-:notebook: **Note:** Thorough, in-depth docs are in the process and will be available by **mid-June**.
+<p align="center">
+    <h3 align="center">Maintainable code for Slack interactive messages, modals, and home tabs.</h3>
+</p>
 
-# Block Builder
+<p align="center">
+    Lightweight, zero-dependency JavasScript library for <strong>Slack Block Kit UI</strong>.
+    <br />
+    <br />
+    <a href="#mag--real-world-examples"><strong>View Real-World Examples »</strong></a>
+    <br />
+    <br />
+    <a href="#space_invader--usage">Quick Start Guide</a>
+    ·
+    <a href="https://github.com/raycharius/slack-block-builder/issues">Request Feature</a>
+    ·
+    <a href="https://github.com/raycharius/slack-block-builder/issues">Report Bug</a>
+  </p>
+</p>
 
+![An example of using Block Builder](resources/images/main/hero-image.png)
+
+***
+
+[![npm](https://img.shields.io/npm/v/slack-block-builder?color=bright-green)](https://www.npmjs.com/package/slack-block-builder)
+![NPM](https://img.shields.io/npm/l/slack-block-builder?color=bright-green)
 [![codecov](https://codecov.io/gh/raycharius/slack-block-builder/branch/master/graph/badge.svg)](https://codecov.io/gh/raycharius/slack-block-builder)
 [![Maintainability](https://api.codeclimate.com/v1/badges/17a96b146284b1b82b9e/maintainability)](https://codeclimate.com/github/raycharius/slack-block-builder/maintainability)
 
-**Block Builder** is a lightweight, dependency-free JavaScript library for creating interactive messages, modals, and home tabs for Slack, with a builder syntax inspired by [SwiftUI](https://developer.apple.com/xcode/swiftui/).
+**Block Builder** helps you keep your Slack app code for UI maintainable, testable, and reusable. It has a simple builder syntax inspired by [SwiftUI](https://developer.apple.com/documentation/swiftui) and lets you code the _you_ want to code.
 
-![An example of using Block Builder](resources/images/main/hero.png)
 
-## :zap:  Features
+
+## :zap: &nbsp; Features
 
 * Simple [SwiftUI](https://developer.apple.com/xcode/swiftui/)-inspired syntax.
 * Builder syntax for better visual code structure.
@@ -21,7 +45,7 @@
 * A `printPreviewURL()` method that outputs to the console a link to preview your UI on Slack's [Block Kit Builder website](https://app.slack.com/block-kit-builder).
 * Small size, with zero dependencies.
 
-#### :hammer:  Coming Soon
+## :rocket: &nbsp; Coming Soon
 
 * In-depth doc site.
 * TypeScript type definitions.
@@ -30,7 +54,7 @@
 * Guide for [Slack](https://slack.com) apps with tips, tricks, and best practices.
 
 
-## :gift:  Benefits
+## :gift: &nbsp; Benefits
 
 * Write three times less code.
 * Build more sophistocated, elegant flows.
@@ -39,7 +63,7 @@
 * Code the way you want to code – [not forced into any single paradigm](#advanced-use-cases).
 * Easily integrate localizations into your app.
 
-## :floppy_disk:  Installation 
+## :floppy_disk: &nbsp; Installation 
 
 #### Using NPM: 
 
@@ -53,7 +77,7 @@ npm install --save slack-block-builder
 yarn add slack-block-builder
 ```
 
-## :space_invader:  Usage
+## :space_invader: &nbsp; Usage
 
 * [**Importing**](#importing)
 * [**Exposed Objects**](#exposed-objects)
@@ -471,7 +495,7 @@ Note that only one method can be called on the object, and needs to be called af
 
 There are multiple ways to handle conditionals with **Block Builder**. This is where **Block Builder** provides the most flexibility, since the builder methods, when receiving an argument that is `undefined`, simply do not set the property. 
 
-While you can definitely use traditional `if` statements, you can also pass in potentially undefined values, inline ternary expressions, the `&&` operator, or even self-invoking functions. Below there is a [real-world example](#conditionals-real-world-example), but let's first take a look at the basics:
+While you can definitely use traditional `if` statements, you can also pass in potentially undefined values, inline ternary expressions, the `&&` operator, or even self-invoking functions. Below there is a [real-world example](#mag--real-world-examples), but let's first take a look at the basics:
 
 ```javascript
 import { Modal, Blocks, Elements, Bits } from 'slack-block-builder';
@@ -549,7 +573,9 @@ const someModal = ({ someData }) => {
 };
 ```
 
-#### Conditionals Real-World Example
+## :mag: &nbsp; Real-World Examples
+
+### Conditionals
 
 Let's say you have an app that manages team rosters, through a [Slack](https://slack.com) modal. 
 
@@ -611,19 +637,20 @@ There are multiple ways to add logic with this in mind. If you're feeling especi
 
 Originally, the idea of accepting a value of `undefined` was to help assist with simple things, such as passing in a value to the `initialOption()` method for select menus, but it opens the door for a lot manipulation. It's up to you to decide where you draw the line with this type of inline logic.
 
-## Other Useful Slack-Related Projects
+## :link: &nbsp; Other Useful Slack-Related Projects
 
 [Bolt for Javascript](https://github.com/SlackAPI/bolt) – A simple framework for building [Slack](https://slack.com) apps, developed by [Slack](https://slack.com) themselves.
 
 [Node Slack SDK](https://github.com/slackapi/node-slack-sdk) – A great and powerful SDK for building [Slack](https://slack.com) Apps from the ground up.
 
-## Author
+## :fire: &nbsp; Acknowledgements
+ 
+<img src="https://github.com/bravecow.png" alt="@bravecow" width="24" height="24" valign="bottom" /> Taras Neporozhniy ([@bravecow](https://github.com/bravecow)) - For all of the advice!
+
+<img src="https://cdn.dribbble.com/users/683635/avatars/normal/ee2c7c826bfe244b573d145376fe0b5a.png?1510328842" alt="@ft502" width="24" height="24" valign="bottom" /> Alexey Chernyshov ([@ft502](https://dribbble.com/ft502) on Dribbble) - For such a beautiful logo!
+
+<img src="https://github.com/slackhq.png" alt="@slackhq" width="24" height="24" valign="bottom" /> SlackHQ ([@slackhq](https://github.com/slackhq)) - For such a wonderful product and API!
+
+## :black_nib: &nbsp; Author
 
 <img src="https://github.com/raycharius.png" alt="@raycharius" width="24" height="24" valign="bottom" /> Ray East ([@raycharius](https://github.com/raycharius)) - Huge Fan of Slack and Block Builder Maintainer
-
-## License
-
-[MIT License](LICENSE)
-
-
-
