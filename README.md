@@ -495,7 +495,7 @@ Note that only one method can be called on the object, and needs to be called af
 
 There are multiple ways to handle conditionals with **Block Builder**. This is where **Block Builder** provides the most flexibility, since the builder methods, when receiving an argument that is `undefined`, simply do not set the property. 
 
-While you can definitely use traditional `if` statements, you can also pass in potentially undefined values, inline ternary expressions, the `&&` operator, or even self-invoking functions. Below there is a [real-world example](#conditionals-real-world-example), but let's first take a look at the basics:
+While you can definitely use traditional `if` statements, you can also pass in potentially undefined values, inline ternary expressions, the `&&` operator, or even self-invoking functions. Below there is a [real-world example](#mag--real-world-examples), but let's first take a look at the basics:
 
 ```javascript
 import { Modal, Blocks, Elements, Bits } from 'slack-block-builder';
