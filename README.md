@@ -31,7 +31,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/17a96b146284b1b82b9e/maintainability)](https://codeclimate.com/github/raycharius/slack-block-builder/maintainability)
 
 
-**Block Builder** helps you keep your Slack app code for UI maintainable, testable, and reusable. It has a simple builder syntax inspired by [SwiftUI](https://developer.apple.com/documentation/swiftui):
+**Block Builder** helps you keep your Slack app code for UI maintainable, testable, and reusable. It has a simple builder syntax inspired by [SwiftUI](https://developer.apple.com/documentation/swiftui) and lets you code the _you_ want to code.
 
 
 
