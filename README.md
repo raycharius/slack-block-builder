@@ -46,7 +46,7 @@
 * A `printPreviewURL()` method that outputs to the console a link to preview your UI on Slack's [Block Kit Builder website](https://app.slack.com/block-kit-builder).
 * Small size, with zero dependencies.
 
-#### :hammer:  Coming Soon
+#### :hammer: &nbsp; Coming Soon
 
 * In-depth doc site.
 * TypeScript type definitions.
@@ -55,7 +55,7 @@
 * Guide for [Slack](https://slack.com) apps with tips, tricks, and best practices.
 
 
-## :gift:  Benefits
+## :gift: &nbsp; Benefits
 
 * Write three times less code.
 * Build more sophistocated, elegant flows.
@@ -64,7 +64,7 @@
 * Code the way you want to code – [not forced into any single paradigm](#advanced-use-cases).
 * Easily integrate localizations into your app.
 
-## :floppy_disk:  Installation 
+## :floppy_disk: &nbsp; Installation 
 
 #### Using NPM: 
 
@@ -78,7 +78,7 @@ npm install --save slack-block-builder
 yarn add slack-block-builder
 ```
 
-## :space_invader:  Usage
+## :space_invader: &nbsp; Usage
 
 * [**Importing**](#importing)
 * [**Exposed Objects**](#exposed-objects)
@@ -638,13 +638,13 @@ There are multiple ways to add logic with this in mind. If you're feeling especi
 
 Originally, the idea of accepting a value of `undefined` was to help assist with simple things, such as passing in a value to the `initialOption()` method for select menus, but it opens the door for a lot manipulation. It's up to you to decide where you draw the line with this type of inline logic.
 
-## Other Useful Slack-Related Projects
+## :link :&nbsp; Other Useful Slack-Related Projects
 
 [Bolt for Javascript](https://github.com/SlackAPI/bolt) – A simple framework for building [Slack](https://slack.com) apps, developed by [Slack](https://slack.com) themselves.
 
 [Node Slack SDK](https://github.com/slackapi/node-slack-sdk) – A great and powerful SDK for building [Slack](https://slack.com) Apps from the ground up.
 
-## Acknowledgements
+## :pray: &nbsp; Acknowledgements
 
 <img src="https://github.com/bravecow.png" alt="@bravecow" width="24" height="24" valign="bottom" /> Taras Neporozhniy ([@bravecow](https://github.com/bravecow)) - For All of the Advice
 
@@ -652,7 +652,7 @@ Originally, the idea of accepting a value of `undefined` was to help assist with
 
 <img src="https://github.com/slackhq.png" alt="@slackhq" width="24" height="24" valign="bottom" /> SlackHQ ([@slackhq](https://github.com/slackhq)) - For the Wonderful Product and API
 
-## Author
+## :black_nib: &nbsp; Author
 
 <img src="https://github.com/raycharius.png" alt="@raycharius" width="24" height="24" valign="bottom" /> Ray East ([@raycharius](https://github.com/raycharius)) - Huge Fan of Slack and Block Builder Maintainer
 e
