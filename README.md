@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/raycharius/slack-block-builder/beautify-readme/resources/images/main/logo-horizontal.png" alt="Logo" width="600">
+    <img src="https://raw.githubusercontent.com/raycharius/slack-block-builder/beautify-readme/resources/images/main/logo-horizontal.png" alt="Logo" width="600px">
 </p>
 
 <p align="center">
@@ -7,10 +7,10 @@
 </p>
 
 <p align="center">
-    Lightweight, zero-dependency JavasScript library for Slack UI.
+    Lightweight, zero-dependency JavasScript library for <strong>Slack Block Kit UI</strong>.
     <br />
     <br />
-    <a href="#real-world-examples"><strong>View Real-World Examples »</strong></a>
+    <a href="#mag--real-world-examples"><strong>View Real-World Examples »</strong></a>
     <br />
     <br />
     <a href="#space_invader--usage">Quick Start Guide</a>
