@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/raycharius/slack-block-builder/beautify-readme/resources/images/main/logo-horizontal.png" alt="Logo" width="600f">
+    <img src="https://raw.githubusercontent.com/raycharius/slack-block-builder/beautify-readme/resources/images/main/logo-horizontal.png" alt="Logo" width="600">
 </p>
 
 <p align="center">
@@ -24,9 +24,9 @@
 ***
   
 [![npm](https://img.shields.io/npm/v/slack-block-builder?color=bright-green)](https://www.npmjs.com/package/slack-block-builder)
+![NPM](https://img.shields.io/npm/l/slack-block-builder?color=bright-green)
 [![codecov](https://codecov.io/gh/raycharius/slack-block-builder/branch/master/graph/badge.svg)](https://codecov.io/gh/raycharius/slack-block-builder)
 [![Maintainability](https://api.codeclimate.com/v1/badges/17a96b146284b1b82b9e/maintainability)](https://codeclimate.com/github/raycharius/slack-block-builder/maintainability)
-![NPM](https://img.shields.io/npm/l/slack-block-builder?color=bright-green)
 
 
 **Block Builder** helps you keep your Slack app code for UI maintainable, testable, and reusable. It has a simple builder syntax inspired by [SwiftUI](https://developer.apple.com/documentation/swiftui):
