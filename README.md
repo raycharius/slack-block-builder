@@ -21,6 +21,8 @@
   </p>
 </p>
 
+![An example of using Block Builder](resources/images/main/hero.png)
+
 ***
   
 [![npm](https://img.shields.io/npm/v/slack-block-builder?color=bright-green)](https://www.npmjs.com/package/slack-block-builder)
@@ -31,7 +33,7 @@
 
 **Block Builder** helps you keep your Slack app code for UI maintainable, testable, and reusable. It has a simple builder syntax inspired by [SwiftUI](https://developer.apple.com/documentation/swiftui):
 
-![An example of using Block Builder](resources/images/main/hero.png)
+
 
 ## :zap:  Features
 
