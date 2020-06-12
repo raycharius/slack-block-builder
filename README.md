@@ -4,7 +4,7 @@
 
 <p align="center">
     <h3 align="center">Maintainable code for Slack interactive messages, modals, and home tabs.</h3>
-    </p>
+</p>
 
 <p align="center">
     Lightweight, zero-dependency JavasScript library for Slack UI.
@@ -15,9 +15,9 @@
     <br />
     <a href="#space_invader--usage">Quick Start Guide</a>
     ·
-    <a href="https://github.com/raycharius/slack-block-builder/issues">Report Bug</a>
-    ·
     <a href="https://github.com/raycharius/slack-block-builder/issues">Request Feature</a>
+    ·
+    <a href="https://github.com/raycharius/slack-block-builder/issues">Report Bug</a>
   </p>
 </p>
 
