@@ -1,6 +1,3 @@
-
-:notebook: **Note:** Thorough, in-depth docs are in the process and will be available by **mid-June**.
-
 <p align="center">
     <img src="https://raw.githubusercontent.com/raycharius/slack-block-builder/beautify-readme/resources/images/main/logo-horizontal.png" alt="Logo" width="600f">
 </p>
@@ -32,7 +29,7 @@
 ![NPM](https://img.shields.io/npm/l/slack-block-builder?color=bright-green)
 
 
-**Block Builder** helps you keep your Slack app code for UI maintainable, testable, and reusable. It has a simple builder syntax inspired by [SwiftUI](https://developer.apple.com/documentation/swiftui). 
+**Block Builder** helps you keep your Slack app code for UI maintainable, testable, and reusable. It has a simple builder syntax inspired by [SwiftUI](https://developer.apple.com/documentation/swiftui):
 
 ![An example of using Block Builder](resources/images/main/hero.png)
 
