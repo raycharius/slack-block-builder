@@ -101,7 +101,7 @@ class Option extends Bit {
   build({ isMarkdown } = { isMarkdown: false }) {
     const augmentedProps = {
       text: isMarkdown ? BuilderHelper.getMarkdownObject(this.props.text) : BuilderHelper.getPlainTextObject(this.props.text),
-      description: BuilderHelper.getPlainTextObject(this.props.description),
+      description: isMarkdown ? BuilderHelper.getMarkdownObject(this.props.description) : BuilderHelper.getPlainTextObject(this.props.description),
     };
 
     return this.getResult(OptionDto, augmentedProps);
