@@ -31,6 +31,10 @@ class Divider extends Block {
   }
 }
 
+/**
+ * {@link https://api.slack.com/reference/block-kit/blocks#divider|View in Slack API Documentation}
+ */
+
 module.exports = {
   Divider,
   DividerDto,

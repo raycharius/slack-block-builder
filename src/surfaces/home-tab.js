@@ -45,3 +45,7 @@ module.exports = {
   HomeTab,
   HomeTabDto,
 };
+
+/**
+ * {@link https://api.slack.com/reference/surfaces/views|View in Slack API Documentation}
+ */

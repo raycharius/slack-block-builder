@@ -1,5 +1,10 @@
 # Change Log
 
+## v0.1.4 – 2020-06-14
+
+* Fix minor typo in class name that was creating issue with doc generation.
+* Add JSDoc comments with links to Slack API for a few classes.
+
 ## v0.1.3 - 2020-06-13
 
 * Add project logo (kudos to Alexey Chernyshov).
