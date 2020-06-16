@@ -148,20 +148,6 @@ class Message extends Surface {
   }
 
   /**
-   * Builds the view and returns a Slack API-compatible array of Blocks objects.
-   *
-   * {@link https://api.slack.com/messaging/composing|View in Slack API Documentation}
-   *
-   * @return {Array} Array of built Block objects
-   */
-
-  getBlocks() {
-    this.build();
-
-    return [...this.result.blocks];
-  }
-
-  /**
    * When called, builds the view and prints to the console the preview URL in
    * order to open and preview the view on the Slack Block Builder website
    */

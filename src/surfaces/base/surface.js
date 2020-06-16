@@ -48,6 +48,20 @@ class Surface extends Builder {
 
     return JSON.stringify(this.result);
   }
+
+  /**
+   * Builds the view and returns a Slack API-compatible array of Blocks objects.
+   *
+   * {@link https://api.slack.com/block-kit|View in Slack API Documentation}
+   *
+   * @return {Array} Array of built Block objects
+   */
+
+  getBlocks() {
+    this.build();
+
+    return [...this.result.blocks];
+  }
 }
 
 module.exports = Surface;
