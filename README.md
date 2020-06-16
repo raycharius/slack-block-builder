@@ -10,7 +10,7 @@
     Lightweight, zero-dependency JavasScript library for <strong>Slack Block Kit UI</strong>.
     <br />
     <br />
-    <a href="https://blockbuilder.dev"><strong>View the Docs »</strong></a>
+    <a href="https://blockbuilder.dev" target="_blank"><strong>View the Docs »</strong></a>
     <br />
     <br />
     <a href="#space_invader--usage">Quick Start Guide</a>
@@ -111,7 +111,7 @@ _Note that since you'll more often only be working with one surface per file, th
 Below is a list of supported objects and how to access them in **Block Builder**:
 
 | **Name**             | **Type**           | **Support**                    | **Accessed Via**                      
-|----------------------|--------------------|--------------------------------|-----------------------------------
+|----------------------|--------------------|--------------------------------|-----------------------------
 | Home Tab             | Surface            | :white_check_mark:             | `HomeTab()`                       
 | Message              | Surface            | :white_check_mark:             | `Message()`                       
 | Modal                | Surface            | :white_check_mark:             | `Modal()`                         

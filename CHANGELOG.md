@@ -1,5 +1,10 @@
 # Change Log
 
+## v1.0.0 – 2020-06-17
+
+* Add `getBlocks()` method to all `Surface` objects.
+* Add doc site at [https://blockbuilder.dev](https://blockbuilder.dev).
+
 ## v0.1.4 – 2020-06-14
 
 * Fix minor typo in class name that was creating issue with doc generation.

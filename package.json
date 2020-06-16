@@ -1,7 +1,7 @@
 {
   "name": "slack-block-builder",
-  "version": "0.1.4",
-  "description": "Lightweight, zero-dependency library for creating Slack messages and modals, with a builder interface inspired by SwiftUI.",
+  "version": "1.0.0",
+  "description": "Maintainable code for interactive Slack messages, modals and home tabs. A must-have for the Slack Block Kit framework.",
   "author": {
     "name": "Ray East",
     "url": "https://github.com/raycharius"

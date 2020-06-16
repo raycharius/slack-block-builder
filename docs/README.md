@@ -6,4 +6,4 @@
     <h4 align="center">Visit <a href="https://blockbuilder.dev">https://blockbuilder.dev</a> for the full documentation.</h4>
 </p>
 
-![Block Builder Doc Site Screenshot](resources/images/docs/hero.png)
+![Block Builder Doc Site Screenshot](https://raw.githubusercontent.com/raycharius/slack-block-builder/master/resources/images/docs/hero.png)
