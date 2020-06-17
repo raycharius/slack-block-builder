@@ -163,11 +163,15 @@ class Message extends Surface {
    */
 
   build() {
-    const augmentedProps = {
-      blocks: BuilderHelper.getBuilderResults(this.props.blocks),
-    };
+    if (!this.hasBeenBuilt) {
+      const augmentedProps = {
+        blocks: BuilderHelper.getBuilderResults(this.props.blocks),
+      };
 
-    return this.getResult(MessageDto, augmentedProps);
+      this.getResult(MessageDto, augmentedProps);
+    }
+
+    return this.result;
   }
 }
 

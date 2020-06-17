@@ -32,9 +32,7 @@
 
 **Block Builder** helps you keep your Slack app code for UI maintainable, testable, and reusable. It has a simple builder syntax inspired by [SwiftUI](https://developer.apple.com/documentation/swiftui) and lets you code the way _you_ want to code.
 
-
-
-## :zap: &nbsp; Features
+### :zap: &nbsp; Features
 
 * Simple [SwiftUI](https://developer.apple.com/xcode/swiftui/) inspired syntax.
 * In-depth [doc site](https://blockbuilder.dev) at [https://blockbuilder.dev](https://blockbuilder.dev).
@@ -44,7 +42,7 @@
 * A `printPreviewURL()` method that outputs to the console a link to preview your UI on Slack's [Block Kit Builder website](https://app.slack.com/block-kit-builder).
 * Small size, with zero dependencies.
 
-## :rocket: &nbsp; Coming Soon
+### :rocket: &nbsp; Coming Soon
 
 * TypeScript type definitions.
 * Components, such as an Accordion module.
@@ -52,7 +50,7 @@
 * Guide for [Slack](https://slack.com) apps with tips, tricks, and best practices.
 
 
-## :gift: &nbsp; Benefits
+### :gift: &nbsp; Benefits
 
 * Write three times less code.
 * Build more sophistocated, elegant flows.
@@ -61,7 +59,14 @@
 * Code the way you want to code – [not forced into any single paradigm](#advanced-use-cases).
 * Easily integrate localizations into your app.
 
-## :floppy_disk: &nbsp; Installation 
+### :phone: Let's Talk?
+
+Feedback – love it! Aside from GitHub Issues, there are Slack channels available in popular bot communities to discuss **Block Builder** – we'll see you there! :raised_hands:
+
+* **Slack Community** – [\#block-builder](https://slackcommunity.com)
+* **Bot Developer Hangout** – [\#block-builder](https://community.botkit.ai)
+
+### :floppy_disk: &nbsp; Installation 
 
 #### Using NPM: 
 
@@ -75,9 +80,9 @@ npm install --save slack-block-builder
 yarn add slack-block-builder
 ```
 
-## :space_invader: &nbsp; Usage
+### :space_invader: &nbsp; Usage
 
-:books: **For full documentation, make sure you head over to [https://blockbuilder.dev](https://blockbuilder.dev).**
+For full documentation, make sure you head over to [https://blockbuilder.dev](https://blockbuilder.dev).
 
 
 ### Importing

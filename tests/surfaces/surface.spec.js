@@ -28,7 +28,7 @@ describe('Surfaces', () => {
 
     jest.spyOn(console, 'log');
 
-    modal.printPreviewUrl()
+    modal.printPreviewUrl();
 
     expect(console.log).toHaveBeenCalled();
   });

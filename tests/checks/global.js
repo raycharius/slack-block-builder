@@ -36,8 +36,14 @@ module.exports = ({ Class, Dto, classProps }) => {
 
   test('Calling \'build()\' when the object has already been built will throw an error', () => {
     const instance = new Class(classProps);
-    const built = instance.build({ raw: true }); // Added for surfaces – 'raw' not supported in others, but don't break anything
+    const built = instance.build();
 
-    expect(() => instance.build()).toThrow();
+    if (instance.category === 'Surface') {
+      expect(instance.build()).toBeInstanceOf(Dto);
+      expect(instance.build()).toMatchObject(instance.result);
+
+    } else {
+      expect(() => instance.build()).toThrow();
+    }
   });
 };
