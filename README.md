@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-    Lightweight, zero-dependency JavasScript library for <strong>Slack Block Kit UI</strong>.
+    Lightweight, zero-dependency JavaScript library for <strong>Slack Block Kit UI</strong>.
     <br />
     <br />
     <a href="https://blockbuilder.dev" target="_blank"><strong>View the Docs »</strong></a>
@@ -282,7 +282,7 @@ Both of these examples render the modal below.
 
 ## :link: &nbsp; Other Useful Slack-Related Projects
 
-[Bolt for Javascript](https://github.com/SlackAPI/bolt) – A simple framework for building [Slack](https://slack.com) apps, developed by [Slack](https://slack.com) themselves.
+[Bolt for JavaScript](https://github.com/SlackAPI/bolt) – A simple framework for building [Slack](https://slack.com) apps, developed by [Slack](https://slack.com) themselves.
 
 [Node Slack SDK](https://github.com/slackapi/node-slack-sdk) – A great and powerful SDK for building [Slack](https://slack.com) Apps from the ground up.
 
