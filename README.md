@@ -291,6 +291,8 @@ Both of these examples render the modal below.
 
 [Node Slack SDK](https://github.com/slackapi/node-slack-sdk) – A great and powerful SDK for building [Slack](https://slack.com) Apps from the ground up.
 
+[JSX-Slack](https://github.com/speee/jsx-slack) – Awesome way to create Slack Block Kit UIs using JSX.
+
 ## :fire: &nbsp; Acknowledgements
  
 <img src="https://github.com/bravecow.png" alt="@bravecow" width="24" height="24" valign="bottom" /> Taras Neporozhniy ([@bravecow](https://github.com/bravecow)) - For mentorship over the years!
