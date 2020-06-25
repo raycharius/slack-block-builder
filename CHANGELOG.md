@@ -1,6 +1,10 @@
 # Change Log
 
-## v1.2.0 – 2020-06-26
+## v1.2.1 – 2020-06-27
+
+* Fix issue where Slack timestamp format not permitted for `ts` and `threadTs` parameters of the `Message` surface object.
+
+## v1.2.0 – 2020-06-27
 
 * Parameter `ts` for the `Message` surface object is now supported.
 

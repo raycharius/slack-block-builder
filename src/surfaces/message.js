@@ -80,12 +80,12 @@ class Message extends Surface {
    *
    * {@link https://api.slack.com/messaging/composing|View in Slack API Documentation}
    *
-   * @param {timestamp} timestamp The timestamp of message to be replied to
+   * @param {string} string The Slack-produced timestamp of message to be replied to
    * @return {this} The instance on which the method is called
    */
 
-  threadTs(timestamp) {
-    return this.set(timestamp, props.threadTs);
+  threadTs(string) {
+    return this.set(string, props.threadTs);
   }
 
   /**
@@ -93,12 +93,12 @@ class Message extends Surface {
    *
    * {@link https://api.slack.com/messaging/composing|View in Slack API Documentation}
    *
-   * @param {timestamp} timestamp The timestamp of message to be replied to
+   * @param {string} string The Slack-produced timestamp of message to be replaced
    * @return {this} The instance on which the method is called
    */
 
-  ts(timestamp) {
-    return this.set(timestamp, props.ts);
+  ts(string) {
+    return this.set(string, props.ts);
   }
 
   /**
