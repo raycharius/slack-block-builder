@@ -56,6 +56,7 @@ module.exports = {
   notifyOnClose: types.isBool,
   description: types.isString,
   asUser: types.isBool,
+  ts: types.isTimestamp,
   threadTs: types.isTimestamp,
   replaceOriginal: types.isBool,
   deleteOriginal: types.isBool,

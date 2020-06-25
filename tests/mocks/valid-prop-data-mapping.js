@@ -56,6 +56,7 @@ module.exports = {
   callbackId: types.string,
   asUser: types.bool,
   threadsTs: types.timestamp,
+  ts: types.timestamp,
   replaceOriginal: types.bool,
   deleteOriginal: types.bool,
   responseType: types.ephemeral,

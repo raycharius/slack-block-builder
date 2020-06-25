@@ -11,6 +11,7 @@ class MessageDto extends SlackDto {
     this.text = params.text;
     this.blocks = params.blocks;
     this.as_user = params.asUser;
+    this.ts = params.ts;
     this.thread_ts = params.threadTs;
     this.replace_original = params.replaceOriginal;
     this.delete_original = params.deleteOriginal;
@@ -27,6 +28,7 @@ class Message extends Surface {
 
     this.props.channel = params.channel;
     this.props.text = params.text;
+    this.props.ts = params.ts;
     this.props.threadTs = params.threadTs;
     this.props.postAt = params.postAt;
 
@@ -84,6 +86,19 @@ class Message extends Surface {
 
   threadTs(timestamp) {
     return this.set(timestamp, props.threadTs);
+  }
+
+  /**
+   * Used to update a message. Sets the timestamp of the message to update.
+   *
+   * {@link https://api.slack.com/messaging/composing|View in Slack API Documentation}
+   *
+   * @param {timestamp} timestamp The timestamp of message to be replied to
+   * @return {this} The instance on which the method is called
+   */
+
+  ts(timestamp) {
+    return this.set(timestamp, props.ts);
   }
 
   /**

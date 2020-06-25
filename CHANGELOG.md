@@ -1,5 +1,9 @@
 # Change Log
 
+## v1.2.0 – 2020-06-26
+
+* Parameter `ts` for the `Message` surface object is now supported.
+
 ## v1.1.0 – 2020-06-17
 
 * Methods that build a `Surface` object can now be called multiple times. Calling a building method after the initial build does not mutate the object in any way – it just returns the built result. These methods include `buildToJSON`, `buildToObject`, `getBlocks()`, `printPreviewUrl()`.

@@ -56,6 +56,7 @@ module.exports = {
   callbackId: types.globallyInvalid,
   asUser: types.globallyInvalid,
   threadsTs: types.globallyInvalid,
+  ts: types.globallyInvalid,
   replaceOriginal: types.globallyInvalid,
   deleteOriginal: types.globallyInvalid,
   responseType: types.globallyInvalid,

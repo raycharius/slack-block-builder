@@ -54,6 +54,7 @@ const submit = require('./submit');
 const text = require('./text');
 const textMessage = require('./text-message');
 const threadTs = require('./thread-ts');
+const ts = require('./ts');
 const title = require('./title');
 const url = require('./url');
 const value = require('./value');
@@ -119,6 +120,7 @@ module.exports = {
   text,
   textMessage,
   threadTs,
+  ts,
   title,
   url,
   value,
