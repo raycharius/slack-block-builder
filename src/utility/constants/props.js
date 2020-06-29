@@ -61,4 +61,5 @@ module.exports = {
   postAt: 'postAt',
   ephemeral: 'ephemeral',
   inChannel: 'inChannel',
+  ts: 'ts',
 };

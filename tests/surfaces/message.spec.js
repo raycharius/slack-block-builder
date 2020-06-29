@@ -19,6 +19,7 @@ const properties = [
   props.ephemeral,
   props.inChannel,
   props.postAt,
+  props.ts,
 ];
 
 helper({ config, props: properties });

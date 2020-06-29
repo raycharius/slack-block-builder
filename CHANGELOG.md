@@ -1,5 +1,28 @@
 # Change Log
 
+## v1.2.1 – 2020-06-27
+
+* Fix issue where Slack timestamp format not permitted for `ts` and `threadTs` parameters of the `Message` surface object.
+
+## v1.2.0 – 2020-06-27
+
+* Parameter `ts` for the `Message` surface object is now supported.
+
+## v1.1.0 – 2020-06-17
+
+* Methods that build a `Surface` object can now be called multiple times. Calling a building method after the initial build does not mutate the object in any way – it just returns the built result. These methods include `buildToJSON`, `buildToObject`, `getBlocks()`, `printPreviewUrl()`.
+* Add links to Slack channels for discussing **Block Builder** to the README.        
+
+## v1.0.0 – 2020-06-17
+
+* Add `getBlocks()` method to all `Surface` objects.
+* Add doc site at [https://blockbuilder.dev](https://blockbuilder.dev).
+
+## v0.1.4 – 2020-06-14
+
+* Fix minor typo in class name that was creating issue with doc generation.
+* Add JSDoc comments with links to Slack API for a few classes.
+
 ## v0.1.3 - 2020-06-13
 
 * Add project logo (kudos to Alexey Chernyshov).

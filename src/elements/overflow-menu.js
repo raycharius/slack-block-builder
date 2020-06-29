@@ -43,3 +43,7 @@ module.exports = {
   OverflowMenu,
   OverflowMenuDto,
 };
+
+/**
+ * {@link https://api.slack.com/reference/block-kit/block-elements#overflow|View in Slack API Documentation}
+ */

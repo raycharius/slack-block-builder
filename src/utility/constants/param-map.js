@@ -52,6 +52,7 @@ module.exports = {
   privateMetaData: 'private_metadata',
   callbackId: 'callback_id',
   asUser: 'as_user',
+  ts: 'ts',
   threadTs: 'thread_ts',
   replaceOriginal: 'replace_original',
   deleteOriginal: 'delete_original',

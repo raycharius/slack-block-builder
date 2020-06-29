@@ -11,6 +11,7 @@ class MessageDto extends SlackDto {
     this.text = params.text;
     this.blocks = params.blocks;
     this.as_user = params.asUser;
+    this.ts = params.ts;
     this.thread_ts = params.threadTs;
     this.replace_original = params.replaceOriginal;
     this.delete_original = params.deleteOriginal;
@@ -27,6 +28,7 @@ class Message extends Surface {
 
     this.props.channel = params.channel;
     this.props.text = params.text;
+    this.props.ts = params.ts;
     this.props.threadTs = params.threadTs;
     this.props.postAt = params.postAt;
 
@@ -78,12 +80,25 @@ class Message extends Surface {
    *
    * {@link https://api.slack.com/messaging/composing|View in Slack API Documentation}
    *
-   * @param {timestamp} timestamp The timestamp of message to be replied to
+   * @param {string} string The Slack-produced timestamp of message to be replied to
    * @return {this} The instance on which the method is called
    */
 
-  threadTs(timestamp) {
-    return this.set(timestamp, props.threadTs);
+  threadTs(string) {
+    return this.set(string, props.threadTs);
+  }
+
+  /**
+   * Used to update a message. Sets the timestamp of the message to update.
+   *
+   * {@link https://api.slack.com/messaging/composing|View in Slack API Documentation}
+   *
+   * @param {string} string The Slack-produced timestamp of message to be replaced
+   * @return {this} The instance on which the method is called
+   */
+
+  ts(string) {
+    return this.set(string, props.ts);
   }
 
   /**
@@ -148,20 +163,6 @@ class Message extends Surface {
   }
 
   /**
-   * Builds the view and returns a Slack API-compatible array of Blocks objects.
-   *
-   * {@link https://api.slack.com/messaging/composing|View in Slack API Documentation}
-   *
-   * @return {Array} Array of built Block objects
-   */
-
-  getBlocks() {
-    this.build();
-
-    return [...this.result.blocks];
-  }
-
-  /**
    * When called, builds the view and prints to the console the preview URL in
    * order to open and preview the view on the Slack Block Builder website
    */
@@ -177,11 +178,15 @@ class Message extends Surface {
    */
 
   build() {
-    const augmentedProps = {
-      blocks: BuilderHelper.getBuilderResults(this.props.blocks),
-    };
+    if (!this.hasBeenBuilt) {
+      const augmentedProps = {
+        blocks: BuilderHelper.getBuilderResults(this.props.blocks),
+      };
 
-    return this.getResult(MessageDto, augmentedProps);
+      this.getResult(MessageDto, augmentedProps);
+    }
+
+    return this.result;
   }
 }
 

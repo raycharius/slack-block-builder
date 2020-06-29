@@ -114,14 +114,18 @@ class Modal extends AdvancedSurface {
    */
 
   build() {
-    const augmentedProps = {
-      title: BuilderHelper.getPlainTextObject(this.props.title),
-      blocks: BuilderHelper.getBuilderResults(this.props.blocks),
-      close: BuilderHelper.getPlainTextObject(this.props.close),
-      submit: BuilderHelper.getPlainTextObject(this.props.submit),
-    };
+    if (!this.hasBeenBuilt) {
+      const augmentedProps = {
+        title: BuilderHelper.getPlainTextObject(this.props.title),
+        blocks: BuilderHelper.getBuilderResults(this.props.blocks),
+        close: BuilderHelper.getPlainTextObject(this.props.close),
+        submit: BuilderHelper.getPlainTextObject(this.props.submit),
+      };
 
-    return this.getResult(ModalDto, augmentedProps);
+      this.getResult(ModalDto, augmentedProps);
+    }
+
+    return this.result;
   }
 }
 

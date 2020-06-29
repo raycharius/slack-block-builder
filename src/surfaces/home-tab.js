@@ -33,11 +33,15 @@ class HomeTab extends AdvancedSurface {
    */
 
   build() {
-    const augmentedProps = {
-      blocks: BuilderHelper.getBuilderResults(this.props.blocks),
-    };
+    if (!this.hasBeenBuilt) {
+      const augmentedProps = {
+        blocks: BuilderHelper.getBuilderResults(this.props.blocks),
+      };
 
-    return this.getResult(HomeTabDto, augmentedProps);
+      this.getResult(HomeTabDto, augmentedProps);
+    }
+
+    return this.result;
   }
 }
 
@@ -45,3 +49,7 @@ module.exports = {
   HomeTab,
   HomeTabDto,
 };
+
+/**
+ * {@link https://api.slack.com/reference/surfaces/views|View in Slack API Documentation}
+ */
