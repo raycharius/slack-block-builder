@@ -36,7 +36,8 @@
     "message-builder",
     "block-builder",
     "slack-block-builder",
-    "block-kit"
+    "block-kit",
+    "blocks"
   ],
   "scripts": {
     "test": "jest",
