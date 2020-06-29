@@ -12,7 +12,7 @@ module.exports = (params) => {
     method: props.description,
     property: props.description,
     param: paramMap.description,
-    mutated: types.PlainTextObject,
+    mutated: params.expectMarkdown ? types.MarkdownObject : types.PlainTextObject,
   };
 
   return [
