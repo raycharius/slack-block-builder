@@ -1,5 +1,9 @@
 # Change Log
 
+## v1.3.1 – 2020-06-30
+
+* Add support for markdown for the `description` property of the `Options` `Bit` object.
+
 ## v1.2.1 – 2020-06-27
 
 * Fix issue where Slack timestamp format not permitted for `ts` and `threadTs` parameters of the `Message` surface object.
