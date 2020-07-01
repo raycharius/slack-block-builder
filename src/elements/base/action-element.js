@@ -8,7 +8,6 @@ const { props } = require('../../utility/constants');
  */
 
 class ActionElement extends Element {
-
   /**
    * Sets a string to be an identifier for the source of
    * an action in interaction payloads

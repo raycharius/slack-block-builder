@@ -63,4 +63,6 @@ module.exports = {
   postAt: types.timestamp,
   ephemeral: types.ephemeral,
   inChannel: types.inChannel,
+  color: types.string,
+  attachments: types.arrayAttachments,
 };

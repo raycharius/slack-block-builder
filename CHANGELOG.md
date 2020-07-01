@@ -1,5 +1,10 @@
 # Change Log
 
+## v1.4.0 – 2020-07-01
+
+* Add support for message attachments using the `Message.attachments()` method, passing in objects created through the `Bits.Attachment()` method.
+* Add `Message.getAttachments()` method (works the same as the existing `Surface.getBlocks()` method).
+
 ## v1.3.1 – 2020-06-30
 
 * Add support for markdown for the `description` property of the `Options` `Bit` object.

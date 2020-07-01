@@ -63,4 +63,6 @@ module.exports = {
   postAt: types.globallyInvalid,
   ephemeral: types.globallyInvalid,
   inChannel: types.globallyInvalid,
+  color: types.globallyInvalid,
+  attachments: types.globallyInvalid,
 };

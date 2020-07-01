@@ -22,4 +22,5 @@ module.exports = {
   timestamp: 1355517523,
   ephemeral: 'ephemeral',
   inChannel: 'in_channel',
+  arrayAttachments: [bitMocks.Attachment.mock, bitMocks.Attachment.mock, bitMocks.Attachment.mock],
 };

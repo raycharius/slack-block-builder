@@ -1,6 +1,6 @@
 {
   "name": "slack-block-builder",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "Maintainable code for interactive Slack messages, modals and home tabs. A must-have for the Slack Block Kit framework.",
   "author": {
     "name": "Ray East",
@@ -45,9 +45,7 @@
   "scripts": {
     "test": "jest",
     "lint-fix": "eslint 'src/**/*.js' --fix",
-    "lint-check": "eslint 'src/**/*.js'",
-    "prettier-fix": "prettier --write 'src/**/*.js'",
-    "prettier-check": "prettier --check 'src/**/*.js'"
+    "lint-check": "eslint 'src/**/*.js'"
   },
   "devDependencies": {
     "eslint": "^6.8.0",

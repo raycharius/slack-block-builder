@@ -2,7 +2,6 @@ const ActionElement = require('./action-element');
 const { props } = require('../../utility/constants');
 
 class ConfirmableElement extends ActionElement {
-
   /**
    * Adds a ConfirmationDialog to be shown upon interacting with
    * the current element or submitting the view

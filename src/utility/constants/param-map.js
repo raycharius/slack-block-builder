@@ -58,4 +58,6 @@ module.exports = {
   deleteOriginal: 'delete_original',
   responseType: 'response_type',
   postAt: 'post_at',
+  color: 'color',
+  attachments: 'attachments',
 };

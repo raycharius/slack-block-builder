@@ -62,4 +62,6 @@ module.exports = {
   deleteOriginal: types.isBool,
   responseType: types.isResponseTypeEnum,
   postAt: types.isTimestamp,
+  color: types.isString,
+  attachments: types.areAttachments,
 };

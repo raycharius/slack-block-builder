@@ -2,7 +2,6 @@ const ConfirmableElement = require('./confirmable-element');
 const { props } = require('../../utility/constants');
 
 class SelectElement extends ConfirmableElement {
-
   /**
    * Adds the text in place of the input before selected or
    * interacted with

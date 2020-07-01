@@ -94,4 +94,11 @@ module.exports = {
     condition: (value) => new Date(value).getTime() > 0,
     message: 'UNIX timestamp',
   }),
+
+  areAttachments: new Validator({
+    condition: (values) => (Array.isArray(values)
+      ? values.filter((value) => value.class === classes.attachment).length === values.length
+      : false),
+    message: 'instances of Attachment',
+  }),
 };

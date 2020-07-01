@@ -22,7 +22,7 @@ class ButtonDto extends SlackDto {
 
 
 class Button extends ConfirmableElement {
-  constructor(params= {}) {
+  constructor(params = {}) {
     super();
 
     this.props.text = params.text;

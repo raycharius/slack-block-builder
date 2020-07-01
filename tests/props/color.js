@@ -6,17 +6,16 @@ const checks = require('../checks');
 module.exports = (params) => {
   const config = {
     ...params,
-    valid: valid.blocks,
-    invalid: invalid.blocks,
-    method: props.blocks,
-    property: props.blocks,
-    param: paramMap.blocks,
-    expectArray: true,
+    valid: valid.color,
+    invalid: invalid.color,
+    method: props.color,
+    property: props.color,
+    param: paramMap.color,
   };
 
   return [
-    checks.appendableProperty(config),
+    checks.settableProperty(config),
     checks.invalidValue(config),
-    checks.builtChildBuild(config),
+    checks.literalBuild(config),
   ];
 };

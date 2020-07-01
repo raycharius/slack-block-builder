@@ -2,7 +2,6 @@ const Surface = require('./surface');
 const { props } = require('../../utility/constants');
 
 class AdvancedSurface extends Surface {
-
   /**
    * Sets a string sent back to your server together with all action and submission events.
    *

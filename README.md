@@ -109,7 +109,7 @@ _Note that since you'll more often only be working with one surface per file, th
 
 `Elements` – UI elements that are used to capture user interaction.
 
-`Bits` – These are composition objects from Slack's docs that are more focused on UI, not data structure (unlike text and filter objects). Included are `Options`, `OptionGroup`, and `ConfirmationDialog`. They felt like they were deserving of their own category.
+`Bits` – These are composition objects and other bits and pieces from Slack's docs. Included are `Attachment`, `Options`, `OptionGroup`, and `ConfirmationDialog`. They felt like they were deserving of their own category.
 
 ### Object Support and Reference
 
@@ -138,7 +138,8 @@ Below is a list of supported objects and how to access them in **Block Builder**
 | Multi-Select Menus   | Element            | :white_check_mark:             | `Elements.[Type]MultiSelect()`     
 | Option               | Composition Object | :white_check_mark:             | `Bits.Option()`                   
 | Confirm Dialog       | Composition Object | :white_check_mark:             | `Bits.ConfirmationDialog()`       
-| Option Group         | Composition Object | :white_check_mark:             | `Bits.OptionGroup()`              
+| Option Group         | Composition Object | :white_check_mark:             | `Bits.OptionGroup()`
+| Attachment           | Legacy Feature     | :white_check_mark:             | `Bits.Attachment()`              
 
 ### Creating a Simple Interactive Message
 

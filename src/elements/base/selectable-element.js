@@ -2,7 +2,6 @@ const ConfirmableElement = require('./confirmable-element');
 const { props } = require('../../utility/constants');
 
 class SelectableElement extends ConfirmableElement {
-
   /**
    * Sets the Options for the current Element
    *

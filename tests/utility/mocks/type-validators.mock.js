@@ -19,6 +19,7 @@ const valid = {
   areStringsOrImages: [elementMocks.Image.mock, 'string'],
   isResponseTypeEnum: 'ephemeral',
   isTimestamp: 1355517523.000005,
+  areAttachments: [bitMocks.Attachment.mock, bitMocks.Attachment.mock],
 };
 
 const invalid = {
@@ -38,6 +39,7 @@ const invalid = {
   areStringsOrImages: [bitMocks.OptionGroup.mock, bitMocks.OptionGroup.mock, bitMocks.OptionGroup.mock],
   isResponseTypeEnum: 'public',
   isTimestamp: 'abcd',
+  areAttachments: [blockMocks.File.mock, blockMocks.Image.mock, blockMocks.Divider.mock],
 };
 
 module.exports = { valid, invalid };

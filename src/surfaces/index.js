@@ -9,7 +9,7 @@ const SurfaceDto = {
 };
 
 const getSurfaces = () => {
-  const getClass = (Class, params) => new Class(params);
+  const getInstance = (Class, params) => new Class(params);
 
   return {
 
@@ -25,7 +25,7 @@ const getSurfaces = () => {
      * @return {HomeTab} An instance of HomeTab
      */
 
-    HomeTab: (params) => getClass(HomeTab, params),
+    HomeTab: (params) => getInstance(HomeTab, params),
 
     /**
      * Creates and returns a Message Surface
@@ -40,7 +40,7 @@ const getSurfaces = () => {
      * @return {Message} An instance of Message
      */
 
-    Message: (params) => getClass(Message, params),
+    Message: (params) => getInstance(Message, params),
 
     /**
      * Creates and returns a Modal Surface
@@ -57,7 +57,7 @@ const getSurfaces = () => {
      * @return {Modal} An instance of Modal
      */
 
-    Modal: (params) => getClass(Modal, params),
+    Modal: (params) => getInstance(Modal, params),
   };
 };
 

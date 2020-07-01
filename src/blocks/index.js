@@ -17,7 +17,7 @@ const BlockDto = {
 };
 
 const getBlocks = () => {
-  const getClass = (Class, params) => new Class(params);
+  const getInstance = (Class, params) => new Class(params);
 
   return {
 
@@ -31,7 +31,7 @@ const getBlocks = () => {
      * @return {Actions} An instance of Actions
      */
 
-    Actions: (params) => getClass(Actions, params),
+    Actions: (params) => getInstance(Actions, params),
 
     /**
      * Creates and returns a Context Block
@@ -43,7 +43,7 @@ const getBlocks = () => {
      * @return {Context} An instance of Context
      */
 
-    Context: (params) => getClass(Context, params),
+    Context: (params) => getInstance(Context, params),
 
     /**
      * Creates and returns a Divider
@@ -55,7 +55,7 @@ const getBlocks = () => {
      * @return {Divider} An instance of Divider
      */
 
-    Divider: (params) => getClass(Divider, params),
+    Divider: (params) => getInstance(Divider, params),
 
     /**
      * Creates and returns a File Block
@@ -68,7 +68,7 @@ const getBlocks = () => {
      * @return {File} An instance of File
      */
 
-    File: (params) => getClass(File, params),
+    File: (params) => getInstance(File, params),
 
     /**
      * Creates and returns an Image Block
@@ -83,7 +83,7 @@ const getBlocks = () => {
      * @return {Image} An instance of Image
      */
 
-    Image: (params) => getClass(Image, params),
+    Image: (params) => getInstance(Image, params),
 
     /**
      * Creates and returns an Input Block
@@ -97,7 +97,7 @@ const getBlocks = () => {
      * @return {Input} An instance of Input
      */
 
-    Input: (params) => getClass(Input, params),
+    Input: (params) => getInstance(Input, params),
 
     /**
      * Creates and returns a Section Block
@@ -110,7 +110,7 @@ const getBlocks = () => {
      * @return {Section} An instance of Section
      */
 
-    Section: (params) => getClass(Section, params),
+    Section: (params) => getInstance(Section, params),
   };
 };
 

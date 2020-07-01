@@ -1,11 +1,17 @@
 const { ConfirmationDialog, ConfirmationDialogDto } = require('./confirmation-dialog');
 const { Option, OptionDto } = require('./option');
 const { OptionGroup, OptionGroupDto } = require('./option-group');
+const { Attachment, AttachmentDto } = require('./attachment');
 
-const BitDto = { ConfirmationDialogDto, OptionDto, OptionGroupDto };
+const BitDto = {
+  ConfirmationDialogDto,
+  OptionDto,
+  OptionGroupDto,
+  AttachmentDto,
+};
 
 const getBits = (config) => {
-  const getClass = (Class, params) => new Class(params, config);
+  const getInstance = (Class, params) => new Class(params, config);
 
   return {
 
@@ -22,7 +28,7 @@ const getBits = (config) => {
      * @return {ConfirmationDialog} An instance of ConfirmationDialog
      */
 
-    ConfirmationDialog: (params) => getClass(ConfirmationDialog, params),
+    ConfirmationDialog: (params) => getInstance(ConfirmationDialog, params),
 
     /**
      * Creates and returns an Option Bit
@@ -37,10 +43,10 @@ const getBits = (config) => {
      * @return {Option} An instance of Option
      */
 
-    Option: (params) => getClass(Option, params),
+    Option: (params) => getInstance(Option, params),
 
     /**
-     * Creates and returns an OpotionGroup Bit
+     * Creates and returns an OptionGroup Bit
      *
      * {@link https://api.slack.com/reference/block-kit/composition-objects#option_group|View in Slack API Documentation}
      *
@@ -49,7 +55,19 @@ const getBits = (config) => {
      * @return {OptionGroup} An instance of OptionsGroup
      */
 
-    OptionGroup: (params) => getClass(OptionGroup, params),
+    OptionGroup: (params) => getInstance(OptionGroup, params),
+
+    /**
+     * Creates and returns an Attachment Bit that can be attached to Message objects
+     *
+     * {@link https://api.slack.com/reference/messaging/attachments|View in Slack API Documentation}
+     *
+     * @param {Object} [params] Constructor parameters
+     * @param {string} [params.color] Sets the color of the block quote border
+     * @return {Attachment} An instance of Attachment
+     */
+
+    Attachment: (params) => getInstance(Attachment, params),
   };
 };
 
@@ -57,6 +75,7 @@ module.exports = {
   ConfirmationDialog,
   Option,
   OptionGroup,
+  Attachment,
   BitDto,
   getBits,
 };

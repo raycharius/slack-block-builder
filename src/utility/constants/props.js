@@ -62,4 +62,6 @@ module.exports = {
   ephemeral: 'ephemeral',
   inChannel: 'inChannel',
   ts: 'ts',
+  color: 'color',
+  attachments: 'attachments',
 };

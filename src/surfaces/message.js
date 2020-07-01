@@ -10,6 +10,7 @@ class MessageDto extends SlackDto {
     this.channel = params.channel;
     this.text = params.text;
     this.blocks = params.blocks;
+    this.attachments = params.attachments;
     this.as_user = params.asUser;
     this.ts = params.ts;
     this.thread_ts = params.threadTs;
@@ -33,6 +34,19 @@ class Message extends Surface {
     this.props.postAt = params.postAt;
 
     this.finalizeConstruction();
+  }
+
+  /**
+   * Sets the Attachments of the Message object
+   *
+   * {@link https://api.slack.com/reference/messaging/attachments|View in Slack API Documentation}
+   *
+   * @param {...Attachment|Array<Attachment>} attachments Accepts multiple arguments or Array
+   * @return {this} The instance on which the method is called
+   */
+
+  attachments(...attachments) {
+    return this.append(attachments.flat(), props.attachments);
   }
 
   /**
@@ -163,6 +177,20 @@ class Message extends Surface {
   }
 
   /**
+   * Builds the view and returns a Slack API-compatible array of Attachment objects.
+   *
+   * {@link https://api.slack.com/reference/messaging/attachments|View in Slack API Documentation}
+   *
+   * @return {Array} Array of built Attachment objects
+   */
+
+  getAttachments() {
+    this.build();
+
+    return [...this.result.attachments];
+  }
+
+  /**
    * When called, builds the view and prints to the console the preview URL in
    * order to open and preview the view on the Slack Block Builder website
    */
@@ -170,7 +198,7 @@ class Message extends Surface {
   printPreviewUrl() {
     this.build();
 
-    console.log(encodeURI(`https://app.slack.com/block-kit-builder/#${JSON.stringify({ blocks: this.result.blocks })}`).replace(/[!'()*]/g, escape));
+    console.log(encodeURI(`https://app.slack.com/block-kit-builder/#${JSON.stringify({ blocks: this.result.blocks, attachments: this.result.attachments })}`).replace(/[!'()*]/g, escape));
   }
 
   /**
@@ -181,6 +209,7 @@ class Message extends Surface {
     if (!this.hasBeenBuilt) {
       const augmentedProps = {
         blocks: BuilderHelper.getBuilderResults(this.props.blocks),
+        attachments: BuilderHelper.getBuilderResults(this.props.attachments),
       };
 
       this.getResult(MessageDto, augmentedProps);

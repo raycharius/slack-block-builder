@@ -2,7 +2,6 @@ const SelectElement = require('./select-element');
 const { props } = require('../../utility/constants');
 
 class MultiSelectElement extends SelectElement {
-
   /**
    * Sets a limit to how many items the user can select in any one MultiSelect
    *

@@ -1,4 +1,4 @@
-const { Modal, Message, HomeTab, Blocks } = require('../../src');
+const { Modal, Message, HomeTab, Blocks, Bits } = require('../../src');
 
 describe('Surfaces', () => {
   test('Calling \'buildObject()\' builds the view and returns an object', () => {
@@ -51,6 +51,24 @@ describe('Surfaces', () => {
 
     expect(message.hasBeenBuilt).toBeTruthy();
     expect(blocks).toEqual(expect.arrayContaining(message.result.blocks));
+  });
+
+  test('Calling \'getAttachments()\' for Message returns an array of Attachments', () => {
+    const message = Message()
+      .attachments([
+        Bits.Attachment({ color: 'ffffff' })
+          .blocks(
+            Blocks.Section({ text: 'Section #1' }),
+            Blocks.Section({ text: 'Section #2' })),
+        Bits.Attachment({ color: '000000' })
+          .blocks(
+            Blocks.Section({ text: 'Section #3' }),
+            Blocks.Section({ text: 'Section #4' })),
+      ]);
+    const attachments = message.getAttachments();
+
+    expect(message.hasBeenBuilt).toBeTruthy();
+    expect(attachments).toEqual(expect.arrayContaining(message.result.attachments));
   });
 
   test('Calling \'getBlocks()\' for Modal returns an array of Blocks', () => {

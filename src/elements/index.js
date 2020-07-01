@@ -37,7 +37,7 @@ const ElementDto = {
 };
 
 const getElements = () => {
-  const getClass = (Class, params) => new Class(params);
+  const getInstance = (Class, params) => new Class(params);
 
   return {
 
@@ -54,7 +54,7 @@ const getElements = () => {
      * @return {Button} An instance of Button
      */
 
-    Button: (params) => getClass(Button, params),
+    Button: (params) => getInstance(Button, params),
 
     /**
      * Creates and returns a ChannelMultiSelect Element
@@ -68,7 +68,7 @@ const getElements = () => {
      * @return {ChannelMultiSelect} An instance of ChannelMultiSelect
      */
 
-    ChannelMultiSelect: (params) => getClass(ChannelMultiSelect, params),
+    ChannelMultiSelect: (params) => getInstance(ChannelMultiSelect, params),
 
     /**
      * Creates and returns a ChannelSelect Element
@@ -82,7 +82,7 @@ const getElements = () => {
      * @return {ChannelSelect} An instance of ChannelSelect
      */
 
-    ChannelSelect: (params) => getClass(ChannelSelect, params),
+    ChannelSelect: (params) => getInstance(ChannelSelect, params),
 
     /**
      * Creates and returns a Checkboxes Element
@@ -94,7 +94,7 @@ const getElements = () => {
      * @return {Checkboxes} An instance of Checkboxes
      */
 
-    Checkboxes: (params) => getClass(Checkboxes, params),
+    Checkboxes: (params) => getInstance(Checkboxes, params),
 
     /**
      * Creates and returns a ConversationMultiSelect Element
@@ -108,7 +108,7 @@ const getElements = () => {
      * @return {ConversationMultiSelect} An instance of ConversationMultiSelect
      */
 
-    ConversationMultiSelect: (params) => getClass(ConversationMultiSelect, params),
+    ConversationMultiSelect: (params) => getInstance(ConversationMultiSelect, params),
 
     /**
      * Creates and returns a ConversationSelect Element
@@ -122,7 +122,7 @@ const getElements = () => {
      * @return {ConversationSelect} An instance of ConversationSelect
      */
 
-    ConversationSelect: (params) => getClass(ConversationSelect, params),
+    ConversationSelect: (params) => getInstance(ConversationSelect, params),
 
     /**
      * Creates and returns a DatePicker Element
@@ -136,7 +136,7 @@ const getElements = () => {
      * @return {DatePicker} An instance of DatePicker
      */
 
-    DatePicker: (params) => getClass(DatePicker, params),
+    DatePicker: (params) => getInstance(DatePicker, params),
 
     /**
      * Creates and returns a ExternalMultiSelect Element
@@ -151,7 +151,7 @@ const getElements = () => {
      * @return {ExternalMultiSelect} An instance of ExternalMultiSelect
      */
 
-    ExternalMultiSelect: (params) => getClass(ExternalMultiSelect, params),
+    ExternalMultiSelect: (params) => getInstance(ExternalMultiSelect, params),
 
     /**
      * Creates and returns a ExternalSelect Element
@@ -165,7 +165,7 @@ const getElements = () => {
      * @return {ExternalSelect} An instance of ExternalSelect
      */
 
-    ExternalSelect: (params) => getClass(ExternalSelect, params),
+    ExternalSelect: (params) => getInstance(ExternalSelect, params),
 
     /**
      * Creates and returns an Img Element
@@ -178,7 +178,7 @@ const getElements = () => {
      * @return {Img} An instance of Img
      */
 
-    Img: (params) => getClass(Img, params),
+    Img: (params) => getInstance(Img, params),
 
     /**
      * Creates and returns an OverflowMenu Element
@@ -190,7 +190,7 @@ const getElements = () => {
      * @return {OverflowMenu} An instance of OverflowMenu
      */
 
-    OverflowMenu: (params) => getClass(OverflowMenu, params),
+    OverflowMenu: (params) => getInstance(OverflowMenu, params),
 
     /**
      * Creates and returns a RadioButtons Element
@@ -202,7 +202,7 @@ const getElements = () => {
      * @return {RadioButtons} An instance of RadioButtons
      */
 
-    RadioButtons: (params) => getClass(RadioButtons, params),
+    RadioButtons: (params) => getInstance(RadioButtons, params),
 
     /**
      * Creates and returns a StaticMultiSelect Element
@@ -216,7 +216,7 @@ const getElements = () => {
      * @return {StaticMultiSelect} An instance of StaticMultiSelect
      */
 
-    StaticMultiSelect: (params) => getClass(StaticMultiSelect, params),
+    StaticMultiSelect: (params) => getInstance(StaticMultiSelect, params),
 
     /**
      * Creates and returns a StaticSelect Element
@@ -229,7 +229,7 @@ const getElements = () => {
      * @return {StaticSelect} An instance of StaticSelect
      */
 
-    StaticSelect: (params) => getClass(StaticSelect, params),
+    StaticSelect: (params) => getInstance(StaticSelect, params),
 
     /**
      * Creates and returns a TextInput Element
@@ -245,7 +245,7 @@ const getElements = () => {
      * @return {TextInput} An instance of Input
      */
 
-    TextInput: (params) => getClass(TextInput, params),
+    TextInput: (params) => getInstance(TextInput, params),
 
     /**
      * Creates and returns a UserMultiSelect Element
@@ -259,7 +259,7 @@ const getElements = () => {
      * @return {UserMultiSelect} An instance of UserMultiSelect
      */
 
-    UserMultiSelect: (params) => getClass(UserMultiSelect, params),
+    UserMultiSelect: (params) => getInstance(UserMultiSelect, params),
 
     /**
      * Creates and returns a UserSelect Element
@@ -273,7 +273,7 @@ const getElements = () => {
      * @return {UserSelect} An instance of UserSelect
      */
 
-    UserSelect: (params) => getClass(UserSelect, params),
+    UserSelect: (params) => getInstance(UserSelect, params),
   };
 };
 

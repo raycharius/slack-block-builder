@@ -3,4 +3,5 @@ module.exports = {
   optionGroup: 'OptionGroup',
   confirmationDialog: 'ConfirmationDialog',
   img: 'Img',
+  attachment: 'Attachment',
 };

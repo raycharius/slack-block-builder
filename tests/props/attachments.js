@@ -6,11 +6,11 @@ const checks = require('../checks');
 module.exports = (params) => {
   const config = {
     ...params,
-    valid: valid.blocks,
-    invalid: invalid.blocks,
-    method: props.blocks,
-    property: props.blocks,
-    param: paramMap.blocks,
+    valid: valid.attachments,
+    invalid: invalid.attachments,
+    method: props.attachments,
+    property: props.attachments,
+    param: paramMap.attachments,
     expectArray: true,
   };
 

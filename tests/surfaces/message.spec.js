@@ -20,6 +20,7 @@ const properties = [
   props.inChannel,
   props.postAt,
   props.ts,
+  props.attachments,
 ];
 
 helper({ config, props: properties });
