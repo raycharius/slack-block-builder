@@ -31,14 +31,14 @@ class Builder {
    */
 
   append(value, prop) {
-    const prunedValue = value.filter((item) => typeof item !== 'undefined');
+    const prunedValue = value.filter(Boolean);
 
     if (prunedValue.length > 0) {
       this.validateProp(prunedValue, prop);
 
       this.props[prop] = typeof this.props[prop] === 'undefined'
-        ? value
-        : this.props[prop].concat(value);
+        ? prunedValue
+        : this.props[prop].concat(prunedValue);
     }
 
     return this;

@@ -1,5 +1,9 @@
 # Change Log
 
+## v1.5.0 – 2020-07-12
+
+* Now all falsy values passed into appending methods are filtered before validation, not just `undefined`, making it easier to work with conditions.
+
 ## v1.4.0 – 2020-07-01
 
 * Add support for message attachments using the `Message.attachments()` method, passing in objects created through the `Bits.Attachment()` method.
