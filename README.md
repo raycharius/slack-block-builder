@@ -123,7 +123,8 @@ Below is a list of supported objects and how to access them in **Block Builder**
 | Actions              | Block              | :white_check_mark:             | `Blocks.Actions()`                
 | Context              | Block              | :white_check_mark:             | `Blocks.Context()`                
 | Divider              | Block              | :white_check_mark:             | `Blocks.Divider()`                
-| File                 | Block              | :white_check_mark:             | `Blocks.File()`                   
+| File                 | Block              | :white_check_mark:             | `Blocks.File()`
+| Header               | Block              | :white_check_mark:             | `Blocks.Header()`
 | Image                | Block              | :white_check_mark:             | `Blocks.Image()`                  
 | Input                | Block              | :white_check_mark:             | `Blocks.Input()`                  
 | Section              | Block              | :white_check_mark:             | `Blocks.Section()`                

@@ -1,5 +1,9 @@
 # Change Log
 
+## v1.6.0 – 2020-07-30
+
+* Add `Header` block.
+
 ## v1.5.0 – 2020-07-12
 
 * Now all falsy values passed into appending methods are filtered before validation, not just `undefined`, making it easier to work with conditions.
