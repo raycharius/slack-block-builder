@@ -12,6 +12,7 @@ module.exports = {
   Context,
   Divider,
   File,
+  Header,
   Image,
   Input,
   Section,

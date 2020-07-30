@@ -75,12 +75,12 @@ const getBlocks = () => {
     /**
      * Creates and returns a Header Block
      *
-     * {@link https://api.slack.com/reference/block-kit/blocks#section|View in Slack API Documentation}
+     * {@link https://api.slack.com/reference/block-kit/blocks#header|View in Slack API Documentation}
      *
      * @param {Object} [params] Constructor parameters
      * @param {string} [params.blockId] Sets a string to be an identifier for the block, that will be available in interaction payloads
      * @param {string} [params.text] Sets the text to be displayed in the Header Block
-     * @return {Section} An instance of Section
+     * @return {Section} An instance of Header
      */
 
     Header: (params) => getInstance(Header, params),
