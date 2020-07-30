@@ -2,6 +2,7 @@ const { Actions, ActionsDto } = require('./actions');
 const { Context, ContextDto } = require('./context');
 const { Divider, DividerDto } = require('./divider');
 const { File, FileDto } = require('./file');
+const { Header, HeaderDto } = require('./header');
 const { Image, ImageDto } = require('./image');
 const { Input, InputDto } = require('./input');
 const { Section, SectionDto } = require('./section');
@@ -11,6 +12,7 @@ const BlockDto = {
   ContextDto,
   DividerDto,
   FileDto,
+  HeaderDto,
   ImageDto,
   InputDto,
   SectionDto,
@@ -71,6 +73,19 @@ const getBlocks = () => {
     File: (params) => getInstance(File, params),
 
     /**
+     * Creates and returns a Header Block
+     *
+     * {@link https://api.slack.com/reference/block-kit/blocks#section|View in Slack API Documentation}
+     *
+     * @param {Object} [params] Constructor parameters
+     * @param {string} [params.blockId] Sets a string to be an identifier for the block, that will be available in interaction payloads
+     * @param {string} [params.text] Sets the text to be displayed in the Header Block
+     * @return {Section} An instance of Section
+     */
+
+    Header: (params) => getInstance(Header, params),
+
+    /**
      * Creates and returns an Image Block
      *
      * {@link https://api.slack.com/reference/block-kit/blocks#image|View in Slack API Documentation}
@@ -119,6 +134,7 @@ module.exports = {
   Context,
   Divider,
   File,
+  Header,
   Image,
   Input,
   Section,

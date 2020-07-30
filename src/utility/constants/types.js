@@ -11,6 +11,7 @@ module.exports = {
     file: 'file',
     divider: 'divider',
     image: 'image',
+    header: 'header',
   },
   elements: {
     button: 'button',
