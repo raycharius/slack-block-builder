@@ -6,7 +6,7 @@ const helper = require('../helper');
 const className = 'ConfirmationDialog';
 const group = 'Bits';
 
-const config = { className, Class, Dto, classProps, group };
+const config = { className, Class, Dto, classProps, group, expectMarkdown: true };
 
 const properties = [
   props.title,

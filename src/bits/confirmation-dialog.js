@@ -127,7 +127,7 @@ class ConfirmationDialog extends Bit {
 
   build() {
     const augmentedProps = {
-      text: BuilderHelper.getPlainTextObject(this.props.text),
+      text: BuilderHelper.getMarkdownObject(this.props.text),
       title: BuilderHelper.getPlainTextObject(this.props.title),
       confirm: BuilderHelper.getPlainTextObject(this.props.confirm),
       deny: BuilderHelper.getPlainTextObject(this.props.deny),
