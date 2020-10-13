@@ -1,6 +1,6 @@
 {
   "name": "slack-block-builder",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Maintainable code for interactive Slack messages, modals and home tabs. A must-have for the Slack Block Kit framework.",
   "author": {
     "name": "Ray East",

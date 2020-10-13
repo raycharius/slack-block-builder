@@ -1,5 +1,9 @@
 # Change Log
 
+## v1.6.1 – 2020-10-13
+
+* Parameter `text` in the `ConfirmationDialog` object now supports markdown.
+
 ## v1.6.0 – 2020-07-30
 
 * Add `Header` block.

@@ -52,6 +52,7 @@ class ConfirmationDialog extends Bit {
    * **Slack Validation Rules:**
    *    * **Required** ⚠
    *    * Max 300 characters
+   *    * Supports markdown
    *
    * {@link https://api.slack.com/reference/block-kit/composition-objects#confirm|View in Slack API Documentation}
    *
