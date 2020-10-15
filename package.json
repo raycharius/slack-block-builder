@@ -19,6 +19,7 @@
     "README.md"
   ],
   "main": "./src/index.js",
+  "types": "./src/index.d.ts",
   "license": "MIT",
   "keywords": [
     "slack",
