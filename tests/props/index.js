@@ -36,6 +36,7 @@ const initialConversations = require('./initial-conversations');
 const initialDate = require('./initial-date');
 const initialOption = require('./initial-option');
 const initialOptions = require('./initial-options');
+const initialTime = require('./initial-time');
 const initialUser = require('./initial-user');
 const initialUsers = require('./initial-users');
 const initialValue = require('./initial-value');
@@ -105,6 +106,7 @@ module.exports = {
   initialDate,
   initialOption,
   initialOptions,
+  initialTime,
   initialUser,
   initialUsers,
   initialValue,

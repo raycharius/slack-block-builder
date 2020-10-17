@@ -68,4 +68,5 @@ module.exports = {
   dispatchAction: types.bool,
   onEnterPressed: types.string,
   onCharacterEntered: types.string,
+  initialTime: types.time,
 };

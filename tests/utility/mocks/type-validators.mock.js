@@ -22,6 +22,7 @@ const valid = {
   isTimestamp: 1355517523.000005,
   areAttachments: [bitMocks.Attachment.mock, bitMocks.Attachment.mock],
   isDispatchConfigEnum: enumValues.onCharacterEntered,
+  isHhMmTime: '21:45',
 };
 
 const invalid = {
@@ -43,6 +44,7 @@ const invalid = {
   isTimestamp: 'abcd',
   areAttachments: [blockMocks.File.mock, blockMocks.Image.mock, blockMocks.Divider.mock],
   isDispatchConfigEnum: 'Korovka, moo moo moo, my dear Taras',
+  isHhMmTime: '45:45',
 };
 
 module.exports = { valid, invalid };

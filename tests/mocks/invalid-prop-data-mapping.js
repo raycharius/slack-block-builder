@@ -68,4 +68,5 @@ module.exports = {
   dispatchAction: types.globallyInvalid,
   onEnterPressed: types.globallyInvalid,
   onCharacterEntered: types.globallyInvalid,
+  initialTime: types.globallyInvalid,
 };
