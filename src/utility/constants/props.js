@@ -70,4 +70,5 @@ module.exports = {
   onCharacterEntered: 'onCharacterEntered',
   dispatchActionOnEnterPressed: 'dispatchActionOnEnterPressed',
   dispatchActionOnCharacterEntered: 'dispatchActionOnCharacterEntered',
+  initialTime: 'initialTime',
 };

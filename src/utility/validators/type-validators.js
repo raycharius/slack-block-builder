@@ -106,4 +106,9 @@ module.exports = {
     condition: (value) => [enumValues.onEnterPressed, enumValues.onCharacterEntered].includes(value),
     message: 'String with value \'on_enter_pressed\' or \'on_character_entered\'',
   }),
+
+  isHhMmTime: new Validator({
+    condition: (value) => new RegExp('([0-2][0-9]:[0-9][0-9])').test(value),
+    message: 'String in the \'HH:mm\' format, where \'HH\' is the 24-hour format of an hour, and \'mm\' is minutes with leading zero'
+  }),
 };

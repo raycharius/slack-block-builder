@@ -62,4 +62,5 @@ module.exports = {
   attachments: 'attachments',
   dispatchAction: 'dispatch_action',
   dispatchActionConfig: 'dispatch_action_config',
+  initialTime: 'initial_time',
 };

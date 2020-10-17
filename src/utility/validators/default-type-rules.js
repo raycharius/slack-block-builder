@@ -67,4 +67,5 @@ module.exports = {
   dispatchAction: types.isBool,
   onEnterPressed: types.isDispatchConfigEnum,
   onCharacterEntered: types.isDispatchConfigEnum,
+  initialTime: types.isHhMmTime,
 };
