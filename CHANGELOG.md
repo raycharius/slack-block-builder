@@ -1,5 +1,12 @@
 # Change Log
 
+## v1.7.0 – 2020-10-17
+
+* Add `TimePicker` input element.
+* Support `dispatch_action` parameter for input block (`dispatchAction` method in `Input` object).
+* Support `dispatch_action_config` for plain-text input (`dispatchActionOnCharacterEntered` and `dispatchActionOnEnterPressed` methods on `TextInput` object).
+* Add TypeScript definitions.
+
 ## v1.6.1 – 2020-10-13
 
 * Parameter `text` in the `ConfirmationDialog` object now supports markdown.
