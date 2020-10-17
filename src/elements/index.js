@@ -309,6 +309,7 @@ module.exports = {
   RadioButtons,
   StaticMultiSelect,
   StaticSelect,
+  TimePicker,
   UserMultiSelect,
   UserSelect,
   ElementDto,
