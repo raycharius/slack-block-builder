@@ -339,6 +339,19 @@ declare module 'slack-block-builder' {
         multiline(): this;
         minLength(minLength: number): this;
         maxLength(maxLength: number): this;
+        dispatchActionOnEnterPressed(): this;
+        dispatchActionOnCharacterEntered(): this;
+      }
+
+      interface TimePickerParams {
+        actionId?: string;
+        placeholder?: string;
+        initialTime?: string;
+      }
+
+      interface TimePicker extends ConfirmableElement {
+        placeholder(placeholder: string): this;
+        initialTime(time: string): this;
       }
 
       interface UserMultiSelectParams {
@@ -479,6 +492,7 @@ declare module 'slack-block-builder' {
       ): Element.StaticMultiSelect;
       StaticSelect(params?: Element.StaticSelectParams): Element.StaticSelect;
       TextInput(params?: Element.TextInputParams): Element.TextInput;
+      TimePicker(params?: Element.TimePickerParams): Element.TimePicker;
       UserMultiSelect(
         params?: Element.UserMultiSelectParams
       ): Element.UserMultiSelect;

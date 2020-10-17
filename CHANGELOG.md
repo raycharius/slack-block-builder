@@ -1,5 +1,9 @@
 # Change Log
 
+## v1.7.1 – 2020-10-13
+
+* Update TypeScript definitions
+
 ## v1.7.0 – 2020-10-17
 
 * Add `TimePicker` input element.
