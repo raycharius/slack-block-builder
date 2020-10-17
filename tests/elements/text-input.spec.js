@@ -15,6 +15,8 @@ const properties = [
   props.multiline,
   props.minLength,
   props.maxLength,
+  props.onEnterPressed,
+  props.onCharacterEntered,
 ];
 
 helper({ config, props: properties });

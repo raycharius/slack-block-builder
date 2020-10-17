@@ -65,4 +65,7 @@ module.exports = {
   inChannel: types.globallyInvalid,
   color: types.globallyInvalid,
   attachments: types.globallyInvalid,
+  dispatchAction: types.globallyInvalid,
+  onEnterPressed: types.globallyInvalid,
+  onCharacterEntered: types.globallyInvalid,
 };
