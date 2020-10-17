@@ -37,6 +37,7 @@
 * Simple [SwiftUI](https://developer.apple.com/xcode/swiftui/) inspired syntax.
 * In-depth [doc site](https://blockbuilder.dev) at [https://blockbuilder.dev](https://blockbuilder.dev).
 * Support for all current Slack Block Kit objects – Surfaces, Blocks, Elements, and Composition Objects ([View Support](#object-support-and-reference)).
+* TypeScript type definitions.
 * Super helpful JSDoc hints that include real-world explanations, Slack validation rules, and a direct link to the object's documentation on [Slack's API doc site](https://api.slack.com/block-kit).
 * Output of the composed UI as either an object, JSON string, or array of blocks.
 * A `printPreviewURL()` method that outputs to the console a link to preview your UI on Slack's [Block Kit Builder website](https://app.slack.com/block-kit-builder).
@@ -44,7 +45,6 @@
 
 ### :rocket: &nbsp; Coming Soon
 
-* TypeScript type definitions.
 * Components, such as an Accordion module.
 * Configurable option to check [Slack](https://slack.com) validation rules.
 * Guide for [Slack](https://slack.com) apps with tips, tricks, and best practices.
@@ -130,7 +130,8 @@ Below is a list of supported objects and how to access them in **Block Builder**
 | Section              | Block              | :white_check_mark:             | `Blocks.Section()`                
 | Button               | Element            | :white_check_mark:️             | `Elements.Button()`               
 | Checkboxes           | Element            | :white_check_mark:             | `Elements.Checkboxes()`           
-| Date Picker          | Element            | :white_check_mark:             | `Elements.DatePicker()`           
+| Date Picker          | Element            | :white_check_mark:             | `Elements.DatePicker()`
+| Time Picker          | Element            | :white_check_mark:             | `Elements.TimePicker()`           
 | Image                | Element            | :white_check_mark:             | `Elements.Img()`                  
 | Overflow Menu        | Element            | :white_check_mark:             | `Elements.OverflowMenu()`         
 | Radio Buttons        | Element            | :white_check_mark:             | `Elements.RadioButtons()`         
