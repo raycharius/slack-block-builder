@@ -17,6 +17,7 @@ const defaultToCurrentConversation = require('./default-to-current-conversation'
 const deny = require('./deny');
 const deleteOriginal = require('./delete-original');
 const description = require('./description');
+const dispatchAction = require('./dispatch-action');
 const element = require('./element');
 const elements = require('./elements');
 const ephemeral = require('./ephemeral');
@@ -35,6 +36,7 @@ const initialConversations = require('./initial-conversations');
 const initialDate = require('./initial-date');
 const initialOption = require('./initial-option');
 const initialOptions = require('./initial-options');
+const initialTime = require('./initial-time');
 const initialUser = require('./initial-user');
 const initialUsers = require('./initial-users');
 const initialValue = require('./initial-value');
@@ -45,6 +47,8 @@ const minLength = require('./min-length');
 const minQueryLength = require('./min-query-length');
 const multiline = require('./multiline');
 const notifyOnClose = require('./notify-on-close');
+const onCharacterEntered = require('./on-character-entered');
+const onEnterPressed = require('./on-enter-pressed');
 const optionGroups = require('./option-groups');
 const optional = require('./optional');
 const options = require('./options');
@@ -83,6 +87,7 @@ module.exports = {
   deleteOriginal,
   deny,
   description,
+  dispatchAction,
   element,
   elements,
   ephemeral,
@@ -101,6 +106,7 @@ module.exports = {
   initialDate,
   initialOption,
   initialOptions,
+  initialTime,
   initialUser,
   initialUsers,
   initialValue,
@@ -111,6 +117,8 @@ module.exports = {
   minQueryLength,
   multiline,
   notifyOnClose,
+  onCharacterEntered,
+  onEnterPressed,
   optionGroups,
   optional,
   options,

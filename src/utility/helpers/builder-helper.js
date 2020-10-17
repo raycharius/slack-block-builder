@@ -94,6 +94,16 @@ class BuilderHelper {
     return new Objects.FilterObject({ filter, excludeBotUsers, excludeExternalSharedChannels });
   }
 
+  static getDispatchActionsConfigurationObject(props) {
+    const { onEnterPressed, onCharacterEntered } = props;
+
+    if (this.areUndefined(onEnterPressed, onCharacterEntered)) {
+      return undefined;
+    }
+
+    return new Objects.DispatchActionsConfigurationObject({ triggerActionsOn: [onEnterPressed, onCharacterEntered].filter(Boolean) });
+  }
+
   static isUndefined(value) {
     return typeof value === 'undefined';
   }

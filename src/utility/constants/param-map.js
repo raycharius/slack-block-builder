@@ -60,4 +60,7 @@ module.exports = {
   postAt: 'post_at',
   color: 'color',
   attachments: 'attachments',
+  dispatchAction: 'dispatch_action',
+  dispatchActionConfig: 'dispatch_action_config',
+  initialTime: 'initial_time',
 };

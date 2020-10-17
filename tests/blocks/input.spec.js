@@ -14,6 +14,7 @@ const properties = [
   props.blockId,
   props.hint,
   props.optional,
+  props.dispatchAction,
 ];
 
 helper({ config, props: properties });

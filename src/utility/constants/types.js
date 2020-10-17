@@ -17,6 +17,7 @@ module.exports = {
     button: 'button',
     checkbox: 'checkboxes',
     datepicker: 'datepicker',
+    timepicker: 'timepicker',
     image: 'image',
     overflow: 'overflow',
     input: 'plain_text_input',

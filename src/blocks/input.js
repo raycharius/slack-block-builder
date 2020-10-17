@@ -10,6 +10,7 @@ class InputDto extends SlackDto {
     this.type = types.blocks.input;
     this.label = params.label;
     this.element = params.element;
+    this.dispatch_action = params.dispatchAction;
     this.block_id = params.blockId;
     this.hint = params.hint;
     this.optional = params.optional;
@@ -90,6 +91,19 @@ class Input extends Block {
 
   optional() {
     return this.set(true, props.optional);
+  }
+
+  /**
+   * Sets the 'dispatch_action' parameter to true, meaning an actions
+   * payload is sent upon interaction.
+   *
+   * {@link https://api.slack.com/reference/block-kit/blocks#input|View in Slack API Documentation}
+   *
+   * @return {this} The instance on which the method is called
+   */
+
+  dispatchAction() {
+    return this.set(true, props.dispatchAction);
   }
 
   /**

@@ -1,6 +1,7 @@
 const blockMocks = require('../../blocks/mocks');
 const elementMocks = require('../../elements/mocks');
 const bitMocks = require('../../bits/mocks');
+const { enumValues } = require('../../../src/utility/constants');
 
 const valid = {
   isString: 'sting',
@@ -20,6 +21,8 @@ const valid = {
   isResponseTypeEnum: 'ephemeral',
   isTimestamp: 1355517523.000005,
   areAttachments: [bitMocks.Attachment.mock, bitMocks.Attachment.mock],
+  isDispatchConfigEnum: enumValues.onCharacterEntered,
+  isHhMmTime: '21:45',
 };
 
 const invalid = {
@@ -40,6 +43,8 @@ const invalid = {
   isResponseTypeEnum: 'public',
   isTimestamp: 'abcd',
   areAttachments: [blockMocks.File.mock, blockMocks.Image.mock, blockMocks.Divider.mock],
+  isDispatchConfigEnum: 'Korovka, moo moo moo, my dear Taras',
+  isHhMmTime: '45:45',
 };
 
 module.exports = { valid, invalid };

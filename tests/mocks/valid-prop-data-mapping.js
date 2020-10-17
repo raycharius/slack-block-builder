@@ -65,4 +65,8 @@ module.exports = {
   inChannel: types.inChannel,
   color: types.string,
   attachments: types.arrayAttachments,
+  dispatchAction: types.bool,
+  onEnterPressed: types.string,
+  onCharacterEntered: types.string,
+  initialTime: types.time,
 };

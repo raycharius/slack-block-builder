@@ -13,6 +13,7 @@ const { OverflowMenu, OverflowMenuDto } = require('./overflow-menu');
 const { RadioButtons, RadioButtonsDto } = require('./radio-buttons');
 const { StaticSelect, StaticSelectDto } = require('./static-select');
 const { StaticMultiSelect, StaticMultiSelectDto } = require('./static-multiselect');
+const { TimePicker, TimePickerDto } = require('./time-picker');
 const { UserMultiSelect, UserMultiSelectDto } = require('./user-multiselect');
 const { UserSelect, UserSelectDto } = require('./user-select');
 
@@ -32,6 +33,7 @@ const ElementDto = {
   RadioButtonsDto,
   StaticMultiSelectDto,
   StaticSelectDto,
+  TimePickerDto,
   UserMultiSelectDto,
   UserSelectDto,
 };
@@ -248,6 +250,20 @@ const getElements = () => {
     TextInput: (params) => getInstance(TextInput, params),
 
     /**
+     * Creates and returns a TimePicker Element
+     *
+     * {@link https://api.slack.com/reference/block-kit/block-elements#timepicker|View in Slack API Documentation}
+     *
+     * @param {Object} [params] Constructor parameters
+     * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads
+     * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with
+     * @param {string} [params.initialTime] Sets the default selected time in the menu
+     * @return {TimePicker} An instance of TimePicker
+     */
+
+    TimePicker: (params) => getInstance(TimePicker, params),
+
+    /**
      * Creates and returns a UserMultiSelect Element
      *
      * {@link https://api.slack.com/reference/block-kit/block-elements#users_multi_select|View in Slack API Documentation}
@@ -293,6 +309,7 @@ module.exports = {
   RadioButtons,
   StaticMultiSelect,
   StaticSelect,
+  TimePicker,
   UserMultiSelect,
   UserSelect,
   ElementDto,
