@@ -127,6 +127,7 @@ declare module 'slack-block-builder' {
         element(element: Element.Element): this;
         hint(hint: string): this;
         optional(): this;
+        dispatchAction(): this;
       }
 
       interface SectionParams {
