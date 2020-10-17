@@ -64,4 +64,7 @@ module.exports = {
   postAt: types.isTimestamp,
   color: types.isString,
   attachments: types.areAttachments,
+  dispatchAction: types.isBool,
+  onEnterPressed: types.isDispatchConfigEnum,
+  onCharacterEntered: types.isDispatchConfigEnum,
 };

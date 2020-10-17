@@ -64,4 +64,10 @@ module.exports = {
   ts: 'ts',
   color: 'color',
   attachments: 'attachments',
+  dispatchAction: 'dispatchAction',
+  dispatchActionConfig: 'dispatchActionConfig',
+  onEnterPressed: 'onEnterPressed',
+  onCharacterEntered: 'onCharacterEntered',
+  dispatchActionOnEnterPressed: 'dispatchActionOnEnterPressed',
+  dispatchActionOnCharacterEntered: 'dispatchActionOnCharacterEntered',
 };

@@ -1,7 +1,7 @@
 const { ActionElement } = require('./base');
 const { SlackDto } = require('../utility/lib');
 const { BuilderHelper } = require('../utility/helpers');
-const { types, props } = require('../utility/constants');
+const { types, props, enumValues } = require('../utility/constants');
 
 class TextInputDto extends SlackDto {
   constructor(params) {
@@ -14,6 +14,7 @@ class TextInputDto extends SlackDto {
     this.multiline = params.multiline;
     this.min_length = params.minLength;
     this.max_length = params.maxLength;
+    this.dispatch_action_config = params.dispatchActionConfig;
 
     this.pruneAndFreeze();
   }
@@ -107,13 +108,40 @@ class TextInput extends ActionElement {
   }
 
   /**
+   * Configures the text input to send an actions payload when Enter is pressed
+   *
+   * {@link https://api.slack.com/reference/block-kit/block-elements#input|View in Slack API Documentation}
+   *
+   * @return {this} The instance on which the method is called
+   */
+
+  dispatchActionOnEnterPressed() {
+    return this.set(enumValues.onEnterPressed, props.onEnterPressed);
+  }
+
+  /**
+   * Configures the text input to send an actions payload when a character is entered
+   *
+   * {@link https://api.slack.com/reference/block-kit/block-elements#input|View in Slack API Documentation}
+   *
+   * @return {this} The instance on which the method is called
+   */
+
+  dispatchActionOnCharacterEntered() {
+    return this.set(enumValues.onCharacterEntered, props.onCharacterEntered);
+  }
+
+  /**
    * @private
    */
 
   build() {
-    this.props.placeholder = BuilderHelper.getPlainTextObject(this.props.placeholder);
+    const augmentedProps = {
+      placeholder: BuilderHelper.getPlainTextObject(this.props.placeholder),
+      dispatchActionConfig: BuilderHelper.getDispatchActionsConfigurationObject(this.props),
+    };
 
-    return this.getResult(TextInputDto);
+    return this.getResult(TextInputDto, augmentedProps);
   }
 }
 

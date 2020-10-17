@@ -101,4 +101,9 @@ module.exports = {
       : false),
     message: 'instances of Attachment',
   }),
+
+  isDispatchConfigEnum: new Validator({
+    condition: (value) => [enumValues.onEnterPressed, enumValues.onCharacterEntered].includes(value),
+    message: 'String with value \'on_enter_pressed\' or \'on_character_entered\'',
+  }),
 };
