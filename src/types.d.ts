@@ -425,6 +425,11 @@ declare module 'slack-block-builder' {
         inChannel(): this;
         postAt(timestamp: string): this;
         getAttachments(): Bit.Attachment[];
+        /**
+         * When called, builds the view and prints to the console the preview URL in
+         * order to open and preview the view on the Slack Block Builder website
+         */
+        printPreviewUrl: () => void;
       }
 
       interface ModalParams {
