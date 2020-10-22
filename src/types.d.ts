@@ -429,7 +429,7 @@ declare module 'slack-block-builder' {
          * When called, builds the view and prints to the console the preview URL in
          * order to open and preview the view on the Slack Block Builder website
          */
-        printPreviewUrl: () => void;
+        printPreviewUrl(): void;
       }
 
       interface ModalParams {
