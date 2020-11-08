@@ -1,5 +1,10 @@
 # Change Log
 
+## v1.7.2 – 2020-11-09
+
+* Small code refactoring
+* Update TypeScript definitions
+
 ## v1.7.1 – 2020-10-13
 
 * Update TypeScript definitions
