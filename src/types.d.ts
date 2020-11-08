@@ -386,13 +386,13 @@ declare module 'slack-block-builder' {
         buildToObject(): BuiltObject;
         buildToJSON(): string;
         getBlocks(): Block.Block[];
+        printPreviewUrl(): void;
       }
 
       interface AdvancedSurface extends Surface {
         privateMetaData(privateMetaData: string): this;
         callbackId(callbackId: string): this;
         externalId(externalId: string): this;
-        printPreviewUrl(): void;
       }
 
       interface HomeTabParams {
@@ -425,11 +425,6 @@ declare module 'slack-block-builder' {
         inChannel(): this;
         postAt(timestamp: string): this;
         getAttachments(): Bit.Attachment[];
-        /**
-         * When called, builds the view and prints to the console the preview URL in
-         * order to open and preview the view on the Slack Block Builder website
-         */
-        printPreviewUrl(): void;
       }
 
       interface ModalParams {
