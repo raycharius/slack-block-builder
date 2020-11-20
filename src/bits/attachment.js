@@ -8,6 +8,7 @@ class AttachmentDto extends SlackDto {
     super();
 
     this.color = params.color;
+    this.fallback = params.fallback;
     this.blocks = params.blocks;
 
     this.pruneAndFreeze();
@@ -19,6 +20,7 @@ class Attachment extends Bit {
     super();
 
     this.props.color = params.color;
+    this.props.fallback = params.fallback;
 
     this.finalizeConstruction();
   }
@@ -34,6 +36,18 @@ class Attachment extends Bit {
 
   color(string) {
     return this.set(string, props.color);
+  }
+
+  /**
+   * Sets the plain text summary of the attachment used in clients that don't show formatted text (eg. IRC, mobile notifications).
+   * 
+   * {@link https://api.slack.com/reference/messaging/attachments|View in Slack API Documentation}
+   * 
+   * @param {string} string
+   * @return {this} The instance on which the method is called
+   */
+  fallback(string) {
+    return this.set(string, props.fallback);
   }
 
   /**

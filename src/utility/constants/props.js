@@ -63,6 +63,7 @@ module.exports = {
   inChannel: 'inChannel',
   ts: 'ts',
   color: 'color',
+  fallback: 'fallback',
   attachments: 'attachments',
   dispatchAction: 'dispatchAction',
   dispatchActionConfig: 'dispatchActionConfig',

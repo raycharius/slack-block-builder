@@ -59,6 +59,7 @@ module.exports = {
   responseType: 'response_type',
   postAt: 'post_at',
   color: 'color',
+  fallback: 'fallback',
   attachments: 'attachments',
   dispatchAction: 'dispatch_action',
   dispatchActionConfig: 'dispatch_action_config',

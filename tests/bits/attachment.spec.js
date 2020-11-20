@@ -10,6 +10,7 @@ const config = { className, Class, Dto, classProps, group };
 
 const properties = [
   props.color,
+  props.fallback,
   props.blocks,
 ];
 
