@@ -1,5 +1,9 @@
 # Change Log
 
+## v1.8.0 – 2020-11-25
+
+* Add `fallback` to `Attachment` object.
+
 ## v1.7.2 – 2020-11-09
 
 * Small code refactoring
