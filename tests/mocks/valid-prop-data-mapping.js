@@ -64,6 +64,7 @@ module.exports = {
   ephemeral: types.ephemeral,
   inChannel: types.inChannel,
   color: types.string,
+  fallback: types.string,
   attachments: types.arrayAttachments,
   dispatchAction: types.bool,
   onEnterPressed: types.string,

@@ -63,6 +63,7 @@ module.exports = {
   responseType: types.isResponseTypeEnum,
   postAt: types.isTimestamp,
   color: types.isString,
+  fallback: types.isString,
   attachments: types.areAttachments,
   dispatchAction: types.isBool,
   onEnterPressed: types.isDispatchConfigEnum,

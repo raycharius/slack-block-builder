@@ -10,10 +10,12 @@ declare module 'slack-block-builder' {
 
       interface AttachmentParams {
         color?: string;
+        fallback?: string;
       }
 
       interface Attachment extends Bit {
         color(color: string): this;
+        fallback(fallback: string): this;
         blocks(...blocks: Array<Block.Block | Block.Block[]>): this;
       }
 

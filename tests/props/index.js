@@ -24,6 +24,7 @@ const ephemeral = require('./ephemeral');
 const excludeBotUsers = require('./exclude-bot-users');
 const excludeExternalSharedChannels = require('./exclude-external-shared-channels');
 const externalId = require('./external-id');
+const fallback = require('./fallback');
 const fields = require('./fields');
 const filter = require('./filter');
 const hint = require('./hint');
@@ -94,6 +95,7 @@ module.exports = {
   excludeBotUsers,
   excludeExternalSharedChannels,
   externalId,
+  fallback,
   fields,
   filter,
   hint,

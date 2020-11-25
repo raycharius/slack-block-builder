@@ -64,6 +64,7 @@ module.exports = {
   ephemeral: types.globallyInvalid,
   inChannel: types.globallyInvalid,
   color: types.globallyInvalid,
+  fallback: types.globallyInvalid,
   attachments: types.globallyInvalid,
   dispatchAction: types.globallyInvalid,
   onEnterPressed: types.globallyInvalid,
