@@ -40,12 +40,13 @@ class Attachment extends Bit {
 
   /**
    * Sets the plain text summary of the attachment used in clients that don't show formatted text (eg. IRC, mobile notifications).
-   * 
+   *
    * {@link https://api.slack.com/reference/messaging/attachments|View in Slack API Documentation}
-   * 
+   *
    * @param {string} string
    * @return {this} The instance on which the method is called
    */
+
   fallback(string) {
     return this.set(string, props.fallback);
   }
