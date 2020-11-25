@@ -77,8 +77,10 @@ declare module 'slack-block-builder' {
         blockId?: string;
       }
 
+      type ContextElement = Element.Img | string;
+
       interface Context extends Block {
-        elements(...elements: Array<Element.Element | Element.Element[]>): this;
+        elements(...elements: Array<ContextElement | ContextElement[]>): this;
       }
 
       interface DividerParams {
