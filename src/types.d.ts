@@ -429,6 +429,7 @@ declare module 'slack-block-builder' {
         inChannel(): this;
         postAt(timestamp: string): this;
         getAttachments(): Bit.Attachment[];
+        ignoreMarkdown(): this;
       }
 
       interface ModalParams {
