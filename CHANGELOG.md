@@ -1,5 +1,12 @@
 # Change Log
 
+## v1.9.0 – 2020-11-26
+
+* Add `ignoreMarkdown` to `Message` object.
+* Fix types for `Context.elements()` args.
+* Fix tests for `onCharacterEntered` and `onEnterPressed`.
+
+
 ## v1.8.0 – 2020-11-25
 
 * Add `fallback` to `Attachment` object.
