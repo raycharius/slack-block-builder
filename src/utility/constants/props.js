@@ -72,4 +72,6 @@ module.exports = {
   dispatchActionOnEnterPressed: 'dispatchActionOnEnterPressed',
   dispatchActionOnCharacterEntered: 'dispatchActionOnCharacterEntered',
   initialTime: 'initialTime',
+  mrkdwn: 'mrkdwn',
+  ignoreMarkdown: 'ignoreMarkdown',
 };

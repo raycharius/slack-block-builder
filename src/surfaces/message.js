@@ -18,6 +18,7 @@ class MessageDto extends SlackDto {
     this.delete_original = params.deleteOriginal;
     this.response_type = params.responseType;
     this.post_at = params.postAt;
+    this.mrkdwn = params.mrkdwn;
 
     this.pruneAndFreeze();
   }
@@ -174,6 +175,18 @@ class Message extends Surface {
 
   postAt(timestamp) {
     return this.set(timestamp, props.postAt);
+  }
+
+  /**
+   * When set, the Slack API knows that markdown in the `text` property should be ignored.
+   *
+   * {@link https://api.slack.com/reference/messaging/payload|View in Slack API Documentation}
+   *
+   * @return {this} The instance on which the method is called
+   */
+
+  ignoreMarkdown() {
+    return this.set(false, props.mrkdwn);
   }
 
   /**

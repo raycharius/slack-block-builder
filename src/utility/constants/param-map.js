@@ -64,4 +64,5 @@ module.exports = {
   dispatchAction: 'dispatch_action',
   dispatchActionConfig: 'dispatch_action_config',
   initialTime: 'initial_time',
+  mrkdwn: 'mrkdwn',
 };
