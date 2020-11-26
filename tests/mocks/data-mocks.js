@@ -24,4 +24,7 @@ module.exports = {
   inChannel: 'in_channel',
   arrayAttachments: [bitMocks.Attachment.mock, bitMocks.Attachment.mock, bitMocks.Attachment.mock],
   time: '21:45',
+  falseBool: false,
+  onEnterPressed: 'on_enter_pressed',
+  onCharacterEntered: 'on_character_entered',
 };

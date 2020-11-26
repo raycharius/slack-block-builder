@@ -21,6 +21,7 @@ const properties = [
   props.postAt,
   props.ts,
   props.attachments,
+  props.ignoreMarkdown,
 ];
 
 helper({ config, props: properties });

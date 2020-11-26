@@ -15,6 +15,6 @@ module.exports = (params) => {
   };
 
   return [
-    checks.boolTrueProperty(config),
+    checks.settableProperty(config),
   ];
 };

@@ -4,6 +4,6 @@ module.exports = ({ Class, method, property }) => {
 
     instance[method]();
 
-    expect(instance.props[property]).toBeTruthy();
+    expect(instance.props[property]).toEqual(true);
   });
 };

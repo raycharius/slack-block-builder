@@ -67,7 +67,8 @@ module.exports = {
   fallback: types.string,
   attachments: types.arrayAttachments,
   dispatchAction: types.bool,
-  onEnterPressed: types.string,
-  onCharacterEntered: types.string,
+  onEnterPressed: types.onEnterPressed,
+  onCharacterEntered: types.onCharacterEntered,
   initialTime: types.time,
+  ignoreMarkdown: types.falseBool,
 };

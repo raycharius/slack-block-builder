@@ -41,6 +41,7 @@ const initialTime = require('./initial-time');
 const initialUser = require('./initial-user');
 const initialUsers = require('./initial-users');
 const initialValue = require('./initial-value');
+const ignoreMarkdown = require('./ignore-markdown');
 const label = require('./label');
 const maxLength = require('./max-length');
 const maxSelectedItems = require('./max-selected-items');
@@ -99,6 +100,7 @@ module.exports = {
   fields,
   filter,
   hint,
+  ignoreMarkdown,
   imageUrl,
   inChannel,
   initialChannel,

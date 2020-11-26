@@ -1,5 +1,6 @@
 const appendableProperty = require('./appendable-property');
 const boolTrueProperty = require('./bool-true-property');
+const boolFalseProperty = require('./bool-false-property');
 const builtChildBuild = require('./built-child-build');
 const invalidValue = require('./invalid-value');
 const literalBuild = require('./literal-build');
@@ -13,6 +14,7 @@ const setUndefined = require('./set-undefined');
 module.exports = {
   appendableProperty,
   boolTrueProperty,
+  boolFalseProperty,
   builtChildBuild,
   invalidValue,
   literalBuild,

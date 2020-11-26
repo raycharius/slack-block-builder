@@ -70,4 +70,5 @@ module.exports = {
   onEnterPressed: types.globallyInvalid,
   onCharacterEntered: types.globallyInvalid,
   initialTime: types.globallyInvalid,
+  ignoreMarkdown: types.globallyInvalid,
 };
