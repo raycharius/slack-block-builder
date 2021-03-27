@@ -61,6 +61,7 @@ const privateMetaData = require('./private-meta-data');
 const replaceOriginal = require('./replace-original');
 const responseUrlEnabled = require('./response-url-enabled');
 const submit = require('./submit');
+const submitDisabled = require('./submit-disabled');
 const text = require('./text');
 const textMessage = require('./text-message');
 const threadTs = require('./thread-ts');
@@ -133,6 +134,7 @@ module.exports = {
   replaceOriginal,
   responseUrlEnabled,
   submit,
+  submitDisabled,
   text,
   textMessage,
   threadTs,

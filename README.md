@@ -59,7 +59,7 @@
 * Code the way you want to code – [not forced into any single paradigm](#advanced-use-cases).
 * Easily integrate localizations into your app.
 
-### :phone: Let's Talk?
+### :phone: &nbsp; Let's Talk?
 
 Feedback – love it! Aside from GitHub Issues, there are Slack channels available in popular bot communities to discuss **Block Builder** – we'll see you there! :raised_hands:
 
@@ -93,7 +93,7 @@ At the top level of the library, there are a few objects exposed for import. You
 import { Message, Blocks, Elements, Bits } from 'slack-block-builder';
 ```
 
-You can also import, in place of `Message`, `Modal` or `HomeTab`.
+In place of `Message`, you can also import `Modal`, `HomeTab`, or `WorkflowStep`.
 
 ### Exposed Imports
 
@@ -101,7 +101,9 @@ You can also import, in place of `Message`, `Modal` or `HomeTab`.
 
 `Message` – Used to create a message surface.
 
-`HomeTab` – Used to create a message surface.
+`HomeTab` – Used to create a home tab surface.
+
+`WorkflowStep` – Used to create a workflow step surface. 
 
 _Note that since you'll more often only be working with one surface per file, they are exposed individually, whereas the rest of the objects are grouped into categories._
 
@@ -120,6 +122,7 @@ Below is a list of supported objects and how to access them in **Block Builder**
 | Home Tab             | Surface            | :white_check_mark:             | `HomeTab()`                       
 | Message              | Surface            | :white_check_mark:             | `Message()`                       
 | Modal                | Surface            | :white_check_mark:             | `Modal()`                         
+| Workflow Step        | Surface            | :white_check_mark:             | `WorkflowStep()`                         
 | Actions              | Block              | :white_check_mark:             | `Blocks.Actions()`                
 | Context              | Block              | :white_check_mark:             | `Blocks.Context()`                
 | Divider              | Block              | :white_check_mark:             | `Blocks.Divider()`                

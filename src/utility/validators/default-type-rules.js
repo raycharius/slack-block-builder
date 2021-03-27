@@ -70,4 +70,5 @@ module.exports = {
   onCharacterEntered: types.isDispatchConfigEnum,
   initialTime: types.isHhMmTime,
   mrkdwn: types.isBool,
+  submitDisabled: types.isBool,
 };

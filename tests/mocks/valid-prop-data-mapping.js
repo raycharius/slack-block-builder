@@ -71,4 +71,5 @@ module.exports = {
   onCharacterEntered: types.onCharacterEntered,
   initialTime: types.time,
   ignoreMarkdown: types.falseBool,
+  submitDisabled: types.bool,
 };

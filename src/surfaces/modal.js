@@ -17,6 +17,7 @@ class ModalDto extends SlackDto {
     this.clear_on_close = params.clearOnClose;
     this.notify_on_close = params.notifyOnClose;
     this.external_id = params.externalId;
+    this.submit_disabled = params.submitDisabled;
 
     this.pruneAndFreeze();
   }
@@ -107,6 +108,22 @@ class Modal extends AdvancedSurface {
 
   notifyOnClose() {
     return this.set(true, props.notifyOnClose);
+  }
+
+  /**
+   * Sets a custom identifier that must be unique for all views on a per-team basis
+   *
+   * **Slack Validation Rules:**
+   *    * Max 255 characters
+   *
+   * {@link https://api.slack.com/reference/surfaces/views|View in Slack API Documentation}
+   *
+   * @param {string} string
+   * @return {this} The instance on which the method is called
+   */
+
+  externalId(string) {
+    return this.set(string, props.externalId);
   }
 
   /**

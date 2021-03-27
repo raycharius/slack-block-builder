@@ -1,5 +1,10 @@
 # Change Log
 
+## v1.10.0 – 2021-03-27
+
+* Add `WorkflowStep` object.
+* Fix types for `Bits.ConfirmationDialog`.
+
 ## v1.9.0 – 2020-11-26
 
 * Add `ignoreMarkdown` to `Message` object.

@@ -99,7 +99,7 @@ class ConfirmationDialog extends Bit {
   }
 
   /**
-   * Sets the 'style' parameter to 'primary', making the
+   * Sets 'style' parameter to 'danger', making the main button of the dialog red.
    *
    * {@link https://api.slack.com/reference/block-kit/composition-objects#confirm|View in Slack API Documentation}
    *
@@ -111,7 +111,7 @@ class ConfirmationDialog extends Bit {
   }
 
   /**
-   * Sets 'style' parameter to 'danger'
+   * Sets 'style' parameter to 'danger', making the main button of the dialog red.
    *
    * {@link https://api.slack.com/reference/block-kit/composition-objects#confirm|View in Slack API Documentation}
    *

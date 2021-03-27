@@ -49,7 +49,14 @@ declare module 'slack-block-builder' {
         deny?: string;
       }
 
-      interface ConfirmationDialog extends Bit {}
+      interface ConfirmationDialog extends Bit {
+        title(title: string): this;
+        text(text: string): this;
+        confirm(confirm: string): this;
+        deny(deny: string): this;
+        primary(): this;
+        danger(): this;
+      }
 
       export function Attachment(params?: AttachmentParams): Attachment;
       export function ConfirmationDialog(
@@ -390,13 +397,12 @@ declare module 'slack-block-builder' {
         buildToObject(): BuiltObject;
         buildToJSON(): string;
         getBlocks(): Block.Block[];
-        printPreviewUrl(): void;
       }
 
       interface AdvancedSurface extends Surface {
         privateMetaData(privateMetaData: string): this;
         callbackId(callbackId: string): this;
-        externalId(externalId: string): this;
+        printPreviewUrl(): void;
       }
 
       interface HomeTabParams {
@@ -405,11 +411,14 @@ declare module 'slack-block-builder' {
         privateMetaData?: string;
       }
 
-      interface HomeTab extends AdvancedSurface {}
+      interface HomeTab extends AdvancedSurface {
+        externalId(externalId: string): this;
+      }
 
       interface MessageParams {
         channel?: string;
         text?: string;
+        ts?: string;
         threadTs?: string;
         postAt?: string;
       }
@@ -428,8 +437,9 @@ declare module 'slack-block-builder' {
         ephemeral(): this;
         inChannel(): this;
         postAt(timestamp: string): this;
-        getAttachments(): Bit.Attachment[];
         ignoreMarkdown(): this;
+        getAttachments(): Bit.Attachment[];
+        printPreviewUrl(): void;
       }
 
       interface ModalParams {
@@ -447,6 +457,16 @@ declare module 'slack-block-builder' {
         submit(submit: string): this;
         clearOnClose(): this;
         notifyOnClose(): this;
+        externalId(externalId: string): this;
+      }
+
+      interface WorkflowStepParams {
+        callbackId?: string;
+        privateMetaData?: string;
+      }
+
+      interface WorkflowStep extends AdvancedSurface {
+        submitDisabled(): this;
       }
     }
 
@@ -507,6 +527,7 @@ declare module 'slack-block-builder' {
     export function HomeTab(params?: Surface.HomeTabParams): Surface.HomeTab;
     export function Message(params?: Surface.MessageParams): Surface.Message;
     export function Modal(params?: Surface.ModalParams): Surface.Modal;
+    export function WorkflowStep(params?: Surface.WorkflowStepParams): Surface.WorkflowStep;
   }
 
   export = SlackBlockBuilder;
