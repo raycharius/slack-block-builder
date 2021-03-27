@@ -5,6 +5,7 @@
   "extends": "airbnb-base",
   "rules": {
     "max-classes-per-file": "off",
-    "no-useless-constructor": "off"
+    "no-useless-constructor": "off",
+    "max-len": "off",
   }
 }
