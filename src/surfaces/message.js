@@ -211,6 +211,7 @@ class Message extends Surface {
   printPreviewUrl() {
     this.build();
 
+    // eslint-disable-next-line no-console
     console.log(encodeURI(`https://app.slack.com/block-kit-builder/#${JSON.stringify({ blocks: this.result.blocks, attachments: this.result.attachments })}`).replace(/[!'()*]/g, escape));
   }
 

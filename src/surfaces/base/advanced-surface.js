@@ -43,6 +43,7 @@ class AdvancedSurface extends Surface {
   printPreviewUrl() {
     this.build();
 
+    // eslint-disable-next-line no-console
     console.log(encodeURI(`https://app.slack.com/block-kit-builder/#${JSON.stringify(this.result)}`).replace(/[!'()*]/g, escape));
   }
 }
