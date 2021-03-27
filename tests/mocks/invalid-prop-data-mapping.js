@@ -71,4 +71,5 @@ module.exports = {
   onCharacterEntered: types.globallyInvalid,
   initialTime: types.globallyInvalid,
   ignoreMarkdown: types.globallyInvalid,
+  submitDisabled: types.globallyInvalid,
 };
