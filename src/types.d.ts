@@ -49,7 +49,14 @@ declare module 'slack-block-builder' {
         deny?: string;
       }
 
-      interface ConfirmationDialog extends Bit {}
+      interface ConfirmationDialog extends Bit {
+        title(title: string): this;
+        text(text: string): this;
+        confirm(confirm: string): this;
+        deny(deny: string): this;
+        primary(): this;
+        danger(): this;
+      }
 
       export function Attachment(params?: AttachmentParams): Attachment;
       export function ConfirmationDialog(
