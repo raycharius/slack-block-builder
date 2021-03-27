@@ -65,4 +65,5 @@ module.exports = {
   dispatchActionConfig: 'dispatch_action_config',
   initialTime: 'initial_time',
   mrkdwn: 'mrkdwn',
+  submitDisabled: 'submit_disabled',
 };

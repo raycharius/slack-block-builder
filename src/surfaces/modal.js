@@ -17,6 +17,7 @@ class ModalDto extends SlackDto {
     this.clear_on_close = params.clearOnClose;
     this.notify_on_close = params.notifyOnClose;
     this.external_id = params.externalId;
+    this.submit_disabled = params.submitDisabled;
 
     this.pruneAndFreeze();
   }
@@ -112,6 +113,10 @@ class Modal extends AdvancedSurface {
   /**
    * @private
    */
+
+  submitDisabled() {
+    return this.set(true, props.submitDisabled);
+  }
 
   build() {
     if (!this.hasBeenBuilt) {

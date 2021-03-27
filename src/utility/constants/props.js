@@ -74,4 +74,5 @@ module.exports = {
   initialTime: 'initialTime',
   mrkdwn: 'mrkdwn',
   ignoreMarkdown: 'ignoreMarkdown',
+  submitDisabled: 'submitDisabled',
 };
