@@ -111,12 +111,24 @@ class Modal extends AdvancedSurface {
   }
 
   /**
-   * @private
+   * Sets a custom identifier that must be unique for all views on a per-team basis
+   *
+   * **Slack Validation Rules:**
+   *    * Max 255 characters
+   *
+   * {@link https://api.slack.com/reference/surfaces/views|View in Slack API Documentation}
+   *
+   * @param {string} string
+   * @return {this} The instance on which the method is called
    */
 
-  submitDisabled() {
-    return this.set(true, props.submitDisabled);
+  externalId(string) {
+    return this.set(string, props.externalId);
   }
+
+  /**
+   * @private
+   */
 
   build() {
     if (!this.hasBeenBuilt) {

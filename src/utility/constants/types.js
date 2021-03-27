@@ -2,6 +2,7 @@ module.exports = {
   surfaces: {
     home: 'home',
     modal: 'modal',
+    workflowStep: 'workflow_step',
   },
   blocks: {
     section: 'section',

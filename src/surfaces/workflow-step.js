@@ -1,47 +1,43 @@
 const { AdvancedSurface } = require('./base');
 const { SlackDto } = require('../utility/lib');
 const { BuilderHelper } = require('../utility/helpers');
-const { props, types } = require('../utility/constants');
+const { types, props } = require('../utility/constants');
 
-class HomeTabDto extends SlackDto {
+class WorkflowStepDto extends SlackDto {
   constructor(params) {
     super();
 
-    this.type = types.surfaces.home;
+    this.type = types.surfaces.workflowStep;
     this.blocks = params.blocks;
     this.private_metadata = params.privateMetaData;
     this.callback_id = params.callbackId;
-    this.external_id = params.externalId;
+    this.submit_disabled = params.submitDisabled;
 
     this.pruneAndFreeze();
   }
 }
 
-class HomeTab extends AdvancedSurface {
+class WorkflowStep extends AdvancedSurface {
   constructor(params = {}) {
     super();
 
     this.props.privateMetaData = params.privateMetaData;
     this.props.callbackId = params.callbackId;
-    this.props.externalId = params.externalId;
 
     this.finalizeConstruction();
   }
 
   /**
-   * Sets a custom identifier that must be unique for all views on a per-team basis
+   * Configures the WorkflowStep to have a disabled Submit button until the
+   * user has completed one or more inputs.
    *
-   * **Slack Validation Rules:**
-   *    * Max 255 characters
+   * {@link https://api.slack.com/reference/workflows/configuration-view|View in Slack API Documentation}
    *
-   * {@link https://api.slack.com/reference/surfaces/views|View in Slack API Documentation}
-   *
-   * @param {string} string
    * @return {this} The instance on which the method is called
    */
 
-  externalId(string) {
-    return this.set(string, props.externalId);
+  submitDisabled() {
+    return this.set(true, props.submitDisabled);
   }
 
   /**
@@ -51,10 +47,13 @@ class HomeTab extends AdvancedSurface {
   build() {
     if (!this.hasBeenBuilt) {
       const augmentedProps = {
+        title: BuilderHelper.getPlainTextObject(this.props.title),
         blocks: BuilderHelper.getBuilderResults(this.props.blocks),
+        close: BuilderHelper.getPlainTextObject(this.props.close),
+        submit: BuilderHelper.getPlainTextObject(this.props.submit),
       };
 
-      this.getResult(HomeTabDto, augmentedProps);
+      this.getResult(WorkflowStepDto, augmentedProps);
     }
 
     return this.result;
@@ -62,10 +61,6 @@ class HomeTab extends AdvancedSurface {
 }
 
 module.exports = {
-  HomeTab,
-  HomeTabDto,
+  WorkflowStep,
+  WorkflowStepDto,
 };
-
-/**
- * {@link https://api.slack.com/reference/surfaces/views|View in Slack API Documentation}
- */

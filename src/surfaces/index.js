@@ -1,11 +1,13 @@
 const { HomeTab, HomeTabDto } = require('./home-tab');
 const { Message, MessageDto } = require('./message');
 const { Modal, ModalDto } = require('./modal');
+const { WorkflowStep, WorkflowStepDto } = require('./workflow-step');
 
 const SurfaceDto = {
   HomeTabDto,
   MessageDto,
   ModalDto,
+  WorkflowStepDto,
 };
 
 const getSurfaces = () => {
@@ -58,6 +60,19 @@ const getSurfaces = () => {
      */
 
     Modal: (params) => getInstance(Modal, params),
+
+    /**
+     * Creates and returns a WorkflowStep Surface
+     *
+     * {@link https://api.slack.com/reference/surfaces/views|View in Slack API Documentation}
+     *
+     * @param {Object} [params] Constructor parameters
+     * @param {string} [params.callbackId] Sets a string sent back to your server together with all action and submission events.
+     * @param {string} [params.privateMetaData] Sets a string sent back to your server together with all action and submission events.
+     * @return {WorkflowStep} An instance of WorkflowStep
+     */
+
+    WorkflowStep: (params) => getInstance(WorkflowStep, params),
   };
 };
 
@@ -65,6 +80,7 @@ module.exports = {
   HomeTab,
   Message,
   Modal,
+  WorkflowStep,
   SurfaceDto,
   getSurfaces,
 };

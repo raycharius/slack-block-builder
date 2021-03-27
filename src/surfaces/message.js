@@ -204,6 +204,17 @@ class Message extends Surface {
   }
 
   /**
+   * When called, builds the view and prints to the console the preview URL in
+   * order to open and preview the view on the Slack Block Builder website
+   */
+
+  printPreviewUrl() {
+    this.build();
+
+    console.log(encodeURI(`https://app.slack.com/block-kit-builder/#${JSON.stringify({ blocks: this.result.blocks, attachments: this.result.attachments })}`).replace(/[!'()*]/g, escape));
+  }
+
+  /**
    * @private
    */
 
