@@ -59,7 +59,7 @@
 * Code the way you want to code – [not forced into any single paradigm](#advanced-use-cases).
 * Easily integrate localizations into your app.
 
-### :phone: Let's Talk?
+### :phone: &nbsp; Let's Talk?
 
 Feedback – love it! Aside from GitHub Issues, there are Slack channels available in popular bot communities to discuss **Block Builder** – we'll see you there! :raised_hands:
 
