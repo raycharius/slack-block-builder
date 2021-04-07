@@ -46,7 +46,7 @@
   "scripts": {
     "test": "jest",
     "lint-fix": "eslint 'src/**/*.js' --fix",
-    "lint-check": "eslint 'src/**/*.js'"
+    "lint": "eslint 'src/**/*.js'"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
