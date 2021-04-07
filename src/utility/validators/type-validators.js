@@ -1,7 +1,6 @@
 const Validator = require('../lib/validator');
 const { enumValues, categories, classes } = require('../constants');
 
-
 module.exports = {
   isString: new Validator({
     condition: (value) => typeof value === 'string',

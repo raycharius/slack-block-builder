@@ -3,7 +3,6 @@ const { SlackDto } = require('../utility/lib');
 const { BuilderHelper } = require('../utility/helpers');
 const { types, enumValues, props } = require('../utility/constants');
 
-
 class ButtonDto extends SlackDto {
   constructor(params) {
     super();
@@ -19,7 +18,6 @@ class ButtonDto extends SlackDto {
     this.pruneAndFreeze();
   }
 }
-
 
 class Button extends ConfirmableElement {
   constructor(params = {}) {

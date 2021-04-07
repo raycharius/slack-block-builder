@@ -75,7 +75,6 @@ class BuilderHelper {
     return array.map((item) => this.getMarkdownObject(item));
   }
 
-
   static getFormattedDate(date) {
     if (this.isUndefined(date)) {
       return undefined;
