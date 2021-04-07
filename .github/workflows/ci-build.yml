@@ -1,0 +1,43 @@
+name: Run Checks
+
+on: pull_request
+
+jobs:
+  check-commit-message:
+    name: Check Commit Message Formatting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Commits Have Emojis
+        uses: gsactions/commit-message-checker@v1
+        with:
+          pattern: '(:(?:tada|bookmark|sparkles|bug|card_index|books|bulb|racehorse|lipstick|rotating_light|white_check_mark|heavy_check_mark|zap|art|hammer|fire|green_heart|lock|arrow_up|arrow_down|shirt|alien|pencil|ambulance|rocket|apple|penguin|checkered_flag|construction|construction_worker|chart_with_upwards_trend|heavy_minus_sign|heavy_plus_sign|whale|wrench|package|twisted_rightwards_arrows|hankey|rewind|boom|ok_hand|wheelchair|truck)(:\s.*))'
+          flags: 'gm'
+          checkAllCommitMessages: 'true'
+          accessToken: ${{ secrets.GITHUB_TOKEN }}
+          error: 'Commit messages must conform to `:<emojiAlias>: Description in sentence case` formatting. There are commits in this pull request without emojis. Please refer to emoji convention: https://gist.github.com/parmentf/035de27d6ed1dce0b36a.'
+      - name: Check Commits Are Sentence Case
+        uses: gsactions/commit-message-checker@v1
+        with:
+          pattern: '(:(?:.*)(:\s[A-Z].*))'
+          flags: 'gm'
+          checkAllCommitMessages: 'true'
+          accessToken: ${{ secrets.GITHUB_TOKEN }}
+          error: 'Commit messages must conform to `:<emojiAlias>: Description in sentence case` formatting. There are commits in this pull request that are not sentence case, following the emoji.'
+  run:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 15.x]
+    name: Lint and Test on Node.js ${{ matrix.node-version }}
+    steps:
+      - uses: actions/checkout@master
+      - name: Set Up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install Dependencies on Node ${{ matrix.node-version }}
+        run: npm install
+      - name: Check Linter on Node ${{ matrix.node-version }}
+        run: npm run lint
+      - name: Run Tests and Generate Coverage Report on Node ${{ matrix.node-version }}
+        run: npm test
