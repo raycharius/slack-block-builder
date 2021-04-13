@@ -1,4 +1,4 @@
-name: Run Checks
+name: Run Checks and Build
 
 on: pull_request
 
@@ -28,7 +28,7 @@ jobs:
     strategy:
       matrix:
         node-version: [12.x, 14.x, 15.x]
-    name: Lint and Test on Node.js ${{ matrix.node-version }}
+    name: Lint, Test, and Build on Node.js ${{ matrix.node-version }}
     steps:
       - uses: actions/checkout@master
       - name: Set Up Node.js ${{ matrix.node-version }}
@@ -41,3 +41,7 @@ jobs:
         run: npm run lint
       - name: Run Tests and Generate Coverage Report on Node ${{ matrix.node-version }}
         run: npm test
+      - name: Upload Coverage Report on Node ${{ matrix.node-version }}
+        run: npm run coverage
+      - name: Build on Node ${{ matrix.node-version }}
+        run: npm run compile
