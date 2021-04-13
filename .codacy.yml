@@ -1,0 +1,9 @@
+---
+exclude_paths:
+  - "tests/**/*"
+  - "docs/**/*"
+  - "resources/**/*"
+  - ".github/**/*"
+  - "CHANGELOG.md"
+  - "README.md"
+  - "LICENSE.md"
