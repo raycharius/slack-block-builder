@@ -2,11 +2,30 @@
   "env": {
     "node": true
   },
-  "extends": "airbnb-base",
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.eslint.json"
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "airbnb-typescript/base",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
   "rules": {
-    "max-classes-per-file": "off",
-    "no-useless-constructor": "off",
-    "max-len": "off",
-    "consistent-return": "off"
+    "import/prefer-default-export": "off", // Prefer consistency
+    "@typescript-eslint/no-useless-constructor": "off", // Prefer code clarity
+    "@typescript-eslint/no-explicit-any": "off", // Prefer flexibility
   }
 }
