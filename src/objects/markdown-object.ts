@@ -1,15 +1,15 @@
 import { UtilityObjectBase } from '../base';
-import { objectTypes } from '../constants';
+import { ObjectType } from '../constants';
 
 export class MarkdownObject extends UtilityObjectBase {
-  public type: string;
+  public type: ObjectType;
 
   public text: string;
 
   constructor(text: string) {
     super();
 
-    this.type = objectTypes.objects.markdown;
+    this.type = ObjectType.Markdown;
     this.text = text;
   }
 }

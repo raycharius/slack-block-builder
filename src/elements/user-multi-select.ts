@@ -10,7 +10,9 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
-import { objectTypes } from '../constants';
+import { ElementType } from '../constants';
+
+import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
 
 export interface UserMultiSelectParams {
   actionId?: string;
@@ -19,7 +21,7 @@ export interface UserMultiSelectParams {
 }
 
 export interface UserMultiSelectElement extends HasActionId,
-  HasConfirm,
+  HasConfirm<ConfirmationDialogBit>,
   HasEnd,
   HasInitialUsers,
   HasMaxSelectedItems,
@@ -35,7 +37,7 @@ export class UserMultiSelectElement extends ElementBase implements UserMultiSele
   constructor(params?: UserMultiSelectParams) {
     super(params);
 
-    this.props.type = objectTypes.elements.usersMultiSelect;
+    this.props.type = ElementType.UsersMultiSelect;
   }
 
   public build(): SlackDto {
@@ -44,7 +46,7 @@ export class UserMultiSelectElement extends ElementBase implements UserMultiSele
       confirm: getBuilderResult(this.props.confirm),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 

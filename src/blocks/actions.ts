@@ -7,7 +7,9 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getBuilderResults } from '../helpers';
-import { objectTypes } from '../constants';
+import { BlockType } from '../constants';
+
+import type { ActionsElement } from '../types';
 
 export interface ActionsParams {
   blockId?: string;
@@ -15,7 +17,7 @@ export interface ActionsParams {
 
 export interface ActionsBlock extends HasBlockId,
   HasEnd,
-  HasElements,
+  HasElements<ActionsElement>,
   MustBuild {
 }
 
@@ -27,7 +29,7 @@ export class ActionsBlock extends BlockBase implements ActionsBlock {
   constructor(params?: ActionsParams) {
     super(params);
 
-    this.props.type = objectTypes.blocks.actions;
+    this.props.type = BlockType.Actions;
   }
 
   public build(): SlackDto {
@@ -35,7 +37,7 @@ export class ActionsBlock extends BlockBase implements ActionsBlock {
       elements: getBuilderResults(this.props.elements),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 

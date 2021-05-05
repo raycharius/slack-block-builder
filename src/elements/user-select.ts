@@ -9,7 +9,9 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
-import { objectTypes } from '../constants';
+import { ElementType } from '../constants';
+
+import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
 
 export interface UserSelectParams {
   actionId?: string;
@@ -18,7 +20,7 @@ export interface UserSelectParams {
 }
 
 export interface UserSelectElement extends HasActionId,
-  HasConfirm,
+  HasConfirm<ConfirmationDialogBit>,
   HasEnd,
   HasInitialUser,
   HasPlaceholder,
@@ -33,7 +35,7 @@ export class UserSelectElement extends ElementBase implements UserSelectElement 
   constructor(params?: UserSelectParams) {
     super(params);
 
-    this.props.type = objectTypes.elements.userSelect;
+    this.props.type = ElementType.UserSelect;
   }
 
   public build(): SlackDto {
@@ -42,7 +44,7 @@ export class UserSelectElement extends ElementBase implements UserSelectElement 
       confirm: getBuilderResult(this.props.confirm),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 

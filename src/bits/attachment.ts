@@ -9,12 +9,14 @@ import {
 } from '../methods';
 import { applyMixins, getBuilderResults } from '../helpers';
 
+import type { Block } from '../types';
+
 export interface AttachmentParams {
   color?: string;
   fallback?: string;
 }
 
-export interface AttachmentBit extends HasBlocks,
+export interface AttachmentBit extends HasBlocks<Block>,
   HasColor,
   HasEnd,
   HasFallback,
@@ -35,7 +37,7 @@ export class AttachmentBit extends BitBase implements AttachmentBit {
       blocks: getBuilderResults(this.props.blocks),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 

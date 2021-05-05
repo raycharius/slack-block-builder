@@ -1,5 +1,5 @@
 import { BitBase } from '../base';
-import { SlackDto, BuildParams } from '../lib';
+import { SlackDto } from '../lib';
 import {
   HasDescription,
   HasEnd,
@@ -9,6 +9,8 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getMarkdownObject } from '../helpers';
+
+import type { ObjectLiteral } from '../types';
 
 export interface OptionParams {
   description?: string;
@@ -34,7 +36,7 @@ export class OptionBit extends BitBase implements OptionBit {
     super(params);
   }
 
-  public build({ isMarkdown }: BuildParams = { isMarkdown: false }): SlackDto {
+  public build({ isMarkdown }: ObjectLiteral = { isMarkdown: false }): SlackDto {
     const augmentedProps = {
       text: isMarkdown
         ? getMarkdownObject(this.props.text)
@@ -44,7 +46,7 @@ export class OptionBit extends BitBase implements OptionBit {
         : getPlainTextObject(this.props.description),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 

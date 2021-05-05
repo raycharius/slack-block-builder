@@ -11,7 +11,9 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
-import { objectTypes } from '../constants';
+import { BlockType } from '../constants';
+
+import type { InputElement } from '../types';
 
 export interface InputParams {
   blockId?: string;
@@ -21,7 +23,7 @@ export interface InputParams {
 
 export interface InputBlock extends HasBlockId,
   HasDispatchAction,
-  HasElement,
+  HasElement<InputElement>,
   HasEnd,
   HasHint,
   HasLabel,
@@ -37,7 +39,7 @@ export class InputBlock extends BlockBase implements InputBlock {
   constructor(params?: InputParams) {
     super(params);
 
-    this.props.type = objectTypes.blocks.input;
+    this.props.type = BlockType.Input;
   }
 
   public build(): SlackDto {
@@ -47,7 +49,7 @@ export class InputBlock extends BlockBase implements InputBlock {
       element: getBuilderResult(this.props.element),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 

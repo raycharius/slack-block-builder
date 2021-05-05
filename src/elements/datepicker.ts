@@ -14,7 +14,9 @@ import {
   getFormattedDate,
   getBuilderResult,
 } from '../helpers';
-import { objectTypes } from '../constants';
+import { ElementType } from '../constants';
+
+import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
 
 export interface DatePickerParams {
   actionId?: string;
@@ -23,7 +25,7 @@ export interface DatePickerParams {
 }
 
 export interface DatePickerElement extends HasActionId,
-  HasConfirm,
+  HasConfirm<ConfirmationDialogBit>,
   HasEnd,
   HasInitialDate,
   HasPlaceholder,
@@ -38,7 +40,7 @@ export class DatePickerElement extends ElementBase implements DatePickerElement 
   constructor(params?: DatePickerParams) {
     super(params);
 
-    this.props.type = objectTypes.elements.datePicker;
+    this.props.type = ElementType.DatePicker;
   }
 
   public build(): SlackDto {
@@ -48,7 +50,7 @@ export class DatePickerElement extends ElementBase implements DatePickerElement 
       confirm: getBuilderResult(this.props.confirm),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 

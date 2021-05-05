@@ -2,19 +2,21 @@ import { BlockBase } from '../base';
 import { SlackDto } from '../lib';
 import {
   HasBlockId,
-  HasElementsForContext,
+  HasElements,
   HasEnd,
   MustBuild,
 } from '../methods';
 import { applyMixins, getElementsForContext } from '../helpers';
-import { objectTypes } from '../constants';
+import { BlockType } from '../constants';
+
+import type { ContextElement } from '../types';
 
 export interface ContextParams {
   blockId?: string;
 }
 
 export interface ContextBlock extends HasBlockId,
-  HasElementsForContext,
+  HasElements<ContextElement>,
   HasEnd,
   MustBuild {
 }
@@ -27,7 +29,7 @@ export class ContextBlock extends BlockBase implements ContextBlock {
   constructor(params?: ContextParams) {
     super(params);
 
-    this.props.type = objectTypes.blocks.context;
+    this.props.type = BlockType.Context;
   }
 
   public build(): SlackDto {
@@ -35,12 +37,12 @@ export class ContextBlock extends BlockBase implements ContextBlock {
       elements: getElementsForContext(this.props.elements),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 
 applyMixins(ContextBlock, [
   HasBlockId,
-  HasElementsForContext,
+  HasElements,
   HasEnd,
 ]);

@@ -9,7 +9,7 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getPlainTextObject } from '../helpers';
-import { objectTypes } from '../constants';
+import { BlockType } from '../constants';
 
 export interface ImageParams {
   altText?: string;
@@ -34,7 +34,7 @@ export class ImageBlock extends BlockBase implements ImageBlock {
   constructor(params?: ImageParams) {
     super(params);
 
-    this.props.type = objectTypes.blocks.image;
+    this.props.type = BlockType.Image;
   }
 
   public build(): SlackDto {
@@ -42,7 +42,7 @@ export class ImageBlock extends BlockBase implements ImageBlock {
       title: getPlainTextObject(this.props.title),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 

@@ -1,25 +1,20 @@
 import { BlockBuilderError } from './error';
 
-interface PropSetterProps {
-  [key: string]: any;
-}
-
-export interface PropSetterParams {
-  [key: string]: any;
-}
+import type { ObjectLiteral } from '../types';
+import type { Prop } from '../constants';
 
 export abstract class PropSetter {
-  protected props: PropSetterProps;
+  protected props: ObjectLiteral;
 
   protected canBeModified: boolean;
 
-  protected constructor(params?: PropSetterParams) {
-    this.props = params || {} as PropSetterProps;
+  protected constructor(params?: ObjectLiteral) {
+    this.props = params || {};
     this.canBeModified = true;
   }
 
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  protected set(value: any, prop: string): this {
+  protected set(value: any, prop: Prop): this {
     this.checkCanBeModified();
 
     if (this.props[prop] !== undefined) {
@@ -31,7 +26,7 @@ export abstract class PropSetter {
     return this;
   }
 
-  protected append(value: any[], prop: string): this {
+  protected append(value: any[], prop: Prop): this {
     this.checkCanBeModified();
 
     const prunedValue = value.filter(Boolean);

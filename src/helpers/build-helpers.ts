@@ -1,4 +1,4 @@
-import { Builder, BuildParams } from '../lib';
+import { Builder } from '../lib';
 import {
   PlainTextObject,
   MarkdownObject,
@@ -7,11 +7,9 @@ import {
   DispatchActionsConfigurationObject,
 } from '../objects';
 
-type PropParams = {
-  [key: string]: any;
-};
+import type { ObjectLiteral } from '../types';
 
-const defaultParams: BuildParams = {
+const defaultParams = {
   isMarkdown: false,
 };
 
@@ -20,11 +18,11 @@ const isUndefined = (value: any): boolean => value === undefined;
 const areUndefined = (...values): boolean => values
   .filter((value) => isUndefined(value)).length === values.length;
 
-export function getBuilderResult(builder: Builder, params: BuildParams = defaultParams): any {
+export function getBuilderResult(builder: Builder, params: ObjectLiteral = defaultParams): any {
   return isUndefined(builder) ? undefined : builder.build(params);
 }
 
-export function getBuilderResults(builders: Builder[], params: BuildParams = defaultParams): any {
+export function getBuilderResults(builders: Builder[], params: ObjectLiteral = defaultParams): any {
   return areUndefined(builders) ? undefined : builders
     .map((builder) => getBuilderResult(builder, params));
 }
@@ -68,7 +66,7 @@ export function getFilter(params: FilterParams): FilterObject {
 }
 
 export function getDispatchActionsConfigurationObject(
-  params: PropParams,
+  params: ObjectLiteral,
 ): DispatchActionsConfigurationObject {
   const { onEnterPressed, onCharacterEntered } = params;
 

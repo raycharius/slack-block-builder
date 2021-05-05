@@ -12,7 +12,9 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getBuilderResults } from '../helpers';
-import { objectTypes } from '../constants';
+import { SurfaceType } from '../constants';
+
+import type { ViewBlock } from '../types';
 
 export interface HomeTabParams {
   privateMetaData?: string;
@@ -24,7 +26,7 @@ export interface HomeTabSurface extends CanBuildToJSON,
   CanBuildToObject,
   CanGetBlocks,
   CanPrintPreviewUrl,
-  HasBlocks,
+  HasBlocks<ViewBlock>,
   HasCallbackId,
   HasExternalId,
   HasPrivateMetaData,
@@ -39,7 +41,7 @@ export class HomeTabSurface extends SurfaceBase implements HomeTabSurface {
   constructor(params?: HomeTabParams) {
     super(params);
 
-    this.props.type = objectTypes.surfaces.homeTab;
+    this.props.type = SurfaceType.HomeTab;
   }
 
   public build(): SlackDto {
@@ -47,7 +49,7 @@ export class HomeTabSurface extends SurfaceBase implements HomeTabSurface {
       blocks: getBuilderResults(this.props.blocks),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 

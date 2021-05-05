@@ -17,7 +17,9 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResults } from '../helpers';
-import { objectTypes } from '../constants';
+import { SurfaceType } from '../constants';
+
+import type { ViewBlock } from '../types';
 
 export interface ModalParams {
   type?: string;
@@ -33,7 +35,7 @@ export interface ModalSurface extends CanBuildToJSON,
   CanBuildToObject,
   CanGetBlocks,
   CanPrintPreviewUrl,
-  HasBlocks,
+  HasBlocks<ViewBlock>,
   HasCallbackId,
   HasClearOnClose,
   HasClose,
@@ -53,7 +55,7 @@ export class ModalSurface extends SurfaceBase implements ModalSurface {
   constructor(params?: ModalParams) {
     super(params);
 
-    this.props.type = objectTypes.surfaces.modal;
+    this.props.type = SurfaceType.Modal;
   }
 
   build(): SlackDto {
@@ -64,7 +66,7 @@ export class ModalSurface extends SurfaceBase implements ModalSurface {
       submit: getPlainTextObject(this.props.submit),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 

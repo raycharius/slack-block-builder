@@ -1,9 +1,10 @@
 import { UtilityObjectBase } from '../base';
+import { DispatchOnType } from '../constants';
 
-export type DispatchActionsConfigParams = string[];
+export type DispatchActionsConfigParams = DispatchOnType[];
 
 export class DispatchActionsConfigurationObject extends UtilityObjectBase {
-  public trigger_actions_on: string[];
+  public trigger_actions_on: DispatchOnType[];
 
   constructor(params: DispatchActionsConfigParams) {
     super();

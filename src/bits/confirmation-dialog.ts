@@ -1,7 +1,7 @@
 import { BitBase } from '../base';
 import { SlackDto } from '../lib';
 import {
-  HasConfirmForBit,
+  HasConfirm,
   HasDanger,
   HasDeny,
   HasEnd,
@@ -19,7 +19,7 @@ export interface ConfirmationDialogParams {
   title?: string;
 }
 
-export interface ConfirmationDialogBit extends HasConfirmForBit,
+export interface ConfirmationDialogBit extends HasConfirm<string>,
   HasDanger,
   HasDeny,
   HasEnd,
@@ -46,12 +46,12 @@ export class ConfirmationDialogBit extends BitBase implements ConfirmationDialog
       deny: getPlainTextObject(this.props.deny),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 
 applyMixins(ConfirmationDialogBit, [
-  HasConfirmForBit,
+  HasConfirm,
   HasDanger,
   HasDeny,
   HasEnd,

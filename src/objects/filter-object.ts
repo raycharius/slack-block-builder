@@ -1,13 +1,14 @@
 import { UtilityObjectBase } from '../base';
+import { Filter } from '../constants';
 
 export interface FilterParams {
-  filter?: string[];
+  filter?: Filter[];
   excludeBotUsers?: boolean;
   excludeExternalSharedChannels?: boolean;
 }
 
 export class FilterObject extends UtilityObjectBase {
-  public include: string[];
+  public include: Filter[];
 
   public exclude_external_shared_channels: boolean;
 

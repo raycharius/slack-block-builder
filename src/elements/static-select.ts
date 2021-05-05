@@ -16,7 +16,9 @@ import {
   getBuilderResult,
   getBuilderResults,
 } from '../helpers';
-import { objectTypes } from '../constants';
+import { ElementType } from '../constants';
+
+import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
 
 export interface StaticSelectParams {
   actionId?: string;
@@ -24,7 +26,7 @@ export interface StaticSelectParams {
 }
 
 export interface StaticSelectElement extends HasActionId,
-  HasConfirm,
+  HasConfirm<ConfirmationDialogBit>,
   HasEnd,
   HasInitialOption,
   HasOptionGroups,
@@ -41,7 +43,7 @@ export class StaticSelectElement extends ElementBase implements StaticSelectElem
   constructor(params?: StaticSelectParams) {
     super(params);
 
-    this.props.type = objectTypes.elements.staticSelect;
+    this.props.type = ElementType.StaticSelect;
   }
 
   public build(): SlackDto {
@@ -53,7 +55,7 @@ export class StaticSelectElement extends ElementBase implements StaticSelectElem
       confirm: getBuilderResult(this.props.confirm),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 

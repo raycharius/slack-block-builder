@@ -14,14 +14,16 @@ import {
   getBuilderResult,
   getFields,
 } from '../helpers';
-import { objectTypes } from '../constants';
+import { BlockType } from '../constants';
+
+import type { SectionElement } from '../types';
 
 export interface SectionParams {
   blockId?: string;
   text?: string;
 }
 
-export interface SectionBlock extends HasAccessory,
+export interface SectionBlock extends HasAccessory<SectionElement>,
   HasBlockId,
   HasEnd,
   HasFields,
@@ -37,7 +39,7 @@ export class SectionBlock extends BlockBase implements SectionBlock {
   constructor(params?: SectionParams) {
     super(params);
 
-    this.props.type = objectTypes.blocks.section;
+    this.props.type = BlockType.Section;
   }
 
   public build(): SlackDto {
@@ -47,7 +49,7 @@ export class SectionBlock extends BlockBase implements SectionBlock {
       accessory: getBuilderResult(this.props.accessory),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 

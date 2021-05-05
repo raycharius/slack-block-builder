@@ -7,7 +7,7 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins } from '../helpers';
-import { objectTypes } from '../constants';
+import { ElementType } from '../constants';
 
 export interface ImgParams {
   imageUrl?: string;
@@ -28,7 +28,7 @@ export class ImgElement extends ElementBase implements ImgElement {
   constructor(params?: ImgParams) {
     super(params);
 
-    this.props.type = objectTypes.elements.image;
+    this.props.type = ElementType.Image;
   }
 
   public build(): SlackDto {

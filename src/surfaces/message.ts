@@ -5,7 +5,7 @@ import {
   CanBuildToObject,
   CanGetAttachments,
   CanGetBlocks,
-  CanPrintPreviewUrlForMessage,
+  CanPrintPreviewUrl,
   HasAsUser,
   HasAttachments,
   HasBlocks,
@@ -23,6 +23,8 @@ import {
 } from '../methods';
 import { applyMixins, getBuilderResults } from '../helpers';
 
+import type { Block } from '../types';
+
 export interface MessageParams {
   channel?: string;
   postAt?: number;
@@ -35,10 +37,10 @@ export interface MessageSurface extends CanBuildToJSON,
   CanBuildToObject,
   CanGetAttachments,
   CanGetBlocks,
-  CanPrintPreviewUrlForMessage,
+  CanPrintPreviewUrl,
   HasAsUser,
   HasAttachments,
-  HasBlocks,
+  HasBlocks<Block>,
   HasChannel,
   HasDeleteOriginal,
   HasEphemeral,
@@ -67,7 +69,7 @@ export class MessageSurface extends SurfaceBase implements MessageSurface {
       attachments: getBuilderResults(this.props.attachments),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 
@@ -76,7 +78,7 @@ applyMixins(MessageSurface, [
   CanBuildToObject,
   CanGetAttachments,
   CanGetBlocks,
-  CanPrintPreviewUrlForMessage,
+  CanPrintPreviewUrl,
   HasAsUser,
   HasAttachments,
   HasBlocks,

@@ -10,7 +10,9 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
-import { objectTypes } from '../constants';
+import { ElementType } from '../constants';
+
+import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
 
 export interface ExternalSelectParams {
   actionId?: string;
@@ -19,7 +21,7 @@ export interface ExternalSelectParams {
 }
 
 export interface ExternalSelectElement extends HasActionId,
-  HasConfirm,
+  HasConfirm<ConfirmationDialogBit>,
   HasEnd,
   HasInitialOption,
   HasMinQueryLength,
@@ -35,7 +37,7 @@ export class ExternalSelectElement extends ElementBase implements ExternalSelect
   constructor(params?: ExternalSelectParams) {
     super(params);
 
-    this.props.type = objectTypes.elements.externalSelect;
+    this.props.type = ElementType.ExternalSelect;
   }
 
   public build(): SlackDto {
@@ -45,7 +47,7 @@ export class ExternalSelectElement extends ElementBase implements ExternalSelect
       confirm: getBuilderResult(this.props.confirm),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 

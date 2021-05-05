@@ -12,7 +12,9 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
-import { objectTypes } from '../constants';
+import { ElementType } from '../constants';
+
+import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
 
 export interface ButtonParams {
   actionId?: string;
@@ -22,7 +24,7 @@ export interface ButtonParams {
 }
 
 export interface ButtonElement extends HasActionId,
-  HasConfirm,
+  HasConfirm<ConfirmationDialogBit>,
   HasDanger,
   HasEnd,
   HasPrimary,
@@ -40,7 +42,7 @@ export class ButtonElement extends ElementBase implements ButtonElement {
   constructor(params?: ButtonParams) {
     super(params);
 
-    this.props.type = objectTypes.elements.button;
+    this.props.type = ElementType.Button;
   }
 
   public build(): SlackDto {
@@ -49,7 +51,7 @@ export class ButtonElement extends ElementBase implements ButtonElement {
       text: getPlainTextObject(this.props.text),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 

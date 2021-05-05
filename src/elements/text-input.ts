@@ -13,7 +13,7 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getDispatchActionsConfigurationObject } from '../helpers';
-import { objectTypes } from '../constants';
+import { ElementType } from '../constants';
 
 export interface TextInputParams {
   actionId?: string;
@@ -43,7 +43,7 @@ export class TextInputElement extends ElementBase implements TextInputElement {
   constructor(params?: TextInputParams) {
     super(params);
 
-    this.props.type = objectTypes.elements.textInput;
+    this.props.type = ElementType.TextInput;
   }
 
   public build(): SlackDto {
@@ -52,7 +52,7 @@ export class TextInputElement extends ElementBase implements TextInputElement {
       dispatchActionConfig: getDispatchActionsConfigurationObject(this.props),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 

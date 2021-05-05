@@ -7,7 +7,7 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins } from '../helpers';
-import { objectTypes, values } from '../constants';
+import { BlockType, FileType } from '../constants';
 
 export interface FileParams {
   blockId?: string;
@@ -28,8 +28,8 @@ export class FileBlock extends BlockBase implements FileBlock {
   constructor(params?: FileParams) {
     super(params);
 
-    this.props.type = objectTypes.blocks.file;
-    this.props.source = values.remote;
+    this.props.type = BlockType.File;
+    this.props.source = FileType.Remote;
   }
 
   public build(): SlackDto {

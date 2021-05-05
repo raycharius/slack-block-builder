@@ -9,7 +9,9 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
-import { objectTypes } from '../constants';
+import { ElementType } from '../constants';
+
+import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
 
 export interface TimePickerParams {
   actionId?: string;
@@ -18,7 +20,7 @@ export interface TimePickerParams {
 }
 
 export interface TimePickerElement extends HasActionId,
-  HasConfirm,
+  HasConfirm<ConfirmationDialogBit>,
   HasEnd,
   HasInitialTime,
   HasPlaceholder,
@@ -33,7 +35,7 @@ export class TimePickerElement extends ElementBase implements TimePickerElement 
   constructor(params?: TimePickerParams) {
     super(params);
 
-    this.props.type = objectTypes.elements.timePicker;
+    this.props.type = ElementType.TimePicker;
   }
 
   public build(): SlackDto {
@@ -42,7 +44,7 @@ export class TimePickerElement extends ElementBase implements TimePickerElement 
       confirm: getBuilderResult(this.props.confirm),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 

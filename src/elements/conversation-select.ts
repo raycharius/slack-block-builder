@@ -19,7 +19,9 @@ import {
   getFilter,
   getBuilderResult,
 } from '../helpers';
-import { objectTypes } from '../constants';
+import { ElementType } from '../constants';
+
+import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
 
 export interface ConversationSelectParams {
   actionId?: string;
@@ -28,7 +30,7 @@ export interface ConversationSelectParams {
 }
 
 export interface ConversationSelectElement extends HasActionId,
-  HasConfirm,
+  HasConfirm<ConfirmationDialogBit>,
   HasDefaultToCurrentConversation,
   HasEnd,
   HasExcludeBotUsers,
@@ -48,7 +50,7 @@ export class ConversationSelectElement extends ElementBase implements Conversati
   constructor(params?: ConversationSelectParams) {
     super(params);
 
-    this.props.type = objectTypes.elements.conversationSelect;
+    this.props.type = ElementType.ConversationSelect;
   }
 
   public build(): SlackDto {
@@ -58,7 +60,7 @@ export class ConversationSelectElement extends ElementBase implements Conversati
       filter: getFilter(this.props),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 

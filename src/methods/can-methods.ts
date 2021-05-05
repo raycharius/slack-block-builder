@@ -63,29 +63,12 @@ export abstract class CanPrintPreviewUrl extends Builder {
   public printPreviewUrl(): void {
     this.build();
 
-    const url = encodeURI(`https://app.slack.com/block-kit-builder/#${JSON.stringify(this.result)}`)
-      .replace(/[!'()*]/g, escape);
+    const baseUri = 'https://app.slack.com/block-kit-builder/#';
+    const stringifiedBlocks = this.props.type
+      ? JSON.stringify(this.result)
+      : JSON.stringify({ blocks: this.result.blocks, attachments: this.result.attachments });
 
     // eslint-disable-next-line no-console
-    console.log(url);
-  }
-}
-
-export abstract class CanPrintPreviewUrlForMessage extends Builder {
-  /**
-   * @description When called, builds the view and prints to the console the preview URL in order to open and preview the view on Slack's Block Kit Builder web application.
-   */
-
-  public printPreviewUrl(): void {
-    this.build();
-
-    const url = encodeURI(`https://app.slack.com/block-kit-builder/#${JSON.stringify({
-      blocks: this.result.blocks,
-      attachments: this.result.attachments,
-    })}`)
-      .replace(/[!'()*]/g, escape);
-
-    // eslint-disable-next-line no-console
-    console.log(url);
+    console.log(encodeURI(`${baseUri}${stringifiedBlocks}`).replace(/[!'()*]/g, escape));
   }
 }

@@ -33,7 +33,7 @@ export class OptionGroupBit extends BitBase implements OptionGroupBit {
       options: getBuilderResults(this.props.options),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 

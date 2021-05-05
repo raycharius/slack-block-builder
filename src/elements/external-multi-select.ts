@@ -16,7 +16,9 @@ import {
   getBuilderResult,
   getBuilderResults,
 } from '../helpers';
-import { objectTypes } from '../constants';
+import { ElementType } from '../constants';
+
+import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
 
 export interface ExternalMultiSelectParams {
   actionId?: string;
@@ -26,7 +28,7 @@ export interface ExternalMultiSelectParams {
 }
 
 export interface ExternalMultiSelectElement extends HasActionId,
-  HasConfirm,
+  HasConfirm<ConfirmationDialogBit>,
   HasEnd,
   HasInitialOptions,
   HasMaxSelectedItems,
@@ -43,7 +45,7 @@ export class ExternalMultiSelectElement extends ElementBase implements ExternalM
   constructor(params?: ExternalMultiSelectParams) {
     super(params);
 
-    this.props.type = objectTypes.elements.externalMultiSelect;
+    this.props.type = ElementType.ExternalMultiSelect;
   }
 
   public build(): SlackDto {
@@ -53,7 +55,7 @@ export class ExternalMultiSelectElement extends ElementBase implements ExternalM
       confirm: getBuilderResult(this.props.confirm),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 

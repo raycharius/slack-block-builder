@@ -19,7 +19,9 @@ import {
   getFilter,
   getBuilderResult,
 } from '../helpers';
-import { objectTypes } from '../constants';
+import { ElementType } from '../constants';
+
+import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
 
 export interface ConversationMultiSelectParams {
   actionId?: string;
@@ -28,7 +30,7 @@ export interface ConversationMultiSelectParams {
 }
 
 export interface ConversationMultiSelectElement extends HasActionId,
-  HasConfirm,
+  HasConfirm<ConfirmationDialogBit>,
   HasDefaultToCurrentConversation,
   HasEnd,
   HasExcludeBotUsers,
@@ -49,7 +51,7 @@ export class ConversationMultiSelectElement extends ElementBase
   constructor(params?: ConversationMultiSelectParams) {
     super(params);
 
-    this.props.type = objectTypes.elements.conversationsMultiSelect;
+    this.props.type = ElementType.ConversationsMultiSelect;
   }
 
   public build(): SlackDto {
@@ -59,7 +61,7 @@ export class ConversationMultiSelectElement extends ElementBase
       filter: getFilter(this.props),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 

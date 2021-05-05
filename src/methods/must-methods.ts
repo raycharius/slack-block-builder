@@ -1,12 +1,12 @@
 /* eslint-disable max-classes-per-file */
 /* eslint-disable max-len */
 
-import { BuildParams } from '../lib';
+import type { ObjectLiteral } from '../types';
 
 export interface MustBuild {
   /**
    * @description ⚠ ATTENTION: Not meant to be called outside of the source code of BlockBase Builder.
    */
 
-  build(params?: BuildParams): any;
+  build(params?: ObjectLiteral): any;
 }

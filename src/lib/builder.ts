@@ -1,16 +1,14 @@
-import { PropSetter, PropSetterParams } from './prop-setter';
+import { PropSetter } from './prop-setter';
 import { BlockBuilderError } from './error';
 
-export interface BuildParams {
-  [key: string]: any;
-}
+import type { ObjectLiteral, Constructor } from '../types';
 
 export abstract class Builder extends PropSetter {
   public isBuilt: boolean;
 
   public result: any;
 
-  protected constructor(params?: PropSetterParams) {
+  protected constructor(params?: ObjectLiteral) {
     super(params);
 
     this.isBuilt = false;
@@ -19,9 +17,9 @@ export abstract class Builder extends PropSetter {
     this.finalizeConstruction();
   }
 
-  protected getResult(
-    ClassToBuild: new (...args: any[]) => any, augmentedProps?: BuildParams,
-  ): any {
+  protected getResult<Type>(
+    ClassToBuild: Constructor<Type>, augmentedProps?: ObjectLiteral,
+  ): Type {
     if (!this.isBuilt) {
       this.result = new ClassToBuild({ ...this.props, ...augmentedProps });
       this.isBuilt = true;
@@ -44,7 +42,7 @@ export abstract class Builder extends PropSetter {
   }
 
   // eslint-disable-next-line class-methods-use-this, @typescript-eslint/no-unused-vars
-  public build(params?: BuildParams): any {
+  public build(params?: ObjectLiteral): ObjectLiteral {
     throw new BlockBuilderError('Builder must have a declared \'build\' method');
   }
 }

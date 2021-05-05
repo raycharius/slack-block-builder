@@ -17,7 +17,9 @@ import {
   getBuilderResult,
   getBuilderResults,
 } from '../helpers';
-import { objectTypes } from '../constants';
+import { ElementType } from '../constants';
+
+import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
 
 export interface StaticMultiSelectParams {
   actionId?: string;
@@ -30,7 +32,7 @@ export interface StaticMultiSelectParams {
  */
 
 export interface StaticMultiSelectElement extends HasActionId,
-  HasConfirm,
+  HasConfirm<ConfirmationDialogBit>,
   HasEnd,
   HasInitialOptions,
   HasMaxSelectedItems,
@@ -44,7 +46,7 @@ export class StaticMultiSelectElement extends ElementBase implements StaticMulti
   constructor(params?: StaticMultiSelectParams) {
     super(params);
 
-    this.props.type = objectTypes.elements.staticMultiSelect;
+    this.props.type = ElementType.StaticMultiSelect;
   }
 
   public build(): SlackDto {
@@ -56,7 +58,7 @@ export class StaticMultiSelectElement extends ElementBase implements StaticMulti
       confirm: getBuilderResult(this.props.confirm),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 

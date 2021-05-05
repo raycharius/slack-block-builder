@@ -9,14 +9,16 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getBuilderResult, getBuilderResults } from '../helpers';
-import { objectTypes } from '../constants';
+import { ElementType } from '../constants';
+
+import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
 
 export interface CheckboxesParams {
   actionId?: string;
 }
 
 export interface CheckboxesElement extends HasActionId,
-  HasConfirm,
+  HasConfirm<ConfirmationDialogBit>,
   HasEnd,
   HasInitialOptions,
   HasOptions,
@@ -31,7 +33,7 @@ export class CheckboxesElement extends ElementBase implements CheckboxesElement 
   constructor(params?: CheckboxesParams) {
     super(params);
 
-    this.props.type = objectTypes.elements.checkboxes;
+    this.props.type = ElementType.Checkboxes;
   }
 
   public build(): SlackDto {
@@ -41,7 +43,7 @@ export class CheckboxesElement extends ElementBase implements CheckboxesElement 
       confirm: getBuilderResult(this.props.confirm),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 

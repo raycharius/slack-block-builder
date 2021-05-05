@@ -9,14 +9,16 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getBuilderResult, getBuilderResults } from '../helpers';
-import { objectTypes } from '../constants';
+import { ElementType } from '../constants';
+
+import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
 
 export interface RadioButtonsParams {
   actionId?: string;
 }
 
 export interface RadioButtonsElement extends HasActionId,
-  HasConfirm,
+  HasConfirm<ConfirmationDialogBit>,
   HasEnd,
   HasInitialOption,
   HasOptions,
@@ -31,7 +33,7 @@ export class RadioButtonsElement extends ElementBase implements RadioButtonsElem
   constructor(params?: RadioButtonsParams) {
     super(params);
 
-    this.props.type = objectTypes.elements.radioButtons;
+    this.props.type = ElementType.RadioButtons;
   }
 
   public build(): SlackDto {
@@ -41,7 +43,7 @@ export class RadioButtonsElement extends ElementBase implements RadioButtonsElem
       confirm: getBuilderResult(this.props.confirm),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 

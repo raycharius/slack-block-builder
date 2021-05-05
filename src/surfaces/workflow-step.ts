@@ -12,7 +12,9 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResults } from '../helpers';
-import { objectTypes } from '../constants';
+import { SurfaceType } from '../constants';
+
+import type { ViewBlock } from '../types';
 
 export interface WorkflowStepParams {
   privateMetaData?: string;
@@ -23,7 +25,7 @@ export interface WorkflowStepSurface extends CanBuildToJSON,
   CanBuildToObject,
   CanGetBlocks,
   CanPrintPreviewUrl,
-  HasBlocks,
+  HasBlocks<ViewBlock>,
   HasCallbackId,
   HasPrivateMetaData,
   HasSubmitDisabled,
@@ -38,7 +40,7 @@ export class WorkflowStepSurface extends SurfaceBase implements WorkflowStepSurf
   constructor(params?: WorkflowStepParams) {
     super(params);
 
-    this.props.type = objectTypes.surfaces.workflowStep;
+    this.props.type = SurfaceType.WorkflowStep;
   }
 
   public build(): SlackDto {
@@ -49,7 +51,7 @@ export class WorkflowStepSurface extends SurfaceBase implements WorkflowStepSurf
       submit: getPlainTextObject(this.props.submit),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 

@@ -1,41 +1,4 @@
-export const objectTypes = {
-  surfaces: {
-    homeTab: 'home',
-    modal: 'modal',
-    workflowStep: 'workflow_step',
-  },
-  blocks: {
-    section: 'section',
-    actions: 'actions',
-    context: 'context',
-    input: 'input',
-    file: 'file',
-    divider: 'divider',
-    image: 'image',
-    header: 'header',
-  },
-  elements: {
-    button: 'button',
-    checkboxes: 'checkboxes',
-    datePicker: 'datepicker',
-    timePicker: 'timepicker',
-    image: 'image',
-    overflow: 'overflow',
-    textInput: 'plain_text_input',
-    radioButtons: 'radio_buttons',
-    staticSelect: 'static_select',
-    externalSelect: 'external_select',
-    userSelect: 'users_select',
-    conversationSelect: 'conversations_select',
-    channelSelect: 'channels_select',
-    staticMultiSelect: 'multi_static_select',
-    externalMultiSelect: 'multi_external_select',
-    usersMultiSelect: 'multi_users_select',
-    conversationsMultiSelect: 'multi_conversations_select',
-    channelsMultiSelect: 'multi_channels_select',
-  },
-  objects: {
-    text: 'plain_text',
-    markdown: 'mrkdwn',
-  },
-};
+export enum ObjectType {
+  Text = 'plain_text',
+  Markdown = 'mrkdwn',
+}

@@ -8,14 +8,16 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getBuilderResult, getBuilderResults } from '../helpers';
-import { objectTypes } from '../constants';
+import { ElementType } from '../constants';
+
+import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
 
 export interface OverflowMenuParams {
   actionId?: string;
 }
 
 export interface OverflowMenuElement extends HasActionId,
-  HasConfirm,
+  HasConfirm<ConfirmationDialogBit>,
   HasEnd,
   HasOptions,
   MustBuild {
@@ -29,7 +31,7 @@ export class OverflowMenuElement extends ElementBase implements OverflowMenuElem
   constructor(params?: OverflowMenuParams) {
     super(params);
 
-    this.props.type = objectTypes.elements.overflow;
+    this.props.type = ElementType.Overflow;
   }
 
   public build(): SlackDto {
@@ -38,7 +40,7 @@ export class OverflowMenuElement extends ElementBase implements OverflowMenuElem
       confirm: getBuilderResult(this.props.confirm),
     };
 
-    return this.getResult(SlackDto, augmentedProps);
+    return this.getResult<SlackDto>(SlackDto, augmentedProps);
   }
 }
 
