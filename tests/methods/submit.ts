@@ -1,16 +1,17 @@
 import { CompositeBuilderClassConfig } from '../test-config-types';
-import { props, paramMap } from '../../src/constants';
+import { Prop } from '../../src/constants';
 import { methodArgMocks } from '../mocks/method-arg-mocks';
 import { PlainTextObject } from '../../src/objects';
+import { SlackDto } from '../../src/lib';
 import * as checks from '../checks';
 
 export const submit = (params: CompositeBuilderClassConfig): void => {
   const config = {
     ...params,
     methodArgMock: methodArgMocks.submit,
-    methodName: props.submit,
-    propSetterPropName: props.submit,
-    slackDtoParamName: paramMap.submit,
+    methodName: Prop.Submit,
+    propSetterPropName: Prop.Submit,
+    slackDtoParamName: SlackDto.mapParam(Prop.Submit),
     mutatedValueType: PlainTextObject,
   };
 

@@ -1,14 +1,15 @@
 import { CompositeBuilderClassConfig } from '../test-config-types';
-import { props, paramMap, values } from '../../src/constants';
+import { Prop, DispatchOnType } from '../../src/constants';
+import { SlackDto } from '../../src/lib';
 import * as checks from '../checks';
 
 export const onEnterPressed = (params: CompositeBuilderClassConfig): void => {
   const config = {
     ...params,
-    methodName: props.dispatchActionOnEnterPressed,
-    propSetterPropName: props.onEnterPressed,
-    slackDtoParamName: paramMap.dispatchActionConfig,
-    expectedEnumValue: values.onEnterPressed,
+    methodName: Prop.DispatchActionOnEnterPressed,
+    propSetterPropName: Prop.OnEnterPressed,
+    slackDtoParamName: SlackDto.mapParam(Prop.DispatchActionConfig),
+    expectedEnumValue: DispatchOnType.OnEnterPressed,
     expectedBuiltValue: { trigger_actions_on: ['on_enter_pressed'] },
   };
 

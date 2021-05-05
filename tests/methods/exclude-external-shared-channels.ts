@@ -1,15 +1,16 @@
 import { CompositeBuilderClassConfig } from '../test-config-types';
-import { props, paramMap } from '../../src/constants';
+import { Prop } from '../../src/constants';
 import { methodArgMocks } from '../mocks/method-arg-mocks';
+import { SlackDto } from '../../src/lib';
 import * as checks from '../checks';
 
 export const excludeExternalSharedChannels = (params: CompositeBuilderClassConfig): void => {
   const config = {
     ...params,
     methodArgMock: methodArgMocks.excludeExternalSharedChannels,
-    methodName: props.excludeExternalSharedChannels,
-    propSetterPropName: props.excludeExternalSharedChannels,
-    slackDtoParamName: paramMap.filter,
+    methodName: Prop.ExcludeExternalSharedChannels,
+    propSetterPropName: Prop.ExcludeExternalSharedChannels,
+    slackDtoParamName: SlackDto.mapParam(Prop.Filter),
   };
 
   checks.boolTrueProperty(config);

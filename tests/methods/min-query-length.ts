@@ -1,15 +1,16 @@
 import { CompositeBuilderClassConfig } from '../test-config-types';
-import { props, paramMap } from '../../src/constants';
+import { Prop } from '../../src/constants';
 import { methodArgMocks } from '../mocks/method-arg-mocks';
+import { SlackDto } from '../../src/lib';
 import * as checks from '../checks';
 
 export const minQueryLength = (params: CompositeBuilderClassConfig): void => {
   const config = {
     ...params,
     methodArgMock: methodArgMocks.minQueryLength,
-    methodName: props.minQueryLength,
-    propSetterPropName: props.minQueryLength,
-    slackDtoParamName: paramMap.minQueryLength,
+    methodName: Prop.MinQueryLength,
+    propSetterPropName: Prop.MinQueryLength,
+    slackDtoParamName: SlackDto.mapParam(Prop.MinQueryLength),
   };
 
   checks.settableProperty(config);

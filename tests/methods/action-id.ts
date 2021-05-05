@@ -1,15 +1,16 @@
 import { CompositeBuilderClassConfig } from '../test-config-types';
-import { props, paramMap } from '../../src/constants';
+import { Prop } from '../../src/constants';
 import { methodArgMocks } from '../mocks/method-arg-mocks';
+import { SlackDto } from '../../src/lib';
 import * as checks from '../checks';
 
 export const actionId = (params: CompositeBuilderClassConfig): void => {
   const config = {
     ...params,
     methodArgMock: methodArgMocks.actionId,
-    methodName: props.actionId,
-    propSetterPropName: props.actionId,
-    slackDtoParamName: paramMap.actionId,
+    methodName: Prop.ActionId,
+    propSetterPropName: Prop.ActionId,
+    slackDtoParamName: SlackDto.mapParam(Prop.ActionId),
   };
 
   checks.settableProperty(config);

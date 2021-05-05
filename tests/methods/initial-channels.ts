@@ -1,15 +1,16 @@
 import { CompositeBuilderClassConfig } from '../test-config-types';
-import { props, paramMap } from '../../src/constants';
+import { Prop } from '../../src/constants';
 import { methodArgMocks } from '../mocks/method-arg-mocks';
+import { SlackDto } from '../../src/lib';
 import * as checks from '../checks';
 
 export const initialChannels = (params: CompositeBuilderClassConfig): void => {
   const config = {
     ...params,
     methodArgMock: methodArgMocks.initialChannels,
-    methodName: props.initialChannels,
-    propSetterPropName: props.initialChannels,
-    slackDtoParamName: paramMap.initialChannels,
+    methodName: Prop.InitialChannels,
+    propSetterPropName: Prop.InitialChannels,
+    slackDtoParamName: SlackDto.mapParam(Prop.InitialChannels),
   };
 
   checks.appendableProperty(config);

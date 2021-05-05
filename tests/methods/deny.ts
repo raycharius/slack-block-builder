@@ -1,16 +1,17 @@
 import { CompositeBuilderClassConfig } from '../test-config-types';
-import { props, paramMap } from '../../src/constants';
+import { Prop } from '../../src/constants';
 import { methodArgMocks } from '../mocks/method-arg-mocks';
 import { PlainTextObject } from '../../src/objects';
+import { SlackDto } from '../../src/lib';
 import * as checks from '../checks';
 
 export const deny = (params: CompositeBuilderClassConfig): void => {
   const config = {
     ...params,
     methodArgMock: methodArgMocks.deny,
-    methodName: props.deny,
-    propSetterPropName: props.deny,
-    slackDtoParamName: paramMap.deny,
+    methodName: Prop.Deny,
+    propSetterPropName: Prop.Deny,
+    slackDtoParamName: SlackDto.mapParam(Prop.Deny),
     mutatedValueType: PlainTextObject,
   };
 

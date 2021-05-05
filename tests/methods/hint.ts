@@ -1,16 +1,17 @@
 import { CompositeBuilderClassConfig } from '../test-config-types';
-import { props, paramMap } from '../../src/constants';
+import { Prop } from '../../src/constants';
 import { methodArgMocks } from '../mocks/method-arg-mocks';
 import { PlainTextObject } from '../../src/objects';
+import { SlackDto } from '../../src/lib';
 import * as checks from '../checks';
 
 export const hint = (params: CompositeBuilderClassConfig): void => {
   const config = {
     ...params,
     methodArgMock: methodArgMocks.hint,
-    methodName: props.hint,
-    propSetterPropName: props.hint,
-    slackDtoParamName: paramMap.hint,
+    methodName: Prop.Hint,
+    propSetterPropName: Prop.Hint,
+    slackDtoParamName: SlackDto.mapParam(Prop.Hint),
     mutatedValueType: PlainTextObject,
   };
 

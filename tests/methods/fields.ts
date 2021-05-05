@@ -1,16 +1,17 @@
 import { CompositeBuilderClassConfig } from '../test-config-types';
-import { props, paramMap } from '../../src/constants';
+import { Prop } from '../../src/constants';
 import { methodArgMocks } from '../mocks/method-arg-mocks';
 import { MarkdownObject } from '../../src/objects';
+import { SlackDto } from '../../src/lib';
 import * as checks from '../checks';
 
 export const fields = (params: CompositeBuilderClassConfig): void => {
   const config = {
     ...params,
     methodArgMock: methodArgMocks.fields,
-    methodName: props.fields,
-    propSetterPropName: props.fields,
-    slackDtoParamName: paramMap.fields,
+    methodName: Prop.Fields,
+    propSetterPropName: Prop.Fields,
+    slackDtoParamName: SlackDto.mapParam(Prop.Fields),
     mutatedValueType: MarkdownObject,
     expectArray: true,
   };

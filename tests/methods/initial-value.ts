@@ -1,15 +1,16 @@
 import { CompositeBuilderClassConfig } from '../test-config-types';
-import { props, paramMap } from '../../src/constants';
+import { Prop } from '../../src/constants';
 import { methodArgMocks } from '../mocks/method-arg-mocks';
+import { SlackDto } from '../../src/lib';
 import * as checks from '../checks';
 
 export const initialValue = (params: CompositeBuilderClassConfig): void => {
   const config = {
     ...params,
     methodArgMock: methodArgMocks.initialValue,
-    methodName: props.initialValue,
-    propSetterPropName: props.initialValue,
-    slackDtoParamName: paramMap.initialValue,
+    methodName: Prop.InitialValue,
+    propSetterPropName: Prop.InitialValue,
+    slackDtoParamName: SlackDto.mapParam(Prop.InitialValue),
   };
 
   checks.settableProperty(config);

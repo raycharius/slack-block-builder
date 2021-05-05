@@ -1,14 +1,15 @@
 import { CompositeBuilderClassConfig } from '../test-config-types';
-import { props, paramMap, values } from '../../src/constants';
+import { Prop, ButtonStyle } from '../../src/constants';
+import { SlackDto } from '../../src/lib';
 import * as checks from '../checks';
 
 export const danger = (params: CompositeBuilderClassConfig): void => {
   const config = {
     ...params,
-    methodName: props.danger,
-    propSetterPropName: props.style,
-    slackDtoParamName: paramMap.style,
-    expectedEnumValue: values.danger,
+    methodName: Prop.Danger,
+    propSetterPropName: Prop.Style,
+    slackDtoParamName: SlackDto.mapParam(Prop.Style),
+    expectedEnumValue: ButtonStyle.Danger,
   };
 
   checks.configurableEnumValueProperty(config);

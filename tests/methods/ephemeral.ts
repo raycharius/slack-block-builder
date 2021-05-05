@@ -1,14 +1,15 @@
 import { CompositeBuilderClassConfig } from '../test-config-types';
-import { props, paramMap, values } from '../../src/constants';
+import { Prop, ResponseType } from '../../src/constants';
+import { SlackDto } from '../../src/lib';
 import * as checks from '../checks';
 
 export const ephemeral = (params: CompositeBuilderClassConfig): void => {
   const config = {
     ...params,
-    methodName: props.ephemeral,
-    propSetterPropName: props.responseType,
-    slackDtoParamName: paramMap.responseType,
-    expectedEnumValue: values.ephemeral,
+    methodName: Prop.Ephemeral,
+    propSetterPropName: Prop.ResponseType,
+    slackDtoParamName: SlackDto.mapParam(Prop.ResponseType),
+    expectedEnumValue: ResponseType.Ephemeral,
   };
 
   checks.configurableEnumValueProperty(config);

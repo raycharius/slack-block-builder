@@ -19,15 +19,15 @@ export const mutatedBuild = (params: MethodTestArgs): void => {
     const built = instance.build();
 
     if (expectArray) {
-      instance.result[propSetterPropName].forEach((value, i) => {
-        expect(instance.result[propSetterPropName][i]).toBeInstanceOf(mutatedValueType);
-        expect(built[slackDtoParamName][i]).toEqual(instance.result[propSetterPropName][i]);
+      instance.result[slackDtoParamName].forEach((value, i) => {
+        expect(instance.result[slackDtoParamName][i]).toBeInstanceOf(mutatedValueType);
+        expect(built[slackDtoParamName][i]).toEqual(instance.result[slackDtoParamName][i]);
       });
 
       return;
     }
 
-    expect(instance.result[propSetterPropName]).toBeInstanceOf(mutatedValueType);
-    expect(built[slackDtoParamName]).toEqual(instance.result[propSetterPropName]);
+    expect(instance.result[slackDtoParamName]).toBeInstanceOf(mutatedValueType);
+    expect(built[slackDtoParamName]).toEqual(instance.result[slackDtoParamName]);
   });
 };

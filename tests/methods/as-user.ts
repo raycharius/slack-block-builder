@@ -1,15 +1,16 @@
 import { CompositeBuilderClassConfig } from '../test-config-types';
-import { props, paramMap } from '../../src/constants';
+import { Prop } from '../../src/constants';
 import { methodArgMocks } from '../mocks/method-arg-mocks';
+import { SlackDto } from '../../src/lib';
 import * as checks from '../checks';
 
 export const asUser = (params: CompositeBuilderClassConfig): void => {
   const config = {
     ...params,
     methodArgMock: methodArgMocks.asUser,
-    methodName: props.asUser,
-    propSetterPropName: props.asUser,
-    slackDtoParamName: paramMap.asUser,
+    methodName: Prop.AsUser,
+    propSetterPropName: Prop.AsUser,
+    slackDtoParamName: SlackDto.mapParam(Prop.AsUser),
   };
 
   checks.boolTrueProperty(config);
