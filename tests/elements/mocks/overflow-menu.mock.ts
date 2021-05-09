@@ -1,7 +1,7 @@
-import { OverflowMenuElement } from '../../../src/elements/overflow-menu';
+import { OverflowMenuBuilder } from '../../../src/elements/overflow-menu';
 
 export const params = {
   actionId: 'actionId',
 };
 
-export const mock = new OverflowMenuElement(params);
+export const mock = new OverflowMenuBuilder(params);

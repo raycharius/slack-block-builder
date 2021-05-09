@@ -1,4 +1,4 @@
-import { UserSelectElement as Class } from '../../src/elements/user-select';
+import { UserSelectBuilder as Class } from '../../src/elements/user-select';
 import { params } from './mocks/user-select.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

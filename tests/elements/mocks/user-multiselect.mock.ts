@@ -1,4 +1,4 @@
-import { UserMultiSelectElement } from '../../../src/elements/user-multi-select';
+import { UserMultiSelectBuilder } from '../../../src/elements/user-multi-select';
 
 export const params = {
   placeholder: 'placeholder',
@@ -6,4 +6,4 @@ export const params = {
   maxSelectedItems: 50,
 };
 
-export const mock = new UserMultiSelectElement(params);
+export const mock = new UserMultiSelectBuilder(params);

@@ -1,4 +1,4 @@
-import { InputBlock } from '../../../src/blocks/input';
+import { InputBuilder } from '../../../src/blocks/input';
 
 export const params = {
   label: 'label',
@@ -6,4 +6,4 @@ export const params = {
   hint: 'hint',
 };
 
-export const mock = new InputBlock(params);
+export const mock = new InputBuilder(params);

@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
 
-import { HomeTabSurface, HomeTabParams } from './home-tab';
-import { MessageSurface, MessageParams } from './message';
-import { ModalSurface, ModalParams } from './modal';
-import { WorkflowStepSurface, WorkflowStepParams } from './workflow-step';
+import { HomeTabBuilder, HomeTabParams } from './home-tab';
+import { MessageBuilder, MessageParams } from './message';
+import { ModalBuilder, ModalParams } from './modal';
+import { WorkflowStepBuilder, WorkflowStepParams } from './workflow-step';
 
 /**
  * Functions here do not use arrow functions stored in variables for IDE color compatibility.
@@ -18,8 +18,8 @@ import { WorkflowStepSurface, WorkflowStepParams } from './workflow-step';
  * {@link https://api.slack.com/surfaces/tabs|View in Slack API Documentation}
  */
 
-export function HomeTab(params?: HomeTabParams): HomeTabSurface {
-  return new HomeTabSurface(params);
+export function HomeTab(params?: HomeTabParams): HomeTabBuilder {
+  return new HomeTabBuilder(params);
 }
 
 /**
@@ -32,8 +32,8 @@ export function HomeTab(params?: HomeTabParams): HomeTabSurface {
  * {@link https://api.slack.com/messaging/composing|View in Slack API Documentation}
  */
 
-export function Message(params?: MessageParams): MessageSurface {
-  return new MessageSurface(params);
+export function Message(params?: MessageParams): MessageBuilder {
+  return new MessageBuilder(params);
 }
 
 /**
@@ -48,8 +48,8 @@ export function Message(params?: MessageParams): MessageSurface {
  * {@link https://api.slack.com/reference/surfaces/views|View in Slack API Documentation}
  */
 
-export function Modal(params?: ModalParams): ModalSurface {
-  return new ModalSurface(params);
+export function Modal(params?: ModalParams): ModalBuilder {
+  return new ModalBuilder(params);
 }
 
 /**
@@ -60,8 +60,8 @@ export function Modal(params?: ModalParams): ModalSurface {
  * {@link https://api.slack.com/reference/surfaces/views|View in Slack API Documentation}
  */
 
-export function WorkflowStep(params?: WorkflowStepParams): WorkflowStepSurface {
-  return new WorkflowStepSurface(params);
+export function WorkflowStep(params?: WorkflowStepParams): WorkflowStepBuilder {
+  return new WorkflowStepBuilder(params);
 }
 
 const surfaceObjects = {

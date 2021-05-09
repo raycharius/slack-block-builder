@@ -11,14 +11,14 @@ import {
 import { applyMixins, getBuilderResult, getBuilderResults } from '../helpers';
 import { ElementType } from '../constants';
 
-import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
+import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface CheckboxesParams {
   actionId?: string;
 }
 
-export interface CheckboxesElement extends HasActionId,
-  HasConfirm<ConfirmationDialogBit>,
+export interface CheckboxesBuilder extends HasActionId,
+  HasConfirm<ConfirmationDialogBuilder>,
   HasEnd,
   HasInitialOptions,
   HasOptions,
@@ -29,7 +29,7 @@ export interface CheckboxesElement extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#checkboxes}
  */
 
-export class CheckboxesElement extends ElementBase implements CheckboxesElement {
+export class CheckboxesBuilder extends ElementBase implements CheckboxesBuilder {
   constructor(params?: CheckboxesParams) {
     super(params);
 
@@ -47,7 +47,7 @@ export class CheckboxesElement extends ElementBase implements CheckboxesElement 
   }
 }
 
-applyMixins(CheckboxesElement, [
+applyMixins(CheckboxesBuilder, [
   HasActionId,
   HasConfirm,
   HasEnd,

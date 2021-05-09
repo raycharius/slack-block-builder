@@ -1,4 +1,4 @@
-import { SectionBlock as Class } from '../../src/blocks/section';
+import { SectionBuilder as Class } from '../../src/blocks/section';
 import { params } from './mocks/section.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

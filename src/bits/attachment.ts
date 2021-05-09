@@ -16,7 +16,7 @@ export interface AttachmentParams {
   fallback?: string;
 }
 
-export interface AttachmentBit extends HasBlocks<Block>,
+export interface AttachmentBuilder extends HasBlocks<Block>,
   HasColor,
   HasEnd,
   HasFallback,
@@ -27,7 +27,7 @@ export interface AttachmentBit extends HasBlocks<Block>,
  * {@link https://api.slack.com/reference/messaging/attachments}
  */
 
-export class AttachmentBit extends BitBase implements AttachmentBit {
+export class AttachmentBuilder extends BitBase implements AttachmentBuilder {
   constructor(params?: AttachmentParams) {
     super(params);
   }
@@ -41,7 +41,7 @@ export class AttachmentBit extends BitBase implements AttachmentBit {
   }
 }
 
-applyMixins(AttachmentBit, [
+applyMixins(AttachmentBuilder, [
   HasBlocks,
   HasColor,
   HasEnd,

@@ -1,7 +1,7 @@
-import { CheckboxesElement } from '../../../src/elements/checkboxes';
+import { CheckboxesBuilder } from '../../../src/elements/checkboxes';
 
 export const params = {
   actionId: 'actionId',
 };
 
-export const mock = new CheckboxesElement(params);
+export const mock = new CheckboxesBuilder(params);

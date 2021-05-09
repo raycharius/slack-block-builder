@@ -19,7 +19,7 @@ export interface ConfirmationDialogParams {
   title?: string;
 }
 
-export interface ConfirmationDialogBit extends HasConfirm<string>,
+export interface ConfirmationDialogBuilder extends HasConfirm<string>,
   HasDanger,
   HasDeny,
   HasEnd,
@@ -33,7 +33,7 @@ export interface ConfirmationDialogBit extends HasConfirm<string>,
  * {@link https://api.slack.com/reference/block-kit/composition-objects#confirm}
  */
 
-export class ConfirmationDialogBit extends BitBase implements ConfirmationDialogBit {
+export class ConfirmationDialogBuilder extends BitBase implements ConfirmationDialogBuilder {
   constructor(params?: ConfirmationDialogParams) {
     super(params);
   }
@@ -50,7 +50,7 @@ export class ConfirmationDialogBit extends BitBase implements ConfirmationDialog
   }
 }
 
-applyMixins(ConfirmationDialogBit, [
+applyMixins(ConfirmationDialogBuilder, [
   HasConfirm,
   HasDanger,
   HasDeny,

@@ -1,23 +1,23 @@
 /* eslint-disable max-len */
 
-import { ButtonElement, ButtonParams } from './button';
-import { ChannelMultiSelectElement, ChannelMultiSelectParams } from './channel-multi-select';
-import { ChannelSelectElement, ChannelSelectParams } from './channel-select';
-import { CheckboxesElement, CheckboxesParams } from './checkboxes';
-import { ConversationMultiSelectElement, ConversationMultiSelectParams } from './conversation-multi-select';
-import { ConversationSelectElement, ConversationSelectParams } from './conversation-select';
-import { DatePickerElement, DatePickerParams } from './datepicker';
-import { ExternalMultiSelectElement, ExternalMultiSelectParams } from './external-multi-select';
-import { ExternalSelectElement, ExternalSelectParams } from './external-select';
-import { ImgElement, ImgParams } from './img';
-import { OverflowMenuElement, OverflowMenuParams } from './overflow-menu';
-import { RadioButtonsElement, RadioButtonsParams } from './radio-buttons';
-import { StaticMultiSelectElement, StaticMultiSelectParams } from './static-multi-select';
-import { StaticSelectElement, StaticSelectParams } from './static-select';
-import { TextInputElement, TextInputParams } from './text-input';
-import { TimePickerElement, TimePickerParams } from './timepicker';
-import { UserMultiSelectElement, UserMultiSelectParams } from './user-multi-select';
-import { UserSelectElement, UserSelectParams } from './user-select';
+import { ButtonBuilder, ButtonParams } from './button';
+import { ChannelMultiSelectBuilder, ChannelMultiSelectParams } from './channel-multi-select';
+import { ChannelSelectBuilder, ChannelSelectParams } from './channel-select';
+import { CheckboxesBuilder, CheckboxesParams } from './checkboxes';
+import { ConversationMultiSelectBuilder, ConversationMultiSelectParams } from './conversation-multi-select';
+import { ConversationSelectBuilder, ConversationSelectParams } from './conversation-select';
+import { DatePickerBuilder, DatePickerParams } from './datepicker';
+import { ExternalMultiSelectBuilder, ExternalMultiSelectParams } from './external-multi-select';
+import { ExternalSelectBuilder, ExternalSelectParams } from './external-select';
+import { ImgBuilder, ImgParams } from './img';
+import { OverflowMenuBuilder, OverflowMenuParams } from './overflow-menu';
+import { RadioButtonsBuilder, RadioButtonsParams } from './radio-buttons';
+import { StaticMultiSelectBuilder, StaticMultiSelectParams } from './static-multi-select';
+import { StaticSelectBuilder, StaticSelectParams } from './static-select';
+import { TextInputBuilder, TextInputParams } from './text-input';
+import { TimePickerBuilder, TimePickerParams } from './timepicker';
+import { UserMultiSelectBuilder, UserMultiSelectParams } from './user-multi-select';
+import { UserSelectBuilder, UserSelectParams } from './user-select';
 
 /**
  * Functions here do not use arrow functions stored in variables for IDE color compatibility.
@@ -33,8 +33,8 @@ import { UserSelectElement, UserSelectParams } from './user-select';
  * {@link https://api.slack.com/reference/block-kit/block-elements#button|View in Slack API Documentation}
  */
 
-export function Button(params?: ButtonParams): ButtonElement {
-  return new ButtonElement(params);
+export function Button(params?: ButtonParams): ButtonBuilder {
+  return new ButtonBuilder(params);
 }
 
 /**
@@ -46,8 +46,8 @@ export function Button(params?: ButtonParams): ButtonElement {
  * {@link https://api.slack.com/reference/block-kit/block-elements#channel_multi_select|View in Slack API Documentation}
  */
 
-export function ChannelMultiSelect(params?: ChannelMultiSelectParams): ChannelMultiSelectElement {
-  return new ChannelMultiSelectElement(params);
+export function ChannelMultiSelect(params?: ChannelMultiSelectParams): ChannelMultiSelectBuilder {
+  return new ChannelMultiSelectBuilder(params);
 }
 
 /**
@@ -59,8 +59,8 @@ export function ChannelMultiSelect(params?: ChannelMultiSelectParams): ChannelMu
  * {@link https://api.slack.com/reference/block-kit/block-elements#channel_select|View in Slack API Documentation}
  */
 
-export function ChannelSelect(params?: ChannelSelectParams): ChannelSelectElement {
-  return new ChannelSelectElement(params);
+export function ChannelSelect(params?: ChannelSelectParams): ChannelSelectBuilder {
+  return new ChannelSelectBuilder(params);
 }
 
 /**
@@ -70,8 +70,8 @@ export function ChannelSelect(params?: ChannelSelectParams): ChannelSelectElemen
  * {@link https://api.slack.com/reference/block-kit/block-elements#checkboxes|View in Slack API Documentation}
  */
 
-export function Checkboxes(params?: CheckboxesParams): CheckboxesElement {
-  return new CheckboxesElement(params);
+export function Checkboxes(params?: CheckboxesParams): CheckboxesBuilder {
+  return new CheckboxesBuilder(params);
 }
 
 /**
@@ -83,8 +83,8 @@ export function Checkboxes(params?: CheckboxesParams): CheckboxesElement {
  * {@link https://api.slack.com/reference/block-kit/block-elements#conversation_multi_select|View in Slack API Documentation}
  */
 
-export function ConversationMultiSelect(params?: ConversationMultiSelectParams): ConversationMultiSelectElement {
-  return new ConversationMultiSelectElement(params);
+export function ConversationMultiSelect(params?: ConversationMultiSelectParams): ConversationMultiSelectBuilder {
+  return new ConversationMultiSelectBuilder(params);
 }
 
 /**
@@ -96,8 +96,8 @@ export function ConversationMultiSelect(params?: ConversationMultiSelectParams):
  * {@link https://api.slack.com/reference/block-kit/block-elements#conversation_multi_select|View in Slack API Documentation}
  */
 
-export function ConversationSelect(params?: ConversationSelectParams): ConversationSelectElement {
-  return new ConversationSelectElement(params);
+export function ConversationSelect(params?: ConversationSelectParams): ConversationSelectBuilder {
+  return new ConversationSelectBuilder(params);
 }
 
 /**
@@ -109,8 +109,8 @@ export function ConversationSelect(params?: ConversationSelectParams): Conversat
  * {@link https://api.slack.com/reference/block-kit/block-elements#datepicker|View in Slack API Documentation}
  */
 
-export function DatePicker(params?: DatePickerParams): DatePickerElement {
-  return new DatePickerElement(params);
+export function DatePicker(params?: DatePickerParams): DatePickerBuilder {
+  return new DatePickerBuilder(params);
 }
 
 /**
@@ -123,8 +123,8 @@ export function DatePicker(params?: DatePickerParams): DatePickerElement {
  * {@link https://api.slack.com/reference/block-kit/block-elements#external_multi_select|View in Slack API Documentation}
  */
 
-export function ExternalMultiSelect(params?: ExternalMultiSelectParams): ExternalMultiSelectElement {
-  return new ExternalMultiSelectElement(params);
+export function ExternalMultiSelect(params?: ExternalMultiSelectParams): ExternalMultiSelectBuilder {
+  return new ExternalMultiSelectBuilder(params);
 }
 
 /**
@@ -136,8 +136,8 @@ export function ExternalMultiSelect(params?: ExternalMultiSelectParams): Externa
  * {@link https://api.slack.com/reference/block-kit/block-elements#external_select|View in Slack API Documentation}
  */
 
-export function ExternalSelect(params?: ExternalSelectParams): ExternalSelectElement {
-  return new ExternalSelectElement(params);
+export function ExternalSelect(params?: ExternalSelectParams): ExternalSelectBuilder {
+  return new ExternalSelectBuilder(params);
 }
 
 /**
@@ -148,8 +148,8 @@ export function ExternalSelect(params?: ExternalSelectParams): ExternalSelectEle
  * {@link https://api.slack.com/reference/block-kit/block-elements#image|View in Slack API Documentation}
  */
 
-export function Img(params?: ImgParams): ImgElement {
-  return new ImgElement(params);
+export function Img(params?: ImgParams): ImgBuilder {
+  return new ImgBuilder(params);
 }
 
 /**
@@ -159,8 +159,8 @@ export function Img(params?: ImgParams): ImgElement {
  * {@link https://api.slack.com/reference/block-kit/block-elements#overflow|View in Slack API Documentation}
  */
 
-export function OverflowMenu(params?: OverflowMenuParams): OverflowMenuElement {
-  return new OverflowMenuElement(params);
+export function OverflowMenu(params?: OverflowMenuParams): OverflowMenuBuilder {
+  return new OverflowMenuBuilder(params);
 }
 
 /**
@@ -170,8 +170,8 @@ export function OverflowMenu(params?: OverflowMenuParams): OverflowMenuElement {
  * {@link https://api.slack.com/reference/block-kit/block-elements#radio|View in Slack API Documentation}
  */
 
-export function RadioButtons(params?: RadioButtonsParams): RadioButtonsElement {
-  return new RadioButtonsElement(params);
+export function RadioButtons(params?: RadioButtonsParams): RadioButtonsBuilder {
+  return new RadioButtonsBuilder(params);
 }
 
 /**
@@ -183,8 +183,8 @@ export function RadioButtons(params?: RadioButtonsParams): RadioButtonsElement {
  * {@link https://api.slack.com/reference/block-kit/block-elements#static_multi_select|View in Slack API Documentation}
  */
 
-export function StaticMultiSelect(params?: StaticMultiSelectParams): StaticMultiSelectElement {
-  return new StaticMultiSelectElement(params);
+export function StaticMultiSelect(params?: StaticMultiSelectParams): StaticMultiSelectBuilder {
+  return new StaticMultiSelectBuilder(params);
 }
 
 /**
@@ -195,8 +195,8 @@ export function StaticMultiSelect(params?: StaticMultiSelectParams): StaticMulti
  * {@link https://api.slack.com/reference/block-kit/block-elements#static_select|View in Slack API Documentation}
  */
 
-export function StaticSelect(params?: StaticSelectParams): StaticSelectElement {
-  return new StaticSelectElement(params);
+export function StaticSelect(params?: StaticSelectParams): StaticSelectBuilder {
+  return new StaticSelectBuilder(params);
 }
 
 /**
@@ -210,8 +210,8 @@ export function StaticSelect(params?: StaticSelectParams): StaticSelectElement {
  * {@link https://api.slack.com/reference/block-kit/block-elements#input|View in Slack API Documentation}
  */
 
-export function TextInput(params?: TextInputParams): TextInputElement {
-  return new TextInputElement(params);
+export function TextInput(params?: TextInputParams): TextInputBuilder {
+  return new TextInputBuilder(params);
 }
 
 /**
@@ -223,8 +223,8 @@ export function TextInput(params?: TextInputParams): TextInputElement {
  * {@link https://api.slack.com/reference/block-kit/block-elements#timepicker|View in Slack API Documentation}
  */
 
-export function TimePicker(params?: TimePickerParams): TimePickerElement {
-  return new TimePickerElement(params);
+export function TimePicker(params?: TimePickerParams): TimePickerBuilder {
+  return new TimePickerBuilder(params);
 }
 
 /**
@@ -236,8 +236,8 @@ export function TimePicker(params?: TimePickerParams): TimePickerElement {
  * {@link https://api.slack.com/reference/block-kit/block-elements#users_multi_select|View in Slack API Documentation}
  */
 
-export function UserMultiSelect(params?: UserMultiSelectParams): UserMultiSelectElement {
-  return new UserMultiSelectElement(params);
+export function UserMultiSelect(params?: UserMultiSelectParams): UserMultiSelectBuilder {
+  return new UserMultiSelectBuilder(params);
 }
 
 /**
@@ -249,8 +249,8 @@ export function UserMultiSelect(params?: UserMultiSelectParams): UserMultiSelect
  * {@link https://api.slack.com/reference/block-kit/block-elements#users_select|View in Slack API Documentation}
  */
 
-export function UserSelect(params?: UserSelectParams): UserSelectElement {
-  return new UserSelectElement(params);
+export function UserSelect(params?: UserSelectParams): UserSelectBuilder {
+  return new UserSelectBuilder(params);
 }
 
 const elementObjects = {

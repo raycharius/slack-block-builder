@@ -1,4 +1,4 @@
-import { DatePickerElement as Class } from '../../src/elements/datepicker';
+import { DatePickerBuilder as Class } from '../../src/elements/datepicker';
 import { params } from './mocks/datepicker.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

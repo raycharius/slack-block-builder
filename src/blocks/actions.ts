@@ -15,7 +15,7 @@ export interface ActionsParams {
   blockId?: string;
 }
 
-export interface ActionsBlock extends HasBlockId,
+export interface ActionsBuilder extends HasBlockId,
   HasEnd,
   HasElements<ActionsElement>,
   MustBuild {
@@ -25,7 +25,7 @@ export interface ActionsBlock extends HasBlockId,
  * {@link https://api.slack.com/reference/block-kit/blocks#actions}
  */
 
-export class ActionsBlock extends BlockBase implements ActionsBlock {
+export class ActionsBuilder extends BlockBase implements ActionsBuilder {
   constructor(params?: ActionsParams) {
     super(params);
 
@@ -41,7 +41,7 @@ export class ActionsBlock extends BlockBase implements ActionsBlock {
   }
 }
 
-applyMixins(ActionsBlock, [
+applyMixins(ActionsBuilder, [
   HasBlockId,
   HasEnd,
   HasElements,

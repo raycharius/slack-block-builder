@@ -1,4 +1,4 @@
-import { TimePickerElement } from '../../../src/elements/timepicker';
+import { TimePickerBuilder } from '../../../src/elements/timepicker';
 
 export const params = {
   placeholder: 'placeholder',
@@ -6,4 +6,4 @@ export const params = {
   initialTime: '21:45',
 };
 
-export const mock = new TimePickerElement(params);
+export const mock = new TimePickerBuilder(params);

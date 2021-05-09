@@ -10,14 +10,14 @@ import {
 import { applyMixins, getBuilderResult, getBuilderResults } from '../helpers';
 import { ElementType } from '../constants';
 
-import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
+import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface OverflowMenuParams {
   actionId?: string;
 }
 
-export interface OverflowMenuElement extends HasActionId,
-  HasConfirm<ConfirmationDialogBit>,
+export interface OverflowMenuBuilder extends HasActionId,
+  HasConfirm<ConfirmationDialogBuilder>,
   HasEnd,
   HasOptions,
   MustBuild {
@@ -27,7 +27,7 @@ export interface OverflowMenuElement extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#overflow}
  */
 
-export class OverflowMenuElement extends ElementBase implements OverflowMenuElement {
+export class OverflowMenuBuilder extends ElementBase implements OverflowMenuBuilder {
   constructor(params?: OverflowMenuParams) {
     super(params);
 
@@ -44,7 +44,7 @@ export class OverflowMenuElement extends ElementBase implements OverflowMenuElem
   }
 }
 
-applyMixins(OverflowMenuElement, [
+applyMixins(OverflowMenuBuilder, [
   HasActionId,
   HasConfirm,
   HasEnd,

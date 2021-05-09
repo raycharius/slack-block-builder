@@ -1,19 +1,19 @@
-import { AttachmentBit } from '../../src/bits/attachment';
-import { ConfirmationDialogBit } from '../../src/bits/confirmation-dialog';
+import { AttachmentBuilder } from '../../src/bits/attachment';
+import { ConfirmationDialogBuilder } from '../../src/bits/confirmation-dialog';
 import { ElementBase, BlockBase } from '../../src/base';
-import { OptionBit } from '../../src/bits/option';
-import { OptionGroupBit } from '../../src/bits/option-group';
+import { OptionBuilder } from '../../src/bits/option';
+import { OptionGroupBuilder } from '../../src/bits/option-group';
 import { PlainTextObject, MarkdownObject, FilterObject } from '../../src/objects';
 
 module.exports = {
-  AttachmentBit,
+  AttachmentBit: AttachmentBuilder,
   Block: BlockBase,
-  ConfirmationDialogBit,
+  ConfirmationDialogBit: ConfirmationDialogBuilder,
   Date,
   Element: ElementBase,
   FilterObject,
   MarkdownObject,
-  OptionBit,
-  OptionGroupBit,
+  OptionBit: OptionBuilder,
+  OptionGroupBit: OptionGroupBuilder,
   PlainTextObject,
 };

@@ -19,7 +19,7 @@ export interface OptionParams {
   value?: string;
 }
 
-export interface OptionBit extends HasDescription,
+export interface OptionBuilder extends HasDescription,
   HasEnd,
   HasText,
   HasUrl,
@@ -31,7 +31,7 @@ export interface OptionBit extends HasDescription,
  * {@link https://api.slack.com/reference/block-kit/composition-objects#option}
  */
 
-export class OptionBit extends BitBase implements OptionBit {
+export class OptionBuilder extends BitBase implements OptionBuilder {
   constructor(params?: OptionParams) {
     super(params);
   }
@@ -50,7 +50,7 @@ export class OptionBit extends BitBase implements OptionBit {
   }
 }
 
-applyMixins(OptionBit, [
+applyMixins(OptionBuilder, [
   HasDescription,
   HasEnd,
   HasText,

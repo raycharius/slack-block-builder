@@ -1,4 +1,4 @@
-import { UserMultiSelectElement as Class } from '../../src/elements/user-multi-select';
+import { UserMultiSelectBuilder as Class } from '../../src/elements/user-multi-select';
 import { params } from './mocks/user-multiselect.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

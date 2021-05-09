@@ -1,4 +1,4 @@
-import { HomeTabSurface } from '../../../src/surfaces/home-tab';
+import { HomeTabBuilder } from '../../../src/surfaces/home-tab';
 
 export const params = {
   privateMetaData: 'privateMetaData',
@@ -6,4 +6,4 @@ export const params = {
   externalId: 'externalId',
 };
 
-export const mock = new HomeTabSurface(params);
+export const mock = new HomeTabBuilder(params);

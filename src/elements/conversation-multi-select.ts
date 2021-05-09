@@ -21,7 +21,7 @@ import {
 } from '../helpers';
 import { ElementType } from '../constants';
 
-import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
+import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface ConversationMultiSelectParams {
   actionId?: string;
@@ -29,8 +29,8 @@ export interface ConversationMultiSelectParams {
   placeholder?: string;
 }
 
-export interface ConversationMultiSelectElement extends HasActionId,
-  HasConfirm<ConfirmationDialogBit>,
+export interface ConversationMultiSelectBuilder extends HasActionId,
+  HasConfirm<ConfirmationDialogBuilder>,
   HasDefaultToCurrentConversation,
   HasEnd,
   HasExcludeBotUsers,
@@ -46,8 +46,8 @@ export interface ConversationMultiSelectElement extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#conversation_multi_select}
  */
 
-export class ConversationMultiSelectElement extends ElementBase
-  implements ConversationMultiSelectElement {
+export class ConversationMultiSelectBuilder extends ElementBase
+  implements ConversationMultiSelectBuilder {
   constructor(params?: ConversationMultiSelectParams) {
     super(params);
 
@@ -65,7 +65,7 @@ export class ConversationMultiSelectElement extends ElementBase
   }
 }
 
-applyMixins(ConversationMultiSelectElement, [
+applyMixins(ConversationMultiSelectBuilder, [
   HasActionId,
   HasConfirm,
   HasDefaultToCurrentConversation,

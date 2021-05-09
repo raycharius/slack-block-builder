@@ -1,4 +1,4 @@
-import { AttachmentBit as Class } from '../../src/bits/attachment';
+import { AttachmentBuilder as Class } from '../../src/bits/attachment';
 import { params } from './mocks/attachment.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

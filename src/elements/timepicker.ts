@@ -11,7 +11,7 @@ import {
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
 import { ElementType } from '../constants';
 
-import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
+import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface TimePickerParams {
   actionId?: string;
@@ -19,8 +19,8 @@ export interface TimePickerParams {
   placeholder?: string;
 }
 
-export interface TimePickerElement extends HasActionId,
-  HasConfirm<ConfirmationDialogBit>,
+export interface TimePickerBuilder extends HasActionId,
+  HasConfirm<ConfirmationDialogBuilder>,
   HasEnd,
   HasInitialTime,
   HasPlaceholder,
@@ -31,7 +31,7 @@ export interface TimePickerElement extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#timepicker}
  */
 
-export class TimePickerElement extends ElementBase implements TimePickerElement {
+export class TimePickerBuilder extends ElementBase implements TimePickerBuilder {
   constructor(params?: TimePickerParams) {
     super(params);
 
@@ -48,7 +48,7 @@ export class TimePickerElement extends ElementBase implements TimePickerElement 
   }
 }
 
-applyMixins(TimePickerElement, [
+applyMixins(TimePickerBuilder, [
   HasActionId,
   HasConfirm,
   HasEnd,

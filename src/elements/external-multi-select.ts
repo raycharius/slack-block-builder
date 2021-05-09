@@ -18,7 +18,7 @@ import {
 } from '../helpers';
 import { ElementType } from '../constants';
 
-import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
+import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface ExternalMultiSelectParams {
   actionId?: string;
@@ -27,8 +27,8 @@ export interface ExternalMultiSelectParams {
   placeholder?: string;
 }
 
-export interface ExternalMultiSelectElement extends HasActionId,
-  HasConfirm<ConfirmationDialogBit>,
+export interface ExternalMultiSelectBuilder extends HasActionId,
+  HasConfirm<ConfirmationDialogBuilder>,
   HasEnd,
   HasInitialOptions,
   HasMaxSelectedItems,
@@ -41,7 +41,7 @@ export interface ExternalMultiSelectElement extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#external_multi_select}
  */
 
-export class ExternalMultiSelectElement extends ElementBase implements ExternalMultiSelectElement {
+export class ExternalMultiSelectBuilder extends ElementBase implements ExternalMultiSelectBuilder {
   constructor(params?: ExternalMultiSelectParams) {
     super(params);
 
@@ -59,7 +59,7 @@ export class ExternalMultiSelectElement extends ElementBase implements ExternalM
   }
 }
 
-applyMixins(ExternalMultiSelectElement, [
+applyMixins(ExternalMultiSelectBuilder, [
   HasActionId,
   HasConfirm,
   HasEnd,

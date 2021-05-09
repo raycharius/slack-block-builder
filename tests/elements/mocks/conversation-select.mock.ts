@@ -1,4 +1,4 @@
-import { ConversationSelectElement } from '../../../src/elements/conversation-select';
+import { ConversationSelectBuilder } from '../../../src/elements/conversation-select';
 
 export const params = {
   placeholder: 'placeholder',
@@ -6,4 +6,4 @@ export const params = {
   initialConversation: 'initialConversation',
 };
 
-export const mock = new ConversationSelectElement(params);
+export const mock = new ConversationSelectBuilder(params);

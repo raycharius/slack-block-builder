@@ -1,4 +1,4 @@
-import { TextInputElement } from '../../../src/elements/text-input';
+import { TextInputBuilder } from '../../../src/elements/text-input';
 
 export const params = {
   placeholder: 'placeholder',
@@ -8,4 +8,4 @@ export const params = {
   maxLength: 300,
 };
 
-export const mock = new TextInputElement(params);
+export const mock = new TextInputBuilder(params);

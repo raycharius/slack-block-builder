@@ -14,7 +14,7 @@ export interface ImgParams {
   altText?: string;
 }
 
-export interface ImgElement extends HasAltText,
+export interface ImgBuilder extends HasAltText,
   HasImageUrl,
   HasEnd,
   MustBuild {
@@ -24,7 +24,7 @@ export interface ImgElement extends HasAltText,
  * {@link https://api.slack.com/reference/block-kit/block-elements#image}
  */
 
-export class ImgElement extends ElementBase implements ImgElement {
+export class ImgBuilder extends ElementBase implements ImgBuilder {
   constructor(params?: ImgParams) {
     super(params);
 
@@ -36,7 +36,7 @@ export class ImgElement extends ElementBase implements ImgElement {
   }
 }
 
-applyMixins(ImgElement, [
+applyMixins(ImgBuilder, [
   HasAltText,
   HasImageUrl,
   HasEnd,

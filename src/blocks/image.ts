@@ -18,7 +18,7 @@ export interface ImageParams {
   title?: string;
 }
 
-export interface ImageBlock extends HasAltText,
+export interface ImageBuilder extends HasAltText,
   HasBlockId,
   HasEnd,
   HasImageUrl,
@@ -30,7 +30,7 @@ export interface ImageBlock extends HasAltText,
  * {@link https://api.slack.com/reference/block-kit/blocks#image}
  */
 
-export class ImageBlock extends BlockBase implements ImageBlock {
+export class ImageBuilder extends BlockBase implements ImageBuilder {
   constructor(params?: ImageParams) {
     super(params);
 
@@ -46,7 +46,7 @@ export class ImageBlock extends BlockBase implements ImageBlock {
   }
 }
 
-applyMixins(ImageBlock, [
+applyMixins(ImageBuilder, [
   HasAltText,
   HasBlockId,
   HasEnd,

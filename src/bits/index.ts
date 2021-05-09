@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
 
-import { AttachmentBit, AttachmentParams } from './attachment';
-import { ConfirmationDialogBit, ConfirmationDialogParams } from './confirmation-dialog';
-import { OptionBit, OptionParams } from './option';
-import { OptionGroupBit, OptionGroupParams } from './option-group';
+import { AttachmentBuilder, AttachmentParams } from './attachment';
+import { ConfirmationDialogBuilder, ConfirmationDialogParams } from './confirmation-dialog';
+import { OptionBuilder, OptionParams } from './option';
+import { OptionGroupBuilder, OptionGroupParams } from './option-group';
 
 /**
  * Functions here do not use arrow functions stored in variables for IDE color compatibility.
@@ -16,8 +16,8 @@ import { OptionGroupBit, OptionGroupParams } from './option-group';
  * {@link https://api.slack.com/reference/messaging/attachments|View in Slack API Documentation}
  */
 
-export function Attachment(params?: AttachmentParams): AttachmentBit {
-  return new AttachmentBit(params);
+export function Attachment(params?: AttachmentParams): AttachmentBuilder {
+  return new AttachmentBuilder(params);
 }
 
 /**
@@ -30,22 +30,22 @@ export function Attachment(params?: AttachmentParams): AttachmentBit {
  * {@link https://api.slack.com/reference/block-kit/composition-objects#confirm|View in Slack API Documentation}
  */
 
-export function ConfirmationDialog(params?: ConfirmationDialogParams): ConfirmationDialogBit {
-  return new ConfirmationDialogBit(params);
+export function ConfirmationDialog(params?: ConfirmationDialogParams): ConfirmationDialogBuilder {
+  return new ConfirmationDialogBuilder(params);
 }
 
 /**
  * @param {Object} [params] Parameters passed to the constructor.
  * @param {string} [params.text] Sets the text displayed in the menu for the current option.
- * @param {string} [params.value] Sets the value passed to your app when this OptionBit is clicked or submitted.
+ * @param {string} [params.value] Sets the value passed to your app when this OptionBuilder is clicked or submitted.
  * @param {string} [params.description] Sets a description shown next to the option, if in a radio button input.
  * @param {string} [params.url] Sets the URL to redirect the user to when this option is clicked, if in an overlow menu.
  *
  * {@link https://api.slack.com/reference/block-kit/composition-objects#option|View in Slack API Documentation}
  */
 
-export function Option(params?: OptionParams): OptionBit {
-  return new OptionBit(params);
+export function Option(params?: OptionParams): OptionBuilder {
+  return new OptionBuilder(params);
 }
 
 /**
@@ -55,8 +55,8 @@ export function Option(params?: OptionParams): OptionBit {
  * {@link https://api.slack.com/reference/block-kit/composition-objects#option_group|View in Slack API Documentation}
  */
 
-export function OptionGroup(params?: OptionGroupParams): OptionGroupBit {
-  return new OptionGroupBit(params);
+export function OptionGroup(params?: OptionGroupParams): OptionGroupBuilder {
+  return new OptionGroupBuilder(params);
 }
 
 const bitObjects = {

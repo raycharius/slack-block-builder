@@ -8,7 +8,7 @@ export interface DividerParams {
   blockId?: string;
 }
 
-export interface DividerBlock extends HasBlockId,
+export interface DividerBuilder extends HasBlockId,
   HasEnd,
   MustBuild {
 }
@@ -17,7 +17,7 @@ export interface DividerBlock extends HasBlockId,
  * {@link https://api.slack.com/reference/block-kit/blocks#divider}
  */
 
-export class DividerBlock extends BlockBase implements DividerBlock {
+export class DividerBuilder extends BlockBase implements DividerBuilder {
   constructor(params?: DividerParams) {
     super(params);
 
@@ -29,7 +29,7 @@ export class DividerBlock extends BlockBase implements DividerBlock {
   }
 }
 
-applyMixins(DividerBlock, [
+applyMixins(DividerBuilder, [
   HasBlockId,
   HasEnd,
 ]);

@@ -15,7 +15,7 @@ export interface ContextParams {
   blockId?: string;
 }
 
-export interface ContextBlock extends HasBlockId,
+export interface ContextBuilder extends HasBlockId,
   HasElements<ContextElement>,
   HasEnd,
   MustBuild {
@@ -25,7 +25,7 @@ export interface ContextBlock extends HasBlockId,
  * {@link https://api.slack.com/reference/block-kit/blocks#context}
  */
 
-export class ContextBlock extends BlockBase implements ContextBlock {
+export class ContextBuilder extends BlockBase implements ContextBuilder {
   constructor(params?: ContextParams) {
     super(params);
 
@@ -41,7 +41,7 @@ export class ContextBlock extends BlockBase implements ContextBlock {
   }
 }
 
-applyMixins(ContextBlock, [
+applyMixins(ContextBuilder, [
   HasBlockId,
   HasElements,
   HasEnd,

@@ -33,7 +33,7 @@ export interface MessageParams {
   ts?: string;
 }
 
-export interface MessageSurface extends CanBuildToJSON,
+export interface MessageBuilder extends CanBuildToJSON,
   CanBuildToObject,
   CanGetAttachments,
   CanGetBlocks,
@@ -58,7 +58,7 @@ export interface MessageSurface extends CanBuildToJSON,
  * {@link }
  */
 
-export class MessageSurface extends SurfaceBase implements MessageSurface {
+export class MessageBuilder extends SurfaceBase implements MessageBuilder {
   constructor(params?: MessageParams) {
     super(params);
   }
@@ -73,7 +73,7 @@ export class MessageSurface extends SurfaceBase implements MessageSurface {
   }
 }
 
-applyMixins(MessageSurface, [
+applyMixins(MessageBuilder, [
   CanBuildToJSON,
   CanBuildToObject,
   CanGetAttachments,

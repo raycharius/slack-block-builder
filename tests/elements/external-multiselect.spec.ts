@@ -1,4 +1,4 @@
-import { ExternalMultiSelectElement as Class } from '../../src/elements/external-multi-select';
+import { ExternalMultiSelectBuilder as Class } from '../../src/elements/external-multi-select';
 import { params } from './mocks/external-multiselect.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

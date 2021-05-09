@@ -1,4 +1,4 @@
-import { ButtonElement } from '../../../src/elements/button';
+import { ButtonBuilder } from '../../../src/elements/button';
 
 export const params = {
   text: 'text',
@@ -7,4 +7,4 @@ export const params = {
   value: 'value',
 };
 
-export const mock = new ButtonElement(params).danger();
+export const mock = new ButtonBuilder(params).danger();

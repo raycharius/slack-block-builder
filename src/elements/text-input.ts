@@ -23,7 +23,7 @@ export interface TextInputParams {
   placeholder?: string;
 }
 
-export interface TextInputElement extends HasActionId,
+export interface TextInputBuilder extends HasActionId,
   HasDispatchActionOnCharacterEntered,
   HasDispatchActionOnEnterPressed,
   HasEnd,
@@ -39,7 +39,7 @@ export interface TextInputElement extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#input}
  */
 
-export class TextInputElement extends ElementBase implements TextInputElement {
+export class TextInputBuilder extends ElementBase implements TextInputBuilder {
   constructor(params?: TextInputParams) {
     super(params);
 
@@ -56,7 +56,7 @@ export class TextInputElement extends ElementBase implements TextInputElement {
   }
 }
 
-applyMixins(TextInputElement, [
+applyMixins(TextInputBuilder, [
   HasActionId,
   HasDispatchActionOnCharacterEntered,
   HasDispatchActionOnEnterPressed,

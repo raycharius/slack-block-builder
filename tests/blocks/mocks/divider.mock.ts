@@ -1,7 +1,7 @@
-import { DividerBlock } from '../../../src/blocks/divider';
+import { DividerBuilder } from '../../../src/blocks/divider';
 
 export const params = {
   blockId: 'blockId',
 };
 
-export const mock = new DividerBlock(params);
+export const mock = new DividerBuilder(params);

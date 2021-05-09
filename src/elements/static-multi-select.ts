@@ -19,7 +19,7 @@ import {
 } from '../helpers';
 import { ElementType } from '../constants';
 
-import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
+import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface StaticMultiSelectParams {
   actionId?: string;
@@ -31,8 +31,8 @@ export interface StaticMultiSelectParams {
  * {@link https://api.slack.com/reference/block-kit/block-elements#static_multi_select}
  */
 
-export interface StaticMultiSelectElement extends HasActionId,
-  HasConfirm<ConfirmationDialogBit>,
+export interface StaticMultiSelectBuilder extends HasActionId,
+  HasConfirm<ConfirmationDialogBuilder>,
   HasEnd,
   HasInitialOptions,
   HasMaxSelectedItems,
@@ -42,7 +42,7 @@ export interface StaticMultiSelectElement extends HasActionId,
   MustBuild {
 }
 
-export class StaticMultiSelectElement extends ElementBase implements StaticMultiSelectElement {
+export class StaticMultiSelectBuilder extends ElementBase implements StaticMultiSelectBuilder {
   constructor(params?: StaticMultiSelectParams) {
     super(params);
 
@@ -62,7 +62,7 @@ export class StaticMultiSelectElement extends ElementBase implements StaticMulti
   }
 }
 
-applyMixins(StaticMultiSelectElement, [
+applyMixins(StaticMultiSelectBuilder, [
   HasActionId,
   HasConfirm,
   HasEnd,

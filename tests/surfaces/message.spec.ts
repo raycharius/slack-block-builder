@@ -1,4 +1,4 @@
-import { MessageSurface as Class } from '../../src/surfaces/message';
+import { MessageBuilder as Class } from '../../src/surfaces/message';
 import { params } from './mocks/message.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

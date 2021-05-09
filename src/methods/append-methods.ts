@@ -4,9 +4,9 @@
 import { PropSetter } from '../lib';
 import { Prop } from '../constants';
 
-import type { AttachmentBit } from '../bits/attachment';
-import type { OptionBit } from '../bits/option';
-import type { OptionGroupBit } from '../bits/option-group';
+import type { AttachmentBuilder } from '../bits/attachment';
+import type { OptionBuilder } from '../bits/option';
+import type { OptionGroupBuilder } from '../bits/option-group';
 
 export abstract class HasAttachments extends PropSetter {
   /**
@@ -16,7 +16,7 @@ export abstract class HasAttachments extends PropSetter {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public attachments(...attachments: Array<AttachmentBit | AttachmentBit[]>): this {
+  public attachments(...attachments: Array<AttachmentBuilder | AttachmentBuilder[]>): this {
     return this.append(attachments.flat(), Prop.Attachments);
   }
 }
@@ -128,7 +128,7 @@ export abstract class HasInitialOptions extends PropSetter {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public initialOptions(...options: Array<OptionBit | OptionBit[]>): this {
+  public initialOptions(...options: Array<OptionBuilder | OptionBuilder[]>): this {
     return this.append(options.flat(), Prop.InitialOptions);
   }
 }
@@ -158,7 +158,7 @@ export abstract class HasOptionGroups extends PropSetter {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public optionGroups(...optionGroups: Array<OptionGroupBit | OptionGroupBit[]>): this {
+  public optionGroups(...optionGroups: Array<OptionGroupBuilder | OptionGroupBuilder[]>): this {
     return this.append(optionGroups.flat(), Prop.OptionGroups);
   }
 }
@@ -176,7 +176,7 @@ export abstract class HasOptions extends PropSetter {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public options(...options: Array<OptionBit | OptionBit[]>): this {
+  public options(...options: Array<OptionBuilder | OptionBuilder[]>): this {
     return this.append(options.flat(), Prop.Options);
   }
 }

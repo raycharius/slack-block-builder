@@ -21,7 +21,7 @@ export interface InputParams {
   label?: string;
 }
 
-export interface InputBlock extends HasBlockId,
+export interface InputBuilder extends HasBlockId,
   HasDispatchAction,
   HasElement<InputElement>,
   HasEnd,
@@ -35,7 +35,7 @@ export interface InputBlock extends HasBlockId,
  * {@link https://api.slack.com/reference/block-kit/blocks#input}
  */
 
-export class InputBlock extends BlockBase implements InputBlock {
+export class InputBuilder extends BlockBase implements InputBuilder {
   constructor(params?: InputParams) {
     super(params);
 
@@ -53,7 +53,7 @@ export class InputBlock extends BlockBase implements InputBlock {
   }
 }
 
-applyMixins(InputBlock, [
+applyMixins(InputBuilder, [
   HasBlockId,
   HasDispatchAction,
   HasElement,

@@ -1,4 +1,4 @@
-import { ImageBlock as Class } from '../../src/blocks/image';
+import { ImageBuilder as Class } from '../../src/blocks/image';
 import { params } from './mocks/image.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

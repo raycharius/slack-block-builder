@@ -1,8 +1,8 @@
-import { HeaderBlock } from '../../../src/blocks/header';
+import { HeaderBuilder } from '../../../src/blocks/header';
 
 export const params = {
   text: 'text',
   blockId: 'blockId',
 };
 
-export const mock = new HeaderBlock(params);
+export const mock = new HeaderBuilder(params);

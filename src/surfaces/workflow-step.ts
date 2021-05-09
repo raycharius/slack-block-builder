@@ -21,7 +21,7 @@ export interface WorkflowStepParams {
   callbackId?: string;
 }
 
-export interface WorkflowStepSurface extends CanBuildToJSON,
+export interface WorkflowStepBuilder extends CanBuildToJSON,
   CanBuildToObject,
   CanGetBlocks,
   CanPrintPreviewUrl,
@@ -36,7 +36,7 @@ export interface WorkflowStepSurface extends CanBuildToJSON,
  * {@link https://api.slack.com/reference/workflows/configuration-view}
  */
 
-export class WorkflowStepSurface extends SurfaceBase implements WorkflowStepSurface {
+export class WorkflowStepBuilder extends SurfaceBase implements WorkflowStepBuilder {
   constructor(params?: WorkflowStepParams) {
     super(params);
 
@@ -55,7 +55,7 @@ export class WorkflowStepSurface extends SurfaceBase implements WorkflowStepSurf
   }
 }
 
-applyMixins(WorkflowStepSurface, [
+applyMixins(WorkflowStepBuilder, [
   CanBuildToJSON,
   CanBuildToObject,
   CanGetBlocks,

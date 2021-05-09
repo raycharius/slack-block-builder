@@ -23,7 +23,7 @@ export interface SectionParams {
   text?: string;
 }
 
-export interface SectionBlock extends HasAccessory<SectionElement>,
+export interface SectionBuilder extends HasAccessory<SectionElement>,
   HasBlockId,
   HasEnd,
   HasFields,
@@ -35,7 +35,7 @@ export interface SectionBlock extends HasAccessory<SectionElement>,
  * {@link https://api.slack.com/reference/block-kit/blocks#section}
  */
 
-export class SectionBlock extends BlockBase implements SectionBlock {
+export class SectionBuilder extends BlockBase implements SectionBuilder {
   constructor(params?: SectionParams) {
     super(params);
 
@@ -53,7 +53,7 @@ export class SectionBlock extends BlockBase implements SectionBlock {
   }
 }
 
-applyMixins(SectionBlock, [
+applyMixins(SectionBuilder, [
   HasAccessory,
   HasBlockId,
   HasEnd,

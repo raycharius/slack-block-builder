@@ -1,7 +1,7 @@
-import { ActionsBlock } from '../../../src/blocks/actions';
+import { ActionsBuilder } from '../../../src/blocks/actions';
 
 export const params = {
   blockId: 'blockId',
 };
 
-export const mock = new ActionsBlock(params);
+export const mock = new ActionsBuilder(params);

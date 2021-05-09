@@ -1,13 +1,13 @@
 /* eslint-disable max-len */
 
-import { ActionsBlock, ActionsParams } from './actions';
-import { ContextBlock, ContextParams } from './context';
-import { DividerBlock, DividerParams } from './divider';
-import { FileBlock, FileParams } from './file';
-import { HeaderBlock, HeaderParams } from './header';
-import { ImageBlock, ImageParams } from './image';
-import { InputBlock, InputParams } from './input';
-import { SectionBlock, SectionParams } from './section';
+import { ActionsBuilder, ActionsParams } from './actions';
+import { ContextBuilder, ContextParams } from './context';
+import { DividerBuilder, DividerParams } from './divider';
+import { FileBuilder, FileParams } from './file';
+import { HeaderBuilder, HeaderParams } from './header';
+import { ImageBuilder, ImageParams } from './image';
+import { InputBuilder, InputParams } from './input';
+import { SectionBuilder, SectionParams } from './section';
 
 /**
  * Functions here do not use arrow functions stored in variables for IDE color compatibility.
@@ -20,8 +20,8 @@ import { SectionBlock, SectionParams } from './section';
  * {@link https://api.slack.com/reference/block-kit/blocks#actions|View in Slack API Documentation}
  */
 
-export function Actions(params?: ActionsParams): ActionsBlock {
-  return new ActionsBlock(params);
+export function Actions(params?: ActionsParams): ActionsBuilder {
+  return new ActionsBuilder(params);
 }
 
 /**
@@ -31,8 +31,8 @@ export function Actions(params?: ActionsParams): ActionsBlock {
  * {@link https://api.slack.com/reference/block-kit/blocks#context|View in Slack API Documentation}
  */
 
-export function Context(params?: ContextParams): ContextBlock {
-  return new ContextBlock(params);
+export function Context(params?: ContextParams): ContextBuilder {
+  return new ContextBuilder(params);
 }
 
 /**
@@ -42,8 +42,8 @@ export function Context(params?: ContextParams): ContextBlock {
  * {@link https://api.slack.com/reference/block-kit/blocks#divider|View in Slack API Documentation}
  */
 
-export function Divider(params?: DividerParams): DividerBlock {
-  return new DividerBlock(params);
+export function Divider(params?: DividerParams): DividerBuilder {
+  return new DividerBuilder(params);
 }
 
 /**
@@ -54,8 +54,8 @@ export function Divider(params?: DividerParams): DividerBlock {
  * {@link https://api.slack.com/reference/block-kit/blocks#file|View in Slack API Documentation}
  */
 
-export function File(params?: FileParams): FileBlock {
-  return new FileBlock(params);
+export function File(params?: FileParams): FileBuilder {
+  return new FileBuilder(params);
 }
 
 /**
@@ -66,8 +66,8 @@ export function File(params?: FileParams): FileBlock {
  * {@link https://api.slack.com/reference/block-kit/blocks#header|View in Slack API Documentation}
  */
 
-export function Header(params?: HeaderParams): HeaderBlock {
-  return new HeaderBlock(params);
+export function Header(params?: HeaderParams): HeaderBuilder {
+  return new HeaderBuilder(params);
 }
 
 /**
@@ -80,8 +80,8 @@ export function Header(params?: HeaderParams): HeaderBlock {
  * {@link https://api.slack.com/reference/block-kit/blocks#image|View in Slack API Documentation}
  */
 
-export function Image(params?: ImageParams): ImageBlock {
-  return new ImageBlock(params);
+export function Image(params?: ImageParams): ImageBuilder {
+  return new ImageBuilder(params);
 }
 
 /**
@@ -93,8 +93,8 @@ export function Image(params?: ImageParams): ImageBlock {
  * {@link https://api.slack.com/reference/block-kit/blocks#input|View in Slack API Documentation}
  */
 
-export function Input(params?: InputParams): InputBlock {
-  return new InputBlock(params);
+export function Input(params?: InputParams): InputBuilder {
+  return new InputBuilder(params);
 }
 
 /**
@@ -105,8 +105,8 @@ export function Input(params?: InputParams): InputBlock {
  * {@link https://api.slack.com/reference/block-kit/blocks#section|View in Slack API Documentation}
  */
 
-export function Section(params?: SectionParams): SectionBlock {
-  return new SectionBlock(params);
+export function Section(params?: SectionParams): SectionBuilder {
+  return new SectionBuilder(params);
 }
 
 const blockObjects = {

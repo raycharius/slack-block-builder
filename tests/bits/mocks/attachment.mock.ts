@@ -1,8 +1,8 @@
-import { AttachmentBit } from '../../../src/bits/attachment';
+import { AttachmentBuilder } from '../../../src/bits/attachment';
 
 export const params = {
   color: 'color',
   fallback: 'fallback',
 };
 
-export const mock = new AttachmentBit(params);
+export const mock = new AttachmentBuilder(params);

@@ -1,4 +1,4 @@
-import { ModalSurface as Class } from '../../src/surfaces/modal';
+import { ModalBuilder as Class } from '../../src/surfaces/modal';
 import { params } from './mocks/modal.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

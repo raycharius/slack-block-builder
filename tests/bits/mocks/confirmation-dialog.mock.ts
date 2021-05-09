@@ -1,4 +1,4 @@
-import { ConfirmationDialogBit } from '../../../src/bits/confirmation-dialog';
+import { ConfirmationDialogBuilder } from '../../../src/bits/confirmation-dialog';
 
 export const params = {
   title: 'title',
@@ -7,4 +7,4 @@ export const params = {
   deny: 'deny',
 };
 
-export const mock = new ConfirmationDialogBit(params);
+export const mock = new ConfirmationDialogBuilder(params);

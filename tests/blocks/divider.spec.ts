@@ -1,4 +1,4 @@
-import { DividerBlock as Class } from '../../src/blocks/divider';
+import { DividerBuilder as Class } from '../../src/blocks/divider';
 import { params } from './mocks/divider.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

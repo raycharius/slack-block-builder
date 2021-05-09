@@ -11,14 +11,14 @@ import {
 import { applyMixins, getBuilderResult, getBuilderResults } from '../helpers';
 import { ElementType } from '../constants';
 
-import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
+import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface RadioButtonsParams {
   actionId?: string;
 }
 
-export interface RadioButtonsElement extends HasActionId,
-  HasConfirm<ConfirmationDialogBit>,
+export interface RadioButtonsBuilder extends HasActionId,
+  HasConfirm<ConfirmationDialogBuilder>,
   HasEnd,
   HasInitialOption,
   HasOptions,
@@ -29,7 +29,7 @@ export interface RadioButtonsElement extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#radio}
  */
 
-export class RadioButtonsElement extends ElementBase implements RadioButtonsElement {
+export class RadioButtonsBuilder extends ElementBase implements RadioButtonsBuilder {
   constructor(params?: RadioButtonsParams) {
     super(params);
 
@@ -47,7 +47,7 @@ export class RadioButtonsElement extends ElementBase implements RadioButtonsElem
   }
 }
 
-applyMixins(RadioButtonsElement, [
+applyMixins(RadioButtonsBuilder, [
   HasActionId,
   HasConfirm,
   HasEnd,

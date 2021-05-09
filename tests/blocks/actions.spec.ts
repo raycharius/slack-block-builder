@@ -1,4 +1,4 @@
-import { ActionsBlock as Class } from '../../src/blocks/actions';
+import { ActionsBuilder as Class } from '../../src/blocks/actions';
 import { params } from './mocks/actions.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

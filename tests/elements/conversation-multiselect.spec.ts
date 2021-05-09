@@ -1,4 +1,4 @@
-import { ConversationMultiSelectElement as Class } from '../../src/elements/conversation-multi-select';
+import { ConversationMultiSelectBuilder as Class } from '../../src/elements/conversation-multi-select';
 import { params } from './mocks/conversation-multiselect.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

@@ -1,4 +1,4 @@
-import { ExternalMultiSelectElement } from '../../../src/elements/external-multi-select';
+import { ExternalMultiSelectBuilder } from '../../../src/elements/external-multi-select';
 
 export const params = {
   placeholder: 'placeholder',
@@ -7,4 +7,4 @@ export const params = {
   maxSelectedItems: 50,
 };
 
-export const mock = new ExternalMultiSelectElement(params);
+export const mock = new ExternalMultiSelectBuilder(params);

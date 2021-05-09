@@ -1,4 +1,4 @@
-import { ConfirmationDialogBit as Class } from '../../src/bits/confirmation-dialog';
+import { ConfirmationDialogBuilder as Class } from '../../src/bits/confirmation-dialog';
 import { params } from './mocks/confirmation-dialog.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

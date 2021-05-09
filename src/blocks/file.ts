@@ -14,7 +14,7 @@ export interface FileParams {
   externalId?: string;
 }
 
-export interface FileBlock extends HasBlockId,
+export interface FileBuilder extends HasBlockId,
   HasEnd,
   HasExternalId,
   MustBuild {
@@ -24,7 +24,7 @@ export interface FileBlock extends HasBlockId,
  * {@link https://api.slack.com/reference/block-kit/blocks#file}
  */
 
-export class FileBlock extends BlockBase implements FileBlock {
+export class FileBuilder extends BlockBase implements FileBuilder {
   constructor(params?: FileParams) {
     super(params);
 
@@ -37,7 +37,7 @@ export class FileBlock extends BlockBase implements FileBlock {
   }
 }
 
-applyMixins(FileBlock, [
+applyMixins(FileBuilder, [
   HasBlockId,
   HasEnd,
   HasExternalId,

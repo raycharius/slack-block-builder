@@ -1,4 +1,4 @@
-import { DatePickerElement } from '../../../src/elements/datepicker';
+import { DatePickerBuilder } from '../../../src/elements/datepicker';
 
 export const params = {
   placeholder: 'placeholder',
@@ -6,4 +6,4 @@ export const params = {
   initialDate: new Date(),
 };
 
-export const mock = new DatePickerElement(params);
+export const mock = new DatePickerBuilder(params);

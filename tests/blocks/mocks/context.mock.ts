@@ -1,7 +1,7 @@
-import { ContextBlock } from '../../../src/blocks/context';
+import { ContextBuilder } from '../../../src/blocks/context';
 
 export const params = {
   blockId: 'blockId',
 };
 
-export const mock = new ContextBlock(params);
+export const mock = new ContextBuilder(params);

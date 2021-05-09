@@ -1,4 +1,4 @@
-import { ModalSurface } from '../../../src/surfaces/modal';
+import { ModalBuilder } from '../../../src/surfaces/modal';
 
 export const params = {
   title: 'title',
@@ -9,4 +9,4 @@ export const params = {
   externalId: 'externalId',
 };
 
-export const mock = new ModalSurface(params);
+export const mock = new ModalBuilder(params);

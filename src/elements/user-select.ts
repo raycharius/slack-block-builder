@@ -11,7 +11,7 @@ import {
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
 import { ElementType } from '../constants';
 
-import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
+import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface UserSelectParams {
   actionId?: string;
@@ -19,8 +19,8 @@ export interface UserSelectParams {
   placeholder?: string;
 }
 
-export interface UserSelectElement extends HasActionId,
-  HasConfirm<ConfirmationDialogBit>,
+export interface UserSelectBuilder extends HasActionId,
+  HasConfirm<ConfirmationDialogBuilder>,
   HasEnd,
   HasInitialUser,
   HasPlaceholder,
@@ -31,7 +31,7 @@ export interface UserSelectElement extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#users_select}
  */
 
-export class UserSelectElement extends ElementBase implements UserSelectElement {
+export class UserSelectBuilder extends ElementBase implements UserSelectBuilder {
   constructor(params?: UserSelectParams) {
     super(params);
 
@@ -48,7 +48,7 @@ export class UserSelectElement extends ElementBase implements UserSelectElement 
   }
 }
 
-applyMixins(UserSelectElement, [
+applyMixins(UserSelectBuilder, [
   HasActionId,
   HasConfirm,
   HasEnd,

@@ -1,4 +1,4 @@
-import { FileBlock as Class } from '../../src/blocks/file';
+import { FileBuilder as Class } from '../../src/blocks/file';
 import { params } from './mocks/file.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

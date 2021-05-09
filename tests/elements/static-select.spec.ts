@@ -1,4 +1,4 @@
-import { StaticSelectElement as Class } from '../../src/elements/static-select';
+import { StaticSelectBuilder as Class } from '../../src/elements/static-select';
 import { params } from './mocks/static-select.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

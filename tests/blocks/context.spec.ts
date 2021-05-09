@@ -1,4 +1,4 @@
-import { ContextBlock as Class } from '../../src/blocks/context';
+import { ContextBuilder as Class } from '../../src/blocks/context';
 import { params } from './mocks/context.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

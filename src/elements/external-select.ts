@@ -12,7 +12,7 @@ import {
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
 import { ElementType } from '../constants';
 
-import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
+import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface ExternalSelectParams {
   actionId?: string;
@@ -20,8 +20,8 @@ export interface ExternalSelectParams {
   placeholder?: string;
 }
 
-export interface ExternalSelectElement extends HasActionId,
-  HasConfirm<ConfirmationDialogBit>,
+export interface ExternalSelectBuilder extends HasActionId,
+  HasConfirm<ConfirmationDialogBuilder>,
   HasEnd,
   HasInitialOption,
   HasMinQueryLength,
@@ -33,7 +33,7 @@ export interface ExternalSelectElement extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#external_select}
  */
 
-export class ExternalSelectElement extends ElementBase implements ExternalSelectElement {
+export class ExternalSelectBuilder extends ElementBase implements ExternalSelectBuilder {
   constructor(params?: ExternalSelectParams) {
     super(params);
 
@@ -51,7 +51,7 @@ export class ExternalSelectElement extends ElementBase implements ExternalSelect
   }
 }
 
-applyMixins(ExternalSelectElement, [
+applyMixins(ExternalSelectBuilder, [
   HasActionId,
   HasConfirm,
   HasEnd,

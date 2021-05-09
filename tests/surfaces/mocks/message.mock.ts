@@ -1,4 +1,4 @@
-import { MessageSurface } from '../../../src/surfaces/message';
+import { MessageBuilder } from '../../../src/surfaces/message';
 
 export const params = {
   channel: 'channel',
@@ -8,4 +8,4 @@ export const params = {
   postAt: 1593125546,
 };
 
-export const mock = new MessageSurface(params);
+export const mock = new MessageBuilder(params);

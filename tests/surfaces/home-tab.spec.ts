@@ -1,4 +1,4 @@
-import { HomeTabSurface as Class } from '../../src/surfaces/home-tab';
+import { HomeTabBuilder as Class } from '../../src/surfaces/home-tab';
 import { params } from './mocks/home-tab.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

@@ -1,4 +1,4 @@
-import { RadioButtonsElement as Class } from '../../src/elements/radio-buttons';
+import { RadioButtonsBuilder as Class } from '../../src/elements/radio-buttons';
 import { params } from './mocks/radio-buttons.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

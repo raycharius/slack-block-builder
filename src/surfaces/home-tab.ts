@@ -22,7 +22,7 @@ export interface HomeTabParams {
   externalId?: string;
 }
 
-export interface HomeTabSurface extends CanBuildToJSON,
+export interface HomeTabBuilder extends CanBuildToJSON,
   CanBuildToObject,
   CanGetBlocks,
   CanPrintPreviewUrl,
@@ -37,7 +37,7 @@ export interface HomeTabSurface extends CanBuildToJSON,
  * {@link https://api.slack.com/reference/surfaces/views}
  */
 
-export class HomeTabSurface extends SurfaceBase implements HomeTabSurface {
+export class HomeTabBuilder extends SurfaceBase implements HomeTabBuilder {
   constructor(params?: HomeTabParams) {
     super(params);
 
@@ -53,7 +53,7 @@ export class HomeTabSurface extends SurfaceBase implements HomeTabSurface {
   }
 }
 
-applyMixins(HomeTabSurface, [
+applyMixins(HomeTabBuilder, [
   CanBuildToJSON,
   CanBuildToObject,
   CanGetBlocks,

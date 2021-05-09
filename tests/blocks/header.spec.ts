@@ -1,4 +1,4 @@
-import { HeaderBlock as Class } from '../../src/blocks/header';
+import { HeaderBuilder as Class } from '../../src/blocks/header';
 import { params } from './mocks/header.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

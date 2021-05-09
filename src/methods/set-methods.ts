@@ -4,7 +4,7 @@
 import { PropSetter } from '../lib';
 import { Prop } from '../constants';
 
-import type { OptionBit } from '../bits/option';
+import type { OptionBuilder } from '../bits/option';
 
 export abstract class HasAccessory<Type> extends PropSetter {
   /**
@@ -314,7 +314,7 @@ export abstract class HasInitialOption extends PropSetter {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public initialOption(option: OptionBit): this {
+  public initialOption(option: OptionBuilder): this {
     return this.set(option, Prop.InitialOption);
   }
 }

@@ -14,7 +14,7 @@ export interface HeaderParams {
   text?: string;
 }
 
-export interface HeaderBlock extends HasBlockId,
+export interface HeaderBuilder extends HasBlockId,
   HasEnd,
   HasText,
   MustBuild {
@@ -24,7 +24,7 @@ export interface HeaderBlock extends HasBlockId,
  * {@link https://api.slack.com/reference/block-kit/blocks#header}
  */
 
-export class HeaderBlock extends BlockBase implements HeaderBlock {
+export class HeaderBuilder extends BlockBase implements HeaderBuilder {
   constructor(params?: HeaderParams) {
     super(params);
 
@@ -40,7 +40,7 @@ export class HeaderBlock extends BlockBase implements HeaderBlock {
   }
 }
 
-applyMixins(HeaderBlock, [
+applyMixins(HeaderBuilder, [
   HasBlockId,
   HasEnd,
   HasText,

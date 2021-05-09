@@ -1,4 +1,4 @@
-import { OptionGroupBit as Class } from '../../src/bits/option-group';
+import { OptionGroupBuilder as Class } from '../../src/bits/option-group';
 import { params } from './mocks/option-group.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

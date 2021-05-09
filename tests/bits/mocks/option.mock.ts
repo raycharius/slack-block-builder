@@ -1,4 +1,4 @@
-import { OptionBit } from '../../../src/bits/option';
+import { OptionBuilder } from '../../../src/bits/option';
 
 export const params = {
   text: 'text',
@@ -7,4 +7,4 @@ export const params = {
   url: 'url',
 };
 
-export const mock = new OptionBit(params);
+export const mock = new OptionBuilder(params);

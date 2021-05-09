@@ -1,4 +1,4 @@
-import { OverflowMenuElement as Class } from '../../src/elements/overflow-menu';
+import { OverflowMenuBuilder as Class } from '../../src/elements/overflow-menu';
 import { params } from './mocks/overflow-menu.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

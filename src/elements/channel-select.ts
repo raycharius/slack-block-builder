@@ -12,7 +12,7 @@ import {
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
 import { ElementType } from '../constants';
 
-import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
+import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface ChannelSelectParams {
   actionId?: string;
@@ -20,8 +20,8 @@ export interface ChannelSelectParams {
   placeholder?: string;
 }
 
-export interface ChannelSelectElement extends HasActionId,
-  HasConfirm<ConfirmationDialogBit>,
+export interface ChannelSelectBuilder extends HasActionId,
+  HasConfirm<ConfirmationDialogBuilder>,
   HasEnd,
   HasInitialChannel,
   HasPlaceholder,
@@ -33,7 +33,7 @@ export interface ChannelSelectElement extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#channel_select}
  */
 
-export class ChannelSelectElement extends ElementBase implements ChannelSelectElement {
+export class ChannelSelectBuilder extends ElementBase implements ChannelSelectBuilder {
   constructor(params?: ChannelSelectParams) {
     super(params);
 
@@ -50,7 +50,7 @@ export class ChannelSelectElement extends ElementBase implements ChannelSelectEl
   }
 }
 
-applyMixins(ChannelSelectElement, [
+applyMixins(ChannelSelectBuilder, [
   HasActionId,
   HasConfirm,
   HasEnd,

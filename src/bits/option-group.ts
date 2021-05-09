@@ -12,7 +12,7 @@ export interface OptionGroupParams {
   label?: string;
 }
 
-export interface OptionGroupBit extends HasEnd,
+export interface OptionGroupBuilder extends HasEnd,
   HasLabel,
   HasOptions,
   MustBuild {
@@ -22,7 +22,7 @@ export interface OptionGroupBit extends HasEnd,
  * {@link https://api.slack.com/reference/block-kit/composition-objects#option_group}
  */
 
-export class OptionGroupBit extends BitBase implements OptionGroupBit {
+export class OptionGroupBuilder extends BitBase implements OptionGroupBuilder {
   constructor(params?: OptionGroupParams) {
     super(params);
   }
@@ -37,7 +37,7 @@ export class OptionGroupBit extends BitBase implements OptionGroupBit {
   }
 }
 
-applyMixins(OptionGroupBit, [
+applyMixins(OptionGroupBuilder, [
   HasEnd,
   HasLabel,
   HasOptions,

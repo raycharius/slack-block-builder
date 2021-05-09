@@ -1,4 +1,4 @@
-import { InputBlock as Class } from '../../src/blocks/input';
+import { InputBuilder as Class } from '../../src/blocks/input';
 import { params } from './mocks/input.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

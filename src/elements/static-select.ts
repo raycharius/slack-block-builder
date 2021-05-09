@@ -18,15 +18,15 @@ import {
 } from '../helpers';
 import { ElementType } from '../constants';
 
-import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
+import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface StaticSelectParams {
   actionId?: string;
   placeholder?: string;
 }
 
-export interface StaticSelectElement extends HasActionId,
-  HasConfirm<ConfirmationDialogBit>,
+export interface StaticSelectBuilder extends HasActionId,
+  HasConfirm<ConfirmationDialogBuilder>,
   HasEnd,
   HasInitialOption,
   HasOptionGroups,
@@ -36,10 +36,10 @@ export interface StaticSelectElement extends HasActionId,
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/block-elements#static_select|View in Slack API Documentation}
+ * {@link https://api.slack.com/reference/block-kit/block-elements#static_select}
  */
 
-export class StaticSelectElement extends ElementBase implements StaticSelectElement {
+export class StaticSelectBuilder extends ElementBase implements StaticSelectBuilder {
   constructor(params?: StaticSelectParams) {
     super(params);
 
@@ -59,7 +59,7 @@ export class StaticSelectElement extends ElementBase implements StaticSelectElem
   }
 }
 
-applyMixins(StaticSelectElement, [
+applyMixins(StaticSelectBuilder, [
   HasActionId,
   HasConfirm,
   HasEnd,

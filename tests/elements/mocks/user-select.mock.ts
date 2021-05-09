@@ -1,4 +1,4 @@
-import { UserSelectElement } from '../../../src/elements/user-select';
+import { UserSelectBuilder } from '../../../src/elements/user-select';
 
 export const params = {
   placeholder: 'placeholder',
@@ -6,4 +6,4 @@ export const params = {
   initialUser: 'initialUser',
 };
 
-export const mock = new UserSelectElement(params);
+export const mock = new UserSelectBuilder(params);

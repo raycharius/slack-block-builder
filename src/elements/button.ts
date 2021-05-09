@@ -14,7 +14,7 @@ import {
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
 import { ElementType } from '../constants';
 
-import type { ConfirmationDialogBit } from '../bits/confirmation-dialog';
+import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface ButtonParams {
   actionId?: string;
@@ -23,8 +23,8 @@ export interface ButtonParams {
   value?: string;
 }
 
-export interface ButtonElement extends HasActionId,
-  HasConfirm<ConfirmationDialogBit>,
+export interface ButtonBuilder extends HasActionId,
+  HasConfirm<ConfirmationDialogBuilder>,
   HasDanger,
   HasEnd,
   HasPrimary,
@@ -38,7 +38,7 @@ export interface ButtonElement extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#button}
  */
 
-export class ButtonElement extends ElementBase implements ButtonElement {
+export class ButtonBuilder extends ElementBase {
   constructor(params?: ButtonParams) {
     super(params);
 
@@ -55,7 +55,7 @@ export class ButtonElement extends ElementBase implements ButtonElement {
   }
 }
 
-applyMixins(ButtonElement, [
+applyMixins(ButtonBuilder, [
   HasActionId,
   HasConfirm,
   HasDanger,

@@ -31,7 +31,7 @@ export interface ModalParams {
   externalId?: string;
 }
 
-export interface ModalSurface extends CanBuildToJSON,
+export interface ModalBuilder extends CanBuildToJSON,
   CanBuildToObject,
   CanGetBlocks,
   CanPrintPreviewUrl,
@@ -51,7 +51,7 @@ export interface ModalSurface extends CanBuildToJSON,
  * {@link https://api.slack.com/reference/surfaces/views}
  */
 
-export class ModalSurface extends SurfaceBase implements ModalSurface {
+export class ModalBuilder extends SurfaceBase implements ModalBuilder {
   constructor(params?: ModalParams) {
     super(params);
 
@@ -70,7 +70,7 @@ export class ModalSurface extends SurfaceBase implements ModalSurface {
   }
 }
 
-applyMixins(ModalSurface, [
+applyMixins(ModalBuilder, [
   CanBuildToJSON,
   CanBuildToObject,
   CanGetBlocks,

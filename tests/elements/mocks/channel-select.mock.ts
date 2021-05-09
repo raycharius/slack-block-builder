@@ -1,4 +1,4 @@
-import { ChannelSelectElement } from '../../../src/elements/channel-select';
+import { ChannelSelectBuilder } from '../../../src/elements/channel-select';
 
 export const params = {
   placeholder: 'placeholder',
@@ -6,4 +6,4 @@ export const params = {
   initialChannel: 'initialChannel',
 };
 
-export const mock = new ChannelSelectElement(params);
+export const mock = new ChannelSelectBuilder(params);
