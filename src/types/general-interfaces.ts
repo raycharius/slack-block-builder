@@ -3,3 +3,5 @@ export interface ObjectLiteral {
 }
 
 export type Constructor<T = Record<string, unknown>> = new (...args: any[]) => T;
+
+export type AbstractConstructor<T> = { prototype: T };
