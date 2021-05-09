@@ -3,12 +3,12 @@ import { BlockBuilderError } from './error';
 
 import type { ObjectLiteral, Constructor } from '../types';
 
-export abstract class Builder<CtorParams> extends PropSetter<CtorParams> {
+export abstract class Builder extends PropSetter {
   public isBuilt: boolean;
 
   public result: any;
 
-  constructor(params?: CtorParams) {
+  constructor(params?: ObjectLiteral) {
     super(params);
 
     this.isBuilt = false;
