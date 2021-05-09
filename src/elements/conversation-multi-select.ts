@@ -46,8 +46,7 @@ export interface ConversationMultiSelectBuilder extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#conversation_multi_select}
  */
 
-export class ConversationMultiSelectBuilder extends ElementBase
-  implements ConversationMultiSelectBuilder {
+export class ConversationMultiSelectBuilder extends ElementBase {
   constructor(params?: ConversationMultiSelectParams) {
     super(params);
 

@@ -24,7 +24,7 @@ export interface FileBuilder extends HasBlockId,
  * {@link https://api.slack.com/reference/block-kit/blocks#file}
  */
 
-export class FileBuilder extends BlockBase implements FileBuilder {
+export class FileBuilder extends BlockBase {
   constructor(params?: FileParams) {
     super(params);
 

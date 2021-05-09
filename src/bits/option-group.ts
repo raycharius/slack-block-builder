@@ -22,7 +22,7 @@ export interface OptionGroupBuilder extends HasEnd,
  * {@link https://api.slack.com/reference/block-kit/composition-objects#option_group}
  */
 
-export class OptionGroupBuilder extends BitBase implements OptionGroupBuilder {
+export class OptionGroupBuilder extends BitBase {
   constructor(params?: OptionGroupParams) {
     super(params);
   }

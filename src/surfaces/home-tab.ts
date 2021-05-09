@@ -37,7 +37,7 @@ export interface HomeTabBuilder extends CanBuildToJSON,
  * {@link https://api.slack.com/reference/surfaces/views}
  */
 
-export class HomeTabBuilder extends SurfaceBase implements HomeTabBuilder {
+export class HomeTabBuilder extends SurfaceBase {
   constructor(params?: HomeTabParams) {
     super(params);
 

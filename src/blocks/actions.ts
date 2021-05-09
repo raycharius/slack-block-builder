@@ -25,7 +25,7 @@ export interface ActionsBuilder extends HasBlockId,
  * {@link https://api.slack.com/reference/block-kit/blocks#actions}
  */
 
-export class ActionsBuilder extends BlockBase implements ActionsBuilder {
+export class ActionsBuilder extends BlockBase {
   constructor(params?: ActionsParams) {
     super(params);
 

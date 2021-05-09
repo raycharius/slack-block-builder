@@ -58,7 +58,7 @@ export interface MessageBuilder extends CanBuildToJSON,
  * {@link }
  */
 
-export class MessageBuilder extends SurfaceBase implements MessageBuilder {
+export class MessageBuilder extends SurfaceBase {
   constructor(params?: MessageParams) {
     super(params);
   }

@@ -31,7 +31,7 @@ export interface TimePickerBuilder extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#timepicker}
  */
 
-export class TimePickerBuilder extends ElementBase implements TimePickerBuilder {
+export class TimePickerBuilder extends ElementBase {
   constructor(params?: TimePickerParams) {
     super(params);
 

@@ -25,7 +25,7 @@ export interface ContextBuilder extends HasBlockId,
  * {@link https://api.slack.com/reference/block-kit/blocks#context}
  */
 
-export class ContextBuilder extends BlockBase implements ContextBuilder {
+export class ContextBuilder extends BlockBase {
   constructor(params?: ContextParams) {
     super(params);
 

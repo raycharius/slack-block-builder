@@ -39,7 +39,7 @@ export interface TextInputBuilder extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#input}
  */
 
-export class TextInputBuilder extends ElementBase implements TextInputBuilder {
+export class TextInputBuilder extends ElementBase {
   constructor(params?: TextInputParams) {
     super(params);
 

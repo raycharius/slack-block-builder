@@ -42,7 +42,7 @@ export interface StaticMultiSelectBuilder extends HasActionId,
   MustBuild {
 }
 
-export class StaticMultiSelectBuilder extends ElementBase implements StaticMultiSelectBuilder {
+export class StaticMultiSelectBuilder extends ElementBase {
   constructor(params?: StaticMultiSelectParams) {
     super(params);
 

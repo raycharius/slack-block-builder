@@ -33,7 +33,7 @@ export interface ChannelSelectBuilder extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#channel_select}
  */
 
-export class ChannelSelectBuilder extends ElementBase implements ChannelSelectBuilder {
+export class ChannelSelectBuilder extends ElementBase {
   constructor(params?: ChannelSelectParams) {
     super(params);
 

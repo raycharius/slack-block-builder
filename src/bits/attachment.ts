@@ -27,7 +27,7 @@ export interface AttachmentBuilder extends HasBlocks<Block>,
  * {@link https://api.slack.com/reference/messaging/attachments}
  */
 
-export class AttachmentBuilder extends BitBase implements AttachmentBuilder {
+export class AttachmentBuilder extends BitBase {
   constructor(params?: AttachmentParams) {
     super(params);
   }

@@ -24,7 +24,7 @@ export interface ImgBuilder extends HasAltText,
  * {@link https://api.slack.com/reference/block-kit/block-elements#image}
  */
 
-export class ImgBuilder extends ElementBase implements ImgBuilder {
+export class ImgBuilder extends ElementBase {
   constructor(params?: ImgParams) {
     super(params);
 

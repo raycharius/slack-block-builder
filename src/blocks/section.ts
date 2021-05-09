@@ -35,7 +35,7 @@ export interface SectionBuilder extends HasAccessory<SectionElement>,
  * {@link https://api.slack.com/reference/block-kit/blocks#section}
  */
 
-export class SectionBuilder extends BlockBase implements SectionBuilder {
+export class SectionBuilder extends BlockBase {
   constructor(params?: SectionParams) {
     super(params);
 

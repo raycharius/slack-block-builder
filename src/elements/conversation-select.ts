@@ -46,7 +46,7 @@ export interface ConversationSelectBuilder extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#conversation_select}
  */
 
-export class ConversationSelectBuilder extends ElementBase implements ConversationSelectBuilder {
+export class ConversationSelectBuilder extends ElementBase {
   constructor(params?: ConversationSelectParams) {
     super(params);
 

@@ -24,7 +24,7 @@ export interface HeaderBuilder extends HasBlockId,
  * {@link https://api.slack.com/reference/block-kit/blocks#header}
  */
 
-export class HeaderBuilder extends BlockBase implements HeaderBuilder {
+export class HeaderBuilder extends BlockBase {
   constructor(params?: HeaderParams) {
     super(params);
 

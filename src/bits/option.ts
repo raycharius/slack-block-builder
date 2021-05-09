@@ -31,7 +31,7 @@ export interface OptionBuilder extends HasDescription,
  * {@link https://api.slack.com/reference/block-kit/composition-objects#option}
  */
 
-export class OptionBuilder extends BitBase implements OptionBuilder {
+export class OptionBuilder extends BitBase {
   constructor(params?: OptionParams) {
     super(params);
   }

@@ -41,7 +41,7 @@ export interface ExternalMultiSelectBuilder extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#external_multi_select}
  */
 
-export class ExternalMultiSelectBuilder extends ElementBase implements ExternalMultiSelectBuilder {
+export class ExternalMultiSelectBuilder extends ElementBase {
   constructor(params?: ExternalMultiSelectParams) {
     super(params);
 

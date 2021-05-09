@@ -36,7 +36,7 @@ export interface WorkflowStepBuilder extends CanBuildToJSON,
  * {@link https://api.slack.com/reference/workflows/configuration-view}
  */
 
-export class WorkflowStepBuilder extends SurfaceBase implements WorkflowStepBuilder {
+export class WorkflowStepBuilder extends SurfaceBase {
   constructor(params?: WorkflowStepParams) {
     super(params);
 

@@ -51,7 +51,7 @@ export interface ModalBuilder extends CanBuildToJSON,
  * {@link https://api.slack.com/reference/surfaces/views}
  */
 
-export class ModalBuilder extends SurfaceBase implements ModalBuilder {
+export class ModalBuilder extends SurfaceBase {
   constructor(params?: ModalParams) {
     super(params);
 

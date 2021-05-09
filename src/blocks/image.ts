@@ -30,7 +30,7 @@ export interface ImageBuilder extends HasAltText,
  * {@link https://api.slack.com/reference/block-kit/blocks#image}
  */
 
-export class ImageBuilder extends BlockBase implements ImageBuilder {
+export class ImageBuilder extends BlockBase {
   constructor(params?: ImageParams) {
     super(params);
 

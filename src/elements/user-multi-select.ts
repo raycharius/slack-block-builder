@@ -33,7 +33,7 @@ export interface UserMultiSelectBuilder extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#users_multi_select}
  */
 
-export class UserMultiSelectBuilder extends ElementBase implements UserMultiSelectBuilder {
+export class UserMultiSelectBuilder extends ElementBase {
   constructor(params?: UserMultiSelectParams) {
     super(params);
 

@@ -29,7 +29,7 @@ export interface RadioButtonsBuilder extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#radio}
  */
 
-export class RadioButtonsBuilder extends ElementBase implements RadioButtonsBuilder {
+export class RadioButtonsBuilder extends ElementBase {
   constructor(params?: RadioButtonsParams) {
     super(params);
 

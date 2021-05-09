@@ -35,7 +35,7 @@ export interface InputBuilder extends HasBlockId,
  * {@link https://api.slack.com/reference/block-kit/blocks#input}
  */
 
-export class InputBuilder extends BlockBase implements InputBuilder {
+export class InputBuilder extends BlockBase {
   constructor(params?: InputParams) {
     super(params);
 

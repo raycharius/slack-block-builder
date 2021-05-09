@@ -29,7 +29,7 @@ export interface CheckboxesBuilder extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#checkboxes}
  */
 
-export class CheckboxesBuilder extends ElementBase implements CheckboxesBuilder {
+export class CheckboxesBuilder extends ElementBase {
   constructor(params?: CheckboxesParams) {
     super(params);
 

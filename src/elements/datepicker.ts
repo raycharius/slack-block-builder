@@ -36,7 +36,7 @@ export interface DatePickerBuilder extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#datepicker}
  */
 
-export class DatePickerBuilder extends ElementBase implements DatePickerBuilder {
+export class DatePickerBuilder extends ElementBase {
   constructor(params?: DatePickerParams) {
     super(params);
 

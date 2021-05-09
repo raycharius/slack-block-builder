@@ -31,7 +31,7 @@ export interface UserSelectBuilder extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#users_select}
  */
 
-export class UserSelectBuilder extends ElementBase implements UserSelectBuilder {
+export class UserSelectBuilder extends ElementBase {
   constructor(params?: UserSelectParams) {
     super(params);
 

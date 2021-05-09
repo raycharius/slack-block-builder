@@ -33,7 +33,7 @@ export interface ExternalSelectBuilder extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#external_select}
  */
 
-export class ExternalSelectBuilder extends ElementBase implements ExternalSelectBuilder {
+export class ExternalSelectBuilder extends ElementBase {
   constructor(params?: ExternalSelectParams) {
     super(params);
 
