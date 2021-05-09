@@ -30,7 +30,8 @@ export interface ChannelMultiSelectBuilder extends HasActionId,
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/block-elements#channel_multi_select}
+ * @@link https://api.slack.com/reference/block-kit/block-elements#channel_multi_select
+ * @@displayName Channel Multi-Select
  */
 
 export class ChannelMultiSelectBuilder extends ElementBuilder {

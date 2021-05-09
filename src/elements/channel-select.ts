@@ -30,7 +30,8 @@ export interface ChannelSelectBuilder extends HasActionId,
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/block-elements#channel_select}
+ * @@link https://api.slack.com/reference/block-kit/block-elements#channel_select
+ * @@displayName Channel Select
  */
 
 export class ChannelSelectBuilder extends ElementBuilder {

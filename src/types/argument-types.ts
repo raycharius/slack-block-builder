@@ -30,7 +30,7 @@ import type { ImageBuilder } from '../blocks/image';
 import type { InputBuilder } from '../blocks/input';
 import type { SectionBuilder } from '../blocks/section';
 
-export type ActionsElement =
+export type ActionsElementBuilder =
   ButtonBuilder
   | ChannelSelectBuilder
   | CheckboxesBuilder
@@ -43,7 +43,7 @@ export type ActionsElement =
   | TimePickerBuilder
   | UserSelectBuilder;
 
-export type SectionElement =
+export type SectionElementBuilder =
   ButtonBuilder
   | ChannelMultiSelectBuilder
   | ChannelSelectBuilder
@@ -62,7 +62,7 @@ export type SectionElement =
   | UserMultiSelectBuilder
   | UserSelectBuilder;
 
-export type InputElement =
+export type InputElementBuilder =
   | ChannelMultiSelectBuilder
   | ChannelSelectBuilder
   | CheckboxesBuilder
@@ -79,9 +79,9 @@ export type InputElement =
   | UserMultiSelectBuilder
   | UserSelectBuilder;
 
-export type ContextElement = ImgBuilder | string;
+export type ContextElementBuilder = ImgBuilder | string;
 
-export type Block =
+export type BlockBuilder =
   ActionsBuilder
   | ContextBuilder
   | DividerBuilder
@@ -91,7 +91,7 @@ export type Block =
   | InputBuilder
   | SectionBuilder;
 
-export type ViewBlock =
+export type ViewBlockBuilder =
   ActionsBuilder
   | ContextBuilder
   | DividerBuilder

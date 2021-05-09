@@ -23,7 +23,7 @@ import {
 } from '../methods';
 import { applyMixins, getBuilderResults } from '../helpers';
 
-import type { Block } from '../types';
+import type { BlockBuilder } from '../types';
 
 export interface MessageParams {
   channel?: string;
@@ -40,7 +40,7 @@ export interface MessageBuilder extends CanBuildToJSON,
   CanPrintPreviewUrl,
   HasAsUser,
   HasAttachments,
-  HasBlocks<Block>,
+  HasBlocks<BlockBuilder>,
   HasChannel,
   HasDeleteOriginal,
   HasEphemeral,
@@ -55,7 +55,8 @@ export interface MessageBuilder extends CanBuildToJSON,
 }
 
 /**
- * {@link }
+ * @@link https://api.slack.com/messaging/composing
+ * @@displayName Message
  */
 
 export class MessageBuilder extends SurfaceBuilder {

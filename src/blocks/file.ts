@@ -21,7 +21,8 @@ export interface FileBuilder extends HasBlockId,
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/blocks#file}
+ * @@link https://api.slack.com/reference/block-kit/blocks#file
+ * @@displayName File
  */
 
 export class FileBuilder extends BlockBuilder {

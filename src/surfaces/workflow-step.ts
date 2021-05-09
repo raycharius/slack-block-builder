@@ -14,7 +14,7 @@ import {
 import { applyMixins, getPlainTextObject, getBuilderResults } from '../helpers';
 import { SurfaceType } from '../constants';
 
-import type { ViewBlock } from '../types';
+import type { ViewBlockBuilder } from '../types';
 
 export interface WorkflowStepParams {
   privateMetaData?: string;
@@ -25,7 +25,7 @@ export interface WorkflowStepBuilder extends CanBuildToJSON,
   CanBuildToObject,
   CanGetBlocks,
   CanPrintPreviewUrl,
-  HasBlocks<ViewBlock>,
+  HasBlocks<ViewBlockBuilder>,
   HasCallbackId,
   HasPrivateMetaData,
   HasSubmitDisabled,
@@ -33,7 +33,8 @@ export interface WorkflowStepBuilder extends CanBuildToJSON,
 }
 
 /**
- * {@link https://api.slack.com/reference/workflows/configuration-view}
+ * @link https://api.slack.com/reference/workflows/configuration-view
+ * @@displayName Workflow Step
  */
 
 export class WorkflowStepBuilder extends SurfaceBuilder {

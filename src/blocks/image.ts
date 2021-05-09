@@ -27,7 +27,8 @@ export interface ImageBuilder extends HasAltText,
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/blocks#image}
+ * @@link https://api.slack.com/reference/block-kit/blocks#image
+ * @@displayName Image
  */
 
 export class ImageBuilder extends BlockBuilder {

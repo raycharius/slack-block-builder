@@ -33,7 +33,8 @@ export interface DatePickerBuilder extends HasActionId,
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/block-elements#datepicker}
+ * @@link https://api.slack.com/reference/block-kit/block-elements#datepicker
+ * @@displayName Date Picker
  */
 
 export class DatePickerBuilder extends ElementBuilder {

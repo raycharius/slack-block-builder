@@ -28,7 +28,8 @@ export interface StaticMultiSelectParams {
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/block-elements#static_multi_select}
+ * @@link https://api.slack.com/reference/block-kit/block-elements#static_multi_select
+ * @@displayName Static Multi-Select
  */
 
 export interface StaticMultiSelectBuilder extends HasActionId,

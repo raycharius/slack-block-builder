@@ -30,7 +30,8 @@ export interface ExternalSelectBuilder extends HasActionId,
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/block-elements#external_select}
+ * @@link https://api.slack.com/reference/block-kit/block-elements#external_select
+ * @@displayName External Select
  */
 
 export class ExternalSelectBuilder extends ElementBuilder {

@@ -14,7 +14,8 @@ export interface DividerBuilder extends HasBlockId,
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/blocks#divider}
+ * @@link https://api.slack.com/reference/block-kit/blocks#divider
+ * @@displayName Divider
  */
 
 export class DividerBuilder extends BlockBuilder {

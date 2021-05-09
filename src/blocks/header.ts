@@ -21,7 +21,8 @@ export interface HeaderBuilder extends HasBlockId,
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/blocks#header}
+ * @@link https://api.slack.com/reference/block-kit/blocks#header
+ * @@displayName Header
  */
 
 export class HeaderBuilder extends BlockBuilder {

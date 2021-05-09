@@ -9,14 +9,14 @@ import {
 } from '../methods';
 import { applyMixins, getBuilderResults } from '../helpers';
 
-import type { Block } from '../types';
+import type { BlockBuilder } from '../types';
 
 export interface AttachmentParams {
   color?: string;
   fallback?: string;
 }
 
-export interface AttachmentBuilder extends HasBlocks<Block>,
+export interface AttachmentBuilder extends HasBlocks<BlockBuilder>,
   HasColor,
   HasEnd,
   HasFallback,
@@ -24,7 +24,8 @@ export interface AttachmentBuilder extends HasBlocks<Block>,
 }
 
 /**
- * {@link https://api.slack.com/reference/messaging/attachments}
+ * @@link https://api.slack.com/reference/messaging/attachments
+ * @@displayName Attachment
  */
 
 export class AttachmentBuilder extends BitBuilder {

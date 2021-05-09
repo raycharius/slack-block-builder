@@ -30,7 +30,8 @@ export interface ConfirmationDialogBuilder extends HasConfirm<string>,
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/composition-objects#confirm}
+ * @@link https://api.slack.com/reference/block-kit/composition-objects#confirm
+ * @@displayName Confirmation Dialog
  */
 
 export class ConfirmationDialogBuilder extends BitBuilder {

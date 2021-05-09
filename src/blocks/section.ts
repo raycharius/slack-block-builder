@@ -16,14 +16,14 @@ import {
 } from '../helpers';
 import { BlockType } from '../constants';
 
-import type { SectionElement } from '../types';
+import type { SectionElementBuilder } from '../types';
 
 export interface SectionParams {
   blockId?: string;
   text?: string;
 }
 
-export interface SectionBuilder extends HasAccessory<SectionElement>,
+export interface SectionBuilder extends HasAccessory<SectionElementBuilder>,
   HasBlockId,
   HasEnd,
   HasFields,
@@ -32,7 +32,8 @@ export interface SectionBuilder extends HasAccessory<SectionElement>,
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/blocks#section}
+ * @@link https://api.slack.com/reference/block-kit/blocks#section
+ * @@displayName Section
  */
 
 export class SectionBuilder extends BlockBuilder {

@@ -26,7 +26,8 @@ export interface RadioButtonsBuilder extends HasActionId,
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/block-elements#radio}
+ * @@link https://api.slack.com/reference/block-kit/block-elements#radio
+ * @@displayName Radio Buttons
  */
 
 export class RadioButtonsBuilder extends ElementBuilder {

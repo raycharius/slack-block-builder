@@ -14,7 +14,7 @@ import {
 import { applyMixins, getBuilderResults } from '../helpers';
 import { SurfaceType } from '../constants';
 
-import type { ViewBlock } from '../types';
+import type { ViewBlockBuilder } from '../types';
 
 export interface HomeTabParams {
   privateMetaData?: string;
@@ -26,7 +26,7 @@ export interface HomeTabBuilder extends CanBuildToJSON,
   CanBuildToObject,
   CanGetBlocks,
   CanPrintPreviewUrl,
-  HasBlocks<ViewBlock>,
+  HasBlocks<ViewBlockBuilder>,
   HasCallbackId,
   HasExternalId,
   HasPrivateMetaData,
@@ -34,7 +34,8 @@ export interface HomeTabBuilder extends CanBuildToJSON,
 }
 
 /**
- * {@link https://api.slack.com/reference/surfaces/views}
+ * @@link https://api.slack.com/reference/surfaces/views
+ * @@displayName Home Tab
  */
 
 export class HomeTabBuilder extends SurfaceBuilder {

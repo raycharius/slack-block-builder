@@ -28,7 +28,8 @@ export interface OptionBuilder extends HasDescription,
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/composition-objects#option}
+ * @@link https://api.slack.com/reference/block-kit/composition-objects#option
+ * @@displayName Option
  */
 
 export class OptionBuilder extends BitBuilder {

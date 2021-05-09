@@ -24,7 +24,8 @@ export interface OverflowMenuBuilder extends HasActionId,
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/block-elements#overflow}
+ * @@link https://api.slack.com/reference/block-kit/block-elements#overflow
+ * @@displayName Overflow Menu
  */
 
 export class OverflowMenuBuilder extends ElementBuilder implements OverflowMenuBuilder {

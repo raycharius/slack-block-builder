@@ -9,7 +9,7 @@ import {
 import { applyMixins, getBuilderResults } from '../helpers';
 import { BlockType } from '../constants';
 
-import type { ActionsElement } from '../types';
+import type { ActionsElementBuilder } from '../types';
 
 export interface ActionsParams {
   blockId?: string;
@@ -17,12 +17,13 @@ export interface ActionsParams {
 
 export interface ActionsBuilder extends HasBlockId,
   HasEnd,
-  HasElements<ActionsElement>,
+  HasElements<ActionsElementBuilder>,
   MustBuild {
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/blocks#actions}
+ * @@link https://api.slack.com/reference/block-kit/blocks#actions
+ * @@displayName Actions
  */
 
 export class ActionsBuilder extends BlockBuilder {

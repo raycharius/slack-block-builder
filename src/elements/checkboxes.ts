@@ -26,7 +26,8 @@ export interface CheckboxesBuilder extends HasActionId,
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/block-elements#checkboxes}
+ * @@link https://api.slack.com/reference/block-kit/block-elements#checkboxes
+ * @@displayName Checkboxes
  */
 
 export class CheckboxesBuilder extends ElementBuilder {

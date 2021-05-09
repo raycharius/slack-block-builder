@@ -28,7 +28,8 @@ export interface TimePickerBuilder extends HasActionId,
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/block-elements#timepicker}
+ * @@link https://api.slack.com/reference/block-kit/block-elements#timepicker
+ * @@displayName Time Picker
  */
 
 export class TimePickerBuilder extends ElementBuilder {

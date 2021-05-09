@@ -19,7 +19,8 @@ export interface OptionGroupBuilder extends HasEnd,
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/composition-objects#option_group}
+ * @@link https://api.slack.com/reference/block-kit/composition-objects#option_group
+ * @@displayName Option Group
  */
 
 export class OptionGroupBuilder extends BitBuilder {

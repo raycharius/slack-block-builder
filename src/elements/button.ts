@@ -35,7 +35,8 @@ export interface ButtonBuilder extends HasActionId,
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/block-elements#button}
+ * @@link https://api.slack.com/reference/block-kit/block-elements#button
+ * @@displayName Button
  */
 
 export class ButtonBuilder extends ElementBuilder {

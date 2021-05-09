@@ -13,7 +13,7 @@ import {
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
 import { BlockType } from '../constants';
 
-import type { InputElement } from '../types';
+import type { InputElementBuilder } from '../types';
 
 export interface InputParams {
   blockId?: string;
@@ -23,7 +23,7 @@ export interface InputParams {
 
 export interface InputBuilder extends HasBlockId,
   HasDispatchAction,
-  HasElement<InputElement>,
+  HasElement<InputElementBuilder>,
   HasEnd,
   HasHint,
   HasLabel,
@@ -32,7 +32,8 @@ export interface InputBuilder extends HasBlockId,
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/blocks#input}
+ * @@link https://api.slack.com/reference/block-kit/blocks#input
+ * @@displayName Input
  */
 
 export class InputBuilder extends BlockBuilder {

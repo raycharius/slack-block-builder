@@ -19,7 +19,7 @@ import {
 import { applyMixins, getPlainTextObject, getBuilderResults } from '../helpers';
 import { SurfaceType } from '../constants';
 
-import type { ViewBlock } from '../types';
+import type { ViewBlockBuilder } from '../types';
 
 export interface ModalParams {
   type?: string;
@@ -35,7 +35,7 @@ export interface ModalBuilder extends CanBuildToJSON,
   CanBuildToObject,
   CanGetBlocks,
   CanPrintPreviewUrl,
-  HasBlocks<ViewBlock>,
+  HasBlocks<ViewBlockBuilder>,
   HasCallbackId,
   HasClearOnClose,
   HasClose,
@@ -48,7 +48,8 @@ export interface ModalBuilder extends CanBuildToJSON,
 }
 
 /**
- * {@link https://api.slack.com/reference/surfaces/views}
+ * @@link https://api.slack.com/reference/surfaces/views
+ * @@displayName Modal
  */
 
 export class ModalBuilder extends SurfaceBuilder {

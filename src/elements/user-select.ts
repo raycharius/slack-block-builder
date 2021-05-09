@@ -28,7 +28,8 @@ export interface UserSelectBuilder extends HasActionId,
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/block-elements#users_select}
+ * @@link https://api.slack.com/reference/block-kit/block-elements#users_select
+ * @@displayName User Select
  */
 
 export class UserSelectBuilder extends ElementBuilder {

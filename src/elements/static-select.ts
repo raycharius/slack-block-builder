@@ -36,7 +36,8 @@ export interface StaticSelectBuilder extends HasActionId,
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/block-elements#static_select}
+ * @@link https://api.slack.com/reference/block-kit/block-elements#static_select
+ * @@displayName Static Select
  */
 
 export class StaticSelectBuilder extends ElementBuilder {

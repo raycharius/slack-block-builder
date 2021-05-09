@@ -43,7 +43,8 @@ export interface ConversationSelectBuilder extends HasActionId,
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/block-elements#conversation_select}
+ * @@link https://api.slack.com/reference/block-kit/block-elements#conversation_select
+ * @@displayName Conversation Select
  */
 
 export class ConversationSelectBuilder extends ElementBuilder {

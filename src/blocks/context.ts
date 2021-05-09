@@ -9,20 +9,21 @@ import {
 import { applyMixins, getElementsForContext } from '../helpers';
 import { BlockType } from '../constants';
 
-import type { ContextElement } from '../types';
+import type { ContextElementBuilder } from '../types';
 
 export interface ContextParams {
   blockId?: string;
 }
 
 export interface ContextBuilder extends HasBlockId,
-  HasElements<ContextElement>,
+  HasElements<ContextElementBuilder>,
   HasEnd,
   MustBuild {
 }
 
 /**
- * {@link https://api.slack.com/reference/block-kit/blocks#context}
+ * @@link https://api.slack.com/reference/block-kit/blocks#context
+ * @@displayName Context
  */
 
 export class ContextBuilder extends BlockBuilder {
