@@ -1,4 +1,4 @@
-import { ElementBase } from '../base';
+import { ElementBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
   HasActionId,
@@ -36,7 +36,7 @@ export interface DatePickerBuilder extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#datepicker}
  */
 
-export class DatePickerBuilder extends ElementBase {
+export class DatePickerBuilder extends ElementBuilder {
   constructor(params?: DatePickerParams) {
     super(params);
 

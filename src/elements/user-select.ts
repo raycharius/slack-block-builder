@@ -1,4 +1,4 @@
-import { ElementBase } from '../base';
+import { ElementBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
   HasActionId,
@@ -31,7 +31,7 @@ export interface UserSelectBuilder extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#users_select}
  */
 
-export class UserSelectBuilder extends ElementBase {
+export class UserSelectBuilder extends ElementBuilder {
   constructor(params?: UserSelectParams) {
     super(params);
 

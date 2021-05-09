@@ -1,4 +1,4 @@
-import { BitBase } from '../base';
+import { BitBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
   HasConfirm,
@@ -33,7 +33,7 @@ export interface ConfirmationDialogBuilder extends HasConfirm<string>,
  * {@link https://api.slack.com/reference/block-kit/composition-objects#confirm}
  */
 
-export class ConfirmationDialogBuilder extends BitBase {
+export class ConfirmationDialogBuilder extends BitBuilder {
   constructor(params?: ConfirmationDialogParams) {
     super(params);
   }

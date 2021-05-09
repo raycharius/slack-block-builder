@@ -1,4 +1,4 @@
-import { BlockBase } from '../base';
+import { BlockBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
   HasBlockId,
@@ -25,7 +25,7 @@ export interface ContextBuilder extends HasBlockId,
  * {@link https://api.slack.com/reference/block-kit/blocks#context}
  */
 
-export class ContextBuilder extends BlockBase {
+export class ContextBuilder extends BlockBuilder {
   constructor(params?: ContextParams) {
     super(params);
 

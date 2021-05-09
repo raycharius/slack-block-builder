@@ -1,4 +1,4 @@
-import { BlockBase } from '../base';
+import { BlockBuilder } from '../base';
 import { SlackDto } from '../lib';
 import { HasBlockId, HasEnd, MustBuild } from '../methods';
 import { applyMixins } from '../helpers';
@@ -17,7 +17,7 @@ export interface DividerBuilder extends HasBlockId,
  * {@link https://api.slack.com/reference/block-kit/blocks#divider}
  */
 
-export class DividerBuilder extends BlockBase {
+export class DividerBuilder extends BlockBuilder {
   constructor(params?: DividerParams) {
     super(params);
 

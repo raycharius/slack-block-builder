@@ -1,4 +1,4 @@
-import { SurfaceBase } from '../base';
+import { SurfaceBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
   CanBuildToJSON,
@@ -51,7 +51,7 @@ export interface ModalBuilder extends CanBuildToJSON,
  * {@link https://api.slack.com/reference/surfaces/views}
  */
 
-export class ModalBuilder extends SurfaceBase {
+export class ModalBuilder extends SurfaceBuilder {
   constructor(params?: ModalParams) {
     super(params);
 

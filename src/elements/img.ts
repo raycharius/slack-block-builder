@@ -1,4 +1,4 @@
-import { ElementBase } from '../base';
+import { ElementBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
   HasAltText,
@@ -24,7 +24,7 @@ export interface ImgBuilder extends HasAltText,
  * {@link https://api.slack.com/reference/block-kit/block-elements#image}
  */
 
-export class ImgBuilder extends ElementBase {
+export class ImgBuilder extends ElementBuilder {
   constructor(params?: ImgParams) {
     super(params);
 

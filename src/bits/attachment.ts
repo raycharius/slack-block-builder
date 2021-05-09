@@ -1,4 +1,4 @@
-import { BitBase } from '../base';
+import { BitBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
   HasBlocks,
@@ -27,7 +27,7 @@ export interface AttachmentBuilder extends HasBlocks<Block>,
  * {@link https://api.slack.com/reference/messaging/attachments}
  */
 
-export class AttachmentBuilder extends BitBase {
+export class AttachmentBuilder extends BitBuilder {
   constructor(params?: AttachmentParams) {
     super(params);
   }

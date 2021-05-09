@@ -1,4 +1,4 @@
-import { SurfaceBase } from '../base';
+import { SurfaceBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
   CanBuildToJSON,
@@ -36,7 +36,7 @@ export interface WorkflowStepBuilder extends CanBuildToJSON,
  * {@link https://api.slack.com/reference/workflows/configuration-view}
  */
 
-export class WorkflowStepBuilder extends SurfaceBase {
+export class WorkflowStepBuilder extends SurfaceBuilder {
   constructor(params?: WorkflowStepParams) {
     super(params);
 

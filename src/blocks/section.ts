@@ -1,4 +1,4 @@
-import { BlockBase } from '../base';
+import { BlockBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
   HasAccessory,
@@ -35,7 +35,7 @@ export interface SectionBuilder extends HasAccessory<SectionElement>,
  * {@link https://api.slack.com/reference/block-kit/blocks#section}
  */
 
-export class SectionBuilder extends BlockBase {
+export class SectionBuilder extends BlockBuilder {
   constructor(params?: SectionParams) {
     super(params);
 

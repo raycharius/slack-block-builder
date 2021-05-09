@@ -1,4 +1,4 @@
-import { ElementBase } from '../base';
+import { ElementBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
   HasActionId,
@@ -39,7 +39,7 @@ export interface StaticSelectBuilder extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#static_select}
  */
 
-export class StaticSelectBuilder extends ElementBase {
+export class StaticSelectBuilder extends ElementBuilder {
   constructor(params?: StaticSelectParams) {
     super(params);
 

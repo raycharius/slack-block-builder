@@ -1,4 +1,4 @@
-import { ElementBase } from '../base';
+import { ElementBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
   HasActionId,
@@ -39,7 +39,7 @@ export interface TextInputBuilder extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#input}
  */
 
-export class TextInputBuilder extends ElementBase {
+export class TextInputBuilder extends ElementBuilder {
   constructor(params?: TextInputParams) {
     super(params);
 

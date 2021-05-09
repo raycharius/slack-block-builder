@@ -1,7 +1,7 @@
-import { UtilityObjectBase } from '../base';
+import { CompositionObject } from '../base';
 import { ObjectType } from '../constants';
 
-export class PlainTextObject extends UtilityObjectBase {
+export class PlainTextObject extends CompositionObject {
   public type: ObjectType;
 
   public text: string;

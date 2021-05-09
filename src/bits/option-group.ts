@@ -1,4 +1,4 @@
-import { BitBase } from '../base';
+import { BitBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
   HasLabel,
@@ -22,7 +22,7 @@ export interface OptionGroupBuilder extends HasEnd,
  * {@link https://api.slack.com/reference/block-kit/composition-objects#option_group}
  */
 
-export class OptionGroupBuilder extends BitBase {
+export class OptionGroupBuilder extends BitBuilder {
   constructor(params?: OptionGroupParams) {
     super(params);
   }

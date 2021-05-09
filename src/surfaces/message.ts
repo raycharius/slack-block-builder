@@ -1,4 +1,4 @@
-import { SurfaceBase } from '../base';
+import { SurfaceBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
   CanBuildToJSON,
@@ -58,7 +58,7 @@ export interface MessageBuilder extends CanBuildToJSON,
  * {@link }
  */
 
-export class MessageBuilder extends SurfaceBase {
+export class MessageBuilder extends SurfaceBuilder {
   constructor(params?: MessageParams) {
     super(params);
   }

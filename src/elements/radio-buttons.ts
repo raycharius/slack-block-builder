@@ -1,4 +1,4 @@
-import { ElementBase } from '../base';
+import { ElementBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
   HasActionId,
@@ -29,7 +29,7 @@ export interface RadioButtonsBuilder extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#radio}
  */
 
-export class RadioButtonsBuilder extends ElementBase {
+export class RadioButtonsBuilder extends ElementBuilder {
   constructor(params?: RadioButtonsParams) {
     super(params);
 

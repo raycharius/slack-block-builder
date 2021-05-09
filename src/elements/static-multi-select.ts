@@ -1,4 +1,4 @@
-import { ElementBase } from '../base';
+import { ElementBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
   HasActionId,
@@ -42,7 +42,7 @@ export interface StaticMultiSelectBuilder extends HasActionId,
   MustBuild {
 }
 
-export class StaticMultiSelectBuilder extends ElementBase {
+export class StaticMultiSelectBuilder extends ElementBuilder {
   constructor(params?: StaticMultiSelectParams) {
     super(params);
 

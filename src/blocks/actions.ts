@@ -1,4 +1,4 @@
-import { BlockBase } from '../base';
+import { BlockBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
   HasBlockId,
@@ -25,7 +25,7 @@ export interface ActionsBuilder extends HasBlockId,
  * {@link https://api.slack.com/reference/block-kit/blocks#actions}
  */
 
-export class ActionsBuilder extends BlockBase {
+export class ActionsBuilder extends BlockBuilder {
   constructor(params?: ActionsParams) {
     super(params);
 

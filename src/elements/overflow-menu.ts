@@ -1,4 +1,4 @@
-import { ElementBase } from '../base';
+import { ElementBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
   HasActionId,
@@ -27,7 +27,7 @@ export interface OverflowMenuBuilder extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#overflow}
  */
 
-export class OverflowMenuBuilder extends ElementBase implements OverflowMenuBuilder {
+export class OverflowMenuBuilder extends ElementBuilder implements OverflowMenuBuilder {
   constructor(params?: OverflowMenuParams) {
     super(params);
 

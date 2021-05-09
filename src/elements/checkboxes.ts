@@ -1,4 +1,4 @@
-import { ElementBase } from '../base';
+import { ElementBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
   HasActionId,
@@ -29,7 +29,7 @@ export interface CheckboxesBuilder extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#checkboxes}
  */
 
-export class CheckboxesBuilder extends ElementBase {
+export class CheckboxesBuilder extends ElementBuilder {
   constructor(params?: CheckboxesParams) {
     super(params);
 

@@ -1,4 +1,4 @@
-import { BlockBase } from '../base';
+import { BlockBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
   HasBlockId,
@@ -35,7 +35,7 @@ export interface InputBuilder extends HasBlockId,
  * {@link https://api.slack.com/reference/block-kit/blocks#input}
  */
 
-export class InputBuilder extends BlockBase {
+export class InputBuilder extends BlockBuilder {
   constructor(params?: InputParams) {
     super(params);
 

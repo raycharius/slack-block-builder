@@ -1,4 +1,4 @@
-import { SurfaceBase } from '../base';
+import { SurfaceBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
   CanBuildToJSON,
@@ -37,7 +37,7 @@ export interface HomeTabBuilder extends CanBuildToJSON,
  * {@link https://api.slack.com/reference/surfaces/views}
  */
 
-export class HomeTabBuilder extends SurfaceBase {
+export class HomeTabBuilder extends SurfaceBuilder {
   constructor(params?: HomeTabParams) {
     super(params);
 

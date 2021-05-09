@@ -1,4 +1,4 @@
-import { ElementBase } from '../base';
+import { ElementBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
   HasActionId,
@@ -38,7 +38,7 @@ export interface ButtonBuilder extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#button}
  */
 
-export class ButtonBuilder extends ElementBase {
+export class ButtonBuilder extends ElementBuilder {
   constructor(params?: ButtonParams) {
     super(params);
 

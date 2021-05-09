@@ -1,4 +1,4 @@
-import { BlockBase } from '../base';
+import { BlockBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
   HasBlockId,
@@ -24,7 +24,7 @@ export interface HeaderBuilder extends HasBlockId,
  * {@link https://api.slack.com/reference/block-kit/blocks#header}
  */
 
-export class HeaderBuilder extends BlockBase {
+export class HeaderBuilder extends BlockBuilder {
   constructor(params?: HeaderParams) {
     super(params);
 

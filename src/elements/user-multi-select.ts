@@ -1,4 +1,4 @@
-import { ElementBase } from '../base';
+import { ElementBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
   HasActionId,
@@ -33,7 +33,7 @@ export interface UserMultiSelectBuilder extends HasActionId,
  * {@link https://api.slack.com/reference/block-kit/block-elements#users_multi_select}
  */
 
-export class UserMultiSelectBuilder extends ElementBase {
+export class UserMultiSelectBuilder extends ElementBuilder {
   constructor(params?: UserMultiSelectParams) {
     super(params);
 
