@@ -12,7 +12,6 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getBuilderResults } from '../helpers';
-import { SurfaceType } from '../constants';
 
 import type { ViewBlockBuilder } from '../types';
 
@@ -38,13 +37,7 @@ export interface HomeTabBuilder extends CanBuildToJSON,
  * @@displayName Home Tab
  */
 
-export class HomeTabBuilder extends SurfaceBuilder {
-  constructor(params?: HomeTabParams) {
-    super(params);
-
-    this.props.type = SurfaceType.HomeTab;
-  }
-
+export class HomeTabBuilder extends SurfaceBuilder<HomeTabParams> {
   public build(): SlackDto {
     const augmentedProps = {
       blocks: getBuilderResults(this.props.blocks),

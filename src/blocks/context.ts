@@ -7,7 +7,6 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getElementsForContext } from '../helpers';
-import { BlockType } from '../constants';
 
 import type { ContextElementBuilder } from '../types';
 
@@ -26,13 +25,7 @@ export interface ContextBuilder extends HasBlockId,
  * @@displayName Context
  */
 
-export class ContextBuilder extends BlockBuilder {
-  constructor(params?: ContextParams) {
-    super(params);
-
-    this.props.type = BlockType.Context;
-  }
-
+export class ContextBuilder extends BlockBuilder<ContextBuilder> {
   public build(): SlackDto {
     const augmentedProps = {
       elements: getElementsForContext(this.props.elements),

@@ -7,7 +7,6 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getPlainTextObject } from '../helpers';
-import { BlockType } from '../constants';
 
 export interface HeaderParams {
   blockId?: string;
@@ -25,13 +24,7 @@ export interface HeaderBuilder extends HasBlockId,
  * @@displayName Header
  */
 
-export class HeaderBuilder extends BlockBuilder {
-  constructor(params?: HeaderParams) {
-    super(params);
-
-    this.props.type = BlockType.Header;
-  }
-
+export class HeaderBuilder extends BlockBuilder<HeaderParams> {
   public build(): SlackDto {
     const augmentedProps = {
       text: getPlainTextObject(this.props.text),

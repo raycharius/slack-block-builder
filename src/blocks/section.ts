@@ -14,7 +14,6 @@ import {
   getBuilderResult,
   getFields,
 } from '../helpers';
-import { BlockType } from '../constants';
 
 import type { SectionElementBuilder } from '../types';
 
@@ -36,13 +35,7 @@ export interface SectionBuilder extends HasAccessory<SectionElementBuilder>,
  * @@displayName Section
  */
 
-export class SectionBuilder extends BlockBuilder {
-  constructor(params?: SectionParams) {
-    super(params);
-
-    this.props.type = BlockType.Section;
-  }
-
+export class SectionBuilder extends BlockBuilder<SectionParams> {
   public build(): SlackDto {
     const augmentedProps = {
       text: getMarkdownObject(this.props.text),

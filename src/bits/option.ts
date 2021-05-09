@@ -32,11 +32,7 @@ export interface OptionBuilder extends HasDescription,
  * @@displayName Option
  */
 
-export class OptionBuilder extends BitBuilder {
-  constructor(params?: OptionParams) {
-    super(params);
-  }
-
+export class OptionBuilder extends BitBuilder<OptionParams> {
   public build({ isMarkdown }: ObjectLiteral = { isMarkdown: false }): SlackDto {
     const augmentedProps = {
       text: isMarkdown

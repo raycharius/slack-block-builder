@@ -7,7 +7,6 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins } from '../helpers';
-import { BlockType, FileType } from '../constants';
 
 export interface FileParams {
   blockId?: string;
@@ -25,14 +24,7 @@ export interface FileBuilder extends HasBlockId,
  * @@displayName File
  */
 
-export class FileBuilder extends BlockBuilder {
-  constructor(params?: FileParams) {
-    super(params);
-
-    this.props.type = BlockType.File;
-    this.props.source = FileType.Remote;
-  }
-
+export class FileBuilder extends BlockBuilder<FileParams> {
   public build(): SlackDto {
     return this.getResult(SlackDto);
   }

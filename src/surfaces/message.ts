@@ -59,11 +59,7 @@ export interface MessageBuilder extends CanBuildToJSON,
  * @@displayName Message
  */
 
-export class MessageBuilder extends SurfaceBuilder {
-  constructor(params?: MessageParams) {
-    super(params);
-  }
-
+export class MessageBuilder extends SurfaceBuilder<MessageParams> {
   public build(): SlackDto {
     const augmentedProps = {
       blocks: getBuilderResults(this.props.blocks),

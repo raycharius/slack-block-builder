@@ -10,7 +10,6 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
-import { ElementType } from '../constants';
 
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
@@ -34,13 +33,7 @@ export interface ExternalSelectBuilder extends HasActionId,
  * @@displayName External Select
  */
 
-export class ExternalSelectBuilder extends ElementBuilder {
-  constructor(params?: ExternalSelectParams) {
-    super(params);
-
-    this.props.type = ElementType.ExternalSelect;
-  }
-
+export class ExternalSelectBuilder extends ElementBuilder<ExternalSelectParams> {
   public build(): SlackDto {
     const augmentedProps = {
       placeholder: getPlainTextObject(this.props.placeholder),

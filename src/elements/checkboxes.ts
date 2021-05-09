@@ -9,7 +9,6 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getBuilderResult, getBuilderResults } from '../helpers';
-import { ElementType } from '../constants';
 
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
@@ -30,13 +29,7 @@ export interface CheckboxesBuilder extends HasActionId,
  * @@displayName Checkboxes
  */
 
-export class CheckboxesBuilder extends ElementBuilder {
-  constructor(params?: CheckboxesParams) {
-    super(params);
-
-    this.props.type = ElementType.Checkboxes;
-  }
-
+export class CheckboxesBuilder extends ElementBuilder<CheckboxesParams> {
   public build(): SlackDto {
     const augmentedProps = {
       options: getBuilderResults(this.props.options, { isMarkdown: true }),

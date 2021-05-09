@@ -3,12 +3,12 @@ import { BlockBuilderError } from './error';
 import type { ObjectLiteral } from '../types';
 import type { Prop } from '../constants';
 
-export abstract class PropSetter {
+export abstract class PropSetter<CtorParams> {
   protected props: ObjectLiteral;
 
   protected canBeModified: boolean;
 
-  protected constructor(params?: ObjectLiteral) {
+  constructor(params?: CtorParams) {
     this.props = params || {};
     this.canBeModified = true;
   }

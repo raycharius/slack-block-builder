@@ -9,7 +9,6 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getPlainTextObject } from '../helpers';
-import { BlockType } from '../constants';
 
 export interface ImageParams {
   altText?: string;
@@ -31,13 +30,7 @@ export interface ImageBuilder extends HasAltText,
  * @@displayName Image
  */
 
-export class ImageBuilder extends BlockBuilder {
-  constructor(params?: ImageParams) {
-    super(params);
-
-    this.props.type = BlockType.Image;
-  }
-
+export class ImageBuilder extends BlockBuilder<ImageParams> {
   public build(): SlackDto {
     const augmentedProps = {
       title: getPlainTextObject(this.props.title),

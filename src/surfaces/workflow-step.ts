@@ -12,7 +12,6 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResults } from '../helpers';
-import { SurfaceType } from '../constants';
 
 import type { ViewBlockBuilder } from '../types';
 
@@ -37,13 +36,7 @@ export interface WorkflowStepBuilder extends CanBuildToJSON,
  * @@displayName Workflow Step
  */
 
-export class WorkflowStepBuilder extends SurfaceBuilder {
-  constructor(params?: WorkflowStepParams) {
-    super(params);
-
-    this.props.type = SurfaceType.WorkflowStep;
-  }
-
+export class WorkflowStepBuilder extends SurfaceBuilder<WorkflowStepParams> {
   public build(): SlackDto {
     const augmentedProps = {
       title: getPlainTextObject(this.props.title),

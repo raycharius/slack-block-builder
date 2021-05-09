@@ -7,7 +7,6 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins } from '../helpers';
-import { ElementType } from '../constants';
 
 export interface ImgParams {
   imageUrl?: string;
@@ -25,13 +24,7 @@ export interface ImgBuilder extends HasAltText,
  * @@displayName Image
  */
 
-export class ImgBuilder extends ElementBuilder {
-  constructor(params?: ImgParams) {
-    super(params);
-
-    this.props.type = ElementType.Image;
-  }
-
+export class ImgBuilder extends ElementBuilder<ImgParams> {
   public build(): SlackDto {
     return this.getResult(SlackDto);
   }

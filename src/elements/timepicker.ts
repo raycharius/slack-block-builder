@@ -9,7 +9,6 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
-import { ElementType } from '../constants';
 
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
@@ -32,13 +31,7 @@ export interface TimePickerBuilder extends HasActionId,
  * @@displayName Time Picker
  */
 
-export class TimePickerBuilder extends ElementBuilder {
-  constructor(params?: TimePickerParams) {
-    super(params);
-
-    this.props.type = ElementType.TimePicker;
-  }
-
+export class TimePickerBuilder extends ElementBuilder<TimePickerParams> {
   public build(): SlackDto {
     const augmentedProps = {
       placeholder: getPlainTextObject(this.props.placeholder),

@@ -17,7 +17,6 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResults } from '../helpers';
-import { SurfaceType } from '../constants';
 
 import type { ViewBlockBuilder } from '../types';
 
@@ -52,13 +51,7 @@ export interface ModalBuilder extends CanBuildToJSON,
  * @@displayName Modal
  */
 
-export class ModalBuilder extends SurfaceBuilder {
-  constructor(params?: ModalParams) {
-    super(params);
-
-    this.props.type = SurfaceType.Modal;
-  }
-
+export class ModalBuilder extends SurfaceBuilder<ModalParams> {
   build(): SlackDto {
     const augmentedProps = {
       title: getPlainTextObject(this.props.title),

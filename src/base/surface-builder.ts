@@ -1,4 +1,4 @@
 import { Builder } from '../lib';
 
-export abstract class SurfaceBuilder extends Builder {
+export abstract class SurfaceBuilder<CtorParams> extends Builder<CtorParams> {
 }

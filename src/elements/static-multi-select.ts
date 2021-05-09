@@ -17,7 +17,6 @@ import {
   getBuilderResult,
   getBuilderResults,
 } from '../helpers';
-import { ElementType } from '../constants';
 
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
@@ -43,13 +42,7 @@ export interface StaticMultiSelectBuilder extends HasActionId,
   MustBuild {
 }
 
-export class StaticMultiSelectBuilder extends ElementBuilder {
-  constructor(params?: StaticMultiSelectParams) {
-    super(params);
-
-    this.props.type = ElementType.StaticMultiSelect;
-  }
-
+export class StaticMultiSelectBuilder extends ElementBuilder<StaticMultiSelectParams> {
   public build(): SlackDto {
     const augmentedProps = {
       placeholder: getPlainTextObject(this.props.placeholder),

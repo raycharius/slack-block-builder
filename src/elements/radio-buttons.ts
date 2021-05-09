@@ -9,7 +9,6 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getBuilderResult, getBuilderResults } from '../helpers';
-import { ElementType } from '../constants';
 
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
@@ -30,13 +29,7 @@ export interface RadioButtonsBuilder extends HasActionId,
  * @@displayName Radio Buttons
  */
 
-export class RadioButtonsBuilder extends ElementBuilder {
-  constructor(params?: RadioButtonsParams) {
-    super(params);
-
-    this.props.type = ElementType.RadioButtons;
-  }
-
+export class RadioButtonsBuilder extends ElementBuilder<RadioButtonsParams> {
   public build(): SlackDto {
     const augmentedProps = {
       options: getBuilderResults(this.props.options, { isMarkdown: true }),

@@ -16,7 +16,6 @@ import {
   getBuilderResult,
   getBuilderResults,
 } from '../helpers';
-import { ElementType } from '../constants';
 
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
@@ -40,13 +39,7 @@ export interface StaticSelectBuilder extends HasActionId,
  * @@displayName Static Select
  */
 
-export class StaticSelectBuilder extends ElementBuilder {
-  constructor(params?: StaticSelectParams) {
-    super(params);
-
-    this.props.type = ElementType.StaticSelect;
-  }
-
+export class StaticSelectBuilder extends ElementBuilder<StaticSelectParams> {
   public build(): SlackDto {
     const augmentedProps = {
       placeholder: getPlainTextObject(this.props.placeholder),

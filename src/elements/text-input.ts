@@ -13,7 +13,6 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getDispatchActionsConfigurationObject } from '../helpers';
-import { ElementType } from '../constants';
 
 export interface TextInputParams {
   actionId?: string;
@@ -40,13 +39,7 @@ export interface TextInputBuilder extends HasActionId,
  * @@displayName Plain-Text Input
  */
 
-export class TextInputBuilder extends ElementBuilder {
-  constructor(params?: TextInputParams) {
-    super(params);
-
-    this.props.type = ElementType.TextInput;
-  }
-
+export class TextInputBuilder extends ElementBuilder<TextInputParams> {
   public build(): SlackDto {
     const augmentedProps = {
       placeholder: getPlainTextObject(this.props.placeholder),

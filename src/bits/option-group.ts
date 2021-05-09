@@ -23,11 +23,7 @@ export interface OptionGroupBuilder extends HasEnd,
  * @@displayName Option Group
  */
 
-export class OptionGroupBuilder extends BitBuilder {
-  constructor(params?: OptionGroupParams) {
-    super(params);
-  }
-
+export class OptionGroupBuilder extends BitBuilder<OptionGroupParams> {
   public build(): SlackDto {
     const augmentedProps = {
       label: getPlainTextObject(this.props.label),

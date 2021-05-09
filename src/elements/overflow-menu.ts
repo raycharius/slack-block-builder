@@ -8,7 +8,6 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getBuilderResult, getBuilderResults } from '../helpers';
-import { ElementType } from '../constants';
 
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
@@ -28,13 +27,7 @@ export interface OverflowMenuBuilder extends HasActionId,
  * @@displayName Overflow Menu
  */
 
-export class OverflowMenuBuilder extends ElementBuilder implements OverflowMenuBuilder {
-  constructor(params?: OverflowMenuParams) {
-    super(params);
-
-    this.props.type = ElementType.Overflow;
-  }
-
+export class OverflowMenuBuilder extends ElementBuilder<OverflowMenuParams> {
   public build(): SlackDto {
     const augmentedProps = {
       options: getBuilderResults(this.props.options),

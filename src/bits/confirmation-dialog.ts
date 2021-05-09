@@ -34,11 +34,7 @@ export interface ConfirmationDialogBuilder extends HasConfirm<string>,
  * @@displayName Confirmation Dialog
  */
 
-export class ConfirmationDialogBuilder extends BitBuilder {
-  constructor(params?: ConfirmationDialogParams) {
-    super(params);
-  }
-
+export class ConfirmationDialogBuilder extends BitBuilder<ConfirmationDialogParams> {
   public build(): SlackDto {
     const augmentedProps = {
       text: getMarkdownObject(this.props.text),

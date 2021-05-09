@@ -19,7 +19,6 @@ import {
   getFilter,
   getBuilderResult,
 } from '../helpers';
-import { ElementType } from '../constants';
 
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
@@ -47,13 +46,7 @@ export interface ConversationMultiSelectBuilder extends HasActionId,
  * @@displayName Conversation Multi-Select
  */
 
-export class ConversationMultiSelectBuilder extends ElementBuilder {
-  constructor(params?: ConversationMultiSelectParams) {
-    super(params);
-
-    this.props.type = ElementType.ConversationsMultiSelect;
-  }
-
+export class ConversationMultiSelectBuilder extends ElementBuilder<ConversationMultiSelectParams> {
   public build(): SlackDto {
     const augmentedProps = {
       placeholder: getPlainTextObject(this.props.placeholder),
