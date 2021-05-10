@@ -33,6 +33,8 @@ export interface OptionBuilder extends HasDescription,
  */
 
 export class OptionBuilder extends BitBuilder<OptionParams> {
+  /** @internal */
+
   public build({ isMarkdown }: ObjectLiteral = { isMarkdown: false }): SlackDto {
     const augmentedProps = {
       text: isMarkdown

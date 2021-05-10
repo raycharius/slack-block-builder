@@ -6,6 +6,7 @@
     "declaration": true,
     "outDir": "dist",
     "esModuleInterop": true,
+    "stripInternal": true,
     "moduleResolution": "node"
   },
   "include": ["src"]

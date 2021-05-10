@@ -36,6 +36,8 @@ export interface InputBuilder extends HasBlockId,
  */
 
 export class InputBuilder extends BlockBuilder<InputParams> {
+  /** @internal */
+
   public build(): SlackDto {
     const augmentedProps = {
       label: getPlainTextObject(this.props.label),

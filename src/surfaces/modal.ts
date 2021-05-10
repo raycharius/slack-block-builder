@@ -52,7 +52,9 @@ export interface ModalBuilder extends CanBuildToJSON,
  */
 
 export class ModalBuilder extends SurfaceBuilder<ModalParams> {
-  build(): SlackDto {
+  /** @internal */
+
+  public build(): SlackDto {
     const augmentedProps = {
       title: getPlainTextObject(this.props.title),
       blocks: getBuilderResults(this.props.blocks),

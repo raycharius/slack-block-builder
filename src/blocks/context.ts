@@ -26,6 +26,8 @@ export interface ContextBuilder extends HasBlockId,
  */
 
 export class ContextBuilder extends BlockBuilder<ContextParams> {
+  /** @internal */
+
   public build(): SlackDto {
     const augmentedProps = {
       elements: getElementsForContext(this.props.elements),

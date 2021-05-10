@@ -4,7 +4,11 @@ import { BlockBuilderError } from './error';
 import type { ObjectLiteral, Constructor } from '../types';
 
 export abstract class Builder extends PropSetter {
+  /** @internal */
+
   public isBuilt: boolean;
+
+  /** @internal */
 
   public result: any;
 
@@ -37,9 +41,13 @@ export abstract class Builder extends PropSetter {
     Object.seal(this);
   }
 
+  /** @internal */
+
   public canBeBuilt(): boolean {
     return !this.isBuilt;
   }
+
+  /** @internal */
 
   // eslint-disable-next-line class-methods-use-this, @typescript-eslint/no-unused-vars
   public build(params?: ObjectLiteral): ObjectLiteral {

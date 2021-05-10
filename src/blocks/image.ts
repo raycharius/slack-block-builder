@@ -31,6 +31,8 @@ export interface ImageBuilder extends HasAltText,
  */
 
 export class ImageBuilder extends BlockBuilder<ImageParams> {
+  /** @internal */
+
   public build(): SlackDto {
     const augmentedProps = {
       title: getPlainTextObject(this.props.title),

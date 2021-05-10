@@ -25,6 +25,8 @@ export interface FileBuilder extends HasBlockId,
  */
 
 export class FileBuilder extends BlockBuilder<FileParams> {
+  /** @internal */
+
   public build(): SlackDto {
     return this.getResult(SlackDto);
   }

@@ -36,6 +36,8 @@ export interface SectionBuilder extends HasAccessory<SectionElementBuilder>,
  */
 
 export class SectionBuilder extends BlockBuilder<SectionParams> {
+  /** @internal */
+
   public build(): SlackDto {
     const augmentedProps = {
       text: getMarkdownObject(this.props.text),

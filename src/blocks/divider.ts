@@ -18,6 +18,8 @@ export interface DividerBuilder extends HasBlockId,
  */
 
 export class DividerBuilder extends BlockBuilder<DividerParams> {
+  /** @internal */
+
   build(): SlackDto {
     return this.getResult(SlackDto);
   }

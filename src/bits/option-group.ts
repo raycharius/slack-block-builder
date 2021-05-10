@@ -24,6 +24,8 @@ export interface OptionGroupBuilder extends HasEnd,
  */
 
 export class OptionGroupBuilder extends BitBuilder<OptionGroupParams> {
+  /** @internal */
+
   public build(): SlackDto {
     const augmentedProps = {
       label: getPlainTextObject(this.props.label),

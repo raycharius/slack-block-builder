@@ -38,6 +38,8 @@ export interface HomeTabBuilder extends CanBuildToJSON,
  */
 
 export class HomeTabBuilder extends SurfaceBuilder<HomeTabParams> {
+  /** @internal */
+
   public build(): SlackDto {
     const augmentedProps = {
       blocks: getBuilderResults(this.props.blocks),

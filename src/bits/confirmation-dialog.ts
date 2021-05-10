@@ -35,6 +35,8 @@ export interface ConfirmationDialogBuilder extends HasConfirm<string>,
  */
 
 export class ConfirmationDialogBuilder extends BitBuilder<ConfirmationDialogParams> {
+  /** @internal */
+
   public build(): SlackDto {
     const augmentedProps = {
       text: getMarkdownObject(this.props.text),

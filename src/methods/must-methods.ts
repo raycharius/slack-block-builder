@@ -8,5 +8,7 @@ export interface MustBuild {
    * @description ⚠ ATTENTION: Not meant to be called outside of the source code of BlockBuilder Builder.
    */
 
+  /** @internal */
+
   build(params?: ObjectLiteral): any;
 }

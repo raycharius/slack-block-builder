@@ -29,6 +29,8 @@ export interface AttachmentBuilder extends HasBlocks<BlockBuilder>,
  */
 
 export class AttachmentBuilder extends BitBuilder<AttachmentParams> {
+  /** @internal */
+
   public build(): SlackDto {
     const augmentedProps = {
       blocks: getBuilderResults(this.props.blocks),

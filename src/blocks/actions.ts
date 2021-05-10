@@ -26,6 +26,8 @@ export interface ActionsBuilder extends HasBlockId,
  */
 
 export class ActionsBuilder extends BlockBuilder<ActionsParams> {
+  /** @internal */
+
   public build(): SlackDto {
     const augmentedProps = {
       elements: getBuilderResults(this.props.elements),

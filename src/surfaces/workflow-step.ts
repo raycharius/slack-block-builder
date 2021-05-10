@@ -37,6 +37,8 @@ export interface WorkflowStepBuilder extends CanBuildToJSON,
  */
 
 export class WorkflowStepBuilder extends SurfaceBuilder<WorkflowStepParams> {
+  /** @internal */
+
   public build(): SlackDto {
     const augmentedProps = {
       title: getPlainTextObject(this.props.title),

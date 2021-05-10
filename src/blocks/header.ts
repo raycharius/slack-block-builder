@@ -25,6 +25,8 @@ export interface HeaderBuilder extends HasBlockId,
  */
 
 export class HeaderBuilder extends BlockBuilder<HeaderParams> {
+  /** @internal */
+
   public build(): SlackDto {
     const augmentedProps = {
       text: getPlainTextObject(this.props.text),
