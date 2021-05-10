@@ -7,6 +7,7 @@ import { Prop } from '../constants';
 import type { AttachmentBuilder } from '../bits/attachment';
 import type { OptionBuilder } from '../bits/option';
 import type { OptionGroupBuilder } from '../bits/option-group';
+import type { SingleOrArray } from '../types';
 
 export abstract class HasAttachments extends PropSetter {
   /**
@@ -16,7 +17,9 @@ export abstract class HasAttachments extends PropSetter {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public attachments(...attachments: Array<AttachmentBuilder | AttachmentBuilder[]>): this {
+  attachments(attachment: SingleOrArray<AttachmentBuilder>, ...attachments: Array<SingleOrArray<AttachmentBuilder>>): this;
+
+  public attachments(...attachments: Array<SingleOrArray<AttachmentBuilder>>): this {
     return this.append(attachments.flat(), Prop.Attachments);
   }
 }
@@ -33,7 +36,9 @@ export abstract class HasBlocks<Type> extends PropSetter {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public blocks(...blocks: Array<Type | Type[]>): this {
+  blocks(block: SingleOrArray<Type>, ...blocks: Array<SingleOrArray<Type>>): this;
+
+  public blocks(...blocks: Array<SingleOrArray<Type>>): this {
     return this.append(blocks.flat(), Prop.Blocks);
   }
 }
@@ -51,7 +56,9 @@ export abstract class HasElements<Type> extends PropSetter {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public elements(...elements: Array<Type | Type[]>): this {
+  elements(element: SingleOrArray<Type>, ...elements: Array<SingleOrArray<Type>>): this;
+
+  public elements(...elements: Array<SingleOrArray<Type>>): this {
     return this.append(elements.flat(), Prop.Elements);
   }
 }
@@ -70,7 +77,9 @@ export abstract class HasFields extends PropSetter {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public fields(...fields: Array<string | string[]>): this {
+  fields(field: SingleOrArray<string>, ...fields: Array<SingleOrArray<string>>): this;
+
+  public fields(...fields: Array<SingleOrArray<string>>): this {
     return this.append(fields.flat(), Prop.Fields);
   }
 }
@@ -86,7 +95,9 @@ export abstract class HasFilter extends PropSetter {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public filter(...filters: Array<string | string[]>): this {
+  filter(filter: SingleOrArray<string>, ...filters: Array<SingleOrArray<string>>): this;
+
+  public filter(...filters: Array<SingleOrArray<string>>): this {
     return this.append(filters.flat(), Prop.Filter);
   }
 }
@@ -99,7 +110,9 @@ export abstract class HasInitialChannels extends PropSetter {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public initialChannels(...channelIds: Array<string | string[]>): this {
+  initialChannels(channelId: SingleOrArray<string>, ...channelIds: Array<SingleOrArray<string>>): this;
+
+  public initialChannels(...channelIds: Array<SingleOrArray<string>>): this {
     return this.append(channelIds.flat(), Prop.InitialChannels);
   }
 }
@@ -112,7 +125,9 @@ export abstract class HasInitialConversations extends PropSetter {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public initialConversations(...conversationIds: Array<string | string[]>): this {
+  initialConversations(conversationId: SingleOrArray<string>, ...conversationIds: Array<SingleOrArray<string>>): this;
+
+  public initialConversations(...conversationIds: Array<SingleOrArray<string>>): this {
     return this.append(conversationIds.flat(), Prop.InitialConversations);
   }
 }
@@ -128,7 +143,9 @@ export abstract class HasInitialOptions extends PropSetter {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public initialOptions(...options: Array<OptionBuilder | OptionBuilder[]>): this {
+  initialOptions(option: SingleOrArray<OptionBuilder>, ...options: Array<SingleOrArray<OptionBuilder>>): this;
+
+  public initialOptions(...options: Array<SingleOrArray<OptionBuilder>>): this {
     return this.append(options.flat(), Prop.InitialOptions);
   }
 }
@@ -141,7 +158,9 @@ export abstract class HasInitialUsers extends PropSetter {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public initialUsers(...userIds: Array<string | string[]>): this {
+  initialUsers(userId: SingleOrArray<string>, ...userIds: Array<SingleOrArray<string>>): this;
+
+  public initialUsers(...userIds: Array<SingleOrArray<string>>): this {
     return this.append(userIds.flat(), Prop.InitialUsers);
   }
 }
@@ -158,7 +177,9 @@ export abstract class HasOptionGroups extends PropSetter {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public optionGroups(...optionGroups: Array<OptionGroupBuilder | OptionGroupBuilder[]>): this {
+  optionGroups(optionGroup: SingleOrArray<OptionGroupBuilder>, ...optionGroups: Array<SingleOrArray<OptionGroupBuilder>>): this;
+
+  public optionGroups(...optionGroups: Array<SingleOrArray<OptionGroupBuilder>>): this {
     return this.append(optionGroups.flat(), Prop.OptionGroups);
   }
 }
@@ -176,7 +197,9 @@ export abstract class HasOptions extends PropSetter {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public options(...options: Array<OptionBuilder | OptionBuilder[]>): this {
+  options(option: SingleOrArray<OptionBuilder>, ...options: Array<SingleOrArray<OptionBuilder>>): this;
+
+  public options(...options: Array<SingleOrArray<OptionBuilder>>): this {
     return this.append(options.flat(), Prop.Options);
   }
 }
