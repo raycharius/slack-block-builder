@@ -1,5 +1,5 @@
 import { SurfaceBuilder } from '../base';
-import { SlackDto } from '../lib';
+import { MessageSlackDto } from '../lib';
 import {
   CanBuildToJSON,
   CanBuildToObject,
@@ -34,7 +34,7 @@ export interface MessageParams {
 }
 
 export interface MessageBuilder extends CanBuildToJSON,
-  CanBuildToObject<SlackDto>,
+  CanBuildToObject<MessageSlackDto>,
   CanGetAttachments,
   CanGetBlocks,
   CanPrintPreviewUrl,
@@ -62,8 +62,8 @@ export interface MessageBuilder extends CanBuildToJSON,
 export class MessageBuilder extends SurfaceBuilder<MessageParams> {
   /** @internal */
 
-  public build(): SlackDto {
-    return this.getResult(SlackDto, {
+  public build(): MessageSlackDto {
+    return this.getResult(MessageSlackDto, {
       blocks: getBuilderResults(this.props.blocks),
       attachments: getBuilderResults(this.props.attachments),
     });
