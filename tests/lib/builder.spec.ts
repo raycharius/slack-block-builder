@@ -9,8 +9,6 @@ describe('Testing Builder Class Methods:', () => {
       submit: undefined,
     });
 
-    console.log(myModal)
-
     // @ts-expect-error Props is not a public property, but necessary here
     expect(myModal.props).toEqual({});
   });
