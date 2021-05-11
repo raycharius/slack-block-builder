@@ -1,5 +1,5 @@
 import { SurfaceBuilder } from '../base';
-import { SlackDto } from '../lib';
+import { ViewSlackDto } from '../lib';
 import {
   CanBuildToJSON,
   CanBuildToObject,
@@ -21,7 +21,7 @@ export interface WorkflowStepParams {
 }
 
 export interface WorkflowStepBuilder extends CanBuildToJSON,
-  CanBuildToObject,
+  CanBuildToObject<ViewSlackDto>,
   CanGetBlocks,
   CanPrintPreviewUrl,
   HasBlocks<ViewBlockBuilder>,
@@ -39,7 +39,7 @@ export interface WorkflowStepBuilder extends CanBuildToJSON,
 export class WorkflowStepBuilder extends SurfaceBuilder<WorkflowStepParams> {
   /** @internal */
 
-  public build(): SlackDto {
+  public build(): ViewSlackDto {
     const augmentedProps = {
       title: getPlainTextObject(this.props.title),
       blocks: getBuilderResults(this.props.blocks),
@@ -47,7 +47,7 @@ export class WorkflowStepBuilder extends SurfaceBuilder<WorkflowStepParams> {
       submit: getPlainTextObject(this.props.submit),
     };
 
-    return this.getResult<SlackDto>(SlackDto, augmentedProps);
+    return this.getResult(ViewSlackDto, augmentedProps);
   }
 }
 

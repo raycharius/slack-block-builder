@@ -1,5 +1,5 @@
 import { ElementBuilder } from '../base';
-import { SlackDto } from '../lib';
+import { ElementSlackDto } from '../lib';
 import {
   HasActionId,
   HasDispatchActionOnCharacterEntered,
@@ -40,13 +40,13 @@ export interface TextInputBuilder extends HasActionId,
  */
 
 export class TextInputBuilder extends ElementBuilder<TextInputParams> {
-  public build(): SlackDto {
+  public build(): ElementSlackDto {
     const augmentedProps = {
       placeholder: getPlainTextObject(this.props.placeholder),
       dispatchActionConfig: getDispatchActionsConfigurationObject(this.props),
     };
 
-    return this.getResult<SlackDto>(SlackDto, augmentedProps);
+    return this.getResult(ElementSlackDto, augmentedProps);
   }
 }
 

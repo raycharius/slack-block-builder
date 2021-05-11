@@ -1,5 +1,5 @@
 import { SurfaceBuilder } from '../base';
-import { SlackDto } from '../lib';
+import { ViewSlackDto } from '../lib';
 import {
   CanBuildToJSON,
   CanBuildToObject,
@@ -31,7 +31,7 @@ export interface ModalParams {
 }
 
 export interface ModalBuilder extends CanBuildToJSON,
-  CanBuildToObject,
+  CanBuildToObject<ViewSlackDto>,
   CanGetBlocks,
   CanPrintPreviewUrl,
   HasBlocks<ViewBlockBuilder>,
@@ -54,7 +54,7 @@ export interface ModalBuilder extends CanBuildToJSON,
 export class ModalBuilder extends SurfaceBuilder<ModalParams> {
   /** @internal */
 
-  public build(): SlackDto {
+  public build(): ViewSlackDto {
     const augmentedProps = {
       title: getPlainTextObject(this.props.title),
       blocks: getBuilderResults(this.props.blocks),
@@ -62,7 +62,7 @@ export class ModalBuilder extends SurfaceBuilder<ModalParams> {
       submit: getPlainTextObject(this.props.submit),
     };
 
-    return this.getResult<SlackDto>(SlackDto, augmentedProps);
+    return this.getResult(ViewSlackDto, augmentedProps);
   }
 }
 

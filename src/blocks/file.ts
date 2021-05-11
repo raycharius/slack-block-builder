@@ -1,5 +1,5 @@
 import { BlockBuilder } from '../base';
-import { SlackDto } from '../lib';
+import { BlockSlackDto } from '../lib';
 import {
   HasBlockId,
   HasEnd,
@@ -27,8 +27,8 @@ export interface FileBuilder extends HasBlockId,
 export class FileBuilder extends BlockBuilder<FileParams> {
   /** @internal */
 
-  public build(): SlackDto {
-    return this.getResult(SlackDto);
+  public build(): BlockSlackDto {
+    return this.getResult(BlockSlackDto);
   }
 }
 

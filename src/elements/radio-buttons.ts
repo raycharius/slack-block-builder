@@ -1,5 +1,5 @@
 import { ElementBuilder } from '../base';
-import { SlackDto } from '../lib';
+import { ElementSlackDto } from '../lib';
 import {
   HasActionId,
   HasConfirm,
@@ -30,14 +30,14 @@ export interface RadioButtonsBuilder extends HasActionId,
  */
 
 export class RadioButtonsBuilder extends ElementBuilder<RadioButtonsParams> {
-  public build(): SlackDto {
+  public build(): ElementSlackDto {
     const augmentedProps = {
       options: getBuilderResults(this.props.options, { isMarkdown: true }),
       initialOption: getBuilderResult(this.props.initialOption, { isMarkdown: true }),
       confirm: getBuilderResult(this.props.confirm),
     };
 
-    return this.getResult<SlackDto>(SlackDto, augmentedProps);
+    return this.getResult(ElementSlackDto, augmentedProps);
   }
 }
 

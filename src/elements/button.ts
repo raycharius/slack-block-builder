@@ -1,5 +1,5 @@
 import { ElementBuilder } from '../base';
-import { SlackDto } from '../lib';
+import { ElementSlackDto } from '../lib';
 import {
   HasActionId,
   HasConfirm,
@@ -39,13 +39,13 @@ export interface ButtonBuilder extends HasActionId,
  */
 
 export class ButtonBuilder extends ElementBuilder<ButtonParams> {
-  public build(): SlackDto {
+  public build(): ElementSlackDto {
     const augmentedProps = {
       confirm: getBuilderResult(this.props.confirm),
       text: getPlainTextObject(this.props.text),
     };
 
-    return this.getResult<SlackDto>(SlackDto, augmentedProps);
+    return this.getResult(ElementSlackDto, augmentedProps);
   }
 }
 

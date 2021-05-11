@@ -1,5 +1,5 @@
 import { ElementBuilder } from '../base';
-import { SlackDto } from '../lib';
+import { ElementSlackDto } from '../lib';
 import {
   HasActionId,
   HasConfirm,
@@ -30,14 +30,14 @@ export interface CheckboxesBuilder extends HasActionId,
  */
 
 export class CheckboxesBuilder extends ElementBuilder<CheckboxesParams> {
-  public build(): SlackDto {
+  public build(): ElementSlackDto {
     const augmentedProps = {
       options: getBuilderResults(this.props.options, { isMarkdown: true }),
       initialOptions: getBuilderResults(this.props.initialOptions, { isMarkdown: true }),
       confirm: getBuilderResult(this.props.confirm),
     };
 
-    return this.getResult<SlackDto>(SlackDto, augmentedProps);
+    return this.getResult(ElementSlackDto, augmentedProps);
   }
 }
 

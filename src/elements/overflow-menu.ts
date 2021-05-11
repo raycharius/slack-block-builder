@@ -1,5 +1,5 @@
 import { ElementBuilder } from '../base';
-import { SlackDto } from '../lib';
+import { ElementSlackDto } from '../lib';
 import {
   HasActionId,
   HasConfirm,
@@ -28,13 +28,13 @@ export interface OverflowMenuBuilder extends HasActionId,
  */
 
 export class OverflowMenuBuilder extends ElementBuilder<OverflowMenuParams> {
-  public build(): SlackDto {
+  public build(): ElementSlackDto {
     const augmentedProps = {
       options: getBuilderResults(this.props.options),
       confirm: getBuilderResult(this.props.confirm),
     };
 
-    return this.getResult<SlackDto>(SlackDto, augmentedProps);
+    return this.getResult(ElementSlackDto, augmentedProps);
   }
 }
 

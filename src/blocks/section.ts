@@ -1,5 +1,5 @@
 import { BlockBuilder } from '../base';
-import { SlackDto } from '../lib';
+import { BlockSlackDto } from '../lib';
 import {
   HasAccessory,
   HasBlockId,
@@ -38,14 +38,14 @@ export interface SectionBuilder extends HasAccessory<SectionElementBuilder>,
 export class SectionBuilder extends BlockBuilder<SectionParams> {
   /** @internal */
 
-  public build(): SlackDto {
+  public build(): BlockSlackDto {
     const augmentedProps = {
       text: getMarkdownObject(this.props.text),
       fields: getFields(this.props.fields),
       accessory: getBuilderResult(this.props.accessory),
     };
 
-    return this.getResult<SlackDto>(SlackDto, augmentedProps);
+    return this.getResult(BlockSlackDto, augmentedProps);
   }
 }
 

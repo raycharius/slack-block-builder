@@ -1,7 +1,7 @@
 /* eslint-disable max-classes-per-file */
 /* eslint-disable max-len */
 
-import { Builder, SlackDto } from '../lib';
+import { Builder, SlackDto, BlockSlackDto } from '../lib';
 
 export abstract class CanBuildToJSON extends Builder {
   /**
@@ -15,12 +15,12 @@ export abstract class CanBuildToJSON extends Builder {
   }
 }
 
-export abstract class CanBuildToObject extends Builder {
+export abstract class CanBuildToObject<Type> extends Builder {
   /**
    * @description Builds the view and returns it as a Slack API-compatible object.
    */
 
-  public buildToObject(): SlackDto {
+  public buildToObject(): Type {
     this.build();
 
     return this.result;
@@ -34,7 +34,7 @@ export abstract class CanGetAttachments extends Builder {
    * {@link https://api.slack.com/reference/messaging/attachments|View in Slack API Documentation}
    */
 
-  getAttachments(): any[] | void {
+  getAttachments(): SlackDto[] {
     this.build();
 
     return this.result.attachments;
@@ -48,7 +48,7 @@ export abstract class CanGetBlocks extends Builder {
    * {@link https://api.slack.com/block-kit|View in Slack API Documentation}
    */
 
-  public getBlocks(): any[] | void {
+  public getBlocks(): BlockSlackDto[]{
     this.build();
 
     return this.result.blocks;

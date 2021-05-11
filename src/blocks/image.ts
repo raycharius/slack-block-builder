@@ -1,5 +1,5 @@
 import { BlockBuilder } from '../base';
-import { SlackDto } from '../lib';
+import { BlockSlackDto } from '../lib';
 import {
   HasAltText,
   HasBlockId,
@@ -33,12 +33,12 @@ export interface ImageBuilder extends HasAltText,
 export class ImageBuilder extends BlockBuilder<ImageParams> {
   /** @internal */
 
-  public build(): SlackDto {
+  public build(): BlockSlackDto {
     const augmentedProps = {
       title: getPlainTextObject(this.props.title),
     };
 
-    return this.getResult<SlackDto>(SlackDto, augmentedProps);
+    return this.getResult(BlockSlackDto, augmentedProps);
   }
 }
 

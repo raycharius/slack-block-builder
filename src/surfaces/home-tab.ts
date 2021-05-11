@@ -1,5 +1,5 @@
 import { SurfaceBuilder } from '../base';
-import { SlackDto } from '../lib';
+import { ViewSlackDto } from '../lib';
 import {
   CanBuildToJSON,
   CanBuildToObject,
@@ -22,7 +22,7 @@ export interface HomeTabParams {
 }
 
 export interface HomeTabBuilder extends CanBuildToJSON,
-  CanBuildToObject,
+  CanBuildToObject<ViewSlackDto>,
   CanGetBlocks,
   CanPrintPreviewUrl,
   HasBlocks<ViewBlockBuilder>,
@@ -40,12 +40,12 @@ export interface HomeTabBuilder extends CanBuildToJSON,
 export class HomeTabBuilder extends SurfaceBuilder<HomeTabParams> {
   /** @internal */
 
-  public build(): SlackDto {
+  public build(): ViewSlackDto {
     const augmentedProps = {
       blocks: getBuilderResults(this.props.blocks),
     };
 
-    return this.getResult<SlackDto>(SlackDto, augmentedProps);
+    return this.getResult(ViewSlackDto, augmentedProps);
   }
 }
 

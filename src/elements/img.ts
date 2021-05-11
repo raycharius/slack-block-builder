@@ -1,5 +1,5 @@
 import { ElementBuilder } from '../base';
-import { SlackDto } from '../lib';
+import { ElementSlackDto } from '../lib';
 import {
   HasAltText,
   HasImageUrl,
@@ -25,8 +25,8 @@ export interface ImgBuilder extends HasAltText,
  */
 
 export class ImgBuilder extends ElementBuilder<ImgParams> {
-  public build(): SlackDto {
-    return this.getResult(SlackDto);
+  public build(): ElementSlackDto {
+    return this.getResult(ElementSlackDto);
   }
 }
 

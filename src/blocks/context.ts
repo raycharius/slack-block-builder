@@ -1,5 +1,5 @@
 import { BlockBuilder } from '../base';
-import { SlackDto } from '../lib';
+import { BlockSlackDto } from '../lib';
 import {
   HasBlockId,
   HasElements,
@@ -28,12 +28,12 @@ export interface ContextBuilder extends HasBlockId,
 export class ContextBuilder extends BlockBuilder<ContextParams> {
   /** @internal */
 
-  public build(): SlackDto {
+  public build(): BlockSlackDto {
     const augmentedProps = {
       elements: getElementsForContext(this.props.elements),
     };
 
-    return this.getResult<SlackDto>(SlackDto, augmentedProps);
+    return this.getResult(BlockSlackDto, augmentedProps);
   }
 }
 

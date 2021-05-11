@@ -1,5 +1,5 @@
 import { ElementBuilder } from '../base';
-import { SlackDto } from '../lib';
+import { ElementSlackDto } from '../lib';
 import {
   HasActionId,
   HasConfirm,
@@ -34,14 +34,14 @@ export interface ExternalSelectBuilder extends HasActionId,
  */
 
 export class ExternalSelectBuilder extends ElementBuilder<ExternalSelectParams> {
-  public build(): SlackDto {
+  public build(): ElementSlackDto {
     const augmentedProps = {
       placeholder: getPlainTextObject(this.props.placeholder),
       initialOption: getBuilderResult(this.props.initialOption),
       confirm: getBuilderResult(this.props.confirm),
     };
 
-    return this.getResult<SlackDto>(SlackDto, augmentedProps);
+    return this.getResult(ElementSlackDto, augmentedProps);
   }
 }
 

@@ -34,7 +34,7 @@ export interface MessageParams {
 }
 
 export interface MessageBuilder extends CanBuildToJSON,
-  CanBuildToObject,
+  CanBuildToObject<SlackDto>,
   CanGetAttachments,
   CanGetBlocks,
   CanPrintPreviewUrl,
@@ -68,7 +68,7 @@ export class MessageBuilder extends SurfaceBuilder<MessageParams> {
       attachments: getBuilderResults(this.props.attachments),
     };
 
-    return this.getResult<SlackDto>(SlackDto, augmentedProps);
+    return this.getResult(SlackDto, augmentedProps);
   }
 }
 
