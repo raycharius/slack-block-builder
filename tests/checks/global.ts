@@ -1,8 +1,7 @@
-import { SlackDto } from '../../src/lib';
 import { CompositeBuilderClassConfig } from '../test-config-types';
 
 export const globalChecks = (config: CompositeBuilderClassConfig): void => {
-  const { Class, params } = config;
+  const { Class, DtoClass, params } = config;
 
   test('Initializing should return a sealed instance of class', () => {
     const instance = new Class();
@@ -11,8 +10,6 @@ export const globalChecks = (config: CompositeBuilderClassConfig): void => {
     expect(() => instance.test = true).toThrow();
     expect(instance).toBeInstanceOf(Class);
     expect(instance).toMatchObject({ props: {} });
-    expect(instance).toMatchObject({ result: {} });
-    expect(instance).toMatchObject({ isBuilt: false });
     expect(instance.test).toBeFalsy();
   });
 
@@ -22,8 +19,6 @@ export const globalChecks = (config: CompositeBuilderClassConfig): void => {
     // eslint-disable-next-line no-return-assign
     expect(() => instance.test = true).toThrow();
     expect(instance).toMatchObject({ props: params });
-    expect(instance).toMatchObject({ result: {} });
-    expect(instance).toMatchObject({ isBuilt: false });
     expect(instance.test).toBeFalsy();
   });
 
@@ -32,9 +27,7 @@ export const globalChecks = (config: CompositeBuilderClassConfig): void => {
     const built = instance.build();
 
     expect(() => instance.text('test')).toThrow(); // Check that props can no longer be set
-    expect(instance.isBuilt).toBeTruthy();
-    expect(instance.result).toBeInstanceOf(SlackDto);
-    expect(built).toBeInstanceOf(SlackDto);
+    expect(built).toBeInstanceOf(DtoClass);
   });
 
   test('Calling \'build()\' when the object has already been built will not modify the resulting object', () => {
@@ -44,7 +37,7 @@ export const globalChecks = (config: CompositeBuilderClassConfig): void => {
     instanceOne.build();
     instanceTwo.build();
 
-    expect(instanceOne.build()).toBeInstanceOf(SlackDto);
-    expect(instanceOne.build()).toMatchObject(instanceTwo.result);
+    expect(instanceOne.build()).toBeInstanceOf(DtoClass);
+    expect(instanceOne.build()).toMatchObject(instanceTwo.build());
   });
 };

@@ -1,4 +1,5 @@
 import { SectionBuilder as Class } from '../../src/blocks/section';
+import { BlockSlackDto as DtoClass } from '../../src/lib';
 import { params } from './mocks/section.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
@@ -7,7 +8,12 @@ const className = 'Section';
 const category = 'Blocks';
 
 const config = {
-  Class, params, className, category, expectMarkdown: true,
+  Class,
+  DtoClass,
+  params,
+  className,
+  category,
+  expectMarkdown: true,
 };
 
 const methodsConfig = [

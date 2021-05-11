@@ -16,7 +16,7 @@ export const literalBuild = (params: MethodTestArgs): void => {
 
     const built = instance.build();
 
-    expect(instance.result[slackDtoParamName]).toEqual(methodArgMock);
+    expect(built[slackDtoParamName]).toEqual(methodArgMock);
     expect(built[slackDtoParamName]).toEqual(instance.props[propSetterPropName]);
   });
 };

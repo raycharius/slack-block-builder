@@ -42,9 +42,9 @@ export const configurableEnumValueProperty = (params: MethodTestArgs): void => {
     const built = instance.build();
 
     if (expectedBuiltValue) {
-      expect(instance.result[slackDtoParamName]).toEqual(expectedBuiltValue);
+      expect(built[slackDtoParamName]).toEqual(expectedBuiltValue);
     } else {
-      expect(instance.result[slackDtoParamName]).toEqual(expectedEnumValue);
+      expect(built[slackDtoParamName]).toEqual(expectedEnumValue);
       expect(built[slackDtoParamName]).toEqual(instance.props[propSetterPropName]);
     }
   });

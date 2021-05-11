@@ -9,34 +9,14 @@ describe('Testing Builder Class Methods:', () => {
       submit: undefined,
     });
 
+    console.log(myModal)
+
     // @ts-expect-error Props is not a public property, but necessary here
-    expect(myModal.props).toEqual({ type: 'modal' });
-  });
-
-  test('After instantiation, the builder subclass should be able to be built, before the `build()` method has been called.', () => {
-    const myModal = Modal();
-
-    expect(myModal.canBeBuilt()).toEqual(true);
-
-    myModal.build();
-
-    expect(myModal.canBeBuilt()).toEqual(false);
+    expect(myModal.props).toEqual({});
   });
 
   test('After being built, the builder should not be able to be built anymore.', () => {
-    const myModal = Modal();
-
-    myModal.build();
-
-    expect(myModal.canBeBuilt()).toEqual(false);
-  });
-
-  test('After being built, the builder should not be able to be built anymore.', () => {
-    class FakeBuilder extends Builder {
-      constructor() {
-        super();
-      }
-    }
+    class FakeBuilder extends Builder {}
 
     const fakeBuilder = new FakeBuilder();
 

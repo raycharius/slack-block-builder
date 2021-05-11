@@ -4,6 +4,7 @@ type AnyObject = {
 
 export type CompositeBuilderClassConfig = {
   Class: new (...args: any[]) => any;
+  DtoClass: new (...args: any[]) => any;
   params: AnyObject,
   className: string;
   category: string;

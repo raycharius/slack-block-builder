@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-    Lightweight, zero-dependency JavaScript library for <strong>Slack Block Kit UI</strong>.
+    Lightweight, zero-dependency JavaScript library for <strong>Slack BlockBuilder Kit UI</strong>.
     <br />
     <br />
     <a href="https://blockbuilder.dev" target="_blank"><strong>View the Docs »</strong></a>
@@ -21,7 +21,7 @@
   </p>
 </p>
 
-![An example of using Block Builder](resources/images/main/hero-image.png)
+![An example of using BlockBuilder Builder](resources/images/main/hero-image.png)
 
 ***
 
@@ -30,17 +30,17 @@
 [![codecov](https://codecov.io/gh/raycharius/slack-block-builder/branch/master/graph/badge.svg)](https://codecov.io/gh/raycharius/slack-block-builder)
 [![Maintainability](https://api.codeclimate.com/v1/badges/17a96b146284b1b82b9e/maintainability)](https://codeclimate.com/github/raycharius/slack-block-builder/maintainability)
 
-**Block Builder** helps you keep your Slack app code for UI maintainable, testable, and reusable. It has a simple builder syntax inspired by [SwiftUI](https://developer.apple.com/documentation/swiftui) and lets you code the way _you_ want to code.
+**BlockBuilder Builder** helps you keep your Slack app code for UI maintainable, testable, and reusable. It has a simple builder syntax inspired by [SwiftUI](https://developer.apple.com/documentation/swiftui) and lets you code the way _you_ want to code.
 
 ### :zap: &nbsp; Features
 
 * Simple [SwiftUI](https://developer.apple.com/xcode/swiftui/) inspired syntax.
 * In-depth [doc site](https://blockbuilder.dev) at [https://blockbuilder.dev](https://blockbuilder.dev).
-* Support for all current Slack Block Kit objects – Surfaces, Blocks, Elements, and Composition Objects ([View Support](#object-support-and-reference)).
+* Support for all current Slack BlockBuilder Kit objects – Surfaces, Blocks, Elements, and Composition Objects ([View Support](#object-support-and-reference)).
 * TypeScript type definitions.
 * Super helpful JSDoc hints that include real-world explanations, Slack validation rules, and a direct link to the object's documentation on [Slack's API doc site](https://api.slack.com/block-kit).
 * Output of the composed UI as either an object, JSON string, or array of blocks.
-* A `printPreviewURL()` method that outputs to the console a link to preview your UI on Slack's [Block Kit Builder website](https://app.slack.com/block-kit-builder).
+* A `printPreviewURL()` method that outputs to the console a link to preview your UI on Slack's [BlockBuilder Kit Builder website](https://app.slack.com/block-kit-builder).
 * Small size, with zero dependencies.
 
 ### :rocket: &nbsp; Coming Soon
@@ -61,7 +61,7 @@
 
 ### :phone: &nbsp; Let's Talk?
 
-Feedback – love it! Aside from GitHub Issues, there are Slack channels available in popular bot communities to discuss **Block Builder** – we'll see you there! :raised_hands:
+Feedback – love it! Aside from GitHub Issues, there are Slack channels available in popular bot communities to discuss **BlockBuilder Builder** – we'll see you there! :raised_hands:
 
 * **Slack Community** – [\#block-builder](https://slackcommunity.com)
 * **Bot Developer Hangout** – [\#block-builder](https://community.botkit.ai)
@@ -115,7 +115,7 @@ _Note that since you'll more often only be working with one surface per file, th
 
 ### Object Support and Reference
 
-Below is a list of supported objects and how to access them in **Block Builder**:
+Below is a list of supported objects and how to access them in **BlockBuilder Builder**:
 
 | **Name**             | **Type**           | **Support**                    | **Accessed Via**                      
 |----------------------|--------------------|--------------------------------|-----------------------------
@@ -123,14 +123,14 @@ Below is a list of supported objects and how to access them in **Block Builder**
 | Message              | Surface            | :white_check_mark:             | `Message()`                       
 | Modal                | Surface            | :white_check_mark:             | `Modal()`                         
 | Workflow Step        | Surface            | :white_check_mark:             | `WorkflowStep()`                         
-| Actions              | Block              | :white_check_mark:             | `Blocks.Actions()`                
-| Context              | Block              | :white_check_mark:             | `Blocks.Context()`                
-| Divider              | Block              | :white_check_mark:             | `Blocks.Divider()`                
-| File                 | Block              | :white_check_mark:             | `Blocks.File()`
-| Header               | Block              | :white_check_mark:             | `Blocks.Header()`
-| Image                | Block              | :white_check_mark:             | `Blocks.Image()`                  
-| Input                | Block              | :white_check_mark:             | `Blocks.Input()`                  
-| Section              | Block              | :white_check_mark:             | `Blocks.Section()`                
+| Actions              | BlockBuilder              | :white_check_mark:             | `Blocks.Actions()`                
+| Context              | BlockBuilder              | :white_check_mark:             | `Blocks.Context()`                
+| Divider              | BlockBuilder              | :white_check_mark:             | `Blocks.Divider()`                
+| File                 | BlockBuilder              | :white_check_mark:             | `Blocks.File()`
+| Header               | BlockBuilder              | :white_check_mark:             | `Blocks.Header()`
+| Image                | BlockBuilder              | :white_check_mark:             | `Blocks.Image()`                  
+| Input                | BlockBuilder              | :white_check_mark:             | `Blocks.Input()`                  
+| Section              | BlockBuilder              | :white_check_mark:             | `Blocks.Section()`                
 | Button               | Element            | :white_check_mark:️             | `Elements.Button()`               
 | Checkboxes           | Element            | :white_check_mark:             | `Elements.Checkboxes()`           
 | Date Picker          | Element            | :white_check_mark:             | `Elements.DatePicker()`
@@ -203,9 +203,9 @@ const myShorterMessage = ({ channel }) => {
 
 Both of these examples render the message below. And the best part? It only took 15 lines of code, as opposed to the 44 lines of JSON generated as a result. 
 
-![An example of using Block Builder for Messages](resources/images/main/simple-message-example.png)
+![An example of using BlockBuilder Builder for Messages](resources/images/main/simple-message-example.png)
 
-[**View Example on Slack Block Kit Builder Website**](https://app.slack.com/block-kit-builder#%7B%22blocks%22:%5B%7B%22type%22:%22section%22,%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22One%20does%20not%20simply%20walk%20into%20Slack%20and%20click%20a%20button.%22%7D%7D,%7B%22type%22:%22section%22,%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22At%20least%20that's%20what%20my%20friend%20Slackomir%20said%20:crossed_swords:%22%7D%7D,%7B%22type%22:%22divider%22%7D,%7B%22type%22:%22actions%22,%22elements%22:%5B%7B%22type%22:%22button%22,%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Sure%20One%20Does%22%7D,%22action_id%22:%22gotClicked%22,%22style%22:%22danger%22%7D,%7B%22type%22:%22button%22,%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22One%20Does%20Not%22%7D,%22action_id%22:%22scaredyCat%22,%22style%22:%22primary%22%7D%5D%7D%5D%7D)
+[**View Example on Slack BlockBuilder Kit Builder Website**](https://app.slack.com/block-kit-builder#%7B%22blocks%22:%5B%7B%22type%22:%22section%22,%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22One%20does%20not%20simply%20walk%20into%20Slack%20and%20click%20a%20button.%22%7D%7D,%7B%22type%22:%22section%22,%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22At%20least%20that's%20what%20my%20friend%20Slackomir%20said%20:crossed_swords:%22%7D%7D,%7B%22type%22:%22divider%22%7D,%7B%22type%22:%22actions%22,%22elements%22:%5B%7B%22type%22:%22button%22,%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Sure%20One%20Does%22%7D,%22action_id%22:%22gotClicked%22,%22style%22:%22danger%22%7D,%7B%22type%22:%22button%22,%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22One%20Does%20Not%22%7D,%22action_id%22:%22scaredyCat%22,%22style%22:%22primary%22%7D%5D%7D%5D%7D)
 
 ### Creating a Simple Modal
 
@@ -287,9 +287,9 @@ const myShorterModal = () => {
 
 Both of these examples render the modal below. 
 
-![An example of using Block Builder for Modals](resources/images/main/simple-modal-example.png)
+![An example of using BlockBuilder Builder for Modals](resources/images/main/simple-modal-example.png)
 
-[**View Example on Slack Block Kit Builder Website**](https://app.slack.com/block-kit-builder#%7B%22type%22:%22modal%22,%22title%22:%7B%22type%22:%22plain_text%22,%22text%22:%22PizzaMate%22%7D,%22blocks%22:%5B%7B%22type%22:%22section%22,%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22Hey%20there,%20colleague!%22%7D%7D,%7B%22type%22:%22section%22,%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22Hurray%20for%20corporate%20pizza!%20Let's%20get%20you%20fed%20and%20happy%20:pizza:%22%7D%7D,%7B%22type%22:%22input%22,%22label%22:%7B%22type%22:%22plain_text%22,%22text%22:%22What%20can%20we%20call%20you?%22%7D,%22element%22:%7B%22type%22:%22plain_text_input%22,%22action_id%22:%22name%22,%22placeholder%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Hi,%20my%20name%20is...%20(What?!)%20(Who?!)%22%7D%7D%7D,%7B%22type%22:%22input%22,%22label%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Which%20floor%20are%20you%20on?%22%7D,%22element%22:%7B%22type%22:%22plain_text_input%22,%22action_id%22:%22floor%22,%22placeholder%22:%7B%22type%22:%22plain_text%22,%22text%22:%22HQ%20–%20Fifth%20Floor%22%7D%7D%7D,%7B%22type%22:%22input%22,%22label%22:%7B%22type%22:%22plain_text%22,%22text%22:%22What'll%20you%20have?%22%7D,%22element%22:%7B%22type%22:%22static_select%22,%22placeholder%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Choose%20your%20favorite...%22%7D,%22action_id%22:%22item%22,%22options%22:%5B%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22:cheese_wedge:%20With%20Cheeze%22%7D,%22value%22:%22012%22%7D,%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22:fish:%20With%20Anchovies%22%7D,%22value%22:%22013%22%7D,%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22:cookie:%20With%20Scooby%20Snacks%22%7D,%22value%22:%22014%22%7D,%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22:beer:%20I%20Prefer%20Steak%20and%20Beer%22%7D,%22value%22:%22015%22%7D%5D%7D%7D%5D,%22submit%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Get%20Fed%22%7D%7D)
+[**View Example on Slack BlockBuilder Kit Builder Website**](https://app.slack.com/block-kit-builder#%7B%22type%22:%22modal%22,%22title%22:%7B%22type%22:%22plain_text%22,%22text%22:%22PizzaMate%22%7D,%22blocks%22:%5B%7B%22type%22:%22section%22,%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22Hey%20there,%20colleague!%22%7D%7D,%7B%22type%22:%22section%22,%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22Hurray%20for%20corporate%20pizza!%20Let's%20get%20you%20fed%20and%20happy%20:pizza:%22%7D%7D,%7B%22type%22:%22input%22,%22label%22:%7B%22type%22:%22plain_text%22,%22text%22:%22What%20can%20we%20call%20you?%22%7D,%22element%22:%7B%22type%22:%22plain_text_input%22,%22action_id%22:%22name%22,%22placeholder%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Hi,%20my%20name%20is...%20(What?!)%20(Who?!)%22%7D%7D%7D,%7B%22type%22:%22input%22,%22label%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Which%20floor%20are%20you%20on?%22%7D,%22element%22:%7B%22type%22:%22plain_text_input%22,%22action_id%22:%22floor%22,%22placeholder%22:%7B%22type%22:%22plain_text%22,%22text%22:%22HQ%20–%20Fifth%20Floor%22%7D%7D%7D,%7B%22type%22:%22input%22,%22label%22:%7B%22type%22:%22plain_text%22,%22text%22:%22What'll%20you%20have?%22%7D,%22element%22:%7B%22type%22:%22static_select%22,%22placeholder%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Choose%20your%20favorite...%22%7D,%22action_id%22:%22item%22,%22options%22:%5B%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22:cheese_wedge:%20With%20Cheeze%22%7D,%22value%22:%22012%22%7D,%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22:fish:%20With%20Anchovies%22%7D,%22value%22:%22013%22%7D,%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22:cookie:%20With%20Scooby%20Snacks%22%7D,%22value%22:%22014%22%7D,%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22:beer:%20I%20Prefer%20Steak%20and%20Beer%22%7D,%22value%22:%22015%22%7D%5D%7D%7D%5D,%22submit%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Get%20Fed%22%7D%7D)
 
 ## :link: &nbsp; Other Useful Slack-Related Projects
 
@@ -297,7 +297,7 @@ Both of these examples render the modal below.
 
 [Node Slack SDK](https://github.com/slackapi/node-slack-sdk) – A great and powerful SDK for building [Slack](https://slack.com) Apps from the ground up.
 
-[JSX-Slack](https://github.com/speee/jsx-slack) – Awesome way to create Slack Block Kit UIs using JSX.
+[JSX-Slack](https://github.com/speee/jsx-slack) – Awesome way to create Slack BlockBuilder Kit UIs using JSX.
 
 ## :fire: &nbsp; Acknowledgements
  
@@ -309,4 +309,4 @@ Both of these examples render the modal below.
 
 ## :black_nib: &nbsp; Author
 
-<img src="https://github.com/raycharius.png" alt="@raycharius" width="24" height="24" valign="bottom" /> Ray East ([@raycharius](https://github.com/raycharius)) - Huge Fan of Slack and **Block Builder** Maintainer
+<img src="https://github.com/raycharius.png" alt="@raycharius" width="24" height="24" valign="bottom" /> Ray East ([@raycharius](https://github.com/raycharius)) - Huge Fan of Slack and **BlockBuilder Builder** Maintainer
