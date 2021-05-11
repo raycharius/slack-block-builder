@@ -9,6 +9,9 @@ export abstract class Builder {
   constructor(params?: ObjectLiteral) {
     this.props = params || {};
 
+    Object.keys(this.props)
+      .forEach((prop) => this.props[prop] === undefined
+        && delete this.props[prop]);
     Object.seal(this);
   }
 
