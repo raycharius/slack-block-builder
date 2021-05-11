@@ -1,15 +1,15 @@
 import { ElementBuilder } from '../base';
 import { ElementSlackDto } from '../lib';
 import {
-  HasActionId,
-  HasConfirm,
-  HasEnd,
-  HasInitialOptions,
-  HasMaxSelectedItems,
-  HasOptionGroups,
-  HasOptions,
-  HasPlaceholder,
-  MustBuild,
+  ActionId,
+  Confirm,
+  End,
+  InitialOptions,
+  MaxSelectedItems,
+  OptionGroups,
+  Options,
+  Placeholder,
+  Build,
 } from '../methods';
 import {
   applyMixins,
@@ -32,15 +32,15 @@ export interface StaticMultiSelectParams {
  * @@displayName Static Multi-Select
  */
 
-export interface StaticMultiSelectBuilder extends HasActionId,
-  HasConfirm<ConfirmationDialogBuilder>,
-  HasEnd,
-  HasInitialOptions,
-  HasMaxSelectedItems,
-  HasOptionGroups,
-  HasOptions,
-  HasPlaceholder,
-  MustBuild {
+export interface StaticMultiSelectBuilder extends ActionId,
+  Confirm<ConfirmationDialogBuilder>,
+  End,
+  InitialOptions,
+  MaxSelectedItems,
+  OptionGroups,
+  Options,
+  Placeholder,
+  Build {
 }
 
 export class StaticMultiSelectBuilder extends ElementBuilder<StaticMultiSelectParams> {
@@ -59,12 +59,12 @@ export class StaticMultiSelectBuilder extends ElementBuilder<StaticMultiSelectPa
 }
 
 applyMixins(StaticMultiSelectBuilder, [
-  HasActionId,
-  HasConfirm,
-  HasEnd,
-  HasInitialOptions,
-  HasMaxSelectedItems,
-  HasOptionGroups,
-  HasOptions,
-  HasPlaceholder,
+  ActionId,
+  Confirm,
+  End,
+  InitialOptions,
+  MaxSelectedItems,
+  OptionGroups,
+  Options,
+  Placeholder,
 ]);

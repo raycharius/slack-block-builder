@@ -1,12 +1,12 @@
 import { ElementBuilder } from '../base';
 import { ElementSlackDto } from '../lib';
 import {
-  HasActionId,
-  HasConfirm,
-  HasEnd,
-  HasInitialDate,
-  HasPlaceholder,
-  MustBuild,
+  ActionId,
+  Confirm,
+  End,
+  InitialDate,
+  Placeholder,
+  Build,
 } from '../methods';
 import {
   applyMixins,
@@ -24,12 +24,12 @@ export interface DatePickerParams {
   placeholder?: string;
 }
 
-export interface DatePickerBuilder extends HasActionId,
-  HasConfirm<ConfirmationDialogBuilder>,
-  HasEnd,
-  HasInitialDate,
-  HasPlaceholder,
-  MustBuild {
+export interface DatePickerBuilder extends ActionId,
+  Confirm<ConfirmationDialogBuilder>,
+  End,
+  InitialDate,
+  Placeholder,
+  Build {
 }
 
 /**
@@ -51,9 +51,9 @@ export class DatePickerBuilder extends ElementBuilder<DatePickerParams> {
 }
 
 applyMixins(DatePickerBuilder, [
-  HasActionId,
-  HasConfirm,
-  HasEnd,
-  HasInitialDate,
-  HasPlaceholder,
+  ActionId,
+  Confirm,
+  End,
+  InitialDate,
+  Placeholder,
 ]);

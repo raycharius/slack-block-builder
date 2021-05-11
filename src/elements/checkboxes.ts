@@ -1,12 +1,12 @@
 import { ElementBuilder } from '../base';
 import { ElementSlackDto } from '../lib';
 import {
-  HasActionId,
-  HasConfirm,
-  HasEnd,
-  HasInitialOptions,
-  HasOptions,
-  MustBuild,
+  ActionId,
+  Confirm,
+  End,
+  InitialOptions,
+  Options,
+  Build,
 } from '../methods';
 import { applyMixins, getBuilderResult, getBuilderResults } from '../helpers';
 import { ElementType } from '../constants';
@@ -17,12 +17,12 @@ export interface CheckboxesParams {
   actionId?: string;
 }
 
-export interface CheckboxesBuilder extends HasActionId,
-  HasConfirm<ConfirmationDialogBuilder>,
-  HasEnd,
-  HasInitialOptions,
-  HasOptions,
-  MustBuild {
+export interface CheckboxesBuilder extends ActionId,
+  Confirm<ConfirmationDialogBuilder>,
+  End,
+  InitialOptions,
+  Options,
+  Build {
 }
 
 /**
@@ -44,9 +44,9 @@ export class CheckboxesBuilder extends ElementBuilder<CheckboxesParams> {
 }
 
 applyMixins(CheckboxesBuilder, [
-  HasActionId,
-  HasConfirm,
-  HasEnd,
-  HasInitialOptions,
-  HasOptions,
+  ActionId,
+  Confirm,
+  End,
+  InitialOptions,
+  Options,
 ]);

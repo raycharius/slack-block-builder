@@ -1,15 +1,15 @@
 import { SurfaceBuilder } from '../base';
 import { ViewSlackDto } from '../lib';
 import {
-  CanBuildToJSON,
-  CanBuildToObject,
-  CanGetBlocks,
-  CanPrintPreviewUrl,
-  HasBlocks,
-  HasCallbackId,
-  HasExternalId,
-  HasPrivateMetaData,
-  MustBuild,
+  Blocks,
+  CallbackId,
+  ExternalId,
+  PrivateMetaData,
+  BuildToJSON,
+  BuildToObject,
+  GetBlocks,
+  PrintPreviewUrl,
+  Build,
 } from '../methods';
 import { applyMixins, getBuilderResults } from '../helpers';
 import { SurfaceType } from '../constants';
@@ -22,15 +22,15 @@ export interface HomeTabParams {
   externalId?: string;
 }
 
-export interface HomeTabBuilder extends CanBuildToJSON,
-  CanBuildToObject<ViewSlackDto>,
-  CanGetBlocks,
-  CanPrintPreviewUrl,
-  HasBlocks<ViewBlockBuilder>,
-  HasCallbackId,
-  HasExternalId,
-  HasPrivateMetaData,
-  MustBuild {
+export interface HomeTabBuilder extends Blocks<ViewBlockBuilder>,
+  CallbackId,
+  ExternalId,
+  PrivateMetaData,
+  BuildToJSON,
+  BuildToObject<ViewSlackDto>,
+  GetBlocks,
+  PrintPreviewUrl,
+  Build {
 }
 
 /**
@@ -50,12 +50,12 @@ export class HomeTabBuilder extends SurfaceBuilder<HomeTabParams> {
 }
 
 applyMixins(HomeTabBuilder, [
-  CanBuildToJSON,
-  CanBuildToObject,
-  CanGetBlocks,
-  CanPrintPreviewUrl,
-  HasBlocks,
-  HasCallbackId,
-  HasExternalId,
-  HasPrivateMetaData,
+  Blocks,
+  CallbackId,
+  ExternalId,
+  PrivateMetaData,
+  BuildToJSON,
+  BuildToObject,
+  GetBlocks,
+  PrintPreviewUrl,
 ]);

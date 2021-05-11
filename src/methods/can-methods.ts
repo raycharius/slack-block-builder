@@ -3,7 +3,7 @@
 
 import { Builder, SlackDto, BlockSlackDto } from '../lib';
 
-export abstract class CanBuildToJSON extends Builder {
+export abstract class BuildToJSON extends Builder {
   /**
    * @description Builds the view and returns it as a Slack API-compatible JSON string.
    */
@@ -15,17 +15,17 @@ export abstract class CanBuildToJSON extends Builder {
   }
 }
 
-export abstract class CanBuildToObject<Type> extends Builder {
+export abstract class BuildToObject<T> extends Builder {
   /**
    * @description Builds the view and returns it as a Slack API-compatible object.
    */
 
-  public buildToObject(): Type {
+  public buildToObject(): T {
     return this.build();
   }
 }
 
-export abstract class CanGetAttachments extends Builder {
+export abstract class GetAttachments extends Builder {
   /**
    * @description Builds the view and returns a Slack API-compatible array of attachments.
    *
@@ -37,7 +37,7 @@ export abstract class CanGetAttachments extends Builder {
   }
 }
 
-export abstract class CanGetBlocks extends Builder {
+export abstract class GetBlocks extends Builder {
   /**
    * @description Builds the view and returns a Slack API-compatible array of blocks.
    *
@@ -51,7 +51,7 @@ export abstract class CanGetBlocks extends Builder {
   }
 }
 
-export abstract class CanPrintPreviewUrl extends Builder {
+export abstract class PrintPreviewUrl extends Builder {
   /**
    * @description When called, builds the view and prints to the console the preview URL in order to open and preview the view on Slack's Block Kit Builder web application.
    */

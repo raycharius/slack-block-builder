@@ -1,13 +1,13 @@
 import { ElementBuilder } from '../base';
 import { ElementSlackDto } from '../lib';
 import {
-  HasActionId,
-  HasConfirm,
-  HasEnd,
-  HasInitialOption,
-  HasMinQueryLength,
-  HasPlaceholder,
-  MustBuild,
+  ActionId,
+  Confirm,
+  End,
+  InitialOption,
+  MinQueryLength,
+  Placeholder,
+  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
 import { ElementType } from '../constants';
@@ -20,13 +20,13 @@ export interface ExternalSelectParams {
   placeholder?: string;
 }
 
-export interface ExternalSelectBuilder extends HasActionId,
-  HasConfirm<ConfirmationDialogBuilder>,
-  HasEnd,
-  HasInitialOption,
-  HasMinQueryLength,
-  HasPlaceholder,
-  MustBuild {
+export interface ExternalSelectBuilder extends ActionId,
+  Confirm<ConfirmationDialogBuilder>,
+  End,
+  InitialOption,
+  MinQueryLength,
+  Placeholder,
+  Build {
 }
 
 /**
@@ -48,10 +48,10 @@ export class ExternalSelectBuilder extends ElementBuilder<ExternalSelectParams> 
 }
 
 applyMixins(ExternalSelectBuilder, [
-  HasActionId,
-  HasConfirm,
-  HasEnd,
-  HasInitialOption,
-  HasMinQueryLength,
-  HasPlaceholder,
+  ActionId,
+  Confirm,
+  End,
+  InitialOption,
+  MinQueryLength,
+  Placeholder,
 ]);

@@ -1,14 +1,14 @@
 import { ElementBuilder } from '../base';
 import { ElementSlackDto } from '../lib';
 import {
-  HasActionId,
-  HasConfirm,
-  HasEnd,
-  HasInitialOption,
-  HasOptionGroups,
-  HasOptions,
-  HasPlaceholder,
-  MustBuild,
+  ActionId,
+  Confirm,
+  End,
+  InitialOption,
+  OptionGroups,
+  Options,
+  Placeholder,
+  Build,
 } from '../methods';
 import {
   applyMixins,
@@ -25,14 +25,14 @@ export interface StaticSelectParams {
   placeholder?: string;
 }
 
-export interface StaticSelectBuilder extends HasActionId,
-  HasConfirm<ConfirmationDialogBuilder>,
-  HasEnd,
-  HasInitialOption,
-  HasOptionGroups,
-  HasOptions,
-  HasPlaceholder,
-  MustBuild {
+export interface StaticSelectBuilder extends ActionId,
+  Confirm<ConfirmationDialogBuilder>,
+  End,
+  InitialOption,
+  OptionGroups,
+  Options,
+  Placeholder,
+  Build {
 }
 
 /**
@@ -56,11 +56,11 @@ export class StaticSelectBuilder extends ElementBuilder<StaticSelectParams> {
 }
 
 applyMixins(StaticSelectBuilder, [
-  HasActionId,
-  HasConfirm,
-  HasEnd,
-  HasInitialOption,
-  HasOptionGroups,
-  HasOptions,
-  HasPlaceholder,
+  ActionId,
+  Confirm,
+  End,
+  InitialOption,
+  OptionGroups,
+  Options,
+  Placeholder,
 ]);

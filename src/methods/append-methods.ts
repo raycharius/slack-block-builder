@@ -9,7 +9,7 @@ import type { OptionBuilder } from '../bits/option';
 import type { OptionGroupBuilder } from '../bits/option-group';
 import type { SingleOrArray } from '../types';
 
-export abstract class HasAttachments extends Builder {
+export abstract class Attachments extends Builder {
   /**
    * @description Adds attachments to your message.
    *
@@ -24,7 +24,7 @@ export abstract class HasAttachments extends Builder {
   }
 }
 
-export abstract class HasBlocks<Type> extends Builder {
+export abstract class Blocks<T> extends Builder {
   /**
    * @description Adds blocks to your view or message.
    *
@@ -36,14 +36,14 @@ export abstract class HasBlocks<Type> extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  blocks(block: SingleOrArray<Type>, ...blocks: Array<SingleOrArray<Type>>): this;
+  blocks(block: SingleOrArray<T>, ...blocks: Array<SingleOrArray<T>>): this;
 
-  public blocks(...blocks: Array<SingleOrArray<Type>>): this {
+  public blocks(...blocks: Array<SingleOrArray<T>>): this {
     return this.append(blocks.flat(), Prop.Blocks);
   }
 }
 
-export abstract class HasElements<Type> extends Builder {
+export abstract class Elements<T> extends Builder {
   /**
    * @description Adds elements to the actions block.
    *
@@ -56,14 +56,14 @@ export abstract class HasElements<Type> extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  elements(element: SingleOrArray<Type>, ...elements: Array<SingleOrArray<Type>>): this;
+  elements(element: SingleOrArray<T>, ...elements: Array<SingleOrArray<T>>): this;
 
-  public elements(...elements: Array<SingleOrArray<Type>>): this {
+  public elements(...elements: Array<SingleOrArray<T>>): this {
     return this.append(elements.flat(), Prop.Elements);
   }
 }
 
-export abstract class HasFields extends Builder {
+export abstract class Fields extends Builder {
   /**
    * @description Adds text fields to the section block, in two columns, side-by-side.
    *
@@ -84,7 +84,7 @@ export abstract class HasFields extends Builder {
   }
 }
 
-export abstract class HasFilter extends Builder {
+export abstract class Filter extends Builder {
   /**
    * @description Defines which conversations should be included in the list.
    *
@@ -102,7 +102,7 @@ export abstract class HasFilter extends Builder {
   }
 }
 
-export abstract class HasInitialChannels extends Builder {
+export abstract class InitialChannels extends Builder {
   /**
    * @description Pre-populates the menu with selected, default channels.
    *
@@ -117,7 +117,7 @@ export abstract class HasInitialChannels extends Builder {
   }
 }
 
-export abstract class HasInitialConversations extends Builder {
+export abstract class InitialConversations extends Builder {
   /**
    * @description Pre-populates the menu with selected, default conversations.
    *
@@ -132,7 +132,7 @@ export abstract class HasInitialConversations extends Builder {
   }
 }
 
-export abstract class HasInitialOptions extends Builder {
+export abstract class InitialOptions extends Builder {
   /**
    * @description Pre-populates the menu or checkbox input with selected, default options.
    *
@@ -150,7 +150,7 @@ export abstract class HasInitialOptions extends Builder {
   }
 }
 
-export abstract class HasInitialUsers extends Builder {
+export abstract class InitialUsers extends Builder {
   /**
    * @description Pre-populates the menu with selected, default users.
    *
@@ -165,7 +165,7 @@ export abstract class HasInitialUsers extends Builder {
   }
 }
 
-export abstract class HasOptionGroups extends Builder {
+export abstract class OptionGroups extends Builder {
   /**
    * @description Adds organized groups of options to the select or multi-select menu, each with its own label or title.
    *
@@ -184,7 +184,7 @@ export abstract class HasOptionGroups extends Builder {
   }
 }
 
-export abstract class HasOptions extends Builder {
+export abstract class Options extends Builder {
   /**
    * @description Adds options to the select or multi-select menu.
    *

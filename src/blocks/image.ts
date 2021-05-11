@@ -1,12 +1,12 @@
 import { BlockBuilder } from '../base';
 import { BlockSlackDto } from '../lib';
 import {
-  HasAltText,
-  HasBlockId,
-  HasEnd,
-  HasImageUrl,
-  HasTitle,
-  MustBuild,
+  AltText,
+  BlockId,
+  End,
+  ImageUrl,
+  Title,
+  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject } from '../helpers';
 import { BlockType } from '../constants';
@@ -18,12 +18,12 @@ export interface ImageParams {
   title?: string;
 }
 
-export interface ImageBuilder extends HasAltText,
-  HasBlockId,
-  HasEnd,
-  HasImageUrl,
-  HasTitle,
-  MustBuild {
+export interface ImageBuilder extends AltText,
+  BlockId,
+  End,
+  ImageUrl,
+  Title,
+  Build {
 }
 
 /**
@@ -43,9 +43,9 @@ export class ImageBuilder extends BlockBuilder<ImageParams> {
 }
 
 applyMixins(ImageBuilder, [
-  HasAltText,
-  HasBlockId,
-  HasEnd,
-  HasImageUrl,
-  HasTitle,
+  AltText,
+  BlockId,
+  End,
+  ImageUrl,
+  Title,
 ]);

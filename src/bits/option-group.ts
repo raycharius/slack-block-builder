@@ -1,10 +1,10 @@
 import { BitBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
-  HasLabel,
-  HasEnd,
-  HasOptions,
-  MustBuild,
+  Label,
+  End,
+  Options,
+  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResults } from '../helpers';
 
@@ -12,10 +12,10 @@ export interface OptionGroupParams {
   label?: string;
 }
 
-export interface OptionGroupBuilder extends HasEnd,
-  HasLabel,
-  HasOptions,
-  MustBuild {
+export interface OptionGroupBuilder extends End,
+  Label,
+  Options,
+  Build {
 }
 
 /**
@@ -35,7 +35,7 @@ export class OptionGroupBuilder extends BitBuilder<OptionGroupParams> {
 }
 
 applyMixins(OptionGroupBuilder, [
-  HasEnd,
-  HasLabel,
-  HasOptions,
+  End,
+  Label,
+  Options,
 ]);

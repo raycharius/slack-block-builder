@@ -1,14 +1,14 @@
 import { BitBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
-  HasConfirm,
-  HasDanger,
-  HasDeny,
-  HasEnd,
-  HasPrimary,
-  HasText,
-  HasTitle,
-  MustBuild,
+  Confirm,
+  Danger,
+  Deny,
+  End,
+  Primary,
+  Text,
+  Title,
+  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getMarkdownObject } from '../helpers';
 
@@ -19,14 +19,14 @@ export interface ConfirmationDialogParams {
   title?: string;
 }
 
-export interface ConfirmationDialogBuilder extends HasConfirm<string>,
-  HasDanger,
-  HasDeny,
-  HasEnd,
-  HasPrimary,
-  HasText,
-  HasTitle,
-  MustBuild {
+export interface ConfirmationDialogBuilder extends Confirm<string>,
+  Danger,
+  Deny,
+  End,
+  Primary,
+  Text,
+  Title,
+  Build {
 }
 
 /**
@@ -48,11 +48,11 @@ export class ConfirmationDialogBuilder extends BitBuilder<ConfirmationDialogPara
 }
 
 applyMixins(ConfirmationDialogBuilder, [
-  HasConfirm,
-  HasDanger,
-  HasDeny,
-  HasEnd,
-  HasPrimary,
-  HasText,
-  HasTitle,
+  Confirm,
+  Danger,
+  Deny,
+  End,
+  Primary,
+  Text,
+  Title,
 ]);

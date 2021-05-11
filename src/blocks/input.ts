@@ -1,14 +1,14 @@
 import { BlockBuilder } from '../base';
 import { BlockSlackDto } from '../lib';
 import {
-  HasBlockId,
-  HasDispatchAction,
-  HasElement,
-  HasEnd,
-  HasHint,
-  HasLabel,
-  HasOptional,
-  MustBuild,
+  BlockId,
+  DispatchAction,
+  Element,
+  End,
+  Hint,
+  Label,
+  Optional,
+  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
 import { BlockType } from '../constants';
@@ -21,14 +21,14 @@ export interface InputParams {
   label?: string;
 }
 
-export interface InputBuilder extends HasBlockId,
-  HasDispatchAction,
-  HasElement<InputElementBuilder>,
-  HasEnd,
-  HasHint,
-  HasLabel,
-  HasOptional,
-  MustBuild {
+export interface InputBuilder extends BlockId,
+  DispatchAction,
+  Element<InputElementBuilder>,
+  End,
+  Hint,
+  Label,
+  Optional,
+  Build {
 }
 
 /**
@@ -50,11 +50,11 @@ export class InputBuilder extends BlockBuilder<InputParams> {
 }
 
 applyMixins(InputBuilder, [
-  HasBlockId,
-  HasDispatchAction,
-  HasElement,
-  HasEnd,
-  HasHint,
-  HasLabel,
-  HasOptional,
+  BlockId,
+  DispatchAction,
+  Element,
+  End,
+  Hint,
+  Label,
+  Optional,
 ]);

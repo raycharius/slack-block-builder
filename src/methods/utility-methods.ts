@@ -3,7 +3,7 @@
 
 import { Builder } from '../lib';
 
-export abstract class HasEnd extends Builder {
+export abstract class End extends Builder {
   /**
    * @description Performs no alterations to the object on which it is called. It is meant to simulate a closing HTML tag for those who prefer to have an explicit end declared for an object.
    *

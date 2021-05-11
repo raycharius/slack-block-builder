@@ -1,13 +1,13 @@
 import { ElementBuilder } from '../base';
 import { ElementSlackDto } from '../lib';
 import {
-  HasActionId,
-  HasConfirm,
-  HasEnd,
-  HasInitialChannel,
-  HasPlaceholder,
-  HasResponseUrlEnabled,
-  MustBuild,
+  ActionId,
+  Confirm,
+  End,
+  InitialChannel,
+  Placeholder,
+  ResponseUrlEnabled,
+  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
 import { ElementType } from '../constants';
@@ -20,13 +20,13 @@ export interface ChannelSelectParams {
   placeholder?: string;
 }
 
-export interface ChannelSelectBuilder extends HasActionId,
-  HasConfirm<ConfirmationDialogBuilder>,
-  HasEnd,
-  HasInitialChannel,
-  HasPlaceholder,
-  HasResponseUrlEnabled,
-  MustBuild {
+export interface ChannelSelectBuilder extends ActionId,
+  Confirm<ConfirmationDialogBuilder>,
+  End,
+  InitialChannel,
+  Placeholder,
+  ResponseUrlEnabled,
+  Build {
 }
 
 /**
@@ -47,10 +47,10 @@ export class ChannelSelectBuilder extends ElementBuilder<ChannelSelectParams> {
 }
 
 applyMixins(ChannelSelectBuilder, [
-  HasActionId,
-  HasConfirm,
-  HasEnd,
-  HasInitialChannel,
-  HasPlaceholder,
-  HasResponseUrlEnabled,
+  ActionId,
+  Confirm,
+  End,
+  InitialChannel,
+  Placeholder,
+  ResponseUrlEnabled,
 ]);

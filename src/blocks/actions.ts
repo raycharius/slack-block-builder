@@ -1,10 +1,10 @@
 import { BlockBuilder } from '../base';
 import { BlockSlackDto } from '../lib';
 import {
-  HasBlockId,
-  HasElements,
-  HasEnd,
-  MustBuild,
+  BlockId,
+  Elements,
+  End,
+  Build,
 } from '../methods';
 import { applyMixins, getBuilderResults } from '../helpers';
 import { BlockType } from '../constants';
@@ -15,10 +15,10 @@ export interface ActionsParams {
   blockId?: string;
 }
 
-export interface ActionsBuilder extends HasBlockId,
-  HasEnd,
-  HasElements<ActionsElementBuilder>,
-  MustBuild {
+export interface ActionsBuilder extends BlockId,
+  End,
+  Elements<ActionsElementBuilder>,
+  Build {
 }
 
 /**
@@ -38,7 +38,7 @@ export class ActionsBuilder extends BlockBuilder<ActionsParams> {
 }
 
 applyMixins(ActionsBuilder, [
-  HasBlockId,
-  HasEnd,
-  HasElements,
+  BlockId,
+  End,
+  Elements,
 ]);

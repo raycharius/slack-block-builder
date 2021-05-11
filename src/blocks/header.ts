@@ -1,10 +1,10 @@
 import { BlockBuilder } from '../base';
 import { BlockSlackDto } from '../lib';
 import {
-  HasBlockId,
-  HasEnd,
-  HasText,
-  MustBuild,
+  BlockId,
+  End,
+  Text,
+  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject } from '../helpers';
 import { BlockType } from '../constants';
@@ -14,10 +14,10 @@ export interface HeaderParams {
   text?: string;
 }
 
-export interface HeaderBuilder extends HasBlockId,
-  HasEnd,
-  HasText,
-  MustBuild {
+export interface HeaderBuilder extends BlockId,
+  End,
+  Text,
+  Build {
 }
 
 /**
@@ -37,7 +37,7 @@ export class HeaderBuilder extends BlockBuilder<HeaderParams> {
 }
 
 applyMixins(HeaderBuilder, [
-  HasBlockId,
-  HasEnd,
-  HasText,
+  BlockId,
+  End,
+  Text,
 ]);

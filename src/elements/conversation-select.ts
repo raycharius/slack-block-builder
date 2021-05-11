@@ -1,17 +1,17 @@
 import { ElementBuilder } from '../base';
 import { ElementSlackDto } from '../lib';
 import {
-  HasActionId,
-  HasConfirm,
-  HasDefaultToCurrentConversation,
-  HasEnd,
-  HasExcludeBotUsers,
-  HasExcludeExternalSharedChannels,
-  HasFilter,
-  HasInitialConversation,
-  HasPlaceholder,
-  HasResponseUrlEnabled,
-  MustBuild,
+  ActionId,
+  Confirm,
+  DefaultToCurrentConversation,
+  End,
+  ExcludeBotUsers,
+  ExcludeExternalSharedChannels,
+  Filter,
+  InitialConversation,
+  Placeholder,
+  ResponseUrlEnabled,
+  Build,
 } from '../methods';
 import {
   applyMixins,
@@ -29,17 +29,17 @@ export interface ConversationSelectParams {
   placeholder?: string;
 }
 
-export interface ConversationSelectBuilder extends HasActionId,
-  HasConfirm<ConfirmationDialogBuilder>,
-  HasDefaultToCurrentConversation,
-  HasEnd,
-  HasExcludeBotUsers,
-  HasExcludeExternalSharedChannels,
-  HasFilter,
-  HasInitialConversation,
-  HasPlaceholder,
-  HasResponseUrlEnabled,
-  MustBuild {
+export interface ConversationSelectBuilder extends ActionId,
+  Confirm<ConfirmationDialogBuilder>,
+  DefaultToCurrentConversation,
+  End,
+  ExcludeBotUsers,
+  ExcludeExternalSharedChannels,
+  Filter,
+  InitialConversation,
+  Placeholder,
+  ResponseUrlEnabled,
+  Build {
 }
 
 /**
@@ -61,15 +61,15 @@ export class ConversationSelectBuilder extends ElementBuilder<ConversationSelect
 }
 
 applyMixins(ConversationSelectBuilder, [
-  HasActionId,
-  HasConfirm,
-  HasDefaultToCurrentConversation,
-  HasEnd,
-  HasExcludeBotUsers,
-  HasExcludeExternalSharedChannels,
-  HasFilter,
-  HasInitialConversation,
-  HasPlaceholder,
-  HasResponseUrlEnabled,
-  HasPlaceholder,
+  ActionId,
+  Confirm,
+  DefaultToCurrentConversation,
+  End,
+  ExcludeBotUsers,
+  ExcludeExternalSharedChannels,
+  Filter,
+  InitialConversation,
+  Placeholder,
+  ResponseUrlEnabled,
+  Placeholder,
 ]);

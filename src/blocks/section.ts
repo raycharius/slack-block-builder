@@ -1,12 +1,12 @@
 import { BlockBuilder } from '../base';
 import { BlockSlackDto } from '../lib';
 import {
-  HasAccessory,
-  HasBlockId,
-  HasEnd,
-  HasFields,
-  HasText,
-  MustBuild,
+  Accessory,
+  BlockId,
+  End,
+  Fields,
+  Text,
+  Build,
 } from '../methods';
 import {
   applyMixins,
@@ -16,19 +16,17 @@ import {
 } from '../helpers';
 import { BlockType } from '../constants';
 
-import type { SectionElementBuilder } from '../types';
-
 export interface SectionParams {
   blockId?: string;
   text?: string;
 }
 
-export interface SectionBuilder extends HasAccessory<SectionElementBuilder>,
-  HasBlockId,
-  HasEnd,
-  HasFields,
-  HasText,
-  MustBuild {
+export interface SectionBuilder extends Accessory,
+  BlockId,
+  End,
+  Fields,
+  Text,
+  Build {
 }
 
 /**
@@ -50,9 +48,9 @@ export class SectionBuilder extends BlockBuilder<SectionParams> {
 }
 
 applyMixins(SectionBuilder, [
-  HasAccessory,
-  HasBlockId,
-  HasEnd,
-  HasFields,
-  HasText,
+  Accessory,
+  BlockId,
+  End,
+  Fields,
+  Text,
 ]);

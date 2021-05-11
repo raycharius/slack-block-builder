@@ -1,16 +1,16 @@
 import { ElementBuilder } from '../base';
 import { ElementSlackDto } from '../lib';
 import {
-  HasActionId,
-  HasDispatchActionOnCharacterEntered,
-  HasDispatchActionOnEnterPressed,
-  HasEnd,
-  HasInitialValue,
-  HasMaxLength,
-  HasMinLength,
-  HasMultiline,
-  HasPlaceholder,
-  MustBuild,
+  ActionId,
+  DispatchActionOnCharacterEntered,
+  DispatchActionOnEnterPressed,
+  End,
+  InitialValue,
+  MaxLength,
+  MinLength,
+  Multiline,
+  Placeholder,
+  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getDispatchActionsConfigurationObject } from '../helpers';
 import { ElementType } from '../constants';
@@ -23,16 +23,16 @@ export interface TextInputParams {
   placeholder?: string;
 }
 
-export interface TextInputBuilder extends HasActionId,
-  HasDispatchActionOnCharacterEntered,
-  HasDispatchActionOnEnterPressed,
-  HasEnd,
-  HasInitialValue,
-  HasMaxLength,
-  HasMinLength,
-  HasMultiline,
-  HasPlaceholder,
-  MustBuild {
+export interface TextInputBuilder extends ActionId,
+  DispatchActionOnCharacterEntered,
+  DispatchActionOnEnterPressed,
+  End,
+  InitialValue,
+  MaxLength,
+  MinLength,
+  Multiline,
+  Placeholder,
+  Build {
 }
 
 /**
@@ -53,13 +53,13 @@ export class TextInputBuilder extends ElementBuilder<TextInputParams> {
 }
 
 applyMixins(TextInputBuilder, [
-  HasActionId,
-  HasDispatchActionOnCharacterEntered,
-  HasDispatchActionOnEnterPressed,
-  HasEnd,
-  HasInitialValue,
-  HasMaxLength,
-  HasMinLength,
-  HasMultiline,
-  HasPlaceholder,
+  ActionId,
+  DispatchActionOnCharacterEntered,
+  DispatchActionOnEnterPressed,
+  End,
+  InitialValue,
+  MaxLength,
+  MinLength,
+  Multiline,
+  Placeholder,
 ]);

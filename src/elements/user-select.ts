@@ -1,12 +1,12 @@
 import { ElementBuilder } from '../base';
 import { ElementSlackDto } from '../lib';
 import {
-  HasActionId,
-  HasConfirm,
-  HasEnd,
-  HasInitialUser,
-  HasPlaceholder,
-  MustBuild,
+  ActionId,
+  Confirm,
+  End,
+  InitialUser,
+  Placeholder,
+  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
 import { ElementType } from '../constants';
@@ -19,12 +19,12 @@ export interface UserSelectParams {
   placeholder?: string;
 }
 
-export interface UserSelectBuilder extends HasActionId,
-  HasConfirm<ConfirmationDialogBuilder>,
-  HasEnd,
-  HasInitialUser,
-  HasPlaceholder,
-  MustBuild {
+export interface UserSelectBuilder extends ActionId,
+  Confirm<ConfirmationDialogBuilder>,
+  End,
+  InitialUser,
+  Placeholder,
+  Build {
 }
 
 /**
@@ -45,9 +45,9 @@ export class UserSelectBuilder extends ElementBuilder<UserSelectParams> {
 }
 
 applyMixins(UserSelectBuilder, [
-  HasActionId,
-  HasConfirm,
-  HasEnd,
-  HasInitialUser,
-  HasPlaceholder,
+  ActionId,
+  Confirm,
+  End,
+  InitialUser,
+  Placeholder,
 ]);

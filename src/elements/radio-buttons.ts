@@ -1,12 +1,12 @@
 import { ElementBuilder } from '../base';
 import { ElementSlackDto } from '../lib';
 import {
-  HasActionId,
-  HasConfirm,
-  HasEnd,
-  HasInitialOption,
-  HasOptions,
-  MustBuild,
+  ActionId,
+  Confirm,
+  End,
+  InitialOption,
+  Options,
+  Build,
 } from '../methods';
 import { applyMixins, getBuilderResult, getBuilderResults } from '../helpers';
 import { ElementType } from '../constants';
@@ -17,12 +17,12 @@ export interface RadioButtonsParams {
   actionId?: string;
 }
 
-export interface RadioButtonsBuilder extends HasActionId,
-  HasConfirm<ConfirmationDialogBuilder>,
-  HasEnd,
-  HasInitialOption,
-  HasOptions,
-  MustBuild {
+export interface RadioButtonsBuilder extends ActionId,
+  Confirm<ConfirmationDialogBuilder>,
+  End,
+  InitialOption,
+  Options,
+  Build {
 }
 
 /**
@@ -44,9 +44,9 @@ export class RadioButtonsBuilder extends ElementBuilder<RadioButtonsParams> {
 }
 
 applyMixins(RadioButtonsBuilder, [
-  HasActionId,
-  HasConfirm,
-  HasEnd,
-  HasInitialOption,
-  HasOptions,
+  ActionId,
+  Confirm,
+  End,
+  InitialOption,
+  Options,
 ]);

@@ -1,12 +1,12 @@
 import { BitBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
-  HasDescription,
-  HasEnd,
-  HasText,
-  HasUrl,
-  HasValue,
-  MustBuild,
+  Description,
+  End,
+  Text,
+  Url,
+  Value,
+  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getMarkdownObject } from '../helpers';
 
@@ -19,12 +19,12 @@ export interface OptionParams {
   value?: string;
 }
 
-export interface OptionBuilder extends HasDescription,
-  HasEnd,
-  HasText,
-  HasUrl,
-  HasValue,
-  MustBuild {
+export interface OptionBuilder extends Description,
+  End,
+  Text,
+  Url,
+  Value,
+  Build {
 }
 
 /**
@@ -48,9 +48,9 @@ export class OptionBuilder extends BitBuilder<OptionParams> {
 }
 
 applyMixins(OptionBuilder, [
-  HasDescription,
-  HasEnd,
-  HasText,
-  HasUrl,
-  HasValue,
+  Description,
+  End,
+  Text,
+  Url,
+  Value,
 ]);

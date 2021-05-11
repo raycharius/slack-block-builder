@@ -4,9 +4,11 @@
 import { Builder } from '../lib';
 import { Prop } from '../constants';
 
+import type { SectionElementBuilder } from '../types';
+
 import type { OptionBuilder } from '../bits/option';
 
-export abstract class HasAccessory<Type> extends Builder {
+export abstract class Accessory extends Builder {
   /**
    * @description Adds an element to the section block of your view or message.
    *
@@ -18,12 +20,12 @@ export abstract class HasAccessory<Type> extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public accessory(element: Type): this {
+  public accessory(element: SectionElementBuilder): this {
     return this.set(element, Prop.Accessory);
   }
 }
 
-export abstract class HasActionId extends Builder {
+export abstract class ActionId extends Builder {
   /**
    * @description Sets a string to be an identifier for the action taken by the user. It is sent back to your app in the interaction payload when the element is interacted or when the view is submitted.
    *
@@ -41,7 +43,7 @@ export abstract class HasActionId extends Builder {
   }
 }
 
-export abstract class HasAltText extends Builder {
+export abstract class AltText extends Builder {
   /**
    * @description This a plain-text summary of the image element or block.
    *
@@ -60,7 +62,7 @@ export abstract class HasAltText extends Builder {
   }
 }
 
-export abstract class HasBlockId extends Builder {
+export abstract class BlockId extends Builder {
   /**
    * @description Sets a string to be an identifier for any given block in a view or message. This is sent back to your app in interaction payloads and view submissions for your app to process.
    *
@@ -78,7 +80,7 @@ export abstract class HasBlockId extends Builder {
   }
 }
 
-export abstract class HasCallbackId extends Builder {
+export abstract class CallbackId extends Builder {
   /**
    * @description Sets a string for your view that is sent back to your server in all of the interaction payloads and view submissions. Used to identify the view from which the interaction payload is generated.
    *
@@ -95,7 +97,7 @@ export abstract class HasCallbackId extends Builder {
   }
 }
 
-export abstract class HasChannel extends Builder {
+export abstract class Channel extends Builder {
   /**
    * @description Sets the Slack channel ID to which the message will be sent via the API.
    *
@@ -108,7 +110,7 @@ export abstract class HasChannel extends Builder {
   }
 }
 
-export abstract class HasClose extends Builder {
+export abstract class Close extends Builder {
   /**
    * @description Sets the text displayed on the button that closes the view.
    *
@@ -124,7 +126,7 @@ export abstract class HasClose extends Builder {
   }
 }
 
-export abstract class HasColor extends Builder {
+export abstract class Color extends Builder {
   /**
    * @description Sets the color for the blockquote border to the left of the attachment.
    *
@@ -137,7 +139,7 @@ export abstract class HasColor extends Builder {
   }
 }
 
-export abstract class HasConfirm<Type> extends Builder {
+export abstract class Confirm<T> extends Builder {
   /**
    * @description For confirmation dialogs, sets the text of the button that confirms the action to which the confirmation dialog has been added. For elements, adds a confirmation dialog that is displayed when the user interacts with the element to confirm the selection or action.
    *
@@ -145,12 +147,12 @@ export abstract class HasConfirm<Type> extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public confirm(value: Type): this {
+  public confirm(value: T): this {
     return this.set(value, Prop.Confirm);
   }
 }
 
-export abstract class HasDeny extends Builder {
+export abstract class Deny extends Builder {
   /**
    * @description Sets the text of the button that is meant to cancel the action or which the confirmation dialog was called.
    *
@@ -167,7 +169,7 @@ export abstract class HasDeny extends Builder {
   }
 }
 
-export abstract class HasDescription extends Builder {
+export abstract class Description extends Builder {
   /**
    * @description Sets the descriptive text displayed below the text field of the option.
    *
@@ -183,7 +185,7 @@ export abstract class HasDescription extends Builder {
   }
 }
 
-export abstract class HasElement<Type> extends Builder {
+export abstract class Element<T> extends Builder {
   /**
    * @description Adds a user input element to the input block for gathering information from the user.
    *
@@ -196,12 +198,12 @@ export abstract class HasElement<Type> extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public element(element: Type): this {
+  public element(element: T): this {
     return this.set(element, Prop.Element);
   }
 }
 
-export abstract class HasExternalId extends Builder {
+export abstract class ExternalId extends Builder {
   /**
    * @description Sets a custom identifier for a view or file that must be unique for all views on a per-team basis.
    *
@@ -218,7 +220,7 @@ export abstract class HasExternalId extends Builder {
   }
 }
 
-export abstract class HasFallback extends Builder {
+export abstract class Fallback extends Builder {
   /**
    * @description Sets the plain text summary of the attachment used in clients that can't display formatted text (eg. IRC, mobile notifications).
    *
@@ -231,7 +233,7 @@ export abstract class HasFallback extends Builder {
   }
 }
 
-export abstract class HasHint extends Builder {
+export abstract class Hint extends Builder {
   /**
    * @description Adds a hint below the input block to provide users with more context or instructions for using the input.
    *
@@ -247,7 +249,7 @@ export abstract class HasHint extends Builder {
   }
 }
 
-export abstract class HasImageUrl extends Builder {
+export abstract class ImageUrl extends Builder {
   /**
    * @description Sets the source URL for the image block or element that you wish to include in your view or message.
    *
@@ -264,7 +266,7 @@ export abstract class HasImageUrl extends Builder {
   }
 }
 
-export abstract class HasInitialChannel extends Builder {
+export abstract class InitialChannel extends Builder {
   /**
    * @description Pre-populates the menu with a selected, default channel.
    *
@@ -277,7 +279,7 @@ export abstract class HasInitialChannel extends Builder {
   }
 }
 
-export abstract class HasInitialConversation extends Builder {
+export abstract class InitialConversation extends Builder {
   /**
    * @description Pre-populates the menu with a selected, default conversation.
    *
@@ -290,7 +292,7 @@ export abstract class HasInitialConversation extends Builder {
   }
 }
 
-export abstract class HasInitialDate extends Builder {
+export abstract class InitialDate extends Builder {
   /**
    * @description Pre-populates the date picker with a selected, default date.
    *
@@ -303,7 +305,7 @@ export abstract class HasInitialDate extends Builder {
   }
 }
 
-export abstract class HasInitialOption extends Builder {
+export abstract class InitialOption extends Builder {
   /**
    * @description Pre-populates the menu or date picker with a selected, default option.
    *
@@ -319,7 +321,7 @@ export abstract class HasInitialOption extends Builder {
   }
 }
 
-export abstract class HasInitialTime extends Builder {
+export abstract class InitialTime extends Builder {
   /**
    * @description Pre-populates the time picker with a selected, default time.
    *
@@ -335,7 +337,7 @@ export abstract class HasInitialTime extends Builder {
   }
 }
 
-export abstract class HasInitialUser extends Builder {
+export abstract class InitialUser extends Builder {
   /**
    * @description Pre-populates the menu with a selected, default user.
    *
@@ -348,7 +350,7 @@ export abstract class HasInitialUser extends Builder {
   }
 }
 
-export abstract class HasInitialValue extends Builder {
+export abstract class InitialValue extends Builder {
   /**
    * @description Pre-populates the text input with default, editable text.
    *
@@ -361,7 +363,7 @@ export abstract class HasInitialValue extends Builder {
   }
 }
 
-export abstract class HasLabel extends Builder {
+export abstract class Label extends Builder {
   /**
    * @description For input blocks, this sets the text displayed in the label for the input. For an option group, it defines the text displayed as a title for the group.
    *
@@ -379,7 +381,7 @@ export abstract class HasLabel extends Builder {
   }
 }
 
-export abstract class HasMaxLength extends Builder {
+export abstract class MaxLength extends Builder {
   /**
    * @description Sets a maximum character count allowed in the given text input.
    *
@@ -392,7 +394,7 @@ export abstract class HasMaxLength extends Builder {
   }
 }
 
-export abstract class HasMaxSelectedItems extends Builder {
+export abstract class MaxSelectedItems extends Builder {
   /**
    * @description Sets a limit to how many items the user can select in the multi-select menu.
    *
@@ -405,7 +407,7 @@ export abstract class HasMaxSelectedItems extends Builder {
   }
 }
 
-export abstract class HasMinQueryLength extends Builder {
+export abstract class MinQueryLength extends Builder {
   /**
    * @description Sets a minimum number of characters required before Slack queries your app for a list of options.
    *
@@ -421,7 +423,7 @@ export abstract class HasMinQueryLength extends Builder {
   }
 }
 
-export abstract class HasMinLength extends Builder {
+export abstract class MinLength extends Builder {
   /**
    * @description Sets a minimum character count required for the given text input before the user can submit the view.
    *
@@ -437,7 +439,7 @@ export abstract class HasMinLength extends Builder {
   }
 }
 
-export abstract class HasPlaceholder extends Builder {
+export abstract class Placeholder extends Builder {
   /**
    * @description Defines the text displayed as a placeholder in the empty input element.
    *
@@ -453,7 +455,7 @@ export abstract class HasPlaceholder extends Builder {
   }
 }
 
-export abstract class HasPostAt extends Builder {
+export abstract class PostAt extends Builder {
   /**
    * @description Sets a time in the future for the message to be sent to the channel or user, as a scheduled message.
    *
@@ -466,7 +468,7 @@ export abstract class HasPostAt extends Builder {
   }
 }
 
-export abstract class HasPrivateMetaData extends Builder {
+export abstract class PrivateMetaData extends Builder {
   /**
    * @description Defines a string sent back to your server with view and interaction payloads.
    *
@@ -483,7 +485,7 @@ export abstract class HasPrivateMetaData extends Builder {
   }
 }
 
-export abstract class HasSubmit extends Builder {
+export abstract class Submit extends Builder {
   /**
    * @description Sets the text displayed on the button that submits the view.
    *
@@ -499,7 +501,7 @@ export abstract class HasSubmit extends Builder {
   }
 }
 
-export abstract class HasText extends Builder {
+export abstract class Text extends Builder {
   /**
    * @description Sets the text displayed for buttons, headers, confirmation dialogs, sections, context blocks, and options.
    *
@@ -519,7 +521,7 @@ export abstract class HasText extends Builder {
   }
 }
 
-export abstract class HasTitle extends Builder {
+export abstract class Title extends Builder {
   /**
    * @description Sets the title displayed for the block, element, or confirmation dialog.
    *
@@ -538,7 +540,7 @@ export abstract class HasTitle extends Builder {
   }
 }
 
-export abstract class HasThreadTs extends Builder {
+export abstract class ThreadTs extends Builder {
   /**
    * @description Instructs the Slack API to send the message to the thread of the message associated with the timestamp.
    *
@@ -551,7 +553,7 @@ export abstract class HasThreadTs extends Builder {
   }
 }
 
-export abstract class HasTs extends Builder {
+export abstract class Ts extends Builder {
   /**
    * @description Instructs the Slack API to use the message to replaced an existing message.
    *
@@ -564,7 +566,7 @@ export abstract class HasTs extends Builder {
   }
 }
 
-export abstract class HasUrl extends Builder {
+export abstract class Url extends Builder {
   /**
    * @description Sets the URL to which the user is redirected when interacting with a button or option.
    *
@@ -581,7 +583,7 @@ export abstract class HasUrl extends Builder {
   }
 }
 
-export abstract class HasValue extends Builder {
+export abstract class Value extends Builder {
   /**
    * @description Sets a value to be sent to your app when a user interacts with a button or option.
    *

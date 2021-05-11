@@ -1,10 +1,10 @@
 import { BlockBuilder } from '../base';
 import { BlockSlackDto } from '../lib';
 import {
-  HasBlockId,
-  HasEnd,
-  HasExternalId,
-  MustBuild,
+  BlockId,
+  End,
+  ExternalId,
+  Build,
 } from '../methods';
 import { applyMixins } from '../helpers';
 import { BlockType, FileType } from '../constants';
@@ -14,10 +14,10 @@ export interface FileParams {
   externalId?: string;
 }
 
-export interface FileBuilder extends HasBlockId,
-  HasEnd,
-  HasExternalId,
-  MustBuild {
+export interface FileBuilder extends BlockId,
+  End,
+  ExternalId,
+  Build {
 }
 
 /**
@@ -37,7 +37,7 @@ export class FileBuilder extends BlockBuilder<FileParams> {
 }
 
 applyMixins(FileBuilder, [
-  HasBlockId,
-  HasEnd,
-  HasExternalId,
+  BlockId,
+  End,
+  ExternalId,
 ]);

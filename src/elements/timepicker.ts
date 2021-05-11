@@ -1,12 +1,12 @@
 import { ElementBuilder } from '../base';
 import { ElementSlackDto } from '../lib';
 import {
-  HasActionId,
-  HasConfirm,
-  HasEnd,
-  HasInitialTime,
-  HasPlaceholder,
-  MustBuild,
+  ActionId,
+  Confirm,
+  End,
+  InitialTime,
+  Placeholder,
+  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
 import { ElementType } from '../constants';
@@ -19,12 +19,12 @@ export interface TimePickerParams {
   placeholder?: string;
 }
 
-export interface TimePickerBuilder extends HasActionId,
-  HasConfirm<ConfirmationDialogBuilder>,
-  HasEnd,
-  HasInitialTime,
-  HasPlaceholder,
-  MustBuild {
+export interface TimePickerBuilder extends ActionId,
+  Confirm<ConfirmationDialogBuilder>,
+  End,
+  InitialTime,
+  Placeholder,
+  Build {
 }
 
 /**
@@ -45,9 +45,9 @@ export class TimePickerBuilder extends ElementBuilder<TimePickerParams> {
 }
 
 applyMixins(TimePickerBuilder, [
-  HasActionId,
-  HasConfirm,
-  HasEnd,
-  HasInitialTime,
-  HasPlaceholder,
+  ActionId,
+  Confirm,
+  End,
+  InitialTime,
+  Placeholder,
 ]);

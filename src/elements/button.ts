@@ -1,15 +1,15 @@
 import { ElementBuilder } from '../base';
 import { ElementSlackDto } from '../lib';
 import {
-  HasActionId,
-  HasConfirm,
-  HasDanger,
-  HasEnd,
-  HasPrimary,
-  HasText,
-  HasUrl,
-  HasValue,
-  MustBuild,
+  ActionId,
+  Confirm,
+  Danger,
+  End,
+  Primary,
+  Text,
+  Url,
+  Value,
+  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
 import { ElementType } from '../constants';
@@ -23,15 +23,15 @@ export interface ButtonParams {
   value?: string;
 }
 
-export interface ButtonBuilder extends HasActionId,
-  HasConfirm<ConfirmationDialogBuilder>,
-  HasDanger,
-  HasEnd,
-  HasPrimary,
-  HasText,
-  HasUrl,
-  HasValue,
-  MustBuild {
+export interface ButtonBuilder extends ActionId,
+  Confirm<ConfirmationDialogBuilder>,
+  Danger,
+  End,
+  Primary,
+  Text,
+  Url,
+  Value,
+  Build {
 }
 
 /**
@@ -52,12 +52,12 @@ export class ButtonBuilder extends ElementBuilder<ButtonParams> {
 }
 
 applyMixins(ButtonBuilder, [
-  HasActionId,
-  HasConfirm,
-  HasDanger,
-  HasEnd,
-  HasPrimary,
-  HasText,
-  HasUrl,
-  HasValue,
+  ActionId,
+  Confirm,
+  Danger,
+  End,
+  Primary,
+  Text,
+  Url,
+  Value,
 ]);

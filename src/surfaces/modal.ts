@@ -1,20 +1,20 @@
 import { SurfaceBuilder } from '../base';
 import { ViewSlackDto } from '../lib';
 import {
-  CanBuildToJSON,
-  CanBuildToObject,
-  CanGetBlocks,
-  CanPrintPreviewUrl,
-  HasBlocks,
-  HasCallbackId,
-  HasClearOnClose,
-  HasClose,
-  HasExternalId,
-  HasNotifyOnClose,
-  HasPrivateMetaData,
-  HasSubmit,
-  HasTitle,
-  MustBuild,
+  Blocks,
+  CallbackId,
+  ClearOnClose,
+  Close,
+  ExternalId,
+  NotifyOnClose,
+  PrivateMetaData,
+  Submit,
+  Title,
+  BuildToJSON,
+  BuildToObject,
+  GetBlocks,
+  PrintPreviewUrl,
+  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResults } from '../helpers';
 import { SurfaceType } from '../constants';
@@ -31,20 +31,20 @@ export interface ModalParams {
   externalId?: string;
 }
 
-export interface ModalBuilder extends CanBuildToJSON,
-  CanBuildToObject<ViewSlackDto>,
-  CanGetBlocks,
-  CanPrintPreviewUrl,
-  HasBlocks<ViewBlockBuilder>,
-  HasCallbackId,
-  HasClearOnClose,
-  HasClose,
-  HasExternalId,
-  HasNotifyOnClose,
-  HasPrivateMetaData,
-  HasSubmit,
-  HasTitle,
-  MustBuild {
+export interface ModalBuilder extends Blocks<ViewBlockBuilder>,
+  CallbackId,
+  ClearOnClose,
+  Close,
+  ExternalId,
+  NotifyOnClose,
+  PrivateMetaData,
+  Submit,
+  Title,
+  BuildToJSON,
+  BuildToObject<ViewSlackDto>,
+  GetBlocks,
+  PrintPreviewUrl,
+  Build {
 }
 
 /**
@@ -67,17 +67,17 @@ export class ModalBuilder extends SurfaceBuilder<ModalParams> {
 }
 
 applyMixins(ModalBuilder, [
-  CanBuildToJSON,
-  CanBuildToObject,
-  CanGetBlocks,
-  CanPrintPreviewUrl,
-  HasBlocks,
-  HasCallbackId,
-  HasClearOnClose,
-  HasClose,
-  HasExternalId,
-  HasNotifyOnClose,
-  HasPrivateMetaData,
-  HasSubmit,
-  HasTitle,
+  Blocks,
+  CallbackId,
+  ClearOnClose,
+  Close,
+  ExternalId,
+  NotifyOnClose,
+  PrivateMetaData,
+  Submit,
+  Title,
+  BuildToJSON,
+  BuildToObject,
+  GetBlocks,
+  PrintPreviewUrl,
 ]);

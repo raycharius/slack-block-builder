@@ -1,14 +1,14 @@
 import { ElementBuilder } from '../base';
 import { ElementSlackDto } from '../lib';
 import {
-  HasActionId,
-  HasConfirm,
-  HasEnd,
-  HasInitialOptions,
-  HasMaxSelectedItems,
-  HasMinQueryLength,
-  HasPlaceholder,
-  MustBuild,
+  ActionId,
+  Confirm,
+  End,
+  InitialOptions,
+  MaxSelectedItems,
+  MinQueryLength,
+  Placeholder,
+  Build,
 } from '../methods';
 import {
   applyMixins,
@@ -27,14 +27,14 @@ export interface ExternalMultiSelectParams {
   placeholder?: string;
 }
 
-export interface ExternalMultiSelectBuilder extends HasActionId,
-  HasConfirm<ConfirmationDialogBuilder>,
-  HasEnd,
-  HasInitialOptions,
-  HasMaxSelectedItems,
-  HasMinQueryLength,
-  HasPlaceholder,
-  MustBuild {
+export interface ExternalMultiSelectBuilder extends ActionId,
+  Confirm<ConfirmationDialogBuilder>,
+  End,
+  InitialOptions,
+  MaxSelectedItems,
+  MinQueryLength,
+  Placeholder,
+  Build {
 }
 
 /**
@@ -56,11 +56,11 @@ export class ExternalMultiSelectBuilder extends ElementBuilder<ExternalMultiSele
 }
 
 applyMixins(ExternalMultiSelectBuilder, [
-  HasActionId,
-  HasConfirm,
-  HasEnd,
-  HasInitialOptions,
-  HasMaxSelectedItems,
-  HasMinQueryLength,
-  HasPlaceholder,
+  ActionId,
+  Confirm,
+  End,
+  InitialOptions,
+  MaxSelectedItems,
+  MinQueryLength,
+  Placeholder,
 ]);

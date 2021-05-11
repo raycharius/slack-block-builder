@@ -1,11 +1,11 @@
 import { ElementBuilder } from '../base';
 import { ElementSlackDto } from '../lib';
 import {
-  HasActionId,
-  HasConfirm,
-  HasEnd,
-  HasOptions,
-  MustBuild,
+  ActionId,
+  Confirm,
+  End,
+  Options,
+  Build,
 } from '../methods';
 import { applyMixins, getBuilderResult, getBuilderResults } from '../helpers';
 import { ElementType } from '../constants';
@@ -16,11 +16,11 @@ export interface OverflowMenuParams {
   actionId?: string;
 }
 
-export interface OverflowMenuBuilder extends HasActionId,
-  HasConfirm<ConfirmationDialogBuilder>,
-  HasEnd,
-  HasOptions,
-  MustBuild {
+export interface OverflowMenuBuilder extends ActionId,
+  Confirm<ConfirmationDialogBuilder>,
+  End,
+  Options,
+  Build {
 }
 
 /**
@@ -41,8 +41,8 @@ export class OverflowMenuBuilder extends ElementBuilder<OverflowMenuParams> {
 }
 
 applyMixins(OverflowMenuBuilder, [
-  HasActionId,
-  HasConfirm,
-  HasEnd,
-  HasOptions,
+  ActionId,
+  Confirm,
+  End,
+  Options,
 ]);

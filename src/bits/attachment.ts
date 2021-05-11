@@ -1,11 +1,11 @@
 import { BitBuilder } from '../base';
 import { SlackDto } from '../lib';
 import {
-  HasBlocks,
-  HasColor,
-  HasEnd,
-  HasFallback,
-  MustBuild,
+  Blocks,
+  Color,
+  End,
+  Fallback,
+  Build,
 } from '../methods';
 import { applyMixins, getBuilderResults } from '../helpers';
 
@@ -16,11 +16,11 @@ export interface AttachmentParams {
   fallback?: string;
 }
 
-export interface AttachmentBuilder extends HasBlocks<BlockBuilder>,
-  HasColor,
-  HasEnd,
-  HasFallback,
-  MustBuild {
+export interface AttachmentBuilder extends Blocks<BlockBuilder>,
+  Color,
+  End,
+  Fallback,
+  Build {
 }
 
 /**
@@ -39,8 +39,8 @@ export class AttachmentBuilder extends BitBuilder<AttachmentParams> {
 }
 
 applyMixins(AttachmentBuilder, [
-  HasBlocks,
-  HasColor,
-  HasEnd,
-  HasFallback,
+  Blocks,
+  Color,
+  End,
+  Fallback,
 ]);

@@ -1,15 +1,15 @@
 import { SurfaceBuilder } from '../base';
 import { ViewSlackDto } from '../lib';
 import {
-  CanBuildToJSON,
-  CanBuildToObject,
-  CanGetBlocks,
-  CanPrintPreviewUrl,
-  HasBlocks,
-  HasCallbackId,
-  HasPrivateMetaData,
-  HasSubmitDisabled,
-  MustBuild,
+  Blocks,
+  CallbackId,
+  PrivateMetaData,
+  SubmitDisabled,
+  BuildToJSON,
+  BuildToObject,
+  GetBlocks,
+  PrintPreviewUrl,
+  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResults } from '../helpers';
 import { SurfaceType } from '../constants';
@@ -21,15 +21,15 @@ export interface WorkflowStepParams {
   callbackId?: string;
 }
 
-export interface WorkflowStepBuilder extends CanBuildToJSON,
-  CanBuildToObject<ViewSlackDto>,
-  CanGetBlocks,
-  CanPrintPreviewUrl,
-  HasBlocks<ViewBlockBuilder>,
-  HasCallbackId,
-  HasPrivateMetaData,
-  HasSubmitDisabled,
-  MustBuild {
+export interface WorkflowStepBuilder extends Blocks<ViewBlockBuilder>,
+  CallbackId,
+  PrivateMetaData,
+  SubmitDisabled,
+  BuildToJSON,
+  BuildToObject<ViewSlackDto>,
+  GetBlocks,
+  PrintPreviewUrl,
+  Build {
 }
 
 /**
@@ -52,12 +52,12 @@ export class WorkflowStepBuilder extends SurfaceBuilder<WorkflowStepParams> {
 }
 
 applyMixins(WorkflowStepBuilder, [
-  CanBuildToJSON,
-  CanBuildToObject,
-  CanGetBlocks,
-  CanPrintPreviewUrl,
-  HasBlocks,
-  HasCallbackId,
-  HasPrivateMetaData,
-  HasSubmitDisabled,
+  Blocks,
+  CallbackId,
+  PrivateMetaData,
+  SubmitDisabled,
+  BuildToJSON,
+  BuildToObject,
+  GetBlocks,
+  PrintPreviewUrl,
 ]);

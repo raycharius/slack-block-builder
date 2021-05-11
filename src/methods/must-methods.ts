@@ -3,7 +3,7 @@
 
 import type { ObjectLiteral } from '../types';
 
-export interface MustBuild {
+export interface Build {
   /**
    * @description ⚠ ATTENTION: Not meant to be called outside of the source code of BlockBuilder Builder.
    */

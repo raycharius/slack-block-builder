@@ -1,10 +1,10 @@
 import { ElementBuilder } from '../base';
 import { ElementSlackDto } from '../lib';
 import {
-  HasAltText,
-  HasImageUrl,
-  HasEnd,
-  MustBuild,
+  AltText,
+  ImageUrl,
+  End,
+  Build,
 } from '../methods';
 import { applyMixins } from '../helpers';
 import { ElementType } from '../constants';
@@ -14,10 +14,10 @@ export interface ImgParams {
   altText?: string;
 }
 
-export interface ImgBuilder extends HasAltText,
-  HasImageUrl,
-  HasEnd,
-  MustBuild {
+export interface ImgBuilder extends AltText,
+  ImageUrl,
+  End,
+  Build {
 }
 
 /**
@@ -36,7 +36,7 @@ export class ImgBuilder extends ElementBuilder<ImgParams> {
 }
 
 applyMixins(ImgBuilder, [
-  HasAltText,
-  HasImageUrl,
-  HasEnd,
+  AltText,
+  ImageUrl,
+  End,
 ]);

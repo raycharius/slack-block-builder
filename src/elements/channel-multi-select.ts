@@ -1,13 +1,13 @@
 import { ElementBuilder } from '../base';
 import { ElementSlackDto } from '../lib';
 import {
-  HasActionId,
-  HasConfirm,
-  HasEnd,
-  HasInitialChannels,
-  HasMaxSelectedItems,
-  HasPlaceholder,
-  MustBuild,
+  ActionId,
+  Confirm,
+  End,
+  InitialChannels,
+  MaxSelectedItems,
+  Placeholder,
+  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
 import { ElementType } from '../constants';
@@ -20,13 +20,13 @@ export interface ChannelMultiSelectParams {
   placeholder?: string;
 }
 
-export interface ChannelMultiSelectBuilder extends HasActionId,
-  HasConfirm<ConfirmationDialogBuilder>,
-  HasEnd,
-  HasInitialChannels,
-  HasMaxSelectedItems,
-  HasPlaceholder,
-  MustBuild {
+export interface ChannelMultiSelectBuilder extends ActionId,
+  Confirm<ConfirmationDialogBuilder>,
+  End,
+  InitialChannels,
+  MaxSelectedItems,
+  Placeholder,
+  Build {
 }
 
 /**
@@ -47,10 +47,10 @@ export class ChannelMultiSelectBuilder extends ElementBuilder<ChannelMultiSelect
 }
 
 applyMixins(ChannelMultiSelectBuilder, [
-  HasActionId,
-  HasConfirm,
-  HasEnd,
-  HasInitialChannels,
-  HasMaxSelectedItems,
-  HasPlaceholder,
+  ActionId,
+  Confirm,
+  End,
+  InitialChannels,
+  MaxSelectedItems,
+  Placeholder,
 ]);

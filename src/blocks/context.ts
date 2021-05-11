@@ -1,10 +1,10 @@
 import { BlockBuilder } from '../base';
 import { BlockSlackDto } from '../lib';
 import {
-  HasBlockId,
-  HasElements,
-  HasEnd,
-  MustBuild,
+  BlockId,
+  Elements,
+  End,
+  Build,
 } from '../methods';
 import { applyMixins, getElementsForContext } from '../helpers';
 import { BlockType } from '../constants';
@@ -15,10 +15,10 @@ export interface ContextParams {
   blockId?: string;
 }
 
-export interface ContextBuilder extends HasBlockId,
-  HasElements<ContextElementBuilder>,
-  HasEnd,
-  MustBuild {
+export interface ContextBuilder extends BlockId,
+  Elements<ContextElementBuilder>,
+  End,
+  Build {
 }
 
 /**
@@ -38,7 +38,7 @@ export class ContextBuilder extends BlockBuilder<ContextParams> {
 }
 
 applyMixins(ContextBuilder, [
-  HasBlockId,
-  HasElements,
-  HasEnd,
+  BlockId,
+  Elements,
+  End,
 ]);
