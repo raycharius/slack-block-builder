@@ -4,7 +4,7 @@ import { params } from './mocks/channel-multiselect.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'ChannelMultiSelect';
+const className = 'ChannelMultiSelectBuilder';
 const category = 'Elements';
 
 const config = {

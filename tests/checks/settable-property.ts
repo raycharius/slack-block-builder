@@ -8,7 +8,7 @@ export const settableProperty = (params: MethodTestArgs): void => {
     methodArgMock,
   } = params;
 
-  test(`Passing a valid value to '${methodName}()' should set the property`, () => {
+  test(`Passing a valid value to '${methodName}()' should set the property.`, () => {
     const instance = new Class();
 
     instance[methodName](methodArgMock);
@@ -16,7 +16,7 @@ export const settableProperty = (params: MethodTestArgs): void => {
     expect(instance.props[propSetterPropName]).toEqual(methodArgMock);
   });
 
-  test(`Passing an value to method '${methodName}()' when value is already set should throw an error`, () => {
+  test(`Passing a valid value to method '${methodName}()' when the value has already been set should throw an error.`, () => {
     const instance = new Class();
 
     instance[methodName](methodArgMock);

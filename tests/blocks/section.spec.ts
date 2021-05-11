@@ -4,7 +4,7 @@ import { params } from './mocks/section.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'Section';
+const className = 'SectionBuilder';
 const category = 'Blocks';
 
 const config = {

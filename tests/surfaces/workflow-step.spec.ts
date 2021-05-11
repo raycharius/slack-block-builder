@@ -4,7 +4,7 @@ import { params } from './mocks/workflow-step.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'WorkflowStep';
+const className = 'WorkflowStepBuilder';
 const category = 'Surfaces';
 
 const config = {

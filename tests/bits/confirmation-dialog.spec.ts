@@ -4,7 +4,7 @@ import { params } from './mocks/confirmation-dialog.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'ConfirmationDialog';
+const className = 'ConfirmationDialogBuilder';
 const category = 'Bits';
 
 const config = {

@@ -4,7 +4,7 @@ import { params } from './mocks/home-tab.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'HomeTab';
+const className = 'HomeTabBuilder';
 const category = 'Surfaces';
 
 const config = {

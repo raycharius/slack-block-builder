@@ -4,7 +4,7 @@ import { params } from './mocks/message.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'Message';
+const className = 'MessageBuilder';
 const category = 'Surfaces';
 
 const config = {

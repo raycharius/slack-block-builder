@@ -10,12 +10,12 @@ export const builtChildBuild = (params: MethodTestArgs): void => {
     expectArray,
   } = params;
 
-  test(`Building the object with a set property of '${propSetterPropName}' build '${propSetterPropName}' or each item inside of it`, () => {
+  test(`Building the object with a defined property of '${propSetterPropName}' should set a DTO property of '${slackDtoParamName}' on the built object.`, () => {
     const instance = new Class();
 
     instance[methodName](methodArgMock);
 
-    const built = instance.build({ raw: true }); // Add raw for surfaces
+    const built = instance.build();
 
     expect(built).toHaveProperty(slackDtoParamName);
 

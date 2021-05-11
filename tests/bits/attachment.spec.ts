@@ -4,7 +4,7 @@ import { params } from './mocks/attachment.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'Attachment';
+const className = 'AttachmentBuilder';
 const category = 'Bits';
 
 const config = {

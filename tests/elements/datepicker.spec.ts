@@ -4,7 +4,7 @@ import { params } from './mocks/datepicker.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'DatePicker';
+const className = 'DatePickerBuilder';
 const category = 'Elements';
 
 const config = {

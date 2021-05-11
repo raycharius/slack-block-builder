@@ -4,7 +4,7 @@ import { params } from './mocks/static-select.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'StaticSelect';
+const className = 'StaticSelectBuilder';
 const category = 'Elements';
 
 const config = {

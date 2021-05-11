@@ -4,7 +4,7 @@ import { params } from './mocks/static-multiselect.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'StaticMultiSelect';
+const className = 'StaticMultiSelectBuilder';
 const category = 'Elements';
 
 const config = {

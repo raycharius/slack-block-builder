@@ -4,7 +4,7 @@ import { params } from './mocks/option-group.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'OptionGroup';
+const className = 'OptionGroupBuilder';
 const category = 'Bits';
 
 const config = {

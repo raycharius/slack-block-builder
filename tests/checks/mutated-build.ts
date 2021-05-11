@@ -3,6 +3,7 @@ import { MethodTestArgs } from '../test-config-types';
 export const mutatedBuild = (params: MethodTestArgs): void => {
   const {
     Class,
+    className,
     methodName,
     propSetterPropName,
     slackDtoParamName,
@@ -11,7 +12,7 @@ export const mutatedBuild = (params: MethodTestArgs): void => {
     expectArray,
   } = params;
 
-  test(`Building the object with a set property of '${propSetterPropName}' should return a mutated value`, () => {
+  test(`Building a '${className}' object with a set property of '${propSetterPropName}' should set a mutated value.`, () => {
     const instance = new Class();
 
     instance[methodName](methodArgMock);

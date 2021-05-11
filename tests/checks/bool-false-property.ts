@@ -7,7 +7,7 @@ export const boolFalseProperty = (params: MethodTestArgs): void => {
     propSetterPropName,
   } = params;
 
-  test(`Calling '${methodName}()' should set the '${propSetterPropName}' property to 'false'`, () => {
+  test(`Calling '${methodName}()' should set the '${propSetterPropName}' property to 'false'.`, () => {
     const instance = new Class();
 
     instance[methodName]();

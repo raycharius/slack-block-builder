@@ -4,7 +4,7 @@ import { params } from './mocks/user-multiselect.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'UserMultiSelect';
+const className = 'UserMultiSelectBuilder';
 const category = 'Elements';
 
 const config = {

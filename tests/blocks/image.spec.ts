@@ -4,7 +4,7 @@ import { params } from './mocks/image.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'Image';
+const className = 'ImageBuilder';
 const category = 'Blocks';
 
 const config = {

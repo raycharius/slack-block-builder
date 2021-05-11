@@ -4,7 +4,7 @@ import { params } from './mocks/option.mock';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 import * as methods from '../methods';
 
-const className = 'Option';
+const className = 'OptionBuilder';
 const category = 'Bits';
 
 const config = {

@@ -7,7 +7,7 @@ export const boolSettableProperty = (params: MethodTestArgs): void => {
     propSetterPropName,
   } = params;
 
-  test(`Calling '${methodName}()', passing in 'false' should set the '${propSetterPropName}' property to 'false'`, () => {
+  test(`Calling '${methodName}()', passing in a value of 'false' should set the '${propSetterPropName}' property to 'false'.`, () => {
     const instance = new Class();
 
     instance[methodName](false);
@@ -15,7 +15,7 @@ export const boolSettableProperty = (params: MethodTestArgs): void => {
     expect(instance.props[propSetterPropName]).toEqual(false);
   });
 
-  test(`Calling '${methodName}()', passing in 'true' should set the '${propSetterPropName}' property to 'true'`, () => {
+  test(`Calling '${methodName}()', passing in a value of 'true' should set the '${propSetterPropName}' property to 'true'`, () => {
     const instance = new Class();
 
     instance[methodName](true);

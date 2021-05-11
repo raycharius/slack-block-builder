@@ -4,7 +4,7 @@ import { params } from './mocks/context.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'Context';
+const className = 'ContextBuilder';
 const category = 'Blocks';
 
 const config = {

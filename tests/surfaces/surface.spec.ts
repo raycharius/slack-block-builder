@@ -7,7 +7,7 @@ import {
 } from '../../src';
 
 describe('Surfaces', () => {
-  test('Calling \'buildToObject()\' builds the view and returns an object', () => {
+  test('Calling \'buildToObject()\' builds the view and returns an object.', () => {
     const modal = Modal()
       .title('Some Modal')
       .blocks(Blocks.Divider());
@@ -16,7 +16,7 @@ describe('Surfaces', () => {
     expect(result).toEqual(modal.build());
   });
 
-  test('Calling \'buildJSON()\' builds the view and returns a string', () => {
+  test('Calling \'buildJSON()\' builds the view and returns a string.', () => {
     const modal = Modal()
       .title('Some Modal')
       .blocks(Blocks.Divider());
@@ -25,9 +25,8 @@ describe('Surfaces', () => {
     expect(result).toEqual(JSON.stringify(modal.build()));
   });
 
-  test('Calling \'printPreviewUrl()\' for Modal and HomeTabs logs the URL to the console', () => {
-    const modal = Modal()
-      .title('Some Modal')
+  test('Calling \'printPreviewUrl()\' for HomeTab logs the URL to the console.', () => {
+    const modal = HomeTab()
       .blocks(Blocks.Divider());
 
     jest.spyOn(console, 'log');
@@ -38,7 +37,7 @@ describe('Surfaces', () => {
     expect(console.log).toHaveBeenCalled();
   });
 
-  test('Calling \'printPreviewUrl()\' for Message logs the URL to the console', () => {
+  test('Calling \'printPreviewUrl()\' for Modal logs the URL to the console.', () => {
     const message = Modal()
       .blocks(Blocks.Divider());
 
@@ -50,7 +49,7 @@ describe('Surfaces', () => {
     expect(console.log).toHaveBeenCalled();
   });
 
-  test('Calling \'getBlocks()\' for Message returns an array of Blocks', () => {
+  test('Calling \'getBlocks()\' for Message should return an array of Blocks.', () => {
     const message = Modal()
       .blocks(Blocks.Divider());
     const blocks = message.getBlocks();
@@ -58,7 +57,7 @@ describe('Surfaces', () => {
     expect(blocks).toEqual(expect.arrayContaining(message.build().blocks));
   });
 
-  test('Calling \'getAttachments()\' for Message returns an array of Attachments', () => {
+  test('Calling \'getAttachments()\' for Message should return an array of Attachments.', () => {
     const message = Message()
       .attachments([
         Bits.Attachment({ color: 'ffffff' })
@@ -77,7 +76,7 @@ describe('Surfaces', () => {
     expect(attachments).toEqual(expect.arrayContaining(message.build().attachments));
   });
 
-  test('Calling \'getBlocks()\' for Modal returns an array of Blocks', () => {
+  test('Calling \'getBlocks()\' for Modal should return an array of Blocks.', () => {
     const modal = Modal()
       .blocks(Blocks.Divider());
     const blocks = modal.getBlocks();
@@ -85,7 +84,7 @@ describe('Surfaces', () => {
     expect(blocks).toEqual(expect.arrayContaining(modal.build().blocks));
   });
 
-  test('Calling \'getBlocks()\' for HomeTab returns an array of Blocks', () => {
+  test('Calling \'getBlocks()\' for HomeTab should return an array of Blocks.', () => {
     const homeTab = HomeTab()
       .blocks(Blocks.Divider());
     const blocks = homeTab.getBlocks();

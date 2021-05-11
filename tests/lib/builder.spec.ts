@@ -2,7 +2,7 @@ import { Modal } from '../../src';
 import { Builder } from '../../src/lib';
 
 describe('Testing Builder Class Methods:', () => {
-  test('Instantiating with undefined values in constructor params does not add them to the `props` property of a build subclass.', () => {
+  test('Instantiating with `undefined` values in constructor params does not add them to the `props` property of a builder.', () => {
     const myModal = Modal({
       title: undefined,
       close: undefined,
@@ -13,7 +13,7 @@ describe('Testing Builder Class Methods:', () => {
     expect(myModal.props).toEqual({});
   });
 
-  test('After being built, the builder should not be able to be built anymore.', () => {
+  test('When no `build()` method is defined in the composite class, an error should be thrown.', () => {
     class FakeBuilder extends Builder {}
 
     const fakeBuilder = new FakeBuilder();

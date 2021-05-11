@@ -4,7 +4,7 @@ import { params } from './mocks/conversation-multiselect.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'ConversationMultiSelect';
+const className = 'ConversationMultiSelectBuilder';
 const category = 'Elements';
 
 const config = {

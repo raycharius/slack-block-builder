@@ -4,7 +4,7 @@ import { params } from './mocks/text-input.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'TextInput';
+const className = 'TextInputBuilder';
 const category = 'Elements';
 
 const config = {

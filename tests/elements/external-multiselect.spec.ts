@@ -4,7 +4,7 @@ import { params } from './mocks/external-multiselect.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'ExternalMultiSelect';
+const className = 'ExternalMultiSelectBuilder';
 const category = 'Elements';
 
 const config = {

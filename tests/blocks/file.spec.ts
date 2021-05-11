@@ -4,7 +4,7 @@ import { params } from './mocks/file.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'File';
+const className = 'FileBuilder';
 const category = 'Blocks';
 
 const config = {

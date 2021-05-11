@@ -9,16 +9,18 @@ export const callFromIndex = (config: CompositeBuilderClassConfig): void => {
     category,
   } = config;
 
-  test(`Calling the ${className} object from the src/index.js file should return an instance of the object`, () => {
-    const instance = index[className] ? index[className]() : index[category][className]();
+  const functionName = className.replace('Builder', '');
+
+  test(`Calling the function to create a '${className}' object from the src/index.ts file should return an instance of the object.`, () => {
+    const instance = index[functionName] ? index[functionName]() : index[category][functionName]();
 
     expect(instance).toBeInstanceOf(Class);
   });
 
-  test(`Calling the ${className} object from the src/index.js with parameters should return an instance of the object with props`, () => {
-    const instance = index[className]
-      ? index[className](params)
-      : index[category][className](params);
+  test(`Calling the function to create a '${className}' object from the src/index.ts file with params should return an instance of the object with defined parameters.`, () => {
+    const instance = index[functionName]
+      ? index[functionName](params)
+      : index[category][functionName](params);
 
     expect(instance).toBeInstanceOf(Class);
     expect(instance).toMatchObject({ props: params });

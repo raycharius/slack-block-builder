@@ -4,7 +4,7 @@ import { params } from './mocks/radio-buttons.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'RadioButtons';
+const className = 'RadioButtonsBuilder';
 const category = 'Elements';
 
 const config = {

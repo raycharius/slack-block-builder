@@ -4,7 +4,7 @@ import { params } from './mocks/input.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'Input';
+const className = 'InputBuilder';
 const category = 'Blocks';
 
 const config = {

@@ -4,7 +4,7 @@ import { params } from './mocks/overflow-menu.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'OverflowMenu';
+const className = 'OverflowMenuBuilder';
 const category = 'Elements';
 
 const config = {

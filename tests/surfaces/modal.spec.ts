@@ -4,7 +4,7 @@ import { params } from './mocks/modal.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'Modal';
+const className = 'ModalBuilder';
 const category = 'Surfaces';
 
 const config = {

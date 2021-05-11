@@ -4,7 +4,7 @@ import { params } from './mocks/time-picker.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'TimePicker';
+const className = 'TimePickerBuilder';
 const category = 'Elements';
 
 const config = {

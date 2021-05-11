@@ -4,7 +4,7 @@ import { params } from './mocks/external-select.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'ExternalSelect';
+const className = 'ExternalSelectBuilder';
 const category = 'Elements';
 
 const config = {
