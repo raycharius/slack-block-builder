@@ -9,6 +9,7 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
+import { ElementType } from '../constants';
 
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
@@ -32,13 +33,14 @@ export interface TimePickerBuilder extends HasActionId,
  */
 
 export class TimePickerBuilder extends ElementBuilder<TimePickerParams> {
+  /** @internal */
+
   public build(): ElementSlackDto {
-    const augmentedProps = {
+    return this.getResult(ElementSlackDto, {
+      type: ElementType.TimePicker,
       placeholder: getPlainTextObject(this.props.placeholder),
       confirm: getBuilderResult(this.props.confirm),
-    };
-
-    return this.getResult(ElementSlackDto, augmentedProps);
+    });
   }
 }
 

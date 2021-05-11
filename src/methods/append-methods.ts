@@ -1,7 +1,7 @@
 /* eslint-disable max-classes-per-file */
 /* eslint-disable max-len */
 
-import { PropSetter } from '../lib';
+import { Builder } from '../lib';
 import { Prop } from '../constants';
 
 import type { AttachmentBuilder } from '../bits/attachment';
@@ -9,7 +9,7 @@ import type { OptionBuilder } from '../bits/option';
 import type { OptionGroupBuilder } from '../bits/option-group';
 import type { SingleOrArray } from '../types';
 
-export abstract class HasAttachments extends PropSetter {
+export abstract class HasAttachments extends Builder {
   /**
    * @description Adds attachments to your message.
    *
@@ -24,7 +24,7 @@ export abstract class HasAttachments extends PropSetter {
   }
 }
 
-export abstract class HasBlocks<Type> extends PropSetter {
+export abstract class HasBlocks<Type> extends Builder {
   /**
    * @description Adds blocks to your view or message.
    *
@@ -43,7 +43,7 @@ export abstract class HasBlocks<Type> extends PropSetter {
   }
 }
 
-export abstract class HasElements<Type> extends PropSetter {
+export abstract class HasElements<Type> extends Builder {
   /**
    * @description Adds elements to the actions block.
    *
@@ -63,7 +63,7 @@ export abstract class HasElements<Type> extends PropSetter {
   }
 }
 
-export abstract class HasFields extends PropSetter {
+export abstract class HasFields extends Builder {
   /**
    * @description Adds text fields to the section block, in two columns, side-by-side.
    *
@@ -84,7 +84,7 @@ export abstract class HasFields extends PropSetter {
   }
 }
 
-export abstract class HasFilter extends PropSetter {
+export abstract class HasFilter extends Builder {
   /**
    * @description Defines which conversations should be included in the list.
    *
@@ -102,7 +102,7 @@ export abstract class HasFilter extends PropSetter {
   }
 }
 
-export abstract class HasInitialChannels extends PropSetter {
+export abstract class HasInitialChannels extends Builder {
   /**
    * @description Pre-populates the menu with selected, default channels.
    *
@@ -117,7 +117,7 @@ export abstract class HasInitialChannels extends PropSetter {
   }
 }
 
-export abstract class HasInitialConversations extends PropSetter {
+export abstract class HasInitialConversations extends Builder {
   /**
    * @description Pre-populates the menu with selected, default conversations.
    *
@@ -132,7 +132,7 @@ export abstract class HasInitialConversations extends PropSetter {
   }
 }
 
-export abstract class HasInitialOptions extends PropSetter {
+export abstract class HasInitialOptions extends Builder {
   /**
    * @description Pre-populates the menu or checkbox input with selected, default options.
    *
@@ -150,7 +150,7 @@ export abstract class HasInitialOptions extends PropSetter {
   }
 }
 
-export abstract class HasInitialUsers extends PropSetter {
+export abstract class HasInitialUsers extends Builder {
   /**
    * @description Pre-populates the menu with selected, default users.
    *
@@ -165,7 +165,7 @@ export abstract class HasInitialUsers extends PropSetter {
   }
 }
 
-export abstract class HasOptionGroups extends PropSetter {
+export abstract class HasOptionGroups extends Builder {
   /**
    * @description Adds organized groups of options to the select or multi-select menu, each with its own label or title.
    *
@@ -184,7 +184,7 @@ export abstract class HasOptionGroups extends PropSetter {
   }
 }
 
-export abstract class HasOptions extends PropSetter {
+export abstract class HasOptions extends Builder {
   /**
    * @description Adds options to the select or multi-select menu.
    *

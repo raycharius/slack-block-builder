@@ -14,7 +14,7 @@ export enum ElementType {
   ChannelSelect = 'channels_select',
   StaticMultiSelect = 'multi_static_select',
   ExternalMultiSelect = 'multi_external_select',
-  UsersMultiSelect = 'multi_users_select',
+  UserMultiSelect = 'multi_users_select',
   ConversationsMultiSelect = 'multi_conversations_select',
   ChannelsMultiSelect = 'multi_channels_select',
 }

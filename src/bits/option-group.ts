@@ -27,12 +27,10 @@ export class OptionGroupBuilder extends BitBuilder<OptionGroupParams> {
   /** @internal */
 
   public build(): SlackDto {
-    const augmentedProps = {
+    return this.getResult(SlackDto, {
       label: getPlainTextObject(this.props.label),
       options: getBuilderResults(this.props.options),
-    };
-
-    return this.getResult<SlackDto>(SlackDto, augmentedProps);
+    });
   }
 }
 

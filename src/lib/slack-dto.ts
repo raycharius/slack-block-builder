@@ -1,4 +1,8 @@
+/* eslint-disable max-classes-per-file */
+
 import { SurfaceType, BlockType, ElementType } from '../constants';
+
+import type { ObjectLiteral } from '../types';
 
 export enum Param {
   actionId = 'action_id',
@@ -72,7 +76,7 @@ export enum Param {
 }
 
 export class SlackDto {
-  constructor(params) {
+  constructor(params: ObjectLiteral) {
     Object.keys(params).forEach((paramName) => {
       const mappedParam = SlackDto.mapParam(paramName);
 
@@ -93,6 +97,7 @@ export class TypedSlackDto extends SlackDto {
 
 export class ViewSlackDto extends TypedSlackDto {
   public readonly type: SurfaceType;
+
   public readonly blocks: BlockSlackDto[];
 }
 

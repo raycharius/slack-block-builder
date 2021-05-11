@@ -19,6 +19,7 @@ import {
   getFilter,
   getBuilderResult,
 } from '../helpers';
+import { ElementType } from '../constants';
 
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
@@ -47,14 +48,15 @@ export interface ConversationMultiSelectBuilder extends HasActionId,
  */
 
 export class ConversationMultiSelectBuilder extends ElementBuilder<ConversationMultiSelectParams> {
+  /** @internal */
+
   public build(): ElementSlackDto {
-    const augmentedProps = {
+    return this.getResult(ElementSlackDto, {
+      type: ElementType.ConversationsMultiSelect,
       placeholder: getPlainTextObject(this.props.placeholder),
       confirm: getBuilderResult(this.props.confirm),
       filter: getFilter(this.props),
-    };
-
-    return this.getResult(ElementSlackDto, augmentedProps);
+    });
   }
 }
 

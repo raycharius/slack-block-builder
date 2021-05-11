@@ -12,6 +12,7 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResults } from '../helpers';
+import { SurfaceType } from '../constants';
 
 import type { ViewBlockBuilder } from '../types';
 
@@ -40,14 +41,13 @@ export class WorkflowStepBuilder extends SurfaceBuilder<WorkflowStepParams> {
   /** @internal */
 
   public build(): ViewSlackDto {
-    const augmentedProps = {
+    return this.getResult(ViewSlackDto, {
+      type: SurfaceType.WorkflowStep,
       title: getPlainTextObject(this.props.title),
       blocks: getBuilderResults(this.props.blocks),
       close: getPlainTextObject(this.props.close),
       submit: getPlainTextObject(this.props.submit),
-    };
-
-    return this.getResult(ViewSlackDto, augmentedProps);
+    });
   }
 }
 

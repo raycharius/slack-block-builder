@@ -1,7 +1,7 @@
 /* eslint-disable max-classes-per-file */
 /* eslint-disable max-len */
 
-import { PropSetter } from '../lib';
+import { Builder } from '../lib';
 import {
   Prop,
   ButtonStyle,
@@ -9,7 +9,7 @@ import {
   DispatchOnType,
 } from '../constants';
 
-export abstract class HasAsUser extends PropSetter {
+export abstract class HasAsUser extends Builder {
   /**
    * @description Sets the message to be sent as either the user whose auth token is being used or as the bot user associated with your app.
    *
@@ -22,7 +22,7 @@ export abstract class HasAsUser extends PropSetter {
   }
 }
 
-export abstract class HasClearOnClose extends PropSetter {
+export abstract class HasClearOnClose extends Builder {
   /**
    * @description Instructs the Slack API to close all open views in the view stack when this particular view is closed.
    *
@@ -35,7 +35,7 @@ export abstract class HasClearOnClose extends PropSetter {
   }
 }
 
-export abstract class HasDanger extends PropSetter {
+export abstract class HasDanger extends Builder {
   /**
    * @description For a button element, this changes the color to red. For confirmation dialogs, this sets the main button in the bottom right corner to red, indicating that an action is potentially destructive.
    *
@@ -52,7 +52,7 @@ export abstract class HasDanger extends PropSetter {
   }
 }
 
-export abstract class HasDefaultToCurrentConversation extends PropSetter {
+export abstract class HasDefaultToCurrentConversation extends Builder {
   /**
    * @description Pre-populates the select menu with the conversation that the user was viewing when they opened the modal, if available.
    *
@@ -68,7 +68,7 @@ export abstract class HasDefaultToCurrentConversation extends PropSetter {
   }
 }
 
-export abstract class HasDeleteOriginal extends PropSetter {
+export abstract class HasDeleteOriginal extends Builder {
   /**
    * @description Instructs the Slack API to delete the message from which the interaction originated when sending the current message.
    *
@@ -81,7 +81,7 @@ export abstract class HasDeleteOriginal extends PropSetter {
   }
 }
 
-export abstract class HasDispatchAction extends PropSetter {
+export abstract class HasDispatchAction extends Builder {
   /**
    * @description Instructs the Slack API to send an interaction event to your app when the element in the input block has been interacted with.
    *
@@ -94,7 +94,7 @@ export abstract class HasDispatchAction extends PropSetter {
   }
 }
 
-export abstract class HasDispatchActionOnCharacterEntered extends PropSetter {
+export abstract class HasDispatchActionOnCharacterEntered extends Builder {
   /**
    * @description Instructs the Slack API to dispatch an interaction payload to your app when the user enters or deletes a character in the input.
    *
@@ -111,7 +111,7 @@ export abstract class HasDispatchActionOnCharacterEntered extends PropSetter {
   }
 }
 
-export abstract class HasDispatchActionOnEnterPressed extends PropSetter {
+export abstract class HasDispatchActionOnEnterPressed extends Builder {
   /**
    * @description Instructs the Slack API to dispatch an interaction payload to your app when the user presses the enter key while the input is in focus.
    *
@@ -128,7 +128,7 @@ export abstract class HasDispatchActionOnEnterPressed extends PropSetter {
   }
 }
 
-export abstract class HasEphemeral extends PropSetter {
+export abstract class HasEphemeral extends Builder {
   /**
    * @description Instructs the Slack API to display the message only to the user who invoked the interaction payload or slash command.
    *
@@ -145,7 +145,7 @@ export abstract class HasEphemeral extends PropSetter {
   }
 }
 
-export abstract class HasExcludeExternalSharedChannels extends PropSetter {
+export abstract class HasExcludeExternalSharedChannels extends Builder {
   /**
    * @description Excludes conversations shared with external organizations from the menu's options.
    *
@@ -158,7 +158,7 @@ export abstract class HasExcludeExternalSharedChannels extends PropSetter {
   }
 }
 
-export abstract class HasExcludeBotUsers extends PropSetter {
+export abstract class HasExcludeBotUsers extends Builder {
   /**
    * @description Excludes conversations with bot users from the menu's options.
    *
@@ -171,7 +171,7 @@ export abstract class HasExcludeBotUsers extends PropSetter {
   }
 }
 
-export abstract class HasIgnoreMarkdown extends PropSetter {
+export abstract class HasIgnoreMarkdown extends Builder {
   /**
    * @description Instructs the Slack API to ignore any markdown in the text property of the message.
    *
@@ -184,7 +184,7 @@ export abstract class HasIgnoreMarkdown extends PropSetter {
   }
 }
 
-export abstract class HasInChannel extends PropSetter {
+export abstract class HasInChannel extends Builder {
   /**
    * @description Instructs the Slack API to make the message visible to everyone in the channel from which the interaction payload or slash command originated.
    *
@@ -201,7 +201,7 @@ export abstract class HasInChannel extends PropSetter {
   }
 }
 
-export abstract class HasMultiline extends PropSetter {
+export abstract class HasMultiline extends Builder {
   /**
    * @description Sets the text input to be a larger, multi-line input for larger portions of text.
    *
@@ -214,7 +214,7 @@ export abstract class HasMultiline extends PropSetter {
   }
 }
 
-export abstract class HasNotifyOnClose extends PropSetter {
+export abstract class HasNotifyOnClose extends Builder {
   /**
    * @description Instructs the Slack API to send an interaction payload to your app when the view is closed.
    *
@@ -227,7 +227,7 @@ export abstract class HasNotifyOnClose extends PropSetter {
   }
 }
 
-export abstract class HasOptional extends PropSetter {
+export abstract class HasOptional extends Builder {
   /**
    * @description Lets the Slack API know that inputting data in the the input is not required for the view to be successfully submitted.
    *
@@ -240,7 +240,7 @@ export abstract class HasOptional extends PropSetter {
   }
 }
 
-export abstract class HasPrimary extends PropSetter {
+export abstract class HasPrimary extends Builder {
   /**
    * @description For a button element, this changes the color to green. For confirmation dialogs, this sets the main button in the bottom right corner to green, which is meant to confirm the action.
    *
@@ -257,7 +257,7 @@ export abstract class HasPrimary extends PropSetter {
   }
 }
 
-export abstract class HasReplaceOriginal extends PropSetter {
+export abstract class HasReplaceOriginal extends Builder {
   /**
    * @description Instructs the Slack API to replace the original message, from which the interaction payload originated, with the current message.
    *
@@ -270,7 +270,7 @@ export abstract class HasReplaceOriginal extends PropSetter {
   }
 }
 
-export abstract class HasResponseUrlEnabled extends PropSetter {
+export abstract class HasResponseUrlEnabled extends Builder {
   /**
    * @description Instructs the Slack API to provide a response URL at view submission.
    *
@@ -286,7 +286,7 @@ export abstract class HasResponseUrlEnabled extends PropSetter {
   }
 }
 
-export abstract class HasSubmitDisabled extends PropSetter {
+export abstract class HasSubmitDisabled extends Builder {
   /**
    * @description Configures the workflow step to have a disabled submit button until the user has input data into one or more inputs.
    *

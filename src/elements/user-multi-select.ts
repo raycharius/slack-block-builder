@@ -10,6 +10,7 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
+import { ElementType } from '../constants';
 
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
@@ -34,13 +35,14 @@ export interface UserMultiSelectBuilder extends HasActionId,
  */
 
 export class UserMultiSelectBuilder extends ElementBuilder<UserMultiSelectParams> {
+  /** @internal */
+
   public build(): ElementSlackDto {
-    const augmentedProps = {
+    return this.getResult(ElementSlackDto, {
+      type: ElementType.UserMultiSelect,
       placeholder: getPlainTextObject(this.props.placeholder),
       confirm: getBuilderResult(this.props.confirm),
-    };
-
-    return this.getResult(ElementSlackDto, augmentedProps);
+    });
   }
 }
 

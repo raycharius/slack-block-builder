@@ -14,6 +14,7 @@ import {
   getBuilderResult,
   getFields,
 } from '../helpers';
+import { BlockType } from '../constants';
 
 import type { SectionElementBuilder } from '../types';
 
@@ -39,13 +40,12 @@ export class SectionBuilder extends BlockBuilder<SectionParams> {
   /** @internal */
 
   public build(): BlockSlackDto {
-    const augmentedProps = {
+    return this.getResult(BlockSlackDto, {
+      type: BlockType.Section,
       text: getMarkdownObject(this.props.text),
       fields: getFields(this.props.fields),
       accessory: getBuilderResult(this.props.accessory),
-    };
-
-    return this.getResult(BlockSlackDto, augmentedProps);
+    });
   }
 }
 

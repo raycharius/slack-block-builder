@@ -9,9 +9,9 @@ export abstract class CanBuildToJSON extends Builder {
    */
 
   public buildToJSON(): string {
-    this.build();
+    const result = this.build();
 
-    return JSON.stringify(this.result);
+    return JSON.stringify(result);
   }
 }
 
@@ -21,9 +21,7 @@ export abstract class CanBuildToObject<Type> extends Builder {
    */
 
   public buildToObject(): Type {
-    this.build();
-
-    return this.result;
+    return this.build();
   }
 }
 
@@ -35,9 +33,7 @@ export abstract class CanGetAttachments extends Builder {
    */
 
   getAttachments(): SlackDto[] {
-    this.build();
-
-    return this.result.attachments;
+    return this.build().attachments;
   }
 }
 
@@ -48,10 +44,10 @@ export abstract class CanGetBlocks extends Builder {
    * {@link https://api.slack.com/block-kit|View in Slack API Documentation}
    */
 
-  public getBlocks(): BlockSlackDto[]{
+  public getBlocks(): BlockSlackDto[] {
     this.build();
 
-    return this.result.blocks;
+    return this.build().blocks;
   }
 }
 
@@ -61,12 +57,12 @@ export abstract class CanPrintPreviewUrl extends Builder {
    */
 
   public printPreviewUrl(): void {
-    this.build();
+    const result = this.build();
 
     const baseUri = 'https://app.slack.com/block-kit-builder/#';
     const stringifiedBlocks = this.props.type
-      ? JSON.stringify(this.result)
-      : JSON.stringify({ blocks: this.result.blocks, attachments: this.result.attachments });
+      ? JSON.stringify(result)
+      : JSON.stringify({ blocks: result.blocks, attachments: result.attachments });
 
     // eslint-disable-next-line no-console
     console.log(encodeURI(`${baseUri}${stringifiedBlocks}`).replace(/[!'()*]/g, escape));

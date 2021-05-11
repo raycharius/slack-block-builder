@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 
-import type { Constructor, AbstractConstructor } from '../types';
+import type { Ctor, AbstractCtor } from '../types';
 
-export function applyMixins(derivedCtor: Constructor<any>, baseCtors: AbstractConstructor<any>[]) {
+export function applyMixins(derivedCtor: Ctor<any>, baseCtors: AbstractCtor<any>[]) {
   const { constructor } = derivedCtor.prototype;
 
   baseCtors.forEach((baseCtor) => {

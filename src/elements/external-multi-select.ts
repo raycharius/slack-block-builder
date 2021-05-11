@@ -16,6 +16,7 @@ import {
   getBuilderResult,
   getBuilderResults,
 } from '../helpers';
+import { ElementType } from '../constants';
 
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
@@ -42,14 +43,15 @@ export interface ExternalMultiSelectBuilder extends HasActionId,
  */
 
 export class ExternalMultiSelectBuilder extends ElementBuilder<ExternalMultiSelectParams> {
+  /** @internal */
+
   public build(): ElementSlackDto {
-    const augmentedProps = {
+    return this.getResult(ElementSlackDto, {
+      type: ElementType.ExternalMultiSelect,
       placeholder: getPlainTextObject(this.props.placeholder),
       initialOptions: getBuilderResults(this.props.initialOptions),
       confirm: getBuilderResult(this.props.confirm),
-    };
-
-    return this.getResult(ElementSlackDto, augmentedProps);
+    });
   }
 }
 

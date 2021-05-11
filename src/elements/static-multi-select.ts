@@ -17,6 +17,7 @@ import {
   getBuilderResult,
   getBuilderResults,
 } from '../helpers';
+import { ElementType } from '../constants';
 
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
@@ -43,16 +44,17 @@ export interface StaticMultiSelectBuilder extends HasActionId,
 }
 
 export class StaticMultiSelectBuilder extends ElementBuilder<StaticMultiSelectParams> {
+  /** @internal */
+
   public build(): ElementSlackDto {
-    const augmentedProps = {
+    return this.getResult(ElementSlackDto, {
+      type: ElementType.StaticMultiSelect,
       placeholder: getPlainTextObject(this.props.placeholder),
       options: getBuilderResults(this.props.options),
       initialOptions: getBuilderResults(this.props.initialOptions),
       optionGroups: getBuilderResults(this.props.optionGroups),
       confirm: getBuilderResult(this.props.confirm),
-    };
-
-    return this.getResult(ElementSlackDto, augmentedProps);
+    });
   }
 }
 

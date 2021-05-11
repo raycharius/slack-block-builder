@@ -12,6 +12,7 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getBuilderResults } from '../helpers';
+import { SurfaceType } from '../constants';
 
 import type { ViewBlockBuilder } from '../types';
 
@@ -41,11 +42,10 @@ export class HomeTabBuilder extends SurfaceBuilder<HomeTabParams> {
   /** @internal */
 
   public build(): ViewSlackDto {
-    const augmentedProps = {
+    return this.getResult(ViewSlackDto, {
+      type: SurfaceType.HomeTab,
       blocks: getBuilderResults(this.props.blocks),
-    };
-
-    return this.getResult(ViewSlackDto, augmentedProps);
+    });
   }
 }
 

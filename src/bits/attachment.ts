@@ -32,11 +32,9 @@ export class AttachmentBuilder extends BitBuilder<AttachmentParams> {
   /** @internal */
 
   public build(): SlackDto {
-    const augmentedProps = {
+    return this.getResult(SlackDto, {
       blocks: getBuilderResults(this.props.blocks),
-    };
-
-    return this.getResult<SlackDto>(SlackDto, augmentedProps);
+    });
   }
 }
 

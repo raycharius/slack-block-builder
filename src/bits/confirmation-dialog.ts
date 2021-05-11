@@ -38,14 +38,12 @@ export class ConfirmationDialogBuilder extends BitBuilder<ConfirmationDialogPara
   /** @internal */
 
   public build(): SlackDto {
-    const augmentedProps = {
+    return this.getResult(SlackDto, {
       text: getMarkdownObject(this.props.text),
       title: getPlainTextObject(this.props.title),
       confirm: getPlainTextObject(this.props.confirm),
       deny: getPlainTextObject(this.props.deny),
-    };
-
-    return this.getResult<SlackDto>(SlackDto, augmentedProps);
+    });
   }
 }
 

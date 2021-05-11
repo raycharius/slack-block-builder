@@ -63,12 +63,10 @@ export class MessageBuilder extends SurfaceBuilder<MessageParams> {
   /** @internal */
 
   public build(): SlackDto {
-    const augmentedProps = {
+    return this.getResult(SlackDto, {
       blocks: getBuilderResults(this.props.blocks),
       attachments: getBuilderResults(this.props.attachments),
-    };
-
-    return this.getResult(SlackDto, augmentedProps);
+    });
   }
 }
 

@@ -7,6 +7,7 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getBuilderResults } from '../helpers';
+import { BlockType } from '../constants';
 
 import type { ActionsElementBuilder } from '../types';
 
@@ -26,15 +27,13 @@ export interface ActionsBuilder extends HasBlockId,
  */
 
 export class ActionsBuilder extends BlockBuilder<ActionsParams> {
-
   /** @internal */
 
   public build(): BlockSlackDto {
-    const augmentedProps = {
+    return this.getResult(BlockSlackDto, {
+      type: BlockType.Actions,
       elements: getBuilderResults(this.props.elements),
-    };
-
-    return this.getResult(BlockSlackDto, augmentedProps);
+    });
   }
 }
 

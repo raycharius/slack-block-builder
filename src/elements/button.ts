@@ -12,6 +12,7 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
+import { ElementType } from '../constants';
 
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
@@ -39,13 +40,14 @@ export interface ButtonBuilder extends HasActionId,
  */
 
 export class ButtonBuilder extends ElementBuilder<ButtonParams> {
+  /** @internal */
+
   public build(): ElementSlackDto {
-    const augmentedProps = {
+    return this.getResult(ElementSlackDto, {
+      type: ElementType.Button,
       confirm: getBuilderResult(this.props.confirm),
       text: getPlainTextObject(this.props.text),
-    };
-
-    return this.getResult(ElementSlackDto, augmentedProps);
+    });
   }
 }
 

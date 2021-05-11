@@ -36,16 +36,14 @@ export class OptionBuilder extends BitBuilder<OptionParams> {
   /** @internal */
 
   public build({ isMarkdown }: ObjectLiteral = { isMarkdown: false }): SlackDto {
-    const augmentedProps = {
+    return this.getResult(SlackDto, {
       text: isMarkdown
         ? getMarkdownObject(this.props.text)
         : getPlainTextObject(this.props.text),
       description: isMarkdown
         ? getMarkdownObject(this.props.description)
         : getPlainTextObject(this.props.description),
-    };
-
-    return this.getResult<SlackDto>(SlackDto, augmentedProps);
+    });
   }
 }
 

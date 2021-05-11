@@ -1,56 +1,49 @@
-import { PropSetter } from './prop-setter';
 import { BlockBuilderError } from './error';
 
-import type { ObjectLiteral, Constructor } from '../types';
+import type { ObjectLiteral, Ctor } from '../types';
+import type { Prop } from '../constants';
 
-export abstract class Builder extends PropSetter {
-  /** @internal */
-
-  public isBuilt: boolean;
-
-  /** @internal */
-
-  public result: any;
+export abstract class Builder {
+  protected readonly props: ObjectLiteral;
 
   constructor(params?: ObjectLiteral) {
-    super(params);
-
-    this.isBuilt = false;
-    this.result = {};
-
-    this.finalizeConstruction();
-  }
-
-  protected getResult<Type>(
-    ClassToBuild: Constructor<Type>, augmentedProps?: ObjectLiteral,
-  ): Type {
-    if (!this.isBuilt) {
-      this.result = new ClassToBuild({ ...this.props, ...augmentedProps });
-      this.isBuilt = true;
-      this.canBeModified = false;
-    }
-
-    return this.result;
-  }
-
-  protected finalizeConstruction(): void {
-    Object.keys(this.props)
-      .forEach((prop) => this.props[prop] === undefined
-        && delete this.props[prop]);
+    this.props = params || {};
 
     Object.seal(this);
   }
 
-  /** @internal */
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  protected set(value: any, prop: string): this {
+    if (this.props[prop] !== undefined) {
+      throw new BlockBuilderError(`Property ${prop} can only be assigned once.`);
+    }
 
-  public canBeBuilt(): boolean {
-    return !this.isBuilt;
+    this.props[prop] = value;
+
+    return this;
+  }
+
+  protected append(value: any[], prop: Prop): this {
+    const prunedValue = value.filter(Boolean);
+
+    if (prunedValue.length > 0) {
+      this.props[prop] = this.props[prop] === undefined
+        ? prunedValue
+        : this.props[prop].concat(prunedValue);
+    }
+
+    return this;
+  }
+
+  protected getResult<T>(Clazz: Ctor<T>, overrideProps?: ObjectLiteral): T {
+    return new Clazz({ ...this.props, ...overrideProps });
   }
 
   /** @internal */
 
-  // eslint-disable-next-line class-methods-use-this, @typescript-eslint/no-unused-vars
-  public build(params?: ObjectLiteral): ObjectLiteral {
+  // eslint-disable-next-line max-len
+  // eslint-disable-next-line class-methods-use-this, @typescript-eslint/no-unused-vars, @typescript-eslint/explicit-module-boundary-types
+  public build(params?: ObjectLiteral): any {
     throw new BlockBuilderError('Builder must have a declared \'build\' method');
   }
 }

@@ -11,6 +11,7 @@ import {
   MustBuild,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
+import { BlockType } from '../constants';
 
 import type { InputElementBuilder } from '../types';
 
@@ -39,13 +40,12 @@ export class InputBuilder extends BlockBuilder<InputParams> {
   /** @internal */
 
   public build(): BlockSlackDto {
-    const augmentedProps = {
+    return this.getResult(BlockSlackDto, {
+      type: BlockType.Input,
       label: getPlainTextObject(this.props.label),
       hint: getPlainTextObject(this.props.hint),
       element: getBuilderResult(this.props.element),
-    };
-
-    return this.getResult(BlockSlackDto, augmentedProps);
+    });
   }
 }
 
