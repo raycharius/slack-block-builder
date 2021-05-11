@@ -18,7 +18,9 @@ export abstract class Builder {
       throw new BlockBuilderError(`Property ${prop} can only be assigned once.`);
     }
 
-    this.props[prop] = value;
+    if (value !== undefined) {
+      this.props[prop] = value;
+    }
 
     return this;
   }
