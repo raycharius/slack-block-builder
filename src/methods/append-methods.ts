@@ -7,7 +7,7 @@ import { Prop } from '../constants';
 import type { AttachmentBuilder } from '../bits/attachment';
 import type { OptionBuilder } from '../bits/option';
 import type { OptionGroupBuilder } from '../bits/option-group';
-import type { SingleOrArray } from '../types';
+import type { OneOrArray } from '../types';
 
 export abstract class Attachments extends Builder {
   /**
@@ -17,9 +17,9 @@ export abstract class Attachments extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  attachments(attachment: SingleOrArray<AttachmentBuilder>, ...attachments: Array<SingleOrArray<AttachmentBuilder>>): this;
+  attachments(attachment: OneOrArray<AttachmentBuilder>, ...attachments: Array<OneOrArray<AttachmentBuilder>>): this;
 
-  public attachments(...attachments: Array<SingleOrArray<AttachmentBuilder>>): this {
+  public attachments(...attachments: Array<OneOrArray<AttachmentBuilder>>): this {
     return this.append(attachments.flat(), Prop.Attachments);
   }
 }
@@ -36,9 +36,9 @@ export abstract class Blocks<T> extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  blocks(block: SingleOrArray<T>, ...blocks: Array<SingleOrArray<T>>): this;
+  blocks(block: OneOrArray<T>, ...blocks: Array<OneOrArray<T>>): this;
 
-  public blocks(...blocks: Array<SingleOrArray<T>>): this {
+  public blocks(...blocks: Array<OneOrArray<T>>): this {
     return this.append(blocks.flat(), Prop.Blocks);
   }
 }
@@ -56,9 +56,9 @@ export abstract class Elements<T> extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  elements(element: SingleOrArray<T>, ...elements: Array<SingleOrArray<T>>): this;
+  elements(element: OneOrArray<T>, ...elements: Array<OneOrArray<T>>): this;
 
-  public elements(...elements: Array<SingleOrArray<T>>): this {
+  public elements(...elements: Array<OneOrArray<T>>): this {
     return this.append(elements.flat(), Prop.Elements);
   }
 }
@@ -77,9 +77,9 @@ export abstract class Fields extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  fields(field: SingleOrArray<string>, ...fields: Array<SingleOrArray<string>>): this;
+  fields(field: OneOrArray<string>, ...fields: Array<OneOrArray<string>>): this;
 
-  public fields(...fields: Array<SingleOrArray<string>>): this {
+  public fields(...fields: Array<OneOrArray<string>>): this {
     return this.append(fields.flat(), Prop.Fields);
   }
 }
@@ -95,9 +95,9 @@ export abstract class Filter extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  filter(filter: SingleOrArray<string>, ...filters: Array<SingleOrArray<string>>): this;
+  filter(filter: OneOrArray<string>, ...filters: Array<OneOrArray<string>>): this;
 
-  public filter(...filters: Array<SingleOrArray<string>>): this {
+  public filter(...filters: Array<OneOrArray<string>>): this {
     return this.append(filters.flat(), Prop.Filter);
   }
 }
@@ -110,9 +110,9 @@ export abstract class InitialChannels extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  initialChannels(channelId: SingleOrArray<string>, ...channelIds: Array<SingleOrArray<string>>): this;
+  initialChannels(channelId: OneOrArray<string>, ...channelIds: Array<OneOrArray<string>>): this;
 
-  public initialChannels(...channelIds: Array<SingleOrArray<string>>): this {
+  public initialChannels(...channelIds: Array<OneOrArray<string>>): this {
     return this.append(channelIds.flat(), Prop.InitialChannels);
   }
 }
@@ -125,9 +125,9 @@ export abstract class InitialConversations extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  initialConversations(conversationId: SingleOrArray<string>, ...conversationIds: Array<SingleOrArray<string>>): this;
+  initialConversations(conversationId: OneOrArray<string>, ...conversationIds: Array<OneOrArray<string>>): this;
 
-  public initialConversations(...conversationIds: Array<SingleOrArray<string>>): this {
+  public initialConversations(...conversationIds: Array<OneOrArray<string>>): this {
     return this.append(conversationIds.flat(), Prop.InitialConversations);
   }
 }
@@ -143,9 +143,9 @@ export abstract class InitialOptions extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  initialOptions(option: SingleOrArray<OptionBuilder>, ...options: Array<SingleOrArray<OptionBuilder>>): this;
+  initialOptions(option: OneOrArray<OptionBuilder>, ...options: Array<OneOrArray<OptionBuilder>>): this;
 
-  public initialOptions(...options: Array<SingleOrArray<OptionBuilder>>): this {
+  public initialOptions(...options: Array<OneOrArray<OptionBuilder>>): this {
     return this.append(options.flat(), Prop.InitialOptions);
   }
 }
@@ -158,9 +158,9 @@ export abstract class InitialUsers extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  initialUsers(userId: SingleOrArray<string>, ...userIds: Array<SingleOrArray<string>>): this;
+  initialUsers(userId: OneOrArray<string>, ...userIds: Array<OneOrArray<string>>): this;
 
-  public initialUsers(...userIds: Array<SingleOrArray<string>>): this {
+  public initialUsers(...userIds: Array<OneOrArray<string>>): this {
     return this.append(userIds.flat(), Prop.InitialUsers);
   }
 }
@@ -177,9 +177,9 @@ export abstract class OptionGroups extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  optionGroups(optionGroup: SingleOrArray<OptionGroupBuilder>, ...optionGroups: Array<SingleOrArray<OptionGroupBuilder>>): this;
+  optionGroups(optionGroup: OneOrArray<OptionGroupBuilder>, ...optionGroups: Array<OneOrArray<OptionGroupBuilder>>): this;
 
-  public optionGroups(...optionGroups: Array<SingleOrArray<OptionGroupBuilder>>): this {
+  public optionGroups(...optionGroups: Array<OneOrArray<OptionGroupBuilder>>): this {
     return this.append(optionGroups.flat(), Prop.OptionGroups);
   }
 }
@@ -197,9 +197,9 @@ export abstract class Options extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  options(option: SingleOrArray<OptionBuilder>, ...options: Array<SingleOrArray<OptionBuilder>>): this;
+  options(option: OneOrArray<OptionBuilder>, ...options: Array<OneOrArray<OptionBuilder>>): this;
 
-  public options(...options: Array<SingleOrArray<OptionBuilder>>): this {
+  public options(...options: Array<OneOrArray<OptionBuilder>>): this {
     return this.append(options.flat(), Prop.Options);
   }
 }
