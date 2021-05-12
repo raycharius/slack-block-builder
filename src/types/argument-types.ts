@@ -99,3 +99,5 @@ export type ViewBlockBuilder =
   | ImageBuilder
   | InputBuilder
   | SectionBuilder;
+
+export type FilterString = 'im' | 'mpim' | 'private' | 'public';

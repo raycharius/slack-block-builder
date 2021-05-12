@@ -7,7 +7,7 @@ import { Prop } from '../constants';
 import type { AttachmentBuilder } from '../bits/attachment';
 import type { OptionBuilder } from '../bits/option';
 import type { OptionGroupBuilder } from '../bits/option-group';
-import type { OneOrArray } from '../types';
+import type { OneOrArray, FilterString } from '../types';
 
 export abstract class Attachments extends Builder {
   /**
@@ -95,9 +95,9 @@ export abstract class Filter extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  filter(filter: OneOrArray<string>, ...filters: Array<OneOrArray<string>>): this;
+  filter(filter: OneOrArray<FilterString>, ...filters: Array<OneOrArray<FilterString>>): this;
 
-  public filter(...filters: Array<OneOrArray<string>>): this {
+  public filter(...filters: Array<OneOrArray<FilterString>>): this {
     return this.append(filters.flat(), Prop.Filter);
   }
 }
