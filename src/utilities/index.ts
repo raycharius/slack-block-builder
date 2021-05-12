@@ -6,13 +6,13 @@ import type { BlockSlackDto, SlackDto } from '../lib';
 
 export function BlockCollection(
   block: OneOrArray<BlockBuilder>, ...blocks: Array<OneOrArray<BlockBuilder>>
-): BlockSlackDto[] {
+): BlockSlackDto[] | [] {
   return getBuiltCollection<BlockBuilder, BlockSlackDto>(...[block, ...blocks]);
 }
 
 export function AttachmentCollection(
   attachment: OneOrArray<AttachmentBuilder>, ...attachments: Array<OneOrArray<AttachmentBuilder>>
-): SlackDto[] {
+): SlackDto[] | [] {
   return getBuiltCollection<AttachmentBuilder, SlackDto>(...[attachment, ...attachments]);
 }
 
