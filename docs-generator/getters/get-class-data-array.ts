@@ -1,7 +1,17 @@
-import { readdirSync } from 'fs';
-import { getSingleMatchFromFile } from '../parsers';
+import { getFilePathsFromFolder, getSingleMatchFromFile } from '../parsers';
+import { getParamArray, getWithGenericsArray } from '../helpers';
 
-interface ClassData {
+export interface ParamsObject {
+  name: string;
+  type: string;
+}
+
+export interface WithGenericsObject {
+  name: string;
+  type: string;
+}
+
+export interface ClassData {
   file: string;
   folder: string;
   fullPath: string;
@@ -13,19 +23,21 @@ interface ClassData {
   blockBuilderLink: string;
   category: string;
   mixins: string[],
-  params: { name: string, type: string }[],
+  params: ParamsObject[] | null,
+  withGenerics: WithGenericsObject[] | null,
 }
 
 export default (): ClassData[] => {
   const basePath = './src';
   const folders = ['surfaces', 'blocks', 'elements', 'bits'];
 
-  return folders.map((folder) => readdirSync(`${basePath}/${folder}`)
-    .filter((file) => !(file === 'index.ts'))
+  return folders.map((folder) => getFilePathsFromFolder(basePath, folder, ['index.ts'])
     .map((file) => {
       const fullPath = `${basePath}/${folder.toLowerCase()}/${file}`;
       const name = getSingleMatchFromFile(fullPath, /^.*(?:export class\s)(.*)(?=\sextends)/gm);
       const functionName = name.replace('Builder', '');
+      const paramsString = getSingleMatchFromFile(fullPath, new RegExp(`(?:export interface ${functionName}Params {)([\\s\\S]*?)(?=;[\\s\\S]})`, 'g'));
+      const withGenericsString = getSingleMatchFromFile(fullPath, new RegExp(`(?:export interface ${name} extends )([\\s\\S]*?)(?=[\\s\\S]{)`, 'g'), false);
 
       return {
         file,
@@ -41,13 +53,8 @@ export default (): ClassData[] => {
         mixins: getSingleMatchFromFile(fullPath, /(?:applyMixins.*, \[)([\s\S]*?)(?=,[\s\S]])/g)
           .replace(/\r?\n|\r|\s/g, '')
           .split(','),
-        params: getSingleMatchFromFile(fullPath, new RegExp(`(?:export interface ${functionName}Params {)([\\s\\S]*?)(?=;[\\s\\S]})`, 'g'))
-          .replace(/\r?\n|\r|\s/g, '')
-          .split(';')
-          .map((paramString) => ({
-            name: paramString.split('?:')[0],
-            type: paramString.split('?:')[1],
-          })),
+        params: getParamArray(paramsString),
+        withGenerics: getWithGenericsArray(withGenericsString),
       };
     }))
     .flat();
