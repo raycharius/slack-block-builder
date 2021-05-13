@@ -33,7 +33,7 @@ export interface WorkflowStepBuilder extends Blocks<ViewBlockBuilder>,
 }
 
 /**
- * @link https://api.slack.com/reference/workflows/configuration-view
+ * @@link https://api.slack.com/reference/workflows/configuration-view
  * @@displayName Workflow Step
  */
 
