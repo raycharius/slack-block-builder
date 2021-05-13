@@ -25,6 +25,19 @@ export abstract class BuildToObject<T> extends Builder {
   }
 }
 
+export abstract class End extends Builder {
+  /**
+   * @description Performs no alterations to the object on which it is called. It is meant to simulate a closing HTML tag for those who prefer to have an explicit end declared for an object.
+   *
+   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
+   */
+
+  public end(): this {
+    return this;
+  }
+}
+
 export abstract class GetAttachments extends Builder {
   /**
    * @description Builds the view and returns a Slack API-compatible array of attachments.
@@ -32,7 +45,7 @@ export abstract class GetAttachments extends Builder {
    * {@link https://api.slack.com/reference/messaging/attachments|View in Slack API Documentation}
    */
 
-  getAttachments(): SlackDto[] {
+  public getAttachments(): SlackDto[] {
     return this.build().attachments;
   }
 }

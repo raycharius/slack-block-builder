@@ -44,11 +44,7 @@ export abstract class Danger extends Builder {
    */
 
   public danger(boolean = true): this {
-    if (boolean) {
-      return this.set(ButtonStyle.Danger, Prop.Style);
-    }
-
-    return this;
+    return boolean ? this.set(ButtonStyle.Danger, Prop.Style) : this;
   }
 }
 
@@ -103,11 +99,7 @@ export abstract class DispatchActionOnCharacterEntered extends Builder {
    */
 
   public dispatchActionOnCharacterEntered(boolean = true): this {
-    if (boolean) {
-      return this.set(DispatchOnType.OnCharacterEntered, Prop.OnCharacterEntered);
-    }
-
-    return this;
+    return boolean ? this.set(DispatchOnType.OnCharacterEntered, Prop.OnCharacterEntered) : this;
   }
 }
 
@@ -120,11 +112,7 @@ export abstract class DispatchActionOnEnterPressed extends Builder {
    */
 
   public dispatchActionOnEnterPressed(boolean = true): this {
-    if (boolean) {
-      return this.set(DispatchOnType.OnEnterPressed, Prop.OnEnterPressed);
-    }
-
-    return this;
+    return boolean ? this.set(DispatchOnType.OnEnterPressed, Prop.OnEnterPressed) : this;
   }
 }
 
@@ -137,11 +125,7 @@ export abstract class Ephemeral extends Builder {
    */
 
   public ephemeral(boolean = true): this {
-    if (boolean) {
-      return this.set(ResponseType.Ephemeral, Prop.ResponseType);
-    }
-
-    return this;
+    return boolean ? this.set(ResponseType.Ephemeral, Prop.ResponseType) : this;
   }
 }
 
@@ -193,11 +177,7 @@ export abstract class InChannel extends Builder {
    */
 
   public inChannel(boolean = true): this {
-    if (boolean) {
-      return this.set(ResponseType.InChannel, Prop.ResponseType);
-    }
-
-    return this;
+    return boolean ? this.set(ResponseType.InChannel, Prop.ResponseType) : this;
   }
 }
 
@@ -249,11 +229,7 @@ export abstract class Primary extends Builder {
    */
 
   public primary(boolean = true): this {
-    if (boolean) {
-      return this.set(ButtonStyle.Primary, Prop.Style);
-    }
-
-    return this;
+    return boolean ? this.set(ButtonStyle.Primary, Prop.Style) : this;
   }
 }
 
