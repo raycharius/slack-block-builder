@@ -1,6 +1,8 @@
 /* eslint-disable max-classes-per-file */
 
-import { SurfaceType, BlockType, ElementType } from '../constants';
+import { SurfaceType } from '../constants/surface-types';
+import { BlockType } from '../constants/block-types';
+import { ElementType } from '../constants/element-types';
 
 import type { ObjectLiteral } from '../types';
 

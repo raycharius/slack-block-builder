@@ -2,7 +2,7 @@
 /* eslint-disable max-len */
 
 import { Builder } from '../lib';
-import { Prop } from '../constants/props';
+import { Prop } from '../constants';
 
 import type { AttachmentBuilder } from '../bits/attachment';
 import type { OptionBuilder } from '../bits/option';
