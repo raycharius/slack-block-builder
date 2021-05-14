@@ -1,7 +1,12 @@
-import { getClassDataArray, getMethodDataArray, getDocTemplateDataArray } from './getters';
+import { getMethodDataArray, getClassDataArray } from './getters';
+import { generateBuilderClassReferences } from './generators';
 
-const classData = getClassDataArray();
-const methodData = getMethodDataArray();
-const docData = getDocTemplateDataArray(classData, methodData);
+(() => {
+  const methodData = getMethodDataArray();
+  const classData = getClassDataArray(methodData);
 
-console.log(docData);
+  generateBuilderClassReferences(classData);
+
+  // eslint-disable-next-line no-console
+  console.log('Docs generated and ready to go!');
+})();

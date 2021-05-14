@@ -4,8 +4,8 @@ const getArrayNotation = (type: string): string => `[${type}1[, ...[, ${type}N]]
 
 const getOptionalNotation = (type: string): string => `${type}?`;
 
-export default (method: MethodData): string | null => {
-  if (!method.arg) return null;
+export default (method: MethodData): string => {
+  if (!method.arg) return '';
 
   const { isArray, isRequired, type } = method.arg;
 
