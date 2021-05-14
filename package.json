@@ -1,7 +1,7 @@
 {
   "name": "slack-block-builder",
-  "version": "1.10.0",
-  "description": "Maintainable code for interactive Slack messages, modals and home tabs. A must-have for the Slack Block Kit framework.",
+  "version": "2.0.0-beta.0",
+  "description": "Maintainable code for interactive Slack messages, modals, home tabs, and workflow steps. A must-have for the Slack Block Kit framework.",
   "author": {
     "name": "Ray East",
     "url": "https://github.com/raycharius"
@@ -44,17 +44,30 @@
     "slack-bolt"
   ],
   "scripts": {
-    "compile": "tsc -p ./tsconfig.json",
+    "src:build": "tsc -p ./tsconfig.json",
+    "src:lint": "eslint 'src/**/*.ts' --fix",
+    "docs:build": "tsc -p ./tsconfig.docs.json",
+    "docs:lint": "eslint 'docs-generator/**/*.ts' --fix",
+    "predocs:generate": "npm run docs:build",
+    "docs:generate": "node docs-generator-dist/index.js",
+    "docs:local": "docsify serve docs-generator --port 3000",
+    "tests:lint": "eslint 'tests/**/*.ts' --fix",
+    "tests:coverage": "codecov",
+    "clean": "shx rm -rf ./dist ./coverage ./docs-generator-dist",
     "test": "jest --coverage",
-    "coverage": "codecov",
-    "lint": "eslint 'src/**/*.ts' 'tests/**/*.ts'",
-    "lint:fix": "eslint 'src/**/*.ts' 'tests/**/*.ts' --fix"
+    "build": "npm run src:build",
+    "lint": "eslint 'src/**/*.ts' 'tests/**/*.ts' 'docs-generator/**/*.ts'",
+    "lint:fix": "eslint 'src/**/*.ts' 'tests/**/*.ts' 'docs-generator/**/*.ts' --fix"
   },
   "devDependencies": {
+    "@slack/bolt": "^3.3.0",
     "@types/jest": "^26.0.22",
     "@typescript-eslint/eslint-plugin": "^4.20.0",
     "@typescript-eslint/parser": "^4.20.0",
     "codecov": "^3.8.1",
+    "docsify-cli": "^4.4.3",
+    "docsify-server-renderer": "^4.12.1",
+    "docsify-tabs": "^1.4.4",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-config-airbnb-typescript": "^12.3.1",
@@ -64,9 +77,14 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "jest": "^26.6.3",
     "jest-environment-jsdom": "^26.6.2",
+    "mustache": "^4.2.0",
     "prettier-eslint-cli": "^5.0.0",
+    "shx": "^0.3.3",
     "ts-jest": "^26.5.4",
     "ts-node": "^8.10.2",
     "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "@slack/web-api": "^6.2.2"
   }
 }
