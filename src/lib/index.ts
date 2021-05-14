@@ -1,3 +1,3 @@
 export * from './builder';
 export * from './error';
-export * from '../dto/slack-dto';
+export * from './slack-dto';
