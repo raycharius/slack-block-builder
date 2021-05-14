@@ -47,7 +47,8 @@ export interface ConversationMultiSelectBuilder extends ActionId,
  * @@displayName Conversation Multi-Select
  */
 
-export class ConversationMultiSelectBuilder extends ElementBuilderBase<ConversationMultiSelectParams> {
+export class ConversationMultiSelectBuilder
+  extends ElementBuilderBase<ConversationMultiSelectParams> {
   /** @internal */
 
   public build(): SlackElementDto {
