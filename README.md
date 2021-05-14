@@ -29,7 +29,7 @@
 ![NPM](https://img.shields.io/npm/l/slack-block-builder?color=bright-green)
 [![codecov](https://codecov.io/gh/raycharius/slack-block-builder/branch/master/graph/badge.svg)](https://codecov.io/gh/raycharius/slack-block-builder)
 
-**Block Builder** helps you keep your Slack app code for UI maintainable, testable, and reusable. It has a simple builder syntax inspired by [SwiftUI](https://developer.apple.com/documentation/swiftui) and lets you code the way _you_ want to code.
+**Block Builder** helps you keep your Slack app code for UI maintainable, testable, and reusable. It has a declarative, chainable syntax inspired by [SwiftUI](https://developer.apple.com/documentation/swiftui) and is built for better UI architecture.
 
 ### :zap: &nbsp; Features
 
@@ -161,10 +161,10 @@ const client = new WebClient(process.env.SLACK_TOKEN);
 client.chat.postMessage({
   channel: 'ABCDEFG',
   text: 'Hello, my dear, sweet world!',
-  blocks: BlockCollection( // Pass in blocks ),
-  attachments: AttachmentCollection( // Pass in blocks ),
+  blocks: BlockCollection( /* Pass in blocks */ ),
+  attachments: AttachmentCollection( /* Pass in blocks */ ),
 })
-.then((response) => // Do something )
+.then((response) => console.log(response))
 .catch((error) => console.log(error));
 ```
 
@@ -192,7 +192,7 @@ const myMessage = ({ channel, dangerLevel }) => {
           Elements.Button()
             .text('Sure One Does')
             .actionId('gotClicked')
-            .danger(dangerLevel > 42), // Optional, defaults to `true` when called
+            .danger(dangerLevel > 42), // Optional, defaults to 'true' when called
           Elements.Button()
             .text('One Does Not')
             .actionId('scaredyCat')
@@ -216,7 +216,7 @@ const myShorterMessage = ({ channel, dangerLevel }) => {
       Blocks.Actions()
         .elements(
           Elements.Button({ text: 'Sure One Does', actionId: 'gotClicked' })
-            .danger(dangerLevel > 42), // Optional, defaults to `true` when called
+            .danger(dangerLevel > 42), // Optional, defaults to 'true' when called
           Elements.Button({ text: 'One Does Not', actionId: 'scaredyCat' })
             .primary()))
     .asUser()
