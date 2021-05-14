@@ -14,7 +14,7 @@ import {
   getBuilderResult,
   getFields,
 } from '../helpers';
-import { BlockType } from '../constants/block-types';
+import { BlockType } from '../constants';
 
 export interface SectionParams {
   blockId?: string;

@@ -2,10 +2,12 @@
 /* eslint-disable max-len */
 
 import { Builder } from '../lib';
-import { Prop } from '../constants/props';
-import { ButtonStyle } from '../constants/button-styles';
-import { ResponseType } from '../constants/response-types';
-import { DispatchOnType } from '../constants/dispatch-on-types';
+import {
+  Prop,
+  ButtonStyle,
+  ResponseType,
+  DispatchOnType,
+} from '../constants';
 
 export abstract class AsUser extends Builder {
   /**

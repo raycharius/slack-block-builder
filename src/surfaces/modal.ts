@@ -17,7 +17,7 @@ import {
   Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResults } from '../helpers';
-import { SurfaceType } from '../constants/surface-types';
+import { SurfaceType } from '../constants';
 
 import type { ViewBlockBuilder } from '../types';
 

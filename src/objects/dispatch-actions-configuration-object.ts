@@ -1,5 +1,5 @@
 import { CompositionObjectBase } from '../base';
-import { DispatchOnType } from '../constants/dispatch-on-types';
+import { DispatchOnType } from '../constants';
 
 export type DispatchActionsConfigParams = DispatchOnType[];
 

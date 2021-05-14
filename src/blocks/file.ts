@@ -7,8 +7,7 @@ import {
   Build,
 } from '../methods';
 import { applyMixins } from '../helpers';
-import { FileType } from '../constants/file-types';
-import { BlockType } from '../constants/block-types';
+import { BlockType, FileType } from '../constants';
 
 export interface FileParams {
   blockId?: string;

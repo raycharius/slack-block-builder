@@ -7,7 +7,7 @@ import {
   Build,
 } from '../methods';
 import { applyMixins } from '../helpers';
-import { ElementType } from '../constants/element-types';
+import { ElementType } from '../constants';
 
 export interface ImgParams {
   imageUrl?: string;

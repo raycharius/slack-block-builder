@@ -1,6 +1,5 @@
 import { CompositeBuilderClassConfig } from '../test-config-types';
-import { Prop } from '../../src/constants/props';
-import { DispatchOnType } from '../../src/constants/dispatch-on-types';
+import { Prop, DispatchOnType } from '../../src/constants';
 import { SlackDto } from '../../src/lib';
 import * as checks from '../checks';
 

@@ -11,7 +11,7 @@ import {
   Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
-import { BlockType } from '../constants/block-types';
+import { BlockType } from '../constants';
 
 import type { InputElementBuilder } from '../types';
 

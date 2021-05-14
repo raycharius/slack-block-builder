@@ -1,5 +1,5 @@
 import { CompositionObjectBase } from '../base';
-import { ObjectType } from '../constants/object-types';
+import { ObjectType } from '../constants';
 
 export class PlainTextObject extends CompositionObjectBase {
   public type: ObjectType;

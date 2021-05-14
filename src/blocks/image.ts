@@ -9,7 +9,7 @@ import {
   Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject } from '../helpers';
-import { BlockType } from '../constants/block-types';
+import { BlockType } from '../constants';
 
 export interface ImageParams {
   altText?: string;

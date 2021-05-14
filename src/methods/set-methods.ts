@@ -2,7 +2,7 @@
 /* eslint-disable max-len */
 
 import { Builder } from '../lib';
-import { Prop } from '../constants/props';
+import { Prop } from '../constants';
 
 import type { SectionElementBuilder } from '../types';
 

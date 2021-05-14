@@ -1,6 +1,7 @@
 import { BlockBuilderError } from './error';
 
 import type { ObjectLiteral, Ctor } from '../types';
+import type { Prop } from '../constants';
 
 export abstract class Builder {
   protected readonly props: ObjectLiteral;
@@ -27,7 +28,7 @@ export abstract class Builder {
     return this;
   }
 
-  protected append(value: any[], prop: string): this {
+  protected append(value: any[], prop: Prop): this {
     const prunedValue = value.filter(Boolean);
 
     if (prunedValue.length > 0) {

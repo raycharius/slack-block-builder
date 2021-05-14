@@ -1,6 +1,5 @@
 import { CompositeBuilderClassConfig } from '../test-config-types';
-import { Prop } from '../../src/constants/props';
-import { ButtonStyle } from '../../src/constants/button-styles';
+import { Prop, ButtonStyle } from '../../src/constants';
 import { SlackDto } from '../../src/lib';
 import * as checks from '../checks';
 
