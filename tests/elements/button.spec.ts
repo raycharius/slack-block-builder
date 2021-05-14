@@ -1,5 +1,5 @@
 import { ButtonBuilder as Class } from '../../src/elements/button';
-import { ElementSlackDto as DtoClass } from '../../src/lib';
+import { SlackElementDto as DtoClass } from '../../src/lib';
 import { params } from './mocks/button.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

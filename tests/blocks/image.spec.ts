@@ -1,5 +1,5 @@
 import { ImageBuilder as Class } from '../../src/blocks/image';
-import { BlockSlackDto as DtoClass } from '../../src/lib';
+import { SlackBlockDto as DtoClass } from '../../src/lib';
 import { params } from './mocks/image.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

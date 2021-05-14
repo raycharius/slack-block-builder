@@ -1,5 +1,5 @@
 import { StaticSelectBuilder as Class } from '../../src/elements/static-select';
-import { ElementSlackDto as DtoClass } from '../../src/lib';
+import { SlackElementDto as DtoClass } from '../../src/lib';
 import { params } from './mocks/static-select.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

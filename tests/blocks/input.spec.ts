@@ -1,5 +1,5 @@
 import { InputBuilder as Class } from '../../src/blocks/input';
-import { BlockSlackDto as DtoClass } from '../../src/lib';
+import { SlackBlockDto as DtoClass } from '../../src/lib';
 import { params } from './mocks/input.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

@@ -1,5 +1,5 @@
 import { MessageBuilder as Class } from '../../src/surfaces/message';
-import { MessageSlackDto as DtoClass } from '../../src/lib';
+import { SlackMessageDto as DtoClass } from '../../src/lib';
 import { params } from './mocks/message.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

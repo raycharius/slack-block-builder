@@ -1,5 +1,5 @@
 import { UserMultiSelectBuilder as Class } from '../../src/elements/user-multi-select';
-import { ElementSlackDto as DtoClass } from '../../src/lib';
+import { SlackElementDto as DtoClass } from '../../src/lib';
 import { params } from './mocks/user-multiselect.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
