@@ -1,5 +1,5 @@
-import { ElementBuilder } from '../base';
-import { ElementSlackDto } from '../lib';
+import { ElementBuilderBase } from '../base';
+import { SlackElementDto } from '../lib';
 import {
   ActionId,
   Confirm,
@@ -28,11 +28,11 @@ export interface OverflowMenuBuilder extends ActionId,
  * @@displayName Overflow Menu
  */
 
-export class OverflowMenuBuilder extends ElementBuilder<OverflowMenuParams> {
+export class OverflowMenuBuilder extends ElementBuilderBase<OverflowMenuParams> {
   /** @internal */
 
-  public build(): ElementSlackDto {
-    return this.getResult(ElementSlackDto, {
+  public build(): SlackElementDto {
+    return this.getResult(SlackElementDto, {
       type: ElementType.Overflow,
       options: getBuilderResults(this.props.options),
       confirm: getBuilderResult(this.props.confirm),

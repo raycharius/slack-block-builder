@@ -1,5 +1,5 @@
-import { SurfaceBuilder } from '../base';
-import { ViewSlackDto } from '../lib';
+import { SurfaceBuilderBase } from '../base';
+import { SlackViewDto } from '../lib';
 import {
   Blocks,
   CallbackId,
@@ -26,7 +26,7 @@ export interface WorkflowStepBuilder extends Blocks<ViewBlockBuilder>,
   PrivateMetaData,
   SubmitDisabled,
   BuildToJSON,
-  BuildToObject<ViewSlackDto>,
+  BuildToObject<SlackViewDto>,
   GetBlocks,
   PrintPreviewUrl,
   Build {
@@ -37,11 +37,11 @@ export interface WorkflowStepBuilder extends Blocks<ViewBlockBuilder>,
  * @@displayName Workflow Step
  */
 
-export class WorkflowStepBuilder extends SurfaceBuilder<WorkflowStepParams> {
+export class WorkflowStepBuilder extends SurfaceBuilderBase<WorkflowStepParams> {
   /** @internal */
 
-  public build(): ViewSlackDto {
-    return this.getResult(ViewSlackDto, {
+  public build(): SlackViewDto {
+    return this.getResult(SlackViewDto, {
       type: SurfaceType.WorkflowStep,
       title: getPlainTextObject(this.props.title),
       blocks: getBuilderResults(this.props.blocks),

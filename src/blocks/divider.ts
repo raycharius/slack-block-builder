@@ -1,5 +1,5 @@
-import { BlockBuilder } from '../base';
-import { BlockSlackDto } from '../lib';
+import { BlockBuilderBase } from '../base';
+import { SlackBlockDto } from '../lib';
 import { BlockId, End, Build } from '../methods';
 import { applyMixins } from '../helpers';
 import { BlockType } from '../constants';
@@ -18,11 +18,11 @@ export interface DividerBuilder extends BlockId,
  * @@displayName Divider
  */
 
-export class DividerBuilder extends BlockBuilder<DividerParams> {
+export class DividerBuilder extends BlockBuilderBase<DividerParams> {
   /** @internal */
 
-  build(): BlockSlackDto {
-    return this.getResult(BlockSlackDto, {
+  build(): SlackBlockDto {
+    return this.getResult(SlackBlockDto, {
       type: BlockType.Divider,
     });
   }

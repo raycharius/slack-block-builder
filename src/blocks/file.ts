@@ -1,5 +1,5 @@
-import { BlockBuilder } from '../base';
-import { BlockSlackDto } from '../lib';
+import { BlockBuilderBase } from '../base';
+import { SlackBlockDto } from '../lib';
 import {
   BlockId,
   End,
@@ -25,11 +25,11 @@ export interface FileBuilder extends BlockId,
  * @@displayName File
  */
 
-export class FileBuilder extends BlockBuilder<FileParams> {
+export class FileBuilder extends BlockBuilderBase<FileParams> {
   /** @internal */
 
-  public build(): BlockSlackDto {
-    return this.getResult(BlockSlackDto, {
+  public build(): SlackBlockDto {
+    return this.getResult(SlackBlockDto, {
       type: BlockType.File,
       source: FileType.Remote,
     });

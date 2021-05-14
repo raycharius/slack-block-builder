@@ -1,5 +1,5 @@
-import { ElementBuilder } from '../base';
-import { ElementSlackDto } from '../lib';
+import { ElementBuilderBase } from '../base';
+import { SlackElementDto } from '../lib';
 import {
   ActionId,
   Confirm,
@@ -47,11 +47,11 @@ export interface ConversationMultiSelectBuilder extends ActionId,
  * @@displayName Conversation Multi-Select
  */
 
-export class ConversationMultiSelectBuilder extends ElementBuilder<ConversationMultiSelectParams> {
+export class ConversationMultiSelectBuilder extends ElementBuilderBase<ConversationMultiSelectParams> {
   /** @internal */
 
-  public build(): ElementSlackDto {
-    return this.getResult(ElementSlackDto, {
+  public build(): SlackElementDto {
+    return this.getResult(SlackElementDto, {
       type: ElementType.ConversationsMultiSelect,
       placeholder: getPlainTextObject(this.props.placeholder),
       confirm: getBuilderResult(this.props.confirm),

@@ -91,28 +91,28 @@ export class SlackDto {
   }
 }
 
-export class MessageSlackDto extends SlackDto {
+export class SlackMessageDto extends SlackDto {
   public readonly text: string;
 
-  public readonly blocks?: BlockSlackDto[];
+  public readonly blocks?: SlackBlockDto[];
 
   public readonly attachments?: SlackDto[];
 }
 
-export class TypedSlackDto extends SlackDto {
+export class SlackTypeableDto extends SlackDto {
   public readonly type: string;
 }
 
-export class ViewSlackDto extends TypedSlackDto {
+export class SlackViewDto extends SlackTypeableDto {
   public readonly type: SurfaceType;
 
-  public readonly blocks: BlockSlackDto[];
+  public readonly blocks: SlackBlockDto[];
 }
 
-export class BlockSlackDto extends TypedSlackDto {
+export class SlackBlockDto extends SlackTypeableDto {
   public readonly type: BlockType;
 }
 
-export class ElementSlackDto extends TypedSlackDto {
+export class SlackElementDto extends SlackTypeableDto {
   public readonly type: ElementType;
 }

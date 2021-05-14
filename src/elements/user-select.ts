@@ -1,5 +1,5 @@
-import { ElementBuilder } from '../base';
-import { ElementSlackDto } from '../lib';
+import { ElementBuilderBase } from '../base';
+import { SlackElementDto } from '../lib';
 import {
   ActionId,
   Confirm,
@@ -32,11 +32,11 @@ export interface UserSelectBuilder extends ActionId,
  * @@displayName User Select
  */
 
-export class UserSelectBuilder extends ElementBuilder<UserSelectParams> {
+export class UserSelectBuilder extends ElementBuilderBase<UserSelectParams> {
   /** @internal */
 
-  public build(): ElementSlackDto {
-    return this.getResult(ElementSlackDto, {
+  public build(): SlackElementDto {
+    return this.getResult(SlackElementDto, {
       type: ElementType.UserSelect,
       placeholder: getPlainTextObject(this.props.placeholder),
       confirm: getBuilderResult(this.props.confirm),

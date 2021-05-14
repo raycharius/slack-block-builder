@@ -1,5 +1,5 @@
-import { ElementBuilder } from '../base';
-import { ElementSlackDto } from '../lib';
+import { ElementBuilderBase } from '../base';
+import { SlackElementDto } from '../lib';
 import {
   ActionId,
   Confirm,
@@ -32,11 +32,11 @@ export interface TimePickerBuilder extends ActionId,
  * @@displayName Time Picker
  */
 
-export class TimePickerBuilder extends ElementBuilder<TimePickerParams> {
+export class TimePickerBuilder extends ElementBuilderBase<TimePickerParams> {
   /** @internal */
 
-  public build(): ElementSlackDto {
-    return this.getResult(ElementSlackDto, {
+  public build(): SlackElementDto {
+    return this.getResult(SlackElementDto, {
       type: ElementType.TimePicker,
       placeholder: getPlainTextObject(this.props.placeholder),
       confirm: getBuilderResult(this.props.confirm),

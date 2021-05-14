@@ -1,4 +1,4 @@
-import { CompositionObject } from '../base';
+import { CompositionObjectBase } from '../base';
 import { Filter } from '../constants';
 
 export interface FilterParams {
@@ -7,7 +7,7 @@ export interface FilterParams {
   excludeExternalSharedChannels?: boolean;
 }
 
-export class FilterObject extends CompositionObject {
+export class FilterObject extends CompositionObjectBase {
   public include: Filter[];
 
   public exclude_external_shared_channels: boolean;

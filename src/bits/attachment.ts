@@ -1,4 +1,4 @@
-import { BitBuilder } from '../base';
+import { BitBuilderBase } from '../base';
 import { SlackDto } from '../lib';
 import {
   Blocks,
@@ -28,7 +28,7 @@ export interface AttachmentBuilder extends Blocks<BlockBuilder>,
  * @@displayName Attachment
  */
 
-export class AttachmentBuilder extends BitBuilder<AttachmentParams> {
+export class AttachmentBuilder extends BitBuilderBase<AttachmentParams> {
   /** @internal */
 
   public build(): SlackDto {

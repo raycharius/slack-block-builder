@@ -1,5 +1,5 @@
-import { BlockBuilder } from '../base';
-import { BlockSlackDto } from '../lib';
+import { BlockBuilderBase } from '../base';
+import { SlackBlockDto } from '../lib';
 import {
   BlockId,
   DispatchAction,
@@ -36,11 +36,11 @@ export interface InputBuilder extends BlockId,
  * @@displayName Input
  */
 
-export class InputBuilder extends BlockBuilder<InputParams> {
+export class InputBuilder extends BlockBuilderBase<InputParams> {
   /** @internal */
 
-  public build(): BlockSlackDto {
-    return this.getResult(BlockSlackDto, {
+  public build(): SlackBlockDto {
+    return this.getResult(SlackBlockDto, {
       type: BlockType.Input,
       label: getPlainTextObject(this.props.label),
       hint: getPlainTextObject(this.props.hint),

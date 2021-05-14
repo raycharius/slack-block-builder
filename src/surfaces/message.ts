@@ -1,5 +1,5 @@
-import { SurfaceBuilder } from '../base';
-import { MessageSlackDto } from '../lib';
+import { SurfaceBuilderBase } from '../base';
+import { SlackMessageDto } from '../lib';
 import {
   AsUser,
   Attachments,
@@ -47,7 +47,7 @@ export interface MessageBuilder extends AsUser,
   ThreadTs,
   Ts,
   BuildToJSON,
-  BuildToObject<MessageSlackDto>,
+  BuildToObject<SlackMessageDto>,
   GetAttachments,
   GetBlocks,
   PrintPreviewUrl,
@@ -59,11 +59,11 @@ export interface MessageBuilder extends AsUser,
  * @@displayName Message
  */
 
-export class MessageBuilder extends SurfaceBuilder<MessageParams> {
+export class MessageBuilder extends SurfaceBuilderBase<MessageParams> {
   /** @internal */
 
-  public build(): MessageSlackDto {
-    return this.getResult(MessageSlackDto, {
+  public build(): SlackMessageDto {
+    return this.getResult(SlackMessageDto, {
       blocks: getBuilderResults(this.props.blocks),
       attachments: getBuilderResults(this.props.attachments),
     });

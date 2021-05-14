@@ -1,5 +1,5 @@
-import { ElementBuilder } from '../base';
-import { ElementSlackDto } from '../lib';
+import { ElementBuilderBase } from '../base';
+import { SlackElementDto } from '../lib';
 import {
   ActionId,
   Confirm,
@@ -30,11 +30,11 @@ export interface CheckboxesBuilder extends ActionId,
  * @@displayName Checkboxes
  */
 
-export class CheckboxesBuilder extends ElementBuilder<CheckboxesParams> {
+export class CheckboxesBuilder extends ElementBuilderBase<CheckboxesParams> {
   /** @internal */
 
-  public build(): ElementSlackDto {
-    return this.getResult(ElementSlackDto, {
+  public build(): SlackElementDto {
+    return this.getResult(SlackElementDto, {
       type: ElementType.Checkboxes,
       options: getBuilderResults(this.props.options, { isMarkdown: true }),
       initialOptions: getBuilderResults(this.props.initialOptions, { isMarkdown: true }),

@@ -1,4 +1,4 @@
-import { BitBuilder } from '../base';
+import { BitBuilderBase } from '../base';
 import { SlackDto } from '../lib';
 import {
   Description,
@@ -32,7 +32,7 @@ export interface OptionBuilder extends Description,
  * @@displayName Option
  */
 
-export class OptionBuilder extends BitBuilder<OptionParams> {
+export class OptionBuilder extends BitBuilderBase<OptionParams> {
   /** @internal */
 
   public build({ isMarkdown }: ObjectLiteral = { isMarkdown: false }): SlackDto {

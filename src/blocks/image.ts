@@ -1,5 +1,5 @@
-import { BlockBuilder } from '../base';
-import { BlockSlackDto } from '../lib';
+import { BlockBuilderBase } from '../base';
+import { SlackBlockDto } from '../lib';
 import {
   AltText,
   BlockId,
@@ -31,11 +31,11 @@ export interface ImageBuilder extends AltText,
  * @@displayName Image
  */
 
-export class ImageBuilder extends BlockBuilder<ImageParams> {
+export class ImageBuilder extends BlockBuilderBase<ImageParams> {
   /** @internal */
 
-  public build(): BlockSlackDto {
-    return this.getResult(BlockSlackDto, {
+  public build(): SlackBlockDto {
+    return this.getResult(SlackBlockDto, {
       type: BlockType.Image,
       title: getPlainTextObject(this.props.title),
     });

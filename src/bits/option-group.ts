@@ -1,4 +1,4 @@
-import { BitBuilder } from '../base';
+import { BitBuilderBase } from '../base';
 import { SlackDto } from '../lib';
 import {
   Label,
@@ -23,7 +23,7 @@ export interface OptionGroupBuilder extends End,
  * @@displayName Option Group
  */
 
-export class OptionGroupBuilder extends BitBuilder<OptionGroupParams> {
+export class OptionGroupBuilder extends BitBuilderBase<OptionGroupParams> {
   /** @internal */
 
   public build(): SlackDto {

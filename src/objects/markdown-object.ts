@@ -1,7 +1,7 @@
-import { CompositionObject } from '../base';
+import { CompositionObjectBase } from '../base';
 import { ObjectType } from '../constants';
 
-export class MarkdownObject extends CompositionObject {
+export class MarkdownObject extends CompositionObjectBase {
   public type: ObjectType;
 
   public text: string;

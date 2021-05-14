@@ -1,4 +1,4 @@
-import { BitBuilder } from '../base';
+import { BitBuilderBase } from '../base';
 import { SlackDto } from '../lib';
 import {
   Confirm,
@@ -34,7 +34,7 @@ export interface ConfirmationDialogBuilder extends Confirm<string>,
  * @@displayName Confirmation Dialog
  */
 
-export class ConfirmationDialogBuilder extends BitBuilder<ConfirmationDialogParams> {
+export class ConfirmationDialogBuilder extends BitBuilderBase<ConfirmationDialogParams> {
   /** @internal */
 
   public build(): SlackDto {

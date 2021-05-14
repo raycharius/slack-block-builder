@@ -1,5 +1,5 @@
-import { BlockBuilder } from '../base';
-import { BlockSlackDto } from '../lib';
+import { BlockBuilderBase } from '../base';
+import { SlackBlockDto } from '../lib';
 import {
   BlockId,
   Elements,
@@ -26,11 +26,11 @@ export interface ActionsBuilder extends BlockId,
  * @@displayName Actions
  */
 
-export class ActionsBuilder extends BlockBuilder<ActionsParams> {
+export class ActionsBuilder extends BlockBuilderBase<ActionsParams> {
   /** @internal */
 
-  public build(): BlockSlackDto {
-    return this.getResult(BlockSlackDto, {
+  public build(): SlackBlockDto {
+    return this.getResult(SlackBlockDto, {
       type: BlockType.Actions,
       elements: getBuilderResults(this.props.elements),
     });

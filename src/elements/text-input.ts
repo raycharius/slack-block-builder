@@ -1,5 +1,5 @@
-import { ElementBuilder } from '../base';
-import { ElementSlackDto } from '../lib';
+import { ElementBuilderBase } from '../base';
+import { SlackElementDto } from '../lib';
 import {
   ActionId,
   DispatchActionOnCharacterEntered,
@@ -40,11 +40,11 @@ export interface TextInputBuilder extends ActionId,
  * @@displayName Plain-Text Input
  */
 
-export class TextInputBuilder extends ElementBuilder<TextInputParams> {
+export class TextInputBuilder extends ElementBuilderBase<TextInputParams> {
   /** @internal */
 
-  public build(): ElementSlackDto {
-    return this.getResult(ElementSlackDto, {
+  public build(): SlackElementDto {
+    return this.getResult(SlackElementDto, {
       type: ElementType.TextInput,
       placeholder: getPlainTextObject(this.props.placeholder),
       dispatchActionConfig: getDispatchActionsConfigurationObject(this.props),

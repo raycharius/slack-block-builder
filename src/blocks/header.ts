@@ -1,5 +1,5 @@
-import { BlockBuilder } from '../base';
-import { BlockSlackDto } from '../lib';
+import { BlockBuilderBase } from '../base';
+import { SlackBlockDto } from '../lib';
 import {
   BlockId,
   End,
@@ -25,11 +25,11 @@ export interface HeaderBuilder extends BlockId,
  * @@displayName Header
  */
 
-export class HeaderBuilder extends BlockBuilder<HeaderParams> {
+export class HeaderBuilder extends BlockBuilderBase<HeaderParams> {
   /** @internal */
 
-  public build(): BlockSlackDto {
-    return this.getResult(BlockSlackDto, {
+  public build(): SlackBlockDto {
+    return this.getResult(SlackBlockDto, {
       type: BlockType.Header,
       text: getPlainTextObject(this.props.text),
     });

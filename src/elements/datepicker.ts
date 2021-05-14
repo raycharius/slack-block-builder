@@ -1,5 +1,5 @@
-import { ElementBuilder } from '../base';
-import { ElementSlackDto } from '../lib';
+import { ElementBuilderBase } from '../base';
+import { SlackElementDto } from '../lib';
 import {
   ActionId,
   Confirm,
@@ -37,11 +37,11 @@ export interface DatePickerBuilder extends ActionId,
  * @@displayName Date Picker
  */
 
-export class DatePickerBuilder extends ElementBuilder<DatePickerParams> {
+export class DatePickerBuilder extends ElementBuilderBase<DatePickerParams> {
   /** @internal */
 
-  public build(): ElementSlackDto {
-    return this.getResult(ElementSlackDto, {
+  public build(): SlackElementDto {
+    return this.getResult(SlackElementDto, {
       type: ElementType.DatePicker,
       placeholder: getPlainTextObject(this.props.placeholder),
       initialDate: getFormattedDate(this.props.initialDate),

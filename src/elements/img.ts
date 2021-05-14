@@ -1,5 +1,5 @@
-import { ElementBuilder } from '../base';
-import { ElementSlackDto } from '../lib';
+import { ElementBuilderBase } from '../base';
+import { SlackElementDto } from '../lib';
 import {
   AltText,
   ImageUrl,
@@ -25,11 +25,11 @@ export interface ImgBuilder extends AltText,
  * @@displayName Image
  */
 
-export class ImgBuilder extends ElementBuilder<ImgParams> {
+export class ImgBuilder extends ElementBuilderBase<ImgParams> {
   /** @internal */
 
-  public build(): ElementSlackDto {
-    return this.getResult(ElementSlackDto, {
+  public build(): SlackElementDto {
+    return this.getResult(SlackElementDto, {
       type: ElementType.Image,
     });
   }

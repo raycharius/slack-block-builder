@@ -1,7 +1,7 @@
 /* eslint-disable max-classes-per-file */
 /* eslint-disable max-len */
 
-import { Builder, SlackDto, BlockSlackDto } from '../lib';
+import { Builder, SlackDto, SlackBlockDto } from '../lib';
 
 export abstract class BuildToJSON extends Builder {
   /**
@@ -57,7 +57,7 @@ export abstract class GetBlocks extends Builder {
    * {@link https://api.slack.com/block-kit|View in Slack API Documentation}
    */
 
-  public getBlocks(): BlockSlackDto[] {
+  public getBlocks(): SlackBlockDto[] {
     this.build();
 
     return this.build().blocks;

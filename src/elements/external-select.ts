@@ -1,5 +1,5 @@
-import { ElementBuilder } from '../base';
-import { ElementSlackDto } from '../lib';
+import { ElementBuilderBase } from '../base';
+import { SlackElementDto } from '../lib';
 import {
   ActionId,
   Confirm,
@@ -34,11 +34,11 @@ export interface ExternalSelectBuilder extends ActionId,
  * @@displayName External Select
  */
 
-export class ExternalSelectBuilder extends ElementBuilder<ExternalSelectParams> {
+export class ExternalSelectBuilder extends ElementBuilderBase<ExternalSelectParams> {
   /** @internal */
 
-  public build(): ElementSlackDto {
-    return this.getResult(ElementSlackDto, {
+  public build(): SlackElementDto {
+    return this.getResult(SlackElementDto, {
       type: ElementType.ExternalSelect,
       placeholder: getPlainTextObject(this.props.placeholder),
       initialOption: getBuilderResult(this.props.initialOption),

@@ -1,5 +1,5 @@
-import { ElementBuilder } from '../base';
-import { ElementSlackDto } from '../lib';
+import { ElementBuilderBase } from '../base';
+import { SlackElementDto } from '../lib';
 import {
   ActionId,
   Confirm,
@@ -40,11 +40,11 @@ export interface StaticSelectBuilder extends ActionId,
  * @@displayName Static Select
  */
 
-export class StaticSelectBuilder extends ElementBuilder<StaticSelectParams> {
+export class StaticSelectBuilder extends ElementBuilderBase<StaticSelectParams> {
   /** @internal */
 
-  public build(): ElementSlackDto {
-    return this.getResult(ElementSlackDto, {
+  public build(): SlackElementDto {
+    return this.getResult(SlackElementDto, {
       type: ElementType.StaticSelect,
       placeholder: getPlainTextObject(this.props.placeholder),
       options: getBuilderResults(this.props.options),

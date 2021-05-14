@@ -1,5 +1,5 @@
-import { ElementBuilder } from '../base';
-import { ElementSlackDto } from '../lib';
+import { ElementBuilderBase } from '../base';
+import { SlackElementDto } from '../lib';
 import {
   ActionId,
   Confirm,
@@ -30,11 +30,11 @@ export interface RadioButtonsBuilder extends ActionId,
  * @@displayName Radio Buttons
  */
 
-export class RadioButtonsBuilder extends ElementBuilder<RadioButtonsParams> {
+export class RadioButtonsBuilder extends ElementBuilderBase<RadioButtonsParams> {
   /** @internal */
 
-  public build(): ElementSlackDto {
-    return this.getResult(ElementSlackDto, {
+  public build(): SlackElementDto {
+    return this.getResult(SlackElementDto, {
       type: ElementType.RadioButtons,
       options: getBuilderResults(this.props.options, { isMarkdown: true }),
       initialOption: getBuilderResult(this.props.initialOption, { isMarkdown: true }),
