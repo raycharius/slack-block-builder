@@ -7,7 +7,7 @@ import {
   Build,
 } from '../methods';
 import { applyMixins, getBuilderResults } from '../helpers';
-import { BlockType } from '../constants';
+import { BlockType } from '../constants/block-types';
 
 import type { ActionsElementBuilder } from '../types';
 

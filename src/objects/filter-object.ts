@@ -1,5 +1,5 @@
 import { CompositionObjectBase } from '../base';
-import { Filter } from '../constants';
+import { Filter } from '../constants/filters';
 
 export interface FilterParams {
   filter?: Filter[];

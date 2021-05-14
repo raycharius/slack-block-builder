@@ -1,5 +1,6 @@
 import { CompositeBuilderClassConfig } from '../test-config-types';
-import { Prop, ResponseType } from '../../src/constants';
+import { Prop } from '../../src/constants/props';
+import { ResponseType } from '../../src/constants/response-types';
 import { SlackDto } from '../../src/lib';
 import * as checks from '../checks';
 

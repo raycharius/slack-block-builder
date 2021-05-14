@@ -13,7 +13,7 @@ import {
   Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getDispatchActionsConfigurationObject } from '../helpers';
-import { ElementType } from '../constants';
+import { ElementType } from '../constants/element-types';
 
 export interface TextInputParams {
   actionId?: string;

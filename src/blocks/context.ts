@@ -7,7 +7,7 @@ import {
   Build,
 } from '../methods';
 import { applyMixins, getElementsForContext } from '../helpers';
-import { BlockType } from '../constants';
+import { BlockType } from '../constants/block-types';
 
 import type { ContextElementBuilder } from '../types';
 

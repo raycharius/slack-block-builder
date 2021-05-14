@@ -12,7 +12,7 @@ import {
   Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResults } from '../helpers';
-import { SurfaceType } from '../constants';
+import { SurfaceType } from '../constants/surface-types';
 
 import type { ViewBlockBuilder } from '../types';
 

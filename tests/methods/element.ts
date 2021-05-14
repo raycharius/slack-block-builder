@@ -1,5 +1,5 @@
 import { CompositeBuilderClassConfig } from '../test-config-types';
-import { Prop } from '../../src/constants';
+import { Prop } from '../../src/constants/props';
 import { methodArgMocks } from '../mocks/method-arg-mocks';
 import { SlackDto } from '../../src/lib';
 

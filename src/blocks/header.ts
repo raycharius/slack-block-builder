@@ -7,7 +7,7 @@ import {
   Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject } from '../helpers';
-import { BlockType } from '../constants';
+import { BlockType } from '../constants/block-types';
 
 export interface HeaderParams {
   blockId?: string;

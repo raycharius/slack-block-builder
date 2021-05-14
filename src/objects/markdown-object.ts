@@ -1,5 +1,5 @@
 import { CompositionObjectBase } from '../base';
-import { ObjectType } from '../constants';
+import { ObjectType } from '../constants/object-types';
 
 export class MarkdownObject extends CompositionObjectBase {
   public type: ObjectType;

@@ -19,7 +19,7 @@ import {
   getFilter,
   getBuilderResult,
 } from '../helpers';
-import { ElementType } from '../constants';
+import { ElementType } from '../constants/element-types';
 
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
