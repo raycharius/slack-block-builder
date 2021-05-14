@@ -1,9 +1,10 @@
 ---
 exclude_paths:
-  - "tests/**/*"
-  - "docs/**/*"
-  - "resources/**/*"
   - ".github/**/*"
+  - "docs/**/*"
+  - "docs-generator/**/*"
+  - "resources/**/*"
+  - "tests/**/*"
   - "CHANGELOG.md"
   - "README.md"
   - "LICENSE.md"

@@ -1,11 +1,13 @@
 {
   "extends": "./tsconfig.json",
+  "lib": [
+    "es2020"
+  ],
   "compilerOptions": {
-    "noEmit": true
+    "declaration": false,
+    "outDir": "docs-generator-dist"
   },
   "include": [
-    "src",
-    "tests",
     "docs-generator"
   ]
 }
