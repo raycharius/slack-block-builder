@@ -61,7 +61,6 @@
     "madge": "npx madge --circular --warning --extensions ts ./"
   },
   "devDependencies": {
-    "@slack/bolt": "^3.3.0",
     "@types/jest": "^26.0.22",
     "@typescript-eslint/eslint-plugin": "^4.20.0",
     "@typescript-eslint/parser": "^4.20.0",
