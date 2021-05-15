@@ -1,5 +1,5 @@
 import { getSingleMatchFromString } from '../parsers';
-import { mapType } from '../mappers/index.js';
+import { mapType } from '../mappers';
 
 import type { ArgObject } from '../getters/get-method-data-array';
 

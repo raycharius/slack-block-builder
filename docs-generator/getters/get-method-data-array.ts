@@ -4,7 +4,7 @@ import {
   getSingleMatchFromString,
 } from '../parsers';
 import { getArgObject } from '../helpers';
-import { mapMethodType } from '../mappers/index.js';
+import { mapMethodType } from '../mappers';
 
 export interface ArgObject {
   name: string;

@@ -1,4 +1,4 @@
-import { mapArgNotation } from '../mappers/index.js.js';
+import { mapArgNotation } from '../mappers';
 
 import type { ClassDataBase, ClassMethod } from '../getters/get-class-data-array';
 import type { MethodData } from '../getters/get-method-data-array';

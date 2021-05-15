@@ -1,4 +1,4 @@
-import { mapType } from '../mappers/index.js';
+import { mapType } from '../mappers';
 
 import type { WithGenericsObject } from '../getters/get-class-data-array';
 
