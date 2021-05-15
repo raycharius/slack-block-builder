@@ -37,6 +37,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install Dependencies on Node ${{ matrix.node-version }}
         run: npm install
+      - name: Check For Circular Dependencies on Node ${{ matrix.node-version }}
+        run: npm run madge
       - name: Check Linter on Node ${{ matrix.node-version }}
         run: npm run lint
       - name: Run Tests and Generate Coverage Report on Node ${{ matrix.node-version }}
