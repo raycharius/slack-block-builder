@@ -1,3 +1,6 @@
 {
-    "tsConfig": "./tsconfig.json"
+    "tsConfig": "./tsconfig.json",
+    "ts": {
+        "skipTypeImports": true
+    }
 }
