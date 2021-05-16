@@ -5,6 +5,11 @@ import { MessageBuilder, MessageParams } from './message';
 import { ModalBuilder, ModalParams } from './modal';
 import { WorkflowStepBuilder, WorkflowStepParams } from './workflow-step';
 
+export type { HomeTabBuilder, HomeTabParams } from './home-tab';
+export type { MessageBuilder, MessageParams } from './message';
+export type { ModalBuilder, ModalParams } from './modal';
+export type { WorkflowStepBuilder, WorkflowStepParams } from './workflow-step';
+
 /**
  * Functions here do not use arrow functions stored in variables for IDE color compatibility.
  */
