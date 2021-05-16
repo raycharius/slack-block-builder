@@ -168,6 +168,23 @@ client.chat.postMessage({
 .catch((error) => console.log(error));
 ```
 
+Another example where you might find `BlockCollection()` helpful is when [unfurling links in messages](https://api.slack.com/reference/messaging/link-unfurling):
+
+```javascript
+import { BlockCollection, Blocks } from 'slack-block-builder';
+import { WebClient } from '@slack/web-api';
+
+const client = new WebClient(process.env.SLACK_TOKEN);
+
+const unfurl = ({ channel, ts, url }) => client.chat.unfurl({
+  channel,
+  ts,
+  unfurls: { [url]: BlockCollection( /* Pass in blocks */ ) },
+})
+.then((response) => console.log(response))
+.catch((error) => console.log(error));
+```
+
 ### Creating a Simple Interactive Message
 
 Let's take a look at how to compose an interactive message. Even though [Slack](https://slack.com) now has modals, these have always been the basis for [Slack](https://slack.com) apps.
@@ -192,7 +209,7 @@ const myMessage = ({ channel, dangerLevel }) => {
           Elements.Button()
             .text('Sure One Does')
             .actionId('gotClicked')
-            .danger(dangerLevel > 42), // Optional, defaults to 'true' when called
+            .danger(dangerLevel > 42), // Optional argument, defaults to 'true'
           Elements.Button()
             .text('One Does Not')
             .actionId('scaredyCat')
@@ -216,7 +233,7 @@ const myShorterMessage = ({ channel, dangerLevel }) => {
       Blocks.Actions()
         .elements(
           Elements.Button({ text: 'Sure One Does', actionId: 'gotClicked' })
-            .danger(dangerLevel > 42), // Optional, defaults to 'true' when called
+            .danger(dangerLevel > 42), // Optional argument, defaults to 'true'
           Elements.Button({ text: 'One Does Not', actionId: 'scaredyCat' })
             .primary()))
     .asUser()
