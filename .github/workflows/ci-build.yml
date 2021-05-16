@@ -44,6 +44,6 @@ jobs:
       - name: Run Tests and Generate Coverage Report on Node ${{ matrix.node-version }}
         run: npm test
       - name: Upload Coverage Report on Node ${{ matrix.node-version }}
-        run: npm run coverage
+        run: npm run tests:coverage
       - name: Build on Node ${{ matrix.node-version }}
         run: npm run build
