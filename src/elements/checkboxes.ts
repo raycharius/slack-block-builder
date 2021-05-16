@@ -6,11 +6,11 @@ import {
   End,
   InitialOptions,
   Options,
-  Build,
 } from '../methods';
 import { applyMixins, getBuilderResult, getBuilderResults } from '../helpers';
 import { ElementType } from '../constants';
 
+import type { SlackDto } from '../lib';
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface CheckboxesParams {
@@ -21,8 +21,7 @@ export interface CheckboxesBuilder extends ActionId,
   Confirm<ConfirmationDialogBuilder>,
   End,
   InitialOptions,
-  Options,
-  Build {
+  Options{
 }
 
 /**
@@ -30,15 +29,15 @@ export interface CheckboxesBuilder extends ActionId,
  * @@displayName Checkboxes
  */
 
-export class CheckboxesBuilder extends ElementBuilderBase<CheckboxesParams> {
+export class CheckboxesBuilder extends ElementBuilderBase {
   /** @internal */
 
   public build(): SlackElementDto {
     return this.getResult(SlackElementDto, {
       type: ElementType.Checkboxes,
-      options: getBuilderResults(this.props.options, { isMarkdown: true }),
-      initialOptions: getBuilderResults(this.props.initialOptions, { isMarkdown: true }),
-      confirm: getBuilderResult(this.props.confirm),
+      options: getBuilderResults<SlackDto>(this.props.options, { isMarkdown: true }),
+      initialOptions: getBuilderResults<SlackDto>(this.props.initialOptions, { isMarkdown: true }),
+      confirm: getBuilderResult<SlackDto>(this.props.confirm),
     });
   }
 }

@@ -9,11 +9,11 @@ import {
   Text,
   Url,
   Value,
-  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
 import { ElementType } from '../constants';
 
+import type { SlackDto } from '../lib';
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface ButtonParams {
@@ -30,8 +30,7 @@ export interface ButtonBuilder extends ActionId,
   Primary,
   Text,
   Url,
-  Value,
-  Build {
+  Value {
 }
 
 /**
@@ -39,13 +38,13 @@ export interface ButtonBuilder extends ActionId,
  * @@displayName Button
  */
 
-export class ButtonBuilder extends ElementBuilderBase<ButtonParams> {
+export class ButtonBuilder extends ElementBuilderBase {
   /** @internal */
 
   public build(): SlackElementDto {
     return this.getResult(SlackElementDto, {
       type: ElementType.Button,
-      confirm: getBuilderResult(this.props.confirm),
+      confirm: getBuilderResult<SlackDto>(this.props.confirm),
       text: getPlainTextObject(this.props.text),
     });
   }

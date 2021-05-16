@@ -4,7 +4,6 @@ import {
   AltText,
   ImageUrl,
   End,
-  Build,
 } from '../methods';
 import { applyMixins } from '../helpers';
 import { ElementType } from '../constants';
@@ -16,8 +15,7 @@ export interface ImgParams {
 
 export interface ImgBuilder extends AltText,
   ImageUrl,
-  End,
-  Build {
+  End {
 }
 
 /**
@@ -25,7 +23,7 @@ export interface ImgBuilder extends AltText,
  * @@displayName Image
  */
 
-export class ImgBuilder extends ElementBuilderBase<ImgParams> {
+export class ImgBuilder extends ElementBuilderBase {
   /** @internal */
 
   public build(): SlackElementDto {

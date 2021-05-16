@@ -6,7 +6,6 @@ import {
   End,
   Fields,
   Text,
-  Build,
 } from '../methods';
 import {
   applyMixins,
@@ -15,6 +14,8 @@ import {
   getFields,
 } from '../helpers';
 import { BlockType } from '../constants';
+
+import type { SlackElementDto } from '../lib';
 
 export interface SectionParams {
   blockId?: string;
@@ -25,8 +26,7 @@ export interface SectionBuilder extends Accessory,
   BlockId,
   End,
   Fields,
-  Text,
-  Build {
+  Text {
 }
 
 /**
@@ -34,7 +34,7 @@ export interface SectionBuilder extends Accessory,
  * @@displayName Section
  */
 
-export class SectionBuilder extends BlockBuilderBase<SectionParams> {
+export class SectionBuilder extends BlockBuilderBase {
   /** @internal */
 
   public build(): SlackBlockDto {
@@ -42,7 +42,7 @@ export class SectionBuilder extends BlockBuilderBase<SectionParams> {
       type: BlockType.Section,
       text: getMarkdownObject(this.props.text),
       fields: getFields(this.props.fields),
-      accessory: getBuilderResult(this.props.accessory),
+      accessory: getBuilderResult<SlackElementDto>(this.props.accessory),
     });
   }
 }

@@ -4,7 +4,6 @@ import {
   BlockId,
   End,
   Text,
-  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject } from '../helpers';
 import { BlockType } from '../constants';
@@ -16,8 +15,7 @@ export interface HeaderParams {
 
 export interface HeaderBuilder extends BlockId,
   End,
-  Text,
-  Build {
+  Text {
 }
 
 /**
@@ -25,7 +23,7 @@ export interface HeaderBuilder extends BlockId,
  * @@displayName Header
  */
 
-export class HeaderBuilder extends BlockBuilderBase<HeaderParams> {
+export class HeaderBuilder extends BlockBuilderBase {
   /** @internal */
 
   public build(): SlackBlockDto {

@@ -5,11 +5,11 @@ import {
   Confirm,
   End,
   Options,
-  Build,
 } from '../methods';
 import { applyMixins, getBuilderResult, getBuilderResults } from '../helpers';
 import { ElementType } from '../constants';
 
+import type { SlackDto } from '../lib';
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface OverflowMenuParams {
@@ -19,8 +19,7 @@ export interface OverflowMenuParams {
 export interface OverflowMenuBuilder extends ActionId,
   Confirm<ConfirmationDialogBuilder>,
   End,
-  Options,
-  Build {
+  Options {
 }
 
 /**
@@ -28,14 +27,14 @@ export interface OverflowMenuBuilder extends ActionId,
  * @@displayName Overflow Menu
  */
 
-export class OverflowMenuBuilder extends ElementBuilderBase<OverflowMenuParams> {
+export class OverflowMenuBuilder extends ElementBuilderBase {
   /** @internal */
 
   public build(): SlackElementDto {
     return this.getResult(SlackElementDto, {
       type: ElementType.Overflow,
-      options: getBuilderResults(this.props.options),
-      confirm: getBuilderResult(this.props.confirm),
+      options: getBuilderResults<SlackDto>(this.props.options),
+      confirm: getBuilderResult<SlackDto>(this.props.confirm),
     });
   }
 }

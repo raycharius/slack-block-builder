@@ -5,10 +5,10 @@ import {
   Color,
   End,
   Fallback,
-  Build,
 } from '../methods';
 import { applyMixins, getBuilderResults } from '../helpers';
 
+import type { SlackBlockDto } from '../lib';
 import type { BlockBuilder } from '../types';
 
 export interface AttachmentParams {
@@ -19,8 +19,7 @@ export interface AttachmentParams {
 export interface AttachmentBuilder extends Blocks<BlockBuilder>,
   Color,
   End,
-  Fallback,
-  Build {
+  Fallback {
 }
 
 /**
@@ -28,12 +27,12 @@ export interface AttachmentBuilder extends Blocks<BlockBuilder>,
  * @@displayName Attachment
  */
 
-export class AttachmentBuilder extends BitBuilderBase<AttachmentParams> {
+export class AttachmentBuilder extends BitBuilderBase {
   /** @internal */
 
   public build(): SlackDto {
     return this.getResult(SlackDto, {
-      blocks: getBuilderResults(this.props.blocks),
+      blocks: getBuilderResults<SlackBlockDto>(this.props.blocks),
     });
   }
 }

@@ -6,11 +6,11 @@ import {
   End,
   InitialTime,
   Placeholder,
-  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
 import { ElementType } from '../constants';
 
+import type { SlackDto } from '../lib';
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface TimePickerParams {
@@ -23,8 +23,7 @@ export interface TimePickerBuilder extends ActionId,
   Confirm<ConfirmationDialogBuilder>,
   End,
   InitialTime,
-  Placeholder,
-  Build {
+  Placeholder {
 }
 
 /**
@@ -32,14 +31,14 @@ export interface TimePickerBuilder extends ActionId,
  * @@displayName Time Picker
  */
 
-export class TimePickerBuilder extends ElementBuilderBase<TimePickerParams> {
+export class TimePickerBuilder extends ElementBuilderBase {
   /** @internal */
 
   public build(): SlackElementDto {
     return this.getResult(SlackElementDto, {
       type: ElementType.TimePicker,
       placeholder: getPlainTextObject(this.props.placeholder),
-      confirm: getBuilderResult(this.props.confirm),
+      confirm: getBuilderResult<SlackDto>(this.props.confirm),
     });
   }
 }

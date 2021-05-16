@@ -6,7 +6,6 @@ import {
   End,
   InitialDate,
   Placeholder,
-  Build,
 } from '../methods';
 import {
   applyMixins,
@@ -16,6 +15,7 @@ import {
 } from '../helpers';
 import { ElementType } from '../constants';
 
+import type { SlackDto } from '../lib';
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface DatePickerParams {
@@ -28,8 +28,7 @@ export interface DatePickerBuilder extends ActionId,
   Confirm<ConfirmationDialogBuilder>,
   End,
   InitialDate,
-  Placeholder,
-  Build {
+  Placeholder {
 }
 
 /**
@@ -37,7 +36,7 @@ export interface DatePickerBuilder extends ActionId,
  * @@displayName Date Picker
  */
 
-export class DatePickerBuilder extends ElementBuilderBase<DatePickerParams> {
+export class DatePickerBuilder extends ElementBuilderBase {
   /** @internal */
 
   public build(): SlackElementDto {
@@ -45,7 +44,7 @@ export class DatePickerBuilder extends ElementBuilderBase<DatePickerParams> {
       type: ElementType.DatePicker,
       placeholder: getPlainTextObject(this.props.placeholder),
       initialDate: getFormattedDate(this.props.initialDate),
-      confirm: getBuilderResult(this.props.confirm),
+      confirm: getBuilderResult<SlackDto>(this.props.confirm),
     });
   }
 }

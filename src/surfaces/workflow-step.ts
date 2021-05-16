@@ -9,11 +9,11 @@ import {
   BuildToObject,
   GetBlocks,
   PrintPreviewUrl,
-  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResults } from '../helpers';
 import { SurfaceType } from '../constants';
 
+import type { SlackBlockDto } from '../lib';
 import type { ViewBlockBuilder } from '../types';
 
 export interface WorkflowStepParams {
@@ -28,8 +28,7 @@ export interface WorkflowStepBuilder extends Blocks<ViewBlockBuilder>,
   BuildToJSON,
   BuildToObject<SlackViewDto>,
   GetBlocks,
-  PrintPreviewUrl,
-  Build {
+  PrintPreviewUrl {
 }
 
 /**
@@ -37,14 +36,14 @@ export interface WorkflowStepBuilder extends Blocks<ViewBlockBuilder>,
  * @@displayName Workflow Step
  */
 
-export class WorkflowStepBuilder extends SurfaceBuilderBase<WorkflowStepParams> {
+export class WorkflowStepBuilder extends SurfaceBuilderBase {
   /** @internal */
 
   public build(): SlackViewDto {
     return this.getResult(SlackViewDto, {
       type: SurfaceType.WorkflowStep,
       title: getPlainTextObject(this.props.title),
-      blocks: getBuilderResults(this.props.blocks),
+      blocks: getBuilderResults<SlackBlockDto>(this.props.blocks),
       close: getPlainTextObject(this.props.close),
       submit: getPlainTextObject(this.props.submit),
     });

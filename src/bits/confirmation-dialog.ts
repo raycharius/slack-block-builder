@@ -8,7 +8,6 @@ import {
   Primary,
   Text,
   Title,
-  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getMarkdownObject } from '../helpers';
 
@@ -25,8 +24,7 @@ export interface ConfirmationDialogBuilder extends Confirm<string>,
   End,
   Primary,
   Text,
-  Title,
-  Build {
+  Title {
 }
 
 /**
@@ -34,7 +32,7 @@ export interface ConfirmationDialogBuilder extends Confirm<string>,
  * @@displayName Confirmation Dialog
  */
 
-export class ConfirmationDialogBuilder extends BitBuilderBase<ConfirmationDialogParams> {
+export class ConfirmationDialogBuilder extends BitBuilderBase {
   /** @internal */
 
   public build(): SlackDto {

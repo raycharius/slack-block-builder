@@ -79,7 +79,7 @@ export type InputElementBuilder =
   | UserMultiSelectBuilder
   | UserSelectBuilder;
 
-export type ContextElementBuilder = ImgBuilder | string;
+export type ContextElement = ImgBuilder | string;
 
 export type BlockBuilder =
   ActionsBuilder

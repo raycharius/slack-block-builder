@@ -10,7 +10,6 @@ import {
   MinLength,
   Multiline,
   Placeholder,
-  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getDispatchActionsConfigurationObject } from '../helpers';
 import { ElementType } from '../constants';
@@ -31,8 +30,7 @@ export interface TextInputBuilder extends ActionId,
   MaxLength,
   MinLength,
   Multiline,
-  Placeholder,
-  Build {
+  Placeholder {
 }
 
 /**
@@ -40,7 +38,7 @@ export interface TextInputBuilder extends ActionId,
  * @@displayName Plain-Text Input
  */
 
-export class TextInputBuilder extends ElementBuilderBase<TextInputParams> {
+export class TextInputBuilder extends ElementBuilderBase {
   /** @internal */
 
   public build(): SlackElementDto {

@@ -6,7 +6,6 @@ import {
   End,
   InitialUser,
   Placeholder,
-  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
 import { ElementType } from '../constants';
@@ -23,8 +22,7 @@ export interface UserSelectBuilder extends ActionId,
   Confirm<ConfirmationDialogBuilder>,
   End,
   InitialUser,
-  Placeholder,
-  Build {
+  Placeholder {
 }
 
 /**
@@ -32,7 +30,7 @@ export interface UserSelectBuilder extends ActionId,
  * @@displayName User Select
  */
 
-export class UserSelectBuilder extends ElementBuilderBase<UserSelectParams> {
+export class UserSelectBuilder extends ElementBuilderBase {
   /** @internal */
 
   public build(): SlackElementDto {

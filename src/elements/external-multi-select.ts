@@ -8,7 +8,6 @@ import {
   MaxSelectedItems,
   MinQueryLength,
   Placeholder,
-  Build,
 } from '../methods';
 import {
   applyMixins,
@@ -18,6 +17,7 @@ import {
 } from '../helpers';
 import { ElementType } from '../constants';
 
+import type { SlackDto } from '../lib';
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface ExternalMultiSelectParams {
@@ -33,8 +33,7 @@ export interface ExternalMultiSelectBuilder extends ActionId,
   InitialOptions,
   MaxSelectedItems,
   MinQueryLength,
-  Placeholder,
-  Build {
+  Placeholder {
 }
 
 /**
@@ -42,15 +41,15 @@ export interface ExternalMultiSelectBuilder extends ActionId,
  * @@displayName External Multi-Select
  */
 
-export class ExternalMultiSelectBuilder extends ElementBuilderBase<ExternalMultiSelectParams> {
+export class ExternalMultiSelectBuilder extends ElementBuilderBase {
   /** @internal */
 
   public build(): SlackElementDto {
     return this.getResult(SlackElementDto, {
       type: ElementType.ExternalMultiSelect,
       placeholder: getPlainTextObject(this.props.placeholder),
-      initialOptions: getBuilderResults(this.props.initialOptions),
-      confirm: getBuilderResult(this.props.confirm),
+      initialOptions: getBuilderResults<SlackDto>(this.props.initialOptions),
+      confirm: getBuilderResult<SlackDto>(this.props.confirm),
     });
   }
 }

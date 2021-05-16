@@ -6,7 +6,6 @@ import {
   Text,
   Url,
   Value,
-  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getMarkdownObject } from '../helpers';
 
@@ -23,8 +22,7 @@ export interface OptionBuilder extends Description,
   End,
   Text,
   Url,
-  Value,
-  Build {
+  Value {
 }
 
 /**
@@ -32,7 +30,7 @@ export interface OptionBuilder extends Description,
  * @@displayName Option
  */
 
-export class OptionBuilder extends BitBuilderBase<OptionParams> {
+export class OptionBuilder extends BitBuilderBase {
   /** @internal */
 
   public build({ isMarkdown }: ObjectLiteral = { isMarkdown: false }): SlackDto {

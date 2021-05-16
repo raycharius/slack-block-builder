@@ -7,11 +7,11 @@ import {
   InitialChannel,
   Placeholder,
   ResponseUrlEnabled,
-  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
 import { ElementType } from '../constants';
 
+import type { SlackDto } from '../lib';
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface ChannelSelectParams {
@@ -25,8 +25,7 @@ export interface ChannelSelectBuilder extends ActionId,
   End,
   InitialChannel,
   Placeholder,
-  ResponseUrlEnabled,
-  Build {
+  ResponseUrlEnabled {
 }
 
 /**
@@ -34,14 +33,14 @@ export interface ChannelSelectBuilder extends ActionId,
  * @@displayName Channel Select
  */
 
-export class ChannelSelectBuilder extends ElementBuilderBase<ChannelSelectParams> {
+export class ChannelSelectBuilder extends ElementBuilderBase {
   /** @internal */
 
   public build(): SlackElementDto {
     return this.getResult(SlackElementDto, {
       type: ElementType.ChannelSelect,
       placeholder: getPlainTextObject(this.props.placeholder),
-      confirm: getBuilderResult(this.props.confirm),
+      confirm: getBuilderResult<SlackDto>(this.props.confirm),
     });
   }
 }

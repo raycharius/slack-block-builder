@@ -7,7 +7,6 @@ import {
   InitialUsers,
   MaxSelectedItems,
   Placeholder,
-  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
 import { ElementType } from '../constants';
@@ -25,8 +24,7 @@ export interface UserMultiSelectBuilder extends ActionId,
   End,
   InitialUsers,
   MaxSelectedItems,
-  Placeholder,
-  Build {
+  Placeholder {
 }
 
 /**
@@ -34,7 +32,7 @@ export interface UserMultiSelectBuilder extends ActionId,
  * @@displayName User Multi-Select
  */
 
-export class UserMultiSelectBuilder extends ElementBuilderBase<UserMultiSelectParams> {
+export class UserMultiSelectBuilder extends ElementBuilderBase {
   /** @internal */
 
   public build(): SlackElementDto {

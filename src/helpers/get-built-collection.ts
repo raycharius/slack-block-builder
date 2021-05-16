@@ -12,5 +12,5 @@ export function getBuiltCollection<T extends Builder, Dto extends SlackDto>(
 
   return prunedBuilders.length === 0
     ? []
-    : getBuilderResults(prunedBuilders);
+    : getBuilderResults<Dto>(prunedBuilders);
 }

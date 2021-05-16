@@ -23,7 +23,7 @@ export default (type: string, capitalize = false): string => {
     return 'Block';
   }
 
-  if (['ActionsElementBuilder', 'InputElementBuilder', 'ContextElementBuilder'].includes(type)) {
+  if (['ActionsElementBuilder', 'InputElementBuilder', 'ContextElement'].includes(type)) {
     return 'Element';
   }
 

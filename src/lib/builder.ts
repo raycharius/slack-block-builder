@@ -11,11 +11,11 @@ export abstract class Builder {
     Object.keys(this.props)
       .forEach((prop) => this.props[prop] === undefined
         && delete this.props[prop]);
+
     Object.seal(this);
   }
 
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  protected set(value: any, prop: string): this {
+  protected set(value: unknown, prop: string): this {
     if (this.props[prop] !== undefined) {
       throw new BlockBuilderError(`Property ${prop} can only be assigned once.`);
     }
@@ -27,7 +27,7 @@ export abstract class Builder {
     return this;
   }
 
-  protected append(value: any[], prop: string): this {
+  protected append(value: unknown[], prop: string): this {
     const prunedValue = value.filter(Boolean);
 
     if (prunedValue.length > 0) {
@@ -46,7 +46,7 @@ export abstract class Builder {
   /** @internal */
 
   // eslint-disable-next-line max-len
-  // eslint-disable-next-line class-methods-use-this, @typescript-eslint/no-unused-vars, @typescript-eslint/explicit-module-boundary-types
+  // eslint-disable-next-line class-methods-use-this, @typescript-eslint/no-unused-vars, @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/no-explicit-any
   public build(params?: ObjectLiteral): any {
     throw new BlockBuilderError('Builder must have a declared \'build\' method');
   }

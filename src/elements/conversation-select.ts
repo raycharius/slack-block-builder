@@ -11,7 +11,6 @@ import {
   InitialConversation,
   Placeholder,
   ResponseUrlEnabled,
-  Build,
 } from '../methods';
 import {
   applyMixins,
@@ -21,6 +20,7 @@ import {
 } from '../helpers';
 import { ElementType } from '../constants';
 
+import type { SlackDto } from '../lib';
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface ConversationSelectParams {
@@ -38,8 +38,7 @@ export interface ConversationSelectBuilder extends ActionId,
   Filter,
   InitialConversation,
   Placeholder,
-  ResponseUrlEnabled,
-  Build {
+  ResponseUrlEnabled {
 }
 
 /**
@@ -47,14 +46,14 @@ export interface ConversationSelectBuilder extends ActionId,
  * @@displayName Conversation Select
  */
 
-export class ConversationSelectBuilder extends ElementBuilderBase<ConversationSelectParams> {
+export class ConversationSelectBuilder extends ElementBuilderBase {
   /** @internal */
 
   public build(): SlackElementDto {
     return this.getResult(SlackElementDto, {
       type: ElementType.ConversationSelect,
       placeholder: getPlainTextObject(this.props.placeholder),
-      confirm: getBuilderResult(this.props.confirm),
+      confirm: getBuilderResult<SlackDto>(this.props.confirm),
       filter: getFilter(this.props),
     });
   }

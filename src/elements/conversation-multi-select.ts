@@ -11,7 +11,6 @@ import {
   InitialConversations,
   MaxSelectedItems,
   Placeholder,
-  Build,
 } from '../methods';
 import {
   applyMixins,
@@ -21,6 +20,7 @@ import {
 } from '../helpers';
 import { ElementType } from '../constants';
 
+import type { SlackDto } from '../lib';
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface ConversationMultiSelectParams {
@@ -38,8 +38,7 @@ export interface ConversationMultiSelectBuilder extends ActionId,
   Filter,
   InitialConversations,
   MaxSelectedItems,
-  Placeholder,
-  Build {
+  Placeholder {
 }
 
 /**
@@ -47,15 +46,14 @@ export interface ConversationMultiSelectBuilder extends ActionId,
  * @@displayName Conversation Multi-Select
  */
 
-export class ConversationMultiSelectBuilder
-  extends ElementBuilderBase<ConversationMultiSelectParams> {
+export class ConversationMultiSelectBuilder extends ElementBuilderBase {
   /** @internal */
 
   public build(): SlackElementDto {
     return this.getResult(SlackElementDto, {
       type: ElementType.ConversationsMultiSelect,
       placeholder: getPlainTextObject(this.props.placeholder),
-      confirm: getBuilderResult(this.props.confirm),
+      confirm: getBuilderResult<SlackDto>(this.props.confirm),
       filter: getFilter(this.props),
     });
   }

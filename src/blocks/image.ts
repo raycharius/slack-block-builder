@@ -6,7 +6,6 @@ import {
   End,
   ImageUrl,
   Title,
-  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject } from '../helpers';
 import { BlockType } from '../constants';
@@ -22,8 +21,7 @@ export interface ImageBuilder extends AltText,
   BlockId,
   End,
   ImageUrl,
-  Title,
-  Build {
+  Title {
 }
 
 /**
@@ -31,7 +29,7 @@ export interface ImageBuilder extends AltText,
  * @@displayName Image
  */
 
-export class ImageBuilder extends BlockBuilderBase<ImageParams> {
+export class ImageBuilder extends BlockBuilderBase {
   /** @internal */
 
   public build(): SlackBlockDto {

@@ -14,11 +14,11 @@ import {
   BuildToObject,
   GetBlocks,
   PrintPreviewUrl,
-  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResults } from '../helpers';
 import { SurfaceType } from '../constants';
 
+import type { SlackBlockDto } from '../lib';
 import type { ViewBlockBuilder } from '../types';
 
 export interface ModalParams {
@@ -43,8 +43,7 @@ export interface ModalBuilder extends Blocks<ViewBlockBuilder>,
   BuildToJSON,
   BuildToObject<SlackViewDto>,
   GetBlocks,
-  PrintPreviewUrl,
-  Build {
+  PrintPreviewUrl {
 }
 
 /**
@@ -52,14 +51,14 @@ export interface ModalBuilder extends Blocks<ViewBlockBuilder>,
  * @@displayName Modal
  */
 
-export class ModalBuilder extends SurfaceBuilderBase<ModalParams> {
+export class ModalBuilder extends SurfaceBuilderBase {
   /** @internal */
 
   public build(): SlackViewDto {
     return this.getResult(SlackViewDto, {
       type: SurfaceType.Modal,
       title: getPlainTextObject(this.props.title),
-      blocks: getBuilderResults(this.props.blocks),
+      blocks: getBuilderResults<SlackBlockDto>(this.props.blocks),
       close: getPlainTextObject(this.props.close),
       submit: getPlainTextObject(this.props.submit),
     });

@@ -8,7 +8,6 @@ import {
   OptionGroups,
   Options,
   Placeholder,
-  Build,
 } from '../methods';
 import {
   applyMixins,
@@ -18,6 +17,7 @@ import {
 } from '../helpers';
 import { ElementType } from '../constants';
 
+import type { SlackDto } from '../lib';
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface StaticSelectParams {
@@ -31,8 +31,7 @@ export interface StaticSelectBuilder extends ActionId,
   InitialOption,
   OptionGroups,
   Options,
-  Placeholder,
-  Build {
+  Placeholder {
 }
 
 /**
@@ -40,17 +39,17 @@ export interface StaticSelectBuilder extends ActionId,
  * @@displayName Static Select
  */
 
-export class StaticSelectBuilder extends ElementBuilderBase<StaticSelectParams> {
+export class StaticSelectBuilder extends ElementBuilderBase {
   /** @internal */
 
   public build(): SlackElementDto {
     return this.getResult(SlackElementDto, {
       type: ElementType.StaticSelect,
       placeholder: getPlainTextObject(this.props.placeholder),
-      options: getBuilderResults(this.props.options),
-      optionGroups: getBuilderResults(this.props.optionGroups),
-      initialOption: getBuilderResult(this.props.initialOption),
-      confirm: getBuilderResult(this.props.confirm),
+      options: getBuilderResults<SlackDto>(this.props.options),
+      optionGroups: getBuilderResults<SlackDto>(this.props.optionGroups),
+      initialOption: getBuilderResult<SlackDto>(this.props.initialOption),
+      confirm: getBuilderResult<SlackDto>(this.props.confirm),
     });
   }
 }

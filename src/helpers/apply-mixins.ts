@@ -1,4 +1,8 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/*
+eslint-disable
+@typescript-eslint/explicit-module-boundary-types,
+@typescript-eslint/no-explicit-any
+*/
 
 import type { Ctor, AbstractCtor } from '../types';
 

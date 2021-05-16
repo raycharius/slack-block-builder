@@ -7,11 +7,11 @@ import {
   InitialChannels,
   MaxSelectedItems,
   Placeholder,
-  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
 import { ElementType } from '../constants';
 
+import type { SlackDto } from '../lib';
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface ChannelMultiSelectParams {
@@ -25,8 +25,7 @@ export interface ChannelMultiSelectBuilder extends ActionId,
   End,
   InitialChannels,
   MaxSelectedItems,
-  Placeholder,
-  Build {
+  Placeholder {
 }
 
 /**
@@ -34,14 +33,14 @@ export interface ChannelMultiSelectBuilder extends ActionId,
  * @@displayName Channel Multi-Select
  */
 
-export class ChannelMultiSelectBuilder extends ElementBuilderBase<ChannelMultiSelectParams> {
+export class ChannelMultiSelectBuilder extends ElementBuilderBase {
   /** @internal */
 
   public build(): SlackElementDto {
     return this.getResult(SlackElementDto, {
       type: ElementType.ChannelsMultiSelect,
       placeholder: getPlainTextObject(this.props.placeholder),
-      confirm: getBuilderResult(this.props.confirm),
+      confirm: getBuilderResult<SlackDto>(this.props.confirm),
     });
   }
 }

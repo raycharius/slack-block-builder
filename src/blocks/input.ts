@@ -8,11 +8,11 @@ import {
   Hint,
   Label,
   Optional,
-  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
 import { BlockType } from '../constants';
 
+import type { SlackElementDto } from '../lib';
 import type { InputElementBuilder } from '../types';
 
 export interface InputParams {
@@ -27,8 +27,7 @@ export interface InputBuilder extends BlockId,
   End,
   Hint,
   Label,
-  Optional,
-  Build {
+  Optional {
 }
 
 /**
@@ -36,7 +35,7 @@ export interface InputBuilder extends BlockId,
  * @@displayName Input
  */
 
-export class InputBuilder extends BlockBuilderBase<InputParams> {
+export class InputBuilder extends BlockBuilderBase {
   /** @internal */
 
   public build(): SlackBlockDto {
@@ -44,7 +43,7 @@ export class InputBuilder extends BlockBuilderBase<InputParams> {
       type: BlockType.Input,
       label: getPlainTextObject(this.props.label),
       hint: getPlainTextObject(this.props.hint),
-      element: getBuilderResult(this.props.element),
+      element: getBuilderResult<SlackElementDto>(this.props.element),
     });
   }
 }

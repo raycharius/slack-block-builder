@@ -4,7 +4,6 @@ import {
   Label,
   End,
   Options,
-  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResults } from '../helpers';
 
@@ -14,8 +13,7 @@ export interface OptionGroupParams {
 
 export interface OptionGroupBuilder extends End,
   Label,
-  Options,
-  Build {
+  Options {
 }
 
 /**
@@ -23,13 +21,13 @@ export interface OptionGroupBuilder extends End,
  * @@displayName Option Group
  */
 
-export class OptionGroupBuilder extends BitBuilderBase<OptionGroupParams> {
+export class OptionGroupBuilder extends BitBuilderBase {
   /** @internal */
 
   public build(): SlackDto {
     return this.getResult(SlackDto, {
       label: getPlainTextObject(this.props.label),
-      options: getBuilderResults(this.props.options),
+      options: getBuilderResults<SlackDto>(this.props.options),
     });
   }
 }

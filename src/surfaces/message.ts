@@ -19,10 +19,10 @@ import {
   GetAttachments,
   GetBlocks,
   PrintPreviewUrl,
-  Build,
 } from '../methods';
 import { applyMixins, getBuilderResults } from '../helpers';
 
+import type { SlackBlockDto, SlackDto } from '../lib';
 import type { BlockBuilder } from '../types';
 
 export interface MessageParams {
@@ -50,8 +50,7 @@ export interface MessageBuilder extends AsUser,
   BuildToObject<SlackMessageDto>,
   GetAttachments,
   GetBlocks,
-  PrintPreviewUrl,
-  Build {
+  PrintPreviewUrl {
 }
 
 /**
@@ -59,13 +58,13 @@ export interface MessageBuilder extends AsUser,
  * @@displayName Message
  */
 
-export class MessageBuilder extends SurfaceBuilderBase<MessageParams> {
+export class MessageBuilder extends SurfaceBuilderBase {
   /** @internal */
 
   public build(): SlackMessageDto {
     return this.getResult(SlackMessageDto, {
-      blocks: getBuilderResults(this.props.blocks),
-      attachments: getBuilderResults(this.props.attachments),
+      blocks: getBuilderResults<SlackBlockDto>(this.props.blocks),
+      attachments: getBuilderResults<SlackDto>(this.props.attachments),
     });
   }
 }

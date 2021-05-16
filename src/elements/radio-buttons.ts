@@ -6,11 +6,11 @@ import {
   End,
   InitialOption,
   Options,
-  Build,
 } from '../methods';
 import { applyMixins, getBuilderResult, getBuilderResults } from '../helpers';
 import { ElementType } from '../constants';
 
+import type { SlackDto } from '../lib';
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface RadioButtonsParams {
@@ -21,8 +21,7 @@ export interface RadioButtonsBuilder extends ActionId,
   Confirm<ConfirmationDialogBuilder>,
   End,
   InitialOption,
-  Options,
-  Build {
+  Options {
 }
 
 /**
@@ -30,15 +29,15 @@ export interface RadioButtonsBuilder extends ActionId,
  * @@displayName Radio Buttons
  */
 
-export class RadioButtonsBuilder extends ElementBuilderBase<RadioButtonsParams> {
+export class RadioButtonsBuilder extends ElementBuilderBase {
   /** @internal */
 
   public build(): SlackElementDto {
     return this.getResult(SlackElementDto, {
       type: ElementType.RadioButtons,
-      options: getBuilderResults(this.props.options, { isMarkdown: true }),
-      initialOption: getBuilderResult(this.props.initialOption, { isMarkdown: true }),
-      confirm: getBuilderResult(this.props.confirm),
+      options: getBuilderResults<SlackDto>(this.props.options, { isMarkdown: true }),
+      initialOption: getBuilderResult<SlackDto>(this.props.initialOption, { isMarkdown: true }),
+      confirm: getBuilderResult<SlackDto>(this.props.confirm),
     });
   }
 }

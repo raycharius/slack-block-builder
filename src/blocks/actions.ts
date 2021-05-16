@@ -4,11 +4,11 @@ import {
   BlockId,
   Elements,
   End,
-  Build,
 } from '../methods';
 import { applyMixins, getBuilderResults } from '../helpers';
 import { BlockType } from '../constants';
 
+import type { SlackElementDto } from '../lib';
 import type { ActionsElementBuilder } from '../types';
 
 export interface ActionsParams {
@@ -17,8 +17,7 @@ export interface ActionsParams {
 
 export interface ActionsBuilder extends BlockId,
   End,
-  Elements<ActionsElementBuilder>,
-  Build {
+  Elements<ActionsElementBuilder> {
 }
 
 /**
@@ -26,13 +25,13 @@ export interface ActionsBuilder extends BlockId,
  * @@displayName Actions
  */
 
-export class ActionsBuilder extends BlockBuilderBase<ActionsParams> {
+export class ActionsBuilder extends BlockBuilderBase {
   /** @internal */
 
   public build(): SlackBlockDto {
     return this.getResult(SlackBlockDto, {
       type: BlockType.Actions,
-      elements: getBuilderResults(this.props.elements),
+      elements: getBuilderResults<SlackElementDto>(this.props.elements),
     });
   }
 }

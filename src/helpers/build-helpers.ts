@@ -7,24 +7,26 @@ import {
   DispatchActionsConfigurationObject,
 } from '../objects';
 
-import type { ObjectLiteral } from '../types';
+import type { ObjectLiteral, ContextElement } from '../types';
 
 const defaultParams = {
   isMarkdown: false,
 };
 
-const isUndefined = (value: any): boolean => value === undefined;
+const isUndefined = (value: unknown): boolean => value === undefined;
 
 const areUndefined = (...values): boolean => values
   .filter((value) => isUndefined(value)).length === values.length;
 
-export function getBuilderResult(builder: Builder, params: ObjectLiteral = defaultParams): any {
+export function getBuilderResult<T>(builder: Builder, params: ObjectLiteral = defaultParams): T {
   return isUndefined(builder) ? undefined : builder.build(params);
 }
 
-export function getBuilderResults(builders: Builder[], params: ObjectLiteral = defaultParams): any {
+export function getBuilderResults<T>(
+  builders: Builder[], params: ObjectLiteral = defaultParams,
+): T[] {
   return areUndefined(builders) ? undefined : builders
-    .map((builder) => getBuilderResult(builder, params));
+    .map((builder) => getBuilderResult<T>(builder, params));
 }
 
 export function getPlainTextObject(text: string): PlainTextObject | undefined {
@@ -35,7 +37,9 @@ export function getMarkdownObject(text: string): MarkdownObject | undefined {
   return isUndefined(text) ? undefined : new MarkdownObject(text);
 }
 
-export function getElementsForContext(elements: any[]): any[] | undefined {
+export function getElementsForContext(
+  elements: ContextElement[],
+): Array<MarkdownObject | ObjectLiteral> | undefined {
   return isUndefined(elements)
     ? undefined
     : elements.map((element) => (typeof element === 'string'

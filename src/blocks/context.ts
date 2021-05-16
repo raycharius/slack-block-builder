@@ -4,21 +4,19 @@ import {
   BlockId,
   Elements,
   End,
-  Build,
 } from '../methods';
 import { applyMixins, getElementsForContext } from '../helpers';
 import { BlockType } from '../constants';
 
-import type { ContextElementBuilder } from '../types';
+import type { ContextElement } from '../types';
 
 export interface ContextParams {
   blockId?: string;
 }
 
 export interface ContextBuilder extends BlockId,
-  Elements<ContextElementBuilder>,
-  End,
-  Build {
+  Elements<ContextElement>,
+  End {
 }
 
 /**
@@ -26,7 +24,7 @@ export interface ContextBuilder extends BlockId,
  * @@displayName Context
  */
 
-export class ContextBuilder extends BlockBuilderBase<ContextParams> {
+export class ContextBuilder extends BlockBuilderBase {
   /** @internal */
 
   public build(): SlackBlockDto {

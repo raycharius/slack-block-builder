@@ -4,7 +4,6 @@ import {
   BlockId,
   End,
   ExternalId,
-  Build,
 } from '../methods';
 import { applyMixins } from '../helpers';
 import { BlockType, FileType } from '../constants';
@@ -16,8 +15,7 @@ export interface FileParams {
 
 export interface FileBuilder extends BlockId,
   End,
-  ExternalId,
-  Build {
+  ExternalId {
 }
 
 /**
@@ -25,7 +23,7 @@ export interface FileBuilder extends BlockId,
  * @@displayName File
  */
 
-export class FileBuilder extends BlockBuilderBase<FileParams> {
+export class FileBuilder extends BlockBuilderBase {
   /** @internal */
 
   public build(): SlackBlockDto {

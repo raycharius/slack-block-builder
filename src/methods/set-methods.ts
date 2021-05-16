@@ -5,7 +5,6 @@ import { Builder } from '../lib';
 import { Prop } from '../constants';
 
 import type { SectionElementBuilder } from '../types';
-
 import type { OptionBuilder } from '../bits/option';
 
 export abstract class Accessory extends Builder {

@@ -9,11 +9,11 @@ import {
   BuildToObject,
   GetBlocks,
   PrintPreviewUrl,
-  Build,
 } from '../methods';
 import { applyMixins, getBuilderResults } from '../helpers';
 import { SurfaceType } from '../constants';
 
+import type { SlackBlockDto } from '../lib';
 import type { ViewBlockBuilder } from '../types';
 
 export interface HomeTabParams {
@@ -29,8 +29,7 @@ export interface HomeTabBuilder extends Blocks<ViewBlockBuilder>,
   BuildToJSON,
   BuildToObject<SlackViewDto>,
   GetBlocks,
-  PrintPreviewUrl,
-  Build {
+  PrintPreviewUrl {
 }
 
 /**
@@ -38,13 +37,13 @@ export interface HomeTabBuilder extends Blocks<ViewBlockBuilder>,
  * @@displayName Home Tab
  */
 
-export class HomeTabBuilder extends SurfaceBuilderBase<HomeTabParams> {
+export class HomeTabBuilder extends SurfaceBuilderBase {
   /** @internal */
 
   public build(): SlackViewDto {
     return this.getResult(SlackViewDto, {
       type: SurfaceType.HomeTab,
-      blocks: getBuilderResults(this.props.blocks),
+      blocks: getBuilderResults<SlackBlockDto>(this.props.blocks),
     });
   }
 }

@@ -7,11 +7,11 @@ import {
   InitialOption,
   MinQueryLength,
   Placeholder,
-  Build,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
 import { ElementType } from '../constants';
 
+import type { SlackDto } from '../lib';
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
 
 export interface ExternalSelectParams {
@@ -25,8 +25,7 @@ export interface ExternalSelectBuilder extends ActionId,
   End,
   InitialOption,
   MinQueryLength,
-  Placeholder,
-  Build {
+  Placeholder {
 }
 
 /**
@@ -34,15 +33,15 @@ export interface ExternalSelectBuilder extends ActionId,
  * @@displayName External Select
  */
 
-export class ExternalSelectBuilder extends ElementBuilderBase<ExternalSelectParams> {
+export class ExternalSelectBuilder extends ElementBuilderBase {
   /** @internal */
 
   public build(): SlackElementDto {
     return this.getResult(SlackElementDto, {
       type: ElementType.ExternalSelect,
       placeholder: getPlainTextObject(this.props.placeholder),
-      initialOption: getBuilderResult(this.props.initialOption),
-      confirm: getBuilderResult(this.props.confirm),
+      initialOption: getBuilderResult<SlackDto>(this.props.initialOption),
+      confirm: getBuilderResult<SlackDto>(this.props.confirm),
     });
   }
 }
