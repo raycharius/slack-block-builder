@@ -140,51 +140,6 @@ Below is a list of supported objects and how to access them in **Block Builder**
 | Option Group         | Composition Object | :white_check_mark:             | `Bits.OptionGroup()`
 | Attachment           | Legacy Feature     | :white_check_mark:             | `Bits.Attachment()`              
 
-### Utility Functions
-
-The `Utilities` object contains various utility functions. Currently, there are two:
-
-`BlockCollection()` – Accepts multiple arguments or an array of blocks and returns them in an array, in their built state.
-
-`AttachmentCollection()` – Accepts multiple arguments or an array of attachments and returns them in an array, in their built state.
-
-These two functions are useful when you wish to keep surface or view configuration separate from UI representation.
-
-An example using Slack's `WebClient` from their [SDK for Node.js](https://github.com/slackapi/node-slack-sdk):
-
-```javascript
-import { BlockCollection, AttachmentCollection, Blocks } from 'slack-block-builder';
-import { WebClient } from '@slack/web-api';
-
-const client = new WebClient(process.env.SLACK_TOKEN);
-
-client.chat.postMessage({
-  channel: 'ABCDEFG',
-  text: 'Hello, my dear, sweet world!',
-  blocks: BlockCollection( /* Pass in blocks */ ),
-  attachments: AttachmentCollection( /* Pass in blocks */ ),
-})
-.then((response) => console.log(response))
-.catch((error) => console.log(error));
-```
-
-Another example where you might find `BlockCollection()` helpful is when [unfurling links in messages](https://api.slack.com/reference/messaging/link-unfurling):
-
-```javascript
-import { BlockCollection, Blocks } from 'slack-block-builder';
-import { WebClient } from '@slack/web-api';
-
-const client = new WebClient(process.env.SLACK_TOKEN);
-
-const unfurl = ({ channel, ts, url }) => client.chat.unfurl({
-  channel,
-  ts,
-  unfurls: { [url]: BlockCollection( /* Pass in blocks */ ) },
-})
-.then((response) => console.log(response))
-.catch((error) => console.log(error));
-```
-
 ### Creating a Simple Interactive Message
 
 Let's take a look at how to compose an interactive message. Even though [Slack](https://slack.com) now has modals, these have always been the basis for [Slack](https://slack.com) apps.
@@ -285,6 +240,51 @@ Both of these examples render the modal below.
 ![An example of using Block Builder for Modals](resources/images/main/simple-modal-example.png)
 
 [**View Example on Slack Block Kit Builder Website**](https://app.slack.com/block-kit-builder#%7B%22type%22:%22modal%22,%22title%22:%7B%22type%22:%22plain_text%22,%22text%22:%22PizzaMate%22%7D,%22blocks%22:%5B%7B%22type%22:%22section%22,%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22Hey%20there,%20colleague!%22%7D%7D,%7B%22type%22:%22section%22,%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22Hurray%20for%20corporate%20pizza!%20Let's%20get%20you%20fed%20and%20happy%20:pizza:%22%7D%7D,%7B%22type%22:%22input%22,%22label%22:%7B%22type%22:%22plain_text%22,%22text%22:%22What%20can%20we%20call%20you?%22%7D,%22element%22:%7B%22type%22:%22plain_text_input%22,%22action_id%22:%22name%22,%22placeholder%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Hi,%20my%20name%20is...%20(What?!)%20(Who?!)%22%7D%7D%7D,%7B%22type%22:%22input%22,%22label%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Which%20floor%20are%20you%20on?%22%7D,%22element%22:%7B%22type%22:%22plain_text_input%22,%22action_id%22:%22floor%22,%22placeholder%22:%7B%22type%22:%22plain_text%22,%22text%22:%22HQ%20–%20Fifth%20Floor%22%7D%7D%7D,%7B%22type%22:%22input%22,%22label%22:%7B%22type%22:%22plain_text%22,%22text%22:%22What'll%20you%20have?%22%7D,%22element%22:%7B%22type%22:%22static_select%22,%22placeholder%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Choose%20your%20favorite...%22%7D,%22action_id%22:%22item%22,%22options%22:%5B%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22:cheese_wedge:%20With%20Cheeze%22%7D,%22value%22:%22012%22%7D,%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22:fish:%20With%20Anchovies%22%7D,%22value%22:%22013%22%7D,%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22:cookie:%20With%20Scooby%20Snacks%22%7D,%22value%22:%22014%22%7D,%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22:beer:%20I%20Prefer%20Steak%20and%20Beer%22%7D,%22value%22:%22015%22%7D%5D%7D%7D%5D,%22submit%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Get%20Fed%22%7D%7D)
+
+### Utility Functions
+
+The `Utilities` object contains various utility functions. Currently, there are two:
+
+`BlockCollection()` – Accepts multiple arguments or an array of blocks and returns them in an array, in their built state.
+
+`AttachmentCollection()` – Accepts multiple arguments or an array of attachments and returns them in an array, in their built state.
+
+These two functions are useful when you wish to keep surface or view configuration separate from UI representation.
+
+An example using Slack's `WebClient` from their [SDK for Node.js](https://github.com/slackapi/node-slack-sdk):
+
+```javascript
+import { BlockCollection, AttachmentCollection, Blocks } from 'slack-block-builder';
+import { WebClient } from '@slack/web-api';
+
+const client = new WebClient(process.env.SLACK_TOKEN);
+
+client.chat.postMessage({
+  channel: 'ABCDEFG',
+  text: 'Hello, my dear, sweet world!',
+  blocks: BlockCollection( /* Pass in blocks */ ),
+  attachments: AttachmentCollection( /* Pass in blocks */ ),
+})
+.then((response) => console.log(response))
+.catch((error) => console.log(error));
+```
+
+Another example where you might find `BlockCollection()` helpful is when [unfurling links in messages](https://api.slack.com/reference/messaging/link-unfurling):
+
+```javascript
+import { BlockCollection, Blocks } from 'slack-block-builder';
+import { WebClient } from '@slack/web-api';
+
+const client = new WebClient(process.env.SLACK_TOKEN);
+
+const unfurl = ({ channel, ts, url }) => client.chat.unfurl({
+  channel,
+  ts,
+  unfurls: { [url]: BlockCollection( /* Pass in blocks */ ) },
+})
+.then((response) => console.log(response))
+.catch((error) => console.log(error));
+```
 
 ## :link: &nbsp; Other Useful Slack-Related Projects
 
