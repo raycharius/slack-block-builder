@@ -24,8 +24,7 @@
     }
   },
   "rules": {
-    "import/prefer-default-export": "off", // Prefer consistency
-    "@typescript-eslint/no-useless-constructor": "off", // Prefer code clarity
-    "@typescript-eslint/no-explicit-any": "off", // Prefer flexibility
+    "import/prefer-default-export": "off",
+    "import/no-cycle": "off" // Use Madge instead until 'import type' is correctly supported, see issue https://github.com/benmosher/eslint-plugin-import/issues/2061
   }
 }
