@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "es2016",
+      "es2017",
+      "es2019.array"
+    ],
+    "module": "commonjs",
+    "declaration": true,
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "stripInternal": true,
+    "moduleResolution": "node"
+  },
+  "include": [
+    "src"
+  ]
+}

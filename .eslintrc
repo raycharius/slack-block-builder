@@ -2,11 +2,29 @@
   "env": {
     "node": true
   },
-  "extends": "airbnb-base",
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.eslint.json"
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "airbnb-typescript/base",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
   "rules": {
-    "max-classes-per-file": "off",
-    "no-useless-constructor": "off",
-    "max-len": "off",
-    "consistent-return": "off"
+    "import/prefer-default-export": "off",
+    "import/no-cycle": "off" // Use Madge instead until 'import type' is correctly supported, see issue https://github.com/benmosher/eslint-plugin-import/issues/2061
   }
 }

@@ -1,0 +1,10 @@
+ignore:
+  - "tests/"
+  - "docs/"
+  - "resources/"
+
+coverage:
+  status:
+    project:
+      default:
+        threshold: 1.0%
