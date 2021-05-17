@@ -1,6 +1,6 @@
 # :sparkles:  Block Builder Version 2.0.0 In Beta
 
-## :arrow_up:  Migration From Version 1
+### :arrow_up:  Migration From Version 1
 
 No need to worry – for 99.99% of developers, the move to Version 2 is not going to break anything. So feel free to bump up.
 
@@ -14,9 +14,9 @@ To install the beta:
 npm install --save slack-block-builder@2.0.0-beta.1
 ```
 
-## :sparkles:  New Features
+### :sparkles:  New Features
 
-### Better TypeScript Experience
+#### Better TypeScript Experience
 
 The library has been rewritten in TypeScript and offers a much better experience than before.
 
@@ -24,7 +24,7 @@ The library has been rewritten in TypeScript and offers a much better experience
 * Better compatibility with the types accepted by Slack's NodeJS SDK.
 * All of the JSDoc annotations are now available (they were lost in the type definitions from Version 1).
 
-### Methods That Configure Now Accept Arguments
+#### Methods That Configure Now Accept Arguments
 
 In Version 1, there are multiple methods on the builder objects that configure behavior, such as `Button.danger()` and `Button.primary()`. They now accept a boolean value (but still default to their inferred value), making it easier to build logic around them:
 
@@ -48,7 +48,7 @@ const myShorterMessage = ({ channel, dangerLevel }) => {
 };
 ```  
 
-### New Utility Functions `BlockCollection()` and `AttachmentCollection()`
+#### New Utility Functions `BlockCollection()` and `AttachmentCollection()`
 
 It's possible that you want to keep surface configuration separate from UI composition. As such, there are now two new functions that allow you to do just that.
 
@@ -74,7 +74,7 @@ client.chat.postMessage({
 .catch((error) => console.log(error));
 ```
 
-### Both Categorized and Top-Level Imports
+#### Both Categorized and Top-Level Imports
 
 Now you can import the functions for instantiating an object as before (as a member of `Blocks`, `Elements`, etc.), or as a top-level import:
 
@@ -88,7 +88,7 @@ import { Surfaces, Blocks, Elements, Bits, Utilities } from 'slack-block-builder
 import { Modal, Section, Actions, Button } from 'slack-block-builder';
 ```
 
-### Better JSDoc Annotations
+#### Better JSDoc Annotations
 
 The JSDoc annotations have gotten better. Moreover, due to the new architecture of the library, they've become much more maintainable, making it easier to improve them in the future.
 
@@ -96,20 +96,20 @@ And as mentioned above, the annotations are now available to those using both Ty
 
 ![Block Builder JSDoc Support](https://raw.githubusercontent.com/raycharius/slack-block-builder/main/resources/images/docs/jsdoc.png)
 
-## :warning:  Breaking Changes
+### :warning:  Breaking Changes
 
 Overall, the usage of Block Builder has remained the same. But for those who have built certain logic around the internal, private properties of the builder objects may need to change some code.
 
-### No More Run-Time Type Validation
+#### No More Run-Time Type Validation
 
 Block Builder Version 1 checks the type of arguments passed in at runtime and throws errors when they are not compatible, and as such, any logic possibly built around those errors will need to be removed. 
 
 All type checking has been delegate to design time. 
 
-### Builders Now Have Different Internal Structure
+#### Builders Now Have Different Internal Structure
 
 Builder objects now longer have properties `class`, `category`, `result`, and `hasBeenBuilt`. They now only contain methods and the `props` property, which is private.
 
-### Class Names Have Changed
+#### Class Names Have Changed
 
 Both the builder objects and their resulting DTOs now have different class names, so any checking of `instanceof` will more than likely break.
