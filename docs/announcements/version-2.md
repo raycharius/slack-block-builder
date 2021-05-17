@@ -14,6 +14,8 @@ To install the beta:
 npm install --save slack-block-builder@2.0.0-beta.1
 ```
 
+Note that the doc site has not been updated. It will be updated upon the final release. However, generated docs based for Version 2 are located in [the docs folder](docs) of the `main` branch.
+
 ### :sparkles:  New Features
 
 #### Better TypeScript Experience
