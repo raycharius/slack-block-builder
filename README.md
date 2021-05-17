@@ -29,6 +29,8 @@
 ![NPM](https://img.shields.io/npm/l/slack-block-builder?color=bright-green)
 [![codecov](https://codecov.io/gh/raycharius/slack-block-builder/branch/master/graph/badge.svg)](https://codecov.io/gh/raycharius/slack-block-builder)
 
+> :sparkles: **Block Builder Version 2.0 is now in beta! Learn about the new features and how to install it [here](docs/version-2.md).**
+
 **Block Builder** helps you keep your Slack app code for UI maintainable, testable, and reusable. It has a declarative, chainable syntax inspired by [SwiftUI](https://developer.apple.com/documentation/swiftui) and is built for better UI architecture.
 
 ### :zap: &nbsp; Features
