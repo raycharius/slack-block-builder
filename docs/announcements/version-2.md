@@ -70,7 +70,7 @@ client.chat.postMessage({
   channel: 'ABCDEFG',
   text: 'Hello, my dear, sweet world!',
   blocks: BlockCollection( /* Pass in blocks */ ),
-  attachments: AttachmentCollection( /* Pass in blocks */ ),
+  attachments: AttachmentCollection( /* Pass in attachments */ ),
 })
 .then((response) => console.log(response))
 .catch((error) => console.log(error));
