@@ -19,24 +19,44 @@ import { TimePickerBuilder, TimePickerParams } from './timepicker';
 import { UserMultiSelectBuilder, UserMultiSelectParams } from './user-multi-select';
 import { UserSelectBuilder, UserSelectParams } from './user-select';
 
-export type { ButtonBuilder, ButtonParams } from './button';
-export type { ChannelMultiSelectBuilder, ChannelMultiSelectParams } from './channel-multi-select';
-export type { ChannelSelectBuilder, ChannelSelectParams } from './channel-select';
-export type { CheckboxesBuilder, CheckboxesParams } from './checkboxes';
-export type { ConversationMultiSelectBuilder, ConversationMultiSelectParams } from './conversation-multi-select';
-export type { ConversationSelectBuilder, ConversationSelectParams } from './conversation-select';
-export type { DatePickerBuilder, DatePickerParams } from './datepicker';
-export type { ExternalMultiSelectBuilder, ExternalMultiSelectParams } from './external-multi-select';
-export type { ExternalSelectBuilder, ExternalSelectParams } from './external-select';
-export type { ImgBuilder, ImgParams } from './img';
-export type { OverflowMenuBuilder, OverflowMenuParams } from './overflow-menu';
-export type { RadioButtonsBuilder, RadioButtonsParams } from './radio-buttons';
-export type { StaticMultiSelectBuilder, StaticMultiSelectParams } from './static-multi-select';
-export type { StaticSelectBuilder, StaticSelectParams } from './static-select';
-export type { TextInputBuilder, TextInputParams } from './text-input';
-export type { TimePickerBuilder, TimePickerParams } from './timepicker';
-export type { UserMultiSelectBuilder, UserMultiSelectParams } from './user-multi-select';
-export type { UserSelectBuilder, UserSelectParams } from './user-select';
+export type {
+  ButtonBuilder,
+  ButtonParams,
+  ChannelMultiSelectBuilder,
+  ChannelMultiSelectParams,
+  ChannelSelectBuilder,
+  ChannelSelectParams,
+  CheckboxesBuilder,
+  CheckboxesParams,
+  ConversationMultiSelectBuilder,
+  ConversationMultiSelectParams,
+  ConversationSelectBuilder,
+  ConversationSelectParams,
+  DatePickerBuilder,
+  DatePickerParams,
+  ExternalMultiSelectBuilder,
+  ExternalMultiSelectParams,
+  ExternalSelectBuilder,
+  ExternalSelectParams,
+  ImgBuilder,
+  ImgParams,
+  OverflowMenuBuilder,
+  OverflowMenuParams,
+  RadioButtonsBuilder,
+  RadioButtonsParams,
+  StaticMultiSelectBuilder,
+  StaticMultiSelectParams,
+  StaticSelectBuilder,
+  StaticSelectParams,
+  TextInputBuilder,
+  TextInputParams,
+  TimePickerBuilder,
+  TimePickerParams,
+  UserMultiSelectBuilder,
+  UserMultiSelectParams,
+  UserSelectBuilder,
+  UserSelectParams,
+};
 
 /**
  * Functions here do not use arrow functions stored in variables for IDE color compatibility.

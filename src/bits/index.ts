@@ -5,10 +5,16 @@ import { ConfirmationDialogBuilder, ConfirmationDialogParams } from './confirmat
 import { OptionBuilder, OptionParams } from './option';
 import { OptionGroupBuilder, OptionGroupParams } from './option-group';
 
-export type { AttachmentBuilder, AttachmentParams } from './attachment';
-export type { ConfirmationDialogBuilder, ConfirmationDialogParams } from './confirmation-dialog';
-export type { OptionBuilder, OptionParams } from './option';
-export type { OptionGroupBuilder, OptionGroupParams } from './option-group';
+export type {
+  AttachmentBuilder,
+  AttachmentParams,
+  ConfirmationDialogBuilder,
+  ConfirmationDialogParams,
+  OptionBuilder,
+  OptionParams,
+  OptionGroupBuilder,
+  OptionGroupParams,
+};
 
 /**
  * Functions here do not use arrow functions stored in variables for IDE color compatibility.
