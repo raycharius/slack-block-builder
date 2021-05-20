@@ -14,7 +14,7 @@ export type {
   ModalParams,
   WorkflowStepBuilder,
   WorkflowStepParams,
-}
+};
 
 /**
  * Functions here do not use arrow functions stored in variables for IDE color compatibility.
