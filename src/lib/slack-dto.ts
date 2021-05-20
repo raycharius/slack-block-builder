@@ -94,6 +94,8 @@ export class SlackDto {
 export class SlackMessageDto extends SlackDto {
   public readonly text: string;
 
+  public readonly channel: string;
+
   public readonly blocks?: SlackBlockDto[];
 
   public readonly attachments?: SlackDto[];
