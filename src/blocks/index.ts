@@ -9,14 +9,24 @@ import { ImageBuilder, ImageParams } from './image';
 import { InputBuilder, InputParams } from './input';
 import { SectionBuilder, SectionParams } from './section';
 
-export type { ActionsBuilder, ActionsParams } from './actions';
-export type { ContextBuilder, ContextParams } from './context';
-export type { DividerBuilder, DividerParams } from './divider';
-export type { FileBuilder, FileParams } from './file';
-export type { HeaderBuilder, HeaderParams } from './header';
-export type { ImageBuilder, ImageParams } from './image';
-export type { InputBuilder, InputParams } from './input';
-export type { SectionBuilder, SectionParams } from './section';
+export type {
+  ActionsBuilder,
+  ActionsParams,
+  ContextBuilder,
+  ContextParams,
+  DividerBuilder,
+  DividerParams,
+  FileBuilder,
+  FileParams,
+  HeaderBuilder,
+  HeaderParams,
+  ImageBuilder,
+  ImageParams,
+  InputBuilder,
+  InputParams,
+  SectionBuilder,
+  SectionParams,
+};
 
 /**
  * Functions here do not use arrow functions stored in variables for IDE color compatibility.
