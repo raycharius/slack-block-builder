@@ -19,15 +19,15 @@ describe('Testing Utility Functions:', () => {
 
   test('Calling `BlockCollection()` with multiple arrays of blocks returns an array of block-focused DTOs.', () => {
     const blocks = BlockCollection([
-      Blocks.Section(),
-      Blocks.Section(),
-      Blocks.Section(),
-    ],
-    [
-      Blocks.Section(),
-      Blocks.Section(),
-      Blocks.Section(),
-    ]);
+        Blocks.Section(),
+        Blocks.Section(),
+        Blocks.Section(),
+      ],
+      [
+        Blocks.Section(),
+        Blocks.Section(),
+        Blocks.Section(),
+      ]);
 
     expect(blocks).toEqual([
       Blocks.Section().build(),
@@ -107,15 +107,15 @@ describe('Testing Utility Functions:', () => {
 
   test('Calling `AttachmentCollection()` with multiple arrays of attachments returns an array of attachment-focused DTOs.', () => {
     const blocks = AttachmentCollection([
-      Bits.Attachment(),
-      Bits.Attachment(),
-      Bits.Attachment(),
-    ],
-    [
-      Bits.Attachment(),
-      Bits.Attachment(),
-      Bits.Attachment(),
-    ]);
+        Bits.Attachment(),
+        Bits.Attachment(),
+        Bits.Attachment(),
+      ],
+      [
+        Bits.Attachment(),
+        Bits.Attachment(),
+        Bits.Attachment(),
+      ]);
 
     expect(blocks).toEqual([
       Bits.Attachment().build(),

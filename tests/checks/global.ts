@@ -28,7 +28,15 @@ export const globalChecks = (config: CompositeBuilderClassConfig): void => {
     const instance = new Class(params);
     const built = instance.build();
 
-    expect(() => instance.text('test')).toThrow(); // Check that props can no longer be set
+    expect(() => instance.text('test')).toThrow(); // Check that props can no longer be set on builder
+    expect(built).toBeInstanceOf(DtoClass);
+  });
+
+  test(`Calling 'build()' on a '${className}' object will product an immutable object.`, () => {
+    const instance = new Class(params);
+    const built = instance.build();
+
+    expect(() => built.hello = 'goodbye').toThrow(); // Check that props can no longer be set on result
     expect(built).toBeInstanceOf(DtoClass);
   });
 
