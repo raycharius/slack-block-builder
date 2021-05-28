@@ -307,7 +307,7 @@ const unfurl = ({ channel, ts, url }) => client.chat.unfurl({
 
 Often you'll find that you need to format text in your messages and modals. *Block Builder* has helper functions available to simply that process. They are available both as members of the `Md` object and as top-level imports. You can find the full list of functions on the [Block Builder doc site](https://blockbuilder.dev):
 
-```
+``` javascript
 import { Message, Blocks, Md } from 'slack-block-builder';
 
 const myMdMessage = ({ channel, user }) => {
