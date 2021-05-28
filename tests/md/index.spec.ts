@@ -5,7 +5,8 @@ import {
   bold,
   italic,
   strike,
-  code,
+  codeInline,
+  codeBlock,
   listDash,
   listBullet,
   link,
@@ -41,9 +42,14 @@ describe('Testing Md Helper Class:', () => {
     expect(strike('hello')).toEqual('~hello~');
   });
 
-  test('Check Md.code()', () => {
-    expect(Md.code('hello')).toEqual('`hello`');
-    expect(code('hello')).toEqual('`hello`');
+  test('Check Md.codeInline()', () => {
+    expect(Md.codeInline('hello')).toEqual('`hello`');
+    expect(codeInline('hello')).toEqual('`hello`');
+  });
+
+  test('Check Md.codeBlock()', () => {
+    expect(Md.codeBlock('hello')).toEqual('```hello```');
+    expect(codeBlock('hello')).toEqual('```hello```');
   });
 
   test('Check Md.listDash() with three arguments', () => {
