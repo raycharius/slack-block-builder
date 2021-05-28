@@ -33,7 +33,7 @@ export interface OptionBuilder extends Description,
 export class OptionBuilder extends BitBuilderBase {
   /** @internal */
 
-  public build({ isMarkdown }: ObjectLiteral = { isMarkdown: false }): SlackDto {
+  public build({ isMarkdown }: ObjectLiteral = { isMarkdown: false }): Readonly<SlackDto> {
     return this.getResult(SlackDto, {
       text: isMarkdown
         ? getMarkdownObject(this.props.text)

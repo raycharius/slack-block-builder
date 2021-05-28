@@ -33,7 +33,7 @@ export interface UserSelectBuilder extends ActionId,
 export class UserSelectBuilder extends ElementBuilderBase {
   /** @internal */
 
-  public build(): SlackElementDto {
+  public build(): Readonly<SlackElementDto> {
     return this.getResult(SlackElementDto, {
       type: ElementType.UserSelect,
       placeholder: getPlainTextObject(this.props.placeholder),

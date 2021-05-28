@@ -7,7 +7,7 @@ import { Prop } from '../constants';
 import type { AttachmentBuilder } from '../bits/attachment';
 import type { OptionBuilder } from '../bits/option';
 import type { OptionGroupBuilder } from '../bits/option-group';
-import type { OneOrArray, FilterString } from '../types';
+import type { Appendable, FilterString } from '../types';
 
 export abstract class Attachments extends Builder {
   /**
@@ -17,9 +17,7 @@ export abstract class Attachments extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  attachments(attachment: OneOrArray<AttachmentBuilder>, ...attachments: Array<OneOrArray<AttachmentBuilder>>): this;
-
-  public attachments(...attachments: Array<OneOrArray<AttachmentBuilder>>): this {
+  public attachments(...attachments: Appendable<AttachmentBuilder>): this {
     return this.append(attachments.flat(), Prop.Attachments);
   }
 }
@@ -36,9 +34,7 @@ export abstract class Blocks<T> extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  blocks(block: OneOrArray<T>, ...blocks: Array<OneOrArray<T>>): this;
-
-  public blocks(...blocks: Array<OneOrArray<T>>): this {
+  public blocks(...blocks: Appendable<T>): this {
     return this.append(blocks.flat(), Prop.Blocks);
   }
 }
@@ -56,9 +52,7 @@ export abstract class Elements<T> extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  elements(element: OneOrArray<T>, ...elements: Array<OneOrArray<T>>): this;
-
-  public elements(...elements: Array<OneOrArray<T>>): this {
+  public elements(...elements: Appendable<T>): this {
     return this.append(elements.flat(), Prop.Elements);
   }
 }
@@ -77,9 +71,7 @@ export abstract class Fields extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  fields(field: OneOrArray<string>, ...fields: Array<OneOrArray<string>>): this;
-
-  public fields(...fields: Array<OneOrArray<string>>): this {
+  public fields(...fields: Appendable<string>): this {
     return this.append(fields.flat(), Prop.Fields);
   }
 }
@@ -95,9 +87,7 @@ export abstract class Filter extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  filter(filter: OneOrArray<FilterString>, ...filters: Array<OneOrArray<FilterString>>): this;
-
-  public filter(...filters: Array<OneOrArray<FilterString>>): this {
+  public filter(...filters: Appendable<FilterString>): this {
     return this.append(filters.flat(), Prop.Filter);
   }
 }
@@ -110,9 +100,7 @@ export abstract class InitialChannels extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  initialChannels(channelId: OneOrArray<string>, ...channelIds: Array<OneOrArray<string>>): this;
-
-  public initialChannels(...channelIds: Array<OneOrArray<string>>): this {
+  public initialChannels(...channelIds: Appendable<string>): this {
     return this.append(channelIds.flat(), Prop.InitialChannels);
   }
 }
@@ -125,9 +113,7 @@ export abstract class InitialConversations extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  initialConversations(conversationId: OneOrArray<string>, ...conversationIds: Array<OneOrArray<string>>): this;
-
-  public initialConversations(...conversationIds: Array<OneOrArray<string>>): this {
+  public initialConversations(...conversationIds: Appendable<string>): this {
     return this.append(conversationIds.flat(), Prop.InitialConversations);
   }
 }
@@ -143,9 +129,7 @@ export abstract class InitialOptions extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  initialOptions(option: OneOrArray<OptionBuilder>, ...options: Array<OneOrArray<OptionBuilder>>): this;
-
-  public initialOptions(...options: Array<OneOrArray<OptionBuilder>>): this {
+  public initialOptions(...options: Appendable<OptionBuilder>): this {
     return this.append(options.flat(), Prop.InitialOptions);
   }
 }
@@ -158,9 +142,7 @@ export abstract class InitialUsers extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  initialUsers(userId: OneOrArray<string>, ...userIds: Array<OneOrArray<string>>): this;
-
-  public initialUsers(...userIds: Array<OneOrArray<string>>): this {
+  public initialUsers(...userIds: Appendable<string>): this {
     return this.append(userIds.flat(), Prop.InitialUsers);
   }
 }
@@ -177,9 +159,7 @@ export abstract class OptionGroups extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  optionGroups(optionGroup: OneOrArray<OptionGroupBuilder>, ...optionGroups: Array<OneOrArray<OptionGroupBuilder>>): this;
-
-  public optionGroups(...optionGroups: Array<OneOrArray<OptionGroupBuilder>>): this {
+  public optionGroups(...optionGroups: Appendable<OptionGroupBuilder>): this {
     return this.append(optionGroups.flat(), Prop.OptionGroups);
   }
 }
@@ -197,9 +177,7 @@ export abstract class Options extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  options(option: OneOrArray<OptionBuilder>, ...options: Array<OneOrArray<OptionBuilder>>): this;
-
-  public options(...options: Array<OneOrArray<OptionBuilder>>): this {
+  public options(...options: Appendable<OptionBuilder>): this {
     return this.append(options.flat(), Prop.Options);
   }
 }

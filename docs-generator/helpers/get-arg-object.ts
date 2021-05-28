@@ -20,7 +20,7 @@ export default (argString: string): ArgObject | null => {
   const isArray = name.startsWith('...');
 
   const arrayedType = isArray
-    ? getSingleMatchFromString(type, /(?:Array<OneOrArray<)(.*)(?=>>)/g)
+    ? getSingleMatchFromString(type, /(?:Appendable<)(.*)(?=>)/g)
     : null;
 
   return {

@@ -35,7 +35,7 @@ export interface ConfirmationDialogBuilder extends Confirm<string>,
 export class ConfirmationDialogBuilder extends BitBuilderBase {
   /** @internal */
 
-  public build(): SlackDto {
+  public build(): Readonly<SlackDto> {
     return this.getResult(SlackDto, {
       text: getMarkdownObject(this.props.text),
       title: getPlainTextObject(this.props.title),

@@ -27,7 +27,7 @@ export interface ContextBuilder extends BlockId,
 export class ContextBuilder extends BlockBuilderBase {
   /** @internal */
 
-  public build(): SlackBlockDto {
+  public build(): Readonly<SlackBlockDto> {
     return this.getResult(SlackBlockDto, {
       type: BlockType.Context,
       elements: getElementsForContext(this.props.elements),

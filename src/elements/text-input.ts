@@ -41,7 +41,7 @@ export interface TextInputBuilder extends ActionId,
 export class TextInputBuilder extends ElementBuilderBase {
   /** @internal */
 
-  public build(): SlackElementDto {
+  public build(): Readonly<SlackElementDto> {
     return this.getResult(SlackElementDto, {
       type: ElementType.TextInput,
       placeholder: getPlainTextObject(this.props.placeholder),

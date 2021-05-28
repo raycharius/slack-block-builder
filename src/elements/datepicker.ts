@@ -39,7 +39,7 @@ export interface DatePickerBuilder extends ActionId,
 export class DatePickerBuilder extends ElementBuilderBase {
   /** @internal */
 
-  public build(): SlackElementDto {
+  public build(): Readonly<SlackElementDto> {
     return this.getResult(SlackElementDto, {
       type: ElementType.DatePicker,
       placeholder: getPlainTextObject(this.props.placeholder),

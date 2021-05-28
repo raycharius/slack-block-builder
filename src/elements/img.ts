@@ -26,7 +26,7 @@ export interface ImgBuilder extends AltText,
 export class ImgBuilder extends ElementBuilderBase {
   /** @internal */
 
-  public build(): SlackElementDto {
+  public build(): Readonly<SlackElementDto> {
     return this.getResult(SlackElementDto, {
       type: ElementType.Image,
     });

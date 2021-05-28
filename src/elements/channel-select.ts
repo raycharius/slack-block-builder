@@ -36,7 +36,7 @@ export interface ChannelSelectBuilder extends ActionId,
 export class ChannelSelectBuilder extends ElementBuilderBase {
   /** @internal */
 
-  public build(): SlackElementDto {
+  public build(): Readonly<SlackElementDto> {
     return this.getResult(SlackElementDto, {
       type: ElementType.ChannelSelect,
       placeholder: getPlainTextObject(this.props.placeholder),

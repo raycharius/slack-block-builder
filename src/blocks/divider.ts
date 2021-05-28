@@ -20,7 +20,7 @@ export interface DividerBuilder extends BlockId,
 export class DividerBuilder extends BlockBuilderBase {
   /** @internal */
 
-  build(): SlackBlockDto {
+  build(): Readonly<SlackBlockDto> {
     return this.getResult(SlackBlockDto, {
       type: BlockType.Divider,
     });

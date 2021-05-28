@@ -101,20 +101,16 @@ export class SlackMessageDto extends SlackDto {
   public readonly attachments?: SlackDto[];
 }
 
-export class SlackTypeableDto extends SlackDto {
-  public readonly type: string;
-}
-
-export class SlackViewDto extends SlackTypeableDto {
+export class SlackViewDto extends SlackDto {
   public readonly type: SurfaceType;
 
   public readonly blocks: SlackBlockDto[];
 }
 
-export class SlackBlockDto extends SlackTypeableDto {
+export class SlackBlockDto extends SlackDto {
   public readonly type: BlockType;
 }
 
-export class SlackElementDto extends SlackTypeableDto {
+export class SlackElementDto extends SlackDto {
   public readonly type: ElementType;
 }

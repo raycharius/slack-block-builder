@@ -11,7 +11,7 @@ See [Breaking Changes](#warning--breaking-changes) below for more information on
 To install the beta:
 
 ``` bash
-npm install --save slack-block-builder@2.0.0-beta.2
+npm install --save slack-block-builder@2.0.0-beta.4
 ```
 
 Note that the doc site has not been updated. It will be updated upon the final release. However, generated docs based for Version 2 are located in [the docs folder](../) of the `main` branch.
@@ -75,6 +75,32 @@ client.chat.postMessage({
 .then((response) => console.log(response))
 .catch((error) => console.log(error));
 ```
+
+#### Markdown Helpers
+
+Often, we need to format text in our messages, modals, and home tabs using Slack's markdown standard. Block Builder Version 2 comes with helper functions to do that in a more declarative, obvious, and functional way: 
+
+``` javascript
+import { Message, Blocks, Md } from 'slack-block-builder';
+
+const myMdMessage = ({ channel, user }) => {
+  const slashCommands = ['/schedule', '/cancel', '/remind', '/help'];
+
+  return Message({ channel, text: 'Alas, my friend.' })
+    .blocks(
+      Blocks.Section({ text: `:wave: Hi there, ${Md.user(user)}!` }),
+      Blocks.Section({ text: `${Md.italic('Sorry')}, I didn't get that. Why don't you try out some of my slash commands?` }),
+      Blocks.Section({ text: `Here are some of the things that I can do:` }),
+      Blocks.Section()
+        .text(Md.listBullet(slashCommands
+          .map((item) => Md.codeInline(item)))))
+    .asUser()
+    .buildToObject();
+};
+```
+
+[**View Example on Slack Block Kit Builder Website**](https://app.slack.com/block-kit-builder/#%7B%22blocks%22:%5B%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22:wave:%20Hi%20there,%20%3C@U03N067AL%3E%21%22%7D,%22type%22:%22section%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22_Sorry_,%20I%20didn%27t%20get%20that.%20Why%20don%27t%20you%20try%20out%20some%20of%20my%20slash%20commands?%22%7D,%22type%22:%22section%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22Here%20are%20some%20of%20the%20things%20that%20I%20can%20do:%22%7D,%22type%22:%22section%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22%E2%80%A2%20%60/schedule%60%5Cn%E2%80%A2%20%60/cancel%60%5Cn%E2%80%A2%20%60/remind%60%5Cn%E2%80%A2%20%60/help%60%22%7D,%22type%22:%22section%22%7D%5D%7D)
+
 
 #### Both Categorized and Top-Level Imports
 

@@ -34,7 +34,7 @@ export interface TimePickerBuilder extends ActionId,
 export class TimePickerBuilder extends ElementBuilderBase {
   /** @internal */
 
-  public build(): SlackElementDto {
+  public build(): Readonly<SlackElementDto> {
     return this.getResult(SlackElementDto, {
       type: ElementType.TimePicker,
       placeholder: getPlainTextObject(this.props.placeholder),

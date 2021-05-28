@@ -32,7 +32,7 @@ export interface RadioButtonsBuilder extends ActionId,
 export class RadioButtonsBuilder extends ElementBuilderBase {
   /** @internal */
 
-  public build(): SlackElementDto {
+  public build(): Readonly<SlackElementDto> {
     return this.getResult(SlackElementDto, {
       type: ElementType.RadioButtons,
       options: getBuilderResults<SlackDto>(this.props.options, { isMarkdown: true }),

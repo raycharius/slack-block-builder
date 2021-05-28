@@ -20,7 +20,7 @@ export abstract class BuildToObject<T> extends Builder {
    * @description Builds the view and returns it as a Slack API-compatible object.
    */
 
-  public buildToObject(): T {
+  public buildToObject(): Readonly<T> {
     return this.build();
   }
 }
@@ -45,7 +45,7 @@ export abstract class GetAttachments extends Builder {
    * {@link https://api.slack.com/reference/messaging/attachments|View in Slack API Documentation}
    */
 
-  public getAttachments(): SlackDto[] {
+  public getAttachments(): Readonly<SlackDto>[] {
     return this.build().attachments;
   }
 }
@@ -57,7 +57,7 @@ export abstract class GetBlocks extends Builder {
    * {@link https://api.slack.com/block-kit|View in Slack API Documentation}
    */
 
-  public getBlocks(): SlackBlockDto[] {
+  public getBlocks(): Readonly<SlackBlockDto>[] {
     this.build();
 
     return this.build().blocks;

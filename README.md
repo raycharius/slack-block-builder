@@ -38,6 +38,7 @@
 * Declarative [SwiftUI](https://developer.apple.com/xcode/swiftui/) inspired syntax.
 * The ability to build more complex flows using loops and conditionals.
 * A `printPreviewURL()` method that outputs a link to preview your UI on Slack's [Block Kit Builder website](https://app.slack.com/block-kit-builder) for easier prototyping.
+* A set of helper functions for formatting text with Slack's markdown standard.
 * In-depth [doc site](https://blockbuilder.dev) at [https://blockbuilder.dev](https://blockbuilder.dev).
 * [Support](#block-kit-support-and-reference) for all current Slack Block Kit objects.
 * A great TypeScript experience.
@@ -97,6 +98,18 @@ import { Surfaces, Blocks, Elements, Bits, Utilities } from 'slack-block-builder
 import { Modal, Section, Actions, Button } from 'slack-block-builder';
 ```
 
+The same goes for importing Slack markdown helper functions:
+
+```javascript
+// Importing the Md object
+
+import { Surfaces, Blocks, Md } from 'slack-block-builder';
+
+// Importing the functions top-level
+
+import { Modal, Section, bold, link } from 'slack-block-builder';
+```
+
 ### Group Explanations
 
 `Surfaces` – Contains functions for creating modals, messages, home tabs, and workflow steps. 
@@ -108,6 +121,8 @@ import { Modal, Section, Actions, Button } from 'slack-block-builder';
 `Bits` – These are composition objects and other bits and pieces from Slack's docs. Included are `Attachment`, `Options`, `OptionGroup`, and `ConfirmationDialog`. They felt like they were deserving of their own category.
 
 `Utilities` – A group of utility functions. See [Utility Functions](#utility-functions).
+
+`Md` – Helper functions for formatting text with Slack's markdown. See [Markdown Helpers](#markdown-helpers).
 
 ### Block Kit Support and Reference
 
@@ -245,7 +260,7 @@ Both of these examples render the modal below.
 
 ### Utility Functions
 
-The `Utilities` object contains various utility functions. Currently, there are two:
+The `Utilities` object contains various utility functions for creating UI. Currently, there are two:
 
 `BlockCollection()` – Accepts multiple arguments or an array of blocks and returns them in an array, in their built state.
 
@@ -288,6 +303,31 @@ const unfurl = ({ channel, ts, url }) => client.chat.unfurl({
 .catch((error) => console.log(error));
 ```
 
+### Markdown Helpers
+
+Often you'll find that you need to format text in your messages and modals. *Block Builder* has helper functions available to simply that process. They are available both as members of the `Md` object and as top-level imports. You can find the full list of functions on the [Block Builder doc site](https://blockbuilder.dev):
+
+``` javascript
+import { Message, Blocks, Md } from 'slack-block-builder';
+
+const myMdMessage = ({ channel, user }) => {
+  const slashCommands = ['/schedule', '/cancel', '/remind', '/help'];
+
+  return Message({ channel, text: 'Alas, my friend.' })
+    .blocks(
+      Blocks.Section({ text: `:wave: Hi there, ${Md.user(user)}!` }),
+      Blocks.Section({ text: `${Md.italic('Sorry')}, I didn't get that. Why don't you try out some of my slash commands?` }),
+      Blocks.Section({ text: `Here are some of the things that I can do:` }),
+      Blocks.Section()
+        .text(Md.listBullet(slashCommands
+          .map((item) => Md.codeInline(item)))))
+    .asUser()
+    .buildToObject();
+};
+```
+
+[**View Example on Slack Block Kit Builder Website**](https://app.slack.com/block-kit-builder/#%7B%22blocks%22:%5B%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22:wave:%20Hi%20there,%20%3C@U03N067AL%3E%21%22%7D,%22type%22:%22section%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22_Sorry_,%20I%20didn%27t%20get%20that.%20Why%20don%27t%20you%20try%20out%20some%20of%20my%20slash%20commands?%22%7D,%22type%22:%22section%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22Here%20are%20some%20of%20the%20things%20that%20I%20can%20do:%22%7D,%22type%22:%22section%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22%E2%80%A2%20%60/schedule%60%5Cn%E2%80%A2%20%60/cancel%60%5Cn%E2%80%A2%20%60/remind%60%5Cn%E2%80%A2%20%60/help%60%22%7D,%22type%22:%22section%22%7D%5D%7D)
+ 
 ## :link: &nbsp; Other Useful Slack-Related Projects
 
 [Bolt for JavaScript](https://github.com/SlackAPI/bolt) – A simple framework for building [Slack](https://slack.com) apps, developed by [Slack](https://slack.com) themselves.

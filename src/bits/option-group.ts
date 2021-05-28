@@ -24,7 +24,7 @@ export interface OptionGroupBuilder extends End,
 export class OptionGroupBuilder extends BitBuilderBase {
   /** @internal */
 
-  public build(): SlackDto {
+  public build(): Readonly<SlackDto> {
     return this.getResult(SlackDto, {
       label: getPlainTextObject(this.props.label),
       options: getBuilderResults<SlackDto>(this.props.options),

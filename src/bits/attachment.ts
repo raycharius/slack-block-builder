@@ -30,7 +30,7 @@ export interface AttachmentBuilder extends Blocks<BlockBuilder>,
 export class AttachmentBuilder extends BitBuilderBase {
   /** @internal */
 
-  public build(): SlackDto {
+  public build(): Readonly<SlackDto> {
     return this.getResult(SlackDto, {
       blocks: getBuilderResults<SlackBlockDto>(this.props.blocks),
     });
