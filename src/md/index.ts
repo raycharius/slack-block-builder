@@ -1,59 +1,76 @@
-export class Md {
-  public static quote(string: string): string {
-    return `"${string}"`;
-  }
-
-  public static blockquote(string: string): string {
-    return `>${string}`;
-  }
-
-  public static bold(string: string): string {
-    return `*${string}*`;
-  }
-
-  public static italic(string: string): string {
-    return `_${string}_`;
-  }
-
-  public static strike(string: string): string {
-    return `~${string}~`;
-  }
-
-  public static code(string: string): string {
-    return `\`${string}\``;
-  }
-
-  public static listDash(...strings: Array<string | string[]>): string {
-    return strings.flat()
-      .map((string) => `- ${string}`)
-      .join('\n');
-  }
-
-  public static listBullet(...strings: Array<string | string[]>): string {
-    return strings.flat()
-      .map((string) => `• ${string}`)
-      .join('\n');
-  }
-
-  public static link(url: string, alias?: string): string {
-    return alias
-      ? `<${url}|${alias}>`
-      : `<${url}>`;
-  }
-
-  public static mailto(email: string, alias: string): string {
-    return `<mailto:${email}|${alias}>`;
-  }
-
-  public static user(string: string): string {
-    return `<@${string}>`;
-  }
-
-  public static channel(string: string): string {
-    return `<#${string}>`;
-  }
-
-  public static group(string: string): string {
-    return `<!subteam^${string}>`;
-  }
+export function quote(string: string): string {
+  return `"${string}"`;
 }
+
+export function blockquote(string: string): string {
+  return `>${string}`;
+}
+
+export function bold(string: string): string {
+  return `*${string}*`;
+}
+
+export function italic(string: string): string {
+  return `_${string}_`;
+}
+
+export function strike(string: string): string {
+  return `~${string}~`;
+}
+
+export function code(string: string): string {
+  return `\`${string}\``;
+}
+
+export function listDash(...strings: Array<string | string[]>): string {
+  return strings.flat()
+    .map((string) => `- ${string}`)
+    .join('\n');
+}
+
+export function listBullet(...strings: Array<string | string[]>): string {
+  return strings.flat()
+    .map((string) => `• ${string}`)
+    .join('\n');
+}
+
+export function link(url: string, alias?: string): string {
+  return alias
+    ? `<${url}|${alias}>`
+    : `<${url}>`;
+}
+
+export function mailto(email: string, alias: string): string {
+  return `<mailto:${email}|${alias}>`;
+}
+
+export function user(string: string): string {
+  return `<@${string}>`;
+}
+
+export function channel(string: string): string {
+  return `<#${string}>`;
+}
+
+export function group(string: string): string {
+  return `<!subteam^${string}>`;
+}
+
+const md = {
+  quote,
+  blockquote,
+  bold,
+  italic,
+  strike,
+  code,
+  listDash,
+  listBullet,
+  link,
+  mailto,
+  user,
+  channel,
+  group,
+};
+
+export { md as Md };
+
