@@ -54,7 +54,7 @@ export interface ModalBuilder extends Blocks<ViewBlockBuilder>,
 export class ModalBuilder extends SurfaceBuilderBase {
   /** @internal */
 
-  public build(): SlackViewDto {
+  public build(): Readonly<SlackViewDto> {
     return this.getResult(SlackViewDto, {
       type: SurfaceType.Modal,
       title: getPlainTextObject(this.props.title),

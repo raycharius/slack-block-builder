@@ -36,7 +36,7 @@ export interface ExternalSelectBuilder extends ActionId,
 export class ExternalSelectBuilder extends ElementBuilderBase {
   /** @internal */
 
-  public build(): SlackElementDto {
+  public build(): Readonly<SlackElementDto> {
     return this.getResult(SlackElementDto, {
       type: ElementType.ExternalSelect,
       placeholder: getPlainTextObject(this.props.placeholder),

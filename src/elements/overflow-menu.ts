@@ -30,7 +30,7 @@ export interface OverflowMenuBuilder extends ActionId,
 export class OverflowMenuBuilder extends ElementBuilderBase {
   /** @internal */
 
-  public build(): SlackElementDto {
+  public build(): Readonly<SlackElementDto> {
     return this.getResult(SlackElementDto, {
       type: ElementType.Overflow,
       options: getBuilderResults<SlackDto>(this.props.options),

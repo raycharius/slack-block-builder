@@ -40,7 +40,7 @@ export interface HomeTabBuilder extends Blocks<ViewBlockBuilder>,
 export class HomeTabBuilder extends SurfaceBuilderBase {
   /** @internal */
 
-  public build(): SlackViewDto {
+  public build(): Readonly<SlackViewDto> {
     return this.getResult(SlackViewDto, {
       type: SurfaceType.HomeTab,
       blocks: getBuilderResults<SlackBlockDto>(this.props.blocks),

@@ -32,7 +32,7 @@ export interface ImageBuilder extends AltText,
 export class ImageBuilder extends BlockBuilderBase {
   /** @internal */
 
-  public build(): SlackBlockDto {
+  public build(): Readonly<SlackBlockDto> {
     return this.getResult(SlackBlockDto, {
       type: BlockType.Image,
       title: getPlainTextObject(this.props.title),

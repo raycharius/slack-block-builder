@@ -32,7 +32,7 @@ export interface CheckboxesBuilder extends ActionId,
 export class CheckboxesBuilder extends ElementBuilderBase {
   /** @internal */
 
-  public build(): SlackElementDto {
+  public build(): Readonly<SlackElementDto> {
     return this.getResult(SlackElementDto, {
       type: ElementType.Checkboxes,
       options: getBuilderResults<SlackDto>(this.props.options, { isMarkdown: true }),

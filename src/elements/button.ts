@@ -41,7 +41,7 @@ export interface ButtonBuilder extends ActionId,
 export class ButtonBuilder extends ElementBuilderBase {
   /** @internal */
 
-  public build(): SlackElementDto {
+  public build(): Readonly<SlackElementDto> {
     return this.getResult(SlackElementDto, {
       type: ElementType.Button,
       confirm: getBuilderResult<SlackDto>(this.props.confirm),

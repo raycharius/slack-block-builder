@@ -1,19 +1,15 @@
 import { getBuiltCollection } from '../helpers';
 
-import type { BlockBuilder, OneOrArray } from '../types';
-import type { AttachmentBuilder } from '../bits/attachment';
+import type { BlockBuilder, Appendable } from '../types';
+import type { AttachmentBuilder } from '../bits';
 import type { SlackBlockDto, SlackDto } from '../lib';
 
-export function BlockCollection(
-  block: OneOrArray<BlockBuilder>, ...blocks: Array<OneOrArray<BlockBuilder>>
-): SlackBlockDto[] | [] {
-  return getBuiltCollection<BlockBuilder, SlackBlockDto>(...[block, ...blocks]);
+export function BlockCollection(...blocks: Appendable<BlockBuilder>): SlackBlockDto[] | [] {
+  return getBuiltCollection<BlockBuilder, SlackBlockDto>(...blocks);
 }
 
-export function AttachmentCollection(
-  attachment: OneOrArray<AttachmentBuilder>, ...attachments: Array<OneOrArray<AttachmentBuilder>>
-): SlackDto[] | [] {
-  return getBuiltCollection<AttachmentBuilder, SlackDto>(...[attachment, ...attachments]);
+export function AttachmentCollection(...attachments: Appendable<AttachmentBuilder>): SlackDto[] | [] {
+  return getBuiltCollection<AttachmentBuilder, SlackDto>(...attachments);
 }
 
 const utilities = {

@@ -61,7 +61,7 @@ export interface MessageBuilder extends AsUser,
 export class MessageBuilder extends SurfaceBuilderBase {
   /** @internal */
 
-  public build(): SlackMessageDto {
+  public build(): Readonly<SlackMessageDto> {
     return this.getResult(SlackMessageDto, {
       blocks: getBuilderResults<SlackBlockDto>(this.props.blocks),
       attachments: getBuilderResults<SlackDto>(this.props.attachments),

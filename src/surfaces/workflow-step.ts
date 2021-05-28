@@ -39,7 +39,7 @@ export interface WorkflowStepBuilder extends Blocks<ViewBlockBuilder>,
 export class WorkflowStepBuilder extends SurfaceBuilderBase {
   /** @internal */
 
-  public build(): SlackViewDto {
+  public build(): Readonly<SlackViewDto> {
     return this.getResult(SlackViewDto, {
       type: SurfaceType.WorkflowStep,
       title: getPlainTextObject(this.props.title),

@@ -35,7 +35,7 @@ export interface UserMultiSelectBuilder extends ActionId,
 export class UserMultiSelectBuilder extends ElementBuilderBase {
   /** @internal */
 
-  public build(): SlackElementDto {
+  public build(): Readonly<SlackElementDto> {
     return this.getResult(SlackElementDto, {
       type: ElementType.UserMultiSelect,
       placeholder: getPlainTextObject(this.props.placeholder),

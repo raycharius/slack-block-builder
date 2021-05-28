@@ -42,7 +42,7 @@ export interface StaticSelectBuilder extends ActionId,
 export class StaticSelectBuilder extends ElementBuilderBase {
   /** @internal */
 
-  public build(): SlackElementDto {
+  public build(): Readonly<SlackElementDto> {
     return this.getResult(SlackElementDto, {
       type: ElementType.StaticSelect,
       placeholder: getPlainTextObject(this.props.placeholder),

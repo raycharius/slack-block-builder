@@ -49,7 +49,7 @@ export interface ConversationMultiSelectBuilder extends ActionId,
 export class ConversationMultiSelectBuilder extends ElementBuilderBase {
   /** @internal */
 
-  public build(): SlackElementDto {
+  public build(): Readonly<SlackElementDto> {
     return this.getResult(SlackElementDto, {
       type: ElementType.ConversationsMultiSelect,
       placeholder: getPlainTextObject(this.props.placeholder),

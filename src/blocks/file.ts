@@ -26,7 +26,7 @@ export interface FileBuilder extends BlockId,
 export class FileBuilder extends BlockBuilderBase {
   /** @internal */
 
-  public build(): SlackBlockDto {
+  public build(): Readonly<SlackBlockDto> {
     return this.getResult(SlackBlockDto, {
       type: BlockType.File,
       source: FileType.Remote,

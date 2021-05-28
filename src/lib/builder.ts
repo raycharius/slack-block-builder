@@ -39,8 +39,10 @@ export abstract class Builder {
     return this;
   }
 
-  protected getResult<T>(Clazz: Ctor<T>, overrideProps?: ObjectLiteral): T {
-    return new Clazz({ ...this.props, ...overrideProps });
+  protected getResult<T>(Clazz: Ctor<T>, overrideProps?: ObjectLiteral): Readonly<T> {
+    const result = new Clazz({ ...this.props, ...overrideProps });
+
+    return Object.freeze(result);
   }
 
   /** @internal */

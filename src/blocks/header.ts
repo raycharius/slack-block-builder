@@ -26,7 +26,7 @@ export interface HeaderBuilder extends BlockId,
 export class HeaderBuilder extends BlockBuilderBase {
   /** @internal */
 
-  public build(): SlackBlockDto {
+  public build(): Readonly<SlackBlockDto> {
     return this.getResult(SlackBlockDto, {
       type: BlockType.Header,
       text: getPlainTextObject(this.props.text),

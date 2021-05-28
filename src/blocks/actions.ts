@@ -28,7 +28,7 @@ export interface ActionsBuilder extends BlockId,
 export class ActionsBuilder extends BlockBuilderBase {
   /** @internal */
 
-  public build(): SlackBlockDto {
+  public build(): Readonly<SlackBlockDto> {
     return this.getResult(SlackBlockDto, {
       type: BlockType.Actions,
       elements: getBuilderResults<SlackElementDto>(this.props.elements),

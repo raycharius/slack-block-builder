@@ -44,7 +44,7 @@ export interface ExternalMultiSelectBuilder extends ActionId,
 export class ExternalMultiSelectBuilder extends ElementBuilderBase {
   /** @internal */
 
-  public build(): SlackElementDto {
+  public build(): Readonly<SlackElementDto> {
     return this.getResult(SlackElementDto, {
       type: ElementType.ExternalMultiSelect,
       placeholder: getPlainTextObject(this.props.placeholder),

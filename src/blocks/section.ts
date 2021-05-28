@@ -37,7 +37,7 @@ export interface SectionBuilder extends Accessory,
 export class SectionBuilder extends BlockBuilderBase {
   /** @internal */
 
-  public build(): SlackBlockDto {
+  public build(): Readonly<SlackBlockDto> {
     return this.getResult(SlackBlockDto, {
       type: BlockType.Section,
       text: getMarkdownObject(this.props.text),

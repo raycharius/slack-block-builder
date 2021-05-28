@@ -45,7 +45,7 @@ export interface StaticMultiSelectBuilder extends ActionId,
 export class StaticMultiSelectBuilder extends ElementBuilderBase {
   /** @internal */
 
-  public build(): SlackElementDto {
+  public build(): Readonly<SlackElementDto> {
     return this.getResult(SlackElementDto, {
       type: ElementType.StaticMultiSelect,
       placeholder: getPlainTextObject(this.props.placeholder),
