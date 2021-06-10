@@ -48,6 +48,7 @@
     "src:lint": "eslint 'src/**/*.ts' --fix",
     "docs:build": "tsc -p ./tsconfig.docs.json",
     "docs:lint": "eslint 'docs-generator/**/*.ts' --fix",
+    "docs:serve": "docsify serve ./docs",
     "predocs:generate": "npm run docs:build",
     "docs:generate": "node docs-generator-dist/index.js",
     "docs:local": "docsify serve docs-generator --port 3000",

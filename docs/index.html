@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>Block Builder – Maintainable JavaScript Code for Slack Block Kit</title>
+    <meta name="description"
+          content="Easily create Slack Block Kit interactive messages, modals, and home tabs, using code that is maintainable, testable, and declarative.">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta property="og:title" content="Slack Block Builder"/>
+    <meta property="og:type"
+          content="Maintainable JavaScript code for the Slack Block Kit framework, with a SwiftUI-inspired syntax."/>
+    <meta property="og:url" content="https://blockbuilder.dev"/>
+    <meta property="og:image"
+          content="https://raw.githubusercontent.com/raycharius/slack-block-builder/main/docs/resources/images/og.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/images/fav-icon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="resources/images/fav-icon-32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+    <a href="https://github.com/raycharius/slack-block-builder" class="github-corner"
+       aria-label="View source on GitHub">
+        <svg width="80" height="80" viewBox="0 0 250 250"
+             style="fill:#00c7f5; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+            <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+            <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+                  fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+            <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+                  fill="currentColor" class="octo-body"></path>
+        </svg>
+    </a>
+    <style>.github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+    }
+
+    @keyframes octocat-wave {
+        0%, 100% {
+            transform: rotate(0)
+        }
+        20%, 60% {
+            transform: rotate(-25deg)
+        }
+        40%, 80% {
+            transform: rotate(10deg)
+        }
+    }
+
+    @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+            animation: none
+        }
+
+        .github-corner .octo-arm {
+            animation: octocat-wave 560ms ease-in-out
+        }
+    }</style>
+    <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        ::-webkit-scrollbar-track {
+            -webkit-box-shadow: none !important;
+            background-color: transparent;
+        }
+
+        ::-webkit-scrollbar {
+            width: 3px !important;
+            background-color: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: transparent;
+        }
+
+        .cover-main img:first-of-type {
+            max-width: 364px;
+            width: 100%;
+        }
+
+        .sidebar-toggle div:first-of-type {
+            background-color: rgb(255, 255, 255, 0);
+        }
+
+        .sidebar-nav {
+            margin-top: 6px;
+        }
+
+        .sidebar-nav img:first-of-type {
+            max-width: 230px;
+        }
+
+        body .docsify-pagination-container {
+            margin-top: 50px;
+            border-top: solid 3px #f7f7f7;
+            font-weight: 600;
+        }
+
+        body .pagination-item-title {
+            color: #121212;
+            font-size: 18px;
+            transition: all 0.2s;
+            opacity: 1;
+            padding-left: 11px;
+            padding-right: 11px;
+        }
+
+        body .pagination-item-subtitle {
+            color: #adadad;
+            font-weight: 400;
+            text-transform: none;
+            transition: all 0.2s;
+            font-size: 14px;
+            opacity: 1;
+            padding-left: 11px;
+            padding-right: 11px;
+        }
+
+        body .pagination-item-label {
+            color: #121212;
+            margin-bottom: 8px;
+            transition: all 0.2s;
+            font-weight: 400;
+            font-size: 10px;
+            opacity: 1;
+        }
+
+        .pagination-item:last-child .pagination-item-label, .pagination-item:not(:last-child) a:hover .pagination-item-label {
+            opacity: 1;
+        }
+
+        .pagination-item a:hover .pagination-item-title {
+            text-decoration: none;
+            transition: all 0.2s;
+            color: #e01e5a;
+        }
+
+        .pagination-item:not(:last-child) a .pagination-item-label,
+        .pagination-item:not(:last-child) a .pagination-item-subtitle,
+        .pagination-item:not(:last-child) a .pagination-item-title {
+            opacity: 1;
+        }
+
+        .sidebar .search .input-wrap {
+            background-color: #121212;
+            border: none;
+        }
+
+        .sidebar .search {
+            margin-top: 0;
+        }
+
+        .sidebar .search input[type="search"]:focus,
+        .sidebar .search input[type="search"] {
+            font-weight: 600;
+            color: #fff;
+            padding-left: 30px;
+            padding-top: 17px;
+            padding-bottom: 17px;
+            box-shadow: none;
+            background-color: transparent;
+            background-image: none;
+        }
+
+        .sidebar .search .results-panel.show {
+            background-color: #181818;
+            margin-left: -25px;
+            margin-right: -25px;
+            padding-left: 31px;
+            padding-right: 25px;
+        }
+
+        .sidebar .search h2 {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .sidebar .search .matching-post p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .sidebar-nav li > a[href^="#/"]:not([href*="?id="]):only-child {
+            padding-left: 5px;
+        }
+
+        .sidebar-nav li > p {
+            margin-bottom: 5px;
+        }
+
+        .sidebar .search .matching-post {
+            border: solid 1px #252525;
+        }
+
+        .sidebar .search .matching-post:nth-child(1n) .search-keyword {
+            background-color: #9c3d98;
+        }
+
+        .sidebar .search .matching-post:nth-child(2n) .search-keyword {
+            background-color: #e01e5a;
+        }
+
+        .sidebar .search .matching-post:nth-child(3n) .search-keyword {
+            background-color: #f6b000;
+        }
+
+        .sidebar .search .matching-post:nth-child(4n) .search-keyword {
+            background-color: #02abd4;
+        }
+
+        .sidebar .search .matching-post:nth-child(5n) .search-keyword {
+            background-color: #00935e;
+        }
+
+        .search p.empty {
+            color: #fff;
+            /*font-weight: 600;*/
+            margin-top: 0;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            text-align: center;
+        }
+
+        .sidebar .search input[type="search"]::placeholder {
+            color: #fff;
+        }
+
+        .sidebar .search .search-keyword {
+            background-color: #00935e;
+            color: #fff;
+            font-weight: 600;
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+
+        .search .clear-button.show {
+            transition: all 0.2s;
+        }
+
+        .search .clear-button.show:hover {
+            transition: all 0.2s;
+            opacity: 0.8;
+        }
+
+        .cover-main a {
+            font-weight: 600;
+        }
+
+        .sidebar .search .clear-button svg circle {
+            transition: all 0.2s;
+            fill: #fff;
+        }
+
+        .sidebar .search .clear-button svg path {
+            stroke: #121212;
+        }
+
+        .markdown-section .warn {
+            border-color: #00c7f5;
+            background-color: #f4fafc;
+        }
+
+        .markdown-section .warn::before {
+            background-color: #00c7f5;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        .docsify-tabs--classic .docsify-tabs__tab--active {
+            border-top: solid 4px #e01e5a;
+            box-shadow: none;
+            font-weight: 600;
+        }
+
+        :root {
+            --cover-background-color: #121212;
+            --cover-background-image: url('https://raw.githubusercontent.com/raycharius/slack-block-builder/master/docs/resources/images/background.png');
+            --cover-button-border: 2px solid #00c7f5;
+            --cover-button-color: #00c7f5;
+            --cover-button-primary-background: #e01e5a;
+            --cover-button-primary-border: 1px solid #e01e5a;
+            --cover-color: #fff;
+            --base-font-family: 'Lato', sans-serif;
+            --base-font-size: 16px;
+            --base-font-weight: 500;
+            --base-line-height: 1.7;
+            --heading-color: #121212;
+            --heading-h1-font-weight: 900;
+            --heading-h2-font-weight: 900;
+            --heading-h3-font-weight: 900;
+            --heading-h4-font-weight: 900;
+            --sidebar-background: #f6f6f6;
+            --sidebar-border-color: rgb(225, 225, 225, 0);
+            --sidebar-border-width: 0;
+            --sidebar-width: 18rem;
+            --table-head-border-color: transparent;
+            --table-cell-border-color: transparent;
+            --table-row-odd-background: #f6f6f6;
+            --table-cell-padding: 1em .5em;
+            --sidebar-nav-margin: 1.3rem 0 0;
+            --sidebar-nav-link-background-image: none;
+            --sidebar-nav-pagelink-background-image: none;
+            --sidebar-nav-link-color: #181818;
+            --sidebar-nav-link-color--hover: #e01e5a;
+            --sidebar-nav-link-text-decoration--hover: none;
+            --sidebar-nav-link-color--active: #e01e5a;
+            --sidebar-nav-link-border-color--active: #e01e5a;
+            --sidebar-toggle-offset-left: 12px;
+            --sidebar-toggle-offset-top: 8px;
+            --sidebar-toggle-icon-height: 18px;
+            --sidebar-toggle-icon-width: 25px;
+            --sidebar-toggle-icon-stroke-width: 3px;
+            --sidebar-toggle-icon-color: #121212;
+            --code-inline-color: #e01e5a;
+            --code-inline-background: rgb(248, 248, 248);
+            --code-inline-border-radius: 5px;
+            --link-color: #02abd4;
+            --link-text-decoration: none;
+            --code-theme-keyword: #e01e5a;
+            --code-theme-function: #9c3d98;
+            --code-theme-selector: #00935e;
+            --code-theme-operator: #f6b000;
+            --docsifytabs-border-color: #f7f7f7;
+            --docsifytabs-border-px: 2px;
+            --docsifytabs-border-radius-px: 5px;
+            --docsifytabs-margin: 3em 0;
+            --docsifytabs-tab-color--active: #121212;
+            --docsifytabs-tab-color: #878787;
+            --docsifytabs-tab-background: #f7f7f7;
+
+        }
+    </style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+  window.$docsify = {
+    homepage: 'home.md',
+    ga: 'UA-169740652-1',
+    auto2top: true,
+    coverpage: true,
+    hideSidebar: false,
+    loadSidebar: true,
+    subMaxLevel: 2,
+    pagination: {
+      crossChapter: true,
+      crossChapterText: true,
+    },
+    search: {
+      maxAge: 86400000, // Expiration time, the default one day
+      placeholder: 'Search...',
+      noData: '😬 Nothing found, friend.',
+      depth: 6,
+      hideOtherSidebarContent: false,
+    },
+    tabs: {
+      persist: true,
+      sync: false,
+      tabComments: true,
+      tabHeadings: true,
+    }
+  }
+</script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/ga.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+</body>
+</html>
