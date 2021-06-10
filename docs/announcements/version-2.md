@@ -1,17 +1,15 @@
-# :sparkles:  Block Builder Version 2.0.0 In Beta
+# :sparkles:  Block Builder Version 2.0.0
 
 ### :arrow_up:  Migration From Version 1
 
-No need to worry – for 99.99% of developers, the move to Version 2 is not going to break anything. So feel free to bump up.
-
-And the Beta is stable – I am currently using it for apps on production. In Beta only for the sake of gathering feedback and possibly improving things further before the actual release. 
+No need to worry – for 99.99% of developers, the move to Version 2 is not going to break anything. So feel free to bump up. 
 
 See [Breaking Changes](#warning--breaking-changes) below for more information on edge cases that could potentially break things.
 
-To install the beta:
+To install:
 
 ``` bash
-npm install --save slack-block-builder@2.0.0-beta.4
+npm install --save slack-block-builder@2.0.1
 ```
 
 Note that the doc site has not been updated. It will be updated upon the final release. However, generated docs based for Version 2 are located in [the docs folder](../) of the `main` branch.
