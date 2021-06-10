@@ -75,7 +75,7 @@ export function listBullet(...items: Array<string | string[]>): string {
 }
 
 /**
- * @description Formats a URL into a clickable, aliased link.
+ * @description Formats a URL into a clickable link, with an optional alias.
  */
 
 export function link(url: string, alias?: string): string {

@@ -60,7 +60,12 @@
   * [Attachment](bits/attachment.md "Block Builder – Attachment – Maintainable JavaScript Code for Slack Block Kit")
   * [Confirmation Dialog](bits/confirmation-dialog.md "Block Builder – Confirmation Dialog – Maintainable JavaScript Code for Slack Block Kit")
   * [Option](bits/option.md "Block Builder – Option – Maintainable JavaScript Code for Slack Block Kit")
-  * [Option Group](bits/option-group.md "Block Builder – Option Group – Maintainable JavaScript Code for Slack Block Kit") 
+  * [Option Group](bits/option-group.md "Block Builder – Option Group – Maintainable JavaScript Code for Slack Block Kit")
+  
+* **Other**
+  * [Block Collection](other/block-collection.md "Block Builder – Block Collection – Maintainable JavaScript Code for Slack Block Kit")
+  * [Attachment Collection](other/attachment-collection.md "Block Builder – Attachment Collection – Maintainable JavaScript Code for Slack Block Kit")
+  * [Markdown](other/markdown.md "Block Builder – Markdown – Maintainable JavaScript Code for Slack Block Kit")   
 
 * **About**
   * [Motivations](motivations.md "Block Builder – Motivations – Maintainable JavaScript Code for Slack Block Kit")
