@@ -122,7 +122,7 @@ The JSDoc annotations have gotten better. Moreover, due to the new architecture 
 
 And as mentioned above, the annotations are now available to those using both TypeScript and plain JavaScript.
 
-![Block Builder JSDoc Support](https://raw.githubusercontent.com/raycharius/slack-block-builder/main/resources/images/docs/jsdoc.png)
+![Block Builder JSDoc Support](https://raw.githubusercontent.com/raycharius/slack-block-builder/main/docs/resources/images/jsdoc.png)
 
 ### :warning:  Breaking Changes
 
