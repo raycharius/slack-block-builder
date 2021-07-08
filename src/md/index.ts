@@ -93,6 +93,14 @@ export function mailto(email: string, alias: string): string {
 }
 
 /**
+ * @description Converts a named emoji to colon format.
+ */
+
+export function emoji(name: string): string {
+  return `:${name}:`
+}
+
+/**
  * @description Mentions a user in a channel.
  */
 
@@ -128,6 +136,7 @@ const md = {
   listBullet,
   link,
   mailto,
+  emoji,
   user,
   channel,
   group,
