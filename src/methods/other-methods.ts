@@ -83,7 +83,7 @@ export abstract class PrintPreviewUrl extends Builder {
   /**
    * @description When called, calls getPreviewUrl to build the preview URL and log it to the console.
    */
-  
+
   public printPreviewUrl(): void {
     // eslint-disable-next-line no-console
     console.log(this.getPreviewUrl());
