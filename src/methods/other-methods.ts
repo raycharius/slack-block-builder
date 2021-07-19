@@ -64,9 +64,9 @@ export abstract class GetBlocks extends Builder {
   }
 }
 
-export abstract class PrintPreviewUrl extends Builder {
+export abstract class GetPreviewUrl extends Builder {
   /**
-   * @description When called, builds the view and returns the preview URL in order to open and preview the view on Slack's Block Kit Builder web application.
+   * @description Builds the view and returns the preview URL in order to open and preview the view on Slack's Block Kit Builder web application.
    */
 
   public getPreviewUrl(): string {
@@ -79,9 +79,11 @@ export abstract class PrintPreviewUrl extends Builder {
 
     return encodeURI(`${baseUri}${stringifiedBlocks}`).replace(/[!'()*]/g, escape);
   }
+}
 
+export abstract class PrintPreviewUrl extends GetPreviewUrl {
   /**
-   * @description When called, calls getPreviewUrl to build the preview URL and log it to the console.
+   * @description Calls getPreviewUrl to build the preview URL and log it to the console.
    */
 
   public printPreviewUrl(): void {
