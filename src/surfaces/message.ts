@@ -18,6 +18,7 @@ import {
   BuildToObject,
   GetAttachments,
   GetBlocks,
+  GetPreviewUrl,
   PrintPreviewUrl,
 } from '../methods';
 import { applyMixins, getBuilderResults } from '../helpers';
@@ -50,6 +51,7 @@ export interface MessageBuilder extends AsUser,
   BuildToObject<SlackMessageDto>,
   GetAttachments,
   GetBlocks,
+  GetPreviewUrl,
   PrintPreviewUrl {
 }
 
@@ -87,5 +89,6 @@ applyMixins(MessageBuilder, [
   BuildToObject,
   GetAttachments,
   GetBlocks,
+  GetPreviewUrl,
   PrintPreviewUrl,
 ]);

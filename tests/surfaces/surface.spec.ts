@@ -25,6 +25,24 @@ describe('Surfaces', () => {
     expect(result).toEqual(JSON.stringify(modal.build()));
   });
 
+  test('Calling \'getPreviewUrl()\' for HomeTab returns the URL as a string.', () => {
+    const modal = HomeTab()
+      .blocks(Blocks.Divider());
+
+    const result = modal.getPreviewUrl();
+
+    expect(result).toEqual('https://app.slack.com/block-kit-builder/#%7B%22blocks%22:%5B%7B%22type%22:%22divider%22%7D%5D%7D');
+  });
+
+  test('Calling \'getPreviewUrl()\' for Modal returns the URL as a string.', () => {
+    const message = Modal()
+      .blocks(Blocks.Divider());
+
+    const result = message.getPreviewUrl();
+
+    expect(result).toEqual('https://app.slack.com/block-kit-builder/#%7B%22blocks%22:%5B%7B%22type%22:%22divider%22%7D%5D%7D');
+  });
+
   test('Calling \'printPreviewUrl()\' for HomeTab logs the URL to the console.', () => {
     const modal = HomeTab()
       .blocks(Blocks.Divider());

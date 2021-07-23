@@ -8,6 +8,7 @@ import {
   BuildToJSON,
   BuildToObject,
   GetBlocks,
+  GetPreviewUrl,
   PrintPreviewUrl,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResults } from '../helpers';
@@ -28,6 +29,7 @@ export interface WorkflowStepBuilder extends Blocks<ViewBlockBuilder>,
   BuildToJSON,
   BuildToObject<SlackViewDto>,
   GetBlocks,
+  GetPreviewUrl,
   PrintPreviewUrl {
 }
 
@@ -58,5 +60,6 @@ applyMixins(WorkflowStepBuilder, [
   BuildToJSON,
   BuildToObject,
   GetBlocks,
+  GetPreviewUrl,
   PrintPreviewUrl,
 ]);

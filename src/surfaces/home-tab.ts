@@ -8,6 +8,7 @@ import {
   BuildToJSON,
   BuildToObject,
   GetBlocks,
+  GetPreviewUrl,
   PrintPreviewUrl,
 } from '../methods';
 import { applyMixins, getBuilderResults } from '../helpers';
@@ -29,6 +30,7 @@ export interface HomeTabBuilder extends Blocks<ViewBlockBuilder>,
   BuildToJSON,
   BuildToObject<SlackViewDto>,
   GetBlocks,
+  GetPreviewUrl,
   PrintPreviewUrl {
 }
 
@@ -56,5 +58,6 @@ applyMixins(HomeTabBuilder, [
   BuildToJSON,
   BuildToObject,
   GetBlocks,
+  GetPreviewUrl,
   PrintPreviewUrl,
 ]);

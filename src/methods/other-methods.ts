@@ -64,12 +64,12 @@ export abstract class GetBlocks extends Builder {
   }
 }
 
-export abstract class PrintPreviewUrl extends Builder {
+export abstract class GetPreviewUrl extends Builder {
   /**
-   * @description When called, builds the view and prints to the console the preview URL in order to open and preview the view on Slack's Block Kit Builder web application.
+   * @description Builds the view and returns the preview URL in order to open and preview the view on Slack's Block Kit Builder web application.
    */
 
-  public printPreviewUrl(): void {
+  public getPreviewUrl(): string {
     const result = this.build();
 
     const baseUri = 'https://app.slack.com/block-kit-builder/#';
@@ -77,7 +77,17 @@ export abstract class PrintPreviewUrl extends Builder {
       ? JSON.stringify(result)
       : JSON.stringify({ blocks: result.blocks, attachments: result.attachments });
 
+    return encodeURI(`${baseUri}${stringifiedBlocks}`).replace(/[!'()*]/g, escape);
+  }
+}
+
+export abstract class PrintPreviewUrl extends GetPreviewUrl {
+  /**
+   * @description Calls getPreviewUrl to build the preview URL and log it to the console.
+   */
+
+  public printPreviewUrl(): void {
     // eslint-disable-next-line no-console
-    console.log(encodeURI(`${baseUri}${stringifiedBlocks}`).replace(/[!'()*]/g, escape));
+    console.log(this.getPreviewUrl());
   }
 }

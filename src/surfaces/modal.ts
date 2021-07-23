@@ -13,6 +13,7 @@ import {
   BuildToJSON,
   BuildToObject,
   GetBlocks,
+  GetPreviewUrl,
   PrintPreviewUrl,
 } from '../methods';
 import { applyMixins, getPlainTextObject, getBuilderResults } from '../helpers';
@@ -43,6 +44,7 @@ export interface ModalBuilder extends Blocks<ViewBlockBuilder>,
   BuildToJSON,
   BuildToObject<SlackViewDto>,
   GetBlocks,
+  GetPreviewUrl,
   PrintPreviewUrl {
 }
 
@@ -78,5 +80,6 @@ applyMixins(ModalBuilder, [
   BuildToJSON,
   BuildToObject,
   GetBlocks,
+  GetPreviewUrl,
   PrintPreviewUrl,
 ]);
