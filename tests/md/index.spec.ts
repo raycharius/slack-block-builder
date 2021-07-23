@@ -105,6 +105,6 @@ describe('Testing Md Helper Class:', () => {
 
   test('Check Md.emoji()', () => {
     expect(Md.emoji('grin')).toEqual(':grin:');
-    expect(emoji('hello')).toEqual(':grin:');
+    expect(emoji('grin')).toEqual(':grin:');
   });
 });
