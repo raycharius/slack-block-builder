@@ -4,7 +4,7 @@
 import { Builder } from '../lib';
 import { Prop } from '../constants';
 
-import type { SectionElementBuilder } from '../types';
+import type { SectionElementBuilder, Undefinable } from '../types';
 import type { OptionBuilder } from '../bits/option';
 
 export abstract class Accessory extends Builder {
@@ -19,7 +19,7 @@ export abstract class Accessory extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public accessory(element: SectionElementBuilder): this {
+  public accessory(element: Undefinable<SectionElementBuilder>): this {
     return this.set(element, Prop.Accessory);
   }
 }
@@ -37,7 +37,7 @@ export abstract class ActionId extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public actionId(actionId: string): this {
+  public actionId(actionId: Undefinable<string>): this {
     return this.set(actionId, Prop.ActionId);
   }
 }
@@ -56,7 +56,7 @@ export abstract class AltText extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public altText(altText: string): this {
+  public altText(altText: Undefinable<string>): this {
     return this.set(altText, Prop.AltText);
   }
 }
@@ -74,7 +74,7 @@ export abstract class BlockId extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public blockId(blockId: string): this {
+  public blockId(blockId: Undefinable<string>): this {
     return this.set(blockId, Prop.BlockId);
   }
 }
@@ -91,7 +91,7 @@ export abstract class CallbackId extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public callbackId(callbackId: string): this {
+  public callbackId(callbackId: Undefinable<string>): this {
     return this.set(callbackId, Prop.CallbackId);
   }
 }
@@ -104,7 +104,7 @@ export abstract class Channel extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public channel(channel: string): this {
+  public channel(channel: Undefinable<string>): this {
     return this.set(channel, Prop.Channel);
   }
 }
@@ -120,7 +120,7 @@ export abstract class Close extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public close(closeButtonText: string): this {
+  public close(closeButtonText: Undefinable<string>): this {
     return this.set(closeButtonText, Prop.Close);
   }
 }
@@ -133,7 +133,7 @@ export abstract class Color extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public color(color: string): this {
+  public color(color: Undefinable<string>): this {
     return this.set(color, Prop.Color);
   }
 }
@@ -146,7 +146,7 @@ export abstract class Confirm<T> extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public confirm(value: T): this {
+  public confirm(value: Undefinable<T>): this {
     return this.set(value, Prop.Confirm);
   }
 }
@@ -163,7 +163,7 @@ export abstract class Deny extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public deny(text: string): this {
+  public deny(text: Undefinable<string>): this {
     return this.set(text, Prop.Deny);
   }
 }
@@ -179,7 +179,7 @@ export abstract class Description extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public description(description: string): this {
+  public description(description: Undefinable<string>): this {
     return this.set(description, Prop.Description);
   }
 }
@@ -197,7 +197,7 @@ export abstract class Element<T> extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public element(element: T): this {
+  public element(element: Undefinable<T>): this {
     return this.set(element, Prop.Element);
   }
 }
@@ -214,7 +214,7 @@ export abstract class ExternalId extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public externalId(externalId: string): this {
+  public externalId(externalId: Undefinable<string>): this {
     return this.set(externalId, Prop.ExternalId);
   }
 }
@@ -227,7 +227,7 @@ export abstract class Fallback extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public fallback(text: string): this {
+  public fallback(text: Undefinable<string>): this {
     return this.set(text, Prop.Fallback);
   }
 }
@@ -243,7 +243,7 @@ export abstract class Hint extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public hint(hint: string): this {
+  public hint(hint: Undefinable<string>): this {
     return this.set(hint, Prop.Hint);
   }
 }
@@ -260,7 +260,7 @@ export abstract class ImageUrl extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public imageUrl(url: string): this {
+  public imageUrl(url: Undefinable<string>): this {
     return this.set(url, Prop.ImageUrl);
   }
 }
@@ -273,7 +273,7 @@ export abstract class InitialChannel extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public initialChannel(channelId: string): this {
+  public initialChannel(channelId: Undefinable<string>): this {
     return this.set(channelId, Prop.InitialChannel);
   }
 }
@@ -286,7 +286,7 @@ export abstract class InitialConversation extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public initialConversation(conversationId: string): this {
+  public initialConversation(conversationId: Undefinable<string>): this {
     return this.set(conversationId, Prop.InitialConversation);
   }
 }
@@ -299,7 +299,7 @@ export abstract class InitialDate extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public initialDate(date: Date): this {
+  public initialDate(date: Undefinable<Date>): this {
     return this.set(date, Prop.InitialDate);
   }
 }
@@ -315,7 +315,7 @@ export abstract class InitialOption extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public initialOption(option: OptionBuilder): this {
+  public initialOption(option: Undefinable<OptionBuilder>): this {
     return this.set(option, Prop.InitialOption);
   }
 }
@@ -331,7 +331,7 @@ export abstract class InitialTime extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public initialTime(time: string): this {
+  public initialTime(time: Undefinable<string>): this {
     return this.set(time, Prop.InitialTime);
   }
 }
@@ -344,7 +344,7 @@ export abstract class InitialUser extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public initialUser(userId: string): this {
+  public initialUser(userId: Undefinable<string>): this {
     return this.set(userId, Prop.InitialUser);
   }
 }
@@ -357,7 +357,7 @@ export abstract class InitialValue extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public initialValue(value: string): this {
+  public initialValue(value: Undefinable<string>): this {
     return this.set(value, Prop.InitialValue);
   }
 }
@@ -375,7 +375,7 @@ export abstract class Label extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public label(label: string): this {
+  public label(label: Undefinable<string>): this {
     return this.set(label, Prop.Label);
   }
 }
@@ -388,7 +388,7 @@ export abstract class MaxLength extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public maxLength(length: number): this {
+  public maxLength(length: Undefinable<number>): this {
     return this.set(length, Prop.MaxLength);
   }
 }
@@ -401,7 +401,7 @@ export abstract class MaxSelectedItems extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public maxSelectedItems(quantity: number): this {
+  public maxSelectedItems(quantity: Undefinable<number>): this {
     return this.set(quantity, Prop.MaxSelectedItems);
   }
 }
@@ -417,7 +417,7 @@ export abstract class MinQueryLength extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public minQueryLength(length: number): this {
+  public minQueryLength(length: Undefinable<number>): this {
     return this.set(length, Prop.MinQueryLength);
   }
 }
@@ -433,7 +433,7 @@ export abstract class MinLength extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public minLength(length: number): this {
+  public minLength(length: Undefinable<number>): this {
     return this.set(length, Prop.MinLength);
   }
 }
@@ -449,7 +449,7 @@ export abstract class Placeholder extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public placeholder(placeholder: string): this {
+  public placeholder(placeholder: Undefinable<string>): this {
     return this.set(placeholder, Prop.Placeholder);
   }
 }
@@ -462,7 +462,7 @@ export abstract class PostAt extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public postAt(timestamp: string): this {
+  public postAt(timestamp: Undefinable<string>): this {
     return this.set(timestamp, Prop.PostAt);
   }
 }
@@ -479,7 +479,7 @@ export abstract class PrivateMetaData extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public privateMetaData(privateMetaData: string): this {
+  public privateMetaData(privateMetaData: Undefinable<string>): this {
     return this.set(privateMetaData, Prop.PrivateMetaData);
   }
 }
@@ -495,7 +495,7 @@ export abstract class Submit extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public submit(text: string): this {
+  public submit(text: Undefinable<string>): this {
     return this.set(text, Prop.Submit);
   }
 }
@@ -515,7 +515,7 @@ export abstract class Text extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public text(text: string): this {
+  public text(text: Undefinable<string>): this {
     return this.set(text, Prop.Text);
   }
 }
@@ -534,7 +534,7 @@ export abstract class Title extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public title(title: string): this {
+  public title(title: Undefinable<string>): this {
     return this.set(title, Prop.Title);
   }
 }
@@ -547,7 +547,7 @@ export abstract class ThreadTs extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public threadTs(threadTs: string): this {
+  public threadTs(threadTs: Undefinable<string>): this {
     return this.set(threadTs, Prop.ThreadTs);
   }
 }
@@ -560,7 +560,7 @@ export abstract class Ts extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public ts(ts: string): this {
+  public ts(ts: Undefinable<string>): this {
     return this.set(ts, Prop.Ts);
   }
 }
@@ -577,7 +577,7 @@ export abstract class Url extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public url(url: string): this {
+  public url(url: Undefinable<string>): this {
     return this.set(url, Prop.Url);
   }
 }
@@ -594,7 +594,7 @@ export abstract class Value extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public value(value: string): this {
+  public value(value: Undefinable<string>): this {
     return this.set(value, Prop.Value);
   }
 }
