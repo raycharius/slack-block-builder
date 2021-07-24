@@ -7,7 +7,12 @@ import {
   DispatchActionsConfigurationObject,
 } from '../objects';
 
-import type { ObjectLiteral, ContextElement, Undefinable, UndefinableArray } from '../types';
+import type {
+  ObjectLiteral,
+  ContextElement,
+  Undefinable,
+  UndefinableArray,
+} from '../types';
 
 const defaultParams = {
   isMarkdown: false,
