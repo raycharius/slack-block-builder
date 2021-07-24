@@ -110,7 +110,12 @@ ModalBuilder.getBlocks();
 
 Builds the view and returns a Slack API-compatible array of blocks. 
 ```javascript
+ModalBuilder.getPreviewUrl();
+```
+
+Builds the view and returns the preview URL in order to open and preview the view on Slack's Block Kit Builder web application. 
+```javascript
 ModalBuilder.printPreviewUrl();
 ```
 
-When called, builds the view and prints to the console the preview URL in order to open and preview the view on Slack's Block Kit Builder web application. 
+Calls getPreviewUrl to build the preview URL and log it to the console. 
