@@ -43,7 +43,7 @@ export default (): MethodData[] => {
             fullPath,
             type: mapMethodType(file),
             description: getSingleMatchFromString(methodClass, /^.*(?:\* @description )(.*)/gm),
-            name: getSingleMatchFromString(methodClass, /(?:export abstract class )(.*?)(?= extends Builder|<)/g),
+            name: getSingleMatchFromString(methodClass, /(?:export abstract class )(.*?)(?= extends|<)/g),
             method: getSingleMatchFromString(methodClass, /(?:.*public )(.*?)(?=\()/g),
             arg: getArgObject(argString),
           };
