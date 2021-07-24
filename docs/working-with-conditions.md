@@ -1,5 +1,7 @@
 # Working With Conditions
 
+?> **Note:** We are exploring new ways of handling inline logic and conditions in **Block Builder**! Weigh in with your thoughts or proposals [over on GitHub](https://github.com/raycharius/slack-block-builder/issues/66).
+
 There are multiple ways to handle conditionals with **Block Builder**, and this is really where it provides the most flexibility, since the setter methods, when receiving an argument with a value of `undefined`, simply do not set the property. 
 
 ### Preferred Way
