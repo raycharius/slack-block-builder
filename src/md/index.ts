@@ -93,11 +93,11 @@ export function mailto(email: string, alias: string): string {
 }
 
 /**
- * @description Converts a named emoji to colon format.
+ * @description Creates a named emoji in the colon format.
  */
 
 export function emoji(name: string): string {
-  return `:${name}:`
+  return `:${name}:`;
 }
 
 /**

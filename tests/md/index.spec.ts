@@ -3,6 +3,7 @@ import {
   quote,
   blockquote,
   bold,
+  emoji,
   italic,
   strike,
   codeInline,
@@ -100,5 +101,10 @@ describe('Testing Md Helper Class:', () => {
   test('Check Md.group()', () => {
     expect(Md.group('hello')).toEqual('<!subteam^hello>');
     expect(group('hello')).toEqual('<!subteam^hello>');
+  });
+
+  test('Check Md.emoji()', () => {
+    expect(Md.emoji('grin')).toEqual(':grin:');
+    expect(emoji('grin')).toEqual(':grin:');
   });
 });

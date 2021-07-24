@@ -7,7 +7,12 @@ import {
   DispatchActionsConfigurationObject,
 } from '../objects';
 
-import type { ObjectLiteral, ContextElement } from '../types';
+import type {
+  ObjectLiteral,
+  ContextElement,
+  Undefinable,
+  UndefinableArray,
+} from '../types';
 
 const defaultParams = {
   isMarkdown: false,
@@ -15,7 +20,7 @@ const defaultParams = {
 
 const isUndefined = (value: unknown): boolean => value === undefined;
 
-const areUndefined = (...values): boolean => values
+const areUndefined = (...values: unknown[]): boolean => values
   .filter((value) => isUndefined(value)).length === values.length;
 
 export function getBuilderResult<T>(builder: Builder, params: ObjectLiteral = defaultParams): T {
@@ -24,22 +29,22 @@ export function getBuilderResult<T>(builder: Builder, params: ObjectLiteral = de
 
 export function getBuilderResults<T>(
   builders: Builder[], params: ObjectLiteral = defaultParams,
-): T[] {
+): Undefinable<UndefinableArray<T>> {
   return areUndefined(builders) ? undefined : builders
     .map((builder) => getBuilderResult<T>(builder, params));
 }
 
-export function getPlainTextObject(text: string): PlainTextObject | undefined {
+export function getPlainTextObject(text: string): Undefinable<PlainTextObject> {
   return isUndefined(text) ? undefined : new PlainTextObject(text);
 }
 
-export function getMarkdownObject(text: string): MarkdownObject | undefined {
+export function getMarkdownObject(text: string): Undefinable<MarkdownObject> {
   return isUndefined(text) ? undefined : new MarkdownObject(text);
 }
 
 export function getElementsForContext(
   elements: ContextElement[],
-): Array<MarkdownObject | ObjectLiteral> | undefined {
+): Undefinable<UndefinableArray<MarkdownObject | ObjectLiteral>> {
   return isUndefined(elements)
     ? undefined
     : elements.map((element) => (typeof element === 'string'
@@ -47,19 +52,19 @@ export function getElementsForContext(
       : element.build()));
 }
 
-export function getFields(fields: string[]): MarkdownObject[] {
+export function getFields(fields: string[]): Undefinable<UndefinableArray<MarkdownObject>> {
   return isUndefined(fields)
     ? undefined
     : fields.map((field) => getMarkdownObject(field));
 }
 
-export function getFormattedDate(date: Date): string {
+export function getFormattedDate(date: Date): Undefinable<string> {
   return isUndefined(date)
     ? undefined
     : date.toISOString().split('T')[0];
 }
 
-export function getFilter(params: FilterParams): FilterObject {
+export function getFilter(params: FilterParams): Undefinable<FilterObject> {
   const { filter, excludeBotUsers, excludeExternalSharedChannels } = params;
 
   if (areUndefined(filter, excludeBotUsers, excludeExternalSharedChannels)) {
@@ -71,7 +76,7 @@ export function getFilter(params: FilterParams): FilterObject {
 
 export function getDispatchActionsConfigurationObject(
   params: ObjectLiteral,
-): DispatchActionsConfigurationObject {
+): Undefinable<DispatchActionsConfigurationObject> {
   const { onEnterPressed, onCharacterEntered } = params;
 
   if (areUndefined(onEnterPressed, onCharacterEntered)) {

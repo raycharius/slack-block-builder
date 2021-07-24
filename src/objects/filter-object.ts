@@ -8,11 +8,11 @@ export interface FilterParams {
 }
 
 export class FilterObject extends CompositionObjectBase {
-  public include: Filter[];
+  public include?: Filter[];
 
-  public exclude_external_shared_channels: boolean;
+  public exclude_external_shared_channels?: boolean;
 
-  public exclude_bot_users: boolean;
+  public exclude_bot_users?: boolean;
 
   constructor(params: FilterParams) {
     super();

@@ -19,14 +19,14 @@ export default (argString: string): ArgObject | null => {
     : hasDefault ? name.split('=')[0] : 'boolean';
   const isArray = name.startsWith('...');
 
-  const arrayedType = isArray
-    ? getSingleMatchFromString(type, /(?:Appendable<)(.*)(?=>)/g)
-    : null;
+  const parsedType = type.includes('<')
+    ? getSingleMatchFromString(type, /(?:<)(.*)(?=>)/g)
+    : type;
 
   return {
     name,
     isArray,
-    type: mapType(isArray ? arrayedType : type),
+    type: mapType(parsedType),
     default: hasDefault
       ? spacelessString.split('=')[1]
       : null,

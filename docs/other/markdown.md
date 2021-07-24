@@ -90,3 +90,9 @@ Md.group(string);
 ```
 
 Mentions a Slack user group.
+
+```javascript
+Md.emoji(string);
+```
+
+Creates a named emoji in the colon format.

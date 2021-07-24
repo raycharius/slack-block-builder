@@ -67,6 +67,8 @@ Feedback – love it! Aside from GitHub Issues, there are Slack channels availab
 
 ### :floppy_disk: &nbsp; Installation 
 
+**Block Builder** requires Node.js 12 or higher, and, when using TypeScript, TypeScript 3.8 or higher.
+
 #### Using NPM: 
 
 ``` bash
