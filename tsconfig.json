@@ -5,6 +5,7 @@
       "es2017",
       "es2019.array"
     ],
+    "strict": true,
     "target": "ES2018",
     "module": "commonjs",
     "declaration": true,
