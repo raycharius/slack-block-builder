@@ -73,7 +73,7 @@ export abstract class GetPreviewUrl extends Builder {
     const result = this.build();
 
     const baseUri = 'https://app.slack.com/block-kit-builder/#';
-    const stringifiedBlocks = this.props.type
+    const stringifiedBlocks = result.type
       ? JSON.stringify(result)
       : JSON.stringify({ blocks: result.blocks, attachments: result.attachments });
 
