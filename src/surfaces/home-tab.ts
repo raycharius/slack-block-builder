@@ -1,5 +1,5 @@
 import { SurfaceBuilderBase } from '../base';
-import { SlackViewDto } from '../lib';
+import { SlackHomeTabDto } from '../lib';
 import {
   Blocks,
   CallbackId,
@@ -28,7 +28,7 @@ export interface HomeTabBuilder extends Blocks<ViewBlockBuilder>,
   ExternalId,
   PrivateMetaData,
   BuildToJSON,
-  BuildToObject<SlackViewDto>,
+  BuildToObject<SlackHomeTabDto>,
   GetBlocks,
   GetPreviewUrl,
   PrintPreviewUrl {
@@ -42,8 +42,8 @@ export interface HomeTabBuilder extends Blocks<ViewBlockBuilder>,
 export class HomeTabBuilder extends SurfaceBuilderBase {
   /** @internal */
 
-  public build(): Readonly<SlackViewDto> {
-    return this.getResult(SlackViewDto, {
+  public build(): Readonly<SlackHomeTabDto> {
+    return this.getResult(SlackHomeTabDto, {
       type: SurfaceType.HomeTab,
       blocks: getBuilderResults<SlackBlockDto>(this.props.blocks),
     });
