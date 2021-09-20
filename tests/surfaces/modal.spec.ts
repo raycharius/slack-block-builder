@@ -1,5 +1,5 @@
 import { ModalBuilder as Class } from '../../src/surfaces/modal';
-import { SlackViewDto as DtoClass } from '../../src/lib';
+import { SlackModalDto as DtoClass } from '../../src/lib';
 import { params } from './mocks/modal.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
