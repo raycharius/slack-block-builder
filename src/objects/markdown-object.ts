@@ -2,7 +2,7 @@ import { CompositionObjectBase } from '../base';
 import { ObjectType } from '../constants';
 
 export class MarkdownObject extends CompositionObjectBase {
-  public type: ObjectType;
+  public type: ObjectType.Markdown;
 
   public text: string;
 

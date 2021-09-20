@@ -2,7 +2,7 @@ import { CompositionObjectBase } from '../base';
 import { ObjectType } from '../constants';
 
 export class PlainTextObject extends CompositionObjectBase {
-  public type: ObjectType;
+  public type: ObjectType.Text;
 
   public text: string;
 
