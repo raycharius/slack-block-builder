@@ -4,6 +4,7 @@
 import { SurfaceType, BlockType, ElementType } from '../constants';
 
 import type { ObjectLiteral } from '../types';
+import type { PlainTextObject } from '../objects';
 
 export enum Param {
   actionId = 'action_id',
@@ -106,13 +107,31 @@ export class SlackMessageDto extends SlackDto {
   public readonly attachments?: SlackDto[];
 }
 
-export class SlackViewDto extends SlackDto {
-  // @ts-ignore -- Dynamically created class
-  public readonly type: SurfaceType;
+export class SlackHomeTabDto extends SlackDto {
+  public readonly type = SurfaceType.HomeTab;
 
   // @ts-ignore -- Dynamically created class
   public readonly blocks: SlackBlockDto[];
 }
+
+export class SlackModalDto extends SlackDto {
+  public readonly type = SurfaceType.Modal;
+
+  // @ts-ignore -- Dynamically created class
+  public readonly title: PlainTextObject;
+
+  // @ts-ignore -- Dynamically created class
+  public readonly blocks: SlackBlockDto[];
+}
+
+export class SlackWorkflowStepDto extends SlackDto {
+  public readonly type = SurfaceType.WorkflowStep;
+
+  // @ts-ignore -- Dynamically created class
+  public readonly blocks: SlackBlockDto[];
+}
+
+export type SlackViewDto = SlackModalDto | SlackWorkflowStepDto | SlackHomeTabDto;
 
 export class SlackBlockDto extends SlackDto {
   // @ts-ignore -- Dynamically created class
