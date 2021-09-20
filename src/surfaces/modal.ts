@@ -1,5 +1,5 @@
 import { SurfaceBuilderBase } from '../base';
-import { SlackViewDto } from '../lib';
+import { SlackModalDto } from '../lib';
 import {
   Blocks,
   CallbackId,
@@ -42,7 +42,7 @@ export interface ModalBuilder extends Blocks<ViewBlockBuilder>,
   Submit,
   Title,
   BuildToJSON,
-  BuildToObject<SlackViewDto>,
+  BuildToObject<SlackModalDto>,
   GetBlocks,
   GetPreviewUrl,
   PrintPreviewUrl {
@@ -56,8 +56,8 @@ export interface ModalBuilder extends Blocks<ViewBlockBuilder>,
 export class ModalBuilder extends SurfaceBuilderBase {
   /** @internal */
 
-  public build(): Readonly<SlackViewDto> {
-    return this.getResult(SlackViewDto, {
+  public build(): Readonly<SlackModalDto> {
+    return this.getResult(SlackModalDto, {
       type: SurfaceType.Modal,
       title: getPlainTextObject(this.props.title),
       blocks: getBuilderResults<SlackBlockDto>(this.props.blocks),
