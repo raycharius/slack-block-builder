@@ -85,10 +85,6 @@ export class PaginatorStateManager {
     return this.getStateByPage(this.page - 1);
   }
 
-  public checkStateIsMoveForward(state: PaginatorState): boolean {
-    return this.offset < state.offset;
-  }
-
   public extractItems<T>(items: T[]): T[] {
     const beginning = this.offset;
     const end = beginning + this.perPage;

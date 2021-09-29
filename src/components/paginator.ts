@@ -5,11 +5,7 @@ import { ComponentUIText } from '../constants';
 import type { StringReturnableFn, BlockBuilderReturnableFn, BlockBuilder } from '../types';
 import type { PaginatorStateManager, PaginatorState } from '../lib';
 
-export interface PaginatorActionIdParams<T> extends PaginatorState {
-  cursor: T,
-}
-
-export type PaginatorActionIdFn<T> = StringReturnableFn<PaginatorActionIdParams<T>>;
+export type PaginatorActionIdFn<T> = StringReturnableFn<PaginatorState>;
 
 export interface PageCountTextFnParams {
   page: number;
@@ -51,15 +47,6 @@ export class PaginatorUIComponent<T> {
     this.actionIdFunction = params.actionId;
   }
 
-  private getActionIdParams(state: PaginatorState): PaginatorActionIdParams<T> {
-    return {
-      ...state,
-      cursor: this.paginator.checkStateIsMoveForward(state)
-        ? this.items[this.items.length - 1]
-        : this.items[0],
-    };
-  }
-
   public blocksForEach(builderFn: BlockBuilderReturnableFn<T>): BlockBuilder[] {
     const blocksForEach = [];
 
@@ -79,15 +66,11 @@ export class PaginatorUIComponent<T> {
           .elements(
             Elements.Button({
               text: this.previousButtonText,
-              actionId: this.actionIdFunction(
-                this.getActionIdParams(this.paginator.getPreviousPageState()),
-              ),
+              actionId: this.actionIdFunction(this.paginator.getPreviousPageState()),
             }),
             Elements.Button({
               text: this.nextButtonText,
-              actionId: this.actionIdFunction(
-                this.getActionIdParams(this.paginator.getNextPageState()),
-              ),
+              actionId: this.actionIdFunction(this.paginator.getNextPageState()),
             }),
           ),
       ]
