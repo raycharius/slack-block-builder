@@ -166,33 +166,6 @@ describe('Testing Paginator State Manager:', () => {
     });
   });
 
-  test('Checking if movement through pagination is forward with future state will product a result of true.', () => {
-    const manager = new PaginatorStateManager({ page: 10, perPage: 5, totalItems: 128 });
-
-    expect(manager.getPage()).toEqual(10);
-    expect(manager.getTotalItems()).toEqual(128);
-    expect(manager.getTotalPages()).toEqual(26);
-    expect(manager.checkStateIsMoveForward(manager.getStateByPage(14))).toEqual(true);
-  });
-
-  test('Checking if movement through pagination is forward with the current state will product a result of false.', () => {
-    const manager = new PaginatorStateManager({ page: 10, perPage: 5, totalItems: 128 });
-
-    expect(manager.getPage()).toEqual(10);
-    expect(manager.getTotalItems()).toEqual(128);
-    expect(manager.getTotalPages()).toEqual(26);
-    expect(manager.checkStateIsMoveForward(manager.getStateByPage(10))).toEqual(false);
-  });
-
-  test('Checking if movement through pagination is forward with a previous state will product a result of false.', () => {
-    const manager = new PaginatorStateManager({ page: 10, perPage: 5, totalItems: 128 });
-
-    expect(manager.getPage()).toEqual(10);
-    expect(manager.getTotalItems()).toEqual(128);
-    expect(manager.getTotalPages()).toEqual(26);
-    expect(manager.checkStateIsMoveForward(manager.getStateByPage(5))).toEqual(false);
-  });
-
   test('Passing in an array to the extract method returns a sliced array with the correct items.', () => {
     const manager = new PaginatorStateManager({ page: 2, perPage: 5, totalItems: 21 });
 
