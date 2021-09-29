@@ -1,0 +1,173 @@
+export interface Human {
+  id: number;
+  firstName: string;
+  lastName: string;
+  email: string;
+  jobTitle: string;
+  department: string;
+}
+
+// Привет MacPaw Platform Team и другие!
+
+export const humans: Human[] = [
+  {
+    id: 1,
+    firstName: 'Ray',
+    lastName: 'East',
+    email: 'ray@ray.com',
+    jobTitle: 'Lord of The Slack Apps',
+    department: 'Engineering',
+  },
+  {
+    id: 2,
+    firstName: 'Taras',
+    lastName: 'Neporozhniy',
+    email: 'taras@taras.com',
+    jobTitle: 'Brave Cow',
+    department: 'Bad Ass MFs',
+  },
+  {
+    id: 3,
+    firstName: 'Dima',
+    lastName: 'Tereshuk',
+    email: 'dima@dima.com',
+    jobTitle: 'Outlander',
+    department: 'Big Rollers',
+  },
+  {
+    id: 4,
+    firstName: 'Lesha',
+    lastName: 'Power',
+    email: 'lesha@lesha.com',
+    jobTitle: 'Kalyanshyk',
+    department: 'DDD Demons',
+  },
+  {
+    id: 5,
+    firstName: 'Yozhef',
+    lastName: 'Hisem',
+    email: 'yozhik@yozhik.com',
+    jobTitle: 'Molnenosets',
+    department: 'Zakarpatska',
+  },
+  {
+    id: 6,
+    firstName: 'Andrey',
+    lastName: 'Roland',
+    email: 'andrey@andrey.com',
+    jobTitle: 'Bathroom Janitor',
+    department: 'American Folklore',
+  },
+  {
+    id: 7,
+    firstName: 'Vlad',
+    lastName: 'Filimonov',
+    email: 'vlad@vlad.com',
+    jobTitle: 'MMA Fanatic',
+    department: 'Kopeika Boxers',
+  },
+  {
+    id: 8,
+    firstName: 'Boris',
+    lastName: 'Boriska',
+    email: 'borya@borya.com',
+    jobTitle: 'Email Builder',
+    department: 'Orange Nissan Owners',
+  },
+  {
+    id: 9,
+    firstName: 'Vadim',
+    lastName: 'Grabovyy',
+    email: 'vadik@vadik.com',
+    jobTitle: 'Local Blonde',
+    department: 'Barcelona United',
+  },
+  {
+    id: 10,
+    firstName: 'Alex',
+    lastName: 'Chernyshov',
+    email: 'alex@alex.com',
+    jobTitle: 'Shaslikshyk',
+    department: 'Ni Dnya Bez Nozhey',
+  },
+  {
+    id: 11,
+    firstName: 'Serega',
+    lastName: 'Grigoruk',
+    email: 'serega@serega.com',
+    jobTitle: 'Atdihaushy',
+    department: 'Sabbatical Goers',
+  },
+  {
+    id: 12,
+    firstName: 'Igor',
+    lastName: 'Roik',
+    email: 'igor@igor.com',
+    jobTitle: 'Moshniy Maliy',
+    department: 'College Freshmen',
+  },
+  {
+    id: 13,
+    firstName: 'Dima',
+    lastName: 'Tretiakov',
+    email: 'dima@dima.com',
+    jobTitle: 'Desktop SDK Slayer',
+    department: 'Immortals',
+  },
+  {
+    id: 14,
+    firstName: 'Sasha',
+    lastName: 'Chernyavska',
+    email: 'sasha@sasha.comm',
+    jobTitle: 'Retro Goddess',
+    department: 'Sabbatical Goers',
+  },
+  {
+    id: 15,
+    firstName: 'Arthur',
+    lastName: 'Nick',
+    email: 'arthur@arthur.com',
+    jobTitle: 'Kachok',
+    department: 'Office Crowd',
+  },
+  {
+    id: 16,
+    firstName: 'Dima',
+    lastName: 'Lutsik',
+    email: 'lutsik@lutsik.com',
+    jobTitle: 'Garmonist',
+    department: 'Relentless Jazz Lovers',
+  },
+  {
+    id: 17,
+    firstName: 'Dima',
+    lastName: 'Svirepchuk',
+    email: 'dimka@dimka.com',
+    jobTitle: 'Bezrabotniy',
+    department: 'Good Dads and Friends',
+  },
+  {
+    id: 18,
+    firstName: 'Dima',
+    lastName: 'Bilkun',
+    email: 'bilkun@bilkun.com',
+    jobTitle: 'Barabanshyk',
+    department: 'Heavy Ass Beats',
+  },
+  {
+    id: 19,
+    firstName: 'Pasha',
+    lastName: 'Akimenko',
+    email: 'pasha@pasha.com',
+    jobTitle: 'Fat String Thumper',
+    department: 'Groove Masters',
+  },
+  {
+    id: 20,
+    firstName: 'Karina',
+    lastName: 'Suprun',
+    email: 'karina@karina.com',
+    jobTitle: 'Calorie Critic',
+    department: 'Health and Fitness',
+  },
+];
