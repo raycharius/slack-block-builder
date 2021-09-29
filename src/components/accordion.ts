@@ -2,13 +2,13 @@ import { Blocks } from '../blocks';
 import { Elements } from '../elements';
 import { ComponentUIText } from '../constants';
 
-import type { AccordionStateManager, State } from '../lib';
+import type { AccordionStateManager, AccordionState } from '../lib';
 import type { BlockBuilderReturnableFn, BlockBuilder, StringReturnableFn } from '../types';
 
 export type TitleTextFn<T> = StringReturnableFn<T>;
 
 export interface AccordionActionIdParams {
-  state: State;
+  expandedItems: AccordionState;
 }
 
 export type AccordionActionIdFn = StringReturnableFn<AccordionActionIdParams>;
@@ -54,7 +54,7 @@ export class AccordionUIComponent<T> {
           .accessory(Elements.Button({
             text: isExpanded ? this.collapseButtonText : this.expandButtonText,
             actionId: this.actionIdFunction({
-              state: this.stateManager.getNextStateByItemIndex(index),
+              expandedItems: this.stateManager.getNextStateByItemIndex(index),
             }),
           })),
         ...isExpanded ? builderFn(item) : [],

@@ -3,14 +3,9 @@ import { Elements } from '../elements';
 import { ComponentUIText } from '../constants';
 
 import type { StringReturnableFn, BlockBuilderReturnableFn, BlockBuilder } from '../types';
-import type { PaginationCalculator } from '../lib';
+import type { PaginatorStateManager, PaginatorState } from '../lib';
 
-export interface PaginatorActionIdParams<T> {
-  page: number,
-  totalItems: number,
-  perPage: number,
-  offset: number;
-  totalPages: number,
+export interface PaginatorActionIdParams<T> extends PaginatorState {
   cursor: T,
 }
 
@@ -25,7 +20,7 @@ export type PageCountTextFn = (params: PageCountTextFnParams) => string;
 
 export interface PaginatorUIComponentParams<T> {
   items: T[];
-  paginator: PaginationCalculator;
+  paginator: PaginatorStateManager;
   nextButtonText?: string;
   previousButtonText?: string;
   pageCountText?: PageCountTextFn;
@@ -37,7 +32,7 @@ const defaultPageCountText = ({ page, totalPages }) => `Page ${page} of ${totalP
 export class PaginatorUIComponent<T> {
   private readonly items: T[];
 
-  private readonly paginator: PaginationCalculator;
+  private readonly paginator: PaginatorStateManager;
 
   private readonly nextButtonText: string;
 
@@ -56,16 +51,12 @@ export class PaginatorUIComponent<T> {
     this.actionIdFunction = params.actionId;
   }
 
-  private getActionIdParams(offset: number): PaginatorActionIdParams<T> {
-    const isMoveForward = offset < this.paginator.getOffset();
-
+  private getActionIdParams(state: PaginatorState): PaginatorActionIdParams<T> {
     return {
-      offset,
-      page: this.paginator.getPageByOffset(offset),
-      totalItems: this.paginator.getTotalItems(),
-      perPage: this.paginator.getPerPage(),
-      totalPages: this.paginator.getTotalPages(),
-      cursor: isMoveForward ? this.items[this.items.length - 1] : this.items[0],
+      ...state,
+      cursor: this.paginator.checkStateIsMoveForward(state)
+        ? this.items[this.items.length - 1]
+        : this.items[0],
     };
   }
 
@@ -89,13 +80,13 @@ export class PaginatorUIComponent<T> {
             Elements.Button({
               text: this.previousButtonText,
               actionId: this.actionIdFunction(
-                this.getActionIdParams(this.paginator.getPreviousPageOffset()),
+                this.getActionIdParams(this.paginator.getPreviousPageState()),
               ),
             }),
             Elements.Button({
               text: this.nextButtonText,
               actionId: this.actionIdFunction(
-                this.getActionIdParams(this.paginator.getNextPageOffset()),
+                this.getActionIdParams(this.paginator.getNextPageState()),
               ),
             }),
           ),

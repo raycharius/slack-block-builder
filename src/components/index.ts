@@ -1,8 +1,8 @@
 import { PaginatorUIComponent, PaginatorUIComponentParams } from './paginator';
 import { AccordionUIComponent, AccordionUIComponentParams } from './accordion';
 import {
-  PaginationCalculator,
-  PaginationCalculatorParams,
+  PaginatorStateManager,
+  PaginatorStateManagerParams,
   AccordionStateManager,
   AccordionStateManagerParams,
 } from '../lib';
@@ -10,12 +10,12 @@ import {
 export type { PaginatorUIComponent };
 export type { AccordionUIComponent };
 
-export type PaginatorParams<T> = PaginationCalculatorParams &
+export type PaginatorParams<T> = PaginatorStateManagerParams &
 Omit<PaginatorUIComponentParams<T>, 'paginator'>;
 
 export function Paginator<T>(params: PaginatorParams<T>): PaginatorUIComponent<T> {
   const { page, perPage, totalItems } = params;
-  const paginationCalculator = new PaginationCalculator({ page, perPage, totalItems });
+  const paginationCalculator = new PaginatorStateManager({ page, perPage, totalItems });
 
   return new PaginatorUIComponent<T>({
     paginator: paginationCalculator,
@@ -32,7 +32,7 @@ export type EasyPaginatorParams<T> = Omit<PaginatorParams<T>, 'totalItems'>;
 export function EasyPaginator<T>(params: EasyPaginatorParams<T>): PaginatorUIComponent<T> {
   const { page, perPage, items } = params;
   const totalItems = items.length;
-  const paginationCalculator = new PaginationCalculator({ page, perPage, totalItems });
+  const paginationCalculator = new PaginatorStateManager({ page, perPage, totalItems });
   const extractedItems = paginationCalculator.extractItems(items);
 
   return new PaginatorUIComponent<T>({
@@ -46,12 +46,11 @@ export function EasyPaginator<T>(params: EasyPaginatorParams<T>): PaginatorUICom
 }
 
 export type AccordionParams<T> = Omit<AccordionUIComponentParams<T>, 'stateManager'>
-& Omit<AccordionStateManagerParams, 'totalItems'>;
+& AccordionStateManagerParams;
 
 export function Accordion<T>(params: AccordionParams<T>): AccordionUIComponent<T> {
-  const { items, collapseOnExpand, state } = params;
-  const totalItems = items.length;
-  const stateManager = new AccordionStateManager({ state, collapseOnExpand, totalItems });
+  const { items, expandedItems, collapseOnExpand } = params;
+  const stateManager = new AccordionStateManager({ expandedItems, collapseOnExpand });
 
   return new AccordionUIComponent<T>({
     items,

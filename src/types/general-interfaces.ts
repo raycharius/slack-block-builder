@@ -16,8 +16,8 @@ export type UndefinableArray<T> = Undefinable<T>[];
 
 export type Appendable<T> = UndefinableArray<T | UndefinableArray<T>>;
 
-export type Callback<T, R> = (params: T) => R;
+export type Fn<T, R> = (arg: T) => R;
 
-export type BlockBuilderReturnableFn<T> = Callback<T, BlockBuilder[]>;
+export type BlockBuilderReturnableFn<T> = Fn<T, BlockBuilder[]>;
 
-export type StringReturnableFn<T> = Callback<T, string>;
+export type StringReturnableFn<T> = Fn<T, string>;
