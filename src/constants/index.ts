@@ -5,6 +5,7 @@ export * from './element-types';
 export * from './file-types';
 export * from './filters';
 export * from './object-types';
+export * from './component-ui-text';
 export * from './props';
 export * from './response-types';
 export * from './surface-types';
