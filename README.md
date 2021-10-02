@@ -261,8 +261,6 @@ It supports customizations, such:
 `expandButtonText` – Used to pass in custom text for the button that expands an item.
 
 `collapseButtonText` – Used to pass in custom text for the button that collapses an expanded item.
-
-Be sure to check out the full documentation on the *Block Builder* doc site.
  
 ```javascript
 import { Modal, Blocks, Accordion } from 'slack-block-builder';
@@ -285,6 +283,8 @@ export default ({ faqs, expandedItems }) =>
     .close('Done')
     .buildToJSON();
 ```
+
+The code above renders the modal below. And be sure to check out the full documentation on the *Block Builder* doc site for more information.
 
 ![An example of using Block Builder for Modals](docs/resources/images/accordion-modal-example.png)
 
