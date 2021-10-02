@@ -36,6 +36,7 @@
 ### :zap: &nbsp; Features
 
 * Declarative [SwiftUI](https://developer.apple.com/xcode/swiftui/) inspired syntax.
+* Commonly-used UI components, such as a `Paginator` and `Accordion`.
 * The ability to build more complex flows using loops and conditionals.
 * A `printPreviewURL()` method that outputs a link to preview your UI on Slack's [Block Kit Builder website](https://app.slack.com/block-kit-builder) for easier prototyping.
 * A set of helper functions for formatting text with Slack's markdown standard.
@@ -45,15 +46,10 @@
 * Extensive JSDoc hints with explanations, validation rules, and quick links to full documentation.
 * Zero dependencies.
 
-### :rocket: &nbsp; Coming Soon
-
-* `Paginator` component.
-* `Accordion` component.
-
 ### :gift: &nbsp; Benefits
 
 * Write three times less code.
-* Build more sophistocated, elegant flows.
+* Build more sophisticated, elegant flows.
 * Design better UI architecture for your Slack apps.
 * Focus more on code in your IDE than on studying the [Slack API docs](https://api.slack.com/).
 * Easily integrate localizations into your app.
