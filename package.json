@@ -1,6 +1,6 @@
 {
   "name": "slack-block-builder",
-  "version": "2.1.2",
+  "version": "2.2.0-beta.1",
   "description": "Maintainable code for interactive Slack messages, modals, home tabs, and workflow steps. A must-have for the Slack Block Kit framework.",
   "author": {
     "name": "Ray East",
@@ -51,7 +51,7 @@
     "docs:serve": "docsify serve ./docs",
     "predocs:generate": "npm run docs:build",
     "docs:generate": "node docs-generator-dist/index.js",
-    "docs:local": "docsify serve docs-generator --port 3000",
+    "docs:local": "docsify serve docs --port 3000",
     "tests:lint": "eslint 'tests/**/*.ts' --fix",
     "tests:coverage": "codecov",
     "clean": "shx rm -rf ./dist ./coverage ./docs-generator-dist",
