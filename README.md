@@ -252,7 +252,17 @@ Both of these examples render the modal below.
 
 ### Accordion Component
 
-Using the `Accordion` component, you can easily create a customizable accordion for your Slack app. It not only assists in building a suitable UI, but also calculates the next state and gives you access to it in the `actionId` of the buttons in the accordion, so that you can pass that back to your app's backend and use it to render the next step.     
+Using the `Accordion` component, you can easily create a customizable accordion for your Slack app. It not only assists in building a suitable UI, but also calculates the next state and gives you access to it in the `actionId` of the buttons in the accordion, so that you can pass that back to your app's backend and use it to render the next state.
+
+It supports customizations, such: 
+
+`collapseOnExpand` – Dictates whether or not multiple items can be expanded at once. When set to true, only one item will be expanded at any given time.
+
+`expandButtonText` – Used to pass in custom text for the button that expands an item.
+
+`collapseButtonText` – Used to pass in custom text for the button that collapses an expanded item.
+
+Be sure to check out the full documentation on the *Block Builder* doc site.
  
 ```javascript
 import { Modal, Blocks, Accordion } from 'slack-block-builder';
