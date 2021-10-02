@@ -5,48 +5,52 @@ import { ComponentUIText } from '../constants';
 import type { AccordionStateManager, AccordionState } from '../lib';
 import type { BlockBuilderReturnableFn, BlockBuilder, StringReturnableFn } from '../types';
 
-export type TitleTextFn<T> = StringReturnableFn<T>;
-
 export interface AccordionActionIdParams {
   expandedItems: AccordionState;
 }
 
 export type AccordionActionIdFn = StringReturnableFn<AccordionActionIdParams>;
+export type AccordionTitleTextFn<T> = StringReturnableFn<T>;
+export type AccordionBuilderFn<T> = BlockBuilderReturnableFn<{ item: T }>;
 
-export interface AccordionUIComponentParams<T> {
+export interface AccordionUIBuilderParams<T> {
   items: T[];
-  stateManager: AccordionStateManager;
+  paginator: AccordionStateManager;
   expandButtonText?: string;
   collapseButtonText?: string;
-  titleText: TitleTextFn<T>;
-  actionId: AccordionActionIdFn;
+  titleTextFunction: AccordionTitleTextFn<T>;
+  actionIdFunction: AccordionActionIdFn;
+  builderFunction: AccordionBuilderFn<T>;
 }
 
-export class AccordionUIComponent<T> {
+export class AccordionUIBuilder<T> {
   private readonly items: T[];
 
-  private readonly stateManager: AccordionStateManager;
+  private readonly paginator: AccordionStateManager;
 
   private readonly expandButtonText: string;
 
   private readonly collapseButtonText: string;
 
-  private readonly titleTextFunction: TitleTextFn<T>;
+  private readonly titleTextFunction: AccordionTitleTextFn<T>;
 
   private readonly actionIdFunction: AccordionActionIdFn;
 
-  constructor(params: AccordionUIComponentParams<T>) {
+  private readonly builderFunction: AccordionBuilderFn<T>;
+
+  constructor(params: AccordionUIBuilderParams<T>) {
     this.items = params.items;
-    this.stateManager = params.stateManager;
+    this.paginator = params.paginator;
     this.expandButtonText = params.expandButtonText || ComponentUIText.More;
     this.collapseButtonText = params.collapseButtonText || ComponentUIText.Close;
-    this.titleTextFunction = params.titleText;
-    this.actionIdFunction = params.actionId;
+    this.titleTextFunction = params.titleTextFunction;
+    this.actionIdFunction = params.actionIdFunction;
+    this.builderFunction = params.builderFunction;
   }
 
-  public blocksOnExpand(builderFn: BlockBuilderReturnableFn<T>): BlockBuilder[] {
+  public getBlocks(): BlockBuilder[] {
     return this.items.map((item, index) => {
-      const isExpanded = this.stateManager.checkItemIsExpandedByIndex(index);
+      const isExpanded = this.paginator.checkItemIsExpandedByIndex(index);
 
       return [
         Blocks.Divider(),
@@ -54,10 +58,10 @@ export class AccordionUIComponent<T> {
           .accessory(Elements.Button({
             text: isExpanded ? this.collapseButtonText : this.expandButtonText,
             actionId: this.actionIdFunction({
-              expandedItems: this.stateManager.getNextStateByItemIndex(index),
+              expandedItems: this.paginator.getNextStateByItemIndex(index),
             }),
           })),
-        ...isExpanded ? builderFn(item) : [],
+        ...isExpanded ? this.builderFunction({ item }) : [],
       ];
     }).flat();
   }
