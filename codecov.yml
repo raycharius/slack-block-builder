@@ -1,6 +1,8 @@
 ignore:
+  - ".github/"
   - "tests/"
   - "docs/"
+  - "docs-generator/"
   - "resources/"
 
 coverage:
