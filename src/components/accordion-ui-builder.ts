@@ -52,8 +52,7 @@ export class AccordionUIBuilder<T> {
     return this.items.map((item, index) => {
       const isExpanded = this.paginator.checkItemIsExpandedByIndex(index);
 
-      return [
-        Blocks.Divider(),
+      const blocks = [
         Blocks.Section({ text: this.titleTextFunction({ item }) })
           .accessory(Elements.Button({
             text: isExpanded ? this.collapseButtonText : this.expandButtonText,
@@ -63,6 +62,8 @@ export class AccordionUIBuilder<T> {
           })),
         ...isExpanded ? this.builderFunction({ item }) : [],
       ];
+
+      return index === 0 ? blocks : [Blocks.Divider(), ...blocks];
     }).flat();
   }
 }
