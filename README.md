@@ -279,7 +279,7 @@ export default ({ faqs, expandedItems }) =>
         titleText: ({ item }) => `*${item.question}*`,
         actionId: ({ expandedItems }) => JSON.stringify({ action: 'render-faqs', expandedItems }),
         blocksForExpanded: ({ item }) => [
-          Blocks.Section({ text: `${item.answer}`}),
+          Blocks.Section({ text: `${item.answer}` }),
         ],
       }))
     .close('Done')
