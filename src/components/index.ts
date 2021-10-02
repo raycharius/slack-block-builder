@@ -69,7 +69,7 @@ interface AccordionBaseParams<T> {
   items: T[];
   expandButtonText?: string;
   collapseButtonText?: string;
-  titleText?: AccordionTitleTextFn<T>;
+  titleText: AccordionTitleTextFn<T>;
   actionId: AccordionActionIdFn;
   blocksForExpanded: PaginatorBuilderFn<T>,
 }
@@ -84,7 +84,7 @@ export function Accordion<T>(params: AccordionParams<T>): BlockBuilder[] {
     paginator: stateManager,
     expandButtonText: params.expandButtonText || null,
     collapseButtonText: params.collapseButtonText || null,
-    titleTextFunction: params.titleText || null,
+    titleTextFunction: params.titleText,
     actionIdFunction: params.actionId,
     builderFunction: params.blocksForExpanded,
   });
