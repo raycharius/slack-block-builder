@@ -250,17 +250,35 @@ Both of these examples render the modal below.
 
 [**View Example on Slack Block Kit Builder Website**](https://app.slack.com/block-kit-builder#%7B%22type%22:%22modal%22,%22title%22:%7B%22type%22:%22plain_text%22,%22text%22:%22PizzaMate%22%7D,%22blocks%22:%5B%7B%22type%22:%22section%22,%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22Hey%20there,%20colleague!%22%7D%7D,%7B%22type%22:%22section%22,%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22Hurray%20for%20corporate%20pizza!%20Let's%20get%20you%20fed%20and%20happy%20:pizza:%22%7D%7D,%7B%22type%22:%22input%22,%22label%22:%7B%22type%22:%22plain_text%22,%22text%22:%22What%20can%20we%20call%20you?%22%7D,%22element%22:%7B%22type%22:%22plain_text_input%22,%22action_id%22:%22name%22,%22placeholder%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Hi,%20my%20name%20is...%20(What?!)%20(Who?!)%22%7D%7D%7D,%7B%22type%22:%22input%22,%22label%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Which%20floor%20are%20you%20on?%22%7D,%22element%22:%7B%22type%22:%22plain_text_input%22,%22action_id%22:%22floor%22,%22placeholder%22:%7B%22type%22:%22plain_text%22,%22text%22:%22HQ%20–%20Fifth%20Floor%22%7D%7D%7D,%7B%22type%22:%22input%22,%22label%22:%7B%22type%22:%22plain_text%22,%22text%22:%22What'll%20you%20have?%22%7D,%22element%22:%7B%22type%22:%22static_select%22,%22placeholder%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Choose%20your%20favorite...%22%7D,%22action_id%22:%22item%22,%22options%22:%5B%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22:cheese_wedge:%20With%20Cheeze%22%7D,%22value%22:%22012%22%7D,%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22:fish:%20With%20Anchovies%22%7D,%22value%22:%22013%22%7D,%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22:cookie:%20With%20Scooby%20Snacks%22%7D,%22value%22:%22014%22%7D,%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22:beer:%20I%20Prefer%20Steak%20and%20Beer%22%7D,%22value%22:%22015%22%7D%5D%7D%7D%5D,%22submit%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Get%20Fed%22%7D%7D)
 
+### Paginator Component
+
+**Block Builder** provides a `Paginator` component that assists in producing paginated UI. It allows you to dictate the UI to build for each items passed in and provides to the `actionId` all of the data (`page`, `perPage`, `totalPages`, `offset`, `totalItems` ) you need to produce the right page when a user clicks the Next or Previous buttons.
+
+It supports optional customizations, such as:  
+
+`nextButtonText` – Used to pass in custom text for the Next button, but has a default.
+
+`previousButtonText` – Used to pass in custom text for the Next button, but has a default.
+
+`pageCountText` – Used to pass in custom text for the page count, accepts a function and passes the function an object with `page` and `totalPages` properties.
+
+The code above renders the modal below. And be sure to check out the full documentation on the **Block Builder** doc site for more information.
+
+![An example of using Block Builder for Modals](docs/resources/images/accordion-modal-example.png)
+
+[**View Example on Slack Block Kit Builder Website**](https://app.slack.com/block-kit-builder#%7B%22title%22:%7B%22type%22:%22plain_text%22,%22text%22:%22FAQ%22%7D,%22blocks%22:%5B%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22Hi!%20:wave::skin-tone-4:%20And%20welcome%20to%20the%20FAQ%20section!%20Take%20a%20look%20around%20and%20if%20you%20don't%20find%20what%20you%20need,%20feel%20free%20to%20open%20an%20issue%20on%20GitHub.%22%7D,%22type%22:%22section%22%7D,%7B%22type%22:%22divider%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22*Why%20should%20I%20adopt%20Block%20Builder?*%22%7D,%22accessory%22:%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22More%22%7D,%22action_id%22:%22%7B%5C%22action%5C%22:%5C%22render-faqs%5C%22,%5C%22expandedItems%5C%22:%5B0%5D%7D%22,%22type%22:%22button%22%7D,%22type%22:%22section%22%7D,%7B%22type%22:%22divider%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22*How%20do%20I%20use%20the%20%60Accordion%60%20component?*%22%7D,%22accessory%22:%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Close%22%7D,%22action_id%22:%22%7B%5C%22action%5C%22:%5C%22render-faqs%5C%22,%5C%22expandedItems%5C%22:%5B%5D%7D%22,%22type%22:%22button%22%7D,%22type%22:%22section%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22It's%20actually%20_really_%20easy!%20All%20you%20have%20to%20do%20is%20pass%20in%20the%20items%20you%20want%20to%20show%20up%20in%20the%20UI,%20a%20function%20that%20captures%20the%20expanded%20items%20in%20the%20%60actionId%60,%20and%20a%20function%20that%20builds%20out%20the%20right%20UI%20when%20an%20item%20is%20expanded.%5Cn%5CnThat's%20it,%20so%20go%20give%20it%20a%20try!%20%20:raised_hands::skin-tone-4:%22%7D,%22type%22:%22section%22%7D,%7B%22type%22:%22divider%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22*What%20other%20features%20are%20in%20the%20pipeline?*%22%7D,%22accessory%22:%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22More%22%7D,%22action_id%22:%22%7B%5C%22action%5C%22:%5C%22render-faqs%5C%22,%5C%22expandedItems%5C%22:%5B2%5D%7D%22,%22type%22:%22button%22%7D,%22type%22:%22section%22%7D,%7B%22type%22:%22divider%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22*Do%20you%20work%20for%20Slack?*%22%7D,%22accessory%22:%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22More%22%7D,%22action_id%22:%22%7B%5C%22action%5C%22:%5C%22render-faqs%5C%22,%5C%22expandedItems%5C%22:%5B3%5D%7D%22,%22type%22:%22button%22%7D,%22type%22:%22section%22%7D,%7B%22type%22:%22divider%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22*What%20can%20I%20do%20to%20help?*%22%7D,%22accessory%22:%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22More%22%7D,%22action_id%22:%22%7B%5C%22action%5C%22:%5C%22render-faqs%5C%22,%5C%22expandedItems%5C%22:%5B4%5D%7D%22,%22type%22:%22button%22%7D,%22type%22:%22section%22%7D%5D,%22close%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Done%22%7D,%22type%22:%22modal%22%7D)
+
 ### Accordion Component
 
 Using the `Accordion` component, you can easily create a customizable accordion for your Slack app. It not only assists in building a suitable UI, but also calculates the next state and gives you access to it in the `actionId` of the buttons in the accordion, so that you can pass that back to your app's backend and use it to render the next state.
 
-It supports customizations, such: 
+It supports optional customizations, such as: 
 
 `collapseOnExpand` – Dictates whether or not multiple items can be expanded at once. When set to true, only one item will be expanded at any given time.
 
-`expandButtonText` – Used to pass in custom text for the button that expands an item.
+`expandButtonText` – Used to pass in custom text for the button that expands an item, but has a default.
 
-`collapseButtonText` – Used to pass in custom text for the button that collapses an expanded item.
+`collapseButtonText` – Used to pass in custom text for the button that collapses an expanded item, but has a default.
  
 ```javascript
 import { Modal, Blocks, Accordion } from 'slack-block-builder';
