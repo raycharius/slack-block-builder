@@ -10,7 +10,7 @@ export interface AccordionActionIdParams {
 }
 
 export type AccordionActionIdFn = StringReturnableFn<AccordionActionIdParams>;
-export type AccordionTitleTextFn<T> = StringReturnableFn<T>;
+export type AccordionTitleTextFn<T> = StringReturnableFn<{ item: T }>;
 export type AccordionBuilderFn<T> = BlockBuilderReturnableFn<{ item: T }>;
 
 export interface AccordionUIBuilderParams<T> {
@@ -54,7 +54,7 @@ export class AccordionUIBuilder<T> {
 
       return [
         Blocks.Divider(),
-        Blocks.Section({ text: this.titleTextFunction(item) })
+        Blocks.Section({ text: this.titleTextFunction({ item }) })
           .accessory(Elements.Button({
             text: isExpanded ? this.collapseButtonText : this.expandButtonText,
             actionId: this.actionIdFunction({
