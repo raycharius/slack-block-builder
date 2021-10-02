@@ -107,7 +107,7 @@ import { Surfaces, Blocks, Md } from 'slack-block-builder';
 import { Modal, Section, bold, link } from 'slack-block-builder';
 ```
 
-### Group Explanations
+### Object Breakdown
 
 `Surfaces` – Contains functions for creating modals, messages, home tabs, and workflow steps. 
 
@@ -163,8 +163,8 @@ Functions that return Block Kit objects have setter methods for all of the prope
 ```javascript
 import { Message, Blocks, Elements } from 'slack-block-builder';
 
-const myMessage = ({ channel, dangerLevel }) => {
-  return Message()
+const myMessage = ({ channel, dangerLevel }) =>
+  Message()
     .channel(channel)
     .text('Alas, my friend.')
     .blocks(
@@ -185,7 +185,6 @@ const myMessage = ({ channel, dangerLevel }) => {
             .primary()))
     .asUser()
     .buildToJSON();
-};
 ```
 
 And now an example with using both the setter methods and passing parameters into the functions at initiation:
@@ -193,8 +192,8 @@ And now an example with using both the setter methods and passing parameters int
 ```javascript
 import { Message, Blocks, Elements } from 'slack-block-builder';
 
-const myShorterMessage = ({ channel, dangerLevel }) => {
-  return Message({ channel, text: 'Alas, my friend.' })
+const myShorterMessage = ({ channel, dangerLevel }) =>
+  Message({ channel, text: 'Alas, my friend.' })
     .blocks(
       Blocks.Section({ text: 'One does not simply walk into Slack and click a button.' }),
       Blocks.Section({ text: 'At least that\'s what my friend Slackomir said :crossed_swords:' }),
@@ -207,7 +206,6 @@ const myShorterMessage = ({ channel, dangerLevel }) => {
             .primary()))
     .asUser()
     .buildToJSON();
-};
 ```
 
 Both of these examples render the message below. And the best part? It only took 15 lines of code, as opposed to the 44 lines of JSON generated as a result. 
@@ -225,8 +223,8 @@ You'll noticed that we've added an inline condition that returns an initial opti
 ```javascript
 import { Modal, Blocks, Elements, Bits } from 'slack-block-builder';
 
-const myShorterModal = ({ menuOptions, selected }) => {
-  return Modal({ title: 'PizzaMate', submit: 'Get Fed' })
+const myShorterModal = ({ menuOptions, selected }) =>
+  Modal({ title: 'PizzaMate', submit: 'Get Fed' })
     .blocks(
       Blocks.Section({ text: 'Hey there, colleague!' }),
       Blocks.Section({ text: 'Hurray for corporate pizza! Let\'s get you fed and happy :pizza:' }),
@@ -246,7 +244,6 @@ const myShorterModal = ({ menuOptions, selected }) => {
               .map((item) => Bits.Option({ text: item.name, value: item.id })))
             .initialOption(selected && Bits.Option({ text: selected.name, value: selected.id }))))
     .buildToJSON();
-};
 ```
 
 Both of these examples render the modal below. 
