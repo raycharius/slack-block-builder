@@ -268,7 +268,7 @@ import { Modal, Blocks, Accordion } from 'slack-block-builder';
 export default ({ faqs, expandedItems }) =>
   Modal({ title: 'FAQ' })
     .blocks(
-      Blocks.Section({ text: 'Hi! :wave::skin-tone-4: And welcome to the FAQ section! Take a look around and if you don\'t find what you need, feel free to open an issue on GitHub.'}),
+      Blocks.Section({ text: 'Hi! :wave: And welcome to the FAQ section! Take a look around and if you don\'t find what you need, feel free to open an issue on GitHub.'}),
       Blocks.Divider(),
       Accordion({
         items: faqs,
@@ -284,7 +284,7 @@ export default ({ faqs, expandedItems }) =>
     .buildToJSON();
 ```
 
-The code above renders the modal below. And be sure to check out the full documentation on the *Block Builder* doc site for more information.
+The code above renders the modal below. And be sure to check out the full documentation on the **Block Builder** doc site for more information.
 
 ![An example of using Block Builder for Modals](docs/resources/images/accordion-modal-example.png)
 
