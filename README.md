@@ -277,6 +277,7 @@ export default ({ tasks, totalTasks, page, perPage }) =>
         page: page || 1,
         actionId: ({ page, offset }) => JSON.stringify({ action: 'render-tasks', page, offset }),
         blocksForEach: ({ item }) => [
+          Blocks.Divider(),
           Blocks.Section({ text: `*${item.title}*` })
             .accessory(
               Elements.Button({ text: 'View Details' })
