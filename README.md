@@ -163,7 +163,7 @@ Functions that return Block Kit objects have setter methods for all of the prope
 ```javascript
 import { Message, Blocks, Elements } from 'slack-block-builder';
 
-const myMessage = ({ channel, dangerLevel }) =>
+export default ({ channel, dangerLevel }) =>
   Message()
     .channel(channel)
     .text('Alas, my friend.')
@@ -192,7 +192,7 @@ And now an example with using both the setter methods and passing parameters int
 ```javascript
 import { Message, Blocks, Elements } from 'slack-block-builder';
 
-const myShorterMessage = ({ channel, dangerLevel }) =>
+export default ({ channel, dangerLevel }) =>
   Message({ channel, text: 'Alas, my friend.' })
     .blocks(
       Blocks.Section({ text: 'One does not simply walk into Slack and click a button.' }),
@@ -223,7 +223,7 @@ You'll noticed that we've added an inline condition that returns an initial opti
 ```javascript
 import { Modal, Blocks, Elements, Bits } from 'slack-block-builder';
 
-const myShorterModal = ({ menuOptions, selected }) =>
+export default ({ menuOptions, selected }) =>
   Modal({ title: 'PizzaMate', submit: 'Get Fed' })
     .blocks(
       Blocks.Section({ text: 'Hey there, colleague!' }),
@@ -304,7 +304,7 @@ Often you'll find that you need to format text in your messages and modals. *Blo
 ``` javascript
 import { Message, Blocks, Md } from 'slack-block-builder';
 
-const myMdMessage = ({ channel, user }) => {
+export default ({ channel, user }) => {
   const slashCommands = ['/schedule', '/cancel', '/remind', '/help'];
 
   return Message({ channel, text: 'Alas, my friend.' })
