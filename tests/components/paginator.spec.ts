@@ -1,30 +1,30 @@
 import {
-  Paginator, Modal, Blocks, BlockBuilder, ModalBuilder,
+  Paginator, Modal, Blocks, BlockBuilder,
 } from '../../src';
 import { Human, humans } from './mock/data-set.mock';
 
-const getBlocks = (human: Human): BlockBuilder[] => [
+const getBlocks = ({ item: human }): BlockBuilder[] => [
   Blocks.Section({ text: `${human.firstName} ${human.lastName}` }),
   Blocks.Section({ text: `${human.jobTitle}` }),
   Blocks.Section({ text: `${human.department}` }),
   Blocks.Section({ text: `${human.email}` }),
 ];
 
-const getModalObject = (blocks: BlockBuilder[]): ModalBuilder => Modal({ title: 'Testing' })
-  .blocks(blocks);
+const getModalObject = (blocks: BlockBuilder[]): string => Modal({ title: 'Testing' })
+  .blocks(blocks)
+  .buildToJSON();
 
-describe('Testing Builder Class Methods:', () => {
+describe('Testing Paginator:', () => {
   test('Creating a paginator with the default parameters creates the correct UI and callback data.', () => {
     const items = [humans[0], humans[1], humans[2], humans[3], humans[4]];
-    const result = getModalObject(Paginator({
+    const result = getModalObject(Paginator<Human>({
       items,
       totalItems: 20,
       page: 1,
       perPage: 5,
       actionId: (params) => JSON.stringify(params),
-    })
-      .blocksForEach(getBlocks))
-      .buildToJSON();
+      blocksForEach: getBlocks,
+    }));
 
     expect(result).toEqual(JSON.stringify({
       title: {
@@ -218,9 +218,8 @@ describe('Testing Builder Class Methods:', () => {
       page: 2,
       perPage: 5,
       actionId: (params) => JSON.stringify(params),
-    })
-      .blocksForEach(getBlocks))
-      .buildToJSON();
+      blocksForEach: getBlocks,
+    }));
 
     expect(result).toEqual(JSON.stringify({
       title: {
@@ -417,9 +416,8 @@ describe('Testing Builder Class Methods:', () => {
       previousButtonText: 'TEST BACKWARD',
       pageCountText: ({ page, totalPages }) => `This is ${page} of like ${totalPages}`,
       actionId: (params) => JSON.stringify(params),
-    })
-      .blocksForEach(getBlocks))
-      .buildToJSON();
+      blocksForEach: getBlocks,
+    }));
 
     expect(result).toEqual(JSON.stringify({
       title: {
