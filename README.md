@@ -262,11 +262,38 @@ It supports optional customizations, such as:
 
 `pageCountText` – Used to pass in custom text for the page count, accepts a function and passes the function an object with `page` and `totalPages` properties.
 
+```javascript
+import { Modal, Blocks, Elements, Paginator } from 'slack-block-builder';
+
+export default ({ tasks, totalTasks, page, perPage }) =>
+  Modal({ title: 'Open Tasks' })
+    .blocks(
+      Blocks.Section({ text: 'Hi! :wave: And welcome to the FAQ section! Take a look around and if you don\'t find what you need, feel free to open an issue on GitHub.' }),
+      Blocks.Section({ text: `You currently have *${totalTasks} open task(s)*:` }),
+      Paginator({
+        perPage,
+        items: tasks,
+        totalItems: totalTasks,
+        page: page || 1,
+        actionId: ({ page, offset }) => JSON.stringify({ action: 'render-tasks', page, offset }),
+        blocksForEach: ({ item }) => [
+          Blocks.Section({ text: `*${item.title}*` })
+            .accessory(
+              Elements.Button({ text: 'View Details' })
+                .actionId('view-details')
+                .value(item.id.toString())),
+          Blocks.Section({ text: `*Due Date:* ${getDate(item.dueDate)}` }),
+        ],
+      }))
+    .close('Done')
+    .buildToJSON();
+```
+
 The code above renders the modal below. And be sure to check out the full documentation on the **Block Builder** doc site for more information.
 
-![An example of using Block Builder for Modals](docs/resources/images/accordion-modal-example.png)
+![An example of using Block Builder for Modals](docs/resources/images/paginator-modal-example.png)
 
-[**View Example on Slack Block Kit Builder Website**](https://app.slack.com/block-kit-builder#%7B%22title%22:%7B%22type%22:%22plain_text%22,%22text%22:%22FAQ%22%7D,%22blocks%22:%5B%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22Hi!%20:wave::skin-tone-4:%20And%20welcome%20to%20the%20FAQ%20section!%20Take%20a%20look%20around%20and%20if%20you%20don't%20find%20what%20you%20need,%20feel%20free%20to%20open%20an%20issue%20on%20GitHub.%22%7D,%22type%22:%22section%22%7D,%7B%22type%22:%22divider%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22*Why%20should%20I%20adopt%20Block%20Builder?*%22%7D,%22accessory%22:%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22More%22%7D,%22action_id%22:%22%7B%5C%22action%5C%22:%5C%22render-faqs%5C%22,%5C%22expandedItems%5C%22:%5B0%5D%7D%22,%22type%22:%22button%22%7D,%22type%22:%22section%22%7D,%7B%22type%22:%22divider%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22*How%20do%20I%20use%20the%20%60Accordion%60%20component?*%22%7D,%22accessory%22:%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Close%22%7D,%22action_id%22:%22%7B%5C%22action%5C%22:%5C%22render-faqs%5C%22,%5C%22expandedItems%5C%22:%5B%5D%7D%22,%22type%22:%22button%22%7D,%22type%22:%22section%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22It's%20actually%20_really_%20easy!%20All%20you%20have%20to%20do%20is%20pass%20in%20the%20items%20you%20want%20to%20show%20up%20in%20the%20UI,%20a%20function%20that%20captures%20the%20expanded%20items%20in%20the%20%60actionId%60,%20and%20a%20function%20that%20builds%20out%20the%20right%20UI%20when%20an%20item%20is%20expanded.%5Cn%5CnThat's%20it,%20so%20go%20give%20it%20a%20try!%20%20:raised_hands::skin-tone-4:%22%7D,%22type%22:%22section%22%7D,%7B%22type%22:%22divider%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22*What%20other%20features%20are%20in%20the%20pipeline?*%22%7D,%22accessory%22:%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22More%22%7D,%22action_id%22:%22%7B%5C%22action%5C%22:%5C%22render-faqs%5C%22,%5C%22expandedItems%5C%22:%5B2%5D%7D%22,%22type%22:%22button%22%7D,%22type%22:%22section%22%7D,%7B%22type%22:%22divider%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22*Do%20you%20work%20for%20Slack?*%22%7D,%22accessory%22:%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22More%22%7D,%22action_id%22:%22%7B%5C%22action%5C%22:%5C%22render-faqs%5C%22,%5C%22expandedItems%5C%22:%5B3%5D%7D%22,%22type%22:%22button%22%7D,%22type%22:%22section%22%7D,%7B%22type%22:%22divider%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22*What%20can%20I%20do%20to%20help?*%22%7D,%22accessory%22:%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22More%22%7D,%22action_id%22:%22%7B%5C%22action%5C%22:%5C%22render-faqs%5C%22,%5C%22expandedItems%5C%22:%5B4%5D%7D%22,%22type%22:%22button%22%7D,%22type%22:%22section%22%7D%5D,%22close%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Done%22%7D,%22type%22:%22modal%22%7D)
+[**View Example on Slack Block Kit Builder Website**](https://app.slack.com/block-kit-builder/#%7B%22title%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Open%20Tasks%22%7D,%22blocks%22:%5B%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22Hello!%20:wave::skin-tone-4:%20%20Below%20you%20can%20find%20all%20of%20your%20open%20tasks.%22%7D,%22type%22:%22section%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22You%20currently%20have%20*58%20open%20task(s)*:%22%7D,%22type%22:%22section%22%7D,%7B%22type%22:%22divider%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22*Set%20Up%20Webhook%20Monitoring*%22%7D,%22accessory%22:%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22View%20Details%22%7D,%22action_id%22:%22view-details%22,%22value%22:%225%22,%22type%22:%22button%22%7D,%22type%22:%22section%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22*Due%20Date:*%20%3C!date%5E1633392000%5E%7Bdate%7D%7C2021-10-05%3E%22%7D,%22type%22:%22section%22%7D,%7B%22type%22:%22divider%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22*Refactor%20Payment%20Service*%22%7D,%22accessory%22:%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22View%20Details%22%7D,%22action_id%22:%22view-details%22,%22value%22:%223%22,%22type%22:%22button%22%7D,%22type%22:%22section%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22*Due%20Date:*%20%3C!date%5E1635292800%5E%7Bdate%7D%7C2021-10-27%3E%22%7D,%22type%22:%22section%22%7D,%7B%22type%22:%22divider%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22*Finalize%20JumboCode%20Documentation*%22%7D,%22accessory%22:%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22View%20Details%22%7D,%22action_id%22:%22view-details%22,%22value%22:%224%22,%22type%22:%22button%22%7D,%22type%22:%22section%22%7D,%7B%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22*Due%20Date:*%20%3C!date%5E1635465600%5E%7Bdate%7D%7C2021-10-29%3E%22%7D,%22type%22:%22section%22%7D,%7B%22elements%22:%5B%7B%22type%22:%22mrkdwn%22,%22text%22:%22Page%208%20of%2020%22%7D%5D,%22type%22:%22context%22%7D,%7B%22type%22:%22divider%22%7D,%7B%22elements%22:%5B%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Previous%22%7D,%22action_id%22:%22%7B%5C%22action%5C%22:%5C%22render-tasks%5C%22,%5C%22page%5C%22:7,%5C%22offset%5C%22:18%7D%22,%22type%22:%22button%22%7D,%7B%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Next%22%7D,%22action_id%22:%22%7B%5C%22action%5C%22:%5C%22render-tasks%5C%22,%5C%22page%5C%22:9,%5C%22offset%5C%22:24%7D%22,%22type%22:%22button%22%7D%5D,%22type%22:%22actions%22%7D%5D,%22close%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Done%22%7D,%22type%22:%22modal%22%7D)
 
 ### Accordion Component
 
