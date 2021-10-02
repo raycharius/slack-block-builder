@@ -10,14 +10,14 @@ const getBlocks = ({ item: human }): BlockBuilder[] => [
   Blocks.Section({ text: `${human.email}` }),
 ];
 
-const getModalObject = (blocks: BlockBuilder[]): string => Modal({ title: 'Testing' })
+const getModalString = (blocks: BlockBuilder[]): string => Modal({ title: 'Testing' })
   .blocks(blocks)
   .buildToJSON();
 
 describe('Testing Paginator:', () => {
   test('Creating a paginator with the default parameters creates the correct UI and callback data.', () => {
     const items = [humans[0], humans[1], humans[2], humans[3], humans[4]];
-    const result = getModalObject(Paginator<Human>({
+    const result = getModalString(Paginator<Human>({
       items,
       totalItems: 20,
       page: 1,
@@ -212,7 +212,7 @@ describe('Testing Paginator:', () => {
 
   test('Creating a paginator somewhere in the middle parameters creates the correct UI and callback data.', () => {
     const items = [humans[5], humans[6], humans[7], humans[8], humans[9]];
-    const result = getModalObject(Paginator({
+    const result = getModalString(Paginator({
       items,
       totalItems: 20,
       page: 2,
@@ -407,7 +407,7 @@ describe('Testing Paginator:', () => {
 
   test('Creating a paginator with the default parameters creates the correct UI and callback data.', () => {
     const items = [humans[15], humans[16], humans[17], humans[18], humans[19]];
-    const result = getModalObject(Paginator({
+    const result = getModalString(Paginator({
       items,
       totalItems: 20,
       page: 4,
