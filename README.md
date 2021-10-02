@@ -54,12 +54,11 @@
 * Focus more on code in your IDE than on studying the [Slack API docs](https://api.slack.com/).
 * Easily integrate localizations into your app.
 
-### :phone: &nbsp; Let's Talk?
+### :busts_in_silhouette: &nbsp; Join The Community
 
-Feedback – love it! Aside from GitHub Issues, there are Slack channels available in popular bot communities to discuss **Block Builder** – we'll see you there! :raised_hands:
+Feedback – love it! Aside from GitHub Issues, there's a Slack channel available in the Slack Community workspace to discuss **Block Builder** – we'll see you there! :raised_hands:
 
 * **Slack Community** – [\#block-builder](https://slackcommunity.com)
-* **Bot Developer Hangout** – [\#block-builder](https://community.botkit.ai)
 
 ### :floppy_disk: &nbsp; Installation 
 
