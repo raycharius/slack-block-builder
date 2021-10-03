@@ -265,30 +265,29 @@ It supports optional customizations, such as:
 ```javascript
 import { Modal, Blocks, Elements, Paginator } from 'slack-block-builder';
 
-export default ({ tasks, totalTasks, page, perPage }) =>
-  Modal({ title: 'Open Tasks' })
-    .blocks(
-      Blocks.Section({ text: 'Hi! :wave: And welcome to the FAQ section! Take a look around and if you don\'t find what you need, feel free to open an issue on GitHub.' }),
-      Blocks.Section({ text: `You currently have *${totalTasks} open task(s)*:` }),
-      Paginator({
-        perPage,
-        items: tasks,
-        totalItems: totalTasks,
-        page: page || 1,
-        actionId: ({ page, offset }) => JSON.stringify({ action: 'render-tasks', page, offset }),
-        blocksForEach: ({ item }) => [
-          Blocks.Divider(),
-          Blocks.Section({ text: `*${item.title}*` })
-            .accessory(
-              Elements.Button({ text: 'View Details' })
-                .actionId('view-details')
-                .value(item.id.toString())),
-          Blocks.Section({ text: `*Due Date:* ${getDate(item.dueDate)}` }),
-        ],
-      }).getBlocks())
-    .close('Done')
-    .buildToJSON();
-```
+export default ({ tasks, totalTasks, page, perPage }) => Modal({ title: 'Open Tasks' })
+  .blocks(
+    Blocks.Section({ text: 'Hi! :wave: And welcome to the FAQ section! Take a look around and if you don\'t find what you need, feel free to open an issue on GitHub.' }),
+    Blocks.Section({ text: `You currently have *${totalTasks} open task(s)*:` }),
+    Paginator({
+      perPage,
+      items: tasks,
+      totalItems: totalTasks,
+      page: page || 1,
+      actionId: ({ page, offset }) => JSON.stringify({ action: 'render-tasks', page, offset }),
+      blocksForEach: ({ item }) => [
+        Blocks.Divider(),
+        Blocks.Section({ text: `*${item.title}*` })
+          .accessory(
+            Elements.Button({ text: 'View Details' })
+              .actionId('view-details')
+              .value(item.id.toString())),
+        Blocks.Section({ text: `*Due Date:* ${getDate(item.dueDate)}` }),
+      ],
+    }).getBlocks())
+  .close('Done')
+  .buildToJSON();
+``` 
 
 The code above renders the modal below. And be sure to check out the full documentation on the **Block Builder** doc site for more information.
 
@@ -311,23 +310,22 @@ It supports optional customizations, such as:
 ```javascript
 import { Modal, Blocks, Accordion } from 'slack-block-builder';
 
-export default ({ faqs, expandedItems }) =>
-  Modal({ title: 'FAQ' })
-    .blocks(
-      Blocks.Section({ text: 'Hi! :wave: And welcome to the FAQ section! Take a look around and if you don\'t find what you need, feel free to open an issue on GitHub.'}),
-      Blocks.Divider(),
-      Accordion({
-        items: faqs,
-        expandedItems: expandedItems || [],
-        collapseOnExpand: true,
-        titleText: ({ item }) => `*${item.question}*`,
-        actionId: ({ expandedItems }) => JSON.stringify({ action: 'render-faqs', expandedItems }),
-        blocksForExpanded: ({ item }) => [
-          Blocks.Section({ text: `${item.answer}` }),
-        ],
-      }).getBlocks())
-    .close('Done')
-    .buildToJSON();
+export default ({ faqs, expandedItems }) => Modal({ title: 'FAQ' })
+  .blocks(
+    Blocks.Section({ text: 'Hi! :wave: And welcome to the FAQ section! Take a look around and if you don\'t find what you need, feel free to open an issue on GitHub.'}),
+    Blocks.Divider(),
+    Accordion({
+      items: faqs,
+      expandedItems: expandedItems || [], // In this case, the value is [1]
+      collapseOnExpand: true,
+      titleText: ({ item }) => `*${item.question}*`,
+      actionId: ({ expandedItems }) => JSON.stringify({ action: 'render-faqs', expandedItems }),
+      blocksForExpanded: ({ item }) => [
+       Blocks.Section({ text: `${item.answer}` }),
+      ],
+    }).getBlocks())
+  .close('Done')
+  .buildToJSON();
 ```
 
 The code above renders the modal below. And be sure to check out the full documentation on the **Block Builder** doc site for more information.

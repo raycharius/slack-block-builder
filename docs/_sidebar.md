@@ -61,6 +61,11 @@
   * [Confirmation Dialog](bits/confirmation-dialog.md "Block Builder – Confirmation Dialog – Maintainable JavaScript Code for Slack Block Kit")
   * [Option](bits/option.md "Block Builder – Option – Maintainable JavaScript Code for Slack Block Kit")
   * [Option Group](bits/option-group.md "Block Builder – Option Group – Maintainable JavaScript Code for Slack Block Kit")
+
+* **Component References**
+  * [Paginator](components/paginator.md "Block Builder – Paginator – Maintainable JavaScript Code for Slack Block Kit")
+  * [Easy Paginator](components/easy-paginator.md "Block Builder – Easy Paginator – Maintainable JavaScript Code for Slack Block Kit")
+  * [Accordion](components/accordion.md "Block Builder – Accordion – Maintainable JavaScript Code for Slack Block Kit")
   
 * **Other**
   * [Block Collection](other/block-collection.md "Block Builder – Block Collection – Maintainable JavaScript Code for Slack Block Kit")
