@@ -24,7 +24,7 @@ describe('Testing Paginator:', () => {
       perPage: 5,
       actionId: (params) => JSON.stringify(params),
       blocksForEach: getBlocks,
-    }));
+    }).getBlocks());
 
     expect(result).toEqual(JSON.stringify({
       title: {
@@ -219,7 +219,7 @@ describe('Testing Paginator:', () => {
       perPage: 5,
       actionId: (params) => JSON.stringify(params),
       blocksForEach: getBlocks,
-    }));
+    }).getBlocks());
 
     expect(result).toEqual(JSON.stringify({
       title: {
@@ -417,7 +417,7 @@ describe('Testing Paginator:', () => {
       pageCountText: ({ page, totalPages }) => `This is ${page} of like ${totalPages}`,
       actionId: (params) => JSON.stringify(params),
       blocksForEach: getBlocks,
-    }));
+    }).getBlocks());
 
     expect(result).toEqual(JSON.stringify({
       title: {

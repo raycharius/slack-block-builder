@@ -3,13 +3,12 @@ import {
 } from '../../src';
 import { Human, humans } from './mock/data-set.mock';
 
-const getBlocks = ({ item: human }): BlockBuilder[] =>
-  [
-    Blocks.Section({ text: `${human.firstName} ${human.lastName}` }),
-    Blocks.Section({ text: `${human.jobTitle}` }),
-    Blocks.Section({ text: `${human.department}` }),
-    Blocks.Section({ text: `${human.email}` }),
-  ];
+const getBlocks = ({ item: human }): BlockBuilder[] => [
+  Blocks.Section({ text: `${human.firstName} ${human.lastName}` }),
+  Blocks.Section({ text: `${human.jobTitle}` }),
+  Blocks.Section({ text: `${human.department}` }),
+  Blocks.Section({ text: `${human.email}` }),
+];
 
 const getModalString = (blocks: BlockBuilder[]): string => Modal({ title: 'Testing' })
   .blocks(blocks)
@@ -23,7 +22,7 @@ describe('Testing Accordion:', () => {
       titleText: ({ item }) => `${item.firstName} ${item.lastName}`,
       actionId: (params) => JSON.stringify(params),
       blocksForExpanded: getBlocks,
-    }));
+    }).getBlocks());
 
     expect(result).toEqual(JSON.stringify({
       title: {
@@ -400,7 +399,7 @@ describe('Testing Accordion:', () => {
       titleText: ({ item }) => `${item.firstName} ${item.lastName}`,
       actionId: (params) => JSON.stringify(params),
       blocksForExpanded: getBlocks,
-    }));
+    }).getBlocks());
 
     expect(result).toEqual(JSON.stringify({
       title: {
@@ -805,7 +804,7 @@ describe('Testing Accordion:', () => {
       titleText: ({ item }) => `${item.firstName} ${item.lastName}`,
       actionId: (params) => JSON.stringify(params),
       blocksForExpanded: getBlocks,
-    }));
+    }).getBlocks());
 
     expect(result).toEqual(JSON.stringify({
       title: {
@@ -1239,7 +1238,7 @@ describe('Testing Accordion:', () => {
       titleText: ({ item }) => `${item.firstName} ${item.lastName}`,
       actionId: (params) => JSON.stringify(params),
       blocksForExpanded: getBlocks,
-    }));
+    }).getBlocks());
 
     expect(result).toEqual(JSON.stringify({
       title: {
@@ -1647,7 +1646,7 @@ describe('Testing Accordion:', () => {
       titleText: ({ item }) => `${item.firstName} ${item.lastName}`,
       actionId: (params) => JSON.stringify(params),
       blocksForExpanded: getBlocks,
-    }));
+    }).getBlocks());
 
     expect(result).toEqual(JSON.stringify({
       title: {
