@@ -35,6 +35,7 @@ export class AccordionStateManager {
 
       return nextState;
     }
+
     return this.collapseOnExpand
       ? [index]
       : [...this.expandedItems, index];
