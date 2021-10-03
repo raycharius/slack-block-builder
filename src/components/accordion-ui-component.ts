@@ -13,7 +13,7 @@ export type AccordionActionIdFn = StringReturnableFn<AccordionActionIdParams>;
 export type AccordionTitleTextFn<T> = StringReturnableFn<{ item: T }>;
 export type AccordionBuilderFn<T> = BlockBuilderReturnableFn<{ item: T }>;
 
-export interface AccordionUIBuilderParams<T> {
+export interface AccordionUIComponentParams<T> {
   items: T[];
   paginator: AccordionStateManager;
   expandButtonText?: string;
@@ -23,7 +23,7 @@ export interface AccordionUIBuilderParams<T> {
   builderFunction: AccordionBuilderFn<T>;
 }
 
-export class AccordionUIBuilder<T> {
+export class AccordionUIComponent<T> {
   private readonly items: T[];
 
   private readonly paginator: AccordionStateManager;
@@ -38,7 +38,7 @@ export class AccordionUIBuilder<T> {
 
   private readonly builderFunction: AccordionBuilderFn<T>;
 
-  constructor(params: AccordionUIBuilderParams<T>) {
+  constructor(params: AccordionUIComponentParams<T>) {
     this.items = params.items;
     this.paginator = params.paginator;
     this.expandButtonText = params.expandButtonText || ComponentUIText.More;

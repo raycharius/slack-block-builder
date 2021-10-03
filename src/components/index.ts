@@ -1,14 +1,14 @@
 import {
-  PaginatorUIBuilder,
+  PaginatorUIComponent,
   PaginatorPageCountTextFn,
   PaginatorActionIdFn,
   PaginatorBuilderFn,
-} from './paginator-ui-builder';
+} from './paginator-ui-component';
 import {
-  AccordionUIBuilder,
+  AccordionUIComponent,
   AccordionTitleTextFn,
   AccordionActionIdFn,
-} from './accordion-ui-builder';
+} from './accordion-ui-component';
 import {
   PaginatorStateManager,
   PaginatorStateManagerParams,
@@ -16,7 +16,7 @@ import {
   AccordionStateManagerParams,
 } from '../lib';
 
-import type { BlockBuilder } from '../types';
+export type { PaginatorUIComponent, AccordionUIComponent };
 
 interface PaginatorBaseParams<T> {
   items: T[];
@@ -29,10 +29,11 @@ interface PaginatorBaseParams<T> {
 
 export type PaginatorParams<T> = PaginatorBaseParams<T> & PaginatorStateManagerParams;
 
-export function Paginator<T>(params: PaginatorParams<T>): BlockBuilder[] {
+export function Paginator<T>(params: PaginatorParams<T>): PaginatorUIComponent<T> {
   const { page, perPage, totalItems } = params;
   const stateManager = new PaginatorStateManager({ page, perPage, totalItems });
-  const paginator = new PaginatorUIBuilder<T>({
+
+  return new PaginatorUIComponent<T>({
     items: params.items,
     paginator: stateManager,
     nextButtonText: params.nextButtonText || null,
@@ -41,18 +42,17 @@ export function Paginator<T>(params: PaginatorParams<T>): BlockBuilder[] {
     actionIdFunction: params.actionId,
     builderFunction: params.blocksForEach,
   });
-
-  return paginator.getBlocks();
 }
 
 export type EasyPaginatorParams<T> = Omit<PaginatorParams<T>, 'totalItems'>;
 
-export function EasyPaginator<T>(params: EasyPaginatorParams<T>): BlockBuilder[] {
+export function EasyPaginator<T>(params: EasyPaginatorParams<T>): PaginatorUIComponent<T> {
   const { page, perPage, items } = params;
   const totalItems = items.length;
   const paginationCalculator = new PaginatorStateManager({ page, perPage, totalItems });
   const extractedItems = paginationCalculator.extractItems(items);
-  const paginator = new PaginatorUIBuilder<T>({
+
+  return new PaginatorUIComponent<T>({
     paginator: paginationCalculator,
     items: extractedItems,
     nextButtonText: params.nextButtonText || null,
@@ -61,8 +61,6 @@ export function EasyPaginator<T>(params: EasyPaginatorParams<T>): BlockBuilder[]
     actionIdFunction: params.actionId,
     builderFunction: params.blocksForEach,
   });
-
-  return paginator.getBlocks();
 }
 
 interface AccordionBaseParams<T> {
@@ -76,10 +74,10 @@ interface AccordionBaseParams<T> {
 
 export type AccordionParams<T> = AccordionBaseParams<T> & AccordionStateManagerParams;
 
-export function Accordion<T>(params: AccordionParams<T>): BlockBuilder[] {
+export function Accordion<T>(params: AccordionParams<T>): AccordionUIComponent<T> {
   const { items, expandedItems, collapseOnExpand } = params;
   const stateManager = new AccordionStateManager({ expandedItems, collapseOnExpand });
-  const accordion = new AccordionUIBuilder<T>({
+  return new AccordionUIComponent<T>({
     items,
     paginator: stateManager,
     expandButtonText: params.expandButtonText || null,
@@ -88,8 +86,6 @@ export function Accordion<T>(params: AccordionParams<T>): BlockBuilder[] {
     actionIdFunction: params.actionId,
     builderFunction: params.blocksForExpanded,
   });
-
-  return accordion.getBlocks();
 }
 
 const components = {

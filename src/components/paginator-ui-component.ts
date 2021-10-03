@@ -15,7 +15,7 @@ export interface PageCountTextFnParams {
 export type PaginatorPageCountTextFn = (params: PageCountTextFnParams) => string;
 export type PaginatorBuilderFn<T> = BlockBuilderReturnableFn<{ item: T }>;
 
-interface PaginatorUIBuilderParams<T> {
+interface PaginatorUIComponentParams<T> {
   items: T[];
   paginator: PaginatorStateManager;
   nextButtonText: string;
@@ -27,7 +27,7 @@ interface PaginatorUIBuilderParams<T> {
 
 const defaultPageCountText = ({ page, totalPages }) => `Page ${page} of ${totalPages}`;
 
-export class PaginatorUIBuilder<T> {
+export class PaginatorUIComponent<T> {
   private readonly items: T[];
 
   private readonly paginator: PaginatorStateManager;
@@ -42,7 +42,7 @@ export class PaginatorUIBuilder<T> {
 
   private readonly builderFunction: PaginatorBuilderFn<T>;
 
-  constructor(params: PaginatorUIBuilderParams<T>) {
+  constructor(params: PaginatorUIComponentParams<T>) {
     this.items = params.items;
     this.paginator = params.paginator;
     this.nextButtonText = params.nextButtonText || ComponentUIText.Next;
