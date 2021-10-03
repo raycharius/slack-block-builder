@@ -285,7 +285,7 @@ export default ({ tasks, totalTasks, page, perPage }) =>
                 .value(item.id.toString())),
           Blocks.Section({ text: `*Due Date:* ${getDate(item.dueDate)}` }),
         ],
-      }))
+      }).getBlocks())
     .close('Done')
     .buildToJSON();
 ```
@@ -325,7 +325,7 @@ export default ({ faqs, expandedItems }) =>
         blocksForExpanded: ({ item }) => [
           Blocks.Section({ text: `${item.answer}` }),
         ],
-      }))
+      }).getBlocks())
     .close('Done')
     .buildToJSON();
 ```
