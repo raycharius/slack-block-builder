@@ -254,7 +254,9 @@ Both of these examples render the modal below.
 
 **Block Builder** provides a `Paginator` component that assists in producing paginated UI. It allows you to dictate the UI to build for each items passed in and provides to the `actionId` all of the data (`page`, `perPage`, `totalPages`, `offset`, `totalItems` ) you need to produce the right page when a user clicks the Next or Previous buttons.
 
-It supports optional customizations, such as:  
+Note that there is a [demo app available](https://github.com/raycharius/slack-block-builder-demo) that demonstrates how to use components.  
+
+The `Paginator` component supports optional customizations, such as:  
 
 `nextButtonText` – Used to pass in custom text for the Next button, but has a default.
 
@@ -289,7 +291,7 @@ export default ({ tasks, totalTasks, page, perPage }) => Modal({ title: 'Open Ta
   .buildToJSON();
 ``` 
 
-The code above renders the modal below. And be sure to check out the full documentation on the **Block Builder** doc site for more information.
+The code above renders the modal below. And be sure to check out the full documentation on the [**Block Builder** doc site](https://www.blockbuilder.dev/#/components/paginator) for more information.
 
 ![An example of using Block Builder for Modals](docs/resources/images/paginator-modal-example.png)
 
@@ -299,7 +301,9 @@ The code above renders the modal below. And be sure to check out the full docume
 
 Using the `Accordion` component, you can easily create a customizable accordion for your Slack app. It not only assists in building a suitable UI, but also calculates the next state and gives you access to it in the `actionId` of the buttons in the accordion, so that you can pass that back to your app's backend and use it to render the next state.
 
-It supports optional customizations, such as: 
+Note that there is a [demo app available](https://github.com/raycharius/slack-block-builder-demo) that demonstrates how to use components.
+
+The `Accordion` component supports optional customizations, such as: 
 
 `collapseOnExpand` – Dictates whether or not multiple items can be expanded at once. When set to true, only one item will be expanded at any given time.
 
@@ -328,7 +332,7 @@ export default ({ faqs, expandedItems }) => Modal({ title: 'FAQ' })
   .buildToJSON();
 ```
 
-The code above renders the modal below. And be sure to check out the full documentation on the **Block Builder** doc site for more information.
+The code above renders the modal below. And be sure to check out the full documentation on the [**Block Builder** doc site](https://www.blockbuilder.dev/#/components/accordion) for more information.
 
 ![An example of using Block Builder for Modals](docs/resources/images/accordion-modal-example.png)
 
