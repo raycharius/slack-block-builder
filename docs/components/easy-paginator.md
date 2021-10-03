@@ -1,6 +1,6 @@
 # Easy Paginator
 
-?> **Note:** This document is a reference for using the `Paginator` component in **Block Builder**. For information on the business logic for the blocks in the context of the Slack Block Kit framework, visit [the official doc site](https://api.slack.com/block-kit) from Slack.
+?> **Note:** This document is a reference for using the `Paginator` component in **Block Builder**. For information on Slack's Block Kit framework and how this carries over to the API, visit [the official doc site](https://api.slack.com/block-kit) from Slack.
 
 **Block Builder** provides a component for creating paginated content called the `Paginator`. It is one of a few UI components available in the library. 
 

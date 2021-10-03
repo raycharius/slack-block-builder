@@ -1,6 +1,6 @@
 # Modal
 
-?> **Note:** This document is a reference to the `ModalBuilder` object in **Block Builder**. For information on the business logic for the **Modal** in the context of the Slack Block Kit framework, visit [the Modal docs](https:&#x2F;&#x2F;api.slack.com&#x2F;reference&#x2F;surfaces&#x2F;views) on Slack's doc site.
+?> **Note:** This document is a reference to the `ModalBuilder` object in **Block Builder**. For more information on how this carries over to the Slack API, view the [the Modal docs](https:&#x2F;&#x2F;api.slack.com&#x2F;reference&#x2F;surfaces&#x2F;views) on Slack's doc site.
 
 ### Creating an Instance 
 

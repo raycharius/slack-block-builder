@@ -1,6 +1,6 @@
 # Checkboxes
 
-?> **Note:** This document is a reference to the `CheckboxesBuilder` object in **Block Builder**. For information on the business logic for the **Checkboxes** in the context of the Slack Block Kit framework, visit [the Checkboxes docs](https:&#x2F;&#x2F;api.slack.com&#x2F;reference&#x2F;block-kit&#x2F;block-elements#checkboxes) on Slack's doc site.
+?> **Note:** This document is a reference to the `CheckboxesBuilder` object in **Block Builder**. For more information on how this carries over to the Slack API, view the [the Checkboxes docs](https:&#x2F;&#x2F;api.slack.com&#x2F;reference&#x2F;block-kit&#x2F;block-elements#checkboxes) on Slack's doc site.
 
 ### Creating an Instance 
 

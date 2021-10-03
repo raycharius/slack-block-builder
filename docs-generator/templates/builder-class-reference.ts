@@ -2,7 +2,7 @@
 // @ts-ignore
 export default `# {{displayName}}
 
-?> **Note:** This document is a reference to the \`{{name}}\` object in **Block Builder**. For information on the business logic for the **{{displayName}}** in the context of the Slack Block Kit framework, visit [the {{displayName}} docs]({{slackLink}}) on Slack's doc site.
+?> **Note:** This document is a reference to the \`{{name}}\` object in **Block Builder**. For more information on how this carries over to the Slack API, view the [the {{displayName}} docs]({{slackLink}}) on Slack's doc site.
 
 ### Creating an Instance 
 

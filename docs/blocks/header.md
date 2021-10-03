@@ -1,6 +1,6 @@
 # Header
 
-?> **Note:** This document is a reference to the `HeaderBuilder` object in **Block Builder**. For information on the business logic for the **Header** in the context of the Slack Block Kit framework, visit [the Header docs](https:&#x2F;&#x2F;api.slack.com&#x2F;reference&#x2F;block-kit&#x2F;blocks#header) on Slack's doc site.
+?> **Note:** This document is a reference to the `HeaderBuilder` object in **Block Builder**. For more information on how this carries over to the Slack API, view the [the Header docs](https:&#x2F;&#x2F;api.slack.com&#x2F;reference&#x2F;block-kit&#x2F;blocks#header) on Slack's doc site.
 
 ### Creating an Instance 
 
