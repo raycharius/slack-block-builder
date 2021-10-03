@@ -1,6 +1,6 @@
 # Time Picker
 
-?> **Note:** This document is a reference to the `TimePickerBuilder` object in **Block Builder**. For information on the business logic for the **Time Picker** in the context of the Slack Block Kit framework, visit [the Time Picker docs](https:&#x2F;&#x2F;api.slack.com&#x2F;reference&#x2F;block-kit&#x2F;block-elements#timepicker) on Slack's doc site.
+?> **Note:** This document is a reference to the `TimePickerBuilder` object in **Block Builder**. For more information on how this carries over to the Slack API, view the [the Time Picker docs](https:&#x2F;&#x2F;api.slack.com&#x2F;reference&#x2F;block-kit&#x2F;block-elements#timepicker) on Slack's doc site.
 
 ### Creating an Instance 
 

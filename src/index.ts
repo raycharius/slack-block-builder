@@ -1,5 +1,6 @@
 export * from './bits';
 export * from './blocks';
+export * from './components';
 export * from './elements';
 export * from './md';
 export * from './surfaces';
@@ -11,3 +12,4 @@ export type {
   SlackElementDto,
   SlackMessageDto,
 } from './lib';
+export * from './types';
