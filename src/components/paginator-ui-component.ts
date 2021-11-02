@@ -1,11 +1,12 @@
 import { Blocks } from '../blocks';
 import { Elements } from '../elements';
-import { ComponentUIText } from '../constants';
+import { ComponentUIText, PaginatorButtonId } from '../constants';
 
-import type { StringReturnableFn, BlockBuilderReturnableFn, BlockBuilder } from '../types';
-import type { PaginatorStateManager, PaginatorState } from '../lib';
+import type { BlockBuilder, BlockBuilderReturnableFn, StringReturnableFn } from '../types';
+import type { PaginatorState, PaginatorStateManager } from '../lib';
 
-export type PaginatorActionIdFn = StringReturnableFn<PaginatorState>;
+export type PaginatorActionIdFn = StringReturnableFn<PaginatorState
+& { buttonId: PaginatorButtonId }>;
 
 export interface PageCountTextFnParams {
   page: number;
@@ -71,11 +72,17 @@ export class PaginatorUIComponent<T> {
           .elements(
             Elements.Button({
               text: this.previousButtonText,
-              actionId: this.actionIdFunction(this.paginator.getPreviousPageState()),
+              actionId: this.actionIdFunction({
+                buttonId: PaginatorButtonId.Previous,
+                ...this.paginator.getPreviousPageState(),
+              }),
             }),
             Elements.Button({
               text: this.nextButtonText,
-              actionId: this.actionIdFunction(this.paginator.getNextPageState()),
+              actionId: this.actionIdFunction({
+                buttonId: PaginatorButtonId.Next,
+                ...this.paginator.getNextPageState(),
+              }),
             }),
           ),
       ]
