@@ -25,7 +25,7 @@ export default ({ tasks, totalTasks, page, perPage }) => Modal({ title: 'Open Ta
       items: tasks,
       totalItems: totalTasks,
       page: page || 1,
-      actionId: ({ page, offset }) => JSON.stringify({ action: 'render-tasks', page, offset }),
+      actionId: ({ buttonId, page, offset }) => JSON.stringify({ action: 'render-tasks', buttonId, page, offset }),
       blocksForEach: ({ item }) => [
         Blocks.Divider(),
         Blocks.Section({ text: `*${item.title}*` })
@@ -119,6 +119,10 @@ The `actionId` parameter accepts a function that takes an object with pagination
 
 The parameters passed into the function are as follows:
 
+`buttonId` – *String* 
+
+A unique string to identify the button that has been pressed. It is recommended to include this in your action ID to avoid duplicate action IDs when a paginator has two pages, and the values for the other parameters passed into the function are the same, since both Previous and Next will render the same page. 
+
 `page` – *Int*
 
 The page for which data should be fetched when updating the view.  
@@ -145,6 +149,7 @@ The function would receive the following payload for the Next button:
 
 ```javascript
 {
+  buttonId: 'next',
   page: 4,
   perPage: 5,
   totalItems: 57,
@@ -157,6 +162,7 @@ And this would be the payload or the Previous button:
 
 ```javascript
 {
+  buttonId: 'previous',
   page: 2,
   perPage: 5,
   totalItems: 57,
@@ -168,9 +174,10 @@ And this would be the payload or the Previous button:
 The data can be mutated into a string however you see it, depending on how your application works, for example: 
 
 ```javascript
-const actionId = ({ page, offset }) => JSON.stringify({
+const actionId = ({ page, offset, buttonId }) => JSON.stringify({
   page, 
   offset,
+  buttonId,
   action: 'render-certain-modal', 
 });
 ```
@@ -178,13 +185,13 @@ const actionId = ({ page, offset }) => JSON.stringify({
 Which would result in the following value for the Next button:
 
 ```javascript
-'{"page":4,"offset":15,"action":"render-certain-modal"}'
+'{"page":4,"offset":15,"buttonId":"next","action":"render-certain-modal"}'
 ```
 
 And this value for the Previous button:
 
 ```javascript
-'{"page":2,"offset":5,"action":"render-certain-modal"}'
+'{"page":2,"offset":5,"buttonId":"previous","action":"render-certain-modal"}'
 ```
 
 Note that the paginator is looped, so the Next button on the last page would be passed the data for the first page, and the Previous button, on the first page, would be passed the data for the last page.
