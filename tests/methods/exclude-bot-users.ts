@@ -1,8 +1,9 @@
 import { CompositeBuilderClassConfig } from '../test-config-types';
 import { Prop } from '../../src/constants';
 import { methodArgMocks } from '../mocks/method-arg-mocks';
-import { SlackDto } from '../../src/lib';
 import * as checks from '../checks';
+
+const dtoParamName = 'exclude_bot_users';
 
 export const excludeBotUsers = (params: CompositeBuilderClassConfig): void => {
   const config = {
@@ -10,9 +11,10 @@ export const excludeBotUsers = (params: CompositeBuilderClassConfig): void => {
     methodArgMock: methodArgMocks.excludeBotUsers,
     methodName: Prop.ExcludeBotUsers,
     propSetterPropName: Prop.ExcludeBotUsers,
-    slackDtoParamName: SlackDto.mapParam(Prop.Filter),
+    slackDtoParamName: dtoParamName,
   };
 
   checks.boolTrueProperty(config);
   checks.boolSettableProperty(config);
+  checks.builtFilterProperty(config);
 };
