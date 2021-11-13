@@ -3,6 +3,7 @@ export * from './bool-false-property';
 export * from './bool-settable-property';
 export * from './bool-true-property';
 export * from './built-child-build';
+export * from './built-filter-property';
 export * from './call-from-index';
 export * from './configurable-enum-value-property';
 export * from './end-method-call';

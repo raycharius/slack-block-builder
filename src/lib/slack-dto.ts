@@ -38,8 +38,6 @@ export enum Param {
   initialConversations = 'initial_conversations',
   defaultToCurrentConversation = 'default_to_current_conversation',
   filter = 'filter',
-  excludeExternalSharedChannels = 'exclude_external_shared_channels',
-  excludeBotUsers = 'exclude_bot_users',
   initialConversation = 'initial_conversation',
   initialDate = 'initial_date',
   minQueryLength = 'min_query_length',
