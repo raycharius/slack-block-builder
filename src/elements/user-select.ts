@@ -4,6 +4,7 @@ import {
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialUser,
   Placeholder,
 } from '../methods';
@@ -21,6 +22,7 @@ export interface UserSelectParams {
 export interface UserSelectBuilder extends ActionId,
   Confirm<ConfirmationDialogBuilder>,
   End,
+  FocusOnLoad,
   InitialUser,
   Placeholder {
 }
@@ -46,6 +48,7 @@ applyMixins(UserSelectBuilder, [
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialUser,
   Placeholder,
 ]);

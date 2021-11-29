@@ -75,4 +75,5 @@ export enum Prop {
   Mrkdwn = 'mrkdwn',
   IgnoreMarkdown = 'ignoreMarkdown',
   SubmitDisabled = 'submitDisabled',
+  FocusOnLoad = 'focusOnLoad',
 }

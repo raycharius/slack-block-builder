@@ -155,6 +155,19 @@ export abstract class ExcludeBotUsers extends Builder {
   }
 }
 
+export abstract class FocusOnLoad extends Builder {
+  /**
+   * @description Sets an element to have auto focus on opening the view
+   *
+   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
+   */
+
+  public focusOnLoad(boolean = true): this {
+    return this.set(boolean, Prop.FocusOnLoad);
+  }
+}
+
 export abstract class IgnoreMarkdown extends Builder {
   /**
    * @description Instructs the Slack API to ignore any markdown in the text property of the message.

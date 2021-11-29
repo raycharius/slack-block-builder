@@ -4,6 +4,7 @@ import {
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialOption,
   MinQueryLength,
   Placeholder,
@@ -23,6 +24,7 @@ export interface ExternalSelectParams {
 export interface ExternalSelectBuilder extends ActionId,
   Confirm<ConfirmationDialogBuilder>,
   End,
+  FocusOnLoad,
   InitialOption,
   MinQueryLength,
   Placeholder {
@@ -50,6 +52,7 @@ applyMixins(ExternalSelectBuilder, [
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialOption,
   MinQueryLength,
   Placeholder,

@@ -4,6 +4,7 @@ import {
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialChannel,
   Placeholder,
   ResponseUrlEnabled,
@@ -23,6 +24,7 @@ export interface ChannelSelectParams {
 export interface ChannelSelectBuilder extends ActionId,
   Confirm<ConfirmationDialogBuilder>,
   End,
+  FocusOnLoad,
   InitialChannel,
   Placeholder,
   ResponseUrlEnabled {
@@ -49,6 +51,7 @@ applyMixins(ChannelSelectBuilder, [
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialChannel,
   Placeholder,
   ResponseUrlEnabled,

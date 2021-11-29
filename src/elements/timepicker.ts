@@ -4,6 +4,7 @@ import {
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialTime,
   Placeholder,
 } from '../methods';
@@ -22,6 +23,7 @@ export interface TimePickerParams {
 export interface TimePickerBuilder extends ActionId,
   Confirm<ConfirmationDialogBuilder>,
   End,
+  FocusOnLoad,
   InitialTime,
   Placeholder {
 }
@@ -47,6 +49,7 @@ applyMixins(TimePickerBuilder, [
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialTime,
   Placeholder,
 ]);

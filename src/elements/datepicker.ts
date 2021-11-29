@@ -4,6 +4,7 @@ import {
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialDate,
   Placeholder,
 } from '../methods';
@@ -27,6 +28,7 @@ export interface DatePickerParams {
 export interface DatePickerBuilder extends ActionId,
   Confirm<ConfirmationDialogBuilder>,
   End,
+  FocusOnLoad,
   InitialDate,
   Placeholder {
 }
@@ -53,6 +55,7 @@ applyMixins(DatePickerBuilder, [
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialDate,
   Placeholder,
 ]);

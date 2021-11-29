@@ -4,6 +4,7 @@ import {
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialUsers,
   MaxSelectedItems,
   Placeholder,
@@ -22,6 +23,7 @@ export interface UserMultiSelectParams {
 export interface UserMultiSelectBuilder extends ActionId,
   Confirm<ConfirmationDialogBuilder>,
   End,
+  FocusOnLoad,
   InitialUsers,
   MaxSelectedItems,
   Placeholder {
@@ -48,6 +50,7 @@ applyMixins(UserMultiSelectBuilder, [
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialUsers,
   MaxSelectedItems,
   Placeholder,

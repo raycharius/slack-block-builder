@@ -73,6 +73,7 @@ export enum Param {
   mrkdwn = 'mrkdwn',
   submitDisabled = 'submit_disabled',
   type = 'type',
+  focusOnLoad = 'focus_on_load',
 }
 
 export class SlackDto implements ObjectLiteral {

@@ -4,6 +4,7 @@ import {
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialChannels,
   MaxSelectedItems,
   Placeholder,
@@ -23,6 +24,7 @@ export interface ChannelMultiSelectParams {
 export interface ChannelMultiSelectBuilder extends ActionId,
   Confirm<ConfirmationDialogBuilder>,
   End,
+  FocusOnLoad,
   InitialChannels,
   MaxSelectedItems,
   Placeholder {
@@ -49,6 +51,7 @@ applyMixins(ChannelMultiSelectBuilder, [
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialChannels,
   MaxSelectedItems,
   Placeholder,

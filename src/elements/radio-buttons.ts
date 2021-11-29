@@ -4,6 +4,7 @@ import {
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialOption,
   Options,
 } from '../methods';
@@ -20,6 +21,7 @@ export interface RadioButtonsParams {
 export interface RadioButtonsBuilder extends ActionId,
   Confirm<ConfirmationDialogBuilder>,
   End,
+  FocusOnLoad,
   InitialOption,
   Options {
 }
@@ -46,6 +48,7 @@ applyMixins(RadioButtonsBuilder, [
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialOption,
   Options,
 ]);

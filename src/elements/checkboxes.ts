@@ -4,6 +4,7 @@ import {
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialOptions,
   Options,
 } from '../methods';
@@ -20,6 +21,7 @@ export interface CheckboxesParams {
 export interface CheckboxesBuilder extends ActionId,
   Confirm<ConfirmationDialogBuilder>,
   End,
+  FocusOnLoad,
   InitialOptions,
   Options{
 }
@@ -46,6 +48,7 @@ applyMixins(CheckboxesBuilder, [
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialOptions,
   Options,
 ]);
