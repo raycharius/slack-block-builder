@@ -4,9 +4,7 @@
 import { Builder } from '../lib';
 import { Prop } from '../constants';
 
-import type { AttachmentBuilder } from '../../bits/attachment';
-import type { OptionBuilder } from '../../bits/option';
-import type { OptionGroupBuilder } from '../../bits/option-group';
+import type { AttachmentBuilder, OptionBuilder, OptionGroupBuilder } from '../../bits';
 import type { Appendable, FilterString } from '../types';
 
 export abstract class Attachments extends Builder {
@@ -18,7 +16,7 @@ export abstract class Attachments extends Builder {
    */
 
   public attachments(...attachments: Appendable<AttachmentBuilder>): this {
-    return this.append(attachments.flat(), Prop.Attachments);
+    return this.append(attachments, Prop.Attachments);
   }
 }
 
@@ -35,7 +33,7 @@ export abstract class Blocks<T> extends Builder {
    */
 
   public blocks(...blocks: Appendable<T>): this {
-    return this.append(blocks.flat(), Prop.Blocks);
+    return this.append(blocks, Prop.Blocks);
   }
 }
 
@@ -53,7 +51,7 @@ export abstract class Elements<T> extends Builder {
    */
 
   public elements(...elements: Appendable<T>): this {
-    return this.append(elements.flat(), Prop.Elements);
+    return this.append(elements, Prop.Elements);
   }
 }
 
@@ -72,7 +70,7 @@ export abstract class Fields extends Builder {
    */
 
   public fields(...fields: Appendable<string>): this {
-    return this.append(fields.flat(), Prop.Fields);
+    return this.append(fields, Prop.Fields);
   }
 }
 
@@ -88,7 +86,7 @@ export abstract class Filter extends Builder {
    */
 
   public filter(...filters: Appendable<FilterString>): this {
-    return this.append(filters.flat(), Prop.Filter);
+    return this.append(filters, Prop.Filter);
   }
 }
 
@@ -101,7 +99,7 @@ export abstract class InitialChannels extends Builder {
    */
 
   public initialChannels(...channelIds: Appendable<string>): this {
-    return this.append(channelIds.flat(), Prop.InitialChannels);
+    return this.append(channelIds, Prop.InitialChannels);
   }
 }
 
@@ -114,7 +112,7 @@ export abstract class InitialConversations extends Builder {
    */
 
   public initialConversations(...conversationIds: Appendable<string>): this {
-    return this.append(conversationIds.flat(), Prop.InitialConversations);
+    return this.append(conversationIds, Prop.InitialConversations);
   }
 }
 
@@ -130,7 +128,7 @@ export abstract class InitialOptions extends Builder {
    */
 
   public initialOptions(...options: Appendable<OptionBuilder>): this {
-    return this.append(options.flat(), Prop.InitialOptions);
+    return this.append(options, Prop.InitialOptions);
   }
 }
 
@@ -143,7 +141,7 @@ export abstract class InitialUsers extends Builder {
    */
 
   public initialUsers(...userIds: Appendable<string>): this {
-    return this.append(userIds.flat(), Prop.InitialUsers);
+    return this.append(userIds, Prop.InitialUsers);
   }
 }
 
@@ -160,7 +158,7 @@ export abstract class OptionGroups extends Builder {
    */
 
   public optionGroups(...optionGroups: Appendable<OptionGroupBuilder>): this {
-    return this.append(optionGroups.flat(), Prop.OptionGroups);
+    return this.append(optionGroups, Prop.OptionGroups);
   }
 }
 
@@ -178,6 +176,6 @@ export abstract class Options extends Builder {
    */
 
   public options(...options: Appendable<OptionBuilder>): this {
-    return this.append(options.flat(), Prop.Options);
+    return this.append(options, Prop.Options);
   }
 }

@@ -1,4 +1,4 @@
-import { BlockBuilderError } from '../exception/error';
+import { BlockBuilderError } from '../exception';
 
 import type { ObjectLiteral, Ctor } from '../types';
 
@@ -28,7 +28,7 @@ export abstract class Builder {
   }
 
   protected append(value: unknown[], prop: string): this {
-    const prunedValue = value.filter(Boolean);
+    const prunedValue = Builder.pruneUndefinedFromArray(value.flat());
 
     if (prunedValue.length > 0) {
       this.props[prop] = this.props[prop] === undefined
@@ -51,5 +51,14 @@ export abstract class Builder {
   // eslint-disable-next-line class-methods-use-this, @typescript-eslint/no-unused-vars, @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/no-explicit-any
   public build(params?: ObjectLiteral): any {
     throw new BlockBuilderError('Builder must have a declared \'build\' method');
+  }
+
+  public static pruneUndefinedFromArray<T>(array: T[]): T[] {
+    return array
+      .filter((value) => {
+        if (value !== undefined) {
+          return value;
+        }
+      });
   }
 }
