@@ -3,7 +3,7 @@ import { Elements } from '../elements';
 import { ComponentUIText } from '../internal/constants';
 
 import type { AccordionStateManager, AccordionState } from '../internal/lib';
-import type { BlockBuilderReturnableFn, BlockBuilder, StringReturnableFn } from '../types';
+import type { BlockBuilderReturnableFn, BlockBuilder, StringReturnableFn } from '../internal/types';
 
 export interface AccordionActionIdParams {
   expandedItems: AccordionState;

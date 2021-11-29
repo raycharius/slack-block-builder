@@ -3,7 +3,7 @@
 import { SlackBlockDto, SlackDto } from '../internal/dto';
 import { getBuiltCollection } from '../internal/helpers';
 
-import type { BlockBuilder, Appendable } from '../types';
+import type { BlockBuilder, Appendable } from '../internal/types';
 import type { AttachmentBuilder } from '../bits';
 
 /**

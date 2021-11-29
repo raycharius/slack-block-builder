@@ -8,7 +8,7 @@ import {
   End,
 } from '../internal/methods';
 
-import type { ContextElement } from '../types';
+import type { ContextElement } from '../internal/types';
 
 export interface ContextParams {
   blockId?: string;

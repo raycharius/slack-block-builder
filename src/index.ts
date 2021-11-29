@@ -11,5 +11,11 @@ export type {
   SlackBlockDto,
   SlackElementDto,
   SlackMessageDto,
+  ActionsElementBuilder,
+  SectionElementBuilder,
+  InputElementBuilder,
+  ContextElement,
+  BlockBuilder,
+  ViewBlockBuilder,
+  FilterString,
 } from './internal';
-export * from './types';

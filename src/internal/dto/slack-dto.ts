@@ -3,7 +3,7 @@
 
 import { SurfaceType, BlockType, ElementType } from '../constants';
 
-import type { ObjectLiteral } from '../../types';
+import type { ObjectLiteral } from '../types';
 import type { PlainTextObject } from '../objects';
 
 export enum Param {

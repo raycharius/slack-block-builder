@@ -24,7 +24,7 @@ import {
 } from '../internal/methods';
 
 import type { SlackBlockDto, SlackDto } from '../internal/dto';
-import type { BlockBuilder } from '../types';
+import type { BlockBuilder } from '../internal/types';
 
 export interface MessageParams {
   channel?: string;

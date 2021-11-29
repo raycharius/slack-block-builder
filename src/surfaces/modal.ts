@@ -20,7 +20,7 @@ import {
 } from '../internal/methods';
 
 import type { SlackBlockDto } from '../internal/dto';
-import type { ViewBlockBuilder } from '../types';
+import type { ViewBlockBuilder } from '../internal/types';
 
 export interface ModalParams {
   type?: string;

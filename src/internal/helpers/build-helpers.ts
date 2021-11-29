@@ -12,7 +12,7 @@ import type {
   ContextElement,
   Undefinable,
   UndefinableArray,
-} from '../../types';
+} from '../types';
 
 const defaultParams = {
   isMarkdown: false,

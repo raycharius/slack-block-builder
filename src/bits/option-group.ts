@@ -1,10 +1,6 @@
-import {
-  applyMixins,
-  getPlainTextObject,
-  getBuilderResults,
-  BitBuilderBase,
-  SlackDto,
-} from '../internal';
+import { BitBuilderBase } from '../internal/base';
+import { SlackDto } from '../internal/dto';
+import { applyMixins, getPlainTextObject, getBuilderResults } from '../internal/helpers';
 import {
   Label,
   End,

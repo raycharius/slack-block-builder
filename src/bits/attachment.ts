@@ -1,9 +1,6 @@
-import {
-  applyMixins,
-  getBuilderResults,
-  BitBuilderBase,
-  SlackDto,
-} from '../internal';
+import { BitBuilderBase } from '../internal/base';
+import { SlackDto } from '../internal/dto';
+import { applyMixins, getBuilderResults } from '../internal/helpers';
 import {
   Blocks,
   Color,
@@ -11,8 +8,8 @@ import {
   Fallback,
 } from '../internal/methods';
 
-import type { SlackBlockDto } from '../internal';
-import type { BlockBuilder } from '../types';
+import type { SlackBlockDto } from '../internal/dto';
+import type { BlockBuilder } from '../internal/types';
 
 export interface AttachmentParams {
   color?: string;

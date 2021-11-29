@@ -9,7 +9,7 @@ import {
 } from '../internal/methods';
 
 import type { SlackElementDto } from '../internal/dto';
-import type { ActionsElementBuilder } from '../types';
+import type { ActionsElementBuilder } from '../internal/types';
 
 export interface ActionsParams {
   blockId?: string;

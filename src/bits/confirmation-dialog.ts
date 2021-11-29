@@ -1,10 +1,6 @@
-import {
-  applyMixins,
-  getPlainTextObject,
-  getMarkdownObject,
-  BitBuilderBase,
-  SlackDto,
-} from '../internal';
+import { BitBuilderBase } from '../internal/base';
+import { SlackDto } from '../internal/dto';
+import { applyMixins, getPlainTextObject, getMarkdownObject } from '../internal/helpers';
 import {
   Confirm,
   Danger,

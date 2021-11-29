@@ -13,7 +13,7 @@ import {
 } from '../internal/methods';
 
 import type { SlackElementDto } from '../internal/dto';
-import type { InputElementBuilder } from '../types';
+import type { InputElementBuilder } from '../internal/types';
 
 export interface InputParams {
   blockId?: string;

@@ -6,3 +6,4 @@ export * from './helpers';
 export * from './lib';
 export * from './methods';
 export * from './objects';
+export * from './types';
