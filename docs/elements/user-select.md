@@ -37,6 +37,11 @@ Each instance of the `UserSelectBuilder` object has chainable setter methods for
 All setter methods return `this`, the instance of `UserSelectBuilder` on which it is called.
 
 ```javascript
+UserSelectBuilder.focusOnLoad(boolean?);
+```
+
+Sets an element to have auto focus on opening the view Defaults to `true`.
+```javascript
 UserSelectBuilder.actionId(string);
 ```
 

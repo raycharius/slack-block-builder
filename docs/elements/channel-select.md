@@ -37,6 +37,11 @@ Each instance of the `ChannelSelectBuilder` object has chainable setter methods 
 All setter methods return `this`, the instance of `ChannelSelectBuilder` on which it is called.
 
 ```javascript
+ChannelSelectBuilder.focusOnLoad(boolean?);
+```
+
+Sets an element to have auto focus on opening the view Defaults to `true`.
+```javascript
 ChannelSelectBuilder.responseUrlEnabled(boolean?);
 ```
 
