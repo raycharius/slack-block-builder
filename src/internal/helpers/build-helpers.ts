@@ -1,4 +1,4 @@
-import { Builder } from './builder';
+import { Builder } from '../lib/builder';
 import {
   PlainTextObject,
   MarkdownObject,
@@ -12,7 +12,7 @@ import type {
   ContextElement,
   Undefinable,
   UndefinableArray,
-} from '../types';
+} from '../../types';
 
 const defaultParams = {
   isMarkdown: false,

@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 
-import { getBuiltCollection, SlackBlockDto, SlackDto } from '../lib';
+import { SlackBlockDto, SlackDto } from '../internal/dto';
+import { getBuiltCollection } from '../internal/helpers';
 
 import type { BlockBuilder, Appendable } from '../types';
 import type { AttachmentBuilder } from '../bits';

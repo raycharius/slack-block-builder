@@ -4,12 +4,12 @@ import {
   getBuilderResults,
   BitBuilderBase,
   SlackDto,
-} from '../lib';
+} from '../internal';
 import {
   Label,
   End,
   Options,
-} from '../methods';
+} from '../internal/methods';
 
 export interface OptionGroupParams {
   label?: string;

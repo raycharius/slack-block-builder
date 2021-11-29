@@ -1,6 +1,6 @@
-import type { Builder } from './builder';
-import type { SlackDto } from './slack-dto';
-import type { Appendable } from '../types';
+import type { Builder } from '../lib/builder';
+import type { SlackDto } from '../dto/slack-dto';
+import type { Appendable } from '../../types';
 
 export type Collection<T> = T[];
 

@@ -1,10 +1,7 @@
-import {
-  applyMixins,
-  getPlainTextObject,
-  getDispatchActionsConfigurationObject,
-  ElementBuilderBase,
-  SlackElementDto,
-} from '../lib';
+import { ElementBuilderBase } from '../internal/base';
+import { ElementType } from '../internal/constants';
+import { SlackElementDto } from '../internal/dto';
+import { applyMixins, getPlainTextObject, getDispatchActionsConfigurationObject } from '../internal/helpers';
 import {
   ActionId,
   DispatchActionOnCharacterEntered,
@@ -16,8 +13,7 @@ import {
   MinLength,
   Multiline,
   Placeholder,
-} from '../methods';
-import { ElementType } from '../constants';
+} from '../internal/methods';
 
 export interface TextInputParams {
   actionId?: string;

@@ -1,5 +1,5 @@
 import { OptionBuilder as Class } from '../../src/bits/option';
-import { SlackDto as DtoClass } from '../../src/lib';
+import { SlackDto as DtoClass } from '../../src/internal';
 import { params } from './mocks/option.mock';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 import * as methods from '../methods';

@@ -1,6 +1,6 @@
 import { CompositeBuilderClassConfig } from '../test-config-types';
-import { Prop, ResponseType } from '../../src/constants';
-import { SlackDto } from '../../src/lib';
+import { Prop, ResponseType } from '../../src/internal/constants';
+import { SlackDto } from '../../src/internal';
 import * as checks from '../checks';
 
 export const ephemeral = (params: CompositeBuilderClassConfig): void => {

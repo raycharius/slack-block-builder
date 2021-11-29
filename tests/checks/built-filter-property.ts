@@ -1,5 +1,5 @@
 import { MethodTestArgs } from '../test-config-types';
-import { Prop } from '../../src/constants';
+import { Prop } from '../../src/internal/constants';
 
 export const builtFilterProperty = (params: MethodTestArgs): void => {
   const {

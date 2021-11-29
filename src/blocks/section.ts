@@ -1,21 +1,21 @@
+import { BlockBuilderBase } from '../internal/base';
+import { BlockType } from '../internal/constants';
+import { SlackBlockDto } from '../internal/dto';
 import {
   applyMixins,
   getMarkdownObject,
   getBuilderResult,
   getFields,
-  BlockBuilderBase,
-  SlackBlockDto,
-} from '../lib';
+} from '../internal/helpers';
 import {
   Accessory,
   BlockId,
   End,
   Fields,
   Text,
-} from '../methods';
-import { BlockType } from '../constants';
+} from '../internal/methods';
 
-import type { SlackElementDto } from '../lib';
+import type { SlackElementDto } from '../internal/dto';
 
 export interface SectionParams {
   blockId?: string;

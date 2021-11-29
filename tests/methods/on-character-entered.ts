@@ -1,6 +1,6 @@
 import { CompositeBuilderClassConfig } from '../test-config-types';
-import { Prop, DispatchOnType } from '../../src/constants';
-import { SlackDto } from '../../src/lib';
+import { Prop, DispatchOnType } from '../../src/internal/constants';
+import { SlackDto } from '../../src/internal';
 import * as checks from '../checks';
 
 export const onCharacterEntered = (params: CompositeBuilderClassConfig): void => {

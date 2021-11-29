@@ -1,4 +1,4 @@
-import { CompositionObjectBase } from '../lib/composition-object-base';
+import { CompositionObjectBase } from '../base';
 import { ObjectType } from '../constants';
 
 export class MarkdownObject extends CompositionObjectBase {

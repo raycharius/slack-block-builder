@@ -17,7 +17,7 @@ import {
   PaginatorStateManagerParams,
   AccordionStateManager,
   AccordionStateManagerParams,
-} from '../lib';
+} from '../internal';
 
 export type { PaginatorUIComponent, AccordionUIComponent };
 

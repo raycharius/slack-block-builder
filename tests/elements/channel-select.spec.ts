@@ -1,5 +1,5 @@
 import { ChannelSelectBuilder as Class } from '../../src/elements/channel-select';
-import { SlackElementDto as DtoClass } from '../../src/lib';
+import { SlackElementDto as DtoClass } from '../../src/internal';
 import { params } from './mocks/channel-select.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

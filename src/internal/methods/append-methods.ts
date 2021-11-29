@@ -4,10 +4,10 @@
 import { Builder } from '../lib';
 import { Prop } from '../constants';
 
-import type { AttachmentBuilder } from '../bits/attachment';
-import type { OptionBuilder } from '../bits/option';
-import type { OptionGroupBuilder } from '../bits/option-group';
-import type { Appendable, FilterString } from '../types';
+import type { AttachmentBuilder } from '../../bits/attachment';
+import type { OptionBuilder } from '../../bits/option';
+import type { OptionGroupBuilder } from '../../bits/option-group';
+import type { Appendable, FilterString } from '../../types';
 
 export abstract class Attachments extends Builder {
   /**

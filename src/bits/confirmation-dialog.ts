@@ -4,7 +4,7 @@ import {
   getMarkdownObject,
   BitBuilderBase,
   SlackDto,
-} from '../lib';
+} from '../internal';
 import {
   Confirm,
   Danger,
@@ -13,7 +13,7 @@ import {
   Primary,
   Text,
   Title,
-} from '../methods';
+} from '../internal/methods';
 
 export interface ConfirmationDialogParams {
   confirm?: string;

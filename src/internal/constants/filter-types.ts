@@ -1,4 +1,4 @@
-export enum Filter {
+export enum FilterType {
   Im = 'im',
   Mpim = 'mpim',
   Private = 'private',

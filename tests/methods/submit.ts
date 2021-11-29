@@ -1,8 +1,8 @@
 import { CompositeBuilderClassConfig } from '../test-config-types';
-import { Prop } from '../../src/constants';
+import { Prop } from '../../src/internal/constants';
 import { methodArgMocks } from '../mocks/method-arg-mocks';
-import { PlainTextObject } from '../../src/objects';
-import { SlackDto } from '../../src/lib';
+import { PlainTextObject } from '../../src/internal/objects';
+import { SlackDto } from '../../src/internal';
 import * as checks from '../checks';
 
 export const submit = (params: CompositeBuilderClassConfig): void => {

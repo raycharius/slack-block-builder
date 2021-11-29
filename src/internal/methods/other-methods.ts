@@ -1,7 +1,8 @@
 /* eslint-disable max-classes-per-file */
 /* eslint-disable max-len */
 
-import { Builder, SlackDto, SlackBlockDto } from '../lib';
+import { Builder } from '../lib';
+import { SlackDto, SlackBlockDto } from '../dto';
 
 export abstract class BuildToJSON extends Builder {
   /**

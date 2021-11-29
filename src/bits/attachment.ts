@@ -3,15 +3,15 @@ import {
   getBuilderResults,
   BitBuilderBase,
   SlackDto,
-} from '../lib';
+} from '../internal';
 import {
   Blocks,
   Color,
   End,
   Fallback,
-} from '../methods';
+} from '../internal/methods';
 
-import type { SlackBlockDto } from '../lib';
+import type { SlackBlockDto } from '../internal';
 import type { BlockBuilder } from '../types';
 
 export interface AttachmentParams {

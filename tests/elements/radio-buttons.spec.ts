@@ -1,5 +1,5 @@
 import { RadioButtonsBuilder as Class } from '../../src/elements/radio-buttons';
-import { SlackElementDto as DtoClass } from '../../src/lib';
+import { SlackElementDto as DtoClass } from '../../src/internal';
 import { params } from './mocks/radio-buttons.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

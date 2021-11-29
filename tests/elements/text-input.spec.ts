@@ -1,5 +1,5 @@
 import { TextInputBuilder as Class } from '../../src/elements/text-input';
-import { SlackElementDto as DtoClass } from '../../src/lib';
+import { SlackElementDto as DtoClass } from '../../src/internal';
 import { params } from './mocks/text-input.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

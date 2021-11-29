@@ -1,9 +1,6 @@
-import {
-  applyMixins,
-  getBuilderResults,
-  SurfaceBuilderBase,
-  SlackMessageDto,
-} from '../lib';
+import { SurfaceBuilderBase } from '../internal/base';
+import { SlackMessageDto } from '../internal/dto';
+import { applyMixins, getBuilderResults } from '../internal/helpers';
 import {
   AsUser,
   Attachments,
@@ -24,9 +21,9 @@ import {
   GetBlocks,
   GetPreviewUrl,
   PrintPreviewUrl,
-} from '../methods';
+} from '../internal/methods';
 
-import type { SlackBlockDto, SlackDto } from '../lib';
+import type { SlackBlockDto, SlackDto } from '../internal/dto';
 import type { BlockBuilder } from '../types';
 
 export interface MessageParams {

@@ -1,4 +1,4 @@
-import { Builder } from './builder';
+import { Builder } from '../lib/builder';
 
 export abstract class BlockBuilderBase extends Builder {
 }

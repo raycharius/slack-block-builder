@@ -1,5 +1,5 @@
 import { ConversationSelectBuilder as Class } from '../../src/elements/conversation-select';
-import { SlackElementDto as DtoClass } from '../../src/lib';
+import { SlackElementDto as DtoClass } from '../../src/internal';
 import { params } from './mocks/conversation-select.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

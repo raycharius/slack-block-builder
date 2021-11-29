@@ -1,5 +1,5 @@
 import { CompositeBuilderClassConfig } from '../test-config-types';
-import { Prop } from '../../src/constants';
+import { Prop } from '../../src/internal/constants';
 import { methodArgMocks } from '../mocks/method-arg-mocks';
 import * as checks from '../checks';
 

@@ -1,14 +1,14 @@
-import { CompositionObjectBase } from '../lib/composition-object-base';
-import { Filter } from '../constants';
+import { CompositionObjectBase } from '../base';
+import { FilterType } from '../constants';
 
 export interface FilterParams {
-  filter?: Filter[];
+  filter?: FilterType[];
   excludeBotUsers?: boolean;
   excludeExternalSharedChannels?: boolean;
 }
 
 export class FilterObject extends CompositionObjectBase {
-  public include?: Filter[];
+  public include?: FilterType[];
 
   public exclude_external_shared_channels?: boolean;
 

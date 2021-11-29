@@ -1,12 +1,12 @@
 import { Blocks } from '../blocks';
 import { Elements } from '../elements';
-import { ComponentUIText, PaginatorButtonId } from '../constants';
+import { ComponentUIText, PaginatorButtonId } from '../internal/constants';
 
+import type { PaginatorStateManager, PaginatorState } from '../internal/lib';
 import type { BlockBuilder, BlockBuilderReturnableFn, StringReturnableFn } from '../types';
-import type { PaginatorState, PaginatorStateManager } from '../lib';
 
 export type PaginatorActionIdFn = StringReturnableFn<PaginatorState
-& { buttonId: PaginatorButtonId }>;
+  & { buttonId: PaginatorButtonId }>;
 
 export interface PageCountTextFnParams {
   page: number;

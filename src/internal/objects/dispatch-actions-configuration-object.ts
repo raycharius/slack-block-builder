@@ -1,4 +1,4 @@
-import { CompositionObjectBase } from '../lib/composition-object-base';
+import { CompositionObjectBase } from '../base';
 import { DispatchOnType } from '../constants';
 
 export type DispatchActionsConfigParams = DispatchOnType[];

@@ -1,11 +1,12 @@
+import { ElementBuilderBase } from '../internal/base';
+import { ElementType } from '../internal/constants';
+import { SlackElementDto } from '../internal/dto';
 import {
   applyMixins,
   getPlainTextObject,
   getBuilderResult,
   getBuilderResults,
-  ElementBuilderBase,
-  SlackElementDto,
-} from '../lib';
+} from '../internal/helpers';
 import {
   ActionId,
   Confirm,
@@ -15,11 +16,10 @@ import {
   OptionGroups,
   Options,
   Placeholder,
-} from '../methods';
-import { ElementType } from '../constants';
+} from '../internal/methods';
 
-import type { SlackDto } from '../lib';
-import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
+import type { SlackDto } from '../internal/dto';
+import type { ConfirmationDialogBuilder } from '../bits';
 
 export interface StaticSelectParams {
   actionId?: string;

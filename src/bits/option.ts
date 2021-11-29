@@ -4,14 +4,14 @@ import {
   getMarkdownObject,
   BitBuilderBase,
   SlackDto,
-} from '../lib';
+} from '../internal';
 import {
   Description,
   End,
   Text,
   Url,
   Value,
-} from '../methods';
+} from '../internal/methods';
 
 import type { ObjectLiteral } from '../types';
 

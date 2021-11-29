@@ -1,15 +1,12 @@
-import {
-  applyMixins,
-  getPlainTextObject,
-  BlockBuilderBase,
-  SlackBlockDto,
-} from '../lib';
+import { BlockBuilderBase } from '../internal/base';
+import { BlockType } from '../internal/constants';
+import { SlackBlockDto } from '../internal/dto';
+import { applyMixins, getPlainTextObject } from '../internal/helpers';
 import {
   BlockId,
   End,
   Text,
-} from '../methods';
-import { BlockType } from '../constants';
+} from '../internal/methods';
 
 export interface HeaderParams {
   blockId?: string;

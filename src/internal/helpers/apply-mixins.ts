@@ -4,7 +4,7 @@ eslint-disable
 @typescript-eslint/no-explicit-any
 */
 
-import type { Ctor, AbstractCtor } from '../types';
+import type { Ctor, AbstractCtor } from '../../types';
 
 export function applyMixins(derivedCtor: Ctor<any>, baseCtors: AbstractCtor<any>[]) {
   const { constructor } = derivedCtor.prototype;

@@ -1,4 +1,4 @@
-import { AccordionStateManager } from '../../src/lib';
+import { AccordionStateManager } from '../../src/internal';
 
 describe('Testing Accordion State Mananger:', () => {
   test('Passing in an empty array of expanded items initiates the manager with an empty array', () => {

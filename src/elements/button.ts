@@ -1,10 +1,7 @@
-import {
-  applyMixins,
-  getPlainTextObject,
-  getBuilderResult,
-  ElementBuilderBase,
-  SlackElementDto,
-} from '../lib';
+import { ElementBuilderBase } from '../internal/base';
+import { ElementType } from '../internal/constants';
+import { SlackElementDto } from '../internal/dto';
+import { applyMixins, getPlainTextObject, getBuilderResult } from '../internal/helpers';
 import {
   ActionId,
   Confirm,
@@ -14,12 +11,10 @@ import {
   Text,
   Url,
   Value,
-} from '../methods';
+} from '../internal/methods';
 
-import { ElementType } from '../constants';
-
-import type { SlackDto } from '../lib';
-import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
+import type { SlackDto } from '../internal/dto';
+import type { ConfirmationDialogBuilder } from '../bits';
 
 export interface ButtonParams {
   actionId?: string;

@@ -1,6 +1,6 @@
-import { BlockBuilderError } from './error';
+import { BlockBuilderError } from '../exception/error';
 
-import type { ObjectLiteral, Ctor } from '../types';
+import type { ObjectLiteral, Ctor } from '../../types';
 
 export abstract class Builder {
   protected readonly props: ObjectLiteral;

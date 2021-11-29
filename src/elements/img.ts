@@ -1,14 +1,12 @@
-import {
-  applyMixins,
-  ElementBuilderBase,
-  SlackElementDto,
-} from '../lib';
+import { ElementBuilderBase } from '../internal/base';
+import { ElementType } from '../internal/constants';
+import { SlackElementDto } from '../internal/dto';
+import { applyMixins } from '../internal/helpers';
 import {
   AltText,
   ImageUrl,
   End,
-} from '../methods';
-import { ElementType } from '../constants';
+} from '../internal/methods';
 
 export interface ImgParams {
   imageUrl?: string;

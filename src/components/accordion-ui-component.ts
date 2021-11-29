@@ -1,8 +1,8 @@
 import { Blocks } from '../blocks';
 import { Elements } from '../elements';
-import { ComponentUIText } from '../constants';
+import { ComponentUIText } from '../internal/constants';
 
-import type { AccordionStateManager, AccordionState } from '../lib';
+import type { AccordionStateManager, AccordionState } from '../internal/lib';
 import type { BlockBuilderReturnableFn, BlockBuilder, StringReturnableFn } from '../types';
 
 export interface AccordionActionIdParams {

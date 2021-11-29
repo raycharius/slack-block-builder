@@ -1,4 +1,4 @@
-import { PaginatorStateManager } from '../../src/lib';
+import { PaginatorStateManager } from '../../src/internal';
 
 describe('Testing Paginator State Manager:', () => {
   test('Instantiating with valid parameters produces a valid state.', () => {

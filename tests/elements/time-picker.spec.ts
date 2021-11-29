@@ -1,5 +1,5 @@
 import { TimePickerBuilder as Class } from '../../src/elements/timepicker';
-import { SlackElementDto as DtoClass } from '../../src/lib';
+import { SlackElementDto as DtoClass } from '../../src/internal';
 import { params } from './mocks/time-picker.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

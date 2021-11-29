@@ -11,5 +11,5 @@ export type {
   SlackBlockDto,
   SlackElementDto,
   SlackMessageDto,
-} from './lib';
+} from './internal';
 export * from './types';

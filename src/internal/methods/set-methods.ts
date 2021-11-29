@@ -4,8 +4,8 @@
 import { Builder } from '../lib';
 import { Prop } from '../constants';
 
-import type { SectionElementBuilder, Undefinable } from '../types';
-import type { OptionBuilder } from '../bits/option';
+import type { SectionElementBuilder, Undefinable } from '../../types';
+import type { OptionBuilder } from '../../bits/option';
 
 export abstract class Accessory extends Builder {
   /**

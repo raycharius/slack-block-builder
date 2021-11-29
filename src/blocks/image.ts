@@ -1,17 +1,14 @@
-import {
-  applyMixins,
-  getPlainTextObject,
-  BlockBuilderBase,
-  SlackBlockDto,
-} from '../lib';
+import { BlockBuilderBase } from '../internal/base';
+import { BlockType } from '../internal/constants';
+import { SlackBlockDto } from '../internal/dto';
+import { applyMixins, getPlainTextObject } from '../internal/helpers';
 import {
   AltText,
   BlockId,
   End,
   ImageUrl,
   Title,
-} from '../methods';
-import { BlockType } from '../constants';
+} from '../internal/methods';
 
 export interface ImageParams {
   altText?: string;

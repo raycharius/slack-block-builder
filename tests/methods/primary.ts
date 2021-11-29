@@ -1,6 +1,6 @@
 import { CompositeBuilderClassConfig } from '../test-config-types';
-import { Prop, ButtonStyle } from '../../src/constants';
-import { SlackDto } from '../../src/lib';
+import { Prop, ButtonStyle } from '../../src/internal/constants';
+import { SlackDto } from '../../src/internal';
 import * as checks from '../checks';
 
 export const primary = (params: CompositeBuilderClassConfig): void => {

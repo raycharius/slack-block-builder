@@ -1,17 +1,14 @@
-import {
-  applyMixins,
-  getBuilderResults,
-  BlockBuilderBase,
-  SlackBlockDto,
-} from '../lib';
+import { BlockBuilderBase } from '../internal/base';
+import { BlockType } from '../internal/constants';
+import { SlackBlockDto } from '../internal/dto';
+import { applyMixins, getBuilderResults } from '../internal/helpers';
 import {
   BlockId,
   Elements,
   End,
-} from '../methods';
-import { BlockType } from '../constants';
+} from '../internal/methods';
 
-import type { SlackElementDto } from '../lib';
+import type { SlackElementDto } from '../internal/dto';
 import type { ActionsElementBuilder } from '../types';
 
 export interface ActionsParams {
