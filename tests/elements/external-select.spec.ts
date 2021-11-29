@@ -21,6 +21,7 @@ const methodsConfig = [
   methods.initialOption,
   methods.minQueryLength,
   methods.confirm,
+  methods.focusOnLoad,
 ];
 
 testCompositeBuilderClass({ config, methods: methodsConfig });

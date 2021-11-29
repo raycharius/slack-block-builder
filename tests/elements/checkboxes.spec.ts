@@ -20,6 +20,7 @@ const methodsConfig = [
   methods.actionId,
   methods.options,
   methods.initialOptions,
+  methods.focusOnLoad,
   methods.confirm,
 ];
 

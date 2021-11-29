@@ -23,6 +23,7 @@ const methodsConfig = [
   methods.confirm,
   methods.maxSelectedItems,
   methods.filter,
+  methods.focusOnLoad,
   methods.excludeBotUsers,
   methods.excludeExternalSharedChannels,
 ];

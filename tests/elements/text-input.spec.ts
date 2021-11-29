@@ -24,6 +24,7 @@ const methodsConfig = [
   methods.maxLength,
   methods.onEnterPressed,
   methods.onCharacterEntered,
+  methods.focusOnLoad,
 ];
 
 testCompositeBuilderClass({ config, methods: methodsConfig });

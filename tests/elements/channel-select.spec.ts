@@ -20,6 +20,7 @@ const methodsConfig = [
   methods.actionId,
   methods.initialChannel,
   methods.confirm,
+  methods.focusOnLoad,
   methods.responseUrlEnabled,
 ];
 

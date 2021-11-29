@@ -22,6 +22,7 @@ const methodsConfig = [
   methods.optionGroups,
   methods.initialOption,
   methods.confirm,
+  methods.focusOnLoad,
 ];
 
 testCompositeBuilderClass({ config, methods: methodsConfig });

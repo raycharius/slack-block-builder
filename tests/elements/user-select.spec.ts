@@ -20,6 +20,7 @@ const methodsConfig = [
   methods.actionId,
   methods.initialUser,
   methods.confirm,
+  methods.focusOnLoad,
 ];
 
 testCompositeBuilderClass({ config, methods: methodsConfig });

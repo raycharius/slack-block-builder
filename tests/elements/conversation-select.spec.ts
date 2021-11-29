@@ -23,6 +23,7 @@ const methodsConfig = [
   methods.confirm,
   methods.responseUrlEnabled,
   methods.filter,
+  methods.focusOnLoad,
   methods.excludeExternalSharedChannels,
   methods.excludeBotUsers,
 ];

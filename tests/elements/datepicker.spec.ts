@@ -20,6 +20,7 @@ const methodsConfig = [
   methods.placeholder,
   methods.initialDate,
   methods.confirm,
+  methods.focusOnLoad,
 ];
 
 testCompositeBuilderClass({ config, methods: methodsConfig });

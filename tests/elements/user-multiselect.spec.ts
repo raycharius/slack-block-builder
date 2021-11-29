@@ -21,6 +21,7 @@ const methodsConfig = [
   methods.initialUsers,
   methods.confirm,
   methods.maxSelectedItems,
+  methods.focusOnLoad,
 ];
 
 testCompositeBuilderClass({ config, methods: methodsConfig });

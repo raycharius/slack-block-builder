@@ -20,6 +20,7 @@ const methodsConfig = [
   methods.actionId,
   methods.initialChannels,
   methods.confirm,
+  methods.focusOnLoad,
   methods.maxSelectedItems,
 ];
 
