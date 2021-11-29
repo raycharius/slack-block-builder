@@ -1,12 +1,16 @@
-import { ElementBuilderBase } from '../base';
-import { SlackElementDto } from '../lib';
+import {
+  applyMixins,
+  getBuilderResult,
+  getBuilderResults,
+  ElementBuilderBase,
+  SlackElementDto,
+} from '../lib';
 import {
   ActionId,
   Confirm,
   End,
   Options,
 } from '../methods';
-import { applyMixins, getBuilderResult, getBuilderResults } from '../helpers';
 import { ElementType } from '../constants';
 
 import type { SlackDto } from '../lib';

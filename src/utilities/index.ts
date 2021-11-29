@@ -1,10 +1,9 @@
 /* eslint-disable max-len */
 
-import { getBuiltCollection } from '../helpers';
+import { getBuiltCollection, SlackBlockDto, SlackDto } from '../lib';
 
 import type { BlockBuilder, Appendable } from '../types';
 import type { AttachmentBuilder } from '../bits';
-import type { SlackBlockDto, SlackDto } from '../lib';
 
 /**
  * @description Creates and returns an array of built blocks. Behaves in the same way as all appending methods, such as Surface.blocks().

@@ -1,11 +1,13 @@
-import { BlockBuilderBase } from '../base';
-import { SlackBlockDto } from '../lib';
+import {
+  applyMixins,
+  BlockBuilderBase,
+  SlackBlockDto,
+} from '../lib';
 import {
   BlockId,
   End,
   ExternalId,
 } from '../methods';
-import { applyMixins } from '../helpers';
 import { BlockType, FileType } from '../constants';
 
 export interface FileParams {

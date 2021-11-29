@@ -1,5 +1,10 @@
-import { ElementBuilderBase } from '../base';
-import { SlackElementDto } from '../lib';
+import {
+  applyMixins,
+  getPlainTextObject,
+  getBuilderResult,
+  ElementBuilderBase,
+  SlackElementDto,
+} from '../lib';
 import {
   ActionId,
   Confirm,
@@ -8,7 +13,6 @@ import {
   InitialUser,
   Placeholder,
 } from '../methods';
-import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
 import { ElementType } from '../constants';
 
 import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';

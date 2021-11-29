@@ -1,5 +1,10 @@
-import { BlockBuilderBase } from '../base';
-import { SlackBlockDto } from '../lib';
+import {
+  applyMixins,
+  getPlainTextObject,
+  getBuilderResult,
+  BlockBuilderBase,
+  SlackBlockDto,
+} from '../lib';
 import {
   BlockId,
   DispatchAction,
@@ -9,7 +14,6 @@ import {
   Label,
   Optional,
 } from '../methods';
-import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
 import { BlockType } from '../constants';
 
 import type { SlackElementDto } from '../lib';

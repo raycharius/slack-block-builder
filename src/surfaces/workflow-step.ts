@@ -1,5 +1,10 @@
-import { SurfaceBuilderBase } from '../base';
-import { SlackWorkflowStepDto } from '../lib';
+import {
+  applyMixins,
+  getPlainTextObject,
+  getBuilderResults,
+  SurfaceBuilderBase,
+  SlackWorkflowStepDto,
+} from '../lib';
 import {
   Blocks,
   CallbackId,
@@ -11,7 +16,6 @@ import {
   GetPreviewUrl,
   PrintPreviewUrl,
 } from '../methods';
-import { applyMixins, getPlainTextObject, getBuilderResults } from '../helpers';
 import { SurfaceType } from '../constants';
 
 import type { SlackBlockDto } from '../lib';

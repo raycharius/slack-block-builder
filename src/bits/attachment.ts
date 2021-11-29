@@ -1,12 +1,15 @@
-import { BitBuilderBase } from '../base';
-import { SlackDto } from '../lib';
+import {
+  applyMixins,
+  getBuilderResults,
+  BitBuilderBase,
+  SlackDto,
+} from '../lib';
 import {
   Blocks,
   Color,
   End,
   Fallback,
 } from '../methods';
-import { applyMixins, getBuilderResults } from '../helpers';
 
 import type { SlackBlockDto } from '../lib';
 import type { BlockBuilder } from '../types';

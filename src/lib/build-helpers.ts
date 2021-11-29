@@ -1,4 +1,4 @@
-import { Builder } from '../lib';
+import { Builder } from './builder';
 import {
   PlainTextObject,
   MarkdownObject,

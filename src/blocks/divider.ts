@@ -1,7 +1,9 @@
-import { BlockBuilderBase } from '../base';
-import { SlackBlockDto } from '../lib';
+import {
+  applyMixins,
+  BlockBuilderBase,
+  SlackBlockDto,
+} from '../lib';
 import { BlockId, End } from '../methods';
-import { applyMixins } from '../helpers';
 import { BlockType } from '../constants';
 
 export interface DividerParams {

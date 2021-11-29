@@ -1,5 +1,9 @@
-import { BlockBuilderBase } from '../base';
-import { SlackBlockDto } from '../lib';
+import {
+  applyMixins,
+  getPlainTextObject,
+  BlockBuilderBase,
+  SlackBlockDto,
+} from '../lib';
 import {
   AltText,
   BlockId,
@@ -7,7 +11,6 @@ import {
   ImageUrl,
   Title,
 } from '../methods';
-import { applyMixins, getPlainTextObject } from '../helpers';
 import { BlockType } from '../constants';
 
 export interface ImageParams {

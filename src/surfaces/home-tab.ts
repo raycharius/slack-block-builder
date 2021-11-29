@@ -1,5 +1,9 @@
-import { SurfaceBuilderBase } from '../base';
-import { SlackHomeTabDto } from '../lib';
+import {
+  applyMixins,
+  getBuilderResults,
+  SurfaceBuilderBase,
+  SlackHomeTabDto,
+} from '../lib';
 import {
   Blocks,
   CallbackId,
@@ -11,7 +15,6 @@ import {
   GetPreviewUrl,
   PrintPreviewUrl,
 } from '../methods';
-import { applyMixins, getBuilderResults } from '../helpers';
 import { SurfaceType } from '../constants';
 
 import type { SlackBlockDto } from '../lib';

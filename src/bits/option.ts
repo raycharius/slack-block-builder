@@ -1,5 +1,10 @@
-import { BitBuilderBase } from '../base';
-import { SlackDto } from '../lib';
+import {
+  applyMixins,
+  getPlainTextObject,
+  getMarkdownObject,
+  BitBuilderBase,
+  SlackDto,
+} from '../lib';
 import {
   Description,
   End,
@@ -7,7 +12,6 @@ import {
   Url,
   Value,
 } from '../methods';
-import { applyMixins, getPlainTextObject, getMarkdownObject } from '../helpers';
 
 import type { ObjectLiteral } from '../types';
 

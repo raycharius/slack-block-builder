@@ -1,5 +1,11 @@
-import { ElementBuilderBase } from '../base';
-import { SlackElementDto } from '../lib';
+import {
+  applyMixins,
+  getPlainTextObject,
+  getBuilderResult,
+  getBuilderResults,
+  ElementBuilderBase,
+  SlackElementDto,
+} from '../lib';
 import {
   ActionId,
   Confirm,
@@ -10,12 +16,6 @@ import {
   MinQueryLength,
   Placeholder,
 } from '../methods';
-import {
-  applyMixins,
-  getPlainTextObject,
-  getBuilderResult,
-  getBuilderResults,
-} from '../helpers';
 import { ElementType } from '../constants';
 
 import type { SlackDto } from '../lib';

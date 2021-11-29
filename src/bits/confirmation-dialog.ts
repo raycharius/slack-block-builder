@@ -1,5 +1,10 @@
-import { BitBuilderBase } from '../base';
-import { SlackDto } from '../lib';
+import {
+  applyMixins,
+  getPlainTextObject,
+  getMarkdownObject,
+  BitBuilderBase,
+  SlackDto,
+} from '../lib';
 import {
   Confirm,
   Danger,
@@ -9,7 +14,6 @@ import {
   Text,
   Title,
 } from '../methods';
-import { applyMixins, getPlainTextObject, getMarkdownObject } from '../helpers';
 
 export interface ConfirmationDialogParams {
   confirm?: string;
