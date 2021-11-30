@@ -1,10 +1,17 @@
 /* eslint-disable max-len */
 
 import { SlackBlockDto, SlackDto } from '../internal/dto';
-import { getBuiltCollection } from '../internal/helpers';
+import { Builder } from '../internal/lib';
 
 import type { BlockBuilder, Appendable } from '../internal/types';
 import type { AttachmentBuilder } from '../bits';
+
+type Collection<T> = T[];
+
+const getBuiltCollection = <T extends Builder, Dto extends SlackDto>(
+  ...builders: Appendable<T>
+): Collection<Dto> => Builder.pruneUndefinedFromArray(builders.flat())
+    .map((builder) => builder.build());
 
 /**
  * @description Creates and returns an array of built blocks. Behaves in the same way as all appending methods, such as Surface.blocks().

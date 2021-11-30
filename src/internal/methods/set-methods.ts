@@ -4,7 +4,7 @@
 import { Builder } from '../lib';
 import { Prop } from '../constants';
 
-import type { SectionElementBuilder, Undefinable } from '../types';
+import type { SectionElementBuilder, Settable } from '../types';
 import type { OptionBuilder } from '../../bits';
 
 export abstract class Accessory extends Builder {
@@ -19,7 +19,7 @@ export abstract class Accessory extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public accessory(element: Undefinable<SectionElementBuilder>): this {
+  public accessory(element: Settable<SectionElementBuilder>): this {
     return this.set(element, Prop.Accessory);
   }
 }
@@ -37,7 +37,7 @@ export abstract class ActionId extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public actionId(actionId: Undefinable<string>): this {
+  public actionId(actionId: Settable<string>): this {
     return this.set(actionId, Prop.ActionId);
   }
 }
@@ -56,7 +56,7 @@ export abstract class AltText extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public altText(altText: Undefinable<string>): this {
+  public altText(altText: Settable<string>): this {
     return this.set(altText, Prop.AltText);
   }
 }
@@ -74,7 +74,7 @@ export abstract class BlockId extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public blockId(blockId: Undefinable<string>): this {
+  public blockId(blockId: Settable<string>): this {
     return this.set(blockId, Prop.BlockId);
   }
 }
@@ -91,7 +91,7 @@ export abstract class CallbackId extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public callbackId(callbackId: Undefinable<string>): this {
+  public callbackId(callbackId: Settable<string>): this {
     return this.set(callbackId, Prop.CallbackId);
   }
 }
@@ -104,7 +104,7 @@ export abstract class Channel extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public channel(channel: Undefinable<string>): this {
+  public channel(channel: Settable<string>): this {
     return this.set(channel, Prop.Channel);
   }
 }
@@ -120,7 +120,7 @@ export abstract class Close extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public close(closeButtonText: Undefinable<string>): this {
+  public close(closeButtonText: Settable<string>): this {
     return this.set(closeButtonText, Prop.Close);
   }
 }
@@ -133,7 +133,7 @@ export abstract class Color extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public color(color: Undefinable<string>): this {
+  public color(color: Settable<string>): this {
     return this.set(color, Prop.Color);
   }
 }
@@ -146,7 +146,7 @@ export abstract class Confirm<T> extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public confirm(value: Undefinable<T>): this {
+  public confirm(value: Settable<T>): this {
     return this.set(value, Prop.Confirm);
   }
 }
@@ -163,7 +163,7 @@ export abstract class Deny extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public deny(text: Undefinable<string>): this {
+  public deny(text: Settable<string>): this {
     return this.set(text, Prop.Deny);
   }
 }
@@ -179,7 +179,7 @@ export abstract class Description extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public description(description: Undefinable<string>): this {
+  public description(description: Settable<string>): this {
     return this.set(description, Prop.Description);
   }
 }
@@ -197,7 +197,7 @@ export abstract class Element<T> extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public element(element: Undefinable<T>): this {
+  public element(element: Settable<T>): this {
     return this.set(element, Prop.Element);
   }
 }
@@ -214,7 +214,7 @@ export abstract class ExternalId extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public externalId(externalId: Undefinable<string>): this {
+  public externalId(externalId: Settable<string>): this {
     return this.set(externalId, Prop.ExternalId);
   }
 }
@@ -227,7 +227,7 @@ export abstract class Fallback extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public fallback(text: Undefinable<string>): this {
+  public fallback(text: Settable<string>): this {
     return this.set(text, Prop.Fallback);
   }
 }
@@ -243,7 +243,7 @@ export abstract class Hint extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public hint(hint: Undefinable<string>): this {
+  public hint(hint: Settable<string>): this {
     return this.set(hint, Prop.Hint);
   }
 }
@@ -260,7 +260,7 @@ export abstract class ImageUrl extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public imageUrl(url: Undefinable<string>): this {
+  public imageUrl(url: Settable<string>): this {
     return this.set(url, Prop.ImageUrl);
   }
 }
@@ -273,7 +273,7 @@ export abstract class InitialChannel extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public initialChannel(channelId: Undefinable<string>): this {
+  public initialChannel(channelId: Settable<string>): this {
     return this.set(channelId, Prop.InitialChannel);
   }
 }
@@ -286,7 +286,7 @@ export abstract class InitialConversation extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public initialConversation(conversationId: Undefinable<string>): this {
+  public initialConversation(conversationId: Settable<string>): this {
     return this.set(conversationId, Prop.InitialConversation);
   }
 }
@@ -299,7 +299,7 @@ export abstract class InitialDate extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public initialDate(date: Undefinable<Date>): this {
+  public initialDate(date: Settable<Date>): this {
     return this.set(date, Prop.InitialDate);
   }
 }
@@ -315,7 +315,7 @@ export abstract class InitialOption extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public initialOption(option: Undefinable<OptionBuilder>): this {
+  public initialOption(option: Settable<OptionBuilder>): this {
     return this.set(option, Prop.InitialOption);
   }
 }
@@ -331,7 +331,7 @@ export abstract class InitialTime extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public initialTime(time: Undefinable<string>): this {
+  public initialTime(time: Settable<string>): this {
     return this.set(time, Prop.InitialTime);
   }
 }
@@ -344,7 +344,7 @@ export abstract class InitialUser extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public initialUser(userId: Undefinable<string>): this {
+  public initialUser(userId: Settable<string>): this {
     return this.set(userId, Prop.InitialUser);
   }
 }
@@ -357,7 +357,7 @@ export abstract class InitialValue extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public initialValue(value: Undefinable<string>): this {
+  public initialValue(value: Settable<string>): this {
     return this.set(value, Prop.InitialValue);
   }
 }
@@ -375,7 +375,7 @@ export abstract class Label extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public label(label: Undefinable<string>): this {
+  public label(label: Settable<string>): this {
     return this.set(label, Prop.Label);
   }
 }
@@ -388,7 +388,7 @@ export abstract class MaxLength extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public maxLength(length: Undefinable<number>): this {
+  public maxLength(length: Settable<number>): this {
     return this.set(length, Prop.MaxLength);
   }
 }
@@ -401,7 +401,7 @@ export abstract class MaxSelectedItems extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public maxSelectedItems(quantity: Undefinable<number>): this {
+  public maxSelectedItems(quantity: Settable<number>): this {
     return this.set(quantity, Prop.MaxSelectedItems);
   }
 }
@@ -417,7 +417,7 @@ export abstract class MinQueryLength extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public minQueryLength(length: Undefinable<number>): this {
+  public minQueryLength(length: Settable<number>): this {
     return this.set(length, Prop.MinQueryLength);
   }
 }
@@ -433,7 +433,7 @@ export abstract class MinLength extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public minLength(length: Undefinable<number>): this {
+  public minLength(length: Settable<number>): this {
     return this.set(length, Prop.MinLength);
   }
 }
@@ -449,7 +449,7 @@ export abstract class Placeholder extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public placeholder(placeholder: Undefinable<string>): this {
+  public placeholder(placeholder: Settable<string>): this {
     return this.set(placeholder, Prop.Placeholder);
   }
 }
@@ -462,7 +462,7 @@ export abstract class PostAt extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public postAt(timestamp: Undefinable<string>): this {
+  public postAt(timestamp: Settable<string>): this {
     return this.set(timestamp, Prop.PostAt);
   }
 }
@@ -479,7 +479,7 @@ export abstract class PrivateMetaData extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public privateMetaData(privateMetaData: Undefinable<string>): this {
+  public privateMetaData(privateMetaData: Settable<string>): this {
     return this.set(privateMetaData, Prop.PrivateMetaData);
   }
 }
@@ -495,7 +495,7 @@ export abstract class Submit extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public submit(text: Undefinable<string>): this {
+  public submit(text: Settable<string>): this {
     return this.set(text, Prop.Submit);
   }
 }
@@ -515,7 +515,7 @@ export abstract class Text extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public text(text: Undefinable<string>): this {
+  public text(text: Settable<string>): this {
     return this.set(text, Prop.Text);
   }
 }
@@ -534,7 +534,7 @@ export abstract class Title extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public title(title: Undefinable<string>): this {
+  public title(title: Settable<string>): this {
     return this.set(title, Prop.Title);
   }
 }
@@ -547,7 +547,7 @@ export abstract class ThreadTs extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public threadTs(threadTs: Undefinable<string>): this {
+  public threadTs(threadTs: Settable<string>): this {
     return this.set(threadTs, Prop.ThreadTs);
   }
 }
@@ -560,7 +560,7 @@ export abstract class Ts extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public ts(ts: Undefinable<string>): this {
+  public ts(ts: Settable<string>): this {
     return this.set(ts, Prop.Ts);
   }
 }
@@ -577,7 +577,7 @@ export abstract class Url extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public url(url: Undefinable<string>): this {
+  public url(url: Settable<string>): this {
     return this.set(url, Prop.Url);
   }
 }
@@ -594,7 +594,7 @@ export abstract class Value extends Builder {
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public value(value: Undefinable<string>): this {
+  public value(value: Settable<string>): this {
     return this.set(value, Prop.Value);
   }
 }

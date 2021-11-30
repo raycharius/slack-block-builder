@@ -28,7 +28,7 @@ export abstract class Builder {
   }
 
   protected append(value: unknown[], prop: string): this {
-    const prunedValue = Builder.pruneUndefinedFromArray(value.flat());
+    const prunedValue = Builder.pruneUndefinedFromArray(value);
 
     if (prunedValue.length > 0) {
       this.props[prop] = this.props[prop] === undefined
@@ -54,11 +54,6 @@ export abstract class Builder {
   }
 
   public static pruneUndefinedFromArray<T>(array: T[]): T[] {
-    return array
-      .filter((value) => {
-        if (value !== undefined) {
-          return value;
-        }
-      });
+    return array.filter((value) => (value !== undefined ? value : undefined));
   }
 }
