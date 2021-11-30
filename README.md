@@ -426,7 +426,7 @@ export default ({ groups, selectedGroup, selectedGroupMembers }) => Modal()
   .buildToJSON();
 ```
 
-These functions essentially return either the value passed into as the second argument or `undefined`, depending on the condition. Please note that falsy is defined as `null`, `undefined`, or `false`. To avoid side effects, values such as `0` or `'''` are not considered to be falsy.
+These functions essentially return either the value passed into as the second argument or `undefined`, depending on the condition. Please note that falsy is defined as `null`, `undefined`, or `false`. To avoid side effects, values such as `0` or `''` are not considered to be falsy.
 
 ### Markdown Helpers
 
