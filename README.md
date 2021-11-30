@@ -35,6 +35,7 @@
 
 * Declarative [SwiftUI](https://developer.apple.com/xcode/swiftui/) inspired syntax.
 * Commonly-used UI components, such as a `Paginator` and `Accordion`.
+* Inline conditional helper functions for declaratively appending or omitting UI content.
 * The ability to build more complex flows using loops and conditionals.
 * A `printPreviewURL()` method that outputs a link to preview your UI on Slack's [Block Kit Builder website](https://app.slack.com/block-kit-builder) for easier prototyping.
 * A set of helper functions for formatting text with Slack's markdown standard.
@@ -214,12 +215,10 @@ Both of these examples render the message below. And the best part? It only took
 
 ### Creating a Simple Modal
 
-Let's take a look at how modals are created. Here we'll also take a look at working with Bits and with loops, by adding options with the `Array.map()` method.
-
-You'll noticed that we've added an inline condition that returns an initial option only if one has been passed into the function. This is because all the setter methods prune values of `undefined`, uncovering opportunities for inline logic. 
+Let's take a look at how modals are created. Here we'll also take a look at working with Bits and with loops, by adding options with the `Array.map()` method. 
 
 ```javascript
-import { Modal, Blocks, Elements, Bits } from 'slack-block-builder';
+import { Modal, Blocks, Elements, Bits, setIfTruthy } from 'slack-block-builder';
 
 export default ({ menuOptions, selected }) =>
   Modal({ title: 'PizzaMate', submit: 'Get Fed' })
@@ -240,7 +239,7 @@ export default ({ menuOptions, selected }) =>
             .actionId('item')
             .options(menuOptions
               .map((item) => Bits.Option({ text: item.name, value: item.id })))
-            .initialOption(selected && Bits.Option({ text: selected.name, value: selected.id }))))
+            .initialOption(setIfTruthy(selected, Bits.Option({ text: selected.name, value: selected.id })))))
     .buildToJSON();
 ```
 
@@ -382,6 +381,52 @@ const unfurl = ({ channel, ts, url }) => client.chat.unfurl({
 .then((response) => console.log(response))
 .catch((error) => console.log(error));
 ```
+
+### Working With Inline Conditionals
+
+There are a few helper functions available to make it easy to work with inline conditionals within your UI source code.
+
+They can be imported separately:
+
+```javascript
+import { setIfTruthy, omitIfTruthy, setIfFalsy, omitIfFalsy } from 'slack-block-builder';
+```
+
+Or as a part of the `conditionals` object:
+
+```javascript
+import { conditionals } from 'slack-block-builder';
+```
+
+Each function accepts to arguments – the first being a value that is evaluated whether it is either `null`, `undefined`, or `false`, and the second being the value to set or omit:
+
+```javascript
+import { Modal, Blocks, Elements, Bits, setIfTruthy } from 'slack-block-builder';
+
+export default ({ groups, selectedGroup, selectedGroupMembers }) => Modal()
+  .title('Edit Groups')
+  .callbackId('submit-edit-groups')
+  .blocks(
+    Blocks.Section({ text: 'Hello! Need to edit some groups?'}),
+    Blocks.Input({ label: 'Select a group to get started' })
+      .dispatchAction()
+      .element(
+        Elements.StaticSelect({ placeholder: 'Select a group...' })
+          .actionId('selectedGroup')
+          .options(groups
+            .map(({ name, id }) => Bits.Option({ text: name, value: id })))),
+    setIfTruthy(selectedGroup, [
+      Blocks.Input({ label: 'Current group members' })
+        .element(
+          Elements.UserMultiSelect({ placeholder: 'Select members...' })
+            .actionId('groupMembers')
+            .initialUsers(selectedGroupMembers))
+    ]))
+  .submit(setIfTruthy(selectedGroup, 'Save Changes'))
+  .buildToJSON();
+```
+
+These functions essentially return either the value passed into as the second argument or `undefined`, depending on the condition. Please note that falsy is defined as `null`, `undefined`, or `false`. To avoid side effects, values such as `0` or `'''` are not considered to be falsy.
 
 ### Markdown Helpers
 
