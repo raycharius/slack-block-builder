@@ -70,6 +70,7 @@
 * **Other**
   * [Block Collection](other/block-collection.md "Block Builder – Block Collection – Maintainable JavaScript Code for Slack Block Kit")
   * [Attachment Collection](other/attachment-collection.md "Block Builder – Attachment Collection – Maintainable JavaScript Code for Slack Block Kit")
+  * [Conditionals](other/conditionals.md "Block Builder – Conditionals – Maintainable JavaScript Code for Slack Block Kit")
   * [Markdown](other/markdown.md "Block Builder – Markdown – Maintainable JavaScript Code for Slack Block Kit")   
 
 * **About**
