@@ -27,7 +27,7 @@ export interface MethodData {
 
 export default (): MethodData[] => {
   const basePath = './src';
-  const folder = 'methods';
+  const folder = 'internal/methods';
 
   return getFilePathsFromFolder(basePath, folder, ['index.ts', 'required-methods.ts'])
     .map((file) => {

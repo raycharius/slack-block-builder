@@ -292,7 +292,7 @@ export function UserSelect(params?: UserSelectParams): UserSelectBuilder {
   return new UserSelectBuilder(params);
 }
 
-const elementObjects = {
+const elements = {
   Button,
   ChannelMultiSelect,
   ChannelSelect,
@@ -313,8 +313,6 @@ const elementObjects = {
   UserSelect,
 };
 
-/**
- * Exported in this way so that the color coding in IDEs for this object differs from the functions it contains.
- */
+// Strange export. I know. For IDE highlighting purposes.
 
-export { elementObjects as Elements };
+export { elements as Elements };

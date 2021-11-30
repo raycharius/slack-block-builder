@@ -27,6 +27,7 @@ export * from './external-id';
 export * from './fallback';
 export * from './fields';
 export * from './filter';
+export * from './focus-on-load';
 export * from './hint';
 export * from './image-url';
 export * from './in-channel';

@@ -1,5 +1,5 @@
 import { StaticMultiSelectBuilder as Class } from '../../src/elements/static-multi-select';
-import { SlackElementDto as DtoClass } from '../../src/lib';
+import { SlackElementDto as DtoClass } from '../../src/internal';
 import { params } from './mocks/static-multiselect.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
@@ -23,6 +23,7 @@ const methodsConfig = [
   methods.initialOptions,
   methods.confirm,
   methods.maxSelectedItems,
+  methods.focusOnLoad,
 ];
 
 testCompositeBuilderClass({ config, methods: methodsConfig });

@@ -17,7 +17,7 @@ import {
   PaginatorStateManagerParams,
   AccordionStateManager,
   AccordionStateManagerParams,
-} from '../lib';
+} from '../internal';
 
 export type { PaginatorUIComponent, AccordionUIComponent };
 
@@ -137,5 +137,7 @@ const components = {
   EasyPaginator,
   Accordion,
 };
+
+// Strange export. I know. For IDE highlighting purposes.
 
 export { components as Components };

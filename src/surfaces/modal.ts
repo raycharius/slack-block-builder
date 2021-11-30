@@ -1,5 +1,7 @@
-import { SurfaceBuilderBase } from '../base';
-import { SlackModalDto } from '../lib';
+import { SurfaceBuilderBase } from '../internal/base';
+import { SurfaceType } from '../internal/constants';
+import { SlackModalDto } from '../internal/dto';
+import { applyMixins, getPlainTextObject, getBuilderResults } from '../internal/helpers';
 import {
   Blocks,
   CallbackId,
@@ -15,12 +17,10 @@ import {
   GetBlocks,
   GetPreviewUrl,
   PrintPreviewUrl,
-} from '../methods';
-import { applyMixins, getPlainTextObject, getBuilderResults } from '../helpers';
-import { SurfaceType } from '../constants';
+} from '../internal/methods';
 
-import type { SlackBlockDto } from '../lib';
-import type { ViewBlockBuilder } from '../types';
+import type { SlackBlockDto } from '../internal/dto';
+import type { ViewBlockBuilder } from '../internal/types';
 
 export interface ModalParams {
   type?: string;

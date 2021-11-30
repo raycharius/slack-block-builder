@@ -1,15 +1,15 @@
-import { BitBuilderBase } from '../base';
-import { SlackDto } from '../lib';
+import { BitBuilderBase } from '../internal/base';
+import { SlackDto } from '../internal/dto';
+import { applyMixins, getPlainTextObject, getMarkdownObject } from '../internal/helpers';
 import {
   Description,
   End,
   Text,
   Url,
   Value,
-} from '../methods';
-import { applyMixins, getPlainTextObject, getMarkdownObject } from '../helpers';
+} from '../internal/methods';
 
-import type { ObjectLiteral } from '../types';
+import type { ObjectLiteral } from '../internal/types';
 
 export interface OptionParams {
   description?: string;

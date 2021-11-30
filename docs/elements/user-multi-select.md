@@ -42,6 +42,11 @@ UserMultiSelectBuilder.initialUsers([string1[, ...[, stringN]]);
 
 Pre-populates the menu with selected, default users. 
 ```javascript
+UserMultiSelectBuilder.focusOnLoad(boolean?);
+```
+
+Sets an element to have auto focus on opening the view Defaults to `true`.
+```javascript
 UserMultiSelectBuilder.actionId(string);
 ```
 

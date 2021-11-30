@@ -37,6 +37,11 @@ Each instance of the `DatePickerBuilder` object has chainable setter methods for
 All setter methods return `this`, the instance of `DatePickerBuilder` on which it is called.
 
 ```javascript
+DatePickerBuilder.focusOnLoad(boolean?);
+```
+
+Sets an element to have auto focus on opening the view Defaults to `true`.
+```javascript
 DatePickerBuilder.actionId(string);
 ```
 

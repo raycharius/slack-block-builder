@@ -1,18 +1,19 @@
-import { ElementBuilderBase } from '../base';
-import { SlackElementDto } from '../lib';
+import { ElementBuilderBase } from '../internal/base';
+import { ElementType } from '../internal/constants';
+import { SlackElementDto } from '../internal/dto';
+import { applyMixins, getPlainTextObject, getBuilderResult } from '../internal/helpers';
 import {
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialChannels,
   MaxSelectedItems,
   Placeholder,
-} from '../methods';
-import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
-import { ElementType } from '../constants';
+} from '../internal/methods';
 
-import type { SlackDto } from '../lib';
-import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
+import type { SlackDto } from '../internal/dto';
+import type { ConfirmationDialogBuilder } from '../bits';
 
 export interface ChannelMultiSelectParams {
   actionId?: string;
@@ -23,6 +24,7 @@ export interface ChannelMultiSelectParams {
 export interface ChannelMultiSelectBuilder extends ActionId,
   Confirm<ConfirmationDialogBuilder>,
   End,
+  FocusOnLoad,
   InitialChannels,
   MaxSelectedItems,
   Placeholder {
@@ -49,6 +51,7 @@ applyMixins(ChannelMultiSelectBuilder, [
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialChannels,
   MaxSelectedItems,
   Placeholder,

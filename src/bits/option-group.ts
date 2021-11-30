@@ -1,11 +1,11 @@
-import { BitBuilderBase } from '../base';
-import { SlackDto } from '../lib';
+import { BitBuilderBase } from '../internal/base';
+import { SlackDto } from '../internal/dto';
+import { applyMixins, getPlainTextObject, getBuilderResults } from '../internal/helpers';
 import {
   Label,
   End,
   Options,
-} from '../methods';
-import { applyMixins, getPlainTextObject, getBuilderResults } from '../helpers';
+} from '../internal/methods';
 
 export interface OptionGroupParams {
   label?: string;

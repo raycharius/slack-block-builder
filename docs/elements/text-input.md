@@ -51,6 +51,11 @@ TextInputBuilder.dispatchActionOnEnterPressed(boolean?);
 
 Instructs the Slack API to dispatch an interaction payload to your app when the user presses the enter key while the input is in focus. Defaults to `true`.
 ```javascript
+TextInputBuilder.focusOnLoad(boolean?);
+```
+
+Sets an element to have auto focus on opening the view Defaults to `true`.
+```javascript
 TextInputBuilder.multiline(boolean?);
 ```
 

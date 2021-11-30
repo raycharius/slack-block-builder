@@ -1,6 +1,7 @@
 export * from './bits';
 export * from './blocks';
 export * from './components';
+export * from './conditionals';
 export * from './elements';
 export * from './md';
 export * from './surfaces';
@@ -11,5 +12,11 @@ export type {
   SlackBlockDto,
   SlackElementDto,
   SlackMessageDto,
-} from './lib';
-export * from './types';
+  ActionsElementBuilder,
+  SectionElementBuilder,
+  InputElementBuilder,
+  ContextElement,
+  BlockBuilder,
+  ViewBlockBuilder,
+  FilterString,
+} from './internal';

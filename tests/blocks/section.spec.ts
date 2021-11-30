@@ -1,5 +1,5 @@
 import { SectionBuilder as Class } from '../../src/blocks/section';
-import { SlackBlockDto as DtoClass } from '../../src/lib';
+import { SlackBlockDto as DtoClass } from '../../src/internal';
 import { params } from './mocks/section.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

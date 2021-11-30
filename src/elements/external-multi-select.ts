@@ -1,24 +1,25 @@
-import { ElementBuilderBase } from '../base';
-import { SlackElementDto } from '../lib';
-import {
-  ActionId,
-  Confirm,
-  End,
-  InitialOptions,
-  MaxSelectedItems,
-  MinQueryLength,
-  Placeholder,
-} from '../methods';
+import { ElementBuilderBase } from '../internal/base';
+import { ElementType } from '../internal/constants';
+import { SlackElementDto } from '../internal/dto';
 import {
   applyMixins,
   getPlainTextObject,
   getBuilderResult,
   getBuilderResults,
-} from '../helpers';
-import { ElementType } from '../constants';
+} from '../internal/helpers';
+import {
+  ActionId,
+  Confirm,
+  End,
+  FocusOnLoad,
+  InitialOptions,
+  MaxSelectedItems,
+  MinQueryLength,
+  Placeholder,
+} from '../internal/methods';
 
-import type { SlackDto } from '../lib';
-import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
+import type { SlackDto } from '../internal/dto';
+import type { ConfirmationDialogBuilder } from '../bits';
 
 export interface ExternalMultiSelectParams {
   actionId?: string;
@@ -30,6 +31,7 @@ export interface ExternalMultiSelectParams {
 export interface ExternalMultiSelectBuilder extends ActionId,
   Confirm<ConfirmationDialogBuilder>,
   End,
+  FocusOnLoad,
   InitialOptions,
   MaxSelectedItems,
   MinQueryLength,
@@ -58,6 +60,7 @@ applyMixins(ExternalMultiSelectBuilder, [
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialOptions,
   MaxSelectedItems,
   MinQueryLength,

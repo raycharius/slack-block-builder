@@ -43,6 +43,11 @@ CheckboxesBuilder.options([Option1[, ...[, OptionN]]);
 
 Adds options to the select or multi-select menu. 
 ```javascript
+CheckboxesBuilder.focusOnLoad(boolean?);
+```
+
+Sets an element to have auto focus on opening the view Defaults to `true`.
+```javascript
 CheckboxesBuilder.actionId(string);
 ```
 

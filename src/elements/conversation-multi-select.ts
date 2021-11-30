@@ -1,5 +1,12 @@
-import { ElementBuilderBase } from '../base';
-import { SlackElementDto } from '../lib';
+import { ElementBuilderBase } from '../internal/base';
+import { ElementType } from '../internal/constants';
+import { SlackElementDto } from '../internal/dto';
+import {
+  applyMixins,
+  getPlainTextObject,
+  getFilter,
+  getBuilderResult,
+} from '../internal/helpers';
 import {
   ActionId,
   Confirm,
@@ -8,20 +15,14 @@ import {
   ExcludeBotUsers,
   ExcludeExternalSharedChannels,
   Filter,
+  FocusOnLoad,
   InitialConversations,
   MaxSelectedItems,
   Placeholder,
-} from '../methods';
-import {
-  applyMixins,
-  getPlainTextObject,
-  getFilter,
-  getBuilderResult,
-} from '../helpers';
-import { ElementType } from '../constants';
+} from '../internal/methods';
 
-import type { SlackDto } from '../lib';
-import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
+import type { SlackDto } from '../internal/dto';
+import type { ConfirmationDialogBuilder } from '../bits';
 
 export interface ConversationMultiSelectParams {
   actionId?: string;
@@ -36,6 +37,7 @@ export interface ConversationMultiSelectBuilder extends ActionId,
   ExcludeBotUsers,
   ExcludeExternalSharedChannels,
   Filter,
+  FocusOnLoad,
   InitialConversations,
   MaxSelectedItems,
   Placeholder {
@@ -67,6 +69,7 @@ applyMixins(ConversationMultiSelectBuilder, [
   ExcludeBotUsers,
   ExcludeExternalSharedChannels,
   Filter,
+  FocusOnLoad,
   InitialConversations,
   MaxSelectedItems,
   Placeholder,

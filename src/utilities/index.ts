@@ -1,10 +1,17 @@
 /* eslint-disable max-len */
 
-import { getBuiltCollection } from '../helpers';
+import { SlackBlockDto, SlackDto } from '../internal/dto';
+import { Builder } from '../internal/lib';
 
-import type { BlockBuilder, Appendable } from '../types';
+import type { BlockBuilder, Appendable } from '../internal/types';
 import type { AttachmentBuilder } from '../bits';
-import type { SlackBlockDto, SlackDto } from '../lib';
+
+type Collection<T> = T[];
+
+const getBuiltCollection = <T extends Builder, Dto extends SlackDto>(
+  ...builders: Appendable<T>
+): Collection<Dto> => Builder.pruneUndefinedFromArray(builders.flat())
+    .map((builder) => builder && builder.build());
 
 /**
  * @description Creates and returns an array of built blocks. Behaves in the same way as all appending methods, such as Surface.blocks().
@@ -26,5 +33,7 @@ const utilities = {
   BlockCollection,
   AttachmentCollection,
 };
+
+// Strange export. I know. For IDE highlighting purposes.
 
 export { utilities as Utilities };

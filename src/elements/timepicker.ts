@@ -1,17 +1,18 @@
-import { ElementBuilderBase } from '../base';
-import { SlackElementDto } from '../lib';
+import { ElementBuilderBase } from '../internal/base';
+import { ElementType } from '../internal/constants';
+import { SlackElementDto } from '../internal/dto';
+import { applyMixins, getPlainTextObject, getBuilderResult } from '../internal/helpers';
 import {
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialTime,
   Placeholder,
-} from '../methods';
-import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
-import { ElementType } from '../constants';
+} from '../internal/methods';
 
-import type { SlackDto } from '../lib';
-import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
+import type { SlackDto } from '../internal/dto';
+import type { ConfirmationDialogBuilder } from '../bits';
 
 export interface TimePickerParams {
   actionId?: string;
@@ -22,6 +23,7 @@ export interface TimePickerParams {
 export interface TimePickerBuilder extends ActionId,
   Confirm<ConfirmationDialogBuilder>,
   End,
+  FocusOnLoad,
   InitialTime,
   Placeholder {
 }
@@ -47,6 +49,7 @@ applyMixins(TimePickerBuilder, [
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialTime,
   Placeholder,
 ]);

@@ -1,14 +1,14 @@
-import { BlockBuilderBase } from '../base';
-import { SlackBlockDto } from '../lib';
+import { BlockBuilderBase } from '../internal/base';
+import { BlockType } from '../internal/constants';
+import { SlackBlockDto } from '../internal/dto';
+import { applyMixins, getElementsForContext } from '../internal/helpers';
 import {
   BlockId,
   Elements,
   End,
-} from '../methods';
-import { applyMixins, getElementsForContext } from '../helpers';
-import { BlockType } from '../constants';
+} from '../internal/methods';
 
-import type { ContextElement } from '../types';
+import type { ContextElement } from '../internal/types';
 
 export interface ContextParams {
   blockId?: string;

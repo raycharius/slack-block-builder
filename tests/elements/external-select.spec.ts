@@ -1,5 +1,5 @@
 import { ExternalSelectBuilder as Class } from '../../src/elements/external-select';
-import { SlackElementDto as DtoClass } from '../../src/lib';
+import { SlackElementDto as DtoClass } from '../../src/internal';
 import { params } from './mocks/external-select.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
@@ -21,6 +21,7 @@ const methodsConfig = [
   methods.initialOption,
   methods.minQueryLength,
   methods.confirm,
+  methods.focusOnLoad,
 ];
 
 testCompositeBuilderClass({ config, methods: methodsConfig });

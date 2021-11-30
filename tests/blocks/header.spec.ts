@@ -1,5 +1,5 @@
 import { HeaderBuilder as Class } from '../../src/blocks/header';
-import { SlackBlockDto as DtoClass } from '../../src/lib';
+import { SlackBlockDto as DtoClass } from '../../src/internal';
 import { params } from './mocks/header.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

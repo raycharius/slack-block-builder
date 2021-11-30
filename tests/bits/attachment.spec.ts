@@ -1,5 +1,5 @@
 import { AttachmentBuilder as Class } from '../../src/bits/attachment';
-import { SlackDto as DtoClass } from '../../src/lib';
+import { SlackDto as DtoClass } from '../../src/internal';
 import { params } from './mocks/attachment.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';

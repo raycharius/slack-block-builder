@@ -1,5 +1,5 @@
 import { UserMultiSelectBuilder as Class } from '../../src/elements/user-multi-select';
-import { SlackElementDto as DtoClass } from '../../src/lib';
+import { SlackElementDto as DtoClass } from '../../src/internal';
 import { params } from './mocks/user-multiselect.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
@@ -21,6 +21,7 @@ const methodsConfig = [
   methods.initialUsers,
   methods.confirm,
   methods.maxSelectedItems,
+  methods.focusOnLoad,
 ];
 
 testCompositeBuilderClass({ config, methods: methodsConfig });

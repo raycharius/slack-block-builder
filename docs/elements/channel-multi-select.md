@@ -42,6 +42,11 @@ ChannelMultiSelectBuilder.initialChannels([string1[, ...[, stringN]]);
 
 Pre-populates the menu with selected, default channels. 
 ```javascript
+ChannelMultiSelectBuilder.focusOnLoad(boolean?);
+```
+
+Sets an element to have auto focus on opening the view Defaults to `true`.
+```javascript
 ChannelMultiSelectBuilder.actionId(string);
 ```
 

@@ -72,4 +72,5 @@ export const methodArgMocks = {
   initialTime: methodArgMocksByType.time,
   ignoreMarkdown: methodArgMocksByType.falseBool,
   submitDisabled: methodArgMocksByType.bool,
+  focusOnLoad: methodArgMocksByType.bool,
 };

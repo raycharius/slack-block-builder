@@ -44,6 +44,11 @@ ExternalMultiSelectBuilder.initialOptions([Option1[, ...[, OptionN]]);
 
 Pre-populates the menu or checkbox input with selected, default options. 
 ```javascript
+ExternalMultiSelectBuilder.focusOnLoad(boolean?);
+```
+
+Sets an element to have auto focus on opening the view Defaults to `true`.
+```javascript
 ExternalMultiSelectBuilder.actionId(string);
 ```
 

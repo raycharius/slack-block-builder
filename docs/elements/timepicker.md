@@ -37,6 +37,11 @@ Each instance of the `TimePickerBuilder` object has chainable setter methods for
 All setter methods return `this`, the instance of `TimePickerBuilder` on which it is called.
 
 ```javascript
+TimePickerBuilder.focusOnLoad(boolean?);
+```
+
+Sets an element to have auto focus on opening the view Defaults to `true`.
+```javascript
 TimePickerBuilder.actionId(string);
 ```
 

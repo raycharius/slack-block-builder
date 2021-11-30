@@ -1,5 +1,5 @@
 import { Modal } from '../../src';
-import { Builder } from '../../src/lib';
+import { Builder } from '../../src/internal';
 
 describe('Testing Builder Class Methods:', () => {
   test('Instantiating with `undefined` values in constructor params does not add them to the `props` property of a builder.', () => {

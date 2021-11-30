@@ -6,7 +6,7 @@ The `Bits` object in **Block Builder** contains various bits and pieces from the
 
 ### Accessing Bits in Block Builder
 
-All of the composition objects provided by the [Slack Block Kit](https://api.slack.com/block-kit) framework are supported in **Block Builder** and most are accessed through the `Bits` object, which is a top-level import. The others (Markdown, Plain-Text, Filter) are created in the background when a view is compiled.
+All of the composition objects provided by the [Slack Block Kit](https://api.slack.com/block-kit) framework are supported in **Block Builder** and most are accessed through the `Bits` object, which is a top-level import. The others (Markdown, Plain-Text, FilterType) are created in the background when a view is compiled.
 
 The `Bits` object also contains a method called `Attachment()` which builds out attachments for messages.
 

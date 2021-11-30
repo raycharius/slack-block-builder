@@ -62,6 +62,11 @@ ConversationMultiSelectBuilder.excludeBotUsers(boolean?);
 
 Excludes conversations with bot users from the menu's options. Defaults to `true`.
 ```javascript
+ConversationMultiSelectBuilder.focusOnLoad(boolean?);
+```
+
+Sets an element to have auto focus on opening the view Defaults to `true`.
+```javascript
 ConversationMultiSelectBuilder.actionId(string);
 ```
 

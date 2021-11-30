@@ -37,6 +37,11 @@ Each instance of the `ExternalSelectBuilder` object has chainable setter methods
 All setter methods return `this`, the instance of `ExternalSelectBuilder` on which it is called.
 
 ```javascript
+ExternalSelectBuilder.focusOnLoad(boolean?);
+```
+
+Sets an element to have auto focus on opening the view Defaults to `true`.
+```javascript
 ExternalSelectBuilder.actionId(string);
 ```
 

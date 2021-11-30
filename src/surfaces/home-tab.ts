@@ -1,5 +1,7 @@
-import { SurfaceBuilderBase } from '../base';
-import { SlackHomeTabDto } from '../lib';
+import { SurfaceBuilderBase } from '../internal/base';
+import { SurfaceType } from '../internal/constants';
+import { SlackHomeTabDto } from '../internal/dto';
+import { applyMixins, getBuilderResults } from '../internal/helpers';
 import {
   Blocks,
   CallbackId,
@@ -10,12 +12,10 @@ import {
   GetBlocks,
   GetPreviewUrl,
   PrintPreviewUrl,
-} from '../methods';
-import { applyMixins, getBuilderResults } from '../helpers';
-import { SurfaceType } from '../constants';
+} from '../internal/methods';
 
-import type { SlackBlockDto } from '../lib';
-import type { ViewBlockBuilder } from '../types';
+import type { SlackBlockDto } from '../internal/dto';
+import type { ViewBlockBuilder } from '../internal/types';
 
 export interface HomeTabParams {
   privateMetaData?: string;

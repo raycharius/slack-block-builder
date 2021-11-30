@@ -1,9 +1,14 @@
 import { Blocks } from '../blocks';
 import { Elements } from '../elements';
-import { ComponentUIText, PaginatorButtonId } from '../constants';
+import { ComponentUIText, PaginatorButtonId } from '../internal/constants';
 
-import type { BlockBuilder, BlockBuilderReturnableFn, StringReturnableFn } from '../types';
-import type { PaginatorState, PaginatorStateManager } from '../lib';
+import type { PaginatorStateManager, PaginatorState } from '../internal/lib';
+import type {
+  BlockBuilder,
+  BlockBuilderReturnableFn,
+  StringReturnableFn,
+  Nullable,
+} from '../internal/types';
 
 export type PaginatorActionIdFn = StringReturnableFn<PaginatorState
 & { buttonId: PaginatorButtonId }>;
@@ -19,14 +24,14 @@ export type PaginatorBuilderFn<T> = BlockBuilderReturnableFn<{ item: T }>;
 interface PaginatorUIComponentParams<T> {
   items: T[];
   paginator: PaginatorStateManager;
-  nextButtonText: string;
-  previousButtonText: string;
-  pageCountTextFunction: PaginatorPageCountTextFn;
+  nextButtonText: Nullable<string>;
+  previousButtonText: Nullable<string>;
+  pageCountTextFunction: Nullable<PaginatorPageCountTextFn>;
   actionIdFunction: PaginatorActionIdFn;
   builderFunction: PaginatorBuilderFn<T>,
 }
 
-const defaultPageCountText = ({ page, totalPages }) => `Page ${page} of ${totalPages}`;
+const defaultPageCountText = ({ page, totalPages }: PageCountTextFnParams) => `Page ${page} of ${totalPages}`;
 
 export class PaginatorUIComponent<T> {
   private readonly items: T[];

@@ -1,16 +1,17 @@
-import { ElementBuilderBase } from '../base';
-import { SlackElementDto } from '../lib';
+import { ElementBuilderBase } from '../internal/base';
+import { ElementType } from '../internal/constants';
+import { SlackElementDto } from '../internal/dto';
+import { applyMixins, getPlainTextObject, getBuilderResult } from '../internal/helpers';
 import {
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialUser,
   Placeholder,
-} from '../methods';
-import { applyMixins, getPlainTextObject, getBuilderResult } from '../helpers';
-import { ElementType } from '../constants';
+} from '../internal/methods';
 
-import type { ConfirmationDialogBuilder } from '../bits/confirmation-dialog';
+import type { ConfirmationDialogBuilder } from '../bits';
 
 export interface UserSelectParams {
   actionId?: string;
@@ -21,6 +22,7 @@ export interface UserSelectParams {
 export interface UserSelectBuilder extends ActionId,
   Confirm<ConfirmationDialogBuilder>,
   End,
+  FocusOnLoad,
   InitialUser,
   Placeholder {
 }
@@ -46,6 +48,7 @@ applyMixins(UserSelectBuilder, [
   ActionId,
   Confirm,
   End,
+  FocusOnLoad,
   InitialUser,
   Placeholder,
 ]);
