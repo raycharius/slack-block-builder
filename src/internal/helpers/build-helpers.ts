@@ -1,4 +1,4 @@
-import { Builder } from '../lib/builder';
+import { Builder } from '../lib';
 import {
   PlainTextObject,
   MarkdownObject,
@@ -11,78 +11,69 @@ import type {
   ObjectLiteral,
   ContextElement,
   Undefinable,
-  UndefinableArray,
 } from '../types';
+import type { SlackElementDto } from '../dto';
 
 const defaultParams = {
   isMarkdown: false,
 };
 
-const isUndefined = (value: unknown): boolean => value === undefined;
+const valueOrUndefined = <T>(value: T): Undefinable<T> => (value === undefined ? undefined : value);
 
-const areUndefined = (...values: unknown[]): boolean => values
-  .filter((value) => isUndefined(value)).length === values.length;
+const valuesOrUndefined = <T extends unknown[]>(values: T): Undefinable<T> => {
+  if (values.filter((value) => value === undefined).length === 0) {
+    return undefined;
+  }
+
+  return values;
+};
 
 export function getBuilderResult<T>(builder: Builder, params: ObjectLiteral = defaultParams): T {
-  return isUndefined(builder) ? undefined : builder.build(params);
+  return valueOrUndefined(builder) && builder.build(params);
 }
 
 export function getBuilderResults<T>(
   builders: Builder[], params: ObjectLiteral = defaultParams,
-): Undefinable<UndefinableArray<T>> {
-  return areUndefined(builders) ? undefined : builders
+): Undefinable<T[]> {
+  return valueOrUndefined(builders) && builders
     .map((builder) => getBuilderResult<T>(builder, params));
 }
 
 export function getPlainTextObject(text: string): Undefinable<PlainTextObject> {
-  return isUndefined(text) ? undefined : new PlainTextObject(text);
+  return valueOrUndefined(text) ? new PlainTextObject(text) : undefined;
 }
 
 export function getMarkdownObject(text: string): Undefinable<MarkdownObject> {
-  return isUndefined(text) ? undefined : new MarkdownObject(text);
+  return valueOrUndefined(text) ? new MarkdownObject(text) : undefined;
 }
 
 export function getElementsForContext(
   elements: ContextElement[],
-): Undefinable<UndefinableArray<MarkdownObject | ObjectLiteral>> {
-  return isUndefined(elements)
-    ? undefined
-    : elements.map((element) => (typeof element === 'string'
-      ? getMarkdownObject(element)
-      : element.build()));
+): Undefinable<Array<MarkdownObject | Readonly<SlackElementDto>>> {
+  return valueOrUndefined(elements) && elements.map((element) => (typeof element === 'string'
+    ? new MarkdownObject(element)
+    : element.build()));
 }
 
-export function getFields(fields: string[]): Undefinable<UndefinableArray<MarkdownObject>> {
-  return isUndefined(fields)
-    ? undefined
-    : fields.map((field) => getMarkdownObject(field));
+export function getFields(fields: string[]): Undefinable<MarkdownObject[]> {
+  return valueOrUndefined(fields) && fields.map((field) => new MarkdownObject(field));
 }
 
 export function getFormattedDate(date: Date): Undefinable<string> {
-  return isUndefined(date)
-    ? undefined
-    : date.toISOString().split('T')[0];
+  return valueOrUndefined(date) && date.toISOString().split('T')[0];
 }
 
-export function getFilter(params: FilterParams): Undefinable<FilterObject> {
-  const { filter, excludeBotUsers, excludeExternalSharedChannels } = params;
-
-  if (areUndefined(filter, excludeBotUsers, excludeExternalSharedChannels)) {
-    return undefined;
-  }
-
-  return new FilterObject({ filter, excludeBotUsers, excludeExternalSharedChannels });
+export function getFilter(
+  { filter, excludeBotUsers, excludeExternalSharedChannels }: FilterParams,
+): Undefinable<FilterObject> {
+  return valuesOrUndefined([filter, excludeBotUsers, excludeExternalSharedChannels])
+    && new FilterObject({ filter, excludeBotUsers, excludeExternalSharedChannels });
 }
 
 export function getDispatchActionsConfigurationObject(
-  params: ObjectLiteral,
+  { onEnterPressed, onCharacterEntered }: ObjectLiteral,
 ): Undefinable<DispatchActionsConfigurationObject> {
-  const { onEnterPressed, onCharacterEntered } = params;
-
-  if (areUndefined(onEnterPressed, onCharacterEntered)) {
-    return undefined;
-  }
-
-  return new DispatchActionsConfigurationObject([onEnterPressed, onCharacterEntered]
-    .filter(Boolean));
+  return valuesOrUndefined([onEnterPressed, onCharacterEntered])
+    && new DispatchActionsConfigurationObject([onEnterPressed, onCharacterEntered]
+      .filter(Boolean));
 }
