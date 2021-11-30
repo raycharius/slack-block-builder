@@ -34,4 +34,6 @@ const utilities = {
   AttachmentCollection,
 };
 
+// Strange export. I know. For IDE highlighting purposes.
+
 export { utilities as Utilities };

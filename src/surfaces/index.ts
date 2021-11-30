@@ -75,15 +75,13 @@ export function WorkflowStep(params?: WorkflowStepParams): WorkflowStepBuilder {
   return new WorkflowStepBuilder(params);
 }
 
-const surfaceObjects = {
+const surfaces = {
   HomeTab,
   Message,
   Modal,
   WorkflowStep,
 };
 
-/**
- * Exported in this way so that the color coding in IDEs for this object differs from the functions it contains.
- */
+// Strange export. I know. For IDE highlighting purposes.
 
-export { surfaceObjects as Surfaces };
+export { surfaces as Surfaces };

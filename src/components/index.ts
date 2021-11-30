@@ -138,4 +138,6 @@ const components = {
   Accordion,
 };
 
+// Strange export. I know. For IDE highlighting purposes.
+
 export { components as Components };

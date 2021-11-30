@@ -1,6 +1,7 @@
 export * from './bits';
 export * from './blocks';
 export * from './components';
+export * from './conditionals';
 export * from './elements';
 export * from './md';
 export * from './surfaces';

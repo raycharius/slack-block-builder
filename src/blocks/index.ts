@@ -128,7 +128,7 @@ export function Section(params?: SectionParams): SectionBuilder {
   return new SectionBuilder(params);
 }
 
-const blockObjects = {
+const blocks = {
   Actions,
   Context,
   Divider,
@@ -139,8 +139,6 @@ const blockObjects = {
   Section,
 };
 
-/**
- * Exported in this way so that the color coding in IDEs for this object differs from the functions it contains.
- */
+// Strange export. I know. For IDE highlighting purposes.
 
-export { blockObjects as Blocks };
+export { blocks as Blocks };
