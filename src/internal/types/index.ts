@@ -115,6 +115,8 @@ export type AbstractCtor<T> = { prototype: T };
 
 export type Undefinable<T> = T | undefined;
 
+export type Nullable<T> = T | null;
+
 export type Settable<T> = Undefinable<T>;
 
 export type UndefinableArray<T> = Undefinable<T>[];

@@ -3,7 +3,12 @@ import { Elements } from '../elements';
 import { ComponentUIText } from '../internal/constants';
 
 import type { AccordionStateManager, AccordionState } from '../internal/lib';
-import type { BlockBuilderReturnableFn, BlockBuilder, StringReturnableFn } from '../internal/types';
+import type {
+  BlockBuilderReturnableFn,
+  BlockBuilder,
+  StringReturnableFn,
+  Nullable,
+} from '../internal/types';
 
 export interface AccordionActionIdParams {
   expandedItems: AccordionState;
@@ -16,8 +21,8 @@ export type AccordionBuilderFn<T> = BlockBuilderReturnableFn<{ item: T }>;
 export interface AccordionUIComponentParams<T> {
   items: T[];
   paginator: AccordionStateManager;
-  expandButtonText?: string;
-  collapseButtonText?: string;
+  expandButtonText: Nullable<string>;
+  collapseButtonText: Nullable<string>;
   titleTextFunction: AccordionTitleTextFn<T>;
   actionIdFunction: AccordionActionIdFn;
   builderFunction: AccordionBuilderFn<T>;

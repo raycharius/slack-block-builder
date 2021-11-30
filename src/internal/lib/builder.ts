@@ -54,6 +54,6 @@ export abstract class Builder {
   }
 
   public static pruneUndefinedFromArray<T>(array: T[]): T[] {
-    return array.filter((value) => (value !== undefined ? value : undefined));
+    return array.filter((value) => (value !== undefined ? value : false));
   }
 }

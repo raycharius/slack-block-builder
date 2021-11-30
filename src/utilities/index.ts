@@ -11,7 +11,7 @@ type Collection<T> = T[];
 const getBuiltCollection = <T extends Builder, Dto extends SlackDto>(
   ...builders: Appendable<T>
 ): Collection<Dto> => Builder.pruneUndefinedFromArray(builders.flat())
-    .map((builder) => builder.build());
+    .map((builder) => builder && builder.build());
 
 /**
  * @description Creates and returns an array of built blocks. Behaves in the same way as all appending methods, such as Surface.blocks().
