@@ -26,4 +26,10 @@ export const appendableProperty = (params: MethodTestArgs): void => {
 
     expect(instance.props[propSetterPropName]).toEqual([...methodArgMock, ...methodArgMock]);
   });
+
+  test(`Passing an undefined value in nested array to appendable method '${methodName}()' not append the value to the property.`, () => {
+    instance[methodName](undefined, [undefined, undefined], undefined);
+
+    expect(instance.props[propSetterPropName]).toEqual([...methodArgMock, ...methodArgMock]);
+  });
 };
