@@ -21,7 +21,7 @@ const defaultParams = {
 const valueOrUndefined = <T>(value: T): Undefinable<T> => (value === undefined ? undefined : value);
 
 const valuesOrUndefined = <T extends unknown[]>(values: T): Undefinable<T> => {
-  if (values.filter((value) => value === undefined).length === 0) {
+  if (values.filter((value) => value !== undefined).length === 0) {
     return undefined;
   }
 
