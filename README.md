@@ -398,7 +398,7 @@ Or as a part of the `conditionals` object:
 import { conditionals } from 'slack-block-builder';
 ```
 
-Each function accepts to arguments – the first being a value that is evaluated whether it is either `null`, `undefined`, or `false`, and the second being the value to set or omit:
+Each function accepts two arguments – the first being a value that is evaluated whether it is either `null`, `undefined`, or `false`, and the second being the value to set or omit:
 
 ```javascript
 import { Modal, Blocks, Elements, Bits, setIfTruthy } from 'slack-block-builder';
