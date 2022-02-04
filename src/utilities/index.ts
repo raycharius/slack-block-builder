@@ -4,7 +4,7 @@ import { SlackBlockDto, SlackDto } from '../internal/dto';
 import { Builder } from '../internal/lib';
 
 import type { BlockBuilder, Appendable } from '../internal/types';
-import type { AttachmentBuilder } from '../bits';
+import type { AttachmentBuilder, OptionBuilder, OptionGroupBuilder } from '../bits';
 
 type Collection<T> = T[];
 
@@ -29,9 +29,19 @@ export function AttachmentCollection(...attachments: Appendable<AttachmentBuilde
   return getBuiltCollection<AttachmentBuilder, Readonly<SlackDto>>(...attachments);
 }
 
+export function OptionCollection(...options: Appendable<OptionBuilder>): Readonly<SlackDto>[] {
+  return getBuiltCollection<OptionBuilder, Readonly<SlackDto>>(...options);
+}
+
+export function OptionGroupCollection(...optionGroups: Appendable<OptionGroupBuilder>): Readonly<SlackDto>[] {
+  return getBuiltCollection<OptionGroupBuilder, Readonly<SlackDto>>(...optionGroups);
+}
+
 const utilities = {
-  BlockCollection,
   AttachmentCollection,
+  BlockCollection,
+  OptionCollection,
+  OptionGroupCollection,
 };
 
 // Strange export. I know. For IDE highlighting purposes.
