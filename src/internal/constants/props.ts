@@ -76,4 +76,5 @@ export enum Prop {
   IgnoreMarkdown = 'ignoreMarkdown',
   SubmitDisabled = 'submitDisabled',
   FocusOnLoad = 'focusOnLoad',
+  AccessibilityLabel = 'accessibilityLabel',
 }

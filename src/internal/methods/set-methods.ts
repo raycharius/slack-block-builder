@@ -7,6 +7,22 @@ import { Prop } from '../constants';
 import type { SectionElementBuilder, Settable } from '../types';
 import type { OptionBuilder } from '../../bits';
 
+export abstract class AccessibilityLabel extends Builder {
+  /**
+   * @description A label for longer descriptive text about a button element. This label will be read out by screen readers instead of the button text object.
+   *
+   * **Slack Validation Rules and Tips:**
+   *    * Maximum of 75 characters.
+   *
+   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
+   */
+
+  public accessibilityLabel(label: string): this {
+    return this.set(label, Prop.AccessibilityLabel);
+  }
+}
+
 export abstract class Accessory extends Builder {
   /**
    * @description Adds an element to the section block of your view or message.

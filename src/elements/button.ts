@@ -3,6 +3,7 @@ import { ElementType } from '../internal/constants';
 import { SlackElementDto } from '../internal/dto';
 import { applyMixins, getPlainTextObject, getBuilderResult } from '../internal/helpers';
 import {
+  AccessibilityLabel,
   ActionId,
   Confirm,
   Danger,
@@ -17,13 +18,15 @@ import type { SlackDto } from '../internal/dto';
 import type { ConfirmationDialogBuilder } from '../bits';
 
 export interface ButtonParams {
+  accessibilityLabel?: string;
   actionId?: string;
   text?: string;
   url?: string;
   value?: string;
 }
 
-export interface ButtonBuilder extends ActionId,
+export interface ButtonBuilder extends AccessibilityLabel,
+  ActionId,
   Confirm<ConfirmationDialogBuilder>,
   Danger,
   End,
@@ -51,6 +54,7 @@ export class ButtonBuilder extends ElementBuilderBase {
 }
 
 applyMixins(ButtonBuilder, [
+  AccessibilityLabel,
   ActionId,
   Confirm,
   Danger,
