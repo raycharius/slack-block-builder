@@ -23,6 +23,8 @@ const myObj = Elements.Button(params?);
 
 Each instance of the `ButtonBuilder` object has chainable setter methods for the object's properties. However, properties with primitive values can optionally be passed to the instantiating function, should you prefer:
 
+`accessibilityLabel` – *String*
+
 `actionId` – *String*
 
 `text` – *String*
@@ -48,6 +50,11 @@ ButtonBuilder.primary(boolean?);
 ```
 
 For a button element, this changes the color to green. For confirmation dialogs, this sets the main button in the bottom right corner to green, which is meant to confirm the action. Defaults to `true`.
+```javascript
+ButtonBuilder.accessibilityLabel(string);
+```
+
+A label for longer descriptive text about a button element. This label will be read out by screen readers instead of the button text object. 
 ```javascript
 ButtonBuilder.actionId(string);
 ```
