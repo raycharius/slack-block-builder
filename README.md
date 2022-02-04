@@ -390,11 +390,9 @@ Both `OptionCollection()` and `OptionGroupCollection()` come in handy when retur
 
 ```javascript
 return { options: OptionCollection( /* Pass in options */ ) };
-```
 
-Or:
+// Or:
 
-```javascript
 return { options: OptionGroupCollection( /* Pass in option groups */ ) };
 ```
 
