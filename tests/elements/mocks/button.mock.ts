@@ -5,6 +5,7 @@ export const params = {
   actionId: 'actionId',
   url: 'url',
   value: 'value',
+  accessibilityLabel: 'accessibilityLabel',
 };
 
 export const mock = new ButtonBuilder(params).danger();

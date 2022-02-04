@@ -1,3 +1,4 @@
+export * from './accessibility-label';
 export * from './accessory';
 export * from './action-id';
 export * from './alt-text';
