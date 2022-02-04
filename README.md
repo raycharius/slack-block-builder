@@ -345,7 +345,11 @@ The `Utilities` object contains various utility functions for creating UI. Curre
 
 `AttachmentCollection()` – Accepts multiple arguments or an array of attachments and returns them in an array, in their built state.
 
-These two functions are useful when you wish to keep surface or view configuration separate from UI representation.
+`OptionCollection()` – Accepts multiple arguments or an array of options and returns them in an array, in their built state.
+
+`OptionGroupCollection()` – Accepts multiple arguments or an array of option groups and returns them in an array, in their built state.
+
+Both `BlockCollection()` and `AttachmentCollection()` are useful when you wish to keep surface or view configuration separate from UI representation.
 
 An example using Slack's `WebClient` from their [SDK for Node.js](https://github.com/slackapi/node-slack-sdk):
 
@@ -380,6 +384,18 @@ const unfurl = ({ channel, ts, url }) => client.chat.unfurl({
 })
 .then((response) => console.log(response))
 .catch((error) => console.log(error));
+```
+
+Both `OptionCollection()` and `OptionGroupCollection()` come in handy when returning an array of options or option groups for select menus with external data sources, as seen in [Slack's API docs](https://api.slack.com/reference/block-kit/block-elements#external_multi_select):
+
+```javascript
+return { options: OptionCollection( /* Pass in options */ ) };
+```
+
+Or:
+
+```javascript
+return { options: OptionGroupCollection( /* Pass in option groups */ ) };
 ```
 
 ### Working With Inline Conditionals
