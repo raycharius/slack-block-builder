@@ -1,8 +1,8 @@
 # Attachment Collection
 
-?> **Note:** This document is a reference for creating a collection of blocks in **Block Builder**. For information on the business logic for the blocks in the context of the Slack Block Kit framework, visit [the official doc site](https://api.slack.com/block-kit) from Slack.
+?> **Note:** This document is a reference for creating a collection of attachments in **Block Builder**. For information on the business logic for the attachments in the context of the Slack Block Kit framework, visit [the official doc site](https://api.slack.com/block-kit) from Slack.
 
-### Creating a Attachment Collection 
+### Creating an Attachment Collection 
 
 A block collection is an array of built block objects. The function that creates a collection, `AttachmentCollection`, is available as both a top-level import and as a member of its 'category', `Utilities`:
 
