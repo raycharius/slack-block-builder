@@ -64,6 +64,7 @@ export type {
 
 /**
  * @param {Object} [params] Parameters passed to the constructor.
+ * @param {string} [params.accessibilityLabel] Sets a longer descriptive text that will be read out by screen readers instead of the button text object.
  * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads.
  * @param {string} [params.text] Sets the display text for the button.
  * @param {string} [params.url] Sets the URL to redirect the user to when this button is clicked.

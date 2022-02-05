@@ -16,6 +16,7 @@ const config = {
 };
 
 const methodsConfig = [
+  methods.accessibilityLabel,
   methods.actionId,
   methods.text,
   methods.url,

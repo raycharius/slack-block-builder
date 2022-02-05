@@ -1,4 +1,9 @@
-import { BlockCollection, AttachmentCollection } from '../../src/utilities';
+import {
+  BlockCollection,
+  AttachmentCollection,
+  OptionCollection,
+  OptionGroupCollection,
+} from '../../src/utilities';
 import { Blocks } from '../../src/blocks';
 import { Bits } from '../../src/bits';
 
@@ -165,6 +170,182 @@ describe('Testing Utility Functions:', () => {
 
   test('Calling `AttachmentCollection()` with only undefined values returns an empty array.', () => {
     const blocks = AttachmentCollection(
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      [
+        undefined,
+        undefined,
+        undefined,
+      ],
+    );
+
+    expect(blocks).toEqual([]);
+  });
+
+  test('Calling `OptionCollection()` with an array of options returns an array of option-focused DTOs.', () => {
+    const blocks = OptionCollection([
+      Bits.Option(),
+      Bits.Option(),
+      Bits.Option(),
+    ]);
+
+    expect(blocks).toEqual([
+      Bits.Option().build(),
+      Bits.Option().build(),
+      Bits.Option().build(),
+    ]);
+  });
+
+  test('Calling `OptionCollection()` with multiple arrays of options returns an array of option-focused DTOs.', () => {
+    const blocks = OptionCollection([
+      Bits.Option(),
+      Bits.Option(),
+      Bits.Option(),
+    ],
+    [
+      Bits.Option(),
+      Bits.Option(),
+      Bits.Option(),
+    ]);
+
+    expect(blocks).toEqual([
+      Bits.Option().build(),
+      Bits.Option().build(),
+      Bits.Option().build(),
+      Bits.Option().build(),
+      Bits.Option().build(),
+      Bits.Option().build(),
+    ]);
+  });
+
+  test('Calling `OptionCollection()` with multiple options as args returns an array of option-focused DTOs.', () => {
+    const blocks = OptionCollection(
+      Bits.Option(),
+      Bits.Option(),
+      Bits.Option(),
+    );
+
+    expect(blocks).toEqual([
+      Bits.Option().build(),
+      Bits.Option().build(),
+      Bits.Option().build(),
+    ]);
+  });
+
+  test('Calling `OptionCollection()` with undefined values strips those from the resulting array.', () => {
+    const blocks = OptionCollection(
+      Bits.Option(),
+      Bits.Option(),
+      undefined,
+      Bits.Option(),
+      [
+        Bits.Option(),
+        undefined,
+        Bits.Option(),
+      ],
+    );
+
+    expect(blocks).toEqual([
+      Bits.Option().build(),
+      Bits.Option().build(),
+      Bits.Option().build(),
+      Bits.Option().build(),
+      Bits.Option().build(),
+    ]);
+  });
+
+  test('Calling `OptionCollection()` with only undefined values returns an empty array.', () => {
+    const blocks = OptionCollection(
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      [
+        undefined,
+        undefined,
+        undefined,
+      ],
+    );
+
+    expect(blocks).toEqual([]);
+  });
+
+  test('Calling `OptionGroupCollection()` with an array of option groups returns an array of option group-focused DTOs.', () => {
+    const blocks = OptionGroupCollection([
+      Bits.OptionGroup(),
+      Bits.OptionGroup(),
+      Bits.OptionGroup(),
+    ]);
+
+    expect(blocks).toEqual([
+      Bits.OptionGroup().build(),
+      Bits.OptionGroup().build(),
+      Bits.OptionGroup().build(),
+    ]);
+  });
+
+  test('Calling `OptionGroupCollection()` with multiple arrays of option groups returns an array of option group-focused DTOs.', () => {
+    const blocks = OptionGroupCollection([
+      Bits.OptionGroup(),
+      Bits.OptionGroup(),
+      Bits.OptionGroup(),
+    ],
+    [
+      Bits.OptionGroup(),
+      Bits.OptionGroup(),
+      Bits.OptionGroup(),
+    ]);
+
+    expect(blocks).toEqual([
+      Bits.OptionGroup().build(),
+      Bits.OptionGroup().build(),
+      Bits.OptionGroup().build(),
+      Bits.OptionGroup().build(),
+      Bits.OptionGroup().build(),
+      Bits.OptionGroup().build(),
+    ]);
+  });
+
+  test('Calling `OptionGroupCollection()` with multiple option groups as args returns an array of option group-focused DTOs.', () => {
+    const blocks = OptionGroupCollection(
+      Bits.OptionGroup(),
+      Bits.OptionGroup(),
+      Bits.OptionGroup(),
+    );
+
+    expect(blocks).toEqual([
+      Bits.OptionGroup().build(),
+      Bits.OptionGroup().build(),
+      Bits.OptionGroup().build(),
+    ]);
+  });
+
+  test('Calling `OptionGroupCollection()` with undefined values strips those from the resulting array.', () => {
+    const blocks = OptionGroupCollection(
+      Bits.OptionGroup(),
+      Bits.OptionGroup(),
+      undefined,
+      Bits.OptionGroup(),
+      [
+        Bits.OptionGroup(),
+        undefined,
+        Bits.OptionGroup(),
+      ],
+    );
+
+    expect(blocks).toEqual([
+      Bits.OptionGroup().build(),
+      Bits.OptionGroup().build(),
+      Bits.OptionGroup().build(),
+      Bits.OptionGroup().build(),
+      Bits.OptionGroup().build(),
+    ]);
+  });
+
+  test('Calling `OptionGroupCollection()` with only undefined values returns an empty array.', () => {
+    const blocks = OptionGroupCollection(
       undefined,
       undefined,
       undefined,

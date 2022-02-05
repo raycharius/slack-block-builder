@@ -73,4 +73,5 @@ export const methodArgMocks = {
   ignoreMarkdown: methodArgMocksByType.falseBool,
   submitDisabled: methodArgMocksByType.bool,
   focusOnLoad: methodArgMocksByType.bool,
+  accessibilityLabel: methodArgMocksByType.string,
 };
