@@ -21,7 +21,7 @@ const myAttachments = Utilities.AttachmentCollection(attachments);
 
 This function behaves in the same way as any other [methods that append](../setter-methods.md). 
 
-### When To Use a Attachment Collection
+### When To Use an Attachment Collection
 
 In **Block Builder**, the `Message` object is more than a UI representation. It also allow you to configure the behavior of the message. However, you may prefer to keep UI representation and surface configuration separate in your application. When that's the case, using `AttachmentCollection` is the way to go.
 
