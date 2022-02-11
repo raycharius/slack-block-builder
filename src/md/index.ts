@@ -11,7 +11,9 @@ export function quote(string: string): string {
  */
 
 export function blockquote(string: string): string {
-  return `>${string}`;
+  return string.split('\n')
+    .map((value) => `>${value}`)
+    .join('\n');
 }
 
 /**
