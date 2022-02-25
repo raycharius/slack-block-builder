@@ -10,7 +10,7 @@ jobs:
       - name: Check Commits Have Emojis
         uses: gsactions/commit-message-checker@v1
         with:
-          pattern: '(:(?:tada|bookmark|sparkles|bug|card_index|books|bulb|racehorse|lipstick|rotating_light|white_check_mark|heavy_check_mark|zap|art|hammer|fire|green_heart|lock|arrow_up|arrow_down|shirt|alien|pencil|ambulance|rocket|apple|penguin|checkered_flag|construction|construction_worker|chart_with_upwards_trend|heavy_minus_sign|heavy_plus_sign|whale|wrench|package|twisted_rightwards_arrows|hankey|rewind|boom|ok_hand|wheelchair|truck)(:\s.*))'
+          pattern: '(:(?:tada|bookmark|sparkles|bug|card_index|books|bulb|racehorse|lipstick|rotating_light|white_check_mark|heavy_check_mark|zap|art|hammer|fire|green_heart|lock|arrow_up|arrow_down|shirt|alien|pencil|ambulance|rocket|apple|penguin|checkered_flag|construction|construction_worker|chart_with_upwards_trend|heavy_minus_sign|heavy_plus_sign|whale|wrench|package|twisted_rightwards_arrows|hankey|rewind|boom|ok_hand|wheelchair|truck|ukraine)(:\s.*))'
           flags: 'gm'
           checkAllCommitMessages: 'true'
           accessToken: ${{ secrets.GITHUB_TOKEN }}
