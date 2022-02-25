@@ -1,4 +1,4 @@
-:information_source: **Block Builder** was built in :ukraine: Kyiv, Ukraine. If it has saved you time, we would like to ask you to consider donating to **[Come Back Alive](https://savelife.in.ua/en/donate/)** to help Ukraine in its fight against Russian aggression. Every cent helps.     
+:pray: **Block Builder** was built in :ukraine: Kyiv, Ukraine. If it has saved you time, we would like to ask you to consider donating to **[Come Back Alive](https://savelife.in.ua/en/donate/)** to help Ukraine in its fight against Russian aggression. Every cent helps.     
 
 <p align="center">
     <img src="https://raw.githubusercontent.com/raycharius/slack-block-builder/master/docs/resources/images/logo-horizontal.png" alt="Logo" width="600px">
