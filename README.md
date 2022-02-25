@@ -1,4 +1,4 @@
-:information_source: **Block Builder** was built in Kyiv, Ukraine :ukraine: If it has saved you time, we would like to ask you to consider donating to **[Come Back Alive](https://savelife.in.ua/en/donate/)** to help Ukraine in its fight against Russian aggression. Every cent helps. :pray:
+:information_source: **Block Builder** was built in Kyiv, Ukraine :ukraine: If it has saved you time as a developer and brought value to your projects and products, we would like to ask you to consider donating to **[Come Back Alive](https://savelife.in.ua/en/donate/)** to help Ukraine in its fight against Russian aggression. Every cent helps. :pray:
 
 ***      
 
