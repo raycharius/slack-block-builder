@@ -42,7 +42,7 @@ All setter methods return `this`, the instance of `OptionBuilder` on which it is
 OptionBuilder.description(string);
 ```
 
-Sets the descriptive text displayed below the text field of the option. 
+Sets the descriptive text displayed below the text field of the option or for a video, if creating a Video block. 
 ```javascript
 OptionBuilder.text(string);
 ```
