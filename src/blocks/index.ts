@@ -8,6 +8,7 @@ import { HeaderBuilder, HeaderParams } from './header';
 import { ImageBuilder, ImageParams } from './image';
 import { InputBuilder, InputParams } from './input';
 import { SectionBuilder, SectionParams } from './section';
+import { VideoBuilder, VideoParams } from './video';
 
 export type {
   ActionsBuilder,
@@ -26,6 +27,8 @@ export type {
   InputParams,
   SectionBuilder,
   SectionParams,
+  VideoBuilder,
+  VideoParams,
 };
 
 /**
@@ -128,6 +131,10 @@ export function Section(params?: SectionParams): SectionBuilder {
   return new SectionBuilder(params);
 }
 
+export function Video(params?: VideoParams): VideoBuilder {
+  return new VideoBuilder(params);
+}
+
 const blocks = {
   Actions,
   Context,
@@ -137,6 +144,7 @@ const blocks = {
   Image,
   Input,
   Section,
+  Video,
 };
 
 // Strange export. I know. For IDE highlighting purposes.

@@ -27,6 +27,7 @@ import type {
   ImageBuilder,
   InputBuilder,
   SectionBuilder,
+  VideoBuilder,
 } from '../../blocks';
 
 export type ActionsElementBuilder =
@@ -88,7 +89,8 @@ export type BlockBuilder =
   | HeaderBuilder
   | ImageBuilder
   | InputBuilder
-  | SectionBuilder;
+  | SectionBuilder
+  | ViewBlockBuilder;
 
 export type ViewBlockBuilder =
   ActionsBuilder
@@ -97,7 +99,8 @@ export type ViewBlockBuilder =
   | HeaderBuilder
   | ImageBuilder
   | InputBuilder
-  | SectionBuilder;
+  | SectionBuilder
+  | VideoBuilder;
 
 export type FilterString = 'im' | 'mpim' | 'private' | 'public';
 

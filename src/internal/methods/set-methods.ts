@@ -77,6 +77,23 @@ export abstract class AltText extends Builder {
   }
 }
 
+export abstract class AuthorName extends Builder {
+  /**
+   * @description This a plain-text representation of the author of a video.
+   *
+   * **Slack Validation Rules and Tips:**
+   *    * Maximum of 50 characters.
+   *
+   *
+   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
+   */
+
+  public authorName(authorName: Settable<string>): this {
+    return this.set(authorName, Prop.AuthorName);
+  }
+}
+
 export abstract class BlockId extends Builder {
   /**
    * @description Sets a string to be an identifier for any given block in a view or message. This is sent back to your app in interaction payloads and view submissions for your app to process.
@@ -500,6 +517,32 @@ export abstract class PrivateMetaData extends Builder {
   }
 }
 
+export abstract class ProviderIconUrl extends Builder {
+  /**
+   * @description Icon for the video provider - ex. YouTube or Vimeo icon.
+   *
+   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
+   */
+
+  public providerIconUrl(providerIconUrl: Settable<string>): this {
+    return this.set(providerIconUrl, Prop.ProviderIconUrl);
+  }
+}
+
+export abstract class ProviderName extends Builder {
+  /**
+   * @description The originating application or domain of the video ex. YouTube or Vimeo.
+   *
+   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
+   */
+
+  public providerName(providerName: Settable<string>): this {
+    return this.set(providerName, Prop.ProviderName);
+  }
+}
+
 export abstract class Submit extends Builder {
   /**
    * @description Sets the text displayed on the button that submits the view.
@@ -555,6 +598,23 @@ export abstract class Title extends Builder {
   }
 }
 
+export abstract class TitleUrl extends Builder {
+  /**
+   * @description A hyperlink for the video's title text.
+   *
+   * **Slack Validation Rules and Tips:**
+   *    * Must correspond to the non-embeddable URL for the video.
+   *    * Must go to an HTTPS URL.
+   *
+   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
+   */
+
+  public titleUrl(titleUrl: Settable<string>): this {
+    return this.set(titleUrl, Prop.TitleUrl);
+  }
+}
+
 export abstract class ThreadTs extends Builder {
   /**
    * @description Instructs the Slack API to send the message to the thread of the message associated with the timestamp.
@@ -565,6 +625,22 @@ export abstract class ThreadTs extends Builder {
 
   public threadTs(threadTs: Settable<string>): this {
     return this.set(threadTs, Prop.ThreadTs);
+  }
+}
+
+export abstract class ThumbnailUrl extends Builder {
+  /**
+   * @description A URL that loads the thumbnail image of the video.
+   *
+   * **Slack Validation Rules and Tips:**
+   *    * **Required property for Video blocks** ⚠
+   *
+   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
+   */
+
+  public thumbnailUrl(thumbnailUrl: Settable<string>): this {
+    return this.set(thumbnailUrl, Prop.ThumbnailUrl);
   }
 }
 
@@ -612,5 +688,23 @@ export abstract class Value extends Builder {
 
   public value(value: Settable<string>): this {
     return this.set(value, Prop.Value);
+  }
+}
+
+export abstract class VideoUrl extends Builder {
+  /**
+   * @description The URL of the video to embed in the Video block.
+   *
+   * **Slack Validation Rules and Tips:**
+   *    * **Required property for Video blocks** ⚠
+   *    * Must match any existing unfurl domains within the app.
+   *    * Must point to an HTTPS URL.
+   *
+   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
+   */
+
+  public videoUrl(videoUrl: Settable<string>): this {
+    return this.set(videoUrl, Prop.VideoUrl);
   }
 }
