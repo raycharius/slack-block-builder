@@ -74,4 +74,10 @@ export const methodArgMocks = {
   submitDisabled: methodArgMocksByType.bool,
   focusOnLoad: methodArgMocksByType.bool,
   accessibilityLabel: methodArgMocksByType.string,
+  authorName: methodArgMocksByType.string,
+  providerIconUrl: methodArgMocksByType.string,
+  providerName: methodArgMocksByType.string,
+  titleUrl: methodArgMocksByType.string,
+  thumbnailUrl: methodArgMocksByType.string,
+  videoUrl: methodArgMocksByType.string,
 };
