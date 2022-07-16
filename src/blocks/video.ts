@@ -10,9 +10,9 @@ import {
   End,
   ProviderIconUrl,
   ProviderName,
+  ThumbnailUrl,
   Title,
   TitleUrl,
-  ThumbnailUrl,
   VideoUrl,
 } from '../internal/methods';
 
@@ -21,9 +21,9 @@ export interface VideoParams {
   description?: string;
   providerIconUrl?: string;
   providerName?: string;
+  thumbnailUrl?: string;
   title?: string;
   titleUrl?: string;
-  thumbnailUrl?: string;
   videoUrl?: string;
 }
 
@@ -34,9 +34,9 @@ export interface VideoBuilder extends AltText,
   End,
   ProviderIconUrl,
   ProviderName,
+  ThumbnailUrl,
   Title,
   TitleUrl,
-  ThumbnailUrl,
   VideoUrl {
 }
 
@@ -65,8 +65,8 @@ applyMixins(VideoBuilder, [
   End,
   ProviderIconUrl,
   ProviderName,
+  ThumbnailUrl,
   Title,
   TitleUrl,
-  ThumbnailUrl,
   VideoUrl,
 ]);

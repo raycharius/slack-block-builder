@@ -579,6 +579,35 @@ export abstract class Text extends Builder {
   }
 }
 
+export abstract class ThreadTs extends Builder {
+  /**
+   * @description Instructs the Slack API to send the message to the thread of the message associated with the timestamp.
+   *
+   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
+   */
+
+  public threadTs(threadTs: Settable<string>): this {
+    return this.set(threadTs, Prop.ThreadTs);
+  }
+}
+
+export abstract class ThumbnailUrl extends Builder {
+  /**
+   * @description A URL that loads the thumbnail image of the video.
+   *
+   * **Slack Validation Rules and Tips:**
+   *    * **Required property for Video blocks** ⚠
+   *
+   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
+   */
+
+  public thumbnailUrl(thumbnailUrl: Settable<string>): this {
+    return this.set(thumbnailUrl, Prop.ThumbnailUrl);
+  }
+}
+
 export abstract class Title extends Builder {
   /**
    * @description Sets the title displayed for the block, element, or confirmation dialog.
@@ -612,35 +641,6 @@ export abstract class TitleUrl extends Builder {
 
   public titleUrl(titleUrl: Settable<string>): this {
     return this.set(titleUrl, Prop.TitleUrl);
-  }
-}
-
-export abstract class ThreadTs extends Builder {
-  /**
-   * @description Instructs the Slack API to send the message to the thread of the message associated with the timestamp.
-   *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
-   * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
-   */
-
-  public threadTs(threadTs: Settable<string>): this {
-    return this.set(threadTs, Prop.ThreadTs);
-  }
-}
-
-export abstract class ThumbnailUrl extends Builder {
-  /**
-   * @description A URL that loads the thumbnail image of the video.
-   *
-   * **Slack Validation Rules and Tips:**
-   *    * **Required property for Video blocks** ⚠
-   *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
-   * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
-   */
-
-  public thumbnailUrl(thumbnailUrl: Settable<string>): this {
-    return this.set(thumbnailUrl, Prop.ThumbnailUrl);
   }
 }
 
