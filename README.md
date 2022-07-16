@@ -141,7 +141,8 @@ Below is a list of supported objects and how to access them in **Block Builder**
 | Header               | Block              | :white_check_mark:             | `Blocks.Header()`
 | Image                | Block              | :white_check_mark:             | `Blocks.Image()`                  
 | Input                | Block              | :white_check_mark:             | `Blocks.Input()`                  
-| Section              | Block              | :white_check_mark:             | `Blocks.Section()`                
+| Section              | Block              | :white_check_mark:             | `Blocks.Section()`
+| Video                | Block              | :white_check_mark:             | `Blocks.Video()`                
 | Button               | Element            | :white_check_mark:️             | `Elements.Button()`               
 | Checkboxes           | Element            | :white_check_mark:             | `Elements.Checkboxes()`           
 | Date Picker          | Element            | :white_check_mark:             | `Elements.DatePicker()`

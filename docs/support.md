@@ -19,6 +19,7 @@ Below is a list of supported components and how to access them in **Block Builde
 | Image                | Block              | **Yes**             | `Blocks.Image()`                  | [View Docs](/blocks/image.md)
 | Input                | Block              | **Yes**             | `Blocks.Input()`                  | [View Docs](/blocks/input.md)
 | Section              | Block              | **Yes**             | `Blocks.Section()`                | [View Docs](/blocks/section.md)
+| Video                | Video              | **Yes**             | `Blocks.Video()`                  | [View Docs](/blocks/video.md)
 | Button               | Element            | **Yes**️             | `Elements.Button()`               | [View Docs](/elements/button.md)
 | Checkboxes           | Element            | **Yes**             | `Elements.Checkboxes()`           | [View Docs](/elements/checkboxes.md)
 | Date Picker          | Element            | **Yes**             | `Elements.DatePicker()`           | [View Docs](/elements/datepicker.md)
@@ -29,8 +30,8 @@ Below is a list of supported components and how to access them in **Block Builde
 | Time Picker          | Element            | **Yes**             | `Elements.TimePicker()`           | [View Docs](/elements/timepicker.md)
 | Select Menus         | Element            | **Yes**             | `Elements.[Type]Select()`         | 
 | Multi-Select Menus   | Element            | **Yes**             | `Elements.[Type]MultiSelect()`    | 
-| Attachment           | Legacy Feature     | **Yes**             | `Bits.Attachment()`              | [View Docs](/bits/attachment.md)
-| Confirmation Dialog       | Composition Object | **Yes**             | `Bits.ConfirmationDialog()`       | [View Docs](/bits/confirmation-dialog.md)
+| Attachment           | Legacy Feature     | **Yes**             | `Bits.Attachment()`               | [View Docs](/bits/attachment.md)
+| Confirmation Dialog  | Composition Object | **Yes**             | `Bits.ConfirmationDialog()`       | [View Docs](/bits/confirmation-dialog.md)
 | Option               | Composition Object | **Yes**             | `Bits.Option()`                   | [View Docs](/bits/option.md)
 | Option Group         | Composition Object | **Yes**             | `Bits.OptionGroup()`              | [View Docs](/bits/option-group.md)
 
