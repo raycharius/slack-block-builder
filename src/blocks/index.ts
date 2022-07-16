@@ -131,6 +131,20 @@ export function Section(params?: SectionParams): SectionBuilder {
   return new SectionBuilder(params);
 }
 
+/**
+ * @param {Object} [params] Parameters passed to the constructor.
+ * @param {string} [params.blockId] Sets a string to be an identifier for the block, that will be available in interaction payloadsSets a string to be an identifier for any given block in a view or message. This is sent back to your app in interaction payloads and view submissions for your app to process.
+ * @param {string} [params.description] Sets a description for the video.
+ * @param {string} [params.providerIconUrl] Icon for the video provider - ex. YouTube or Vimeo icon.
+ * @param {string} [params.providerName] The originating application or domain of the video ex. YouTube or Vimeo.
+ * @param {string} [params.thumbnailUrl] A URL that loads the thumbnail image of the video.
+ * @param {string} [params.title] Sets the title displayed for the block, element, or confirmation dialog.
+ * @param {string} [params.titleUrl] A hyperlink for the video's title text.
+ * @param {string} [params.videoUrl] The URL of the video to embed in the Video block.
+ *
+ * {@link https://api.slack.com/reference/block-kit/blocks#section|View in Slack API Documentation}
+ */
+
 export function Video(params?: VideoParams): VideoBuilder {
   return new VideoBuilder(params);
 }

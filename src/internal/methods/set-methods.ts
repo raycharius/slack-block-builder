@@ -203,7 +203,7 @@ export abstract class Deny extends Builder {
 
 export abstract class Description extends Builder {
   /**
-   * @description Sets the descriptive text displayed below the text field of the option.
+   * @description Sets the descriptive text displayed below the text field of the option or for a video, if creating a Video block.
    *
    * **Slack Validation Rules and Tips:**
    *    * Maximum of 75 characters.
