@@ -1,5 +1,9 @@
 import {
-  Paginator, Modal, Blocks, BlockBuilder,
+  Paginator,
+  Modal,
+  Blocks,
+  BlockBuilder,
+  setIfTruthy,
 } from '../../src';
 import { Human, humans } from './mock/data-set.mock';
 
@@ -593,6 +597,212 @@ describe('Testing Paginator:', () => {
                 text: 'TEST FORWARD',
               },
               action_id: '{"buttonId":"next","totalItems":20,"perPage":5,"totalPages":4,"offset":0,"page":1}',
+              type: 'button',
+            },
+          ],
+          type: 'actions',
+        },
+      ],
+      type: 'modal',
+    }));
+  });
+
+  test('Creating a paginator with conditionals in the builder function does not throw type errors.', () => {
+    const items = [humans[0], humans[1], humans[2], humans[3], humans[4]];
+    const result = Modal({ title: 'Testing' })
+      .blocks(
+        Paginator<Human>({
+          items,
+          totalItems: 20,
+          page: 1,
+          perPage: 5,
+          actionId: (params) => JSON.stringify(params),
+          blocksForEach: ({ item: human }) => [
+            Blocks.Section({ text: `${human.firstName} ${human.lastName}` }),
+            setIfTruthy(human, [
+              Blocks.Section({ text: `${human.jobTitle}` }),
+              Blocks.Section({ text: `${human.department}` }),
+            ]),
+            Blocks.Section({ text: `${human.email}` }),
+          ],
+        }).getBlocks(),
+      )
+      .buildToJSON();
+
+    expect(result).toEqual(JSON.stringify({
+      title: {
+        type: 'plain_text',
+        text: 'Testing',
+      },
+      blocks: [
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Ray East',
+          },
+          type: 'section',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Lord of The Slack Apps',
+          },
+          type: 'section',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Engineering',
+          },
+          type: 'section',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'ray@ray.com',
+          },
+          type: 'section',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Taras Neporozhniy',
+          },
+          type: 'section',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Brave Cow',
+          },
+          type: 'section',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Bad Ass MFs',
+          },
+          type: 'section',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'taras@taras.com',
+          },
+          type: 'section',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Dima Tereshuk',
+          },
+          type: 'section',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Outlander',
+          },
+          type: 'section',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Big Rollers',
+          },
+          type: 'section',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'dima@dima.com',
+          },
+          type: 'section',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Lesha Power',
+          },
+          type: 'section',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Kalyanshyk',
+          },
+          type: 'section',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'DDD Demons',
+          },
+          type: 'section',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'lesha@lesha.com',
+          },
+          type: 'section',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Yozhef Hisem',
+          },
+          type: 'section',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Molnenosets',
+          },
+          type: 'section',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Zakarpatska',
+          },
+          type: 'section',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'yozhik@yozhik.com',
+          },
+          type: 'section',
+        },
+        {
+          elements: [
+            {
+              type: 'mrkdwn',
+              text: 'Page 1 of 4',
+            },
+          ],
+          type: 'context',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          elements: [
+            {
+              text: {
+                type: 'plain_text',
+                text: 'Previous',
+              },
+              action_id: '{"buttonId":"previous","totalItems":20,"perPage":5,"totalPages":4,"offset":15,"page":4}',
+              type: 'button',
+            },
+            {
+              text: {
+                type: 'plain_text',
+                text: 'Next',
+              },
+              action_id: '{"buttonId":"next","totalItems":20,"perPage":5,"totalPages":4,"offset":5,"page":2}',
               type: 'button',
             },
           ],
