@@ -3,6 +3,8 @@ import {
   AttachmentCollection,
   OptionCollection,
   OptionGroupCollection,
+  buildBlock,
+  buildBlocks,
 } from '../../src/utilities';
 import { Blocks } from '../../src/blocks';
 import { Bits } from '../../src/bits';
@@ -358,5 +360,26 @@ describe('Testing Utility Functions:', () => {
     );
 
     expect(blocks).toEqual([]);
+  });
+
+  test('Calling `buildBlock()` with a block returns the built block.', () => {
+    const block = Blocks.Section();
+    const built = buildBlock(block);
+
+    expect(built).toEqual(block.build());
+  });
+
+  test('Calling `buildBlocks()` with blocks returns the built blocks.', () => {
+    const blocks = buildBlocks([
+      Blocks.Section(),
+      Blocks.Section(),
+      Blocks.Section(),
+    ]);
+
+    expect(blocks).toEqual([
+      Blocks.Section().build(),
+      Blocks.Section().build(),
+      Blocks.Section().build(),
+    ]);
   });
 });
