@@ -27,6 +27,7 @@ import type {
   ImageBuilder,
   InputBuilder,
   SectionBuilder,
+  VideoBuilder,
 } from '../../blocks';
 
 export type ActionsElementBuilder =
@@ -88,7 +89,8 @@ export type BlockBuilder =
   | HeaderBuilder
   | ImageBuilder
   | InputBuilder
-  | SectionBuilder;
+  | SectionBuilder
+  | ViewBlockBuilder;
 
 export type ViewBlockBuilder =
   ActionsBuilder
@@ -97,7 +99,8 @@ export type ViewBlockBuilder =
   | HeaderBuilder
   | ImageBuilder
   | InputBuilder
-  | SectionBuilder;
+  | SectionBuilder
+  | VideoBuilder;
 
 export type FilterString = 'im' | 'mpim' | 'private' | 'public';
 
@@ -125,6 +128,6 @@ export type Appendable<T> = UndefinableArray<T | UndefinableArray<T>>;
 
 export type Fn<T, R> = (arg: T) => R;
 
-export type BlockBuilderReturnableFn<T> = Fn<T, BlockBuilder[]>;
+export type BlockBuilderReturnableFn<T> = Fn<T, Appendable<BlockBuilder>>;
 
 export type StringReturnableFn<T> = Fn<T, string>;

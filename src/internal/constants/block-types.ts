@@ -7,4 +7,5 @@ export enum BlockType {
   Divider = 'divider',
   Image = 'image',
   Header = 'header',
+  Video = 'video',
 }

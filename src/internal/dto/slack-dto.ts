@@ -75,6 +75,12 @@ export enum Param {
   type = 'type',
   focusOnLoad = 'focus_on_load',
   accessibilityLabel = 'accessibility_label',
+  authorName = 'author_name',
+  providerIconUrl = 'provider_icon_url',
+  providerName = 'provider_name',
+  titleUrl = 'title_url',
+  thumbnailUrl = 'thumbnail_url',
+  videoUrl = 'video_url',
 }
 
 export class SlackDto implements ObjectLiteral {

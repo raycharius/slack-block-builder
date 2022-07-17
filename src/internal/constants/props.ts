@@ -1,4 +1,5 @@
 export enum Prop {
+  AuthorName = 'authorName',
   Blocks = 'blocks',
   Elements = 'elements',
   BlockId = 'blockId',
@@ -77,4 +78,9 @@ export enum Prop {
   SubmitDisabled = 'submitDisabled',
   FocusOnLoad = 'focusOnLoad',
   AccessibilityLabel = 'accessibilityLabel',
+  ProviderIconUrl = 'providerIconUrl',
+  ProviderName = 'providerName',
+  TitleUrl = 'titleUrl',
+  ThumbnailUrl = 'thumbnailUrl',
+  VideoUrl = 'videoUrl',
 }

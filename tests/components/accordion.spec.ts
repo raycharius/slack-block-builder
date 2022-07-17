@@ -1,5 +1,9 @@
 import {
-  Accordion, Modal, Blocks, BlockBuilder,
+  Accordion,
+  Modal,
+  Blocks,
+  BlockBuilder,
+  setIfTruthy,
 } from '../../src';
 import { Human, humans } from './mock/data-set.mock';
 
@@ -2033,6 +2037,394 @@ describe('Testing Accordion:', () => {
             text: {
               type: 'plain_text',
               text: 'EXPAND ME',
+            },
+            action_id: '{"expandedItems":[19]}',
+            type: 'button',
+          },
+          type: 'section',
+        },
+      ],
+      type: 'modal',
+    }));
+  });
+
+  test('Check that using conditionals in an accordion build method does not throw a type error', () => {
+    const result = Modal({ title: 'Testing' })
+      .blocks(
+        Accordion<Human>({
+          items: humans,
+          expandedItems: [],
+          titleText: ({ item }) => `${item.firstName} ${item.lastName}`,
+          actionId: (params) => JSON.stringify(params),
+          blocksForExpanded: ({ item: human }) => [
+            Blocks.Section({ text: `${human.firstName} ${human.lastName}` }),
+            setIfTruthy(human, [
+              Blocks.Section({ text: `${human.jobTitle}` }),
+              Blocks.Section({ text: `${human.department}` }),
+            ]),
+            Blocks.Section({ text: `${human.email}` }),
+          ],
+        }).getBlocks(),
+      )
+      .buildToJSON();
+
+    expect(result).toEqual(JSON.stringify({
+      title: {
+        type: 'plain_text',
+        text: 'Testing',
+      },
+      blocks: [
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Ray East',
+          },
+          accessory: {
+            text: {
+              type: 'plain_text',
+              text: 'More',
+            },
+            action_id: '{"expandedItems":[0]}',
+            type: 'button',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Taras Neporozhniy',
+          },
+          accessory: {
+            text: {
+              type: 'plain_text',
+              text: 'More',
+            },
+            action_id: '{"expandedItems":[1]}',
+            type: 'button',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Dima Tereshuk',
+          },
+          accessory: {
+            text: {
+              type: 'plain_text',
+              text: 'More',
+            },
+            action_id: '{"expandedItems":[2]}',
+            type: 'button',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Lesha Power',
+          },
+          accessory: {
+            text: {
+              type: 'plain_text',
+              text: 'More',
+            },
+            action_id: '{"expandedItems":[3]}',
+            type: 'button',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Yozhef Hisem',
+          },
+          accessory: {
+            text: {
+              type: 'plain_text',
+              text: 'More',
+            },
+            action_id: '{"expandedItems":[4]}',
+            type: 'button',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Andrey Roland',
+          },
+          accessory: {
+            text: {
+              type: 'plain_text',
+              text: 'More',
+            },
+            action_id: '{"expandedItems":[5]}',
+            type: 'button',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Vlad Filimonov',
+          },
+          accessory: {
+            text: {
+              type: 'plain_text',
+              text: 'More',
+            },
+            action_id: '{"expandedItems":[6]}',
+            type: 'button',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Boris Boriska',
+          },
+          accessory: {
+            text: {
+              type: 'plain_text',
+              text: 'More',
+            },
+            action_id: '{"expandedItems":[7]}',
+            type: 'button',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Vadim Grabovyy',
+          },
+          accessory: {
+            text: {
+              type: 'plain_text',
+              text: 'More',
+            },
+            action_id: '{"expandedItems":[8]}',
+            type: 'button',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Alex Chernyshov',
+          },
+          accessory: {
+            text: {
+              type: 'plain_text',
+              text: 'More',
+            },
+            action_id: '{"expandedItems":[9]}',
+            type: 'button',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Serega Grigoruk',
+          },
+          accessory: {
+            text: {
+              type: 'plain_text',
+              text: 'More',
+            },
+            action_id: '{"expandedItems":[10]}',
+            type: 'button',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Igor Roik',
+          },
+          accessory: {
+            text: {
+              type: 'plain_text',
+              text: 'More',
+            },
+            action_id: '{"expandedItems":[11]}',
+            type: 'button',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Dima Tretiakov',
+          },
+          accessory: {
+            text: {
+              type: 'plain_text',
+              text: 'More',
+            },
+            action_id: '{"expandedItems":[12]}',
+            type: 'button',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Sasha Chernyavska',
+          },
+          accessory: {
+            text: {
+              type: 'plain_text',
+              text: 'More',
+            },
+            action_id: '{"expandedItems":[13]}',
+            type: 'button',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Arthur Nick',
+          },
+          accessory: {
+            text: {
+              type: 'plain_text',
+              text: 'More',
+            },
+            action_id: '{"expandedItems":[14]}',
+            type: 'button',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Dima Lutsik',
+          },
+          accessory: {
+            text: {
+              type: 'plain_text',
+              text: 'More',
+            },
+            action_id: '{"expandedItems":[15]}',
+            type: 'button',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Dima Svirepchuk',
+          },
+          accessory: {
+            text: {
+              type: 'plain_text',
+              text: 'More',
+            },
+            action_id: '{"expandedItems":[16]}',
+            type: 'button',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Dima Bilkun',
+          },
+          accessory: {
+            text: {
+              type: 'plain_text',
+              text: 'More',
+            },
+            action_id: '{"expandedItems":[17]}',
+            type: 'button',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Pasha Akimenko',
+          },
+          accessory: {
+            text: {
+              type: 'plain_text',
+              text: 'More',
+            },
+            action_id: '{"expandedItems":[18]}',
+            type: 'button',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Karina Suprun',
+          },
+          accessory: {
+            text: {
+              type: 'plain_text',
+              text: 'More',
             },
             action_id: '{"expandedItems":[19]}',
             type: 'button',

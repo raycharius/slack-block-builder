@@ -32,6 +32,7 @@
   * [Image](blocks/image.md "Block Builder – Image – Maintainable JavaScript Code for Slack Block Kit")
   * [Input](blocks/input.md "Block Builder – Input – Maintainable JavaScript Code for Slack Block Kit")
   * [Section](blocks/section.md "Block Builder – Section – Maintainable JavaScript Code for Slack Block Kit")
+  * [Video](blocks/video.md "Block Builder – Video – Maintainable JavaScript Code for Slack Block Kit")
  
 
 * **Element References**

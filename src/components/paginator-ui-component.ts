@@ -1,8 +1,8 @@
 import { Blocks } from '../blocks';
 import { Elements } from '../elements';
 import { ComponentUIText, PaginatorButtonId } from '../internal/constants';
+import { Builder, PaginatorStateManager, PaginatorState } from '../internal/lib';
 
-import type { PaginatorStateManager, PaginatorState } from '../internal/lib';
 import type {
   BlockBuilder,
   BlockBuilderReturnableFn,
@@ -62,10 +62,10 @@ export class PaginatorUIComponent<T> {
     const blocksForEach = [];
 
     for (let i = 0; i < this.paginator.getTotalItems() && i < this.items.length; i += 1) {
-      blocksForEach.push(this.builderFunction({ item: this.items[i] }));
+      blocksForEach.push(this.builderFunction({ item: this.items[i] }).flat());
     }
 
-    return this.paginator.getTotalPages() > 1
+    const unpruned = this.paginator.getTotalPages() > 1
       ? [
         ...blocksForEach.flat(),
         Blocks.Context().elements(this.pageCountTextFunction({
@@ -92,5 +92,7 @@ export class PaginatorUIComponent<T> {
           ),
       ]
       : blocksForEach.flat();
+
+    return Builder.pruneUndefinedFromArray(unpruned);
   }
 }
