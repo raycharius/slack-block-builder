@@ -37,11 +37,21 @@ export function OptionGroupCollection(...optionGroups: Appendable<OptionGroupBui
   return getBuiltCollection<OptionGroupBuilder, Readonly<SlackDto>>(...optionGroups);
 }
 
+export function buildBlock(block: BlockBuilder): Readonly<SlackBlockDto> {
+  return block.build();
+}
+
+export function buildBlocks(...blocks: Appendable<BlockBuilder>): Readonly<SlackBlockDto>[] {
+  return getBuiltCollection<BlockBuilder, Readonly<SlackBlockDto>>(...blocks);
+}
+
 const utilities = {
   AttachmentCollection,
   BlockCollection,
   OptionCollection,
   OptionGroupCollection,
+  buildBlock,
+  buildBlocks,
 };
 
 // Strange export. I know. For IDE highlighting purposes.
