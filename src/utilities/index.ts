@@ -37,9 +37,17 @@ export function OptionGroupCollection(...optionGroups: Appendable<OptionGroupBui
   return getBuiltCollection<OptionGroupBuilder, Readonly<SlackDto>>(...optionGroups);
 }
 
+/**
+ * @description Returns the block passed into the function as a built block, an object that conforms to the Slack API.
+ */
+
 export function buildBlock(block: BlockBuilder): Readonly<SlackBlockDto> {
   return block.build();
 }
+
+/**
+ * @description Creates and returns an array of built blocks. Behaves in the same way as all appending methods, such as Surface.blocks().
+ */
 
 export function buildBlocks(...blocks: Appendable<BlockBuilder>): Readonly<SlackBlockDto>[] {
   return getBuiltCollection<BlockBuilder, Readonly<SlackBlockDto>>(...blocks);
