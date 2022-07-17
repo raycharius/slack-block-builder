@@ -2064,7 +2064,8 @@ describe('Testing Accordion:', () => {
             ]),
             Blocks.Section({ text: `${human.email}` }),
           ],
-        }).getBlocks())
+        }).getBlocks(),
+      )
       .buildToJSON();
 
     expect(result).toEqual(JSON.stringify({

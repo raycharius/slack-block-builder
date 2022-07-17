@@ -11,7 +11,7 @@ import type {
 } from '../internal/types';
 
 export type PaginatorActionIdFn = StringReturnableFn<PaginatorState
-  & { buttonId: PaginatorButtonId }>;
+& { buttonId: PaginatorButtonId }>;
 
 export interface PageCountTextFnParams {
   page: number;
