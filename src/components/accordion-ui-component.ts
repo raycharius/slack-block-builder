@@ -1,8 +1,8 @@
 import { Blocks } from '../blocks';
 import { Elements } from '../elements';
 import { ComponentUIText } from '../internal/constants';
+import { Builder, AccordionStateManager, AccordionState } from '../internal/lib';
 
-import type { AccordionStateManager, AccordionState } from '../internal/lib';
 import type {
   BlockBuilderReturnableFn,
   BlockBuilder,
@@ -54,7 +54,7 @@ export class AccordionUIComponent<T> {
   }
 
   public getBlocks(): BlockBuilder[] {
-    return this.items.map((item, index) => {
+    const unpruned = this.items.map((item, index) => {
       const isExpanded = this.paginator.checkItemIsExpandedByIndex(index);
 
       const blocks = [
@@ -65,10 +65,12 @@ export class AccordionUIComponent<T> {
               expandedItems: this.paginator.getNextStateByItemIndex(index),
             }),
           })),
-        ...isExpanded ? this.builderFunction({ item }) : [],
+        ...isExpanded ? this.builderFunction({ item }).flat() : [],
       ];
 
       return index === 0 ? blocks : [Blocks.Divider(), ...blocks];
     }).flat();
+
+    return Builder.pruneUndefinedFromArray(unpruned);
   }
 }

@@ -128,6 +128,6 @@ export type Appendable<T> = UndefinableArray<T | UndefinableArray<T>>;
 
 export type Fn<T, R> = (arg: T) => R;
 
-export type BlockBuilderReturnableFn<T> = Fn<T, BlockBuilder[]>;
+export type BlockBuilderReturnableFn<T> = Fn<T, Appendable<BlockBuilder>>;
 
 export type StringReturnableFn<T> = Fn<T, string>;
