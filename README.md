@@ -128,35 +128,39 @@ import { Modal, Section, bold, link } from 'slack-block-builder';
 
 Below is a list of supported objects and how to access them in **Block Builder**:
 
-| **Name**             | **Type**           | **Support**                    | **Accessed Via**                      
-|----------------------|--------------------|--------------------------------|-----------------------------------------
-| Home Tab             | Surface            | :white_check_mark:             | `Surfaces.HomeTab()`                       
-| Message              | Surface            | :white_check_mark:             | `Surfaces.Message()`                       
-| Modal                | Surface            | :white_check_mark:             | `Surfaces.Modal()`                         
-| Workflow Step        | Surface            | :white_check_mark:             | `Surfaces.WorkflowStep()`                         
-| Actions              | Block              | :white_check_mark:             | `Blocks.Actions()`                
-| Context              | Block              | :white_check_mark:             | `Blocks.Context()`                
-| Divider              | Block              | :white_check_mark:             | `Blocks.Divider()`                
-| File                 | Block              | :white_check_mark:             | `Blocks.File()`
-| Header               | Block              | :white_check_mark:             | `Blocks.Header()`
-| Image                | Block              | :white_check_mark:             | `Blocks.Image()`                  
-| Input                | Block              | :white_check_mark:             | `Blocks.Input()`                  
-| Section              | Block              | :white_check_mark:             | `Blocks.Section()`
-| Video                | Block              | :white_check_mark:             | `Blocks.Video()`                
-| Button               | Element            | :white_check_mark:️             | `Elements.Button()`               
-| Checkboxes           | Element            | :white_check_mark:             | `Elements.Checkboxes()`           
-| Date Picker          | Element            | :white_check_mark:             | `Elements.DatePicker()`
-| Time Picker          | Element            | :white_check_mark:             | `Elements.TimePicker()`           
-| Image                | Element            | :white_check_mark:             | `Elements.Img()`                  
-| Overflow Menu        | Element            | :white_check_mark:             | `Elements.OverflowMenu()`         
-| Radio Buttons        | Element            | :white_check_mark:             | `Elements.RadioButtons()`         
-| Plain-Text Input     | Element            | :white_check_mark:             | `Elements.TextInput()`            
-| Select Menus         | Element            | :white_check_mark:             | `Elements.[Type]Select()`          
-| Multi-Select Menus   | Element            | :white_check_mark:             | `Elements.[Type]MultiSelect()`     
-| Option               | Composition Object | :white_check_mark:             | `Bits.Option()`                   
-| Confirm Dialog       | Composition Object | :white_check_mark:             | `Bits.ConfirmationDialog()`       
-| Option Group         | Composition Object | :white_check_mark:             | `Bits.OptionGroup()`
-| Attachment           | Legacy Feature     | :white_check_mark:             | `Bits.Attachment()`              
+| **Name**           | **Type**           | **Support**                    | **Accessed Via**                      
+|--------------------|--------------------|--------------------------------|-----------------------------------------
+| Home Tab           | Surface            | :white_check_mark:             | `Surfaces.HomeTab()`                       
+| Message            | Surface            | :white_check_mark:             | `Surfaces.Message()`                       
+| Modal              | Surface            | :white_check_mark:             | `Surfaces.Modal()`                         
+| Workflow Step      | Surface            | :white_check_mark:             | `Surfaces.WorkflowStep()`                         
+| Actions            | Block              | :white_check_mark:             | `Blocks.Actions()`                
+| Context            | Block              | :white_check_mark:             | `Blocks.Context()`                
+| Divider            | Block              | :white_check_mark:             | `Blocks.Divider()`                
+| File               | Block              | :white_check_mark:             | `Blocks.File()`
+| Header             | Block              | :white_check_mark:             | `Blocks.Header()`
+| Image              | Block              | :white_check_mark:             | `Blocks.Image()`                  
+| Input              | Block              | :white_check_mark:             | `Blocks.Input()`                  
+| Section            | Block              | :white_check_mark:             | `Blocks.Section()`
+| Video              | Block              | :white_check_mark:             | `Blocks.Video()`                
+| Button             | Element            | :white_check_mark:️             | `Elements.Button()`               
+| Checkboxes         | Element            | :white_check_mark:             | `Elements.Checkboxes()`           
+| Date Picker        | Element            | :white_check_mark:             | `Elements.DatePicker()`
+| Date Time Picker   | Element            | :white_check_mark:             | `Elements.DateTimePicker()`
+| Email Input        | Element            | :white_check_mark:             | `Elements.EmailInput()`
+| Time Picker        | Element            | :white_check_mark:             | `Elements.TimePicker()`           
+| Image              | Element            | :white_check_mark:             | `Elements.Img()`       
+| Number Input       | Element            | :white_check_mark:             | `Elements.NumberInput()`
+| Overflow Menu      | Element            | :white_check_mark:             | `Elements.OverflowMenu()`         
+| Radio Buttons      | Element            | :white_check_mark:             | `Elements.RadioButtons()`         
+| Plain-Text Input   | Element            | :white_check_mark:             | `Elements.TextInput()`            
+| Select Menus       | Element            | :white_check_mark:             | `Elements.[Type]Select()`          
+| Multi-Select Menus | Element            | :white_check_mark:             | `Elements.[Type]MultiSelect()`
+| URL Input          | Element            | :white_check_mark:             | `Elements.NumberInput()`
+| Option             | Composition Object | :white_check_mark:             | `Bits.Option()`                   
+| Confirm Dialog     | Composition Object | :white_check_mark:             | `Bits.ConfirmationDialog()`       
+| Option Group       | Composition Object | :white_check_mark:             | `Bits.OptionGroup()`
+| Attachment         | Legacy Feature     | :white_check_mark:             | `Bits.Attachment()`              
 
 ### Creating a Simple Interactive Message
 
