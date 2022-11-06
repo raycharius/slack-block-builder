@@ -7,6 +7,7 @@ import { CheckboxesBuilder, CheckboxesParams } from './checkboxes';
 import { ConversationMultiSelectBuilder, ConversationMultiSelectParams } from './conversation-multi-select';
 import { ConversationSelectBuilder, ConversationSelectParams } from './conversation-select';
 import { DatePickerBuilder, DatePickerParams } from './datepicker';
+import { EmailInputBuilder, EmailInputParams } from './email-input';
 import { ExternalMultiSelectBuilder, ExternalMultiSelectParams } from './external-multi-select';
 import { ExternalSelectBuilder, ExternalSelectParams } from './external-select';
 import { ImgBuilder, ImgParams } from './img';
@@ -35,6 +36,8 @@ export type {
   ConversationSelectParams,
   DatePickerBuilder,
   DatePickerParams,
+  EmailInputBuilder,
+  EmailInputParams,
   ExternalMultiSelectBuilder,
   ExternalMultiSelectParams,
   ExternalSelectBuilder,
@@ -154,6 +157,19 @@ export function ConversationSelect(params?: ConversationSelectParams): Conversat
 
 export function DatePicker(params?: DatePickerParams): DatePickerBuilder {
   return new DatePickerBuilder(params);
+}
+
+/**
+ * @param {Object} [params] Parameters passed to the constructor.
+ * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads.
+ * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
+ * @param {string} [params.initialValue] Sets the default email entered into the Email input at modal render.
+ *
+ * {@link https://api.slack.com/reference/block-kit/block-elements#input|View in Slack API Documentation}
+ */
+
+export function EmailInput(params?: EmailInputParams): EmailInputBuilder {
+  return new EmailInputBuilder(params);
 }
 
 /**
