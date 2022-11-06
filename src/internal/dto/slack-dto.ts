@@ -40,6 +40,7 @@ export enum Param {
   filter = 'filter',
   initialConversation = 'initial_conversation',
   initialDate = 'initial_date',
+  initialDateTime = 'initial_date_time',
   isDecimalAllowed = 'is_decimal_allowed',
   minQueryLength = 'min_query_length',
   initialOption = 'initial_option',

@@ -23,6 +23,7 @@ export enum Prop {
   InitialOption = 'initialOption',
   Placeholder = 'placeholder',
   InitialDate = 'initialDate',
+  InitialDateTime = 'initialDateTime',
   InitialValue = 'initialValue',
   IsDecimalAllowed = 'isDecimalAllowed',
   Multiline = 'multiline',

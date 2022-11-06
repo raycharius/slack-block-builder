@@ -2,6 +2,7 @@ export enum ElementType {
   Button = 'button',
   Checkboxes = 'checkboxes',
   DatePicker = 'datepicker',
+  DateTimePicker = 'datetimepicker',
   TimePicker = 'timepicker',
   Image = 'image',
   Overflow = 'overflow',

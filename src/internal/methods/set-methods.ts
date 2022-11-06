@@ -337,6 +337,19 @@ export abstract class InitialDate extends Builder {
   }
 }
 
+export abstract class InitialDateTime extends Builder {
+  /**
+   * @description Pre-populates the date time picker with a selected, default date and time.
+   *
+   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
+   */
+
+  public initialDateTime(date: Settable<Date>): this {
+    return this.set(date, Prop.InitialDateTime);
+  }
+}
+
 export abstract class InitialOption extends Builder {
   /**
    * @description Pre-populates the menu or date picker with a selected, default option.

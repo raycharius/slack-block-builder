@@ -67,6 +67,10 @@ export function getFormattedDate(date: Date): Undefinable<string> {
   return valueOrUndefined(date) && date.toISOString().split('T')[0];
 }
 
+export function getDateTimeIntegerFromDate(date: Date): Undefinable<number> {
+  return valueOrUndefined(date) && Math.floor(date.getTime() / 1000);
+}
+
 export function getFilter(
   { filter, excludeBotUsers, excludeExternalSharedChannels }: FilterParams,
 ): Undefinable<FilterObject> {

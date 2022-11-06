@@ -7,6 +7,7 @@ import { CheckboxesBuilder, CheckboxesParams } from './checkboxes';
 import { ConversationMultiSelectBuilder, ConversationMultiSelectParams } from './conversation-multi-select';
 import { ConversationSelectBuilder, ConversationSelectParams } from './conversation-select';
 import { DatePickerBuilder, DatePickerParams } from './date-picker';
+import { DateTimePickerBuilder, DateTimePickerParams } from './date-time-picker';
 import { EmailInputBuilder, EmailInputParams } from './email-input';
 import { ExternalMultiSelectBuilder, ExternalMultiSelectParams } from './external-multi-select';
 import { ExternalSelectBuilder, ExternalSelectParams } from './external-select';
@@ -37,6 +38,8 @@ export type {
   ConversationSelectParams,
   DatePickerBuilder,
   DatePickerParams,
+  DateTimePickerBuilder,
+  DateTimePickerParams,
   EmailInputBuilder,
   EmailInputParams,
   ExternalMultiSelectBuilder,
@@ -166,9 +169,22 @@ export function DatePicker(params?: DatePickerParams): DatePickerBuilder {
  * @param {Object} [params] Parameters passed to the constructor.
  * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads.
  * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
+ * @param {string} [params.initialDateTime] Sets the default selected date and time for the date time picker.
+ *
+ * {@link https://api.slack.com/reference/block-kit/block-elements#datetimepicker|View in Slack API Documentation}
+ */
+
+export function DateTimePicker(params?: DateTimePickerParams): DateTimePickerBuilder {
+  return new DateTimePickerBuilder(params);
+}
+
+/**
+ * @param {Object} [params] Parameters passed to the constructor.
+ * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads.
+ * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
  * @param {string} [params.initialValue] Sets the default email entered into the Email input at modal render.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#input|View in Slack API Documentation}
+ * {@link https://api.slack.com/reference/block-kit/block-elements#email|View in Slack API Documentation}
  */
 
 export function EmailInput(params?: EmailInputParams): EmailInputBuilder {
@@ -223,7 +239,7 @@ export function Img(params?: ImgParams): ImgBuilder {
  * @param {int} [params.minValue] Sets a minimum value for the number input.
  * @param {int} [params.maxValue] Sets a maximum value for the number input.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#input|View in Slack API Documentation}
+ * {@link https://api.slack.com/reference/block-kit/block-elements#number|View in Slack API Documentation}
  */
 
 export function NumberInput(params?: NumberInputParams): NumberInputBuilder {
@@ -311,7 +327,7 @@ export function TimePicker(params?: TimePickerParams): TimePickerBuilder {
  * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
  * @param {string} [params.initialValue] Sets the default URL entered into the URL input at modal render.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#input|View in Slack API Documentation}
+ * {@link https://api.slack.com/reference/block-kit/block-elements#url|View in Slack API Documentation}
  */
 
 export function URLInput(params?: URLInputParams): URLInputBuilder {
