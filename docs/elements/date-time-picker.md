@@ -27,8 +27,6 @@ Each instance of the `DateTimePickerBuilder` object has chainable setter methods
 
 `initialDateTime` – *Date*
 
-`placeholder` – *String*
-
 
 ?> **Note:** For an explanation of any one of the parameters, see its corresponding setter method below.
 
@@ -56,11 +54,6 @@ DateTimePickerBuilder.initialDateTime(Date);
 ```
 
 Pre-populates the date time picker with a selected, default date and time. 
-```javascript
-DateTimePickerBuilder.placeholder(string);
-```
-
-Defines the text displayed as a placeholder in the empty input element. 
 
 ### Other Methods
 
