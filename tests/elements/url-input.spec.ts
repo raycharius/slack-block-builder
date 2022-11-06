@@ -1,10 +1,10 @@
-import { TextInputBuilder as Class } from '../../src/elements/text-input';
+import { URLInputBuilder as Class } from '../../src/elements/url-input';
 import { SlackElementDto as DtoClass } from '../../src/internal';
 import { params } from './mocks/text-input.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'TextInputBuilder';
+const className = 'URLInputBuilder';
 const category = 'Elements';
 
 const config = {
@@ -19,9 +19,6 @@ const methodsConfig = [
   methods.placeholder,
   methods.actionId,
   methods.initialValueString,
-  methods.multiline,
-  methods.minLength,
-  methods.maxLength,
   methods.onEnterPressed,
   methods.onCharacterEntered,
   methods.focusOnLoad,

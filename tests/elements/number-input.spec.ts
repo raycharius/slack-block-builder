@@ -1,10 +1,10 @@
-import { DatePickerBuilder as Class } from '../../src/elements/date-picker';
+import { NumberInputBuilder as Class } from '../../src/elements/number-input';
 import { SlackElementDto as DtoClass } from '../../src/internal';
-import { params } from './mocks/datepicker.mock';
+import { params } from './mocks/text-input.mock';
 import * as methods from '../methods';
 import { testCompositeBuilderClass } from '../test-composite-builder-class';
 
-const className = 'DatePickerBuilder';
+const className = 'NumberInputBuilder';
 const category = 'Elements';
 
 const config = {
@@ -16,10 +16,14 @@ const config = {
 };
 
 const methodsConfig = [
-  methods.actionId,
+  methods.isDecimalAllowed,
   methods.placeholder,
-  methods.initialDate,
-  methods.confirm,
+  methods.actionId,
+  methods.initialValueNumber,
+  methods.minValue,
+  methods.maxValue,
+  methods.onEnterPressed,
+  methods.onCharacterEntered,
   methods.focusOnLoad,
 ];
 
