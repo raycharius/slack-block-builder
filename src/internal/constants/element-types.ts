@@ -19,4 +19,5 @@ export enum ElementType {
   ChannelsMultiSelect = 'multi_channels_select',
   URLInput = 'url_text_input',
   EmailInput = 'email_text_input',
+  NumberInput = 'number_input',
 }

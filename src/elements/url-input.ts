@@ -23,7 +23,7 @@ export interface URLInputBuilder extends ActionId,
   DispatchActionOnEnterPressed,
   End,
   FocusOnLoad,
-  InitialValue,
+  InitialValue<string>,
   Placeholder {
 }
 

@@ -11,6 +11,7 @@ import { EmailInputBuilder, EmailInputParams } from './email-input';
 import { ExternalMultiSelectBuilder, ExternalMultiSelectParams } from './external-multi-select';
 import { ExternalSelectBuilder, ExternalSelectParams } from './external-select';
 import { ImgBuilder, ImgParams } from './img';
+import { NumberInputBuilder, NumberInputParams } from './number-input';
 import { OverflowMenuBuilder, OverflowMenuParams } from './overflow-menu';
 import { RadioButtonsBuilder, RadioButtonsParams } from './radio-buttons';
 import { StaticMultiSelectBuilder, StaticMultiSelectParams } from './static-multi-select';
@@ -44,6 +45,8 @@ export type {
   ExternalSelectParams,
   ImgBuilder,
   ImgParams,
+  NumberInputBuilder,
+  NumberInputParams,
   OverflowMenuBuilder,
   OverflowMenuParams,
   RadioButtonsBuilder,
@@ -214,6 +217,22 @@ export function Img(params?: ImgParams): ImgBuilder {
 /**
  * @param {Object} [params] Parameters passed to the constructor.
  * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads.
+ * @param {boolean} [params.isDecimalAllowed] Dicates whether a decimal is allowed for the value entered into the number input.
+ * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
+ * @param {string} [params.initialValue] Sets the default text entered into the text input at modal render.
+ * @param {int} [params.minValue] Sets a minimum value for the number input.
+ * @param {int} [params.maxValue] Sets a maximum value for the number input.
+ *
+ * {@link https://api.slack.com/reference/block-kit/block-elements#input|View in Slack API Documentation}
+ */
+
+export function NumberInput(params?: NumberInputParams): NumberInputBuilder {
+  return new NumberInputBuilder(params);
+}
+
+/**
+ * @param {Object} [params] Parameters passed to the constructor.
+ * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads.
  *
  * {@link https://api.slack.com/reference/block-kit/block-elements#overflow|View in Slack API Documentation}
  */
@@ -333,15 +352,18 @@ const elements = {
   ConversationMultiSelect,
   ConversationSelect,
   DatePicker,
+  EmailInput,
   ExternalMultiSelect,
   ExternalSelect,
   Img,
+  NumberInput,
   OverflowMenu,
   RadioButtons,
   StaticMultiSelect,
   StaticSelect,
   TextInput,
   TimePicker,
+  URLInput,
   UserMultiSelect,
   UserSelect,
 };

@@ -43,6 +43,10 @@ export function getPlainTextObject(text: string): Undefinable<PlainTextObject> {
   return valueOrUndefined(text) ? new PlainTextObject(text) : undefined;
 }
 
+export function getStringFromNumber(value: number): Undefinable<string> {
+  return valueOrUndefined(value) ? value.toString() : undefined;
+}
+
 export function getMarkdownObject(text: string): Undefinable<MarkdownObject> {
   return valueOrUndefined(text) ? new MarkdownObject(text) : undefined;
 }

@@ -40,6 +40,7 @@ export enum Param {
   filter = 'filter',
   initialConversation = 'initial_conversation',
   initialDate = 'initial_date',
+  isDecimalAllowed = 'is_decimal_allowed',
   minQueryLength = 'min_query_length',
   initialOption = 'initial_option',
   optionGroups = 'option_groups',
@@ -81,6 +82,8 @@ export enum Param {
   titleUrl = 'title_url',
   thumbnailUrl = 'thumbnail_url',
   videoUrl = 'video_url',
+  minValue = 'min_value',
+  maxValue = 'max_value',
 }
 
 export class SlackDto implements ObjectLiteral {

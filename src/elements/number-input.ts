@@ -1,7 +1,12 @@
 import { ElementBuilderBase } from '../internal/base';
 import { ElementType } from '../internal/constants';
 import { SlackElementDto } from '../internal/dto';
-import { applyMixins, getPlainTextObject, getDispatchActionsConfigurationObject } from '../internal/helpers';
+import {
+  applyMixins,
+  getPlainTextObject,
+  getDispatchActionsConfigurationObject,
+  getStringFromNumber,
+} from '../internal/helpers';
 import {
   ActionId,
   DispatchActionOnCharacterEntered,
@@ -9,21 +14,30 @@ import {
   End,
   FocusOnLoad,
   InitialValue,
+  IsDecimalAllowed,
+  MaxValue,
+  MinValue,
   Placeholder,
 } from '../internal/methods';
 
-export interface EmailInputParams {
+export interface NumberInputParams {
   actionId?: string;
-  initialValue?: string;
+  initialValue?: number;
+  isDecimalAllowed?: boolean;
+  minValue?: number;
+  maxValue?: number;
   placeholder?: string;
 }
 
-export interface EmailInputBuilder extends ActionId,
+export interface NumberInputBuilder extends ActionId,
   DispatchActionOnCharacterEntered,
   DispatchActionOnEnterPressed,
   End,
   FocusOnLoad,
-  InitialValue<string>,
+  InitialValue<number>,
+  IsDecimalAllowed,
+  MaxValue,
+  MinValue,
   Placeholder {
 }
 
@@ -32,24 +46,30 @@ export interface EmailInputBuilder extends ActionId,
  * @@displayName Email Input
  */
 
-export class EmailInputBuilder extends ElementBuilderBase {
+export class NumberInputBuilder extends ElementBuilderBase {
   /** @internal */
 
   public build(): Readonly<SlackElementDto> {
     return this.getResult(SlackElementDto, {
-      type: ElementType.EmailInput,
+      type: ElementType.NumberInput,
+      initialValue: getStringFromNumber(this.props.initialValue),
+      maxValue: getStringFromNumber(this.props.maxValue),
+      minValue: getStringFromNumber(this.props.minValue),
       placeholder: getPlainTextObject(this.props.placeholder),
       dispatchActionConfig: getDispatchActionsConfigurationObject(this.props),
     });
   }
 }
 
-applyMixins(EmailInputBuilder, [
+applyMixins(NumberInputBuilder, [
   ActionId,
   DispatchActionOnCharacterEntered,
   DispatchActionOnEnterPressed,
   End,
   FocusOnLoad,
   InitialValue,
+  IsDecimalAllowed,
+  MaxValue,
+  MinValue,
   Placeholder,
 ]);

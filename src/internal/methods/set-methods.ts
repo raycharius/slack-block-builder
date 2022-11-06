@@ -382,16 +382,32 @@ export abstract class InitialUser extends Builder {
   }
 }
 
-export abstract class InitialValue extends Builder {
+export abstract class InitialValue<T extends string | number> extends Builder {
   /**
-   * @description Pre-populates the text input with default, editable text.
+   * @description Pre-populates the input with a default value.
    *
    * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
-  public initialValue(value: Settable<string>): this {
+  public initialValue(value: Settable<T>): this {
     return this.set(value, Prop.InitialValue);
+  }
+}
+
+export abstract class IsDecimalAllowed extends Builder {
+  /**
+   * @description Dicates whether a decimal is allowed for the value entered into the number input.
+   *
+   * **Slack Validation Rules and Tips:**
+   *    * **Required** ⚠
+   *
+   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
+   */
+
+  public isDecimalAllowed(value: Settable<boolean>): this {
+    return this.set(value, Prop.IsDecimalAllowed);
   }
 }
 
@@ -439,6 +455,22 @@ export abstract class MaxSelectedItems extends Builder {
   }
 }
 
+export abstract class MaxValue extends Builder {
+  /**
+   * @description Sets a maximum value for the number input.
+   *
+   * **Slack Validation Rules and Tips:**
+   *    * Cannot be less than the minimum value.
+   *
+   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
+   */
+
+  public maxValue(value: Settable<number>): this {
+    return this.set(value, Prop.MaxValue);
+  }
+}
+
 export abstract class MinQueryLength extends Builder {
   /**
    * @description Sets a minimum number of characters required before Slack queries your app for a list of options.
@@ -468,6 +500,22 @@ export abstract class MinLength extends Builder {
 
   public minLength(length: Settable<number>): this {
     return this.set(length, Prop.MinLength);
+  }
+}
+
+export abstract class MinValue extends Builder {
+  /**
+   * @description Sets a minimum value for the number input.
+   *
+   * **Slack Validation Rules and Tips:**
+   *    * Cannot be less than the maximum value.
+   *
+   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
+   */
+
+  public minValue(value: Settable<number>): this {
+    return this.set(value, Prop.MinValue);
   }
 }
 
