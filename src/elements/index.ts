@@ -168,7 +168,6 @@ export function DatePicker(params?: DatePickerParams): DatePickerBuilder {
 /**
  * @param {Object} [params] Parameters passed to the constructor.
  * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads.
- * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
  * @param {string} [params.initialDateTime] Sets the default selected date and time for the date time picker.
  *
  * {@link https://api.slack.com/reference/block-kit/block-elements#datetimepicker|View in Slack API Documentation}
