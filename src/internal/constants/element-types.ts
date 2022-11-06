@@ -2,6 +2,7 @@ export enum ElementType {
   Button = 'button',
   Checkboxes = 'checkboxes',
   DatePicker = 'datepicker',
+  DateTimePicker = 'datetimepicker',
   TimePicker = 'timepicker',
   Image = 'image',
   Overflow = 'overflow',
@@ -17,4 +18,7 @@ export enum ElementType {
   UserMultiSelect = 'multi_users_select',
   ConversationsMultiSelect = 'multi_conversations_select',
   ChannelsMultiSelect = 'multi_channels_select',
+  URLInput = 'url_text_input',
+  EmailInput = 'email_text_input',
+  NumberInput = 'number_input',
 }

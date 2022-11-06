@@ -1,4 +1,4 @@
-import { DatePickerBuilder } from '../../../src/elements/datepicker';
+import { DatePickerBuilder } from '../../../src/elements/date-picker';
 
 export const params = {
   placeholder: 'placeholder',

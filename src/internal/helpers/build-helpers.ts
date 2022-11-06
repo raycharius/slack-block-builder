@@ -43,6 +43,10 @@ export function getPlainTextObject(text: string): Undefinable<PlainTextObject> {
   return valueOrUndefined(text) ? new PlainTextObject(text) : undefined;
 }
 
+export function getStringFromNumber(value: number): Undefinable<string> {
+  return valueOrUndefined(value) ? value.toString() : undefined;
+}
+
 export function getMarkdownObject(text: string): Undefinable<MarkdownObject> {
   return valueOrUndefined(text) ? new MarkdownObject(text) : undefined;
 }
@@ -61,6 +65,10 @@ export function getFields(fields: string[]): Undefinable<MarkdownObject[]> {
 
 export function getFormattedDate(date: Date): Undefinable<string> {
   return valueOrUndefined(date) && date.toISOString().split('T')[0];
+}
+
+export function getDateTimeIntegerFromDate(date: Date): Undefinable<number> {
+  return valueOrUndefined(date) && Math.floor(date.getTime() / 1000);
 }
 
 export function getFilter(

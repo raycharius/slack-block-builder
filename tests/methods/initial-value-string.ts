@@ -4,15 +4,15 @@ import { methodArgMocks } from '../mocks/method-arg-mocks';
 import { SlackDto } from '../../src/internal';
 import * as checks from '../checks';
 
-export const initialDate = (params: CompositeBuilderClassConfig): void => {
+export const initialValueString = (params: CompositeBuilderClassConfig): void => {
   const config = {
     ...params,
-    methodArgMock: methodArgMocks.initialDate,
-    methodName: Prop.InitialDate,
-    propSetterPropName: Prop.InitialDate,
-    slackDtoParamName: SlackDto.mapParam(Prop.InitialDate),
+    methodArgMock: methodArgMocks.initialValueString,
+    methodName: Prop.InitialValue,
+    propSetterPropName: Prop.InitialValue,
+    slackDtoParamName: SlackDto.mapParam(Prop.InitialValue),
   };
 
   checks.settableProperty(config);
-  checks.mutatedToString(config);
+  checks.literalBuild(config);
 };

@@ -1,7 +1,12 @@
 import { ElementBuilderBase } from '../internal/base';
 import { ElementType } from '../internal/constants';
 import { SlackElementDto } from '../internal/dto';
-import { applyMixins, getPlainTextObject, getDispatchActionsConfigurationObject } from '../internal/helpers';
+import {
+  applyMixins,
+  getPlainTextObject,
+  getDispatchActionsConfigurationObject,
+  getStringFromNumber,
+} from '../internal/helpers';
 import {
   ActionId,
   DispatchActionOnCharacterEntered,
@@ -9,58 +14,62 @@ import {
   End,
   FocusOnLoad,
   InitialValue,
-  MaxLength,
-  MinLength,
-  Multiline,
+  IsDecimalAllowed,
+  MaxValue,
+  MinValue,
   Placeholder,
 } from '../internal/methods';
 
-export interface TextInputParams {
+export interface NumberInputParams {
   actionId?: string;
-  initialValue?: string;
-  maxLength?: number;
-  minLength?: number;
+  initialValue?: number;
+  isDecimalAllowed?: boolean;
+  minValue?: number;
+  maxValue?: number;
   placeholder?: string;
 }
 
-export interface TextInputBuilder extends ActionId,
+export interface NumberInputBuilder extends ActionId,
   DispatchActionOnCharacterEntered,
   DispatchActionOnEnterPressed,
   End,
   FocusOnLoad,
-  InitialValue<string>,
-  MaxLength,
-  MinLength,
-  Multiline,
+  InitialValue<number>,
+  IsDecimalAllowed,
+  MaxValue,
+  MinValue,
   Placeholder {
 }
 
 /**
- * @@link https://api.slack.com/reference/block-kit/block-elements#input
- * @@displayName Plain-Text Input
+ * @@link https://api.slack.com/reference/block-kit/block-elements#number
+ * @@displayName Email Input
  */
 
-export class TextInputBuilder extends ElementBuilderBase {
+export class NumberInputBuilder extends ElementBuilderBase {
   /** @internal */
 
   public build(): Readonly<SlackElementDto> {
     return this.getResult(SlackElementDto, {
-      type: ElementType.TextInput,
+      type: ElementType.NumberInput,
+      initialValue: getStringFromNumber(this.props.initialValue),
+      maxValue: getStringFromNumber(this.props.maxValue),
+      minValue: getStringFromNumber(this.props.minValue),
       placeholder: getPlainTextObject(this.props.placeholder),
       dispatchActionConfig: getDispatchActionsConfigurationObject(this.props),
     });
   }
 }
 
-applyMixins(TextInputBuilder, [
+applyMixins(NumberInputBuilder, [
   ActionId,
   DispatchActionOnCharacterEntered,
   DispatchActionOnEnterPressed,
   End,
   FocusOnLoad,
   InitialValue,
-  MaxLength,
-  MinLength,
-  Multiline,
+  IsDecimalAllowed,
+  MaxValue,
+  MinValue,
   Placeholder,
 ]);

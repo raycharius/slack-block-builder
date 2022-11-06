@@ -10,5 +10,7 @@ export * from './end-method-call';
 export * from './global';
 export * from './literal-build';
 export * from './mutated-build';
+export * from './mutated-to-number';
+export * from './mutated-to-string';
 export * from './set-undefined';
 export * from './settable-property';

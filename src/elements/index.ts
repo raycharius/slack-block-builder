@@ -6,16 +6,20 @@ import { ChannelSelectBuilder, ChannelSelectParams } from './channel-select';
 import { CheckboxesBuilder, CheckboxesParams } from './checkboxes';
 import { ConversationMultiSelectBuilder, ConversationMultiSelectParams } from './conversation-multi-select';
 import { ConversationSelectBuilder, ConversationSelectParams } from './conversation-select';
-import { DatePickerBuilder, DatePickerParams } from './datepicker';
+import { DatePickerBuilder, DatePickerParams } from './date-picker';
+import { DateTimePickerBuilder, DateTimePickerParams } from './date-time-picker';
+import { EmailInputBuilder, EmailInputParams } from './email-input';
 import { ExternalMultiSelectBuilder, ExternalMultiSelectParams } from './external-multi-select';
 import { ExternalSelectBuilder, ExternalSelectParams } from './external-select';
 import { ImgBuilder, ImgParams } from './img';
+import { NumberInputBuilder, NumberInputParams } from './number-input';
 import { OverflowMenuBuilder, OverflowMenuParams } from './overflow-menu';
 import { RadioButtonsBuilder, RadioButtonsParams } from './radio-buttons';
 import { StaticMultiSelectBuilder, StaticMultiSelectParams } from './static-multi-select';
 import { StaticSelectBuilder, StaticSelectParams } from './static-select';
 import { TextInputBuilder, TextInputParams } from './text-input';
 import { TimePickerBuilder, TimePickerParams } from './timepicker';
+import { URLInputBuilder, URLInputParams } from './url-input';
 import { UserMultiSelectBuilder, UserMultiSelectParams } from './user-multi-select';
 import { UserSelectBuilder, UserSelectParams } from './user-select';
 
@@ -34,12 +38,18 @@ export type {
   ConversationSelectParams,
   DatePickerBuilder,
   DatePickerParams,
+  DateTimePickerBuilder,
+  DateTimePickerParams,
+  EmailInputBuilder,
+  EmailInputParams,
   ExternalMultiSelectBuilder,
   ExternalMultiSelectParams,
   ExternalSelectBuilder,
   ExternalSelectParams,
   ImgBuilder,
   ImgParams,
+  NumberInputBuilder,
+  NumberInputParams,
   OverflowMenuBuilder,
   OverflowMenuParams,
   RadioButtonsBuilder,
@@ -52,6 +62,8 @@ export type {
   TextInputParams,
   TimePickerBuilder,
   TimePickerParams,
+  URLInputBuilder,
+  URLInputParams,
   UserMultiSelectBuilder,
   UserMultiSelectParams,
   UserSelectBuilder,
@@ -156,6 +168,31 @@ export function DatePicker(params?: DatePickerParams): DatePickerBuilder {
 /**
  * @param {Object} [params] Parameters passed to the constructor.
  * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads.
+ * @param {string} [params.initialDateTime] Sets the default selected date and time for the date time picker.
+ *
+ * {@link https://api.slack.com/reference/block-kit/block-elements#datetimepicker|View in Slack API Documentation}
+ */
+
+export function DateTimePicker(params?: DateTimePickerParams): DateTimePickerBuilder {
+  return new DateTimePickerBuilder(params);
+}
+
+/**
+ * @param {Object} [params] Parameters passed to the constructor.
+ * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads.
+ * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
+ * @param {string} [params.initialValue] Sets the default email entered into the Email input at modal render.
+ *
+ * {@link https://api.slack.com/reference/block-kit/block-elements#email|View in Slack API Documentation}
+ */
+
+export function EmailInput(params?: EmailInputParams): EmailInputBuilder {
+  return new EmailInputBuilder(params);
+}
+
+/**
+ * @param {Object} [params] Parameters passed to the constructor.
+ * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads.
  * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
  * @param {int} [params.maxSelectedItems] Sets a limit to how many items the user can select.
  * @param {int} [params.minQueryLength] Sets a minimum number of characters types before querying your options URL.
@@ -190,6 +227,22 @@ export function ExternalSelect(params?: ExternalSelectParams): ExternalSelectBui
 
 export function Img(params?: ImgParams): ImgBuilder {
   return new ImgBuilder(params);
+}
+
+/**
+ * @param {Object} [params] Parameters passed to the constructor.
+ * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads.
+ * @param {boolean} [params.isDecimalAllowed] Dicates whether a decimal is allowed for the value entered into the number input.
+ * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
+ * @param {string} [params.initialValue] Sets the default text entered into the text input at modal render.
+ * @param {int} [params.minValue] Sets a minimum value for the number input.
+ * @param {int} [params.maxValue] Sets a maximum value for the number input.
+ *
+ * {@link https://api.slack.com/reference/block-kit/block-elements#number|View in Slack API Documentation}
+ */
+
+export function NumberInput(params?: NumberInputParams): NumberInputBuilder {
+  return new NumberInputBuilder(params);
 }
 
 /**
@@ -271,6 +324,19 @@ export function TimePicker(params?: TimePickerParams): TimePickerBuilder {
  * @param {Object} [params] Parameters passed to the constructor.
  * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads.
  * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
+ * @param {string} [params.initialValue] Sets the default URL entered into the URL input at modal render.
+ *
+ * {@link https://api.slack.com/reference/block-kit/block-elements#url|View in Slack API Documentation}
+ */
+
+export function URLInput(params?: URLInputParams): URLInputBuilder {
+  return new URLInputBuilder(params);
+}
+
+/**
+ * @param {Object} [params] Parameters passed to the constructor.
+ * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads.
+ * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
  * @param {int} [params.maxSelectedItems] Sets a limit to how many items the user can select.
  *
  * {@link https://api.slack.com/reference/block-kit/block-elements#users_multi_select|View in Slack API Documentation}
@@ -301,15 +367,18 @@ const elements = {
   ConversationMultiSelect,
   ConversationSelect,
   DatePicker,
+  EmailInput,
   ExternalMultiSelect,
   ExternalSelect,
   Img,
+  NumberInput,
   OverflowMenu,
   RadioButtons,
   StaticMultiSelect,
   StaticSelect,
   TextInput,
   TimePicker,
+  URLInput,
   UserMultiSelect,
   UserSelect,
 };

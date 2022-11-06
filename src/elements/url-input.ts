@@ -9,58 +9,47 @@ import {
   End,
   FocusOnLoad,
   InitialValue,
-  MaxLength,
-  MinLength,
-  Multiline,
   Placeholder,
 } from '../internal/methods';
 
-export interface TextInputParams {
+export interface URLInputParams {
   actionId?: string;
   initialValue?: string;
-  maxLength?: number;
-  minLength?: number;
   placeholder?: string;
 }
 
-export interface TextInputBuilder extends ActionId,
+export interface URLInputBuilder extends ActionId,
   DispatchActionOnCharacterEntered,
   DispatchActionOnEnterPressed,
   End,
   FocusOnLoad,
   InitialValue<string>,
-  MaxLength,
-  MinLength,
-  Multiline,
   Placeholder {
 }
 
 /**
- * @@link https://api.slack.com/reference/block-kit/block-elements#input
- * @@displayName Plain-Text Input
+ * @@link https://api.slack.com/reference/block-kit/block-elements#url
+ * @@displayName URL Input
  */
 
-export class TextInputBuilder extends ElementBuilderBase {
+export class URLInputBuilder extends ElementBuilderBase {
   /** @internal */
 
   public build(): Readonly<SlackElementDto> {
     return this.getResult(SlackElementDto, {
-      type: ElementType.TextInput,
+      type: ElementType.URLInput,
       placeholder: getPlainTextObject(this.props.placeholder),
       dispatchActionConfig: getDispatchActionsConfigurationObject(this.props),
     });
   }
 }
 
-applyMixins(TextInputBuilder, [
+applyMixins(URLInputBuilder, [
   ActionId,
   DispatchActionOnCharacterEntered,
   DispatchActionOnEnterPressed,
   End,
   FocusOnLoad,
   InitialValue,
-  MaxLength,
-  MinLength,
-  Multiline,
   Placeholder,
 ]);

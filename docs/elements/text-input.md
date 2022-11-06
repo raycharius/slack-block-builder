@@ -69,7 +69,7 @@ Sets a string to be an identifier for the action taken by the user. It is sent b
 TextInputBuilder.initialValue(string);
 ```
 
-Pre-populates the text input with default, editable text. 
+Pre-populates the input with a default value. 
 ```javascript
 TextInputBuilder.maxLength(int);
 ```
