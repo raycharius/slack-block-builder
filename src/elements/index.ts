@@ -16,6 +16,7 @@ import { StaticMultiSelectBuilder, StaticMultiSelectParams } from './static-mult
 import { StaticSelectBuilder, StaticSelectParams } from './static-select';
 import { TextInputBuilder, TextInputParams } from './text-input';
 import { TimePickerBuilder, TimePickerParams } from './timepicker';
+import { URLInputBuilder, URLInputParams } from './url-input';
 import { UserMultiSelectBuilder, UserMultiSelectParams } from './user-multi-select';
 import { UserSelectBuilder, UserSelectParams } from './user-select';
 
@@ -52,6 +53,8 @@ export type {
   TextInputParams,
   TimePickerBuilder,
   TimePickerParams,
+  URLInputBuilder,
+  URLInputParams,
   UserMultiSelectBuilder,
   UserMultiSelectParams,
   UserSelectBuilder,
@@ -265,6 +268,19 @@ export function TextInput(params?: TextInputParams): TextInputBuilder {
 
 export function TimePicker(params?: TimePickerParams): TimePickerBuilder {
   return new TimePickerBuilder(params);
+}
+
+/**
+ * @param {Object} [params] Parameters passed to the constructor.
+ * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads.
+ * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
+ * @param {string} [params.initialValue] Sets the default URL entered into the URL input at modal render.
+ *
+ * {@link https://api.slack.com/reference/block-kit/block-elements#input|View in Slack API Documentation}
+ */
+
+export function URLInput(params?: URLInputParams): URLInputBuilder {
+  return new URLInputBuilder(params);
 }
 
 /**
