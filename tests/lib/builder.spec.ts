@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 import { Modal } from '../../src';
 import { Builder } from '../../src/internal';
 
@@ -28,7 +29,7 @@ describe('Testing Builder Class Methods:', () => {
       }
     }
 
-    const commonProps = {foo: '42'};
+    const commonProps = { foo: '42' };
     const testBuilder1 = new TestBuilder(commonProps);
     const testBuilder2 = new TestBuilder(commonProps);
 
