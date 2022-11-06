@@ -6,7 +6,7 @@ import { ChannelSelectBuilder, ChannelSelectParams } from './channel-select';
 import { CheckboxesBuilder, CheckboxesParams } from './checkboxes';
 import { ConversationMultiSelectBuilder, ConversationMultiSelectParams } from './conversation-multi-select';
 import { ConversationSelectBuilder, ConversationSelectParams } from './conversation-select';
-import { DatePickerBuilder, DatePickerParams } from './datepicker';
+import { DatePickerBuilder, DatePickerParams } from './date-picker';
 import { EmailInputBuilder, EmailInputParams } from './email-input';
 import { ExternalMultiSelectBuilder, ExternalMultiSelectParams } from './external-multi-select';
 import { ExternalSelectBuilder, ExternalSelectParams } from './external-select';

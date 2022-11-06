@@ -1,4 +1,4 @@
-import { DatePickerBuilder as Class } from '../../src/elements/datepicker';
+import { DatePickerBuilder as Class } from '../../src/elements/date-picker';
 import { SlackElementDto as DtoClass } from '../../src/internal';
 import { params } from './mocks/datepicker.mock';
 import * as methods from '../methods';
