@@ -6,7 +6,7 @@ export abstract class Builder {
   protected readonly props: ObjectLiteral;
 
   constructor(params?: ObjectLiteral) {
-    this.props = params || {};
+    this.props = params ? { ...params } : {};
 
     Object.keys(this.props)
       .forEach((prop) => this.props[prop] === undefined
