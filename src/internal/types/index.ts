@@ -5,7 +5,7 @@ import type {
   CheckboxesBuilder,
   ConversationMultiSelectBuilder,
   ConversationSelectBuilder,
-  DatePickerBuilder,
+  DatePickerBuilder, DateTimePickerBuilder,
   ExternalMultiSelectBuilder,
   ExternalSelectBuilder,
   ImgBuilder,
@@ -29,6 +29,7 @@ import type {
   SectionBuilder,
   VideoBuilder,
 } from '../../blocks';
+import { EmailInputBuilder, NumberInputBuilder, URLInputBuilder } from '../../elements';
 
 export type ActionsElementBuilder =
   ButtonBuilder
@@ -36,6 +37,7 @@ export type ActionsElementBuilder =
   | CheckboxesBuilder
   | ConversationSelectBuilder
   | DatePickerBuilder
+  | DateTimePickerBuilder
   | ExternalSelectBuilder
   | OverflowMenuBuilder
   | RadioButtonsBuilder
@@ -69,13 +71,17 @@ export type InputElementBuilder =
   | ConversationMultiSelectBuilder
   | ConversationSelectBuilder
   | DatePickerBuilder
+  | DateTimePickerBuilder
+  | EmailInputBuilder
   | ExternalMultiSelectBuilder
   | ExternalSelectBuilder
+  | NumberInputBuilder
   | RadioButtonsBuilder
   | StaticMultiSelectBuilder
   | StaticSelectBuilder
   | TextInputBuilder
   | TimePickerBuilder
+  | URLInputBuilder
   | UserMultiSelectBuilder
   | UserSelectBuilder;
 
