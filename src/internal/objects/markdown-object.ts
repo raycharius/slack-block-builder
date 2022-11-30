@@ -6,10 +6,13 @@ export class MarkdownObject extends CompositionObjectBase {
 
   public text: string;
 
-  constructor(text: string) {
+  public verbatim?: boolean;
+
+  constructor(text: string, verbatim?: boolean) {
     super();
 
     this.type = ObjectType.Markdown;
     this.text = text;
+    this.verbatim = verbatim;
   }
 }

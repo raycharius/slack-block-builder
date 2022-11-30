@@ -6,10 +6,13 @@ export class PlainTextObject extends CompositionObjectBase {
 
   public text: string;
 
-  constructor(text: string) {
+  public emoji?: boolean;
+
+  constructor(text: string, emoji?: boolean) {
     super();
 
     this.type = ObjectType.Text;
     this.text = text;
+    this.emoji = emoji;
   }
 }

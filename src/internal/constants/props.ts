@@ -87,4 +87,5 @@ export enum Prop {
   TitleUrl = 'titleUrl',
   ThumbnailUrl = 'thumbnailUrl',
   VideoUrl = 'videoUrl',
+  TextAttributes = 'textAttributes',
 }

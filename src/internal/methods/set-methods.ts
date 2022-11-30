@@ -6,6 +6,7 @@ import { Prop } from '../constants';
 
 import type { SectionElementBuilder, Settable } from '../types';
 import type { OptionBuilder } from '../../bits';
+import { TextAttributesType } from '../objects/text-attributes-object';
 
 export abstract class AccessibilityLabel extends Builder {
   /**
@@ -637,6 +638,23 @@ export abstract class Text extends Builder {
 
   public text(text: Settable<string>): this {
     return this.set(text, Prop.Text);
+  }
+}
+export abstract class TextAttributes extends Builder {
+  /**
+   * @description Controls the attributes of a string.
+   *
+   * **Slack Validation Rules and Tips:**
+   *    * Only usable when text type is 'mrkdwn'.
+   *    * When set to false (default) URLs will be auto-converted into links, conversation names will be link-ified, and certain mentions will be automatically parsed.
+   *    * When set to true, any preprocessing will be skipped. However, you can still include manual parsing strings.
+   *
+   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
+   */
+
+  public textAttributes(textAttributes: Settable<TextAttributesType>): this {
+    return this.set(textAttributes, Prop.TextAttributes);
   }
 }
 
