@@ -367,6 +367,7 @@ const elements = {
   ConversationMultiSelect,
   ConversationSelect,
   DatePicker,
+  DateTimePicker,
   EmailInput,
   ExternalMultiSelect,
   ExternalSelect,
