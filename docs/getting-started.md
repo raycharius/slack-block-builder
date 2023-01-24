@@ -2,9 +2,9 @@
 
 In this section, we'll take a quick look at a few things that you need to know about the [Slack Block Kit](https://api.slack.com/block-kit) framework before you get started, if you aren't familiar with the framework. We'll also take a look at the basics of accessing objects in **Block Builder**.
 
-### Heirarchy and Structure
+### Hierarchy and Structure
 
-When building views and messages for [Slack](https://slack.com) apps, there is a certain heirarchy that needs to be followed, which is also true of any UI library used to build those out.
+When building views and messages for [Slack](https://slack.com) apps, there is a certain hierarchy that needs to be followed, which is also true of any UI library used to build those out.
 
 #### There are four kinds of objects: ####
 
