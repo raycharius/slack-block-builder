@@ -18,6 +18,7 @@ import {
 export interface TextInputParams {
   actionId?: string;
   initialValue?: string;
+  multiline?: boolean;
   maxLength?: number;
   minLength?: number;
   placeholder?: string;
