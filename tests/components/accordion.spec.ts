@@ -2435,4 +2435,241 @@ describe('Testing Accordion:', () => {
       type: 'modal',
     }));
   });
+
+  test('Check that only expandable items get a expand/collapse button', () => {
+    const result = Modal({ title: 'Testing' })
+      .blocks(
+        Accordion<Human>({
+          items: humans,
+          expandedItems: [],
+          titleText: ({ item }) => `${item.firstName} ${item.lastName}`,
+          actionId: (params) => JSON.stringify(params),
+          blocksForExpanded: ({ item: human }) => [
+            Blocks.Section({ text: `${human.firstName} ${human.lastName}` }),
+            setIfTruthy(human, [
+              Blocks.Section({ text: `${human.jobTitle}` }),
+              Blocks.Section({ text: `${human.department}` }),
+            ]),
+            Blocks.Section({ text: `${human.email}` }),
+          ],
+          isExpandable: (item) => item.firstName === 'Taras',
+        }).getBlocks(),
+      )
+      .buildToJSON();
+
+    expect(result).toEqual(JSON.stringify({
+      title: {
+        type: 'plain_text',
+        text: 'Testing',
+      },
+      blocks: [
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Ray East',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Taras Neporozhniy',
+          },
+          accessory: {
+            text: {
+              type: 'plain_text',
+              text: 'More',
+            },
+            action_id: '{"expandedItems":[1]}',
+            type: 'button',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Dima Tereshuk',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Lesha Power',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Yozhef Hisem',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Andrey Roland',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Vlad Filimonov',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Boris Boriska',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Vadim Grabovyy',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Alex Chernyshov',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Serega Grigoruk',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Igor Roik',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Dima Tretiakov',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Sasha Chernyavska',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Arthur Nick',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Dima Lutsik',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Dima Svirepchuk',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Dima Bilkun',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Pasha Akimenko',
+          },
+          type: 'section',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          text: {
+            type: 'mrkdwn',
+            text: 'Karina Suprun',
+          },
+          type: 'section',
+        },
+      ],
+      type: 'modal',
+    }));
+  });
 });

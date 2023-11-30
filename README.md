@@ -318,6 +318,8 @@ The `Accordion` component supports optional customizations, such as:
 `expandButtonText` – Used to pass in custom text for the button that expands an item, but has a default.
 
 `collapseButtonText` – Used to pass in custom text for the button that collapses an expanded item, but has a default.
+
+`isExpandable` – Used to display or not the expand/collapse button for a given item.
  
 ```javascript
 import { Modal, Blocks, Accordion } from 'slack-block-builder';

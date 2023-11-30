@@ -11,6 +11,7 @@ import {
   AccordionTitleTextFn,
   AccordionActionIdFn,
   AccordionBuilderFn,
+  AccordionIsExpandableFn,
 } from './accordion-ui-component';
 import {
   PaginatorStateManager,
@@ -102,6 +103,7 @@ interface AccordionBaseParams<T> {
   titleText: AccordionTitleTextFn<T>;
   actionId: AccordionActionIdFn;
   blocksForExpanded: AccordionBuilderFn<T>,
+  isExpandable?: AccordionIsExpandableFn<T>,
 }
 
 export type AccordionParams<T> = AccordionBaseParams<T> & AccordionStateManagerParams;
@@ -112,6 +114,7 @@ export type AccordionParams<T> = AccordionBaseParams<T> & AccordionStateManagerP
  * @param {AccordionTitleTextFn} [params.titleText] A function that receives an object with a single item and returns a string to be displayed next to the expand/collapse button.
  * @param {AccordionActionIdFn} [params.actionId] A function that receives the accordion state data and returns a string to set as the action IDs of the expand/collapse buttons.
  * @param {AccordionBuilderFn} [params.blocksForExpanded] A function that receives an object with a single item and returns the blocks to create for that item.
+ * @param {AccordionIsExpandableFn} [params.isExpandable] A function that receives an item and and returns a boolean that tells if the section should have an expand/collapse button.
  * @param {string} [params.expandButtonText] The text to display on the button that expands an item in the UI.
  * @param {string} [params.collapseButtonText] The text to display on the button that collapses an item in the UI.
  *
@@ -129,6 +132,7 @@ export function Accordion<T>(params: AccordionParams<T>): AccordionUIComponent<T
     titleTextFunction: params.titleText,
     actionIdFunction: params.actionId,
     builderFunction: params.blocksForExpanded,
+    isExpandableFunction: params.isExpandable || (() => true),
   });
 }
 
