@@ -85,4 +85,6 @@ export const methodArgMocks = {
   titleUrl: methodArgMocksByType.string,
   thumbnailUrl: methodArgMocksByType.string,
   videoUrl: methodArgMocksByType.string,
+  maxFiles: methodArgMocksByType.int,
+  filetypes: methodArgMocksByType.arrayStrings,
 };

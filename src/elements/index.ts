@@ -22,6 +22,7 @@ import { TimePickerBuilder, TimePickerParams } from './timepicker';
 import { URLInputBuilder, URLInputParams } from './url-input';
 import { UserMultiSelectBuilder, UserMultiSelectParams } from './user-multi-select';
 import { UserSelectBuilder, UserSelectParams } from './user-select';
+import { FileInputBuilder, FileInputParams } from './file-input';
 
 export type {
   ButtonBuilder,
@@ -68,6 +69,8 @@ export type {
   UserMultiSelectParams,
   UserSelectBuilder,
   UserSelectParams,
+  FileInputBuilder,
+  FileInputParams,
 };
 
 /**
@@ -231,6 +234,18 @@ export function Img(params?: ImgParams): ImgBuilder {
 
 /**
  * @param {Object} [params] Parameters passed to the constructor.
+ * @param {string} [params.filetypes] Sets the accepted filetypes.
+ * @param {string} [params.maxFiles] Sets the maximum number of files to upload.
+ *
+ * {@link https://api.slack.com/reference/block-kit/block-elements#file_input|View in Slack API Documentation}
+ */
+
+export function FileInput(params?: FileInputParams): FileInputBuilder {
+  return new FileInputBuilder(params);
+}
+
+/**
+ * @param {Object} [params] Parameters passed to the constructor.
  * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads.
  * @param {boolean} [params.isDecimalAllowed] Dicates whether a decimal is allowed for the value entered into the number input.
  * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
@@ -382,6 +397,7 @@ const elements = {
   URLInput,
   UserMultiSelect,
   UserSelect,
+  FileInput,
 };
 
 // Strange export. I know. For IDE highlighting purposes.

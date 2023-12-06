@@ -20,3 +20,4 @@ export * as TimePicker from './time-picker.mock';
 export * as URLInput from './url-input.mock';
 export * as UserMultiSelect from './user-multiselect.mock';
 export * as UserSelect from './user-select.mock';
+export * as FileInput from './file-input.mock';

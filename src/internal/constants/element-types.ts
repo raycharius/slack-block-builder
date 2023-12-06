@@ -21,4 +21,5 @@ export enum ElementType {
   URLInput = 'url_text_input',
   EmailInput = 'email_text_input',
   NumberInput = 'number_input',
+  FileInput = 'file_input',
 }
