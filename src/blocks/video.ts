@@ -17,6 +17,7 @@ import {
 } from '../internal/methods';
 
 export interface VideoParams {
+  altText?: string;
   blockId?: string;
   description?: string;
   providerIconUrl?: string;
