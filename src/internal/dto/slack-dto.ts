@@ -112,6 +112,9 @@ export class SlackMessageDto extends SlackDto {
   // @ts-ignore -- Dynamically created class
   public readonly channel: string;
 
+  // @ts-ignore -- Dynamically created class
+  public readonly ts: string;
+
   public readonly blocks?: SlackBlockDto[];
 
   public readonly attachments?: SlackDto[];
