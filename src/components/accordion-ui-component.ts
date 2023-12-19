@@ -17,6 +17,7 @@ export interface AccordionActionIdParams {
 export type AccordionActionIdFn = StringReturnableFn<AccordionActionIdParams>;
 export type AccordionTitleTextFn<T> = StringReturnableFn<{ item: T }>;
 export type AccordionBuilderFn<T> = BlockBuilderReturnableFn<{ item: T }>;
+
 export type AccordionIsExpandableFn<T> = (item: T) => boolean;
 export interface AccordionUIComponentParams<T> {
   items: T[];
@@ -61,6 +62,7 @@ export class AccordionUIComponent<T> {
     const unpruned = this.items.map((item, index) => {
       const isExpanded = this.paginator.checkItemIsExpandedByIndex(index);
       const section = Blocks.Section({ text: this.titleTextFunction({ item }) });
+
       if (this.isExpandableFunction(item)) {
         section.accessory(Elements.Button({
           text: isExpanded ? this.collapseButtonText : this.expandButtonText,
@@ -69,6 +71,7 @@ export class AccordionUIComponent<T> {
           }),
         }));
       }
+
       const blocks = [
         section,
         ...isExpanded ? this.builderFunction({ item }).flat() : [],
