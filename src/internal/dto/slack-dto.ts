@@ -85,6 +85,8 @@ export enum Param {
   videoUrl = 'video_url',
   minValue = 'min_value',
   maxValue = 'max_value',
+  maxFiles = 'max_files',
+  filetypes = 'filetypes',
 }
 
 export class SlackDto implements ObjectLiteral {

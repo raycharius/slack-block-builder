@@ -82,3 +82,5 @@ export * from './ts';
 export * from './url';
 export * from './value';
 export * from './video-url';
+export * from './max-files';
+export * from './filetypes';

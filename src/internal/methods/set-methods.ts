@@ -769,3 +769,35 @@ export abstract class VideoUrl extends Builder {
     return this.set(videoUrl, Prop.VideoUrl);
   }
 }
+
+export abstract class MaxFiles extends Builder {
+  /**
+   * @description Maximum number of files that can be uploaded for this file_input element. Minimum of 1, maximum of 10. Defaults to 10 if not specified.
+   *
+   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
+   */
+
+  public maxFiles(maxFiles:Settable<number> = 10): this {
+    return this.set(maxFiles, Prop.MaxFiles);
+  }
+}
+
+export abstract class Filetypes extends Builder {
+  /**
+   * @description An array of valid file extensions that will be accepted for this element. All file extensions will be accepted if filetypes is not specified.
+   *
+   * **Slack Validation Rules and Tips:**
+   *    * **Required if the text property is undefined** ⚠
+   *    * Maximum of 10 items.
+   *    * Maximum of 2000 characters for each field.
+   *    * Markdown supported.
+   *
+   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
+   */
+
+  public filetypes(filetypes:Settable<string[]> = []): this {
+    return this.set(filetypes.flat(), Prop.Filetypes);
+  }
+}
