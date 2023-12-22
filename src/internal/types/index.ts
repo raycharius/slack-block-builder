@@ -8,6 +8,7 @@ import type {
   DatePickerBuilder, DateTimePickerBuilder,
   ExternalMultiSelectBuilder,
   ExternalSelectBuilder,
+  FileInputBuilder,
   ImgBuilder,
   OverflowMenuBuilder,
   RadioButtonsBuilder,
@@ -83,7 +84,8 @@ export type InputElementBuilder =
   | TimePickerBuilder
   | URLInputBuilder
   | UserMultiSelectBuilder
-  | UserSelectBuilder;
+  | UserSelectBuilder
+  | FileInputBuilder;
 
 export type ContextElement = ImgBuilder | string;
 

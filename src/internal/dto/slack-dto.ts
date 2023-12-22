@@ -85,6 +85,8 @@ export enum Param {
   videoUrl = 'video_url',
   minValue = 'min_value',
   maxValue = 'max_value',
+  maxFiles = 'max_files',
+  filetypes = 'filetypes',
 }
 
 export class SlackDto implements ObjectLiteral {
@@ -111,6 +113,9 @@ export class SlackMessageDto extends SlackDto {
 
   // @ts-ignore -- Dynamically created class
   public readonly channel: string;
+
+  // @ts-ignore -- Dynamically created class
+  public readonly ts: string;
 
   public readonly blocks?: SlackBlockDto[];
 

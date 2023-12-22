@@ -87,4 +87,6 @@ export enum Prop {
   TitleUrl = 'titleUrl',
   ThumbnailUrl = 'thumbnailUrl',
   VideoUrl = 'videoUrl',
+  MaxFiles = 'maxFiles',
+  Filetypes = 'filetypes',
 }
