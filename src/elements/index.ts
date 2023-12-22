@@ -67,7 +67,7 @@ export type {
   UserMultiSelectBuilder,
   UserMultiSelectParams,
   UserSelectBuilder,
-  UserSelectParams,
+  UserSelectParams
 };
 
 /**
@@ -305,8 +305,7 @@ export function StaticSelect(params?: StaticSelectParams): StaticSelectBuilder {
  */
 
 export function TextInput(params?: TextInputParams): TextInputBuilder {
-  const input = new TextInputBuilder(params);
-  return input;
+  return new TextInputBuilder(params);
 }
 
 /**
