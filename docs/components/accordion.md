@@ -102,6 +102,10 @@ Used to customize the text for the expand button, which defaults to `'More'`.
 
 Used to customize the text for the collapse button, which defaults to `'Close'`.
 
+`isExpandable` – *Function* `Optional`
+
+Used to show/hide expand/collapse button for a given item.
+
 ### The `titleText` Function
 
 The `titleText` parameter accepts a function that takes an object that contains one of the items from the data set and returns a string to display as the title, next to the collapse/expand button. The object, at the moment, contains only one parameter, `item`, which is the item for which the title will be displayed.

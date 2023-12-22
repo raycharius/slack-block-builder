@@ -18,6 +18,7 @@ export type AccordionActionIdFn = StringReturnableFn<AccordionActionIdParams>;
 export type AccordionTitleTextFn<T> = StringReturnableFn<{ item: T }>;
 export type AccordionBuilderFn<T> = BlockBuilderReturnableFn<{ item: T }>;
 
+export type AccordionIsExpandableFn<T> = (item: T) => boolean;
 export interface AccordionUIComponentParams<T> {
   items: T[];
   paginator: AccordionStateManager;
@@ -26,6 +27,7 @@ export interface AccordionUIComponentParams<T> {
   titleTextFunction: AccordionTitleTextFn<T>;
   actionIdFunction: AccordionActionIdFn;
   builderFunction: AccordionBuilderFn<T>;
+  isExpandableFunction: AccordionIsExpandableFn<T>;
 }
 
 export class AccordionUIComponent<T> {
@@ -43,6 +45,8 @@ export class AccordionUIComponent<T> {
 
   private readonly builderFunction: AccordionBuilderFn<T>;
 
+  private readonly isExpandableFunction: AccordionIsExpandableFn<T>;
+
   constructor(params: AccordionUIComponentParams<T>) {
     this.items = params.items;
     this.paginator = params.paginator;
@@ -51,20 +55,25 @@ export class AccordionUIComponent<T> {
     this.titleTextFunction = params.titleTextFunction;
     this.actionIdFunction = params.actionIdFunction;
     this.builderFunction = params.builderFunction;
+    this.isExpandableFunction = params.isExpandableFunction;
   }
 
   public getBlocks(): BlockBuilder[] {
     const unpruned = this.items.map((item, index) => {
       const isExpanded = this.paginator.checkItemIsExpandedByIndex(index);
+      const section = Blocks.Section({ text: this.titleTextFunction({ item }) });
+
+      if (this.isExpandableFunction(item)) {
+        section.accessory(Elements.Button({
+          text: isExpanded ? this.collapseButtonText : this.expandButtonText,
+          actionId: this.actionIdFunction({
+            expandedItems: this.paginator.getNextStateByItemIndex(index),
+          }),
+        }));
+      }
 
       const blocks = [
-        Blocks.Section({ text: this.titleTextFunction({ item }) })
-          .accessory(Elements.Button({
-            text: isExpanded ? this.collapseButtonText : this.expandButtonText,
-            actionId: this.actionIdFunction({
-              expandedItems: this.paginator.getNextStateByItemIndex(index),
-            }),
-          })),
+        section,
         ...isExpanded ? this.builderFunction({ item }).flat() : [],
       ];
 
