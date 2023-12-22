@@ -23,6 +23,8 @@ const myObj = Blocks.Video(params?);
 
 Each instance of the `VideoBuilder` object has chainable setter methods for the object's properties. However, properties with primitive values can optionally be passed to the instantiating function, should you prefer:
 
+`altText` – *String*
+
 `blockId` – *String*
 
 `description` – *String*

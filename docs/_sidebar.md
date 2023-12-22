@@ -48,6 +48,7 @@
   * [Email Input](elements/email-input.md "Block Builder – Email Input – Maintainable JavaScript Code for Slack Block Kit")
   * [External Multi-Select](elements/external-multi-select.md "Block Builder – External Multi-Select – Maintainable JavaScript Code for Slack Block Kit")
   * [External Select](elements/external-select.md "Block Builder – External Select – Maintainable JavaScript Code for Slack Block Kit")
+  * [File Input](elements/file-input.md "Block Builder – File Input – Maintainable JavaScript Code for Slack Block Kit")
   * [Image](elements/img.md "Block Builder – Image – Maintainable JavaScript Code for Slack Block Kit")
   * [Number Input](elements/number-input.md "Block Builder – Number Input – Maintainable JavaScript Code for Slack Block Kit")
   * [Overflow Menu](elements/overflow-menu.md "Block Builder – Overflow Menu – Maintainable JavaScript Code for Slack Block Kit")

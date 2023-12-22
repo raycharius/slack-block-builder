@@ -15,6 +15,10 @@ export default (type: string, capitalize = false): string => {
     return 'Date';
   }
 
+  if (type === 'string[]') {
+    return 'String[]';
+  }
+
   if (type === 'boolean') {
     return 'boolean';
   }
