@@ -11,6 +11,7 @@ import { DateTimePickerBuilder, DateTimePickerParams } from './date-time-picker'
 import { EmailInputBuilder, EmailInputParams } from './email-input';
 import { ExternalMultiSelectBuilder, ExternalMultiSelectParams } from './external-multi-select';
 import { ExternalSelectBuilder, ExternalSelectParams } from './external-select';
+import { FileInputBuilder, FileInputParams } from './file-input';
 import { ImgBuilder, ImgParams } from './img';
 import { NumberInputBuilder, NumberInputParams } from './number-input';
 import { OverflowMenuBuilder, OverflowMenuParams } from './overflow-menu';
@@ -22,7 +23,6 @@ import { TimePickerBuilder, TimePickerParams } from './timepicker';
 import { URLInputBuilder, URLInputParams } from './url-input';
 import { UserMultiSelectBuilder, UserMultiSelectParams } from './user-multi-select';
 import { UserSelectBuilder, UserSelectParams } from './user-select';
-import { FileInputBuilder, FileInputParams } from './file-input';
 
 export type {
   ButtonBuilder,
@@ -312,6 +312,7 @@ export function StaticSelect(params?: StaticSelectParams): StaticSelectBuilder {
  * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads.
  * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
  * @param {string} [params.initialValue] Sets the default text entered into the text input at modal render.
+ * @param {boolean} [params.multiline] Sets wether the input will be a single line or a larger text area.
  * @param {int} [params.minLength] Sets a minimum character count in order for the user to submit the form.
  * @param {int} [params.maxLength] Sets a maximum character count allowed to send the form.
  *
