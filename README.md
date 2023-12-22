@@ -148,6 +148,7 @@ Below is a list of supported objects and how to access them in **Block Builder**
 | Date Picker        | Element            | :white_check_mark:             | `Elements.DatePicker()`
 | Date Time Picker   | Element            | :white_check_mark:             | `Elements.DateTimePicker()`
 | Email Input        | Element            | :white_check_mark:             | `Elements.EmailInput()`
+| File Input         | Element            | :white_check_mark:             | `Elements.FileInput()`
 | Time Picker        | Element            | :white_check_mark:             | `Elements.TimePicker()`           
 | Image              | Element            | :white_check_mark:             | `Elements.Img()`       
 | Number Input       | Element            | :white_check_mark:             | `Elements.NumberInput()`
