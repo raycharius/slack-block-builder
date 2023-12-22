@@ -87,6 +87,7 @@ export enum Param {
   maxValue = 'max_value',
   maxFiles = 'max_files',
   filetypes = 'filetypes',
+  source = 'source',
 }
 
 export class SlackDto implements ObjectLiteral {

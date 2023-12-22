@@ -17,8 +17,8 @@ export interface AccordionActionIdParams {
 export type AccordionActionIdFn = StringReturnableFn<AccordionActionIdParams>;
 export type AccordionTitleTextFn<T> = StringReturnableFn<{ item: T }>;
 export type AccordionBuilderFn<T> = BlockBuilderReturnableFn<{ item: T }>;
-
 export type AccordionIsExpandableFn<T> = (item: T) => boolean;
+
 export interface AccordionUIComponentParams<T> {
   items: T[];
   paginator: AccordionStateManager;

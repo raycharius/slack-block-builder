@@ -27,6 +27,8 @@ Each instance of the `TextInputBuilder` object has chainable setter methods for 
 
 `initialValue` – *String*
 
+`multiline` – *boolean*
+
 `maxLength` – *Int*
 
 `minLength` – *Int*

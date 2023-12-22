@@ -312,7 +312,7 @@ export function StaticSelect(params?: StaticSelectParams): StaticSelectBuilder {
  * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads.
  * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
  * @param {string} [params.initialValue] Sets the default text entered into the text input at modal render.
- * @param {boolean} [params.multiline] Sets wether the input will be a single line or a larger text area.
+ * @param {boolean} [params.multiline] Sets whether the input will be a single line or a larger text area.
  * @param {int} [params.minLength] Sets a minimum character count in order for the user to submit the form.
  * @param {int} [params.maxLength] Sets a maximum character count allowed to send the form.
  *
