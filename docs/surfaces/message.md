@@ -33,6 +33,10 @@ Each instance of the `MessageBuilder` object has chainable setter methods for th
 
 `ts` – *String*
 
+`unfurlLinks` - *Boolean*
+
+`unfurlMedia` - *Boolean*
+
 
 ?> **Note:** For an explanation of any one of the parameters, see its corresponding setter method below.
 

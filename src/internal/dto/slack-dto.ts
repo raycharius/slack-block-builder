@@ -66,6 +66,8 @@ export enum Param {
   deleteOriginal = 'delete_original',
   responseType = 'response_type',
   postAt = 'post_at',
+  unfurlLinks = 'unfurl_links',
+  unfurlMedia = 'unfurl_media',
   color = 'color',
   fallback = 'fallback',
   attachments = 'attachments',
