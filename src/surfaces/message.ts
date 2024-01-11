@@ -21,6 +21,8 @@ import {
   GetBlocks,
   GetPreviewUrl,
   PrintPreviewUrl,
+  UnfurlLinks,
+  UnfurlMedia,
 } from '../internal/methods';
 
 import type { SlackBlockDto, SlackDto } from '../internal/dto';
@@ -32,6 +34,8 @@ export interface MessageParams {
   text?: string;
   threadTs?: string;
   ts?: string;
+  unfurlLinks?: boolean;
+  unfurlMedia?: boolean;
 }
 
 export interface MessageBuilder extends AsUser,
@@ -47,6 +51,8 @@ export interface MessageBuilder extends AsUser,
   Text,
   ThreadTs,
   Ts,
+  UnfurlLinks,
+  UnfurlMedia,
   BuildToJSON,
   BuildToObject<SlackMessageDto>,
   GetAttachments,
@@ -85,6 +91,8 @@ applyMixins(MessageBuilder, [
   Text,
   ThreadTs,
   Ts,
+  UnfurlLinks,
+  UnfurlMedia,
   BuildToJSON,
   BuildToObject,
   GetAttachments,

@@ -561,6 +561,32 @@ export abstract class PostAt extends Builder {
   }
 }
 
+export abstract class UnfurlLinks extends Builder {
+  /**
+   * @description Enables (or disables) unfurling of primarily text-based content.
+   *
+   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
+   */
+
+  public unfurlLinks(unfurlLinks: Settable<boolean>): this {
+    return this.set(unfurlLinks, Prop.UnfurlLinks);
+  }
+}
+
+export abstract class UnfurlMedia extends Builder {
+  /**
+   * @description Enables (or disables) unfurling of primarily text-based content.
+   *
+   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
+   */
+
+  public unfurlMedia(unfurlMedia: Settable<boolean>): this {
+    return this.set(unfurlMedia, Prop.UnfurlLinks);
+  }
+}
+
 export abstract class PrivateMetaData extends Builder {
   /**
    * @description Defines a string sent back to your server with view and interaction payloads.

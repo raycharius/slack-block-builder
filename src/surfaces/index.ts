@@ -39,6 +39,8 @@ export function HomeTab(params?: HomeTabParams): HomeTabBuilder {
  * @param {string} [params.text] Text to be displayed in the notification on the Message, or in the body, if there are no Blocks available.
  * @param {timestamp} [params.threadTs] Sets the message to be a reply in a thread to the message whose timestamp is passed.
  * @param {timestamp} [params.postAt] Sets a time for the message to be posted, as a scheduled message.
+ * @param {boolean} [params.unfurlLinks] Sets whether Slack should unfurl links in the Message.
+ * @param {boolean} [params.unfurlMedia] Sets whether Slack should unfurl media in the Message.
  *
  * {@link https://api.slack.com/messaging/composing|View in Slack API Documentation}
  */

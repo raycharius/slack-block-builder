@@ -64,6 +64,8 @@ export enum Prop {
   DeleteOriginal = 'deleteOriginal',
   ResponseType = 'responseType',
   PostAt = 'postAt',
+  UnfurlLinks = 'unfurlLinks',
+  UnfurlLinks = 'unfurlMedia',
   Ephemeral = 'ephemeral',
   InChannel = 'inChannel',
   Ts = 'ts',
@@ -89,4 +91,5 @@ export enum Prop {
   VideoUrl = 'videoUrl',
   MaxFiles = 'maxFiles',
   Filetypes = 'filetypes',
+
 }
