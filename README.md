@@ -118,7 +118,7 @@ import { Modal, Section, bold, link } from 'slack-block-builder';
 
 `Elements` – UI elements that are used to capture user interaction.
 
-`Bits` – These are composition objects and other bits and pieces from Slack's docs. Included are `Attachment`, `Options`, `OptionGroup`, and `ConfirmationDialog`. They felt like they were deserving of their own category.
+`Bits` – These are composition objects and other bits and pieces from Slack's docs. Included are `Attachment`, `Options`, `OptionGroup`,`ConfirmationDialog`, and `Workflow`. They felt like they were deserving of their own category.
 
 `Utilities` – A group of utility functions. See [Utility Functions](#utility-functions).
 
@@ -158,9 +158,11 @@ Below is a list of supported objects and how to access them in **Block Builder**
 | Select Menus       | Element            | :white_check_mark:             | `Elements.[Type]Select()`          
 | Multi-Select Menus | Element            | :white_check_mark:             | `Elements.[Type]MultiSelect()`
 | URL Input          | Element            | :white_check_mark:             | `Elements.NumberInput()`
+| Workflow Button    | Element            | :white_check_mark:             | `Elements.WorkflowButton()`
 | Option             | Composition Object | :white_check_mark:             | `Bits.Option()`                   
 | Confirm Dialog     | Composition Object | :white_check_mark:             | `Bits.ConfirmationDialog()`       
 | Option Group       | Composition Object | :white_check_mark:             | `Bits.OptionGroup()`
+| Workflow           | Composition Object | :white_check_mark:             | `Bits.Workflow()`
 | Attachment         | Legacy Feature     | :white_check_mark:             | `Bits.Attachment()`              
 
 ### Creating a Simple Interactive Message

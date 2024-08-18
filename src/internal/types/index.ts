@@ -18,6 +18,7 @@ import type {
   TimePickerBuilder,
   UserMultiSelectBuilder,
   UserSelectBuilder,
+  WorkflowButtonBuilder,
 } from '../../elements';
 import type {
   ActionsBuilder,
@@ -44,7 +45,8 @@ export type ActionsElementBuilder =
   | RadioButtonsBuilder
   | StaticSelectBuilder
   | TimePickerBuilder
-  | UserSelectBuilder;
+  | UserSelectBuilder
+  | WorkflowButtonBuilder;
 
 export type SectionElementBuilder =
   ButtonBuilder
@@ -63,7 +65,8 @@ export type SectionElementBuilder =
   | StaticSelectBuilder
   | TimePickerBuilder
   | UserMultiSelectBuilder
-  | UserSelectBuilder;
+  | UserSelectBuilder
+  | WorkflowButtonBuilder;
 
 export type InputElementBuilder =
   | ChannelMultiSelectBuilder

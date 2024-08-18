@@ -60,6 +60,7 @@
   * [URL Input](elements/url-input.md "Block Builder – URL Input – Maintainable JavaScript Code for Slack Block Kit")
   * [User Multi-Select](elements/user-multi-select.md "Block Builder – User Multi-Select – Maintainable JavaScript Code for Slack Block Kit")
   * [User Select](elements/user-select.md "Block Builder – User Select – Maintainable JavaScript Code for Slack Block Kit")
+  * [Workflow Button](elements/workflow-button.md "Block Builder – Workflow Button – Maintainable JavaScript Code for Slack Block Kit")
   
 * **Bit References**
   * [Introduction](bits/introduction.md "Block Builder – Bits – Introduction – Maintainable JavaScript Code for Slack Block Kit")
@@ -67,6 +68,7 @@
   * [Confirmation Dialog](bits/confirmation-dialog.md "Block Builder – Confirmation Dialog – Maintainable JavaScript Code for Slack Block Kit")
   * [Option](bits/option.md "Block Builder – Option – Maintainable JavaScript Code for Slack Block Kit")
   * [Option Group](bits/option-group.md "Block Builder – Option Group – Maintainable JavaScript Code for Slack Block Kit")
+  * [Workflow](bits/workflow.md "Block Builder – Workflow – Maintainable JavaScript Code for Slack Block Kit")
 
 * **Component References**
   * [Paginator](components/paginator.md "Block Builder – Paginator – Maintainable JavaScript Code for Slack Block Kit")

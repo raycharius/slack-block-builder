@@ -2,7 +2,7 @@
 
 This is the one category of objects that differs from those laid out in the [Slack Block Kit](https://api.slack.com/block-kit) documentation.     
 
-The `Bits` object in **Block Builder** contains various bits and pieces from the Slack Block Kit documentation. More specifically, **Attachment**, **Options**, **Option Groups**, and **Confirmation Dialogs**.    
+The `Bits` object in **Block Builder** contains various bits and pieces from the Slack Block Kit documentation. More specifically, **Attachment**, **Options**, **Option Groups**, **Confirmation Dialogs**, and **Workflow**.    
 
 ### Accessing Bits in Block Builder
 

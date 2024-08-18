@@ -5,6 +5,7 @@ import {
   FilterObject,
   FilterParams,
   DispatchActionsConfigurationObject,
+  TriggerParams,
 } from '../objects';
 
 import type {
@@ -12,7 +13,7 @@ import type {
   ContextElement,
   Undefinable,
 } from '../types';
-import type { SlackElementDto } from '../dto';
+import { SlackDto, type SlackElementDto } from '../dto';
 
 const defaultParams = {
   isMarkdown: false,
@@ -84,4 +85,17 @@ export function getDispatchActionsConfigurationObject(
   return valuesOrUndefined([onEnterPressed, onCharacterEntered])
     && new DispatchActionsConfigurationObject([onEnterPressed, onCharacterEntered]
       .filter(Boolean));
+}
+
+export function getTriggerObject(trigger: TriggerParams): Undefinable<SlackDto> {
+  return valueOrUndefined(trigger) && new SlackDto({
+    url: trigger.url,
+    customizableInputParameters:
+    trigger.customizableInputParameters === undefined
+      ? undefined
+      : Object.keys(trigger.customizableInputParameters).map((paramName) => ({
+        name: paramName,
+        value: trigger.customizableInputParameters[paramName],
+      })),
+  });
 }

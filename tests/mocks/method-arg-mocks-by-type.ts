@@ -31,4 +31,6 @@ export const methodArgMocksByType = {
   falseBool: false,
   onEnterPressed: 'on_enter_pressed',
   onCharacterEntered: 'on_character_entered',
+  trigger: { url: 'string', customizableInputParameters: { parameter: 'string' } },
+  workflow: bitMocks.Workflow.mock,
 };

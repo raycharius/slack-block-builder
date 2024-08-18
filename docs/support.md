@@ -34,8 +34,10 @@ Below is a list of supported components and how to access them in **Block Builde
 | Select Menus        | Element            | **Yes**             | `Elements.[Type]Select()`      | 
 | Multi-Select Menus  | Element            | **Yes**             | `Elements.[Type]MultiSelect()` |
 | URL Input           | Element            | **Yes**             | `Elements.URLInput()`          | [View Docs](/elements/url-input.md)
+| Workflow Button     | Element            | **Yes**             | `Elements.WorkflowButton()`          | [View Docs](/elements/workflow-button.md)
 | Attachment          | Legacy Feature     | **Yes**             | `Bits.Attachment()`            | [View Docs](/bits/attachment.md)
 | Confirmation Dialog | Composition Object | **Yes**             | `Bits.ConfirmationDialog()`    | [View Docs](/bits/confirmation-dialog.md)
 | Option              | Composition Object | **Yes**             | `Bits.Option()`                | [View Docs](/bits/option.md)
 | Option Group        | Composition Object | **Yes**             | `Bits.OptionGroup()`           | [View Docs](/bits/option-group.md)
+| Workflow            | Composition Object | **Yes**             | `Bits.Workflow()`           | [View Docs](/bits/workflow.md)
 

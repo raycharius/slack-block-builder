@@ -88,6 +88,9 @@ export enum Param {
   maxFiles = 'max_files',
   filetypes = 'filetypes',
   source = 'source',
+  workflow = 'workflow',
+  trigger = 'trigger',
+  customizableInputParameters = 'customizable_input_parameters',
 }
 
 export class SlackDto implements ObjectLiteral {

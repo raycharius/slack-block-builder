@@ -21,3 +21,4 @@ export * as URLInput from './url-input.mock';
 export * as UserMultiSelect from './user-multiselect.mock';
 export * as UserSelect from './user-select.mock';
 export * as FileInput from './file-input.mock';
+export * as WorkflowButton from './workflow-button.mock';

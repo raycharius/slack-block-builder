@@ -4,6 +4,7 @@ import { AttachmentBuilder, AttachmentParams } from './attachment';
 import { ConfirmationDialogBuilder, ConfirmationDialogParams } from './confirmation-dialog';
 import { OptionBuilder, OptionParams } from './option';
 import { OptionGroupBuilder, OptionGroupParams } from './option-group';
+import { WorkflowBuilder, WorkflowParams } from './workflow';
 
 export type {
   AttachmentBuilder,
@@ -14,6 +15,8 @@ export type {
   OptionParams,
   OptionGroupBuilder,
   OptionGroupParams,
+  WorkflowBuilder,
+  WorkflowParams,
 };
 
 /**
@@ -70,11 +73,23 @@ export function OptionGroup(params?: OptionGroupParams): OptionGroupBuilder {
   return new OptionGroupBuilder(params);
 }
 
+/**
+ * @param {Object} [params] Parameters passed to the constructor.
+ * @param {string} [params.trigger] Sets the trigger object that contains information about a workflow's trigger.
+ *
+ * {@link https://api.slack.com/reference/block-kit/composition-objects#workflow|View in Slack API Documentation}
+ */
+
+export function Workflow(params?: WorkflowParams): WorkflowBuilder {
+  return new WorkflowBuilder(params);
+}
+
 const bits = {
   Attachment,
   ConfirmationDialog,
   Option,
   OptionGroup,
+  Workflow,
 };
 
 // Strange export. I know. For IDE highlighting purposes.

@@ -5,7 +5,8 @@ import { Builder } from '../lib';
 import { Prop } from '../constants';
 
 import type { SectionElementBuilder, Settable } from '../types';
-import type { OptionBuilder } from '../../bits';
+import type { OptionBuilder, WorkflowBuilder } from '../../bits';
+import type { TriggerObject } from '../objects';
 
 export abstract class AccessibilityLabel extends Builder {
   /**
@@ -799,5 +800,38 @@ export abstract class Filetypes extends Builder {
 
   public filetypes(filetypes:Settable<string[]> = []): this {
     return this.set(filetypes.flat(), Prop.Filetypes);
+  }
+}
+
+export abstract class Workflow extends Builder {
+  /**
+   * @description Sets a workflow object that contains details about the workflow that will run when the button is clicked.
+   *
+   * **Slack Validation Rules and Tips:**
+   *    * **Required** ⚠
+   *
+   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
+   */
+
+  public workflow(workflow: Settable<WorkflowBuilder>): this {
+    return this.set(workflow, Prop.Workflow);
+  }
+}
+
+export abstract class Trigger extends Builder {
+  /**
+   * @description A trigger object that contains information about a workflow's trigger.
+   *
+   * **Slack Validation Rules and Tips:**
+   *    * **Required** ⚠
+   *    * Must be associated with a valid trigger.
+   *
+   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
+   */
+
+  public trigger(trigger: Settable<TriggerObject>): this {
+    return this.set(trigger, Prop.Trigger);
   }
 }

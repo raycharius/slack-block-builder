@@ -22,4 +22,5 @@ export enum ElementType {
   EmailInput = 'email_text_input',
   NumberInput = 'number_input',
   FileInput = 'file_input',
+  WorkflowButton = 'workflow_button',
 }

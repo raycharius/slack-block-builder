@@ -89,4 +89,7 @@ export enum Prop {
   VideoUrl = 'videoUrl',
   MaxFiles = 'maxFiles',
   Filetypes = 'filetypes',
+  Workflow = 'workflow',
+  Trigger = 'trigger',
+  CustomizableInputParameters = 'customizableInputParameters',
 }

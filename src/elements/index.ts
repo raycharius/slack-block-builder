@@ -23,6 +23,7 @@ import { TimePickerBuilder, TimePickerParams } from './timepicker';
 import { URLInputBuilder, URLInputParams } from './url-input';
 import { UserMultiSelectBuilder, UserMultiSelectParams } from './user-multi-select';
 import { UserSelectBuilder, UserSelectParams } from './user-select';
+import { WorkflowButtonBuilder, WorkflowButtonParams } from './workflow-button';
 
 export type {
   ButtonBuilder,
@@ -71,6 +72,8 @@ export type {
   UserSelectParams,
   FileInputBuilder,
   FileInputParams,
+  WorkflowButtonBuilder,
+  WorkflowButtonParams,
 };
 
 /**
@@ -375,6 +378,20 @@ export function UserSelect(params?: UserSelectParams): UserSelectBuilder {
   return new UserSelectBuilder(params);
 }
 
+/**
+ * @param {Object} [params] Parameters passed to the constructor.
+ * @param {string} [params.accessibilityLabel] Sets a longer descriptive text that will be read out by screen readers instead of the button text object.
+ * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads.
+ * @param {string} [params.text] Sets the display text for the button.
+ * @param {string} [params.trigger] Sets a trigger object that contains information about a workflow's trigger.
+ *
+ * {@link https://api.slack.com/reference/block-kit/block-elements#workflow_button|View in Slack API Documentation}
+ */
+
+export function WorkflowButton(params?: WorkflowButtonParams): WorkflowButtonBuilder {
+  return new WorkflowButtonBuilder(params);
+}
+
 const elements = {
   Button,
   ChannelMultiSelect,
@@ -399,6 +416,7 @@ const elements = {
   UserMultiSelect,
   UserSelect,
   FileInput,
+  WorkflowButton,
 };
 
 // Strange export. I know. For IDE highlighting purposes.

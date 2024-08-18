@@ -35,6 +35,10 @@ export default (type: string, capitalize = false): string => {
     return type.replace('Builder', '');
   }
 
+  if (type === 'TriggerObject') {
+    return 'TriggerObject';
+  }
+
   if (type === 'T') {
     return 'T'; // Means it is a generic and should be replaced when class mapped with methods
   }

@@ -87,4 +87,6 @@ export const methodArgMocks = {
   videoUrl: methodArgMocksByType.string,
   maxFiles: methodArgMocksByType.int,
   filetypes: methodArgMocksByType.arrayStrings,
+  trigger: methodArgMocksByType.trigger,
+  workflow: methodArgMocksByType.workflow,
 };
