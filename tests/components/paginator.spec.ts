@@ -19,7 +19,7 @@ const getModalString = (blocks: BlockBuilder[]): string => Modal({ title: 'Testi
   .buildToJSON();
 
 describe('Testing Paginator:', () => {
-  test('Creating a paginator with the default parameters creates the correct UI and callback data.', () => {
+  test('Creating a paginator with the default parameters creates the correct UI and callback data for the first page.', () => {
     const items = [humans[0], humans[1], humans[2], humans[3], humans[4]];
     const result = getModalString(Paginator<Human>({
       items,
@@ -190,14 +190,6 @@ describe('Testing Paginator:', () => {
         },
         {
           elements: [
-            {
-              text: {
-                type: 'plain_text',
-                text: 'Previous',
-              },
-              action_id: '{"buttonId":"previous","totalItems":20,"perPage":5,"totalPages":4,"offset":15,"page":4}',
-              type: 'button',
-            },
             {
               text: {
                 type: 'plain_text',
@@ -409,7 +401,7 @@ describe('Testing Paginator:', () => {
     }));
   });
 
-  test('Creating a paginator with the default parameters creates the correct UI and callback data.', () => {
+  test('Creating a paginator on the last page creates the correct UI and callback data.', () => {
     const items = [humans[15], humans[16], humans[17], humans[18], humans[19]];
     const result = getModalString(Paginator({
       items,
@@ -589,14 +581,6 @@ describe('Testing Paginator:', () => {
                 text: 'TEST BACKWARD',
               },
               action_id: '{"buttonId":"previous","totalItems":20,"perPage":5,"totalPages":4,"offset":10,"page":3}',
-              type: 'button',
-            },
-            {
-              text: {
-                type: 'plain_text',
-                text: 'TEST FORWARD',
-              },
-              action_id: '{"buttonId":"next","totalItems":20,"perPage":5,"totalPages":4,"offset":0,"page":1}',
               type: 'button',
             },
           ],
@@ -789,14 +773,6 @@ describe('Testing Paginator:', () => {
         },
         {
           elements: [
-            {
-              text: {
-                type: 'plain_text',
-                text: 'Previous',
-              },
-              action_id: '{"buttonId":"previous","totalItems":20,"perPage":5,"totalPages":4,"offset":15,"page":4}',
-              type: 'button',
-            },
             {
               text: {
                 type: 'plain_text',

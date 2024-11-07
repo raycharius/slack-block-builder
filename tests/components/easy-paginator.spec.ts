@@ -15,7 +15,7 @@ const getModalString = (blocks: BlockBuilder[]): string => Modal({ title: 'Testi
   .buildToJSON();
 
 describe('Testing Easy Paginator:', () => {
-  test('Creating a paginator with the default parameters creates the correct UI and callback data.', () => {
+  test('Creating a paginator with the default parameters creates the correct UI and callback data for the first page.', () => {
     const result = getModalString(EasyPaginator<Human>({
       page: 1,
       perPage: 5,
@@ -184,14 +184,6 @@ describe('Testing Easy Paginator:', () => {
         },
         {
           elements: [
-            {
-              text: {
-                type: 'plain_text',
-                text: 'Previous',
-              },
-              action_id: '{"buttonId":"previous","totalItems":20,"perPage":5,"totalPages":4,"offset":15,"page":4}',
-              type: 'button',
-            },
             {
               text: {
                 type: 'plain_text',
@@ -401,7 +393,7 @@ describe('Testing Easy Paginator:', () => {
     }));
   });
 
-  test('Creating a paginator with the default parameters creates the correct UI and callback data.', () => {
+  test('Creating a paginator with the default parameters creates the correct UI and callback data for the last page.', () => {
     const result = getModalString(EasyPaginator({
       items: humans,
       page: 4,
@@ -579,14 +571,6 @@ describe('Testing Easy Paginator:', () => {
                 text: 'TEST BACKWARD',
               },
               action_id: '{"buttonId":"previous","totalItems":20,"perPage":5,"totalPages":4,"offset":10,"page":3}',
-              type: 'button',
-            },
-            {
-              text: {
-                type: 'plain_text',
-                text: 'TEST FORWARD',
-              },
-              action_id: '{"buttonId":"next","totalItems":20,"perPage":5,"totalPages":4,"offset":0,"page":1}',
               type: 'button',
             },
           ],
