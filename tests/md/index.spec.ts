@@ -107,4 +107,28 @@ describe('Testing Md Helper Class:', () => {
     expect(Md.emoji('grin')).toEqual(':grin:');
     expect(emoji('grin')).toEqual(':grin:');
   });
+  
+  test('Check Md.date() pads timestamp to 10 digits', () => {
+      expect(Md.date(123456789, '{date_short}', 'Fallback')).toEqual(
+        '<!date^0123456789^{date_short}|Fallback>'
+      );
+    });
+  
+    test('Check Md.date() throws error for negative timestamp', () => {
+      expect(() => Md.date(-1, '{date_short}', 'Fallback')).toThrow(
+        /Invalid timestamp/
+      );
+    });
+  
+    test('Check Md.date() throws error for timestamp > 9999999999', () => {
+      expect(() => Md.date(10000000000, '{date_short}', 'Fallback')).toThrow(
+        /Invalid timestamp/
+      );
+    });
+
+    test('Check Md.date() supports optional link', () => {
+          expect(Md.date(123456789, '{date_short}', 'Fallback', 'https://www.example.com')).toEqual(
+            '<!date^0123456789^{date_short}^https://www.example.com|Fallback>'
+      );
+    });
 });
