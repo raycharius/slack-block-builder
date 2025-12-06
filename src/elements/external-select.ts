@@ -31,7 +31,7 @@ export interface ExternalSelectBuilder extends ActionId,
 }
 
 /**
- * @@link https://api.slack.com/reference/block-kit/block-elements#external_select
+ * @@link https://docs.slack.dev/reference/block-kit/block-elements/select-menu-element#external_select
  * @@displayName External Select
  */
 

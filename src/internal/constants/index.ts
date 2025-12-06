@@ -10,3 +10,4 @@ export * from './paginator-button-id';
 export * from './props';
 export * from './response-types';
 export * from './surface-types';
+export * from './rich-text-element-types';

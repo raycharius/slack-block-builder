@@ -44,7 +44,7 @@ export interface ConversationMultiSelectBuilder extends ActionId,
 }
 
 /**
- * @@link https://api.slack.com/reference/block-kit/block-elements#conversation_multi_select
+ * @@link https://docs.slack.dev/reference/block-kit/block-elements/multi-select-menu-element#conversation_multi_select
  * @@displayName Conversation Multi-Select
  */
 

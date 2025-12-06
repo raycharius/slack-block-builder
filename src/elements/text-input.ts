@@ -37,7 +37,7 @@ export interface TextInputBuilder extends ActionId,
 }
 
 /**
- * @@link https://api.slack.com/reference/block-kit/block-elements#input
+ * @@link https://docs.slack.dev/reference/block-kit/block-elements/plain-text-input-element
  * @@displayName Plain-Text Input
  */
 

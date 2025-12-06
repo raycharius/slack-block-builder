@@ -21,7 +21,7 @@ export interface ActionsBuilder extends BlockId,
 }
 
 /**
- * @@link https://api.slack.com/reference/block-kit/blocks#actions
+ * @@link https://docs.slack.dev/reference/block-kit/blocks/actions-block
  * @@displayName Actions
  */
 

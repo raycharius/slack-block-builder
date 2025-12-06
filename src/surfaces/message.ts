@@ -56,7 +56,7 @@ export interface MessageBuilder extends AsUser,
 }
 
 /**
- * @@link https://api.slack.com/messaging/composing
+ * @@link https://docs.slack.dev/messaging/composing
  * @@displayName Message
  */
 

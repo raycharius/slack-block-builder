@@ -19,7 +19,7 @@ export interface HeaderBuilder extends BlockId,
 }
 
 /**
- * @@link https://api.slack.com/reference/block-kit/blocks#header
+ * @@link https://docs.slack.dev/reference/block-kit/blocks/header-block
  * @@displayName Header
  */
 

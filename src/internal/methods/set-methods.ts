@@ -14,7 +14,7 @@ export abstract class AccessibilityLabel extends Builder {
    * **Slack Validation Rules and Tips:**
    *    * Maximum of 75 characters.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -31,7 +31,7 @@ export abstract class Accessory extends Builder {
    *    * Maximum of 1 element.
    *    * Can be any one of the elements.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -49,7 +49,7 @@ export abstract class ActionId extends Builder {
    *    * Each element in a view or message must have its own unique action ID.
    *    * Maximum of 255 characters.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -68,7 +68,7 @@ export abstract class AltText extends Builder {
    *    * Maximum of 2000 characters.
    *
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -85,7 +85,7 @@ export abstract class AuthorName extends Builder {
    *    * Maximum of 50 characters.
    *
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -103,7 +103,7 @@ export abstract class BlockId extends Builder {
    *    * Each block in a view or message must have its own unique action ID.
    *    * If the contents of a block is updated, the block ID should also be updated.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -120,7 +120,7 @@ export abstract class CallbackId extends Builder {
    *    * Maximum of 255 characters.
    *    * It is recommended that sensitive data not be stored in the callback ID. Instead, use the `privateMetaData()` method.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -133,7 +133,7 @@ export abstract class Channel extends Builder {
   /**
    * @description Sets the Slack channel ID to which the message will be sent via the API.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -149,7 +149,7 @@ export abstract class Close extends Builder {
    * **Slack Validation Rules and Tips:**
    *    * Maximum of 24 characters.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -162,7 +162,7 @@ export abstract class Color extends Builder {
   /**
    * @description Sets the color for the blockquote border to the left of the attachment.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -175,7 +175,7 @@ export abstract class Confirm<T> extends Builder {
   /**
    * @description For confirmation dialogs, sets the text of the button that confirms the action to which the confirmation dialog has been added. For elements, adds a confirmation dialog that is displayed when the user interacts with the element to confirm the selection or action.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -192,7 +192,7 @@ export abstract class Deny extends Builder {
    *    * **Required** ⚠
    *    * Maximum of 30 characters.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -208,7 +208,7 @@ export abstract class Description extends Builder {
    * **Slack Validation Rules and Tips:**
    *    * Maximum of 75 characters.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -226,7 +226,7 @@ export abstract class Element<T> extends Builder {
    *    * Maximum of 1 element.
    *    * Supports text inputs, select and multi-select menus, as well as date pickers and checkbox inputs.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -243,7 +243,7 @@ export abstract class ExternalId extends Builder {
    *    * Maximum of 255 characters.
    *    * When used, an external ID must be unique to a certain view.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -256,7 +256,7 @@ export abstract class Fallback extends Builder {
   /**
    * @description Sets the plain text summary of the attachment used in clients that can't display formatted text (eg. IRC, mobile notifications).
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -272,7 +272,7 @@ export abstract class Hint extends Builder {
    * **Slack Validation Rules and Tips:**
    *    * Maximum of 2000 characters.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -289,7 +289,7 @@ export abstract class ImageUrl extends Builder {
    *    * **Required** ⚠
    *    * Maximum of 2000 characters.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -302,7 +302,7 @@ export abstract class InitialChannel extends Builder {
   /**
    * @description Pre-populates the menu with a selected, default channel.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -315,7 +315,7 @@ export abstract class InitialConversation extends Builder {
   /**
    * @description Pre-populates the menu with a selected, default conversation.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -328,7 +328,7 @@ export abstract class InitialDate extends Builder {
   /**
    * @description Pre-populates the date picker with a selected, default date.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -341,7 +341,7 @@ export abstract class InitialDateTime extends Builder {
   /**
    * @description Pre-populates the date time picker with a selected, default date and time.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -357,7 +357,7 @@ export abstract class InitialOption extends Builder {
    * **Slack Validation Rules and Tips:**
    *    * Must be an exact match for one of the options in the menu.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -373,7 +373,7 @@ export abstract class InitialTime extends Builder {
    * **Slack Validation Rules and Tips:**
    *    * Set in HH:mm format, where HH is 24-hour hour format and mm is minutes with a leading zero.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -386,7 +386,7 @@ export abstract class InitialUser extends Builder {
   /**
    * @description Pre-populates the menu with a selected, default user.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -399,7 +399,7 @@ export abstract class InitialValue<T extends string | number> extends Builder {
   /**
    * @description Pre-populates the input with a default value.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -415,7 +415,7 @@ export abstract class IsDecimalAllowed extends Builder {
    * **Slack Validation Rules and Tips:**
    *    * **Required** ⚠
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -433,7 +433,7 @@ export abstract class Label extends Builder {
    *    * For input blocks, maximum of 2000 characters.
    *    * For option groups, maximum of 75 characters.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -446,7 +446,7 @@ export abstract class MaxLength extends Builder {
   /**
    * @description Sets a maximum character count allowed in the given text input.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -459,7 +459,7 @@ export abstract class MaxSelectedItems extends Builder {
   /**
    * @description Sets a limit to how many items the user can select in the multi-select menu.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -475,7 +475,7 @@ export abstract class MaxValue extends Builder {
    * **Slack Validation Rules and Tips:**
    *    * Cannot be less than the minimum value.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -491,7 +491,7 @@ export abstract class MinQueryLength extends Builder {
    * **Slack Validation Rules and Tips:**
    *    * If not set, the request will be sent on every character entered or removed.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -507,7 +507,7 @@ export abstract class MinLength extends Builder {
    * **Slack Validation Rules and Tips:**
    *    * Maximum 3000 characters.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -523,7 +523,7 @@ export abstract class MinValue extends Builder {
    * **Slack Validation Rules and Tips:**
    *    * Cannot be less than the maximum value.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -539,7 +539,7 @@ export abstract class Placeholder extends Builder {
    * **Slack Validation Rules and Tips:**
    *    * Maximum of 150 characters.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -552,7 +552,7 @@ export abstract class PostAt extends Builder {
   /**
    * @description Sets a time in the future for the message to be sent to the channel or user, as a scheduled message.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -569,7 +569,7 @@ export abstract class PrivateMetaData extends Builder {
    *    * Maximum 3000 characters.
    *    * Typically used to persist data or store context between views.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -582,7 +582,7 @@ export abstract class ProviderIconUrl extends Builder {
   /**
    * @description Icon for the video provider - ex. YouTube or Vimeo icon.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -595,7 +595,7 @@ export abstract class ProviderName extends Builder {
   /**
    * @description The originating application or domain of the video ex. YouTube or Vimeo.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -611,7 +611,7 @@ export abstract class Submit extends Builder {
    * **Slack Validation Rules and Tips:**
    *    * Maximum of 24 characters.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -631,7 +631,7 @@ export abstract class Text extends Builder {
    *    * For confirmation dialogs, maximum of 75 characters.
    *    * For section and header blocks, maximum of 3000 characters.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -644,7 +644,7 @@ export abstract class ThreadTs extends Builder {
   /**
    * @description Instructs the Slack API to send the message to the thread of the message associated with the timestamp.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -660,7 +660,7 @@ export abstract class ThumbnailUrl extends Builder {
    * **Slack Validation Rules and Tips:**
    *    * **Required property for Video blocks** ⚠
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -679,7 +679,7 @@ export abstract class Title extends Builder {
    *    * For images, maximum of 2000 characters.
    *    * For confirmation dialogs, maximum of 100 characters.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -696,7 +696,7 @@ export abstract class TitleUrl extends Builder {
    *    * Must correspond to the non-embeddable URL for the video.
    *    * Must go to an HTTPS URL.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -709,7 +709,7 @@ export abstract class Ts extends Builder {
   /**
    * @description Instructs the Slack API to use the message to replaced an existing message.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -726,7 +726,7 @@ export abstract class Url extends Builder {
    *    * Maximum of 3000 characters.
    *    * For options, it is only supported for options in an overflow menu.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -743,7 +743,7 @@ export abstract class Value extends Builder {
    *    * For buttons, maximum of 2000 characters.
    *    * For options, maximum of 75 characters.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -761,7 +761,7 @@ export abstract class VideoUrl extends Builder {
    *    * Must match any existing unfurl domains within the app.
    *    * Must point to an HTTPS URL.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -774,7 +774,7 @@ export abstract class MaxFiles extends Builder {
   /**
    * @description Maximum number of files that can be uploaded for this file_input element. Minimum of 1, maximum of 10. Defaults to 10 if not specified.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -793,7 +793,7 @@ export abstract class Filetypes extends Builder {
    *    * Maximum of 2000 characters for each field.
    *    * Markdown supported.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 

@@ -88,6 +88,20 @@ export enum Param {
   maxFiles = 'max_files',
   filetypes = 'filetypes',
   source = 'source',
+  rows = 'rows',
+  columnSettings = 'column_settings',
+  border = 'border',
+  indent = 'indent',
+  name = 'name',
+  unicode = 'unicode',
+  unsafe = 'unsafe',
+  format = 'format',
+  range = 'range',
+  teamId = 'team_id',
+  userId = 'user_id',
+  usergroupId = 'usergroup_id',
+  channelId = 'channel_id',
+  timestamp = 'timestamp',
 }
 
 export class SlackDto implements ObjectLiteral {

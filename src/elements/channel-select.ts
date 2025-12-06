@@ -31,7 +31,7 @@ export interface ChannelSelectBuilder extends ActionId,
 }
 
 /**
- * @@link https://api.slack.com/reference/block-kit/block-elements#channel_select
+ * @@link https://docs.slack.dev/reference/block-kit/block-elements/select-menu-element#channels_select
  * @@displayName Channel Select
  */
 

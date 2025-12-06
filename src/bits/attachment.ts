@@ -23,7 +23,7 @@ export interface AttachmentBuilder extends Blocks<BlockBuilder>,
 }
 
 /**
- * @@link https://api.slack.com/reference/messaging/attachments
+ * @@link https://docs.slack.dev/reference/messaging/attachments
  * @@displayName Attachment
  */
 

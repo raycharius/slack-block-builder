@@ -11,7 +11,7 @@ export abstract class Attachments extends Builder {
   /**
    * @description Adds attachments to your message.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -28,7 +28,7 @@ export abstract class Blocks<T> extends Builder {
    *    * **Required for modals, home tabs, and workflow steps** ⚠
    *    * Maximum of 100 blocks.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -46,7 +46,7 @@ export abstract class Elements<T> extends Builder {
    *    * Maximum of 5 elements.
    *    * Supported elements are buttons, select and overflow menus, and date pickers.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -65,7 +65,7 @@ export abstract class Fields extends Builder {
    *    * Maximum of 2000 characters for each field.
    *    * Markdown supported.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -81,7 +81,7 @@ export abstract class Filter extends Builder {
    * **Slack Validation Rules and Tips:**
    *    * Possible values are *im*, *impm*, *private*, and *public*.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -94,7 +94,7 @@ export abstract class InitialChannels extends Builder {
   /**
    * @description Pre-populates the menu with selected, default channels.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -107,7 +107,7 @@ export abstract class InitialConversations extends Builder {
   /**
    * @description Pre-populates the menu with selected, default conversations.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -123,7 +123,7 @@ export abstract class InitialOptions extends Builder {
    * **Slack Validation Rules and Tips:**
    *    * Must be exact matches to options in the menu.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -136,7 +136,7 @@ export abstract class InitialUsers extends Builder {
   /**
    * @description Pre-populates the menu with selected, default users.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -153,7 +153,7 @@ export abstract class OptionGroups extends Builder {
    *    * Maximum of 100 options.
    *    * Both options and options groups cannot be defined at the same time for any element.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 
@@ -171,7 +171,7 @@ export abstract class Options extends Builder {
    *    * Maximum of 100 options.
    *    * Both options and options groups cannot be defined at the same time for any element.
    *
-   * {@link https://api.slack.com/block-kit|Open Official Slack Block Kit Documentation}
+   * {@link https://docs.slack.dev/reference/block-kit|Open Official Slack Block Kit Documentation}
    * {@link https://www.blockbuilder.dev|Open Block Builder Documentation}
    */
 

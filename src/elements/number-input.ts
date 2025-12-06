@@ -42,7 +42,7 @@ export interface NumberInputBuilder extends ActionId,
 }
 
 /**
- * @@link https://api.slack.com/reference/block-kit/block-elements#number
+ * @@link https://docs.slack.dev/reference/block-kit/block-elements/number-input-element
  * @@displayName Email Input
  */
 

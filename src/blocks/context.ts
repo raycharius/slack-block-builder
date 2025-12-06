@@ -20,7 +20,7 @@ export interface ContextBuilder extends BlockId,
 }
 
 /**
- * @@link https://api.slack.com/reference/block-kit/blocks#context
+ * @@link https://docs.slack.dev/reference/block-kit/blocks/context-block
  * @@displayName Context
  */
 

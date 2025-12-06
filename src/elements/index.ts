@@ -23,6 +23,10 @@ import { TimePickerBuilder, TimePickerParams } from './timepicker';
 import { URLInputBuilder, URLInputParams } from './url-input';
 import { UserMultiSelectBuilder, UserMultiSelectParams } from './user-multi-select';
 import { UserSelectBuilder, UserSelectParams } from './user-select';
+import { WorkflowButtonBuilder, WorkflowButtonParams } from './workflow-button';
+import { IconButtonBuilder, IconButtonParams } from './icon-button';
+import { FeedbackButtonsBuilder, FeedbackButtonsParams } from './feedback-buttons';
+import { RichTextInputBuilder, RichTextInputParams } from './rich-text-input';
 
 export type {
   ButtonBuilder,
@@ -71,6 +75,14 @@ export type {
   UserSelectParams,
   FileInputBuilder,
   FileInputParams,
+  WorkflowButtonBuilder,
+  WorkflowButtonParams,
+  IconButtonBuilder,
+  IconButtonParams,
+  FeedbackButtonsBuilder,
+  FeedbackButtonsParams,
+  RichTextInputBuilder,
+  RichTextInputParams,
 };
 
 /**
@@ -85,7 +97,7 @@ export type {
  * @param {string} [params.url] Sets the URL to redirect the user to when this button is clicked.
  * @param {string} [params.value] Sets the value to be passed to your app when this button is clicked.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#button|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/button-element|View in Slack API Documentation}
  */
 
 export function Button(params?: ButtonParams): ButtonBuilder {
@@ -98,7 +110,7 @@ export function Button(params?: ButtonParams): ButtonBuilder {
  * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
  * @param {int} [params.maxSelectedItems] Sets a limit to how many items the user can select.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#channel_multi_select|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/multi-select-menu-element#channel_multi_select|View in Slack API Documentation}
  */
 
 export function ChannelMultiSelect(params?: ChannelMultiSelectParams): ChannelMultiSelectBuilder {
@@ -111,7 +123,7 @@ export function ChannelMultiSelect(params?: ChannelMultiSelectParams): ChannelMu
  * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
  * @param {string} [params.initialChannel] Sets the default selected item in the menu.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#channel_select|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/select-menu-element#channels_select|View in Slack API Documentation}
  */
 
 export function ChannelSelect(params?: ChannelSelectParams): ChannelSelectBuilder {
@@ -122,7 +134,7 @@ export function ChannelSelect(params?: ChannelSelectParams): ChannelSelectBuilde
  * @param {Object} [params] Parameters passed to the constructor.
  * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#checkboxes|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/checkboxes-element|View in Slack API Documentation}
  */
 
 export function Checkboxes(params?: CheckboxesParams): CheckboxesBuilder {
@@ -135,7 +147,7 @@ export function Checkboxes(params?: CheckboxesParams): CheckboxesBuilder {
  * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
  * @param {int} [params.maxSelectedItems] Sets a limit to how many items the user can select.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#conversation_multi_select|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/multi-select-menu-element#conversation_multi_select|View in Slack API Documentation}
  */
 
 export function ConversationMultiSelect(params?: ConversationMultiSelectParams): ConversationMultiSelectBuilder {
@@ -148,7 +160,7 @@ export function ConversationMultiSelect(params?: ConversationMultiSelectParams):
  * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
  * @param {string} [params.initialConversation] Sets the default selected item in the menu.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#conversation_multi_select|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/select-menu-element#conversations_select|View in Slack API Documentation}
  */
 
 export function ConversationSelect(params?: ConversationSelectParams): ConversationSelectBuilder {
@@ -161,7 +173,7 @@ export function ConversationSelect(params?: ConversationSelectParams): Conversat
  * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
  * @param {string} [params.initialDate] Sets the default selected date in the menu.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#datepicker|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/date-picker-element|View in Slack API Documentation}
  */
 
 export function DatePicker(params?: DatePickerParams): DatePickerBuilder {
@@ -173,7 +185,7 @@ export function DatePicker(params?: DatePickerParams): DatePickerBuilder {
  * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads.
  * @param {string} [params.initialDateTime] Sets the default selected date and time for the date time picker.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#datetimepicker|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/datetime-picker-element|View in Slack API Documentation}
  */
 
 export function DateTimePicker(params?: DateTimePickerParams): DateTimePickerBuilder {
@@ -186,7 +198,7 @@ export function DateTimePicker(params?: DateTimePickerParams): DateTimePickerBui
  * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
  * @param {string} [params.initialValue] Sets the default email entered into the Email input at modal render.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#email|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/email-input-element|View in Slack API Documentation}
  */
 
 export function EmailInput(params?: EmailInputParams): EmailInputBuilder {
@@ -200,7 +212,7 @@ export function EmailInput(params?: EmailInputParams): EmailInputBuilder {
  * @param {int} [params.maxSelectedItems] Sets a limit to how many items the user can select.
  * @param {int} [params.minQueryLength] Sets a minimum number of characters types before querying your options URL.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#external_multi_select|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/multi-select-menu-element#external_multi_select|View in Slack API Documentation}
  */
 
 export function ExternalMultiSelect(params?: ExternalMultiSelectParams): ExternalMultiSelectBuilder {
@@ -213,7 +225,7 @@ export function ExternalMultiSelect(params?: ExternalMultiSelectParams): Externa
  * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
  * @param {int} [params.minQueryLength] Sets a minimum number of characters types before querying your options URL.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#external_select|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/select-menu-element#external_select|View in Slack API Documentation}
  */
 
 export function ExternalSelect(params?: ExternalSelectParams): ExternalSelectBuilder {
@@ -225,7 +237,7 @@ export function ExternalSelect(params?: ExternalSelectParams): ExternalSelectBui
  * @param {string} [params.imageUrl] Sets the source URL from which the image will be loaded.
  * @param {string} [params.altText] Sets the textual summary of the image.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#image|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/image-element|View in Slack API Documentation}
  */
 
 export function Img(params?: ImgParams): ImgBuilder {
@@ -237,7 +249,7 @@ export function Img(params?: ImgParams): ImgBuilder {
  * @param {string} [params.filetypes] Sets the accepted filetypes.
  * @param {string} [params.maxFiles] Sets the maximum number of files to upload.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#file_input|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/file-input-element|View in Slack API Documentation}
  */
 
 export function FileInput(params?: FileInputParams): FileInputBuilder {
@@ -253,7 +265,7 @@ export function FileInput(params?: FileInputParams): FileInputBuilder {
  * @param {int} [params.minValue] Sets a minimum value for the number input.
  * @param {int} [params.maxValue] Sets a maximum value for the number input.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#number|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/number-input-element|View in Slack API Documentation}
  */
 
 export function NumberInput(params?: NumberInputParams): NumberInputBuilder {
@@ -264,7 +276,7 @@ export function NumberInput(params?: NumberInputParams): NumberInputBuilder {
  * @param {Object} [params] Parameters passed to the constructor.
  * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#overflow|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/overflow-menu-element|View in Slack API Documentation}
  */
 
 export function OverflowMenu(params?: OverflowMenuParams): OverflowMenuBuilder {
@@ -275,7 +287,7 @@ export function OverflowMenu(params?: OverflowMenuParams): OverflowMenuBuilder {
  * @param {Object} [params] Parameters passed to the constructor.
  * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#radio|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/radio-button-group-element|View in Slack API Documentation}
  */
 
 export function RadioButtons(params?: RadioButtonsParams): RadioButtonsBuilder {
@@ -288,7 +300,7 @@ export function RadioButtons(params?: RadioButtonsParams): RadioButtonsBuilder {
  * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
  * @param {int} [params.maxSelectedItems] Sets a limit to how many items the user can select.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#static_multi_select|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/multi-select-menu-element#static_multi_select|View in Slack API Documentation}
  */
 
 export function StaticMultiSelect(params?: StaticMultiSelectParams): StaticMultiSelectBuilder {
@@ -300,7 +312,7 @@ export function StaticMultiSelect(params?: StaticMultiSelectParams): StaticMulti
  * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action in interaction payloads.
  * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#static_select|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/select-menu-element#static_select|View in Slack API Documentation}
  */
 
 export function StaticSelect(params?: StaticSelectParams): StaticSelectBuilder {
@@ -316,7 +328,7 @@ export function StaticSelect(params?: StaticSelectParams): StaticSelectBuilder {
  * @param {int} [params.minLength] Sets a minimum character count in order for the user to submit the form.
  * @param {int} [params.maxLength] Sets a maximum character count allowed to send the form.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#input|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/plain-text-input-element|View in Slack API Documentation}
  */
 
 export function TextInput(params?: TextInputParams): TextInputBuilder {
@@ -329,7 +341,7 @@ export function TextInput(params?: TextInputParams): TextInputBuilder {
  * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
  * @param {string} [params.initialTime] Sets the default selected time in the menu.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#timepicker|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/time-picker-element|View in Slack API Documentation}
  */
 
 export function TimePicker(params?: TimePickerParams): TimePickerBuilder {
@@ -342,7 +354,7 @@ export function TimePicker(params?: TimePickerParams): TimePickerBuilder {
  * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
  * @param {string} [params.initialValue] Sets the default URL entered into the URL input at modal render.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#url|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/url-input-element|View in Slack API Documentation}
  */
 
 export function URLInput(params?: URLInputParams): URLInputBuilder {
@@ -355,7 +367,7 @@ export function URLInput(params?: URLInputParams): URLInputBuilder {
  * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
  * @param {int} [params.maxSelectedItems] Sets a limit to how many items the user can select.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#users_multi_select|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/multi-select-menu-element#users_multi_select|View in Slack API Documentation}
  */
 
 export function UserMultiSelect(params?: UserMultiSelectParams): UserMultiSelectBuilder {
@@ -368,11 +380,59 @@ export function UserMultiSelect(params?: UserMultiSelectParams): UserMultiSelect
  * @param {string} [params.placeholder] Adds the text in place of the input before selected or interacted with.
  * @param {string} [params.initialUser] Setts the default selected user in the menu.
  *
- * {@link https://api.slack.com/reference/block-kit/block-elements#users_select|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/select-menu-element#users_select|View in Slack API Documentation}
  */
 
 export function UserSelect(params?: UserSelectParams): UserSelectBuilder {
   return new UserSelectBuilder(params);
+}
+
+/**
+ * @param {Object} [params] Parameters passed to the constructor.
+ * @param {string} [params.text] Sets the display text for the workflow button.
+ * @param {string} [params.accessibilityLabel] Sets accessibility label.
+ *
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/workflow-button-element|View in Slack API Documentation}
+ */
+
+export function WorkflowButton(params?: WorkflowButtonParams): WorkflowButtonBuilder {
+  return new WorkflowButtonBuilder(params);
+}
+
+/**
+ * @param {Object} [params] Parameters passed to the constructor.
+ * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action.
+ * @param {string} [params.icon] Sets the icon to display.
+ * @param {string} [params.text] Sets the text for the button.
+ *
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/icon-button-element|View in Slack API Documentation}
+ */
+
+export function IconButton(params?: IconButtonParams): IconButtonBuilder {
+  return new IconButtonBuilder(params);
+}
+
+/**
+ * @param {Object} [params] Parameters passed to the constructor.
+ * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action.
+ *
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/feedback-buttons-element|View in Slack API Documentation}
+ */
+
+export function FeedbackButtons(params?: FeedbackButtonsParams): FeedbackButtonsBuilder {
+  return new FeedbackButtonsBuilder(params);
+}
+
+/**
+ * @param {Object} [params] Parameters passed to the constructor.
+ * @param {string} [params.actionId] Sets a string to be an identifier for the source of an action.
+ * @param {string} [params.placeholder] Sets placeholder text.
+ *
+ * {@link https://docs.slack.dev/reference/block-kit/block-elements/rich-text-input-element|View in Slack API Documentation}
+ */
+
+export function RichTextInput(params?: RichTextInputParams): RichTextInputBuilder {
+  return new RichTextInputBuilder(params);
 }
 
 const elements = {
@@ -399,6 +459,10 @@ const elements = {
   UserMultiSelect,
   UserSelect,
   FileInput,
+  WorkflowButton,
+  IconButton,
+  FeedbackButtons,
+  RichTextInput,
 };
 
 // Strange export. I know. For IDE highlighting purposes.

@@ -8,4 +8,8 @@ export enum BlockType {
   Image = 'image',
   Header = 'header',
   Video = 'video',
+  RichText = 'rich_text',
+  Markdown = 'markdown',
+  Table = 'table',
+  ContextActions = 'context_actions',
 }

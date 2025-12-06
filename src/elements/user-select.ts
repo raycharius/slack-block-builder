@@ -28,7 +28,7 @@ export interface UserSelectBuilder extends ActionId,
 }
 
 /**
- * @@link https://api.slack.com/reference/block-kit/block-elements#users_select
+ * @@link https://docs.slack.dev/reference/block-kit/block-elements/select-menu-element#users_select
  * @@displayName User Select
  */
 

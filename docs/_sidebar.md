@@ -33,6 +33,10 @@
   * [Input](blocks/input.md "Block Builder – Input – Maintainable JavaScript Code for Slack Block Kit")
   * [Section](blocks/section.md "Block Builder – Section – Maintainable JavaScript Code for Slack Block Kit")
   * [Video](blocks/video.md "Block Builder – Video – Maintainable JavaScript Code for Slack Block Kit")
+  * [Rich Text](blocks/rich-text.md "Block Builder – Rich Text – Maintainable JavaScript Code for Slack Block Kit")
+  * [Markdown](blocks/markdown.md "Block Builder – Markdown – Maintainable JavaScript Code for Slack Block Kit")
+  * [Table](blocks/table.md "Block Builder – Table – Maintainable JavaScript Code for Slack Block Kit")
+  * [Context Actions](blocks/context-actions.md "Block Builder – Context Actions – Maintainable JavaScript Code for Slack Block Kit")
  
 
 * **Element References**
@@ -60,6 +64,10 @@
   * [URL Input](elements/url-input.md "Block Builder – URL Input – Maintainable JavaScript Code for Slack Block Kit")
   * [User Multi-Select](elements/user-multi-select.md "Block Builder – User Multi-Select – Maintainable JavaScript Code for Slack Block Kit")
   * [User Select](elements/user-select.md "Block Builder – User Select – Maintainable JavaScript Code for Slack Block Kit")
+  * [Workflow Button](elements/workflow-button.md "Block Builder – Workflow Button – Maintainable JavaScript Code for Slack Block Kit")
+  * [Icon Button](elements/icon-button.md "Block Builder – Icon Button – Maintainable JavaScript Code for Slack Block Kit")
+  * [Feedback Buttons](elements/feedback-buttons.md "Block Builder – Feedback Buttons – Maintainable JavaScript Code for Slack Block Kit")
+  * [Rich Text Input](elements/rich-text-input.md "Block Builder – Rich Text Input – Maintainable JavaScript Code for Slack Block Kit")
   
 * **Bit References**
   * [Introduction](bits/introduction.md "Block Builder – Bits – Introduction – Maintainable JavaScript Code for Slack Block Kit")
@@ -67,6 +75,20 @@
   * [Confirmation Dialog](bits/confirmation-dialog.md "Block Builder – Confirmation Dialog – Maintainable JavaScript Code for Slack Block Kit")
   * [Option](bits/option.md "Block Builder – Option – Maintainable JavaScript Code for Slack Block Kit")
   * [Option Group](bits/option-group.md "Block Builder – Option Group – Maintainable JavaScript Code for Slack Block Kit")
+  * [Rich Text Section](bits/rich-text-section.md "Block Builder – Rich Text Section – Maintainable JavaScript Code for Slack Block Kit")
+  * [Rich Text List](bits/rich-text-list.md "Block Builder – Rich Text List – Maintainable JavaScript Code for Slack Block Kit")
+  * [Rich Text Quote](bits/rich-text-quote.md "Block Builder – Rich Text Quote – Maintainable JavaScript Code for Slack Block Kit")
+  * [Rich Text Preformatted](bits/rich-text-preformatted.md "Block Builder – Rich Text Preformatted – Maintainable JavaScript Code for Slack Block Kit")
+  * [Rich Text Text](bits/rich-text-text.md "Block Builder – Rich Text Text – Maintainable JavaScript Code for Slack Block Kit")
+  * [Rich Text Emoji](bits/rich-text-emoji.md "Block Builder – Rich Text Emoji – Maintainable JavaScript Code for Slack Block Kit")
+  * [Rich Text Link](bits/rich-text-link.md "Block Builder – Rich Text Link – Maintainable JavaScript Code for Slack Block Kit")
+  * [Rich Text User](bits/rich-text-user.md "Block Builder – Rich Text User – Maintainable JavaScript Code for Slack Block Kit")
+  * [Rich Text Channel](bits/rich-text-channel.md "Block Builder – Rich Text Channel – Maintainable JavaScript Code for Slack Block Kit")
+  * [Rich Text Usergroup](bits/rich-text-usergroup.md "Block Builder – Rich Text Usergroup – Maintainable JavaScript Code for Slack Block Kit")
+  * [Rich Text Broadcast](bits/rich-text-broadcast.md "Block Builder – Rich Text Broadcast – Maintainable JavaScript Code for Slack Block Kit")
+  * [Rich Text Date](bits/rich-text-date.md "Block Builder – Rich Text Date – Maintainable JavaScript Code for Slack Block Kit")
+  * [Rich Text Color](bits/rich-text-color.md "Block Builder – Rich Text Color – Maintainable JavaScript Code for Slack Block Kit")
+  * [Rich Text Team](bits/rich-text-team.md "Block Builder – Rich Text Team – Maintainable JavaScript Code for Slack Block Kit")
 
 * **Component References**
   * [Paginator](components/paginator.md "Block Builder – Paginator – Maintainable JavaScript Code for Slack Block Kit")
