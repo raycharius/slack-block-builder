@@ -26,7 +26,7 @@ export type {
  * @param {string} [params.externalId] Sets a custom identifier that must be unique for all views on a per-team basis.
  * @param {string} [params.privateMetaData] Sets a string sent back to your server together with all action and submission events.
  *
- * {@link https://api.slack.com/surfaces/tabs|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/surfaces/app-home|View in Slack API Documentation}
  */
 
 export function HomeTab(params?: HomeTabParams): HomeTabBuilder {
@@ -39,8 +39,10 @@ export function HomeTab(params?: HomeTabParams): HomeTabBuilder {
  * @param {string} [params.text] Text to be displayed in the notification on the Message, or in the body, if there are no Blocks available.
  * @param {timestamp} [params.threadTs] Sets the message to be a reply in a thread to the message whose timestamp is passed.
  * @param {timestamp} [params.postAt] Sets a time for the message to be posted, as a scheduled message.
+ * @param {boolean} [params.unfurlLinks] Sets whether Slack should unfurl links in the Message.
+ * @param {boolean} [params.unfurlMedia] Sets whether Slack should unfurl media in the Message.
  *
- * {@link https://api.slack.com/messaging/composing|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/messaging/composing|View in Slack API Documentation}
  */
 
 export function Message(params?: MessageParams): MessageBuilder {
@@ -56,7 +58,7 @@ export function Message(params?: MessageParams): MessageBuilder {
  * @param {string} [params.externalId] Sets a custom identifier that must be unique for all views on a per-team basis.
  * @param {string} [params.privateMetaData] Sets a string sent back to your server together with all action and submission events.
  *
- * {@link https://api.slack.com/reference/surfaces/views|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/surfaces/modals|View in Slack API Documentation}
  */
 
 export function Modal(params?: ModalParams): ModalBuilder {
@@ -68,7 +70,7 @@ export function Modal(params?: ModalParams): ModalBuilder {
  * @param {string} [params.callbackId] Sets a string sent back to your server together with all action and submission events.
  * @param {string} [params.privateMetaData] Sets a string sent back to your server together with all action and submission events.
  *
- * {@link https://api.slack.com/reference/surfaces/views|View in Slack API Documentation}
+ * {@link https://docs.slack.dev/surfaces/modals|View in Slack API Documentation}
  */
 
 export function WorkflowStep(params?: WorkflowStepParams): WorkflowStepBuilder {

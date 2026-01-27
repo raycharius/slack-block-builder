@@ -37,7 +37,7 @@ export interface ButtonBuilder extends AccessibilityLabel,
 }
 
 /**
- * @@link https://api.slack.com/reference/block-kit/block-elements#button
+ * @@link https://docs.slack.dev/reference/block-kit/block-elements/button-element
  * @@displayName Button
  */
 

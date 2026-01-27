@@ -29,7 +29,7 @@ export interface StaticMultiSelectParams {
 }
 
 /**
- * @@link https://api.slack.com/reference/block-kit/block-elements#static_multi_select
+ * @@link https://docs.slack.dev/reference/block-kit/block-elements/multi-select-menu-element#static_multi_select
  * @@displayName Static Multi-Select
  */
 

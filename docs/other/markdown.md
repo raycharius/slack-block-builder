@@ -96,3 +96,14 @@ Md.emoji(string);
 ```
 
 Creates a named emoji in the colon format.
+
+```javascript
+Md.date(
+    timestamp: number,
+    tokenString: string,
+    fallbackText: string,
+    optionalLink?: string
+);
+```
+
+Creates a formatted date, optionally provide a link.

@@ -2,6 +2,8 @@
  * @description Wraps a string in quotation marks.
  */
 
+import { BlockBuilderError } from '../internal';
+
 export function quote(string: string): string {
   return `"${string}"`;
 }
@@ -126,6 +128,35 @@ export function group(id: string): string {
   return `<!subteam^${id}>`;
 }
 
+/**
+ * @description creates a formatted date.
+ * @link https://docs.slack.dev/messaging/formatting-message-text/#date-formatting
+ * @param timestamp A 10-digit Unix timestamp (seconds since the Unix epoch).
+ * @param tokenString The token string to use for the date formatting.
+ *                    Examples include {date_num} {date_short} {date_long} {ago}
+ *                    See linked slack documentation for more details.
+ * @param fallbackText The fallback text to display if the date cannot be formatted.
+ * @param optionalLink An optional link to associate with the date.
+ */
+export function date(
+  timestamp: number,
+  tokenString: string,
+  fallbackText: string,
+  optionalLink?: string
+): string {
+  if (timestamp < 0 || timestamp > 9999999999) {
+    throw new BlockBuilderError(
+      `Invalid timestamp "${timestamp}", must be a 10-digit Unix timestamp (0–9999999999)`
+    );
+  }
+  const paddedTimestamp = Math.floor(timestamp)
+    .toString()
+    .padStart(10, '0');
+  return optionalLink
+    ? `<!date^${paddedTimestamp}^${tokenString}^${optionalLink}|${fallbackText}>`
+    : `<!date^${paddedTimestamp}^${tokenString}|${fallbackText}>`;
+}
+
 const md = {
   quote,
   blockquote,
@@ -142,6 +173,7 @@ const md = {
   user,
   channel,
   group,
+  date,
 };
 
 // Strange export. I know. For IDE highlighting purposes.

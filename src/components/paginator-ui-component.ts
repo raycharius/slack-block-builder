@@ -10,8 +10,8 @@ import type {
   Nullable,
 } from '../internal/types';
 
-export type PaginatorActionIdFn = StringReturnableFn<PaginatorState
-& { buttonId: PaginatorButtonId }>;
+export type PaginatorActionIdFn =
+  StringReturnableFn<PaginatorState & { buttonId: PaginatorButtonId }>;
 
 export interface PageCountTextFnParams {
   page: number;
@@ -28,7 +28,7 @@ interface PaginatorUIComponentParams<T> {
   previousButtonText: Nullable<string>;
   pageCountTextFunction: Nullable<PaginatorPageCountTextFn>;
   actionIdFunction: PaginatorActionIdFn;
-  builderFunction: PaginatorBuilderFn<T>,
+  builderFunction: PaginatorBuilderFn<T>;
 }
 
 const defaultPageCountText = ({ page, totalPages }: PageCountTextFnParams) => `Page ${page} of ${totalPages}`;
@@ -65,6 +65,28 @@ export class PaginatorUIComponent<T> {
       blocksForEach.push(this.builderFunction({ item: this.items[i] }).flat());
     }
 
+    const actionButtons = [];
+
+    if (this.paginator.getPage() > 1) {
+      actionButtons.push(Elements.Button({
+        text: this.previousButtonText,
+        actionId: this.actionIdFunction({
+          buttonId: PaginatorButtonId.Previous,
+          ...this.paginator.getPreviousPageState(),
+        }),
+      }));
+    }
+
+    if (this.paginator.getPage() < this.paginator.getTotalPages()) {
+      actionButtons.push(Elements.Button({
+        text: this.nextButtonText,
+        actionId: this.actionIdFunction({
+          buttonId: PaginatorButtonId.Next,
+          ...this.paginator.getNextPageState(),
+        }),
+      }));
+    }
+
     const unpruned = this.paginator.getTotalPages() > 1
       ? [
         ...blocksForEach.flat(),
@@ -73,23 +95,7 @@ export class PaginatorUIComponent<T> {
           totalPages: this.paginator.getTotalPages(),
         })),
         Blocks.Divider(),
-        Blocks.Actions()
-          .elements(
-            Elements.Button({
-              text: this.previousButtonText,
-              actionId: this.actionIdFunction({
-                buttonId: PaginatorButtonId.Previous,
-                ...this.paginator.getPreviousPageState(),
-              }),
-            }),
-            Elements.Button({
-              text: this.nextButtonText,
-              actionId: this.actionIdFunction({
-                buttonId: PaginatorButtonId.Next,
-                ...this.paginator.getNextPageState(),
-              }),
-            }),
-          ),
+        Blocks.Actions().elements(...actionButtons),
       ]
       : blocksForEach.flat();
 

@@ -40,6 +40,10 @@ export function getBuilderResults<T>(
 }
 
 export function getPlainTextObject(text: string): Undefinable<PlainTextObject> {
+  if (text !== undefined && typeof text !== 'string') {
+    throw new Error(`Text must be a string, but found ${typeof text}. If you are trying to pass a Rich Text block, please note that it is not supported in this field.`);
+  }
+
   return valueOrUndefined(text) ? new PlainTextObject(text) : undefined;
 }
 
@@ -48,6 +52,10 @@ export function getStringFromNumber(value: number): Undefinable<string> {
 }
 
 export function getMarkdownObject(text: string): Undefinable<MarkdownObject> {
+  if (text !== undefined && typeof text !== 'string') {
+    throw new Error(`Text must be a string, but found ${typeof text}. If you are trying to pass a Rich Text block, please note that it is not supported in this field.`);
+  }
+
   return valueOrUndefined(text) ? new MarkdownObject(text) : undefined;
 }
 

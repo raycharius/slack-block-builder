@@ -28,7 +28,7 @@ export interface URLInputBuilder extends ActionId,
 }
 
 /**
- * @@link https://api.slack.com/reference/block-kit/block-elements#url
+ * @@link https://docs.slack.dev/reference/block-kit/block-elements/url-input-element
  * @@displayName URL Input
  */
 

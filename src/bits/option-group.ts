@@ -17,7 +17,7 @@ export interface OptionGroupBuilder extends End,
 }
 
 /**
- * @@link https://api.slack.com/reference/block-kit/composition-objects#option_group
+ * @@link https://docs.slack.dev/reference/block-kit/composition-objects/option-group-object
  * @@displayName Option Group
  */
 

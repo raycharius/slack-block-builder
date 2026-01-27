@@ -19,7 +19,7 @@ export interface FileBuilder extends BlockId,
 }
 
 /**
- * @@link https://api.slack.com/reference/block-kit/blocks#file
+ * @@link https://docs.slack.dev/reference/block-kit/blocks/file-block
  * @@displayName File
  */
 

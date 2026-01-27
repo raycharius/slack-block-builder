@@ -49,7 +49,7 @@ export interface ModalBuilder extends Blocks<ViewBlockBuilder>,
 }
 
 /**
- * @@link https://api.slack.com/reference/surfaces/views
+ * @@link https://docs.slack.dev/surfaces/modals
  * @@displayName Modal
  */
 

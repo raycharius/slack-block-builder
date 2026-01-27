@@ -61,6 +61,8 @@ export const methodArgMocks = {
   asUser: methodArgMocksByType.bool,
   threadTs: methodArgMocksByType.string,
   ts: methodArgMocksByType.string,
+  unfurlLinks: methodArgMocksByType.bool,
+  unfurlMedia: methodArgMocksByType.bool,
   replaceOriginal: methodArgMocksByType.bool,
   deleteOriginal: methodArgMocksByType.bool,
   responseType: methodArgMocksByType.ephemeral,

@@ -26,7 +26,7 @@ export interface OptionBuilder extends Description,
 }
 
 /**
- * @@link https://api.slack.com/reference/block-kit/composition-objects#option
+ * @@link https://docs.slack.dev/reference/block-kit/composition-objects/option-object
  * @@displayName Option
  */
 

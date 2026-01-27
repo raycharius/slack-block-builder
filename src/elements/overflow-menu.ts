@@ -23,7 +23,7 @@ export interface OverflowMenuBuilder extends ActionId,
 }
 
 /**
- * @@link https://api.slack.com/reference/block-kit/block-elements#overflow
+ * @@link https://docs.slack.dev/reference/block-kit/block-elements/overflow-menu-element
  * @@displayName Overflow Menu
  */
 

@@ -91,7 +91,7 @@ describe('Surfaces', () => {
       ]);
     const attachments = message.getAttachments();
 
-    expect(attachments).toEqual(expect.arrayContaining(message.build().attachments));
+    expect(attachments).toEqual(expect.arrayContaining(message.build().attachments!));
   });
 
   test('Calling \'getBlocks()\' for Modal should return an array of Blocks.', () => {

@@ -19,7 +19,7 @@ export interface ImgBuilder extends AltText,
 }
 
 /**
- * @@link https://api.slack.com/reference/block-kit/block-elements#image
+ * @@link https://docs.slack.dev/reference/block-kit/block-elements/image-element
  * @@displayName Image
  */
 

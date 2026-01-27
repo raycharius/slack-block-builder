@@ -9,6 +9,7 @@ import {
   FocusOnLoad,
   InitialTime,
   Placeholder,
+  Timezone,
 } from '../internal/methods';
 
 import type { SlackDto } from '../internal/dto';
@@ -18,6 +19,7 @@ export interface TimePickerParams {
   actionId?: string;
   initialTime?: string;
   placeholder?: string;
+  timezone?: string;
 }
 
 export interface TimePickerBuilder extends ActionId,
@@ -25,11 +27,12 @@ export interface TimePickerBuilder extends ActionId,
   End,
   FocusOnLoad,
   InitialTime,
-  Placeholder {
+  Placeholder,
+  Timezone {
 }
 
 /**
- * @@link https://api.slack.com/reference/block-kit/block-elements#timepicker
+ * @@link https://docs.slack.dev/reference/block-kit/block-elements/time-picker-element
  * @@displayName Time Picker
  */
 
@@ -52,4 +55,5 @@ applyMixins(TimePickerBuilder, [
   FocusOnLoad,
   InitialTime,
   Placeholder,
+  Timezone,
 ]);

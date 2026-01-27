@@ -27,7 +27,7 @@ export interface CheckboxesBuilder extends ActionId,
 }
 
 /**
- * @@link https://api.slack.com/reference/block-kit/block-elements#checkboxes
+ * @@link https://docs.slack.dev/reference/block-kit/block-elements/checkboxes-element
  * @@displayName Checkboxes
  */
 

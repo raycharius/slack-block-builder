@@ -7,3 +7,4 @@ coverage/
 package-lock.json
 dist/
 docs-generator-dist/
+tmp/

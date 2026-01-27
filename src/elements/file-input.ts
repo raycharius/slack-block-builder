@@ -22,7 +22,7 @@ export interface FileInputBuilder extends ActionId,
 }
 
 /**
- * @@link https://api.slack.com/reference/block-kit/block-elements#file_input
+ * @@link https://docs.slack.dev/reference/block-kit/block-elements/file-input-element
  * @@displayName File Input Builder
  */
 

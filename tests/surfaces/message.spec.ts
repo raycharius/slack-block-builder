@@ -29,6 +29,8 @@ const methodsConfig = [
   methods.ts,
   methods.attachments,
   methods.ignoreMarkdown,
+  methods.unfurlLinks,
+  methods.unfurlMedia,
 ];
 
 testCompositeBuilderClass({ config, methods: methodsConfig });

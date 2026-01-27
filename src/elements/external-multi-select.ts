@@ -39,7 +39,7 @@ export interface ExternalMultiSelectBuilder extends ActionId,
 }
 
 /**
- * @@link https://api.slack.com/reference/block-kit/block-elements#external_multi_select
+ * @@link https://docs.slack.dev/reference/block-kit/block-elements/multi-select-menu-element#external_multi_select
  * @@displayName External Multi-Select
  */
 

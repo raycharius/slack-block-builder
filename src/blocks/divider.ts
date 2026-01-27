@@ -13,7 +13,7 @@ export interface DividerBuilder extends BlockId,
 }
 
 /**
- * @@link https://api.slack.com/reference/block-kit/blocks#divider
+ * @@link https://docs.slack.dev/reference/block-kit/blocks/divider-block
  * @@displayName Divider
  */
 

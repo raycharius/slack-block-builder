@@ -27,10 +27,11 @@ import type {
   HeaderBuilder,
   ImageBuilder,
   InputBuilder,
+  RichTextBuilder,
   SectionBuilder,
   VideoBuilder,
 } from '../../blocks';
-import { EmailInputBuilder, NumberInputBuilder, URLInputBuilder } from '../../elements';
+import { EmailInputBuilder, NumberInputBuilder, RichTextInputBuilder, URLInputBuilder } from '../../elements';
 
 export type ActionsElementBuilder =
   ButtonBuilder
@@ -76,16 +77,17 @@ export type InputElementBuilder =
   | EmailInputBuilder
   | ExternalMultiSelectBuilder
   | ExternalSelectBuilder
+  | FileInputBuilder
   | NumberInputBuilder
   | RadioButtonsBuilder
+  | RichTextInputBuilder
   | StaticMultiSelectBuilder
   | StaticSelectBuilder
   | TextInputBuilder
   | TimePickerBuilder
   | URLInputBuilder
   | UserMultiSelectBuilder
-  | UserSelectBuilder
-  | FileInputBuilder;
+  | UserSelectBuilder;
 
 export type ContextElement = ImgBuilder | string;
 
@@ -107,6 +109,7 @@ export type ViewBlockBuilder =
   | HeaderBuilder
   | ImageBuilder
   | InputBuilder
+  | RichTextBuilder
   | SectionBuilder
   | VideoBuilder;
 
